@@ -1,0 +1,139 @@
+require('dotenv').config({ path: '/opt/examel/pdf-engine/.env' });
+const { createClient } = require('@supabase/supabase-js');
+const fs = require('fs');
+const path = require('path');
+
+const supabase = createClient(
+  process.env.SUPABASE_URL,
+  process.env.SUPABASE_ANON_KEY
+);
+
+async function generatePages() {
+  console.log('Fetching worksheets from Supabase...');
+  
+  const { data: worksheets, error } = await supabase
+    .from('worksheets')
+    .select('*')
+    .eq('status', 'published')
+    .order('created_at', { ascending: false });
+
+  if (error) {
+    console.error('Supabase error:', error.message);
+    process.exit(1);
+  }
+
+  console.log(`Found ${worksheets.length} worksheets`);
+
+  for (const ws of worksheets) {
+    const dir = `/opt/examel/examel-pages/worksheets/${ws.slug}`;
+    fs.mkdirSync(dir, { recursive: true });
+
+    const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${ws.title} | Free Printable Worksheet | Examel</title>
+  <meta name="description" content="Free printable ${ws.subject} worksheet for Grade ${ws.grade}. ${ws.topic} with ${ws.theme} theme. Download and print instantly.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalResource",
+    "name": "${ws.title}",
+    "description": "Free printable ${ws.subject} worksheet for Grade ${ws.grade} about ${ws.topic}",
+    "educationalLevel": "Grade ${ws.grade}",
+    "subject": "${ws.subject}",
+    "provider": {
+      "@type": "Organization",
+      "name": "Examel",
+      "url": "https://examel.com"
+    }
+  }
+  </script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, sans-serif; color: #2D3436; background: #F8F7FF; }
+    .hero { background: #6C5CE7; color: white; padding: 40px 20px; text-align: center; }
+    .hero h1 { font-size: 2em; margin-bottom: 10px; }
+    .hero p { font-size: 1.1em; opacity: 0.9; }
+    .badges { display: flex; justify-content: center; gap: 10px; margin-top: 15px; flex-wrap: wrap; }
+    .badge { background: rgba(255,255,255,0.2); border-radius: 20px; padding: 4px 14px; font-size: 13px; font-weight: bold; }
+    .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+    .download-box { background: white; border-radius: 16px; padding: 30px; text-align: center; margin-bottom: 30px; border: 2px solid #6C5CE7; }
+    .download-box h2 { color: #6C5CE7; margin-bottom: 10px; }
+    .download-box p { color: #636E72; margin-bottom: 20px; }
+    .btn { background: #6C5CE7; color: white; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 1.1em; display: inline-block; }
+    .btn:hover { background: #5A4BD1; }
+    .info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 30px; }
+    .info-card { background: white; border-radius: 12px; padding: 20px; text-align: center; }
+    .info-card .label { font-size: 11px; color: #B2BEC3; font-weight: bold; letter-spacing: 0.5px; margin-bottom: 5px; }
+    .info-card .value { font-size: 1.1em; font-weight: bold; color: #2D3436; }
+    .footer { text-align: center; padding: 30px; font-size: 13px; color: #B2BEC3; border-top: 1px solid #DFE6E9; margin-top: 40px; }
+    .footer a { color: #6C5CE7; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <h1>${ws.title}</h1>
+    <p>Free printable worksheet — download and print instantly</p>
+    <div class="badges">
+      <span class="badge">${ws.subject}</span>
+      <span class="badge">Grade ${ws.grade}</span>
+      <span class="badge">${ws.theme} Theme</span>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="label">SUBJECT</div>
+        <div class="value">${ws.subject}</div>
+      </div>
+      <div class="info-card">
+        <div class="label">GRADE</div>
+        <div class="value">Grade ${ws.grade}</div>
+      </div>
+      <div class="info-card">
+        <div class="label">TOPIC</div>
+        <div class="value">${ws.topic}</div>
+      </div>
+    </div>
+
+    <div class="download-box">
+      <h2>Ready to Print</h2>
+      <p>This worksheet includes 8 questions plus a full answer key for parents and teachers.</p>
+      <a href="https://examel.com" class="btn">Download Free Worksheet</a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <a href="https://examel.com">examel.com</a> | The worksheet your child actually finishes.
+  </div>
+</body>
+</html>`;
+
+    fs.writeFileSync(`${dir}/index.html`, html);
+    console.log(`Generated: /worksheets/${ws.slug}/`);
+  }
+
+  // Generate sitemap
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://examel-pages.pages.dev/</loc>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+${worksheets.map(ws => `  <url>
+    <loc>https://examel-pages.pages.dev/worksheets/${ws.slug}/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>`).join('\n')}
+</urlset>`;
+
+  fs.writeFileSync('/opt/examel/examel-pages/sitemap.xml', sitemap);
+  console.log('Sitemap generated');
+  console.log(`Done — ${worksheets.length} pages + sitemap`);
+}
+
+generatePages().catch(console.error);
