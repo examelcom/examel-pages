@@ -6,6 +6,41 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://examel-pages.pages.dev/worksheets/math-grade5-nature/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel-pages.pages.dev/worksheets/math-grade5-sports/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel-pages.pages.dev/worksheets/math-grade4-superheroes/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel-pages.pages.dev/worksheets/math-grade4-pirates/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel-pages.pages.dev/worksheets/math-grade3-robots/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel-pages.pages.dev/worksheets/math-grade3-dragons/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel-pages.pages.dev/worksheets/math-grade2-ocean/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://examel-pages.pages.dev/worksheets/math-grade2-space/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -17,11 +52,6 @@
   </url>
   <url>
     <loc>https://examel-pages.pages.dev/worksheets/math-grade1-animals/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://examel-pages.pages.dev/worksheets/test-worksheet-001/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
