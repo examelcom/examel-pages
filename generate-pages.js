@@ -15,8 +15,10 @@ const formatTheme = (t) => titleCase(t.replace(/-/g, ' '));
 
 function worksheetCard(ws) {
   const color = gradeColor(ws.grade);
+  const thumb = ws.preview_image_url ? `<img src="${ws.preview_image_url}" alt="${ws.title}" style="width:100%;height:140px;object-fit:cover;border-radius:8px 8px 0 0;margin:-20px -20px 12px -20px;width:calc(100% + 40px);">` : '';
   return `
-    <a href="/worksheets/${ws.slug}/" class="ws-card" style="border-top:3px solid ${color}">
+    <a href="/worksheets/${ws.slug}/" class="ws-card" style="border-top:3px solid ${color};padding-top:${ws.preview_image_url?'0':'20px'}">
+      ${thumb}
       <div class="ws-card-badge" style="background:${color}">${capitalize(ws.subject)} · Grade ${ws.grade}</div>
       <h3>${ws.title}</h3>
       <p>${formatTopic(ws.topic)} · ${formatTheme(ws.theme)} theme</p>
@@ -84,7 +86,7 @@ async function generatePages() {
 
   const { data: worksheets, error } = await supabase
     .from('worksheets')
-    .select('*')
+    .select('id,slug,grade,subject,topic,theme,title,pdf_url,preview_image_url,status')
     .eq('status', 'published')
     .order('created_at', { ascending: false });
 
