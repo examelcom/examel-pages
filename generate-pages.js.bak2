@@ -1,7 +1,6 @@
 require('dotenv').config({ path: '/opt/examel/pdf-engine/.env' });
 const { createClient } = require('@supabase/supabase-js');
 const fs = require('fs');
-const { generateWordSearchPages } = require('./word-search-generator.js');
 
 const supabase = createClient(
   process.env.SUPABASE_URL,
@@ -356,9 +355,6 @@ async function generatePages() {
   }
   console.log(`✓ Grade hub pages generated`);
 
-  // ── WORD SEARCH PAGES
-  const wordSearches = generateWordSearchPages(worksheets, sharedCSS, siteHeader, siteFooter, gradeColor, capitalize, formatTopic, formatTheme);
-
   // ── 5. SITEMAP ────────────────────────────────────────────────────────────
   const baseUrl = 'https://examel.com';
   const sitemapUrls = [
@@ -366,8 +362,7 @@ async function generatePages() {
     ...subjects.map(s => ({ url: `/free-${s}-worksheets/`, priority: '0.9', freq: 'daily' })),
     ...subjects.flatMap(s => grades.map(g => ({ url: `/free-${s}-worksheets/grade-${g}/`, priority: '0.85', freq: 'daily' }))),
     ...grades.map(g => ({ url: `/free-worksheets/grade-${g}/`, priority: '0.85', freq: 'daily' })),
-    ...worksheets.filter(ws => !ws.format || ws.format === 'worksheet').map(ws => ({ url: `/worksheets/${ws.slug}/`, priority: '0.7', freq: 'monthly' })),
-    ...wordSearches.map(ws => ({ url: `/word-searches/${ws.subject}/grade-${ws.grade}/${ws.slug}/`, priority: '0.75', freq: 'monthly' }))
+    ...worksheets.map(ws => ({ url: `/worksheets/${ws.slug}/`, priority: '0.7', freq: 'monthly' }))
   ];
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
