@@ -97,12 +97,12 @@ async function generatePages() {
   console.log(`Found ${worksheets.length} worksheets`);
 
   // ── 1. INDIVIDUAL WORKSHEET PAGES ─────────────────────────────────────────
-  for (const ws of worksheets) {
+  for (const ws of worksheets.filter(w => !w.format || w.format === 'worksheet')) {
     const dir = `/opt/examel/examel-pages/worksheets/${ws.slug}`;
     fs.mkdirSync(dir, { recursive: true });
     const color = gradeColor(ws.grade);
     const downloadUrl = ws.pdf_url && ws.pdf_url.startsWith('http') ? ws.pdf_url : 'https://examel.com';
-    const related = worksheets.filter(w => w.subject === ws.subject && w.grade === ws.grade && w.slug !== ws.slug).slice(0, 4);
+    const related = worksheets.filter(w => w.subject === ws.subject && w.grade === ws.grade && w.slug !== ws.slug && (!w.format || w.format === 'worksheet')).slice(0, 4);
     const sameTopicDiffTheme = worksheets.filter(w => w.topic === ws.topic && w.theme !== ws.theme && w.slug !== ws.slug).slice(0, 4);
     const sameThemeDiffSubject = worksheets.filter(w => w.theme === ws.theme && w.subject !== ws.subject && w.grade === ws.grade && w.slug !== ws.slug).slice(0, 3);
 
