@@ -3,6 +3,7 @@ const { createClient } = require('@supabase/supabase-js');
 const fs = require('fs');
 const { generateWordSearchPages } = require('./word-search-generator.js');
 const { generateDrillPages } = require('./drill-generator.js');
+const { generateVocabMatchPages } = require('./vocab-match-generator.js');
 
 const supabase = createClient(
   process.env.SUPABASE_URL,
@@ -378,6 +379,9 @@ async function generatePages() {
   // ── WORD SEARCH PAGES
   const wordSearches = generateWordSearchPages(worksheets, sharedCSS, siteHeader, siteFooter, gradeColor, capitalize, formatTopic, formatTheme);
 
+  // ── VOCAB MATCH PAGES
+  const vocabMatchPages = generateVocabMatchPages(worksheets, sharedCSS, siteHeader, siteFooter, gradeColor, capitalize, formatTopic, formatTheme);
+
   // ── DRILL PAGES
   const drillPages = generateDrillPages(worksheets, sharedCSS, siteHeader, siteFooter, gradeColor, capitalize, formatTopic, formatTheme);
 
@@ -459,6 +463,39 @@ async function generatePages() {
   }
   console.log('✓ Drill hub pages generated');
 
+  // ── VOCAB MATCH HUB PAGES
+  const vocabSubjects = ['math', 'english', 'science'];
+  for (const subj of vocabSubjects) {
+    const subjDir = `/opt/examel/examel-pages/free-${subj}-vocabulary`;
+    fs.mkdirSync(subjDir, { recursive: true });
+    const subjVocab = vocabMatchPages.filter(v => v.subject === subj);
+    const subjColor = subj === 'math' ? '#6C5CE7' : subj === 'english' ? '#00B894' : '#0984E3';
+    const subjHTML = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free ${capitalize(subj)} Vocabulary Worksheets | Grades 1-6 | Examel</title>
+  <meta name="description" content="Free printable ${subj} vocabulary match worksheets for Grades 1-6. Match words to definitions with answer keys. Download PDF instantly.">
+  <link rel="canonical" href="https://examel.com/free-${subj}-vocabulary/">
+  ${sharedCSS}
+</head>
+<body>
+  ${siteHeader}
+  <div class="breadcrumb"><a href="https://examel.com">Home</a><span>›</span> Free ${capitalize(subj)} Vocabulary</div>
+  <div class="hero">
+    <h1>Free <span>${capitalize(subj)} Vocabulary</span> Worksheets</h1>
+    <p>${subjVocab.length || '200'}+ free printable ${subj} vocabulary match worksheets for Grades 1-6. Match words to definitions with answer keys.</p>
+  </div>
+  <div class="grid">
+    ${subjVocab.slice(0,12).map(ws => worksheetCard(ws)).join('')}
+  </div>
+  ${siteFooter}
+</body></html>`;
+    fs.writeFileSync(subjDir + '/index.html', subjHTML);
+  }
+  console.log('✓ Vocab match hub pages generated');
+
   // ── 5. SITEMAP ────────────────────────────────────────────────────────────
   const baseUrl = 'https://examel.com';
   const sitemapUrls = [
@@ -469,6 +506,8 @@ async function generatePages() {
     ...worksheets.filter(ws => !ws.format || ws.format === 'worksheet').map(ws => ({ url: `/worksheets/${ws.slug}/`, priority: '0.7', freq: 'monthly' })),
     ...wordSearches.map(ws => ({ url: `/word-searches/${ws.subject}/grade-${ws.grade}/${ws.slug}/`, priority: '0.75', freq: 'monthly' })),
     ...drillPages.map(ws => ({ url: `/drills/${ws.subject}/grade-${ws.grade}/${ws.slug}/`, priority: '0.75', freq: 'monthly' })),
+    ...vocabMatchPages.map(ws => ({ url: `/vocab-match/${ws.subject}/grade-${ws.grade}/${ws.slug}/`, priority: '0.75', freq: 'monthly' })),
+    ...vocabSubjects.map(s => ({ url: `/free-${s}-vocabulary/`, priority: '0.85', freq: 'daily' })),
     { url: '/free-math-drills/', priority: '0.9', freq: 'daily' },
     ...drillTopics.map(t => ({ url: `/free-${t}-drills/`, priority: '0.85', freq: 'daily' }))
   ];
