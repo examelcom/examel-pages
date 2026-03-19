@@ -12,7 +12,8 @@
     body{font-family:Arial,sans-serif;color:#2D3436;background:#F8F7FF;}
     .site-header{background:#6C5CE7;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;}
     .site-header a{color:white;text-decoration:none;font-weight:bold;font-size:1.1em;}
-    .site-header nav a{margin-left:20px;font-size:14px;opacity:0.9;}
+    .site-header nav a{margin-left:16px;font-size:13px;opacity:0.9;font-weight:600;}
+    .site-logo{font-size:22px!important;font-weight:900!important;opacity:1!important;letter-spacing:-0.5px;}
     .breadcrumb{max-width:1100px;margin:16px auto;padding:0 20px;font-size:13px;color:#636E72;}
     .breadcrumb a{color:#6C5CE7;text-decoration:none;}
     .breadcrumb span{margin:0 6px;}
@@ -36,20 +37,28 @@
     .hub-card .hub-icon{font-size:40px;margin-bottom:12px;display:block;}
     .hub-card h3{font-size:17px;margin-bottom:4px;}
     .hub-card p{font-size:13px;color:#636E72;}
-    .site-footer{text-align:center;padding:30px;font-size:13px;color:#B2BEC3;border-top:1px solid #DFE6E9;}
-    .site-footer a{color:#6C5CE7;text-decoration:none;margin:0 10px;}
+    .site-footer{padding:40px 20px 20px;background:#2D3436;border-top:4px solid #6C5CE7;}
+    .footer-grid{display:flex;gap:40px;justify-content:center;flex-wrap:wrap;margin-bottom:24px;}
+    .footer-col{display:flex;flex-direction:column;gap:8px;min-width:120px;}
+    .footer-heading{font-size:11px;font-weight:800;color:#FFFFFF;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;}
+    .site-footer a{color:#B2BEC3;text-decoration:none;font-size:13px;transition:color 0.2s;}
+    .site-footer a:hover{color:#6C5CE7;}
+    .footer-bottom{text-align:center;font-size:12px;color:#636E72;border-top:1px solid #444;padding-top:16px;}
     @media(max-width:600px){.hub-grid{grid-template-columns:repeat(2,1fr);}}
   </style>
 </head>
 <body>
   
   <header class="site-header">
-    <a href="https://examel.com">Examel</a>
+    <a href="https://examel.com" class="site-logo">Examel</a>
     <nav>
       <a href="/free-math-worksheets/">Math</a>
       <a href="/free-english-worksheets/">English</a>
       <a href="/free-science-worksheets/">Science</a>
       <a href="/free-math-drills/">Drills</a>
+      <a href="/free-reading-passages/">Reading</a>
+      <a href="/free-math-vocabulary/">Vocabulary</a>
+      <a href="/word-searches/">Word Searches</a>
     </nav>
   </header>
   <div class="breadcrumb">
@@ -1245,12 +1254,36 @@
   </div>
   
   <footer class="site-footer">
-    <a href="https://examel.com">Home</a>
-    <a href="/free-math-worksheets/">Math</a>
-    <a href="/free-english-worksheets/">English</a>
-    <a href="/free-science-worksheets/">Science</a>
-    <a href="https://examel.com/privacy-policy/">Privacy Policy</a>
-    <br><br>© 2026 Examel · Free K-8 Worksheets · examel.com
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-heading">Worksheets</div>
+        <a href="/free-math-worksheets/">Math</a>
+        <a href="/free-english-worksheets/">English</a>
+        <a href="/free-science-worksheets/">Science</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-heading">Practice</div>
+        <a href="/free-math-drills/">Math Drills</a>
+        <a href="/word-searches/">Word Searches</a>
+        <a href="/free-math-vocabulary/">Vocabulary</a>
+        <a href="/free-reading-passages/">Reading Passages</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-heading">By Grade</div>
+        <a href="/free-worksheets/grade-1/">Grade 1</a>
+        <a href="/free-worksheets/grade-2/">Grade 2</a>
+        <a href="/free-worksheets/grade-3/">Grade 3</a>
+        <a href="/free-worksheets/grade-4/">Grade 4</a>
+        <a href="/free-worksheets/grade-5/">Grade 5</a>
+        <a href="/free-worksheets/grade-6/">Grade 6</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-heading">Examel</div>
+        <a href="https://examel.com">Home</a>
+        <a href="https://examel.com/privacy-policy/">Privacy Policy</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Examel · Free K-8 Printable Worksheets · examel.com</div>
   </footer>
 </body>
 </html>
