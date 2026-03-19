@@ -101,8 +101,6 @@ async function generatePages() {
     const color = gradeColor(ws.grade);
     const downloadUrl = ws.pdf_url && ws.pdf_url.startsWith('http') ? ws.pdf_url : 'https://examel.com';
     const related = worksheets.filter(w => w.subject === ws.subject && w.grade === ws.grade && w.slug !== ws.slug).slice(0, 4);
-    const sameTopicDiffTheme = worksheets.filter(w => w.topic === ws.topic && w.theme !== ws.theme && w.slug !== ws.slug).slice(0, 4);
-    const sameThemeDiffSubject = worksheets.filter(w => w.theme === ws.theme && w.subject !== ws.subject && w.grade === ws.grade && w.slug !== ws.slug).slice(0, 3);
 
     const html = `<!DOCTYPE html>
 <html lang="en">
@@ -188,24 +186,9 @@ async function generatePages() {
         ${related.map(worksheetCard).join('')}
       </div>
     </div>` : ''}
-    ${sameTopicDiffTheme.length > 0 ? `
-    <div class="related">
-      <h3>More ${formatTopic(ws.topic)} Worksheets</h3>
-      <div class="grid" style="padding:0;margin:0 0 20px;">
-        ${sameTopicDiffTheme.map(worksheetCard).join('')}
-      </div>
-    </div>` : ''}
-    ${sameThemeDiffSubject.length > 0 ? `
-    <div class="related">
-      <h3>More ${formatTheme(ws.theme)} Theme Worksheets</h3>
-      <div class="grid" style="padding:0;margin:0 0 20px;">
-        ${sameThemeDiffSubject.map(worksheetCard).join('')}
-      </div>
-    </div>` : ''}
     <div class="nav-links">
       <a href="/free-${ws.subject.toLowerCase()}-worksheets/grade-${ws.grade}/">← All Grade ${ws.grade} ${capitalize(ws.subject)} Worksheets</a>
       <a href="/free-${ws.subject.toLowerCase()}-worksheets/">← All ${capitalize(ws.subject)} Worksheets</a>
-      <a href="/free-worksheets/grade-${ws.grade}/">← All Grade ${ws.grade} Worksheets</a>
       <a href="https://examel.com">← Examel Home</a>
     </div>
   </div>
