@@ -106,7 +106,7 @@ async function generatePages() {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${ws.title} | Free Printable Worksheet with Answer Key | Examel</title>
+  <title>${ws.title} | ${ws.difficulty && ws.difficulty !== "standard" ? ws.difficulty.charAt(0).toUpperCase() + ws.difficulty.slice(1) + " " : ""}Free Printable Worksheet with Answer Key | Examel</title>
   <meta name="description" content="Free printable ${ws.subject} worksheet for Grade ${ws.grade}. ${formatTopic(ws.topic)} with ${formatTheme(ws.theme)} theme. Download PDF instantly. Answer key included.">
   <link rel="canonical" href="https://examel.com/worksheets/${ws.slug}/">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"EducationalResource","name":"${ws.title}","description":"Free printable ${ws.subject} worksheet for Grade ${ws.grade} about ${ws.topic}","educationalLevel":"Grade ${ws.grade}","subject":"${ws.subject}","provider":{"@type":"Organization","name":"Examel","url":"https://examel.com"},"isAccessibleForFree":true,"url":"https://examel.com/worksheets/${ws.slug}/"}</script>
