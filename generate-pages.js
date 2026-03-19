@@ -4,6 +4,7 @@ const fs = require('fs');
 const { generateWordSearchPages } = require('./word-search-generator.js');
 const { generateDrillPages } = require('./drill-generator.js');
 const { generateVocabMatchPages } = require('./vocab-match-generator.js');
+const { generateReadingPassagePages } = require('./reading-passage-generator.js');
 
 const supabase = createClient(
   process.env.SUPABASE_URL,
@@ -382,6 +383,9 @@ async function generatePages() {
   // ── VOCAB MATCH PAGES
   const vocabMatchPages = generateVocabMatchPages(worksheets, sharedCSS, siteHeader, siteFooter, gradeColor, capitalize, formatTopic, formatTheme);
 
+  // ── READING PASSAGE PAGES
+  const readingPassagePages = generateReadingPassagePages(worksheets, sharedCSS, siteHeader, siteFooter, gradeColor, capitalize, formatTopic, formatTheme);
+
   // ── DRILL PAGES
   const drillPages = generateDrillPages(worksheets, sharedCSS, siteHeader, siteFooter, gradeColor, capitalize, formatTopic, formatTheme);
 
@@ -496,6 +500,72 @@ async function generatePages() {
   }
   console.log('✓ Vocab match hub pages generated');
 
+  // ── READING PASSAGE HUB PAGES
+  const rpGrades = [1,2,3,4,5,6];
+  const rpMainDir = '/opt/examel/examel-pages/free-reading-passages';
+  fs.mkdirSync(rpMainDir, { recursive: true });
+  const rpMainHTML = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Reading Comprehension Passages | Grades 1-6 | Examel</title>
+  <meta name="description" content="Free printable reading comprehension passages for Grades 1-6. Nonfiction passages with 6 comprehension questions and answer keys. Download PDF instantly.">
+  <link rel="canonical" href="https://examel.com/free-reading-passages/">
+  ${sharedCSS}
+</head>
+<body>
+  ${siteHeader}
+  <div class="breadcrumb"><a href="https://examel.com">Home</a><span>›</span> Free Reading Passages</div>
+  <div class="hero">
+    <h1>Free <span>Reading Comprehension</span> Passages</h1>
+    <p>${readingPassagePages.length || '200'}+ free printable reading passages for Grades 1-6. Nonfiction passages with 6 comprehension questions and answer keys.</p>
+  </div>
+  <div class="hub-grid">
+    ${rpGrades.map(g => {
+      const count = readingPassagePages.filter(p => p.grade === g).length;
+      return `<a href="/free-reading-passages/grade-${g}/" class="hub-card" style="border-top:3px solid ${gradeColor(g)};">
+        <span class="hub-icon">📖</span>
+        <h3>Grade ${g}</h3>
+        <p>${count || '30'}+ passages</p>
+      </a>`;
+    }).join('')}
+  </div>
+  ${siteFooter}
+</body></html>`;
+  fs.writeFileSync(rpMainDir + '/index.html', rpMainHTML);
+
+  // Grade hub pages
+  for (const g of rpGrades) {
+    const gradeDir = `/opt/examel/examel-pages/free-reading-passages/grade-${g}`;
+    fs.mkdirSync(gradeDir, { recursive: true });
+    const gradePasses = readingPassagePages.filter(p => p.grade === g);
+    const gradeHTML = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Grade ${g} Reading Comprehension Passages | Examel</title>
+  <meta name="description" content="Free printable Grade ${g} reading comprehension passages. Nonfiction with 6 questions and answer keys. Download PDF instantly.">
+  <link rel="canonical" href="https://examel.com/free-reading-passages/grade-${g}/">
+  ${sharedCSS}
+</head>
+<body>
+  ${siteHeader}
+  <div class="breadcrumb"><a href="https://examel.com">Home</a><span>›</span><a href="/free-reading-passages/">Reading Passages</a><span>›</span>Grade ${g}</div>
+  <div class="hero">
+    <h1>Free Grade ${g} <span>Reading Passages</span></h1>
+    <p>${gradePasses.length || '30'}+ free printable Grade ${g} nonfiction reading passages with comprehension questions and answer keys.</p>
+  </div>
+  <div class="grid">
+    ${gradePasses.slice(0,12).map(ws => worksheetCard(ws)).join('')}
+  </div>
+  ${siteFooter}
+</body></html>`;
+    fs.writeFileSync(gradeDir + '/index.html', gradeHTML);
+  }
+  console.log('✓ Reading passage hub pages generated');
+
   // ── 5. SITEMAP ────────────────────────────────────────────────────────────
   const baseUrl = 'https://examel.com';
   const sitemapUrls = [
@@ -508,6 +578,9 @@ async function generatePages() {
     ...drillPages.map(ws => ({ url: `/drills/${ws.subject}/grade-${ws.grade}/${ws.slug}/`, priority: '0.75', freq: 'monthly' })),
     ...vocabMatchPages.map(ws => ({ url: `/vocab-match/${ws.subject}/grade-${ws.grade}/${ws.slug}/`, priority: '0.75', freq: 'monthly' })),
     ...vocabSubjects.map(s => ({ url: `/free-${s}-vocabulary/`, priority: '0.85', freq: 'daily' })),
+    ...readingPassagePages.map(ws => ({ url: `/reading-passages/grade-${ws.grade}/${ws.slug}/`, priority: '0.8', freq: 'monthly' })),
+    { url: '/free-reading-passages/', priority: '0.9', freq: 'daily' },
+    ...rpGrades.map(g => ({ url: `/free-reading-passages/grade-${g}/`, priority: '0.85', freq: 'daily' })),
     { url: '/free-math-drills/', priority: '0.9', freq: 'daily' },
     ...drillTopics.map(t => ({ url: `/free-${t}-drills/`, priority: '0.85', freq: 'daily' }))
   ];
