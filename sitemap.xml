@@ -6,39 +6,14 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://examel.com/free-english-worksheets/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
     <loc>https://examel.com/free-math-worksheets/</loc>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://examel.com/free-english-worksheets/grade-1/</loc>
+    <loc>https://examel.com/free-english-worksheets/</loc>
     <changefreq>daily</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/free-english-worksheets/grade-2/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/free-english-worksheets/grade-3/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/free-english-worksheets/grade-4/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/free-english-worksheets/grade-5/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.85</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://examel.com/free-math-worksheets/grade-1/</loc>
@@ -66,6 +41,31 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://examel.com/free-english-worksheets/grade-1/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/free-english-worksheets/grade-2/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/free-english-worksheets/grade-3/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/free-english-worksheets/grade-4/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/free-english-worksheets/grade-5/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://examel.com/free-worksheets/grade-1/</loc>
     <changefreq>daily</changefreq>
     <priority>0.85</priority>
@@ -89,6 +89,11 @@
     <loc>https://examel.com/free-worksheets/grade-5/</loc>
     <changefreq>daily</changefreq>
     <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/drill-math-grade3-multiplication-halloween-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://examel.com/worksheets/english-grade3-reading-comprehension-mythology/</loc>
@@ -2724,5 +2729,30 @@
     <loc>https://examel.com/worksheets/math-grade1-animals/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/free-math-drills/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/free-multiplication-drills/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/free-division-drills/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/free-addition-drills/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/free-subtraction-drills/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
   </url>
 </urlset>

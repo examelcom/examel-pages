@@ -2,6 +2,7 @@ require('dotenv').config({ path: '/opt/examel/pdf-engine/.env' });
 const { createClient } = require('@supabase/supabase-js');
 const fs = require('fs');
 const { generateWordSearchPages } = require('./word-search-generator.js');
+const { generateDrillPages } = require('./drill-generator.js');
 
 const supabase = createClient(
   process.env.SUPABASE_URL,
@@ -69,6 +70,7 @@ const siteHeader = `
       <a href="/free-math-worksheets/">Math</a>
       <a href="/free-english-worksheets/">English</a>
       <a href="/free-science-worksheets/">Science</a>
+      <a href="/free-math-drills/">Drills</a>
     </nav>
   </header>`;
 
@@ -376,6 +378,87 @@ async function generatePages() {
   // ── WORD SEARCH PAGES
   const wordSearches = generateWordSearchPages(worksheets, sharedCSS, siteHeader, siteFooter, gradeColor, capitalize, formatTopic, formatTheme);
 
+  // ── DRILL PAGES
+  const drillPages = generateDrillPages(worksheets, sharedCSS, siteHeader, siteFooter, gradeColor, capitalize, formatTopic, formatTheme);
+
+
+  // ── DRILL HUB PAGES ───────────────────────────────────────────────────────
+  const drillTopics = ['multiplication', 'division', 'addition', 'subtraction'];
+  const drillIcons = { multiplication: '✖', division: '➗', addition: '➕', subtraction: '➖' };
+
+  // Main hub: /free-math-drills/
+  const allDrills = drillPages;
+  const mainDrillDir = '/opt/examel/examel-pages/free-math-drills';
+  fs.mkdirSync(mainDrillDir, { recursive: true });
+  const mainDrillHTML = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Math Drills for Kids | Grades 1-6 | Examel</title>
+  <meta name="description" content="Free printable math drills for Grades 1-6. Multiplication, division, addition and subtraction drills with answer keys. Download PDF instantly.">
+  <link rel="canonical" href="https://examel.com/free-math-drills/">
+  ${sharedCSS}
+</head>
+<body>
+  ${siteHeader}
+  <div class="breadcrumb"><a href="https://examel.com">Home</a><span>›</span> Free Math Drills</div>
+  <div class="hero">
+    <h1>Free <span>Math Drills</span> for Kids</h1>
+    <p>${allDrills.length || '500'}+ free printable math drills for Grades 1-6. Build fact fluency with timed practice. Answer keys included.</p>
+  </div>
+  <div class="hub-grid">
+    ${drillTopics.map(t => `<a href="/free-${t}-drills/" class="hub-card" style="border-top:3px solid #6C5CE7;">
+      <span class="hub-icon">${drillIcons[t]}</span>
+      <h3>${t.charAt(0).toUpperCase()+t.slice(1)} Drills</h3>
+      <p>Grades 1-6</p>
+    </a>`).join('')}
+  </div>
+  ${siteFooter}
+</body></html>`;
+  fs.writeFileSync(mainDrillDir + '/index.html', mainDrillHTML);
+
+  // Topic hubs: /free-multiplication-drills/ etc
+  for (const topic of drillTopics) {
+    const topicDir = `/opt/examel/examel-pages/free-${topic}-drills`;
+    fs.mkdirSync(topicDir, { recursive: true });
+    const topicDrills = allDrills.filter(d => d.topic === topic);
+    const topicHTML = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free ${topic.charAt(0).toUpperCase()+topic.slice(1)} Drills | Grades 1-6 | Examel</title>
+  <meta name="description" content="Free printable ${topic} drills for Grades 1-6. Build ${topic} fact fluency with timed practice sheets. Answer keys included. Download PDF instantly.">
+  <link rel="canonical" href="https://examel.com/free-${topic}-drills/">
+  ${sharedCSS}
+</head>
+<body>
+  ${siteHeader}
+  <div class="breadcrumb"><a href="https://examel.com">Home</a><span>›</span><a href="/free-math-drills/">Math Drills</a><span>›</span>${topic.charAt(0).toUpperCase()+topic.slice(1)} Drills</div>
+  <div class="hero">
+    <h1>Free <span>${topic.charAt(0).toUpperCase()+topic.slice(1)} Drills</span></h1>
+    <p>${topicDrills.length || '100'}+ free printable ${topic} drills for Grades 1-6. Timed practice with answer keys.</p>
+  </div>
+  <div class="hub-grid">
+    ${[1,2,3,4,5,6].map(g => {
+      const count = topicDrills.filter(d => d.grade === g).length;
+      return `<a href="/drills/math/grade-${g}/" class="hub-card" style="border-top:3px solid ${gradeColor(g)};">
+        <span class="hub-icon">📄</span>
+        <h3>Grade ${g}</h3>
+        <p>${count || '50'}+ drills</p>
+      </a>`;
+    }).join('')}
+  </div>
+  <div class="grid">
+    ${topicDrills.slice(0,12).map(ws => worksheetCard(ws)).join('')}
+  </div>
+  ${siteFooter}
+</body></html>`;
+    fs.writeFileSync(topicDir + '/index.html', topicHTML);
+  }
+  console.log('✓ Drill hub pages generated');
+
   // ── 5. SITEMAP ────────────────────────────────────────────────────────────
   const baseUrl = 'https://examel.com';
   const sitemapUrls = [
@@ -384,7 +467,10 @@ async function generatePages() {
     ...subjects.flatMap(s => grades.map(g => ({ url: `/free-${s}-worksheets/grade-${g}/`, priority: '0.85', freq: 'daily' }))),
     ...grades.map(g => ({ url: `/free-worksheets/grade-${g}/`, priority: '0.85', freq: 'daily' })),
     ...worksheets.filter(ws => !ws.format || ws.format === 'worksheet').map(ws => ({ url: `/worksheets/${ws.slug}/`, priority: '0.7', freq: 'monthly' })),
-    ...wordSearches.map(ws => ({ url: `/word-searches/${ws.subject}/grade-${ws.grade}/${ws.slug}/`, priority: '0.75', freq: 'monthly' }))
+    ...wordSearches.map(ws => ({ url: `/word-searches/${ws.subject}/grade-${ws.grade}/${ws.slug}/`, priority: '0.75', freq: 'monthly' })),
+    ...drillPages.map(ws => ({ url: `/drills/${ws.subject}/grade-${ws.grade}/${ws.slug}/`, priority: '0.75', freq: 'monthly' })),
+    { url: '/free-math-drills/', priority: '0.9', freq: 'daily' },
+    ...drillTopics.map(t => ({ url: `/free-${t}-drills/`, priority: '0.85', freq: 'daily' }))
   ];
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
