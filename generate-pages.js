@@ -89,7 +89,7 @@ async function generatePages() {
 
   const { data: worksheets, error } = await supabase
     .from('worksheets')
-    .select('id,slug,grade,subject,topic,theme,title,pdf_url,preview_image_url,status')
+    .select('id,slug,grade,subject,topic,theme,title,pdf_url,preview_image_url,status,format,difficulty,ccss_standard')
     .eq('status', 'published')
     .order('created_at', { ascending: false });
 
