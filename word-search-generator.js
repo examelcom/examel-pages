@@ -81,6 +81,32 @@ function generateWordSearchPages(worksheets, sharedCSS, siteHeader, siteFooter, 
         <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/VruXqp/klaviyo.js?company_id=VruXqp"></script>
       </div>
     </div>
+    ${ws.preview_p1_url ? `
+    <div class="preview-section">
+      <h3>📄 Worksheet Preview</h3>
+      <div class="preview-grid">
+        <div>
+          <p class="preview-label">Page 1 — Word Search</p>
+          <a href="${ws.preview_p1_url}" target="_blank">
+            <img src="${ws.preview_p1_url}"
+              alt="Free Grade ${ws.grade} ${capitalize(ws.subject)} word search worksheet — ${formatTopic(ws.topic)} — Common Core ${ws.ccss_standard}"
+              loading="lazy" width="850" height="1100"
+              class="preview-img">
+          </a>
+        </div>
+        <div>
+          <p class="preview-label">Page 2 — Answer Key</p>
+          <a href="${ws.preview_p2_url}" target="_blank">
+            <img src="${ws.preview_p2_url}"
+              alt="Answer key — Grade ${ws.grade} ${capitalize(ws.subject)} word search — ${formatTopic(ws.topic)} — teacher and parent use only"
+              loading="lazy" width="850" height="1100"
+              class="preview-img">
+          </a>
+        </div>
+      </div>
+      <p class="preview-note">Click any image to view full size · 2 pages · Print-ready PDF</p>
+    </div>
+    ` : ''}
     <div class="features">
       <h3>What is included</h3>
       <div class="feature-item"><span class="check">✓</span> 10 curriculum-aligned vocabulary words</div>
