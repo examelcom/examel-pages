@@ -10,72 +10,65 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     *{box-sizing:border-box;margin:0;padding:0;}
     html{scroll-behavior:smooth;}
-    body{font-family:'Inter',system-ui,sans-serif;color:#1A1A2E;background:#FAFAF7;-webkit-font-smoothing:antialiased;}
-    /* NAV */
-    .site-header{background:#1A1A2E;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:100;box-shadow:0 2px 16px rgba(0,0,0,0.15);}
-    .site-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+    body{font-family:'Inter',system-ui,sans-serif;background:#FAF8F3;color:#1A1420;-webkit-font-smoothing:antialiased;}
+    /* ── NAV ── */
+    .site-header{background:#1C1526;padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:200;border-bottom:1px solid rgba(255,255,255,0.06);box-shadow:0 4px 24px rgba(0,0,0,0.18);}
+    .site-logo{display:flex;align-items:center;gap:10px;text-decoration:none;transition:transform 0.2s;}
+    .site-logo:hover{transform:translateY(-1px);}
     .site-logo-text{font-size:20px;font-weight:800;letter-spacing:-1px;color:white;}
     .site-logo-text span{color:#6C5CE7;}
-    .site-header nav{display:flex;align-items:center;gap:4px;}
-    .site-header nav a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:13px;font-weight:600;padding:6px 10px;border-radius:6px;transition:all 0.2s;}
+    .site-header nav{display:flex;align-items:center;gap:2px;}
+    .site-header nav a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:13px;font-weight:600;padding:7px 12px;border-radius:8px;transition:all 0.2s;letter-spacing:0.1px;}
     .site-header nav a:hover{color:white;background:rgba(108,92,231,0.2);}
-    /* BREADCRUMB */
-    .breadcrumb{max-width:1100px;margin:16px auto;padding:0 20px;font-size:13px;color:#636E72;}
-    .breadcrumb a{color:#6C5CE7;text-decoration:none;}
-    .breadcrumb a:hover{text-decoration:underline;}
-    .breadcrumb span{margin:0 6px;opacity:0.4;}
-    /* HERO (hub/category pages) */
-    .hero{padding:60px 20px;text-align:center;background:#FAFAF7;}
-    .hero h1{font-size:clamp(26px,4vw,44px);margin-bottom:14px;color:#1A1A2E;font-weight:800;letter-spacing:-1px;line-height:1.15;}
+    /* ── BREADCRUMB ── */
+    .breadcrumb{max-width:860px;margin:18px auto 0;padding:0 20px;font-size:12px;color:#A89FAE;display:flex;align-items:center;flex-wrap:wrap;gap:4px;}
+    .breadcrumb a{color:#6C5CE7;text-decoration:none;font-weight:500;transition:opacity 0.2s;}
+    .breadcrumb a:hover{opacity:0.7;}
+    .breadcrumb .sep{opacity:0.3;margin:0 2px;}
+    /* ── HUB HERO ── */
+    .hero{padding:64px 20px 56px;text-align:center;background:#FAF8F3;}
+    .hero h1{font-size:clamp(26px,4vw,44px);margin-bottom:14px;color:#1A1420;font-weight:800;letter-spacing:-1.5px;line-height:1.15;}
     .hero h1 span{color:#6C5CE7;}
-    .hero p{font-size:17px;color:#636E72;max-width:600px;margin:0 auto;line-height:1.7;}
-    /* FILTER */
-    .filter-bar{max-width:1100px;margin:0 auto 30px;padding:0 20px;display:flex;gap:10px;flex-wrap:wrap;}
-    .filter-btn{padding:8px 18px;border-radius:100px;text-decoration:none;font-size:13px;font-weight:700;border:2px solid #DFE6E9;color:#636E72;background:white;transition:all 0.2s;}
-    .filter-btn:hover,.filter-btn.active{background:#6C5CE7;color:white;border-color:#6C5CE7;}
-    /* GRID */
-    .grid{max-width:1100px;margin:0 auto;padding:0 20px 60px;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;}
-    /* CARDS */
-    .ws-card{background:white;border-radius:16px;padding:20px;text-decoration:none;color:#1A1A2E;display:block;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 2px 12px rgba(108,92,231,0.07);}
-    .ws-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(108,92,231,0.13);}
+    .hero p{font-size:17px;color:#6B6475;max-width:580px;margin:0 auto;line-height:1.75;}
+    /* ── FILTER ── */
+    .filter-bar{max-width:1100px;margin:0 auto 32px;padding:0 20px;display:flex;gap:10px;flex-wrap:wrap;}
+    .filter-btn{padding:8px 20px;border-radius:100px;text-decoration:none;font-size:13px;font-weight:700;border:2px solid #EDE8DF;color:#6B6475;background:white;transition:all 0.2s;cursor:pointer;}
+    .filter-btn:hover,.filter-btn.active{background:#6C5CE7;color:white;border-color:#6C5CE7;box-shadow:0 4px 16px rgba(108,92,231,0.3);}
+    /* ── GRID ── */
+    .grid{max-width:1100px;margin:0 auto;padding:0 20px 64px;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;}
+    /* ── CARDS ── */
+    .ws-card{background:white;border-radius:20px;overflow:hidden;text-decoration:none;color:#1A1420;display:block;transition:transform 0.25s cubic-bezier(0.34,1.56,0.64,1),box-shadow 0.25s;box-shadow:0 2px 8px rgba(0,0,0,0.04),0 8px 24px rgba(0,0,0,0.06);border:1px solid #EDE8DF;}
+    .ws-card:hover{transform:translateY(-5px);box-shadow:0 8px 32px rgba(108,92,231,0.14),0 2px 8px rgba(0,0,0,0.04);}
+    .ws-card-thumb{width:100%;height:160px;object-fit:cover;object-position:top;display:block;border-bottom:1px solid #EDE8DF;}
+    .ws-card-thumb-placeholder{width:100%;height:160px;background:linear-gradient(135deg,#F4F1FF 0%,#EDE8DF 100%);display:flex;align-items:center;justify-content:center;font-size:32px;}
+    .ws-card-body{padding:16px 18px 18px;}
     .ws-card-badge{display:inline-block;color:white;padding:3px 10px;border-radius:100px;font-size:11px;font-weight:700;margin-bottom:10px;letter-spacing:0.3px;}
-    .ws-card h3{font-size:14px;margin-bottom:6px;line-height:1.5;font-weight:700;}
-    .ws-card p{font-size:12px;color:#636E72;margin-bottom:12px;}
+    .ws-card h3{font-size:14px;margin-bottom:5px;line-height:1.5;font-weight:700;color:#1A1420;}
+    .ws-card p{font-size:12px;color:#A89FAE;margin-bottom:12px;line-height:1.5;}
     .ws-card-btn{font-size:12px;font-weight:700;color:#6C5CE7;}
-    /* HUB */
-    .hub-grid{max-width:1100px;margin:0 auto;padding:0 20px 60px;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;}
-    .hub-card{background:white;border-radius:20px;padding:32px 20px;text-decoration:none;color:#1A1A2E;text-align:center;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 2px 12px rgba(108,92,231,0.07);}
-    .hub-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(108,92,231,0.13);}
+    /* ── HUB ── */
+    .hub-grid{max-width:1100px;margin:0 auto;padding:0 20px 64px;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;}
+    .hub-card{background:white;border-radius:24px;padding:36px 20px;text-decoration:none;color:#1A1420;text-align:center;transition:transform 0.25s cubic-bezier(0.34,1.56,0.64,1),box-shadow 0.25s;box-shadow:0 2px 8px rgba(0,0,0,0.04),0 8px 24px rgba(0,0,0,0.06);border:1px solid #EDE8DF;}
+    .hub-card:hover{transform:translateY(-5px);box-shadow:0 8px 32px rgba(108,92,231,0.14),0 2px 8px rgba(0,0,0,0.04);}
     .hub-card .hub-icon{font-size:40px;margin-bottom:14px;display:block;}
-    .hub-card h3{font-size:17px;margin-bottom:4px;font-weight:700;}
-    .hub-card p{font-size:13px;color:#636E72;}
-    /* PREVIEW */
-    .preview-section{background:white;border-radius:20px;padding:32px;margin-bottom:24px;box-shadow:0 2px 12px rgba(108,92,231,0.07);}
-    .preview-section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;flex-wrap:wrap;gap:12px;}
-    .preview-section-title{font-size:16px;color:#1A1A2E;font-weight:800;letter-spacing:-0.3px;}
-    .preview-badge{background:#F0EDFF;color:#6C5CE7;font-size:11px;font-weight:700;padding:4px 12px;border-radius:100px;letter-spacing:0.5px;}
-    .preview-label{font-size:11px;font-weight:700;color:#636E72;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;}
-    .preview-teacher-badge{background:#FFF5F5;color:#D63031;font-size:10px;font-weight:700;padding:3px 10px;border-radius:100px;letter-spacing:0.5px;display:inline-block;margin-bottom:10px;}
-    .preview-img-wrap{position:relative;overflow:hidden;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.12),2px 2px 0 rgba(0,0,0,0.04);transition:transform 0.3s,box-shadow 0.3s;cursor:pointer;}
-    .preview-img-wrap:hover{transform:rotate(-0.5deg) scale(1.01);box-shadow:0 16px 48px rgba(0,0,0,0.18),2px 2px 0 rgba(0,0,0,0.04);}
-    .preview-img{width:100%;display:block;border-radius:12px;}
-    .preview-pin-btn{position:absolute;top:12px;right:12px;background:#E60023;color:white;border:none;border-radius:8px;padding:7px 12px;font-size:12px;font-weight:700;cursor:pointer;text-decoration:none;opacity:0;transition:opacity 0.2s;display:flex;align-items:center;gap:5px;}
-    .preview-img-wrap:hover .preview-pin-btn{opacity:1;}
-    .preview-note{font-size:12px;color:#B2BEC3;text-align:center;margin-top:20px;}
-    /* FOOTER */
-    .site-footer{padding:48px 20px 24px;background:#1A1A2E;border-top:3px solid #6C5CE7;margin-top:60px;}
-    .footer-grid{display:flex;gap:48px;justify-content:center;flex-wrap:wrap;margin-bottom:32px;max-width:1100px;margin-left:auto;margin-right:auto;}
+    .hub-card h3{font-size:17px;margin-bottom:6px;font-weight:700;}
+    .hub-card p{font-size:13px;color:#6B6475;line-height:1.6;}
+    /* ── FOOTER ── */
+    .site-footer{padding:52px 20px 28px;background:#1C1526;border-top:3px solid #6C5CE7;margin-top:64px;}
+    .footer-inner{max-width:1100px;margin:0 auto;}
+    .footer-logo{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:36px;}
+    .footer-motto{font-size:12px;color:rgba(255,255,255,0.3);letter-spacing:1.5px;margin-top:2px;}
+    .footer-grid{display:flex;gap:48px;justify-content:center;flex-wrap:wrap;margin-bottom:36px;}
     .footer-col{display:flex;flex-direction:column;gap:10px;min-width:130px;}
-    .footer-heading{font-size:10px;font-weight:800;color:#FFFFFF;text-transform:uppercase;letter-spacing:2px;margin-bottom:6px;}
-    .site-footer a{color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;transition:color 0.2s;}
+    .footer-heading{font-size:10px;font-weight:800;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:2px;margin-bottom:6px;}
+    .site-footer a{color:rgba(255,255,255,0.4);text-decoration:none;font-size:13px;transition:color 0.2s;}
     .site-footer a:hover{color:#6C5CE7;}
-    .footer-bottom{text-align:center;font-size:12px;color:rgba(255,255,255,0.25);border-top:1px solid rgba(255,255,255,0.08);padding-top:20px;max-width:1100px;margin:0 auto;}
-    .footer-logo{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:32px;}
-    .footer-motto{font-size:12px;color:rgba(255,255,255,0.35);letter-spacing:1px;}
+    .footer-bottom{text-align:center;font-size:12px;color:rgba(255,255,255,0.2);border-top:1px solid rgba(255,255,255,0.07);padding-top:24px;}
+    .footer-chars{display:flex;justify-content:center;gap:8px;margin-bottom:28px;opacity:0.6;}
     @media(max-width:768px){
       .site-header nav{display:none;}
       .hub-grid{grid-template-columns:repeat(2,1fr);}
@@ -83,6 +76,7 @@
     }
     @media(max-width:480px){
       .grid{grid-template-columns:1fr;}
+      .hub-grid{grid-template-columns:1fr;}
     }
   </style>
 </head>
@@ -90,7 +84,7 @@
   
   <header class="site-header">
     <a href="https://examel.com" class="site-logo">
-      <svg width="28" height="28" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+      <svg width="30" height="30" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
         <rect width="72" height="72" rx="16" fill="#6C5CE7"/>
         <rect x="15" y="15" width="9" height="42" rx="2.5" fill="white"/>
         <rect x="15" y="15" width="15" height="9" rx="2.5" fill="white"/>
@@ -143,135 +137,161 @@
   </div>
   <div class="grid">
     
-    <a href="/drills/math/grade-4/drill-math-grade4-multiplication-dragons-challenge/" class="ws-card" style="border-top:3px solid #6C5CE7;padding-top:0">
-      <img src="https://examel.com/thumbnails/drill-math-grade4-multiplication-dragons-challenge.png" alt="Dragon Treasure Hunt: Multiply to Find Gold" style="width:100%;height:140px;object-fit:cover;border-radius:8px 8px 0 0;margin:-20px -20px 12px -20px;width:calc(100% + 40px);">
-      <div class="ws-card-badge" style="background:#6C5CE7">Math · Grade 4</div>
-      <h3>Dragon Treasure Hunt: Multiply to Find Gold</h3>
-      <p>Multiplication · Dragons theme</p>
-      <span class="ws-card-btn" style="color:#6C5CE7">Download Free →</span>
+    <a href="/drills/math/grade-4/drill-math-grade4-multiplication-dragons-challenge/" class="ws-card">
+      <div class="ws-card-thumb-placeholder" style="border-top:4px solid #DC2626">⚡</div>
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#DC2626">Math · Grade 4</div>
+        <h3>Dragon Treasure Hunt: Multiply to Find Gold</h3>
+        <p>Multiplication · Dragons theme</p>
+        <span class="ws-card-btn">Download Free →</span>
+      </div>
     </a>
-    <a href="/drills/math/grade-4/drill-math-grade4-multiplication-young-scientists-beginner/" class="ws-card" style="border-top:3px solid #6C5CE7;padding-top:0">
-      <img src="https://examel.com/thumbnails/drill-math-grade4-multiplication-young-scientists-beginner.png" alt="Young Scientists Multiply Experiments in Secret Lab" style="width:100%;height:140px;object-fit:cover;border-radius:8px 8px 0 0;margin:-20px -20px 12px -20px;width:calc(100% + 40px);">
-      <div class="ws-card-badge" style="background:#6C5CE7">Math · Grade 4</div>
-      <h3>Young Scientists Multiply Experiments in Secret Lab</h3>
-      <p>Multiplication · Young Scientists theme</p>
-      <span class="ws-card-btn" style="color:#6C5CE7">Download Free →</span>
+    <a href="/drills/math/grade-4/drill-math-grade4-multiplication-young-scientists-beginner/" class="ws-card">
+      <div class="ws-card-thumb-placeholder" style="border-top:4px solid #DC2626">⚡</div>
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#DC2626">Math · Grade 4</div>
+        <h3>Young Scientists Multiply Experiments in Secret Lab</h3>
+        <p>Multiplication · Young Scientists theme</p>
+        <span class="ws-card-btn">Download Free →</span>
+      </div>
     </a>
-    <a href="/drills/math/grade-3/drill-math-grade3-multiplication-desert-beginner/" class="ws-card" style="border-top:3px solid #6C5CE7;padding-top:0">
-      <img src="https://examel.com/thumbnails/drill-math-grade3-multiplication-desert-beginner.png" alt="Desert Oasis Multiplication Adventure" style="width:100%;height:140px;object-fit:cover;border-radius:8px 8px 0 0;margin:-20px -20px 12px -20px;width:calc(100% + 40px);">
-      <div class="ws-card-badge" style="background:#6C5CE7">Math · Grade 3</div>
-      <h3>Desert Oasis Multiplication Adventure</h3>
-      <p>Multiplication · Desert theme</p>
-      <span class="ws-card-btn" style="color:#6C5CE7">Download Free →</span>
+    <a href="/drills/math/grade-3/drill-math-grade3-multiplication-desert-beginner/" class="ws-card">
+      <div class="ws-card-thumb-placeholder" style="border-top:4px solid #DC2626">⚡</div>
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#DC2626">Math · Grade 3</div>
+        <h3>Desert Oasis Multiplication Adventure</h3>
+        <p>Multiplication · Desert theme</p>
+        <span class="ws-card-btn">Download Free →</span>
+      </div>
     </a>
-    <a href="/drills/math/grade-3/drill-math-grade3-multiplication-gardening-beginner/" class="ws-card" style="border-top:3px solid #6C5CE7;padding-top:0">
-      <img src="https://examel.com/thumbnails/drill-math-grade3-multiplication-gardening-beginner.png" alt="Garden Growing Games: Multiplication Fun" style="width:100%;height:140px;object-fit:cover;border-radius:8px 8px 0 0;margin:-20px -20px 12px -20px;width:calc(100% + 40px);">
-      <div class="ws-card-badge" style="background:#6C5CE7">Math · Grade 3</div>
-      <h3>Garden Growing Games: Multiplication Fun</h3>
-      <p>Multiplication · Gardening theme</p>
-      <span class="ws-card-btn" style="color:#6C5CE7">Download Free →</span>
+    <a href="/drills/math/grade-3/drill-math-grade3-multiplication-gardening-beginner/" class="ws-card">
+      <div class="ws-card-thumb-placeholder" style="border-top:4px solid #DC2626">⚡</div>
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#DC2626">Math · Grade 3</div>
+        <h3>Garden Growing Games: Multiplication Fun</h3>
+        <p>Multiplication · Gardening theme</p>
+        <span class="ws-card-btn">Download Free →</span>
+      </div>
     </a>
-    <a href="/drills/math/grade-3/drill-math-grade3-multiplication-coding-kids-beginner/" class="ws-card" style="border-top:3px solid #6C5CE7;padding-top:0">
-      <img src="https://examel.com/thumbnails/drill-math-grade3-multiplication-coding-kids-beginner.png" alt="Robot Factory: Multiply to Build Amazing Machines" style="width:100%;height:140px;object-fit:cover;border-radius:8px 8px 0 0;margin:-20px -20px 12px -20px;width:calc(100% + 40px);">
-      <div class="ws-card-badge" style="background:#6C5CE7">Math · Grade 3</div>
-      <h3>Robot Factory: Multiply to Build Amazing Machines</h3>
-      <p>Multiplication · Coding Kids theme</p>
-      <span class="ws-card-btn" style="color:#6C5CE7">Download Free →</span>
+    <a href="/drills/math/grade-3/drill-math-grade3-multiplication-coding-kids-beginner/" class="ws-card">
+      <div class="ws-card-thumb-placeholder" style="border-top:4px solid #DC2626">⚡</div>
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#DC2626">Math · Grade 3</div>
+        <h3>Robot Factory: Multiply to Build Amazing Machines</h3>
+        <p>Multiplication · Coding Kids theme</p>
+        <span class="ws-card-btn">Download Free →</span>
+      </div>
     </a>
-    <a href="/drills/math/grade-4/drill-math-grade4-multiplication-fall-harvest-standard/" class="ws-card" style="border-top:3px solid #6C5CE7;padding-top:0">
-      <img src="https://examel.com/thumbnails/drill-math-grade4-multiplication-fall-harvest-standard.png" alt="Pumpkin Patch Multiplication Mystery" style="width:100%;height:140px;object-fit:cover;border-radius:8px 8px 0 0;margin:-20px -20px 12px -20px;width:calc(100% + 40px);">
-      <div class="ws-card-badge" style="background:#6C5CE7">Math · Grade 4</div>
-      <h3>Pumpkin Patch Multiplication Mystery</h3>
-      <p>Multiplication · Fall Harvest theme</p>
-      <span class="ws-card-btn" style="color:#6C5CE7">Download Free →</span>
+    <a href="/drills/math/grade-4/drill-math-grade4-multiplication-fall-harvest-standard/" class="ws-card">
+      <div class="ws-card-thumb-placeholder" style="border-top:4px solid #DC2626">⚡</div>
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#DC2626">Math · Grade 4</div>
+        <h3>Pumpkin Patch Multiplication Mystery</h3>
+        <p>Multiplication · Fall Harvest theme</p>
+        <span class="ws-card-btn">Download Free →</span>
+      </div>
     </a>
-    <a href="/drills/math/grade-3/drill-math-grade3-multiplication-gardening-standard/" class="ws-card" style="border-top:3px solid #6C5CE7;padding-top:0">
-      <img src="https://examel.com/thumbnails/drill-math-grade3-multiplication-gardening-standard.png" alt="Garden Growth: Multiplication Blooms" style="width:100%;height:140px;object-fit:cover;border-radius:8px 8px 0 0;margin:-20px -20px 12px -20px;width:calc(100% + 40px);">
-      <div class="ws-card-badge" style="background:#6C5CE7">Math · Grade 3</div>
-      <h3>Garden Growth: Multiplication Blooms</h3>
-      <p>Multiplication · Gardening theme</p>
-      <span class="ws-card-btn" style="color:#6C5CE7">Download Free →</span>
+    <a href="/drills/math/grade-3/drill-math-grade3-multiplication-gardening-standard/" class="ws-card">
+      <div class="ws-card-thumb-placeholder" style="border-top:4px solid #DC2626">⚡</div>
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#DC2626">Math · Grade 3</div>
+        <h3>Garden Growth: Multiplication Blooms</h3>
+        <p>Multiplication · Gardening theme</p>
+        <span class="ws-card-btn">Download Free →</span>
+      </div>
     </a>
-    <a href="/drills/math/grade-5/drill-math-grade5-multiplication-spring-flowers-beginner/" class="ws-card" style="border-top:3px solid #0984E3;padding-top:0">
-      <img src="https://examel.com/thumbnails/drill-math-grade5-multiplication-spring-flowers-beginner.png" alt="Spring Flowers Multiplication Garden Adventure" style="width:100%;height:140px;object-fit:cover;border-radius:8px 8px 0 0;margin:-20px -20px 12px -20px;width:calc(100% + 40px);">
-      <div class="ws-card-badge" style="background:#0984E3">Math · Grade 5</div>
-      <h3>Spring Flowers Multiplication Garden Adventure</h3>
-      <p>Multiplication · Spring Flowers theme</p>
-      <span class="ws-card-btn" style="color:#0984E3">Download Free →</span>
+    <a href="/drills/math/grade-5/drill-math-grade5-multiplication-spring-flowers-beginner/" class="ws-card">
+      <img src="https://examel.com/thumbnails/previews/drill-math-grade5-multiplication-spring-flowers-beginner-p1.png" alt="Spring Flowers Multiplication Garden Adventure" class="ws-card-thumb" loading="lazy">
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#DC2626">Math · Grade 5</div>
+        <h3>Spring Flowers Multiplication Garden Adventure</h3>
+        <p>Multiplication · Spring Flowers theme</p>
+        <span class="ws-card-btn">Download Free →</span>
+      </div>
     </a>
-    <a href="/drills/math/grade-3/drill-math-grade3-multiplication-christmas-beginner/" class="ws-card" style="border-top:3px solid #6C5CE7;padding-top:0">
-      <img src="https://examel.com/thumbnails/drill-math-grade3-multiplication-christmas-beginner.png" alt="Santa's Workshop Multiplication Gift Factory" style="width:100%;height:140px;object-fit:cover;border-radius:8px 8px 0 0;margin:-20px -20px 12px -20px;width:calc(100% + 40px);">
-      <div class="ws-card-badge" style="background:#6C5CE7">Math · Grade 3</div>
-      <h3>Santa's Workshop Multiplication Gift Factory</h3>
-      <p>Multiplication · Christmas theme</p>
-      <span class="ws-card-btn" style="color:#6C5CE7">Download Free →</span>
+    <a href="/drills/math/grade-3/drill-math-grade3-multiplication-christmas-beginner/" class="ws-card">
+      <div class="ws-card-thumb-placeholder" style="border-top:4px solid #DC2626">⚡</div>
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#DC2626">Math · Grade 3</div>
+        <h3>Santa's Workshop Multiplication Gift Factory</h3>
+        <p>Multiplication · Christmas theme</p>
+        <span class="ws-card-btn">Download Free →</span>
+      </div>
     </a>
-    <a href="/drills/math/grade-5/drill-math-grade5-multiplication-dragons-beginner/" class="ws-card" style="border-top:3px solid #0984E3;padding-top:0">
-      <img src="https://examel.com/thumbnails/drill-math-grade5-multiplication-dragons-beginner.png" alt="Dragon Treasure: Multiply Your Way to Gold" style="width:100%;height:140px;object-fit:cover;border-radius:8px 8px 0 0;margin:-20px -20px 12px -20px;width:calc(100% + 40px);">
-      <div class="ws-card-badge" style="background:#0984E3">Math · Grade 5</div>
-      <h3>Dragon Treasure: Multiply Your Way to Gold</h3>
-      <p>Multiplication · Dragons theme</p>
-      <span class="ws-card-btn" style="color:#0984E3">Download Free →</span>
+    <a href="/drills/math/grade-5/drill-math-grade5-multiplication-dragons-beginner/" class="ws-card">
+      <img src="https://examel.com/thumbnails/previews/drill-math-grade5-multiplication-dragons-beginner-p1.png" alt="Dragon Treasure: Multiply Your Way to Gold" class="ws-card-thumb" loading="lazy">
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#DC2626">Math · Grade 5</div>
+        <h3>Dragon Treasure: Multiply Your Way to Gold</h3>
+        <p>Multiplication · Dragons theme</p>
+        <span class="ws-card-btn">Download Free →</span>
+      </div>
     </a>
-    <a href="/drills/math/grade-4/drill-math-grade4-multiplication-robots-standard/" class="ws-card" style="border-top:3px solid #6C5CE7;padding-top:0">
-      <img src="https://examel.com/thumbnails/drill-math-grade4-multiplication-robots-standard.png" alt="Robo-Racers: Multiplication Speed Challenge" style="width:100%;height:140px;object-fit:cover;border-radius:8px 8px 0 0;margin:-20px -20px 12px -20px;width:calc(100% + 40px);">
-      <div class="ws-card-badge" style="background:#6C5CE7">Math · Grade 4</div>
-      <h3>Robo-Racers: Multiplication Speed Challenge</h3>
-      <p>Multiplication · Robots theme</p>
-      <span class="ws-card-btn" style="color:#6C5CE7">Download Free →</span>
+    <a href="/drills/math/grade-4/drill-math-grade4-multiplication-robots-standard/" class="ws-card">
+      <div class="ws-card-thumb-placeholder" style="border-top:4px solid #DC2626">⚡</div>
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#DC2626">Math · Grade 4</div>
+        <h3>Robo-Racers: Multiplication Speed Challenge</h3>
+        <p>Multiplication · Robots theme</p>
+        <span class="ws-card-btn">Download Free →</span>
+      </div>
     </a>
-    <a href="/drills/math/grade-5/drill-math-grade5-multiplication-music-challenge/" class="ws-card" style="border-top:3px solid #0984E3;padding-top:0">
-      <img src="https://examel.com/thumbnails/drill-math-grade5-multiplication-music-challenge.png" alt="Rock Star Multiplication: Concert Stage Math Challenge" style="width:100%;height:140px;object-fit:cover;border-radius:8px 8px 0 0;margin:-20px -20px 12px -20px;width:calc(100% + 40px);">
-      <div class="ws-card-badge" style="background:#0984E3">Math · Grade 5</div>
-      <h3>Rock Star Multiplication: Concert Stage Math Challenge</h3>
-      <p>Multiplication · Music theme</p>
-      <span class="ws-card-btn" style="color:#0984E3">Download Free →</span>
+    <a href="/drills/math/grade-5/drill-math-grade5-multiplication-music-challenge/" class="ws-card">
+      <img src="https://examel.com/thumbnails/previews/drill-math-grade5-multiplication-music-challenge-p1.png" alt="Rock Star Multiplication: Concert Stage Math Challenge" class="ws-card-thumb" loading="lazy">
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#DC2626">Math · Grade 5</div>
+        <h3>Rock Star Multiplication: Concert Stage Math Challenge</h3>
+        <p>Multiplication · Music theme</p>
+        <span class="ws-card-btn">Download Free →</span>
+      </div>
     </a>
   </div>
   
   <footer class="site-footer">
-    <div class="footer-logo">
-      <svg width="32" height="32" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
-        <rect width="72" height="72" rx="16" fill="#6C5CE7"/>
-        <rect x="15" y="15" width="9" height="42" rx="2.5" fill="white"/>
-        <rect x="15" y="15" width="15" height="9" rx="2.5" fill="white"/>
-        <rect x="15" y="31.5" width="24" height="9" rx="2.5" fill="white"/>
-        <rect x="15" y="48" width="33" height="9" rx="2.5" fill="white"/>
-      </svg>
-      <div>
-        <div style="font-size:18px;font-weight:800;letter-spacing:-0.5px;color:white;">examel<span style="color:#6C5CE7;">·</span></div>
-        <div class="footer-motto">Know more. Score more.</div>
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <svg width="34" height="34" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+          <rect width="72" height="72" rx="16" fill="#6C5CE7"/>
+          <rect x="15" y="15" width="9" height="42" rx="2.5" fill="white"/>
+          <rect x="15" y="15" width="15" height="9" rx="2.5" fill="white"/>
+          <rect x="15" y="31.5" width="24" height="9" rx="2.5" fill="white"/>
+          <rect x="15" y="48" width="33" height="9" rx="2.5" fill="white"/>
+        </svg>
+        <div>
+          <div style="font-size:20px;font-weight:800;letter-spacing:-1px;color:white;">examel<span style="color:#6C5CE7;">·</span></div>
+          <div class="footer-motto">Know more. Score more.</div>
+        </div>
       </div>
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-heading">Worksheets</div>
+          <a href="/free-math-worksheets/">Math</a>
+          <a href="/free-english-worksheets/">English</a>
+          <a href="/free-science-worksheets/">Science</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-heading">Practice</div>
+          <a href="/free-math-drills/">Math Drills</a>
+          <a href="/word-searches/">Word Searches</a>
+          <a href="/free-math-vocabulary/">Vocabulary</a>
+          <a href="/free-reading-passages/">Reading</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-heading">By Grade</div>
+          <a href="/free-worksheets/grade-1/">Grade 1</a>
+          <a href="/free-worksheets/grade-2/">Grade 2</a>
+          <a href="/free-worksheets/grade-3/">Grade 3</a>
+          <a href="/free-worksheets/grade-4/">Grade 4</a>
+          <a href="/free-worksheets/grade-5/">Grade 5</a>
+          <a href="/free-worksheets/grade-6/">Grade 6</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-heading">Examel</div>
+          <a href="https://examel.com">Home</a>
+          <a href="https://examel.com/privacy-policy/">Privacy Policy</a>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2026 Examel · Free K-8 Printable Worksheets · Every exam. Every grade.</div>
     </div>
-    <div class="footer-grid">
-      <div class="footer-col">
-        <div class="footer-heading">Worksheets</div>
-        <a href="/free-math-worksheets/">Math</a>
-        <a href="/free-english-worksheets/">English</a>
-        <a href="/free-science-worksheets/">Science</a>
-      </div>
-      <div class="footer-col">
-        <div class="footer-heading">Practice</div>
-        <a href="/free-math-drills/">Math Drills</a>
-        <a href="/word-searches/">Word Searches</a>
-        <a href="/free-math-vocabulary/">Vocabulary</a>
-        <a href="/free-reading-passages/">Reading Passages</a>
-      </div>
-      <div class="footer-col">
-        <div class="footer-heading">By Grade</div>
-        <a href="/free-worksheets/grade-1/">Grade 1</a>
-        <a href="/free-worksheets/grade-2/">Grade 2</a>
-        <a href="/free-worksheets/grade-3/">Grade 3</a>
-        <a href="/free-worksheets/grade-4/">Grade 4</a>
-        <a href="/free-worksheets/grade-5/">Grade 5</a>
-        <a href="/free-worksheets/grade-6/">Grade 6</a>
-      </div>
-      <div class="footer-col">
-        <div class="footer-heading">Examel</div>
-        <a href="https://examel.com">Home</a>
-        <a href="https://examel.com/privacy-policy/">Privacy Policy</a>
-      </div>
-    </div>
-    <div class="footer-bottom">© 2026 Examel · Free K-8 Printable Worksheets · Every exam. Every grade.</div>
   </footer>
 </body></html>

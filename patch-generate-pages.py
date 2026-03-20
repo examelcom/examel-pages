@@ -1,0 +1,589 @@
+#!/usr/bin/env python3
+"""
+Examel generate-pages.js — complete worksheet page redesign patch
+Run on Hetzner: python3 patch-generate-pages.py
+"""
+
+import re
+
+filepath = '/opt/examel/examel-pages/generate-pages.js'
+
+with open(filepath, 'r') as f:
+    content = f.read()
+
+# ── 1. NEW sharedCSS ──────────────────────────────────────────────────────────
+old_shared_start = "const sharedCSS = `"
+old_shared_end = "const siteHeader"
+
+start_idx = content.index(old_shared_start)
+end_idx = content.index(old_shared_end)
+
+new_shared_css = """const sharedCSS = `
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Inter',system-ui,sans-serif;background:#FAF8F3;color:#1A1420;-webkit-font-smoothing:antialiased;}
+    /* ── NAV ── */
+    .site-header{background:#1C1526;padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:200;border-bottom:1px solid rgba(255,255,255,0.06);box-shadow:0 4px 24px rgba(0,0,0,0.18);}
+    .site-logo{display:flex;align-items:center;gap:10px;text-decoration:none;transition:transform 0.2s;}
+    .site-logo:hover{transform:translateY(-1px);}
+    .site-logo-text{font-size:20px;font-weight:800;letter-spacing:-1px;color:white;}
+    .site-logo-text span{color:#6C5CE7;}
+    .site-header nav{display:flex;align-items:center;gap:2px;}
+    .site-header nav a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:13px;font-weight:600;padding:7px 12px;border-radius:8px;transition:all 0.2s;letter-spacing:0.1px;}
+    .site-header nav a:hover{color:white;background:rgba(108,92,231,0.2);}
+    /* ── BREADCRUMB ── */
+    .breadcrumb{max-width:860px;margin:18px auto 0;padding:0 20px;font-size:12px;color:#A89FAE;display:flex;align-items:center;flex-wrap:wrap;gap:4px;}
+    .breadcrumb a{color:#6C5CE7;text-decoration:none;font-weight:500;transition:opacity 0.2s;}
+    .breadcrumb a:hover{opacity:0.7;}
+    .breadcrumb .sep{opacity:0.3;margin:0 2px;}
+    /* ── HUB HERO ── */
+    .hero{padding:64px 20px 56px;text-align:center;background:#FAF8F3;}
+    .hero h1{font-size:clamp(26px,4vw,44px);margin-bottom:14px;color:#1A1420;font-weight:800;letter-spacing:-1.5px;line-height:1.15;}
+    .hero h1 span{color:#6C5CE7;}
+    .hero p{font-size:17px;color:#6B6475;max-width:580px;margin:0 auto;line-height:1.75;}
+    /* ── FILTER ── */
+    .filter-bar{max-width:1100px;margin:0 auto 32px;padding:0 20px;display:flex;gap:10px;flex-wrap:wrap;}
+    .filter-btn{padding:8px 20px;border-radius:100px;text-decoration:none;font-size:13px;font-weight:700;border:2px solid #EDE8DF;color:#6B6475;background:white;transition:all 0.2s;cursor:pointer;}
+    .filter-btn:hover,.filter-btn.active{background:#6C5CE7;color:white;border-color:#6C5CE7;box-shadow:0 4px 16px rgba(108,92,231,0.3);}
+    /* ── GRID ── */
+    .grid{max-width:1100px;margin:0 auto;padding:0 20px 64px;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;}
+    /* ── CARDS ── */
+    .ws-card{background:white;border-radius:20px;overflow:hidden;text-decoration:none;color:#1A1420;display:block;transition:transform 0.25s cubic-bezier(0.34,1.56,0.64,1),box-shadow 0.25s;box-shadow:0 2px 8px rgba(0,0,0,0.04),0 8px 24px rgba(0,0,0,0.06);border:1px solid #EDE8DF;}
+    .ws-card:hover{transform:translateY(-5px);box-shadow:0 8px 32px rgba(108,92,231,0.14),0 2px 8px rgba(0,0,0,0.04);}
+    .ws-card-thumb{width:100%;height:160px;object-fit:cover;object-position:top;display:block;border-bottom:1px solid #EDE8DF;}
+    .ws-card-thumb-placeholder{width:100%;height:160px;background:linear-gradient(135deg,#F4F1FF 0%,#EDE8DF 100%);display:flex;align-items:center;justify-content:center;font-size:32px;}
+    .ws-card-body{padding:16px 18px 18px;}
+    .ws-card-badge{display:inline-block;color:white;padding:3px 10px;border-radius:100px;font-size:11px;font-weight:700;margin-bottom:10px;letter-spacing:0.3px;}
+    .ws-card h3{font-size:14px;margin-bottom:5px;line-height:1.5;font-weight:700;color:#1A1420;}
+    .ws-card p{font-size:12px;color:#A89FAE;margin-bottom:12px;line-height:1.5;}
+    .ws-card-btn{font-size:12px;font-weight:700;color:#6C5CE7;}
+    /* ── HUB ── */
+    .hub-grid{max-width:1100px;margin:0 auto;padding:0 20px 64px;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;}
+    .hub-card{background:white;border-radius:24px;padding:36px 20px;text-decoration:none;color:#1A1420;text-align:center;transition:transform 0.25s cubic-bezier(0.34,1.56,0.64,1),box-shadow 0.25s;box-shadow:0 2px 8px rgba(0,0,0,0.04),0 8px 24px rgba(0,0,0,0.06);border:1px solid #EDE8DF;}
+    .hub-card:hover{transform:translateY(-5px);box-shadow:0 8px 32px rgba(108,92,231,0.14),0 2px 8px rgba(0,0,0,0.04);}
+    .hub-card .hub-icon{font-size:40px;margin-bottom:14px;display:block;}
+    .hub-card h3{font-size:17px;margin-bottom:6px;font-weight:700;}
+    .hub-card p{font-size:13px;color:#6B6475;line-height:1.6;}
+    /* ── FOOTER ── */
+    .site-footer{padding:52px 20px 28px;background:#1C1526;border-top:3px solid #6C5CE7;margin-top:64px;}
+    .footer-inner{max-width:1100px;margin:0 auto;}
+    .footer-logo{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:36px;}
+    .footer-motto{font-size:12px;color:rgba(255,255,255,0.3);letter-spacing:1.5px;margin-top:2px;}
+    .footer-grid{display:flex;gap:48px;justify-content:center;flex-wrap:wrap;margin-bottom:36px;}
+    .footer-col{display:flex;flex-direction:column;gap:10px;min-width:130px;}
+    .footer-heading{font-size:10px;font-weight:800;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:2px;margin-bottom:6px;}
+    .site-footer a{color:rgba(255,255,255,0.4);text-decoration:none;font-size:13px;transition:color 0.2s;}
+    .site-footer a:hover{color:#6C5CE7;}
+    .footer-bottom{text-align:center;font-size:12px;color:rgba(255,255,255,0.2);border-top:1px solid rgba(255,255,255,0.07);padding-top:24px;}
+    .footer-chars{display:flex;justify-content:center;gap:8px;margin-bottom:28px;opacity:0.6;}
+    @media(max-width:768px){
+      .site-header nav{display:none;}
+      .hub-grid{grid-template-columns:repeat(2,1fr);}
+      .grid{grid-template-columns:repeat(2,1fr);}
+    }
+    @media(max-width:480px){
+      .grid{grid-template-columns:1fr;}
+      .hub-grid{grid-template-columns:1fr;}
+    }
+  </style>`;
+
+"""
+
+# ── 2. NEW siteHeader ─────────────────────────────────────────────────────────
+old_header_start = "const siteHeader = `"
+old_header_end = "const siteFooter"
+
+header_start_idx = content.index(old_header_start)
+header_end_idx = content.index(old_header_end)
+
+new_site_header = """const siteHeader = `
+  <header class="site-header">
+    <a href="https://examel.com" class="site-logo">
+      <svg width="30" height="30" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+        <rect width="72" height="72" rx="16" fill="#6C5CE7"/>
+        <rect x="15" y="15" width="9" height="42" rx="2.5" fill="white"/>
+        <rect x="15" y="15" width="15" height="9" rx="2.5" fill="white"/>
+        <rect x="15" y="31.5" width="24" height="9" rx="2.5" fill="white"/>
+        <rect x="15" y="48" width="33" height="9" rx="2.5" fill="white"/>
+      </svg>
+      <span class="site-logo-text">examel<span>·</span></span>
+    </a>
+    <nav>
+      <a href="/free-math-worksheets/">Math</a>
+      <a href="/free-english-worksheets/">English</a>
+      <a href="/free-science-worksheets/">Science</a>
+      <a href="/free-math-drills/">Drills</a>
+      <a href="/free-reading-passages/">Reading</a>
+      <a href="/free-math-vocabulary/">Vocabulary</a>
+      <a href="/word-searches/">Word Searches</a>
+    </nav>
+  </header>`;
+
+"""
+
+# ── 3. NEW siteFooter ─────────────────────────────────────────────────────────
+old_footer_start = "const siteFooter = `"
+old_footer_end = "async function generatePages"
+
+footer_start_idx = content.index(old_footer_start)
+footer_end_idx = content.index(old_footer_end)
+
+new_site_footer = """const siteFooter = `
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <svg width="34" height="34" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+          <rect width="72" height="72" rx="16" fill="#6C5CE7"/>
+          <rect x="15" y="15" width="9" height="42" rx="2.5" fill="white"/>
+          <rect x="15" y="15" width="15" height="9" rx="2.5" fill="white"/>
+          <rect x="15" y="31.5" width="24" height="9" rx="2.5" fill="white"/>
+          <rect x="15" y="48" width="33" height="9" rx="2.5" fill="white"/>
+        </svg>
+        <div>
+          <div style="font-size:20px;font-weight:800;letter-spacing:-1px;color:white;">examel<span style="color:#6C5CE7;">·</span></div>
+          <div class="footer-motto">Know more. Score more.</div>
+        </div>
+      </div>
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-heading">Worksheets</div>
+          <a href="/free-math-worksheets/">Math</a>
+          <a href="/free-english-worksheets/">English</a>
+          <a href="/free-science-worksheets/">Science</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-heading">Practice</div>
+          <a href="/free-math-drills/">Math Drills</a>
+          <a href="/word-searches/">Word Searches</a>
+          <a href="/free-math-vocabulary/">Vocabulary</a>
+          <a href="/free-reading-passages/">Reading</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-heading">By Grade</div>
+          <a href="/free-worksheets/grade-1/">Grade 1</a>
+          <a href="/free-worksheets/grade-2/">Grade 2</a>
+          <a href="/free-worksheets/grade-3/">Grade 3</a>
+          <a href="/free-worksheets/grade-4/">Grade 4</a>
+          <a href="/free-worksheets/grade-5/">Grade 5</a>
+          <a href="/free-worksheets/grade-6/">Grade 6</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-heading">Examel</div>
+          <a href="https://examel.com">Home</a>
+          <a href="https://examel.com/privacy-policy/">Privacy Policy</a>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2026 Examel · Free K-8 Printable Worksheets · Every exam. Every grade.</div>
+    </div>
+  </footer>`;
+
+"""
+
+# ── 4. NEW worksheetCard function ─────────────────────────────────────────────
+old_card_start = "function worksheetCard(ws) {"
+old_card_end = "const sharedCSS"
+
+card_start_idx = content.index(old_card_start)
+card_end_idx = content.index(old_card_end)
+
+new_worksheet_card = """function subjectColor(subject) {
+  const map = { math:'#7C3AED', english:'#DB2777', science:'#059669', 'drill-grid':'#DC2626', reading:'#0891B2', vocab:'#D97706' };
+  return map[subject?.toLowerCase()] || '#6C5CE7';
+}
+function subjectEmoji(subject) {
+  const map = { math:'📐', english:'📖', science:'🔬', 'drill-grid':'⚡', reading:'📚', vocab:'💬' };
+  return map[subject?.toLowerCase()] || '📄';
+}
+function worksheetCard(ws) {
+  const color = subjectColor(ws.format === 'drill-grid' ? 'drill-grid' : ws.subject);
+  const url = getCardUrl(ws);
+  const thumb = ws.preview_p1_url
+    ? `<img src="${ws.preview_p1_url}" alt="${ws.title}" class="ws-card-thumb" loading="lazy">`
+    : `<div class="ws-card-thumb-placeholder" style="border-top:4px solid ${color}">${subjectEmoji(ws.format === 'drill-grid' ? 'drill-grid' : ws.subject)}</div>`;
+  return `
+    <a href="${url}" class="ws-card">
+      ${thumb}
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:${color}">${capitalize(ws.subject)} · Grade ${ws.grade}</div>
+        <h3>${ws.title}</h3>
+        <p>${formatTopic(ws.topic)} · ${formatTheme(ws.theme)} theme</p>
+        <span class="ws-card-btn">Download Free →</span>
+      </div>
+    </a>`;
+}
+
+"""
+
+# ── 5. NEW worksheet page HTML template ──────────────────────────────────────
+# Find the worksheet page html template section
+old_ws_page_start = "    const html = `<!DOCTYPE html>"
+# Find end — the next format section or fs.writeFileSync
+old_ws_page_end = "    fs.writeFileSync(`${dir}/index.html`, html);"
+
+ws_start_idx = content.index(old_ws_page_start)
+ws_end_idx = content.index(old_ws_page_end)
+
+new_ws_page = """    const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%236C5CE7'/%3E%3Crect x='7' y='7' width='4' height='18' rx='1' fill='white'/%3E%3Crect x='7' y='7' width='7' height='4' rx='1' fill='white'/%3E%3Crect x='7' y='14' width='11' height='4' rx='1' fill='white'/%3E%3Crect x='7' y='21' width='15' height='4' rx='1' fill='white'/%3E%3C/svg%3E">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Free ${formatTopic(ws.topic)} Worksheet Grade ${ws.grade} | Examel</title>
+  <meta name="description" content="Free printable ${ws.subject} worksheet for Grade ${ws.grade}. ${formatTopic(ws.topic)} with ${formatTheme(ws.theme)} theme. Download PDF instantly. Answer key included.">
+  <link rel="canonical" href="https://examel.com/worksheets/${ws.slug}/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="${ws.title} | Free Printable Worksheet | Examel">
+  <meta property="og:description" content="Free printable Grade ${ws.grade} ${capitalize(ws.subject)} worksheet about ${formatTopic(ws.topic)}. Answer key included. Download PDF free.">
+  <meta property="og:image" content="${ws.pinterest_image_url || ws.preview_image_url || `https://examel.com/thumbnails/${ws.slug}.png`}">
+  <meta property="og:url" content="https://examel.com/worksheets/${ws.slug}/">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"EducationalResource","name":"${ws.title}","description":"Free printable Grade ${ws.grade} ${ws.subject} worksheet about ${formatTopic(ws.topic)} — 8 questions with answer key","educationalLevel":"Grade ${ws.grade}","subject":"${capitalize(ws.subject)}","teaches":"${formatTopic(ws.topic)}","keywords":"Grade ${ws.grade} ${capitalize(ws.subject)} worksheet, ${formatTopic(ws.topic)} worksheet, free printable","url":"https://examel.com/worksheets/${ws.slug}/","isAccessibleForFree":true,"provider":{"@type":"Organization","name":"Examel","url":"https://examel.com"}}</script>
+  ${sharedCSS}
+  <style>
+    :root{
+      --subject:${color};
+      --subject-light:${subjectColorLight};
+    }
+    /* ── WS PAGE ── */
+    .ws-hero{background:#1C1526;color:white;padding:0 20px;text-align:center;position:relative;overflow:hidden;border-top:5px solid var(--subject);}
+    .ws-hero-inner{max-width:860px;margin:0 auto;padding:52px 0 48px;position:relative;z-index:2;}
+    .ws-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 0%,rgba(108,92,231,0.18) 0%,transparent 65%);pointer-events:none;}
+    .ws-hero::after{content:'';position:absolute;top:-40px;right:-20px;width:220px;height:220px;background:radial-gradient(circle,var(--subject) 0%,transparent 70%);opacity:0.07;pointer-events:none;}
+    .ws-hero-char{position:absolute;right:60px;bottom:0;opacity:0.9;pointer-events:none;}
+    .ws-hero h1{font-size:clamp(22px,3.2vw,34px);margin-bottom:12px;line-height:1.22;font-weight:800;letter-spacing:-0.8px;}
+    .ws-hero-sub{font-size:14px;opacity:0.55;margin-bottom:20px;font-weight:500;}
+    .ws-badges{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;}
+    .ws-badge{background:var(--subject);border-radius:100px;padding:5px 16px;font-size:12px;font-weight:700;letter-spacing:0.3px;color:white;}
+    /* ── CONTAINER ── */
+    .ws-container{max-width:780px;margin:0 auto;padding:32px 20px 60px;}
+    /* ── PREVIEW FIRST ── */
+    .preview-desk{background:#FDF8EE;border-radius:24px;padding:36px 32px;margin-bottom:28px;border:1px solid #EDE8DF;}
+    .preview-desk-title{font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#A89FAE;text-align:center;margin-bottom:24px;}
+    .preview-desk-images{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+    .preview-paper{position:relative;border-radius:14px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.1),0 2px 8px rgba(0,0,0,0.06);border:1px solid #EDE8DF;cursor:pointer;transition:transform 0.3s,box-shadow 0.3s;}
+    .preview-paper:first-child{transform:rotate(-1deg);}
+    .preview-paper:last-child{transform:rotate(1deg);}
+    .preview-paper:hover{transform:rotate(0deg) translateY(-4px);box-shadow:0 16px 56px rgba(0,0,0,0.15);}
+    .preview-paper img{width:100%;height:320px;object-fit:cover;object-position:top;display:block;}
+    .preview-paper-label{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(28,21,38,0.85));color:white;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:20px 14px 12px;}
+    .preview-paper-pin{position:absolute;top:10px;right:10px;background:#E60023;color:white;border-radius:8px;padding:5px 10px;font-size:11px;font-weight:700;text-decoration:none;opacity:0;transition:opacity 0.2s;}
+    .preview-paper:hover .preview-paper-pin{opacity:1;}
+    .preview-note{font-size:11px;color:#B2BEC3;text-align:center;margin-top:16px;}
+    /* ── DOWNLOAD BOX ── */
+    .download-box{background:white;border-radius:24px;padding:32px;margin-bottom:24px;box-shadow:0 2px 8px rgba(0,0,0,0.04),0 8px 24px rgba(0,0,0,0.06);border:1px solid #EDE8DF;}
+    .download-box-label{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#A89FAE;margin-bottom:8px;}
+    .download-box-desc{color:#6B6475;margin-bottom:24px;line-height:1.75;font-size:15px;}
+    .btn-download{background:#6C5CE7;color:white;padding:18px 32px;border-radius:14px;text-decoration:none;font-weight:800;font-size:16px;display:block;text-align:center;transition:all 0.2s cubic-bezier(0.34,1.56,0.64,1);letter-spacing:-0.3px;margin-bottom:16px;box-shadow:0 4px 20px rgba(108,92,231,0.35);position:relative;overflow:hidden;}
+    .btn-download:hover{background:#5A4BD1;transform:translateY(-2px) scale(1.01);box-shadow:0 8px 32px rgba(108,92,231,0.5);}
+    .btn-download:active{transform:scale(0.99);}
+    .btn-download-sub{display:flex;gap:12px;justify-content:center;margin-bottom:20px;}
+    .btn-sub{background:#F4F1FF;color:#6C5CE7;padding:11px 0;border-radius:10px;text-decoration:none;font-weight:700;font-size:13px;text-align:center;transition:all 0.2s;flex:1;max-width:160px;}
+    .btn-sub:hover{background:#6C5CE7;color:white;}
+    .share-divider{border:none;border-top:1px solid #F0EDE8;margin:18px 0;}
+    .share-row{display:flex;align-items:center;justify-content:space-between;gap:8px;}
+    .share-label{font-size:11px;font-weight:700;color:#A89FAE;letter-spacing:1px;text-transform:uppercase;}
+    .share-icons{display:flex;gap:8px;}
+    .share-icon{width:36px;height:36px;border-radius:50%;border:1.5px solid #EDE8DF;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:15px;transition:all 0.2s;color:#6B6475;}
+    .share-icon:hover{border-color:#6C5CE7;background:#F4F1FF;transform:scale(1.1);}
+    .trust-strip{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;padding-top:14px;}
+    .trust-item{font-size:12px;color:#059669;font-weight:700;display:flex;align-items:center;gap:5px;}
+    .whisper{font-size:11px;color:#B2BEC3;text-align:center;margin-top:10px;font-style:italic;}
+    /* ── INFO STRIP ── */
+    .info-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:28px;}
+    .info-chip{text-align:center;padding:16px 12px;}
+    .info-chip .lbl{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#A89FAE;display:block;margin-bottom:6px;}
+    .info-chip .val{font-size:16px;font-weight:800;color:#1A1420;}
+    /* ── INCLUDED ── */
+    .included-box{background:var(--subject-light);border-radius:20px;padding:28px;margin-bottom:28px;border:1px solid rgba(108,92,231,0.08);}
+    .included-title{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--subject);margin-bottom:16px;}
+    .included-item{display:flex;align-items:flex-start;gap:12px;margin-bottom:12px;font-size:14px;color:#1A1420;font-weight:500;line-height:1.5;}
+    .check{color:var(--subject);font-size:16px;font-weight:900;flex-shrink:0;margin-top:1px;}
+    .ccss-badge{display:inline-block;background:#1C1526;color:white;font-size:11px;font-weight:700;padding:5px 14px;border-radius:8px;letter-spacing:0.5px;margin-top:10px;}
+    /* ── RELATED ── */
+    .related{margin-bottom:28px;}
+    .related-title{font-size:20px;margin-bottom:16px;color:#1A1420;font-weight:800;letter-spacing:-0.5px;}
+    .related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;}
+    /* ── EMAIL ── */
+    .email-section{background:#1C1526;border-radius:24px;padding:36px 32px;margin-bottom:28px;text-align:center;position:relative;overflow:hidden;}
+    .email-section::before{content:'';position:absolute;top:-60px;right:-40px;width:200px;height:200px;background:radial-gradient(circle,#6C5CE7 0%,transparent 70%);opacity:0.12;}
+    .email-char{position:absolute;right:24px;bottom:0;opacity:0.7;}
+    .email-section h3{color:white;font-size:20px;font-weight:800;margin-bottom:8px;letter-spacing:-0.5px;position:relative;z-index:2;}
+    .email-section p{color:rgba(255,255,255,0.45);font-size:14px;margin-bottom:22px;position:relative;z-index:2;}
+    .email-form{display:flex;gap:10px;flex-wrap:wrap;position:relative;z-index:2;}
+    .email-input{flex:1;min-width:200px;padding:15px 18px;border-radius:12px;border:none;font-size:15px;font-family:inherit;outline:none;background:rgba(255,255,255,0.08);color:white;border:1px solid rgba(255,255,255,0.12);}
+    .email-input::placeholder{color:rgba(255,255,255,0.3);}
+    .email-input:focus{background:rgba(255,255,255,0.12);border-color:rgba(108,92,231,0.5);}
+    .email-submit{background:#6C5CE7;color:white;border:none;padding:15px 24px;border-radius:12px;font-size:14px;font-weight:800;cursor:pointer;font-family:inherit;white-space:nowrap;transition:all 0.2s;box-shadow:0 4px 16px rgba(108,92,231,0.4);}
+    .email-submit:hover{background:#5A4BD1;transform:translateY(-1px);}
+    .email-note{font-size:11px;color:rgba(255,255,255,0.25);margin-top:12px;position:relative;z-index:2;}
+    /* ── SEO ── */
+    .seo-prose{padding:0 4px;margin-bottom:28px;line-height:1.85;font-size:14px;color:#6B6475;}
+    .seo-prose h3{color:#1A1420;margin-bottom:14px;font-size:18px;font-weight:800;letter-spacing:-0.3px;}
+    /* ── NAV LINKS ── */
+    .nav-links{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:20px;font-size:13px;}
+    .nav-links a{color:#6C5CE7;text-decoration:none;font-weight:600;}
+    .nav-links a:hover{text-decoration:underline;}
+    /* ── STICKY BAR ── */
+    .sticky-bar{position:fixed;bottom:0;left:0;right:0;background:#1C1526;border-top:2px solid #6C5CE7;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;z-index:300;transform:translateY(100%);transition:transform 0.3s ease;box-shadow:0 -4px 24px rgba(0,0,0,0.25);}
+    .sticky-bar.visible{transform:translateY(0);}
+    .sticky-bar-title{color:rgba(255,255,255,0.8);font-size:13px;font-weight:700;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+    .sticky-bar-btn{background:#6C5CE7;color:white;padding:10px 22px;border-radius:10px;text-decoration:none;font-weight:800;font-size:13px;white-space:nowrap;flex-shrink:0;box-shadow:0 4px 12px rgba(108,92,231,0.4);}
+    @keyframes confetti-fall{0%{transform:translateY(-20px) rotate(0deg);opacity:1;}100%{transform:translateY(80px) rotate(360deg);opacity:0;}}
+    .confetti-piece{position:absolute;width:8px;height:8px;border-radius:2px;pointer-events:none;animation:confetti-fall 0.8s ease-out forwards;}
+    @media(max-width:640px){
+      .preview-desk-images{grid-template-columns:1fr;}
+      .preview-paper:first-child,.preview-paper:last-child{transform:none;}
+      .btn-download-sub{flex-wrap:wrap;}
+      .ws-hero-char{display:none;}
+      .email-char{display:none;}
+      .info-strip{grid-template-columns:repeat(3,1fr);}
+      .share-row{flex-direction:column;align-items:flex-start;gap:12px;}
+      .sticky-bar-title{display:none;}
+    }
+  </style>
+</head>
+<body>
+  ${siteHeader}
+  <div class="breadcrumb">
+    <a href="https://examel.com">Home</a><span class="sep">›</span>
+    <a href="/free-${ws.subject.toLowerCase()}-worksheets/">Free ${capitalize(ws.subject)} Worksheets</a><span class="sep">›</span>
+    <a href="/free-${ws.subject.toLowerCase()}-worksheets/grade-${ws.grade}/">Grade ${ws.grade}</a><span class="sep">›</span>
+    <span>${ws.title}</span>
+  </div>
+
+  <div class="ws-hero">
+    <div class="ws-hero-inner">
+      <h1>${ws.title}</h1>
+      <p class="ws-hero-sub">Free printable worksheet — download and print instantly</p>
+      <div class="ws-badges">
+        <span class="ws-badge">${capitalize(ws.subject)}</span>
+        <span class="ws-badge">Grade ${ws.grade}</span>
+        <span class="ws-badge">${formatTheme(ws.theme)} Theme</span>
+      </div>
+    </div>
+    <div class="ws-hero-char">
+      ${charSVG}
+    </div>
+  </div>
+
+  <div class="ws-container">
+
+    ${ws.preview_p1_url ? `
+    <div class="preview-desk">
+      <div class="preview-desk-title">What's inside this worksheet</div>
+      <div class="preview-desk-images">
+        <div class="preview-paper">
+          <a href="${ws.preview_p1_url}" target="_blank">
+            <img src="${ws.preview_p1_url}" alt="Grade ${ws.grade} ${capitalize(ws.subject)} worksheet preview — ${formatTopic(ws.topic)}" loading="lazy">
+          </a>
+          <div class="preview-paper-label">Questions</div>
+          <a href="https://pinterest.com/pin/create/button/?url=https://examel.com/worksheets/${ws.slug}/&media=${encodeURIComponent(ws.pinterest_image_url||ws.preview_p1_url||'')}&description=${encodeURIComponent(ws.title+' — Free Grade '+ws.grade+' '+ws.subject+' worksheet. Download free at examel.com')}" target="_blank" class="preview-paper-pin">📌 Pin</a>
+        </div>
+        ${ws.preview_p2_url ? `
+        <div class="preview-paper">
+          <a href="${ws.preview_p2_url}" target="_blank">
+            <img src="${ws.preview_p2_url}" alt="Answer key — Grade ${ws.grade} ${capitalize(ws.subject)} worksheet" loading="lazy">
+          </a>
+          <div class="preview-paper-label">Answer Key · Teacher Use</div>
+          <a href="https://pinterest.com/pin/create/button/?url=https://examel.com/worksheets/${ws.slug}/&media=${encodeURIComponent(ws.pinterest_image_url||ws.preview_p1_url||'')}&description=${encodeURIComponent(ws.title+' — Free Grade '+ws.grade+' '+ws.subject+' worksheet. Download free at examel.com')}" target="_blank" class="preview-paper-pin">📌 Pin</a>
+        </div>` : ''}
+      </div>
+      <p class="preview-note">Click any image to view full size · US Letter · Instant download</p>
+    </div>
+    ` : ''}
+
+    <div class="download-box" id="downloadBox">
+      <div class="download-box-label">Ready to print</div>
+      <p class="download-box-desc">8 questions with a ${formatTheme(ws.theme)} theme plus a full answer key. Perfect for Grade ${ws.grade} ${capitalize(ws.subject)}.</p>
+      <a href="${downloadUrl}" class="btn-download" id="dlBtn" download onclick="handleDownload(this)">⬇ Download Free Worksheet</a>
+      <div class="btn-download-sub">
+        <a href="${downloadUrl}" target="_blank" class="btn-sub">🖨 Print</a>
+        <a href="${downloadUrl}" target="_blank" class="btn-sub">👁 Open PDF</a>
+        <a href="#" onclick="navigator.clipboard.writeText(window.location.href);this.textContent='✓ Copied!';setTimeout(()=>this.textContent='🔗 Copy Link',2000);return false;" class="btn-sub">🔗 Copy Link</a>
+      </div>
+      <hr class="share-divider">
+      <div class="share-row">
+        <span class="share-label">Share</span>
+        <div class="share-icons">
+          <a href="https://pinterest.com/pin/create/button/?url=https://examel.com/worksheets/${ws.slug}/&media=${encodeURIComponent(ws.pinterest_image_url||ws.preview_image_url||'')}&description=${encodeURIComponent(ws.title+' — Free Grade '+ws.grade+' '+ws.subject+' worksheet #freeworksheets #homeschool')}" target="_blank" class="share-icon" title="Pinterest">📌</a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://examel.com/worksheets/${ws.slug}/" target="_blank" class="share-icon" title="Facebook">📘</a>
+          <a href="https://twitter.com/intent/tweet?text=${encodeURIComponent('Free Grade '+ws.grade+' '+ws.subject+' worksheet: '+ws.title)}&url=https://examel.com/worksheets/${ws.slug}/" target="_blank" class="share-icon" title="Twitter">🐦</a>
+          <a href="mailto:?subject=${encodeURIComponent('Free worksheet: '+ws.title)}&body=${encodeURIComponent('Check out this free worksheet: https://examel.com/worksheets/'+ws.slug+'/')}" class="share-icon" title="Email">📧</a>
+        </div>
+      </div>
+      <div class="trust-strip">
+        <span class="trust-item">✓ Free forever</span>
+        <span class="trust-item">✓ No login required</span>
+        <span class="trust-item">✓ Instant PDF</span>
+      </div>
+      <p class="whisper">psst — 8 questions on this one. You've got this ⭐</p>
+    </div>
+
+    <div class="info-strip">
+      <div class="info-chip"><span class="lbl">Subject</span><span class="val">${capitalize(ws.subject)}</span></div>
+      <div class="info-chip"><span class="lbl">Grade</span><span class="val">Grade ${ws.grade}</span></div>
+      <div class="info-chip"><span class="lbl">Topic</span><span class="val">${formatTopic(ws.topic)}</span></div>
+    </div>
+
+    <div class="included-box">
+      <div class="included-title">What is included</div>
+      <div class="included-item"><span class="check">✓</span> 8 curriculum-aligned questions</div>
+      <div class="included-item"><span class="check">✓</span> Full answer key for parents and teachers</div>
+      <div class="included-item"><span class="check">✓</span> ${formatTheme(ws.theme)} theme to keep kids engaged</div>
+      <div class="included-item"><span class="check">✓</span> Print-ready PDF — US Letter size</div>
+      <div class="included-item"><span class="check">✓</span> Name, date, and score fields included</div>
+      ${ws.ccss_standard ? `<div style="margin-top:6px;"><span class="ccss-badge">CCSS: ${ws.ccss_standard}</span></div>` : ''}
+    </div>
+
+    ${related.length > 0 ? `
+    <div class="related">
+      <h3 class="related-title">More Grade ${ws.grade} ${capitalize(ws.subject)} Worksheets</h3>
+      <div class="related-grid">${related.map(worksheetCard).join('')}</div>
+    </div>` : ''}
+
+    ${sameTopicDiffTheme.length > 0 ? `
+    <div class="related">
+      <h3 class="related-title">More ${formatTopic(ws.topic)} Worksheets</h3>
+      <div class="related-grid">${sameTopicDiffTheme.map(worksheetCard).join('')}</div>
+    </div>` : ''}
+
+    <div class="email-section">
+      <div class="email-char">
+        <svg width="70" height="90" viewBox="0 0 70 90" xmlns="http://www.w3.org/2000/svg" opacity="0.8">
+          <ellipse cx="35" cy="62" rx="22" ry="6" fill="rgba(108,92,231,0.2)"/>
+          <rect x="14" y="44" width="44" height="30" rx="10" fill="#6C5CE7"/>
+          <ellipse cx="35" cy="38" rx="24" ry="26" fill="#C8874A"/>
+          <ellipse cx="35" cy="16" rx="24" ry="14" fill="#1A0A00"/>
+          <ellipse cx="18" cy="26" rx="10" ry="16" fill="#1A0A00"/>
+          <ellipse cx="52" cy="26" rx="10" ry="16" fill="#1A0A00"/>
+          <circle cx="26" cy="38" r="9" fill="white"/><circle cx="44" cy="38" r="9" fill="white"/>
+          <circle cx="27" cy="39" r="6" fill="#3D1F00"/><circle cx="45" cy="39" r="6" fill="#3D1F00"/>
+          <circle cx="29" cy="36" r="3" fill="white"/><circle cx="47" cy="36" r="3" fill="white"/>
+          <path d="M28 48 Q35 56 42 48" stroke="#C05030" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <rect x="2" y="56" width="20" height="14" rx="3" fill="white" opacity="0.9"/>
+          <line x1="4" y1="60" x2="20" y2="60" stroke="#DDD" stroke-width="1"/>
+          <line x1="4" y1="64" x2="20" y2="64" stroke="#DDD" stroke-width="1"/>
+          <line x1="4" y1="68" x2="14" y2="68" stroke="#DDD" stroke-width="1"/>
+        </svg>
+      </div>
+      <h3>📬 Get Free Worksheets Every Week</h3>
+      <p>New themed worksheets added daily. Free for parents and teachers.</p>
+      <form action="https://app.kit.com/forms/9220999/subscriptions" method="POST" target="kit-iframe-ws" class="email-form">
+        <input type="email" name="email_address" placeholder="Your email address" required class="email-input">
+        <button type="submit" class="email-submit">Get Free Worksheets →</button>
+      </form>
+      <iframe name="kit-iframe-ws" style="display:none;"></iframe>
+      <p class="email-note">No spam. Unsubscribe anytime.</p>
+    </div>
+
+    <div class="seo-prose">
+      <h3>About this ${capitalize(ws.subject)} worksheet for Grade ${ws.grade}</h3>
+      <p>This free printable ${capitalize(ws.subject)} worksheet is designed for Grade ${ws.grade} students and covers ${formatTopic(ws.topic)}. The ${formatTheme(ws.theme)} theme keeps kids engaged while they practice essential ${capitalize(ws.subject)} skills. Every worksheet includes a full answer key making it easy for parents and teachers to check work instantly. Aligned to Common Core State Standards (CCSS) for Grade ${ws.grade} ${capitalize(ws.subject)}. Print-ready at US Letter size. No login required — download and print in seconds.</p>
+    </div>
+
+    ${sameThemeDiffSubject.length > 0 ? `
+    <div class="related">
+      <h3 class="related-title">More ${formatTheme(ws.theme)} Theme Worksheets</h3>
+      <div class="related-grid">${sameThemeDiffSubject.map(worksheetCard).join('')}</div>
+    </div>` : ''}
+
+    <div class="nav-links">
+      <a href="/free-${ws.subject.toLowerCase()}-worksheets/grade-${ws.grade}/">← All Grade ${ws.grade} ${capitalize(ws.subject)} Worksheets</a>
+      <a href="/free-${ws.subject.toLowerCase()}-worksheets/">← All ${capitalize(ws.subject)} Worksheets</a>
+      <a href="/free-worksheets/grade-${ws.grade}/">← All Grade ${ws.grade} Worksheets</a>
+    </div>
+  </div>
+
+  <div class="sticky-bar" id="stickyBar">
+    <span class="sticky-bar-title">${ws.title}</span>
+    <a href="${downloadUrl}" class="sticky-bar-btn" download>⬇ Download Free</a>
+  </div>
+
+  <script>
+    (function(){
+      var bar=document.getElementById('stickyBar');
+      var box=document.getElementById('downloadBox');
+      if(!bar||!box)return;
+      var obs=new IntersectionObserver(function(e){bar.classList.toggle('visible',!e[0].isIntersecting);},{threshold:0});
+      obs.observe(box);
+    })();
+    function handleDownload(btn){
+      var orig=btn.innerHTML;
+      btn.innerHTML='⏳ Preparing your worksheet...';
+      btn.style.background='#5A4BD1';
+      // confetti
+      for(var i=0;i<12;i++){
+        var c=document.createElement('div');
+        c.className='confetti-piece';
+        c.style.left=(30+Math.random()*40)+'%';
+        c.style.top='0px';
+        c.style.background=['#6C5CE7','#F9A825','#FF85A1','#10B981','#EF4444'][Math.floor(Math.random()*5)];
+        c.style.animationDelay=(Math.random()*0.4)+'s';
+        c.style.transform='rotate('+(Math.random()*360)+'deg)';
+        btn.parentNode.appendChild(c);
+        setTimeout(function(el){el.remove();},1200,c);
+      }
+      setTimeout(function(){
+        btn.innerHTML='✓ Worksheet ready!';
+        btn.style.background='#059669';
+        setTimeout(function(){btn.innerHTML=orig;btn.style.background='';},3000);
+      },1500);
+    }
+  </script>
+  ${siteFooter}
+</body>
+</html>`;
+    fs.writeFileSync(`${dir}/index.html`, html);
+"""
+
+# ── Now find and inject subjectColor + subjectColorLight + charSVG variables
+# They need to be declared just before the html template
+# Find the line where color is declared
+old_color_line = "    const color = gradeColor(ws.grade);"
+new_color_lines = """    const color = subjectColor(ws.subject);
+    const subjectColorLight = (function(s){const m={math:'#F5F3FF',english:'#FDF2F8',science:'#ECFDF5','drill-grid':'#FEF2F2',reading:'#E0F2FE',vocab:'#FFFBEB'};return m[s]||'#F4F1FF';})(ws.subject);
+    const charSVG = (function(s){
+      if(s==='math') return '<svg width="110" height="130" viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg"><ellipse cx="60" cy="105" rx="36" ry="8" fill="rgba(108,92,231,0.12)"/><rect x="22" y="72" width="76" height="52" rx="16" fill="#6C5CE7"/><path d="M16 96 Q60 86 104 96 L108 124 Q60 134 12 124 Z" fill="#7C6CF7"/><ellipse cx="34" cy="120" rx="14" ry="8" fill="#5A4BD1"/><ellipse cx="86" cy="120" rx="14" ry="8" fill="#5A4BD1"/><ellipse cx="60" cy="68" rx="38" ry="42" fill="#C8874A"/><ellipse cx="60" cy="32" rx="40" ry="22" fill="#1A0A00"/><circle cx="38" cy="36" r="14" fill="#1A0A00"/><circle cx="60" cy="28" r="16" fill="#1A0A00"/><circle cx="82" cy="36" r="14" fill="#1A0A00"/><path d="M26 42 Q20 62 24 82" fill="#1A0A00"/><path d="M94 42 Q100 62 96 82" fill="#1A0A00"/><path d="M80,30 Q90,20 96,28 Q90,26 88,32 Z" fill="#FF85A1"/><path d="M96,28 Q106,20 110,30 Q104,28 102,34 Z" fill="#FF6B8E"/><circle cx="96" cy="30" r="6" fill="#FF85A1"/><circle cx="48" cy="66" r="14" fill="white"/><circle cx="72" cy="66" r="14" fill="white"/><circle cx="49" cy="67" r="10" fill="#3D1F00"/><circle cx="73" cy="67" r="10" fill="#3D1F00"/><circle cx="53" cy="62" r="5" fill="white"/><circle cx="77" cy="62" r="5" fill="white"/><circle cx="49" cy="68" r="3.5" fill="#0A0500"/><circle cx="73" cy="68" r="3.5" fill="#0A0500"/><path d="M38 54 Q48 48 58 53" stroke="#1A0A00" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M62 53 Q72 48 82 54" stroke="#1A0A00" stroke-width="2.5" fill="none" stroke-linecap="round"/><circle cx="60" cy="78" r="2.5" fill="#A05830" opacity="0.5"/><circle cx="66" cy="78" r="2.5" fill="#A05830" opacity="0.5"/><path d="M46 88 Q60 100 74 88" stroke="#C05030" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="40" cy="80" r="10" fill="#FF9999" opacity="0.2"/><circle cx="80" cy="80" r="10" fill="#FF9999" opacity="0.2"/></svg>';
+      if(s==='english'||s==='reading'||s==='vocab') return '<svg width="110" height="130" viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg"><ellipse cx="60" cy="105" rx="36" ry="8" fill="rgba(8,145,178,0.12)"/><rect x="22" y="72" width="76" height="52" rx="16" fill="#0891B2"/><ellipse cx="34" cy="120" rx="14" ry="8" fill="#1C1526"/><ellipse cx="86" cy="120" rx="14" ry="8" fill="#1C1526"/><ellipse cx="60" cy="68" rx="40" ry="44" fill="#FDBCB4"/><ellipse cx="60" cy="30" rx="38" ry="22" fill="#6B3A2A"/><ellipse cx="26" cy="52" rx="13" ry="20" fill="#6B3A2A"/><ellipse cx="94" cy="52" rx="13" ry="20" fill="#6B3A2A"/><circle cx="48" cy="66" r="15" fill="none" stroke="#4A3728" stroke-width="3"/><circle cx="72" cy="66" r="15" fill="none" stroke="#4A3728" stroke-width="3"/><path d="M63 66 Q62 64 61 66" stroke="#4A3728" stroke-width="3" fill="none"/><circle cx="48" cy="66" r="10" fill="white"/><circle cx="72" cy="66" r="10" fill="white"/><circle cx="49" cy="67" r="7" fill="#3A2010"/><circle cx="73" cy="67" r="7" fill="#3A2010"/><circle cx="52" cy="63" r="3.5" fill="white"/><circle cx="76" cy="63" r="3.5" fill="white"/><circle cx="49" cy="68" r="2.5" fill="#0A0500"/><circle cx="73" cy="68" r="2.5" fill="#0A0500"/><path d="M50 88 Q60 98 70 88" stroke="#C06050" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="36" cy="78" r="10" fill="#FFB0A0" opacity="0.2"/><circle cx="84" cy="78" r="10" fill="#FFB0A0" opacity="0.2"/></svg>';
+      if(s==='science') return '<svg width="110" height="130" viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg"><ellipse cx="60" cy="105" rx="36" ry="8" fill="rgba(5,150,105,0.12)"/><rect x="18" y="70" width="84" height="54" rx="18" fill="#F8F8F8"/><rect x="30" y="76" width="60" height="28" rx="12" fill="#0D9488"/><ellipse cx="34" cy="122" rx="14" ry="8" fill="#0F766E"/><ellipse cx="86" cy="122" rx="14" ry="8" fill="#0F766E"/><ellipse cx="60" cy="66" rx="42" ry="46" fill="#7B3F0E"/><ellipse cx="60" cy="26" rx="42" ry="24" fill="#0A0500"/><circle cx="32" cy="28" r="22" fill="#0A0500"/><circle cx="88" cy="28" r="22" fill="#0A0500"/><ellipse cx="32" cy="50" rx="12" ry="6" fill="#F59E0B"/><ellipse cx="88" cy="50" rx="12" ry="6" fill="#F59E0B"/><ellipse cx="32" cy="49" rx="9" ry="4" fill="#FBBF24"/><ellipse cx="88" cy="49" rx="9" ry="4" fill="#FBBF24"/><rect x="20" y="54" width="14" height="52" rx="7" fill="#0A0500"/><rect x="86" y="54" width="14" height="52" rx="7" fill="#0A0500"/><circle cx="27" cy="95" r="6" fill="#F59E0B" stroke="#0A0500" stroke-width="1.5"/><circle cx="93" cy="95" r="6" fill="#10B981" stroke="#0A0500" stroke-width="1.5"/><circle cx="48" cy="64" r="16" fill="white"/><circle cx="72" cy="64" r="16" fill="white"/><circle cx="49" cy="65" r="11" fill="#1A0500"/><circle cx="73" cy="65" r="11" fill="#1A0500"/><circle cx="53" cy="60" r="5.5" fill="white"/><circle cx="77" cy="60" r="5.5" fill="white"/><circle cx="49" cy="66" r="4" fill="#050100"/><circle cx="73" cy="66" r="4" fill="#050100"/><ellipse cx="48" cy="78" rx="10" ry="8" fill="#C05030" opacity="0.9"/><ellipse cx="48" cy="78" rx="7" ry="5" fill="white" opacity="0.9"/><circle cx="36" cy="72" r="12" fill="#FF8C69" opacity="0.25"/><circle cx="84" cy="72" r="12" fill="#FF8C69" opacity="0.25"/></svg>';
+      return '<svg width="110" height="130" viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg"><ellipse cx="60" cy="108" rx="36" ry="8" fill="rgba(239,68,68,0.12)"/><rect x="22" y="74" width="80" height="60" rx="18" fill="#EF4444"/><ellipse cx="62" cy="70" rx="10" ry="9" fill="#FDBCB4"/><ellipse cx="60" cy="46" rx="42" ry="44" fill="#FDBCB4"/><ellipse cx="60" cy="10" rx="40" ry="22" fill="#3D1F00"/><path d="M22 18 Q46 2 96 6 Q108 12 112 24" fill="#3D1F00"/><rect x="22" y="10" width="76" height="13" rx="6.5" fill="#EF4444"/><circle cx="44" cy="44" r="14" fill="white"/><circle cx="76" cy="44" r="14" fill="white"/><circle cx="45" cy="45" r="9" fill="#3D1F00"/><circle cx="77" cy="45" r="9" fill="#3D1F00"/><circle cx="48" cy="41" r="4.5" fill="white"/><circle cx="80" cy="41" r="4.5" fill="white"/><circle cx="45" cy="46" r="3" fill="#0A0500"/><circle cx="77" cy="46" r="3" fill="#0A0500"/><path d="M40 66 Q60 84 80 66" stroke="#C06050" stroke-width="3" fill="#FF9999" stroke-linecap="round"/><path d="M44 68 Q60 78 76 68" fill="white"/><circle cx="28" cy="58" r="11" fill="#FF9999" opacity="0.25"/><circle cx="92" cy="58" r="11" fill="#FF9999" opacity="0.25"/></svg>';
+    })(ws.subject);"""
+
+# ── Apply all replacements ────────────────────────────────────────────────────
+
+# 1. Replace card function + sharedCSS
+content = content[:card_start_idx] + new_worksheet_card + content[card_end_idx:]
+
+# Recalculate indices after first replacement
+start_idx = content.index(old_shared_start)
+end_idx = content.index(old_shared_end)
+content = content[:start_idx] + new_shared_css + '\n' + content[end_idx:]
+
+# 2. Replace siteHeader
+header_start_idx = content.index(old_header_start)
+header_end_idx = content.index(old_header_end)
+content = content[:header_start_idx] + new_site_header + content[header_end_idx:]
+
+# 3. Replace siteFooter
+footer_start_idx = content.index(old_footer_start)
+footer_end_idx = content.index(old_footer_end)
+content = content[:footer_start_idx] + new_site_footer + content[footer_end_idx:]
+
+# 4. Replace color line
+content = content.replace(old_color_line, new_color_lines, 1)
+
+# 5. Replace worksheet page template
+ws_start_idx = content.index(old_ws_page_start)
+ws_end_idx = content.index(old_ws_page_end) + len(old_ws_page_end)
+content = content[:ws_start_idx] + new_ws_page + content[ws_end_idx:]
+
+# ── Write output ──────────────────────────────────────────────────────────────
+with open(filepath, 'w') as f:
+    f.write(content)
+
+print('✓ generate-pages.js patched successfully')
+print('Run: node --check /opt/examel/examel-pages/generate-pages.js')

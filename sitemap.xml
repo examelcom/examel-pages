@@ -6,11 +6,6 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://examel.com/free-english-worksheets/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
     <loc>https://examel.com/free-math-worksheets/</loc>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
@@ -21,34 +16,9 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://examel.com/free-english-worksheets/grade-1/</loc>
+    <loc>https://examel.com/free-english-worksheets/</loc>
     <changefreq>daily</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/free-english-worksheets/grade-2/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/free-english-worksheets/grade-3/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/free-english-worksheets/grade-4/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/free-english-worksheets/grade-5/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/free-english-worksheets/grade-6/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.85</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://examel.com/free-math-worksheets/grade-1/</loc>
@@ -111,6 +81,36 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://examel.com/free-english-worksheets/grade-1/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/free-english-worksheets/grade-2/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/free-english-worksheets/grade-3/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/free-english-worksheets/grade-4/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/free-english-worksheets/grade-5/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/free-english-worksheets/grade-6/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://examel.com/free-worksheets/grade-1/</loc>
     <changefreq>daily</changefreq>
     <priority>0.85</priority>
@@ -139,6 +139,16 @@
     <loc>https://examel.com/free-worksheets/grade-6/</loc>
     <changefreq>daily</changefreq>
     <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-subtraction-back-to-school-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-subtraction-mountains-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://examel.com/worksheets/grade-1-math-addition-sports-standard/</loc>
@@ -2921,54 +2931,14 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade3-area-ocean/</loc>
+    <loc>https://examel.com/word-searches/science/grade-3/word-search-science-grade3-magnets-winter-wonderland-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade3-area-space/</loc>
+    <loc>https://examel.com/word-searches/science/grade-4/word-search-science-grade4-electricity-music-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/worksheets/math-grade3-area-dinosaurs/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/worksheets/math-grade3-fractions-gardening/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/worksheets/math-grade3-fractions-cooking/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/worksheets/math-grade3-fractions-history/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/worksheets/math-grade3-fractions-mythology/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/worksheets/math-grade3-fractions-fairy-tales/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/worksheets/math-grade3-fractions-technology/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/worksheets/math-grade3-fractions-art/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://examel.com/word-searches/english/grade-6/word-search-english-grade6-vocabulary-thanksgiving-standard/</loc>
@@ -3517,6 +3487,16 @@
   </url>
   <url>
     <loc>https://examel.com/word-searches/math/grade-1/word-search-math-grade1-comparing-numbers-robots-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-6/drill-math-grade6-division-space-explorers-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-2/drill-math-grade2-subtraction-rainforest-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -4361,6 +4341,16 @@
     <priority>0.75</priority>
   </url>
   <url>
+    <loc>https://examel.com/vocab-match/math/grade-5/vocab-match-math-grade5-division-valentines-day-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/math/grade-2/vocab-match-math-grade2-even-odd-hanukkah-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
     <loc>https://examel.com/vocab-match/math/grade-5/vocab-match-math-grade5-division-video-game-heroes-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
@@ -4764,6 +4754,16 @@
     <loc>https://examel.com/free-science-vocabulary/</loc>
     <changefreq>daily</changefreq>
     <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-1/reading-passage-math-grade1-place-value-dinosaurs-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-6/reading-passage-science-grade6-weather-climate-space-explorers-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://examel.com/reading-passages/grade-1/reading-passage-english-grade1-writing-sentences-robots-beginner/</loc>

@@ -5,77 +5,70 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%236C5CE7'/%3E%3Crect x='7' y='7' width='4' height='18' rx='1' fill='white'/%3E%3Crect x='7' y='7' width='7' height='4' rx='1' fill='white'/%3E%3Crect x='7' y='14' width='11' height='4' rx='1' fill='white'/%3E%3Crect x='7' y='21' width='15' height='4' rx='1' fill='white'/%3E%3C/svg%3E">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Free Science Worksheets for Kids | Grades 1-6 | Examel</title>
-  <meta name="description" content="Free printable Science worksheets for Grades 1-6. 113+ worksheets with fun themes kids love. Download PDF instantly. Answer keys included.">
+  <meta name="description" content="Free printable Science worksheets for Grades 1-6. 116+ worksheets with fun themes kids love. Download PDF instantly. Answer keys included.">
   <link rel="canonical" href="https://examel.com/free-science-worksheets/">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     *{box-sizing:border-box;margin:0;padding:0;}
     html{scroll-behavior:smooth;}
-    body{font-family:'Inter',system-ui,sans-serif;color:#1A1A2E;background:#FAFAF7;-webkit-font-smoothing:antialiased;}
-    /* NAV */
-    .site-header{background:#1A1A2E;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:100;box-shadow:0 2px 16px rgba(0,0,0,0.15);}
-    .site-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+    body{font-family:'Inter',system-ui,sans-serif;background:#FAF8F3;color:#1A1420;-webkit-font-smoothing:antialiased;}
+    /* ── NAV ── */
+    .site-header{background:#1C1526;padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:200;border-bottom:1px solid rgba(255,255,255,0.06);box-shadow:0 4px 24px rgba(0,0,0,0.18);}
+    .site-logo{display:flex;align-items:center;gap:10px;text-decoration:none;transition:transform 0.2s;}
+    .site-logo:hover{transform:translateY(-1px);}
     .site-logo-text{font-size:20px;font-weight:800;letter-spacing:-1px;color:white;}
     .site-logo-text span{color:#6C5CE7;}
-    .site-header nav{display:flex;align-items:center;gap:4px;}
-    .site-header nav a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:13px;font-weight:600;padding:6px 10px;border-radius:6px;transition:all 0.2s;}
+    .site-header nav{display:flex;align-items:center;gap:2px;}
+    .site-header nav a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:13px;font-weight:600;padding:7px 12px;border-radius:8px;transition:all 0.2s;letter-spacing:0.1px;}
     .site-header nav a:hover{color:white;background:rgba(108,92,231,0.2);}
-    /* BREADCRUMB */
-    .breadcrumb{max-width:1100px;margin:16px auto;padding:0 20px;font-size:13px;color:#636E72;}
-    .breadcrumb a{color:#6C5CE7;text-decoration:none;}
-    .breadcrumb a:hover{text-decoration:underline;}
-    .breadcrumb span{margin:0 6px;opacity:0.4;}
-    /* HERO (hub/category pages) */
-    .hero{padding:60px 20px;text-align:center;background:#FAFAF7;}
-    .hero h1{font-size:clamp(26px,4vw,44px);margin-bottom:14px;color:#1A1A2E;font-weight:800;letter-spacing:-1px;line-height:1.15;}
+    /* ── BREADCRUMB ── */
+    .breadcrumb{max-width:860px;margin:18px auto 0;padding:0 20px;font-size:12px;color:#A89FAE;display:flex;align-items:center;flex-wrap:wrap;gap:4px;}
+    .breadcrumb a{color:#6C5CE7;text-decoration:none;font-weight:500;transition:opacity 0.2s;}
+    .breadcrumb a:hover{opacity:0.7;}
+    .breadcrumb .sep{opacity:0.3;margin:0 2px;}
+    /* ── HUB HERO ── */
+    .hero{padding:64px 20px 56px;text-align:center;background:#FAF8F3;}
+    .hero h1{font-size:clamp(26px,4vw,44px);margin-bottom:14px;color:#1A1420;font-weight:800;letter-spacing:-1.5px;line-height:1.15;}
     .hero h1 span{color:#6C5CE7;}
-    .hero p{font-size:17px;color:#636E72;max-width:600px;margin:0 auto;line-height:1.7;}
-    /* FILTER */
-    .filter-bar{max-width:1100px;margin:0 auto 30px;padding:0 20px;display:flex;gap:10px;flex-wrap:wrap;}
-    .filter-btn{padding:8px 18px;border-radius:100px;text-decoration:none;font-size:13px;font-weight:700;border:2px solid #DFE6E9;color:#636E72;background:white;transition:all 0.2s;}
-    .filter-btn:hover,.filter-btn.active{background:#6C5CE7;color:white;border-color:#6C5CE7;}
-    /* GRID */
-    .grid{max-width:1100px;margin:0 auto;padding:0 20px 60px;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;}
-    /* CARDS */
-    .ws-card{background:white;border-radius:16px;padding:20px;text-decoration:none;color:#1A1A2E;display:block;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 2px 12px rgba(108,92,231,0.07);}
-    .ws-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(108,92,231,0.13);}
+    .hero p{font-size:17px;color:#6B6475;max-width:580px;margin:0 auto;line-height:1.75;}
+    /* ── FILTER ── */
+    .filter-bar{max-width:1100px;margin:0 auto 32px;padding:0 20px;display:flex;gap:10px;flex-wrap:wrap;}
+    .filter-btn{padding:8px 20px;border-radius:100px;text-decoration:none;font-size:13px;font-weight:700;border:2px solid #EDE8DF;color:#6B6475;background:white;transition:all 0.2s;cursor:pointer;}
+    .filter-btn:hover,.filter-btn.active{background:#6C5CE7;color:white;border-color:#6C5CE7;box-shadow:0 4px 16px rgba(108,92,231,0.3);}
+    /* ── GRID ── */
+    .grid{max-width:1100px;margin:0 auto;padding:0 20px 64px;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;}
+    /* ── CARDS ── */
+    .ws-card{background:white;border-radius:20px;overflow:hidden;text-decoration:none;color:#1A1420;display:block;transition:transform 0.25s cubic-bezier(0.34,1.56,0.64,1),box-shadow 0.25s;box-shadow:0 2px 8px rgba(0,0,0,0.04),0 8px 24px rgba(0,0,0,0.06);border:1px solid #EDE8DF;}
+    .ws-card:hover{transform:translateY(-5px);box-shadow:0 8px 32px rgba(108,92,231,0.14),0 2px 8px rgba(0,0,0,0.04);}
+    .ws-card-thumb{width:100%;height:160px;object-fit:cover;object-position:top;display:block;border-bottom:1px solid #EDE8DF;}
+    .ws-card-thumb-placeholder{width:100%;height:160px;background:linear-gradient(135deg,#F4F1FF 0%,#EDE8DF 100%);display:flex;align-items:center;justify-content:center;font-size:32px;}
+    .ws-card-body{padding:16px 18px 18px;}
     .ws-card-badge{display:inline-block;color:white;padding:3px 10px;border-radius:100px;font-size:11px;font-weight:700;margin-bottom:10px;letter-spacing:0.3px;}
-    .ws-card h3{font-size:14px;margin-bottom:6px;line-height:1.5;font-weight:700;}
-    .ws-card p{font-size:12px;color:#636E72;margin-bottom:12px;}
+    .ws-card h3{font-size:14px;margin-bottom:5px;line-height:1.5;font-weight:700;color:#1A1420;}
+    .ws-card p{font-size:12px;color:#A89FAE;margin-bottom:12px;line-height:1.5;}
     .ws-card-btn{font-size:12px;font-weight:700;color:#6C5CE7;}
-    /* HUB */
-    .hub-grid{max-width:1100px;margin:0 auto;padding:0 20px 60px;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;}
-    .hub-card{background:white;border-radius:20px;padding:32px 20px;text-decoration:none;color:#1A1A2E;text-align:center;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 2px 12px rgba(108,92,231,0.07);}
-    .hub-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(108,92,231,0.13);}
+    /* ── HUB ── */
+    .hub-grid{max-width:1100px;margin:0 auto;padding:0 20px 64px;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;}
+    .hub-card{background:white;border-radius:24px;padding:36px 20px;text-decoration:none;color:#1A1420;text-align:center;transition:transform 0.25s cubic-bezier(0.34,1.56,0.64,1),box-shadow 0.25s;box-shadow:0 2px 8px rgba(0,0,0,0.04),0 8px 24px rgba(0,0,0,0.06);border:1px solid #EDE8DF;}
+    .hub-card:hover{transform:translateY(-5px);box-shadow:0 8px 32px rgba(108,92,231,0.14),0 2px 8px rgba(0,0,0,0.04);}
     .hub-card .hub-icon{font-size:40px;margin-bottom:14px;display:block;}
-    .hub-card h3{font-size:17px;margin-bottom:4px;font-weight:700;}
-    .hub-card p{font-size:13px;color:#636E72;}
-    /* PREVIEW */
-    .preview-section{background:white;border-radius:20px;padding:32px;margin-bottom:24px;box-shadow:0 2px 12px rgba(108,92,231,0.07);}
-    .preview-section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;flex-wrap:wrap;gap:12px;}
-    .preview-section-title{font-size:16px;color:#1A1A2E;font-weight:800;letter-spacing:-0.3px;}
-    .preview-badge{background:#F0EDFF;color:#6C5CE7;font-size:11px;font-weight:700;padding:4px 12px;border-radius:100px;letter-spacing:0.5px;}
-    .preview-label{font-size:11px;font-weight:700;color:#636E72;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;}
-    .preview-teacher-badge{background:#FFF5F5;color:#D63031;font-size:10px;font-weight:700;padding:3px 10px;border-radius:100px;letter-spacing:0.5px;display:inline-block;margin-bottom:10px;}
-    .preview-img-wrap{position:relative;overflow:hidden;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.12),2px 2px 0 rgba(0,0,0,0.04);transition:transform 0.3s,box-shadow 0.3s;cursor:pointer;}
-    .preview-img-wrap:hover{transform:rotate(-0.5deg) scale(1.01);box-shadow:0 16px 48px rgba(0,0,0,0.18),2px 2px 0 rgba(0,0,0,0.04);}
-    .preview-img{width:100%;display:block;border-radius:12px;}
-    .preview-pin-btn{position:absolute;top:12px;right:12px;background:#E60023;color:white;border:none;border-radius:8px;padding:7px 12px;font-size:12px;font-weight:700;cursor:pointer;text-decoration:none;opacity:0;transition:opacity 0.2s;display:flex;align-items:center;gap:5px;}
-    .preview-img-wrap:hover .preview-pin-btn{opacity:1;}
-    .preview-note{font-size:12px;color:#B2BEC3;text-align:center;margin-top:20px;}
-    /* FOOTER */
-    .site-footer{padding:48px 20px 24px;background:#1A1A2E;border-top:3px solid #6C5CE7;margin-top:60px;}
-    .footer-grid{display:flex;gap:48px;justify-content:center;flex-wrap:wrap;margin-bottom:32px;max-width:1100px;margin-left:auto;margin-right:auto;}
+    .hub-card h3{font-size:17px;margin-bottom:6px;font-weight:700;}
+    .hub-card p{font-size:13px;color:#6B6475;line-height:1.6;}
+    /* ── FOOTER ── */
+    .site-footer{padding:52px 20px 28px;background:#1C1526;border-top:3px solid #6C5CE7;margin-top:64px;}
+    .footer-inner{max-width:1100px;margin:0 auto;}
+    .footer-logo{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:36px;}
+    .footer-motto{font-size:12px;color:rgba(255,255,255,0.3);letter-spacing:1.5px;margin-top:2px;}
+    .footer-grid{display:flex;gap:48px;justify-content:center;flex-wrap:wrap;margin-bottom:36px;}
     .footer-col{display:flex;flex-direction:column;gap:10px;min-width:130px;}
-    .footer-heading{font-size:10px;font-weight:800;color:#FFFFFF;text-transform:uppercase;letter-spacing:2px;margin-bottom:6px;}
-    .site-footer a{color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;transition:color 0.2s;}
+    .footer-heading{font-size:10px;font-weight:800;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:2px;margin-bottom:6px;}
+    .site-footer a{color:rgba(255,255,255,0.4);text-decoration:none;font-size:13px;transition:color 0.2s;}
     .site-footer a:hover{color:#6C5CE7;}
-    .footer-bottom{text-align:center;font-size:12px;color:rgba(255,255,255,0.25);border-top:1px solid rgba(255,255,255,0.08);padding-top:20px;max-width:1100px;margin:0 auto;}
-    .footer-logo{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:32px;}
-    .footer-motto{font-size:12px;color:rgba(255,255,255,0.35);letter-spacing:1px;}
+    .footer-bottom{text-align:center;font-size:12px;color:rgba(255,255,255,0.2);border-top:1px solid rgba(255,255,255,0.07);padding-top:24px;}
+    .footer-chars{display:flex;justify-content:center;gap:8px;margin-bottom:28px;opacity:0.6;}
     @media(max-width:768px){
       .site-header nav{display:none;}
       .hub-grid{grid-template-columns:repeat(2,1fr);}
@@ -83,6 +76,7 @@
     }
     @media(max-width:480px){
       .grid{grid-template-columns:1fr;}
+      .hub-grid{grid-template-columns:1fr;}
     }
   </style>
 </head>
@@ -90,7 +84,7 @@
   
   <header class="site-header">
     <a href="https://examel.com" class="site-logo">
-      <svg width="28" height="28" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+      <svg width="30" height="30" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
         <rect width="72" height="72" rx="16" fill="#6C5CE7"/>
         <rect x="15" y="15" width="9" height="42" rx="2.5" fill="white"/>
         <rect x="15" y="15" width="15" height="9" rx="2.5" fill="white"/>
@@ -115,7 +109,7 @@
   </div>
   <div class="hero">
     <h1>Free <span>Science Worksheets</span> for Kids</h1>
-    <p>113+ free printable Science worksheets for Grades 1-6. Solar system, ecosystems, plants, animals and more. Fun themes, answer keys included.</p>
+    <p>116+ free printable Science worksheets for Grades 1-6. Solar system, ecosystems, plants, animals and more. Fun themes, answer keys included.</p>
   </div>
   <div class="hub-grid">
     <a href="/free-science-worksheets/grade-1/" class="hub-card" style="border-top:3px solid #FF6B6B">
@@ -129,11 +123,11 @@
       </a><a href="/free-science-worksheets/grade-3/" class="hub-card" style="border-top:3px solid #6C5CE7">
         <span class="hub-icon">📄</span>
         <h3>Grade 3</h3>
-        <p>16 worksheets</p>
+        <p>17 worksheets</p>
       </a><a href="/free-science-worksheets/grade-4/" class="hub-card" style="border-top:3px solid #6C5CE7">
         <span class="hub-icon">📄</span>
         <h3>Grade 4</h3>
-        <p>20 worksheets</p>
+        <p>21 worksheets</p>
       </a><a href="/free-science-worksheets/grade-5/" class="hub-card" style="border-top:3px solid #0984E3">
         <span class="hub-icon">📄</span>
         <h3>Grade 5</h3>
@@ -141,142 +135,168 @@
       </a><a href="/free-science-worksheets/grade-6/" class="hub-card" style="border-top:3px solid #0984E3">
         <span class="hub-icon">📄</span>
         <h3>Grade 6</h3>
-        <p>29 worksheets</p>
+        <p>30 worksheets</p>
       </a>
   </div>
   <h2 style="text-align:center;max-width:1100px;margin:0 auto 20px;padding:0 20px;font-size:22px;">Latest Science Worksheets</h2>
   <div class="grid">
     
-    <a href="/reading-passages/grade-1/reading-passage-science-grade1-living-nonliving-nature-standard/" class="ws-card" style="border-top:3px solid #FF6B6B;padding-top:0">
-      <img src="https://examel.com/thumbnails/reading-passage-science-grade1-living-nonliving-nature-standard.png" alt="Living and Nonliving Things in Nature" style="width:100%;height:140px;object-fit:cover;border-radius:8px 8px 0 0;margin:-20px -20px 12px -20px;width:calc(100% + 40px);">
-      <div class="ws-card-badge" style="background:#FF6B6B">Science · Grade 1</div>
-      <h3>Living and Nonliving Things in Nature</h3>
-      <p>Living Nonliving · Nature theme</p>
-      <span class="ws-card-btn" style="color:#FF6B6B">Download Free →</span>
+    <a href="/word-searches/science/grade-3/word-search-science-grade3-magnets-winter-wonderland-standard/" class="ws-card">
+      <div class="ws-card-thumb-placeholder" style="border-top:4px solid #059669">🔬</div>
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#059669">Science · Grade 3</div>
+        <h3>Magnetic Forces in the Frozen Wonderland</h3>
+        <p>Magnets · Winter Wonderland theme</p>
+        <span class="ws-card-btn">Download Free →</span>
+      </div>
     </a>
-    <a href="/word-searches/science/grade-4/word-search-science-grade4-waves-mythology-beginner/" class="ws-card" style="border-top:3px solid #6C5CE7;padding-top:0">
-      <img src="https://examel.com/thumbnails/word-search-science-grade4-waves-mythology-beginner.png" alt="Poseidon's Wave Adventure in Mythology" style="width:100%;height:140px;object-fit:cover;border-radius:8px 8px 0 0;margin:-20px -20px 12px -20px;width:calc(100% + 40px);">
-      <div class="ws-card-badge" style="background:#6C5CE7">Science · Grade 4</div>
-      <h3>Poseidon's Wave Adventure in Mythology</h3>
-      <p>Waves · Mythology theme</p>
-      <span class="ws-card-btn" style="color:#6C5CE7">Download Free →</span>
+    <a href="/reading-passages/grade-6/reading-passage-science-grade6-weather-climate-space-explorers-beginner/" class="ws-card">
+      <div class="ws-card-thumb-placeholder" style="border-top:4px solid #059669">🔬</div>
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#059669">Science · Grade 6</div>
+        <h3>Astronauts Study Earth's Weather From Space</h3>
+        <p>Weather Climate · Space Explorers theme</p>
+        <span class="ws-card-btn">Download Free →</span>
+      </div>
     </a>
-    <a href="/word-searches/science/grade-4/word-search-science-grade4-electricity-young-scientists-challenge/" class="ws-card" style="border-top:3px solid #6C5CE7;padding-top:0">
-      <img src="https://examel.com/thumbnails/word-search-science-grade4-electricity-young-scientists-challenge.png" alt="Young Scientists Explore Electricity Energy" style="width:100%;height:140px;object-fit:cover;border-radius:8px 8px 0 0;margin:-20px -20px 12px -20px;width:calc(100% + 40px);">
-      <div class="ws-card-badge" style="background:#6C5CE7">Science · Grade 4</div>
-      <h3>Young Scientists Explore Electricity Energy</h3>
-      <p>Electricity · Young Scientists theme</p>
-      <span class="ws-card-btn" style="color:#6C5CE7">Download Free →</span>
+    <a href="/word-searches/science/grade-4/word-search-science-grade4-electricity-music-standard/" class="ws-card">
+      <div class="ws-card-thumb-placeholder" style="border-top:4px solid #059669">🔬</div>
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#059669">Science · Grade 4</div>
+        <h3>Electric Music: Power Up the Sound</h3>
+        <p>Electricity · Music theme</p>
+        <span class="ws-card-btn">Download Free →</span>
+      </div>
     </a>
-    <a href="/word-searches/science/grade-3/word-search-science-grade3-fossils-new-year-standard/" class="ws-card" style="border-top:3px solid #6C5CE7;padding-top:0">
-      <img src="https://examel.com/thumbnails/word-search-science-grade3-fossils-new-year-standard.png" alt="Start the Year Discovering Ancient Fossils" style="width:100%;height:140px;object-fit:cover;border-radius:8px 8px 0 0;margin:-20px -20px 12px -20px;width:calc(100% + 40px);">
-      <div class="ws-card-badge" style="background:#6C5CE7">Science · Grade 3</div>
-      <h3>Start the Year Discovering Ancient Fossils</h3>
-      <p>Fossils · New Year theme</p>
-      <span class="ws-card-btn" style="color:#6C5CE7">Download Free →</span>
+    <a href="/reading-passages/grade-1/reading-passage-science-grade1-living-nonliving-nature-standard/" class="ws-card">
+      <img src="https://examel.com/thumbnails/previews/reading-passage-science-grade1-living-nonliving-nature-standard-p1.png" alt="Living and Nonliving Things in Nature" class="ws-card-thumb" loading="lazy">
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#059669">Science · Grade 1</div>
+        <h3>Living and Nonliving Things in Nature</h3>
+        <p>Living Nonliving · Nature theme</p>
+        <span class="ws-card-btn">Download Free →</span>
+      </div>
     </a>
-    <a href="/worksheets/grade-6-science-weather-climate-underwater-explorers-standard/" class="ws-card" style="border-top:3px solid #0984E3;padding-top:0">
-      <img src="https://examel.com/thumbnails/grade-6-science-weather-climate-underwater-explorers-standard.png" alt="Underwater Explorers: Weather and Climate Patterns" style="width:100%;height:140px;object-fit:cover;border-radius:8px 8px 0 0;margin:-20px -20px 12px -20px;width:calc(100% + 40px);">
-      <div class="ws-card-badge" style="background:#0984E3">Science · Grade 6</div>
-      <h3>Underwater Explorers: Weather and Climate Patterns</h3>
-      <p>Weather Climate · Underwater Explorers theme</p>
-      <span class="ws-card-btn" style="color:#0984E3">Download Free →</span>
+    <a href="/word-searches/science/grade-4/word-search-science-grade4-waves-mythology-beginner/" class="ws-card">
+      <img src="https://examel.com/thumbnails/previews/word-search-science-grade4-waves-mythology-beginner-p1.png" alt="Poseidon's Wave Adventure in Mythology" class="ws-card-thumb" loading="lazy">
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#059669">Science · Grade 4</div>
+        <h3>Poseidon's Wave Adventure in Mythology</h3>
+        <p>Waves · Mythology theme</p>
+        <span class="ws-card-btn">Download Free →</span>
+      </div>
     </a>
-    <a href="/reading-passages/grade-6/reading-passage-science-grade6-heredity-mythology-beginner/" class="ws-card" style="border-top:3px solid #0984E3;padding-top:0">
-      <img src="https://examel.com/thumbnails/reading-passage-science-grade6-heredity-mythology-beginner.png" alt="Greek Heroes and Family Traits Through Generations" style="width:100%;height:140px;object-fit:cover;border-radius:8px 8px 0 0;margin:-20px -20px 12px -20px;width:calc(100% + 40px);">
-      <div class="ws-card-badge" style="background:#0984E3">Science · Grade 6</div>
-      <h3>Greek Heroes and Family Traits Through Generations</h3>
-      <p>Heredity · Mythology theme</p>
-      <span class="ws-card-btn" style="color:#0984E3">Download Free →</span>
+    <a href="/word-searches/science/grade-4/word-search-science-grade4-electricity-young-scientists-challenge/" class="ws-card">
+      <img src="https://examel.com/thumbnails/previews/word-search-science-grade4-electricity-young-scientists-challenge-p1.png" alt="Young Scientists Explore Electricity Energy" class="ws-card-thumb" loading="lazy">
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#059669">Science · Grade 4</div>
+        <h3>Young Scientists Explore Electricity Energy</h3>
+        <p>Electricity · Young Scientists theme</p>
+        <span class="ws-card-btn">Download Free →</span>
+      </div>
     </a>
-    <a href="/reading-passages/grade-3/reading-passage-science-grade3-magnets-dinosaurs-beginner/" class="ws-card" style="border-top:3px solid #6C5CE7;padding-top:0">
-      <img src="https://examel.com/thumbnails/reading-passage-science-grade3-magnets-dinosaurs-beginner.png" alt="Dinosaurs and the Power of Magnets" style="width:100%;height:140px;object-fit:cover;border-radius:8px 8px 0 0;margin:-20px -20px 12px -20px;width:calc(100% + 40px);">
-      <div class="ws-card-badge" style="background:#6C5CE7">Science · Grade 3</div>
-      <h3>Dinosaurs and the Power of Magnets</h3>
-      <p>Magnets · Dinosaurs theme</p>
-      <span class="ws-card-btn" style="color:#6C5CE7">Download Free →</span>
+    <a href="/word-searches/science/grade-3/word-search-science-grade3-fossils-new-year-standard/" class="ws-card">
+      <img src="https://examel.com/thumbnails/previews/word-search-science-grade3-fossils-new-year-standard-p1.png" alt="Start the Year Discovering Ancient Fossils" class="ws-card-thumb" loading="lazy">
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#059669">Science · Grade 3</div>
+        <h3>Start the Year Discovering Ancient Fossils</h3>
+        <p>Fossils · New Year theme</p>
+        <span class="ws-card-btn">Download Free →</span>
+      </div>
     </a>
-    <a href="/worksheets/grade-5-science-gravity-ocean-animals-standard/" class="ws-card" style="border-top:3px solid #0984E3;padding-top:0">
-      <img src="https://examel.com/thumbnails/grade-5-science-gravity-ocean-animals-standard.png" alt="Gravity and Ocean Animals" style="width:100%;height:140px;object-fit:cover;border-radius:8px 8px 0 0;margin:-20px -20px 12px -20px;width:calc(100% + 40px);">
-      <div class="ws-card-badge" style="background:#0984E3">Science · Grade 5</div>
-      <h3>Gravity and Ocean Animals</h3>
-      <p>Gravity · Ocean Animals theme</p>
-      <span class="ws-card-btn" style="color:#0984E3">Download Free →</span>
+    <a href="/worksheets/grade-6-science-weather-climate-underwater-explorers-standard/" class="ws-card">
+      <img src="https://examel.com/thumbnails/previews/grade-6-science-weather-climate-underwater-explorers-standard-p1.png" alt="Underwater Explorers: Weather and Climate Patterns" class="ws-card-thumb" loading="lazy">
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#059669">Science · Grade 6</div>
+        <h3>Underwater Explorers: Weather and Climate Patterns</h3>
+        <p>Weather Climate · Underwater Explorers theme</p>
+        <span class="ws-card-btn">Download Free →</span>
+      </div>
     </a>
-    <a href="/reading-passages/grade-4/reading-passage-science-grade4-natural-disasters-earth-day-standard/" class="ws-card" style="border-top:3px solid #6C5CE7;padding-top:0">
-      <img src="https://examel.com/thumbnails/reading-passage-science-grade4-natural-disasters-earth-day-standard.png" alt="Natural Disasters and Protecting Our Earth" style="width:100%;height:140px;object-fit:cover;border-radius:8px 8px 0 0;margin:-20px -20px 12px -20px;width:calc(100% + 40px);">
-      <div class="ws-card-badge" style="background:#6C5CE7">Science · Grade 4</div>
-      <h3>Natural Disasters and Protecting Our Earth</h3>
-      <p>Natural Disasters · Earth Day theme</p>
-      <span class="ws-card-btn" style="color:#6C5CE7">Download Free →</span>
+    <a href="/reading-passages/grade-6/reading-passage-science-grade6-heredity-mythology-beginner/" class="ws-card">
+      <img src="https://examel.com/thumbnails/previews/reading-passage-science-grade6-heredity-mythology-beginner-p1.png" alt="Greek Heroes and Family Traits Through Generations" class="ws-card-thumb" loading="lazy">
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#059669">Science · Grade 6</div>
+        <h3>Greek Heroes and Family Traits Through Generations</h3>
+        <p>Heredity · Mythology theme</p>
+        <span class="ws-card-btn">Download Free →</span>
+      </div>
     </a>
-    <a href="/worksheets/grade-6-science-cells-time-travelers-standard/" class="ws-card" style="border-top:3px solid #0984E3;padding-top:0">
-      <img src="https://examel.com/thumbnails/grade-6-science-cells-time-travelers-standard.png" alt="Time-Travelers Explore the Microscopic Cell World" style="width:100%;height:140px;object-fit:cover;border-radius:8px 8px 0 0;margin:-20px -20px 12px -20px;width:calc(100% + 40px);">
-      <div class="ws-card-badge" style="background:#0984E3">Science · Grade 6</div>
-      <h3>Time-Travelers Explore the Microscopic Cell World</h3>
-      <p>Cells · Time Travelers theme</p>
-      <span class="ws-card-btn" style="color:#0984E3">Download Free →</span>
+    <a href="/reading-passages/grade-3/reading-passage-science-grade3-magnets-dinosaurs-beginner/" class="ws-card">
+      <img src="https://examel.com/thumbnails/previews/reading-passage-science-grade3-magnets-dinosaurs-beginner-p1.png" alt="Dinosaurs and the Power of Magnets" class="ws-card-thumb" loading="lazy">
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#059669">Science · Grade 3</div>
+        <h3>Dinosaurs and the Power of Magnets</h3>
+        <p>Magnets · Dinosaurs theme</p>
+        <span class="ws-card-btn">Download Free →</span>
+      </div>
     </a>
-    <a href="/word-searches/science/grade-3/word-search-science-grade3-forces-motion-art-studio-standard/" class="ws-card" style="border-top:3px solid #6C5CE7;padding-top:0">
-      <img src="https://examel.com/thumbnails/word-search-science-grade3-forces-motion-art-studio-standard.png" alt="Forces and Motion in the Art Studio" style="width:100%;height:140px;object-fit:cover;border-radius:8px 8px 0 0;margin:-20px -20px 12px -20px;width:calc(100% + 40px);">
-      <div class="ws-card-badge" style="background:#6C5CE7">Science · Grade 3</div>
-      <h3>Forces and Motion in the Art Studio</h3>
-      <p>Forces Motion · Art Studio theme</p>
-      <span class="ws-card-btn" style="color:#6C5CE7">Download Free →</span>
+    <a href="/worksheets/grade-5-science-gravity-ocean-animals-standard/" class="ws-card">
+      <div class="ws-card-thumb-placeholder" style="border-top:4px solid #059669">🔬</div>
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#059669">Science · Grade 5</div>
+        <h3>Gravity and Ocean Animals</h3>
+        <p>Gravity · Ocean Animals theme</p>
+        <span class="ws-card-btn">Download Free →</span>
+      </div>
     </a>
-    <a href="/worksheets/grade-6-science-earth-history-fairy-tales-standard/" class="ws-card" style="border-top:3px solid #0984E3;padding-top:0">
-      <img src="https://examel.com/thumbnails/grade-6-science-earth-history-fairy-tales-standard.png" alt="Earth's History Through Fairy-Tales" style="width:100%;height:140px;object-fit:cover;border-radius:8px 8px 0 0;margin:-20px -20px 12px -20px;width:calc(100% + 40px);">
-      <div class="ws-card-badge" style="background:#0984E3">Science · Grade 6</div>
-      <h3>Earth's History Through Fairy-Tales</h3>
-      <p>Earth History · Fairy Tales theme</p>
-      <span class="ws-card-btn" style="color:#0984E3">Download Free →</span>
+    <a href="/reading-passages/grade-4/reading-passage-science-grade4-natural-disasters-earth-day-standard/" class="ws-card">
+      <img src="https://examel.com/thumbnails/previews/reading-passage-science-grade4-natural-disasters-earth-day-standard-p1.png" alt="Natural Disasters and Protecting Our Earth" class="ws-card-thumb" loading="lazy">
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#059669">Science · Grade 4</div>
+        <h3>Natural Disasters and Protecting Our Earth</h3>
+        <p>Natural Disasters · Earth Day theme</p>
+        <span class="ws-card-btn">Download Free →</span>
+      </div>
     </a>
   </div>
   
   <footer class="site-footer">
-    <div class="footer-logo">
-      <svg width="32" height="32" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
-        <rect width="72" height="72" rx="16" fill="#6C5CE7"/>
-        <rect x="15" y="15" width="9" height="42" rx="2.5" fill="white"/>
-        <rect x="15" y="15" width="15" height="9" rx="2.5" fill="white"/>
-        <rect x="15" y="31.5" width="24" height="9" rx="2.5" fill="white"/>
-        <rect x="15" y="48" width="33" height="9" rx="2.5" fill="white"/>
-      </svg>
-      <div>
-        <div style="font-size:18px;font-weight:800;letter-spacing:-0.5px;color:white;">examel<span style="color:#6C5CE7;">·</span></div>
-        <div class="footer-motto">Know more. Score more.</div>
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <svg width="34" height="34" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+          <rect width="72" height="72" rx="16" fill="#6C5CE7"/>
+          <rect x="15" y="15" width="9" height="42" rx="2.5" fill="white"/>
+          <rect x="15" y="15" width="15" height="9" rx="2.5" fill="white"/>
+          <rect x="15" y="31.5" width="24" height="9" rx="2.5" fill="white"/>
+          <rect x="15" y="48" width="33" height="9" rx="2.5" fill="white"/>
+        </svg>
+        <div>
+          <div style="font-size:20px;font-weight:800;letter-spacing:-1px;color:white;">examel<span style="color:#6C5CE7;">·</span></div>
+          <div class="footer-motto">Know more. Score more.</div>
+        </div>
       </div>
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-heading">Worksheets</div>
+          <a href="/free-math-worksheets/">Math</a>
+          <a href="/free-english-worksheets/">English</a>
+          <a href="/free-science-worksheets/">Science</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-heading">Practice</div>
+          <a href="/free-math-drills/">Math Drills</a>
+          <a href="/word-searches/">Word Searches</a>
+          <a href="/free-math-vocabulary/">Vocabulary</a>
+          <a href="/free-reading-passages/">Reading</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-heading">By Grade</div>
+          <a href="/free-worksheets/grade-1/">Grade 1</a>
+          <a href="/free-worksheets/grade-2/">Grade 2</a>
+          <a href="/free-worksheets/grade-3/">Grade 3</a>
+          <a href="/free-worksheets/grade-4/">Grade 4</a>
+          <a href="/free-worksheets/grade-5/">Grade 5</a>
+          <a href="/free-worksheets/grade-6/">Grade 6</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-heading">Examel</div>
+          <a href="https://examel.com">Home</a>
+          <a href="https://examel.com/privacy-policy/">Privacy Policy</a>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2026 Examel · Free K-8 Printable Worksheets · Every exam. Every grade.</div>
     </div>
-    <div class="footer-grid">
-      <div class="footer-col">
-        <div class="footer-heading">Worksheets</div>
-        <a href="/free-math-worksheets/">Math</a>
-        <a href="/free-english-worksheets/">English</a>
-        <a href="/free-science-worksheets/">Science</a>
-      </div>
-      <div class="footer-col">
-        <div class="footer-heading">Practice</div>
-        <a href="/free-math-drills/">Math Drills</a>
-        <a href="/word-searches/">Word Searches</a>
-        <a href="/free-math-vocabulary/">Vocabulary</a>
-        <a href="/free-reading-passages/">Reading Passages</a>
-      </div>
-      <div class="footer-col">
-        <div class="footer-heading">By Grade</div>
-        <a href="/free-worksheets/grade-1/">Grade 1</a>
-        <a href="/free-worksheets/grade-2/">Grade 2</a>
-        <a href="/free-worksheets/grade-3/">Grade 3</a>
-        <a href="/free-worksheets/grade-4/">Grade 4</a>
-        <a href="/free-worksheets/grade-5/">Grade 5</a>
-        <a href="/free-worksheets/grade-6/">Grade 6</a>
-      </div>
-      <div class="footer-col">
-        <div class="footer-heading">Examel</div>
-        <a href="https://examel.com">Home</a>
-        <a href="https://examel.com/privacy-policy/">Privacy Policy</a>
-      </div>
-    </div>
-    <div class="footer-bottom">© 2026 Examel · Free K-8 Printable Worksheets · Every exam. Every grade.</div>
   </footer>
 </body>
 </html>
