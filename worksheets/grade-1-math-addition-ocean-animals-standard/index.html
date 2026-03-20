@@ -14,83 +14,168 @@
   <meta property="og:url" content="https://examel.com/worksheets/grade-1-math-addition-ocean-animals-standard/">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"EducationalResource","name":"Ocean Animals Addition Practice Worksheet Grade One","description":"Free printable Grade 1 math worksheet about Addition — 8 questions with answer key","educationalLevel":"Grade 1","subject":"Math","teaches":"Addition","keywords":"Grade 1 Math worksheet, Addition worksheet, free printable Math worksheet","url":"https://examel.com/worksheets/grade-1-math-addition-ocean-animals-standard/","thumbnailUrl":"https://examel.com/thumbnails/pinterest-thumbs/grade-1-math-addition-ocean-animals-standard.png","provider":{"@type":"Organization","name":"Examel","url":"https://examel.com"},"isAccessibleForFree":true}</script>
   
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
     *{box-sizing:border-box;margin:0;padding:0;}
-    body{font-family:Arial,sans-serif;color:#2D3436;background:#F8F7FF;}
-    .site-header{background:#6C5CE7;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;}
-    .site-header a{color:white;text-decoration:none;font-weight:bold;font-size:1.1em;}
-    .site-header nav a{margin-left:16px;font-size:13px;opacity:0.9;font-weight:600;}
-    .site-logo{font-size:22px!important;font-weight:900!important;opacity:1!important;letter-spacing:-0.5px;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Inter',system-ui,sans-serif;color:#1A1A2E;background:#FAFAF7;-webkit-font-smoothing:antialiased;}
+    /* NAV */
+    .site-header{background:#1A1A2E;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:100;box-shadow:0 2px 16px rgba(0,0,0,0.15);}
+    .site-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+    .site-logo-text{font-size:20px;font-weight:800;letter-spacing:-1px;color:white;}
+    .site-logo-text span{color:#6C5CE7;}
+    .site-header nav{display:flex;align-items:center;gap:4px;}
+    .site-header nav a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:13px;font-weight:600;padding:6px 10px;border-radius:6px;transition:all 0.2s;}
+    .site-header nav a:hover{color:white;background:rgba(108,92,231,0.2);}
+    /* BREADCRUMB */
     .breadcrumb{max-width:1100px;margin:16px auto;padding:0 20px;font-size:13px;color:#636E72;}
     .breadcrumb a{color:#6C5CE7;text-decoration:none;}
-    .breadcrumb span{margin:0 6px;}
-    .hero{padding:50px 20px;text-align:center;}
-    .hero h1{font-size:clamp(24px,4vw,42px);margin-bottom:14px;color:#2D3436;}
+    .breadcrumb a:hover{text-decoration:underline;}
+    .breadcrumb span{margin:0 6px;opacity:0.4;}
+    /* HERO (hub/category pages) */
+    .hero{padding:60px 20px;text-align:center;background:#FAFAF7;}
+    .hero h1{font-size:clamp(26px,4vw,44px);margin-bottom:14px;color:#1A1A2E;font-weight:800;letter-spacing:-1px;line-height:1.15;}
     .hero h1 span{color:#6C5CE7;}
-    .hero p{font-size:17px;color:#636E72;max-width:600px;margin:0 auto;}
+    .hero p{font-size:17px;color:#636E72;max-width:600px;margin:0 auto;line-height:1.7;}
+    /* FILTER */
     .filter-bar{max-width:1100px;margin:0 auto 30px;padding:0 20px;display:flex;gap:10px;flex-wrap:wrap;}
-    .filter-btn{padding:8px 18px;border-radius:100px;text-decoration:none;font-size:14px;font-weight:bold;border:2px solid #DFE6E9;color:#636E72;background:white;transition:all 0.2s;}
+    .filter-btn{padding:8px 18px;border-radius:100px;text-decoration:none;font-size:13px;font-weight:700;border:2px solid #DFE6E9;color:#636E72;background:white;transition:all 0.2s;}
     .filter-btn:hover,.filter-btn.active{background:#6C5CE7;color:white;border-color:#6C5CE7;}
+    /* GRID */
     .grid{max-width:1100px;margin:0 auto;padding:0 20px 60px;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;}
-    .ws-card{background:white;border-radius:12px;padding:20px;text-decoration:none;color:#2D3436;display:block;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 2px 8px rgba(0,0,0,0.06);}
-    .ws-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.1);}
-    .ws-card-badge{display:inline-block;color:white;padding:3px 10px;border-radius:100px;font-size:12px;font-weight:bold;margin-bottom:10px;}
-    .ws-card h3{font-size:15px;margin-bottom:6px;line-height:1.4;}
-    .ws-card p{font-size:13px;color:#636E72;margin-bottom:12px;}
-    .ws-card-btn{font-size:13px;font-weight:bold;}
-    .preview-section{background:white;border-radius:12px;padding:24px;margin-bottom:30px;}
-    .preview-section h3{font-size:16px;color:#2D3436;margin-bottom:16px;font-weight:700;}
-    .preview-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:8px;}
-    .preview-label{font-size:11px;font-weight:700;color:#636E72;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px;}
-    .preview-img{width:100%;border:1px solid #DFE6E9;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:box-shadow 0.2s;display:block;}
-    .preview-img:hover{box-shadow:0 8px 24px rgba(0,0,0,0.15);}
-    .preview-note{font-size:12px;color:#B2BEC3;text-align:center;margin-top:8px;}
-    @media(max-width:600px){.preview-grid{grid-template-columns:1fr;}}
+    /* CARDS */
+    .ws-card{background:white;border-radius:16px;padding:20px;text-decoration:none;color:#1A1A2E;display:block;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 2px 12px rgba(108,92,231,0.07);}
+    .ws-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(108,92,231,0.13);}
+    .ws-card-badge{display:inline-block;color:white;padding:3px 10px;border-radius:100px;font-size:11px;font-weight:700;margin-bottom:10px;letter-spacing:0.3px;}
+    .ws-card h3{font-size:14px;margin-bottom:6px;line-height:1.5;font-weight:700;}
+    .ws-card p{font-size:12px;color:#636E72;margin-bottom:12px;}
+    .ws-card-btn{font-size:12px;font-weight:700;color:#6C5CE7;}
+    /* HUB */
     .hub-grid{max-width:1100px;margin:0 auto;padding:0 20px 60px;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;}
-    .hub-card{background:white;border-radius:16px;padding:28px 20px;text-decoration:none;color:#2D3436;text-align:center;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 2px 8px rgba(0,0,0,0.06);}
-    .hub-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.1);}
-    .hub-card .hub-icon{font-size:40px;margin-bottom:12px;display:block;}
-    .hub-card h3{font-size:17px;margin-bottom:4px;}
+    .hub-card{background:white;border-radius:20px;padding:32px 20px;text-decoration:none;color:#1A1A2E;text-align:center;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 2px 12px rgba(108,92,231,0.07);}
+    .hub-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(108,92,231,0.13);}
+    .hub-card .hub-icon{font-size:40px;margin-bottom:14px;display:block;}
+    .hub-card h3{font-size:17px;margin-bottom:4px;font-weight:700;}
     .hub-card p{font-size:13px;color:#636E72;}
-    .site-footer{padding:40px 20px 20px;background:#2D3436;border-top:4px solid #6C5CE7;}
-    .footer-grid{display:flex;gap:40px;justify-content:center;flex-wrap:wrap;margin-bottom:24px;}
-    .footer-col{display:flex;flex-direction:column;gap:8px;min-width:120px;}
-    .footer-heading{font-size:11px;font-weight:800;color:#FFFFFF;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;}
-    .site-footer a{color:#B2BEC3;text-decoration:none;font-size:13px;transition:color 0.2s;}
+    /* PREVIEW */
+    .preview-section{background:white;border-radius:20px;padding:32px;margin-bottom:24px;box-shadow:0 2px 12px rgba(108,92,231,0.07);}
+    .preview-section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;flex-wrap:wrap;gap:12px;}
+    .preview-section-title{font-size:16px;color:#1A1A2E;font-weight:800;letter-spacing:-0.3px;}
+    .preview-badge{background:#F0EDFF;color:#6C5CE7;font-size:11px;font-weight:700;padding:4px 12px;border-radius:100px;letter-spacing:0.5px;}
+    .preview-label{font-size:11px;font-weight:700;color:#636E72;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;}
+    .preview-teacher-badge{background:#FFF5F5;color:#D63031;font-size:10px;font-weight:700;padding:3px 10px;border-radius:100px;letter-spacing:0.5px;display:inline-block;margin-bottom:10px;}
+    .preview-img-wrap{position:relative;overflow:hidden;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.12),2px 2px 0 rgba(0,0,0,0.04);transition:transform 0.3s,box-shadow 0.3s;cursor:pointer;}
+    .preview-img-wrap:hover{transform:rotate(-0.5deg) scale(1.01);box-shadow:0 16px 48px rgba(0,0,0,0.18),2px 2px 0 rgba(0,0,0,0.04);}
+    .preview-img{width:100%;display:block;border-radius:12px;}
+    .preview-pin-btn{position:absolute;top:12px;right:12px;background:#E60023;color:white;border:none;border-radius:8px;padding:7px 12px;font-size:12px;font-weight:700;cursor:pointer;text-decoration:none;opacity:0;transition:opacity 0.2s;display:flex;align-items:center;gap:5px;}
+    .preview-img-wrap:hover .preview-pin-btn{opacity:1;}
+    .preview-note{font-size:12px;color:#B2BEC3;text-align:center;margin-top:20px;}
+    /* FOOTER */
+    .site-footer{padding:48px 20px 24px;background:#1A1A2E;border-top:3px solid #6C5CE7;margin-top:60px;}
+    .footer-grid{display:flex;gap:48px;justify-content:center;flex-wrap:wrap;margin-bottom:32px;max-width:1100px;margin-left:auto;margin-right:auto;}
+    .footer-col{display:flex;flex-direction:column;gap:10px;min-width:130px;}
+    .footer-heading{font-size:10px;font-weight:800;color:#FFFFFF;text-transform:uppercase;letter-spacing:2px;margin-bottom:6px;}
+    .site-footer a{color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;transition:color 0.2s;}
     .site-footer a:hover{color:#6C5CE7;}
-    .footer-bottom{text-align:center;font-size:12px;color:#636E72;border-top:1px solid #444;padding-top:16px;}
-    @media(max-width:600px){.hub-grid{grid-template-columns:repeat(2,1fr);}}
+    .footer-bottom{text-align:center;font-size:12px;color:rgba(255,255,255,0.25);border-top:1px solid rgba(255,255,255,0.08);padding-top:20px;max-width:1100px;margin:0 auto;}
+    .footer-logo{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:32px;}
+    .footer-motto{font-size:12px;color:rgba(255,255,255,0.35);letter-spacing:1px;}
+    @media(max-width:768px){
+      .site-header nav{display:none;}
+      .hub-grid{grid-template-columns:repeat(2,1fr);}
+      .grid{grid-template-columns:repeat(2,1fr);}
+    }
+    @media(max-width:480px){
+      .grid{grid-template-columns:1fr;}
+    }
   </style>
   <style>
-    .ws-hero{background:#FF6B6B;color:white;padding:40px 20px;text-align:center;}
-    .ws-hero h1{font-size:clamp(20px,3vw,32px);margin-bottom:10px;line-height:1.3;}
-    .ws-hero p{font-size:15px;opacity:0.9;}
-    .badges{display:flex;justify-content:center;gap:10px;margin-top:15px;flex-wrap:wrap;}
-    .badge{background:rgba(255,255,255,0.2);border-radius:20px;padding:4px 14px;font-size:13px;font-weight:bold;}
-    .ws-container{max-width:800px;margin:0 auto;padding:40px 20px;}
-    .info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:30px;}
-    .info-card{background:white;border-radius:12px;padding:20px;text-align:center;}
-    .info-card .label{font-size:11px;color:#B2BEC3;font-weight:bold;letter-spacing:0.5px;margin-bottom:5px;display:block;}
-    .info-card .value{font-size:1em;font-weight:bold;}
-    .download-box{background:white;border-radius:16px;padding:30px;text-align:center;margin-bottom:30px;border:2px solid #FF6B6B;}
-    .download-box h2{color:#FF6B6B;margin-bottom:10px;font-size:1.3em;}
-    .download-box p{color:#636E72;margin-bottom:20px;line-height:1.6;font-size:15px;}
-    .btn{background:#FF6B6B;color:white;padding:14px 32px;border-radius:8px;text-decoration:none;font-weight:bold;font-size:1em;display:inline-block;}
-    .features{background:white;border-radius:12px;padding:24px;margin-bottom:30px;}
-    .features h3{color:#FF6B6B;margin-bottom:16px;}
-    .feature-item{display:flex;align-items:center;gap:10px;margin-bottom:10px;font-size:14px;color:#636E72;}
-    .check{color:#00B894;font-weight:bold;}
-    .seo-text{background:white;border-radius:12px;padding:24px;margin-bottom:30px;line-height:1.8;font-size:14px;color:#636E72;}
-    .seo-text h3{color:#2D3436;margin-bottom:12px;font-size:16px;}
-    .related h3{font-size:18px;margin-bottom:16px;color:#2D3436;}
+    /* WS PAGE */
+    .ws-hero{background:#1A1A2E;color:white;padding:56px 20px 48px;text-align:center;position:relative;overflow:hidden;border-top:4px solid #FF6B6B;}
+    .ws-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 60% 0%,rgba(108,92,231,0.15) 0%,transparent 70%);pointer-events:none;}
+    .ws-hero h1{font-size:clamp(22px,3.5vw,36px);margin-bottom:12px;line-height:1.25;font-weight:800;letter-spacing:-0.5px;position:relative;}
+    .ws-hero p{font-size:15px;opacity:0.6;position:relative;margin-bottom:20px;}
+    .badges{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;position:relative;}
+    .badge{background:#FF6B6B;border-radius:100px;padding:5px 16px;font-size:12px;font-weight:700;letter-spacing:0.3px;}
+    .ws-container{max-width:800px;margin:0 auto;padding:32px 20px 60px;}
+    /* INFO STRIP */
+    .info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px;}
+    .info-card{background:white;border-radius:16px;padding:18px 16px;text-align:center;box-shadow:0 2px 12px rgba(108,92,231,0.07);}
+    .info-card .label{font-size:10px;color:#B2BEC3;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px;display:block;}
+    .info-card .value{font-size:15px;font-weight:800;color:#1A1A2E;}
+    /* DOWNLOAD BOX */
+    .download-box{background:white;border-radius:20px;padding:32px;margin-bottom:24px;box-shadow:0 2px 12px rgba(108,92,231,0.07);}
+    .download-box-title{font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#B2BEC3;margin-bottom:8px;}
+    .download-box-desc{color:#636E72;margin-bottom:24px;line-height:1.7;font-size:15px;}
+    .btn-primary{background:#6C5CE7;color:white;padding:18px 32px;border-radius:12px;text-decoration:none;font-weight:800;font-size:16px;display:block;text-align:center;transition:all 0.2s;letter-spacing:-0.3px;margin-bottom:16px;}
+    .btn-primary:hover{background:#5a4bd1;transform:translateY(-1px);box-shadow:0 8px 24px rgba(108,92,231,0.35);}
+    .btn-secondary-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:24px;}
+    .btn-secondary{background:#F0EDFF;color:#6C5CE7;padding:12px 8px;border-radius:10px;text-decoration:none;font-weight:700;font-size:13px;text-align:center;transition:all 0.2s;display:block;}
+    .btn-secondary:hover{background:#6C5CE7;color:white;}
+    .share-divider{border:none;border-top:1px solid #F0EDFF;margin:20px 0;}
+    .share-label{font-size:11px;font-weight:700;color:#B2BEC3;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:12px;}
+    .share-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:20px;}
+    .share-btn{padding:10px 8px;border-radius:10px;text-decoration:none;font-weight:700;font-size:12px;text-align:center;transition:all 0.2s;display:block;}
+    .share-btn:hover{transform:translateY(-1px);opacity:0.9;}
+    .share-pinterest{background:#E60023;color:white;}
+    .share-facebook{background:#1877F2;color:white;}
+    .share-twitter{background:#1A1A2E;color:white;}
+    .share-email{background:#F0EDFF;color:#6C5CE7;}
+    .trust-strip{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;padding-top:4px;}
+    .trust-item{font-size:12px;color:#00B894;font-weight:700;display:flex;align-items:center;gap:5px;}
+    /* FEATURES */
+    .features{background:#F0EDFF;border-radius:20px;padding:28px;margin-bottom:24px;}
+    .features-title{font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#6C5CE7;margin-bottom:16px;}
+    .feature-item{display:flex;align-items:flex-start;gap:12px;margin-bottom:12px;font-size:14px;color:#1A1A2E;font-weight:500;}
+    .check{color:#6C5CE7;font-size:16px;font-weight:800;flex-shrink:0;margin-top:1px;}
+    .ccss-badge{display:inline-block;background:#1A1A2E;color:white;font-size:11px;font-weight:700;padding:4px 12px;border-radius:6px;letter-spacing:0.5px;margin-top:8px;}
+    /* EMAIL CAPTURE */
+    .email-section{background:#1A1A2E;border-radius:20px;padding:32px;margin-bottom:24px;text-align:center;}
+    .email-section h3{color:white;font-size:18px;font-weight:800;margin-bottom:8px;letter-spacing:-0.3px;}
+    .email-section p{color:rgba(255,255,255,0.5);font-size:14px;margin-bottom:20px;}
+    .email-form{display:flex;gap:10px;flex-wrap:wrap;}
+    .email-input{flex:1;min-width:200px;padding:14px 18px;border-radius:10px;border:none;font-size:15px;font-family:inherit;outline:none;}
+    .email-submit{background:#6C5CE7;color:white;border:none;padding:14px 24px;border-radius:10px;font-size:14px;font-weight:800;cursor:pointer;font-family:inherit;white-space:nowrap;transition:all 0.2s;}
+    .email-submit:hover{background:#5a4bd1;}
+    .email-note{font-size:12px;color:rgba(255,255,255,0.3);margin-top:12px;}
+    /* SEO */
+    .seo-text{background:white;border-radius:20px;padding:28px;margin-bottom:24px;line-height:1.8;font-size:14px;color:#636E72;box-shadow:0 2px 12px rgba(108,92,231,0.07);}
+    .seo-text h3{color:#1A1A2E;margin-bottom:14px;font-size:17px;font-weight:800;}
+    /* RELATED */
+    .related{margin-bottom:24px;}
+    .related-title{font-size:18px;margin-bottom:16px;color:#1A1A2E;font-weight:800;letter-spacing:-0.3px;}
+    /* NAV LINKS */
     .nav-links{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px;font-size:13px;}
-    .nav-links a{color:#FF6B6B;text-decoration:none;}
+    .nav-links a{color:#6C5CE7;text-decoration:none;font-weight:600;}
+    .nav-links a:hover{text-decoration:underline;}
+    /* STICKY BAR */
+    .sticky-bar{position:fixed;bottom:0;left:0;right:0;background:#1A1A2E;border-top:2px solid #6C5CE7;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;z-index:200;transform:translateY(100%);transition:transform 0.3s ease;box-shadow:0 -4px 24px rgba(0,0,0,0.2);}
+    .sticky-bar.visible{transform:translateY(0);}
+    .sticky-bar-title{color:white;font-size:13px;font-weight:700;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+    .sticky-bar-btn{background:#6C5CE7;color:white;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:800;font-size:13px;white-space:nowrap;flex-shrink:0;}
+    @media(max-width:600px){
+      .btn-secondary-row{grid-template-columns:repeat(3,1fr);}
+      .share-row{grid-template-columns:repeat(2,1fr);}
+      .info-grid{grid-template-columns:repeat(3,1fr);}
+      .sticky-bar-title{display:none;}
+    }
   </style>
 </head>
 <body>
   
   <header class="site-header">
-    <a href="https://examel.com" class="site-logo">Examel</a>
+    <a href="https://examel.com" class="site-logo">
+      <svg width="28" height="28" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+        <rect width="72" height="72" rx="16" fill="#6C5CE7"/>
+        <rect x="15" y="15" width="9" height="42" rx="2.5" fill="white"/>
+        <rect x="15" y="15" width="15" height="9" rx="2.5" fill="white"/>
+        <rect x="15" y="31.5" width="24" height="9" rx="2.5" fill="white"/>
+        <rect x="15" y="48" width="33" height="9" rx="2.5" fill="white"/>
+      </svg>
+      <span class="site-logo-text">examel<span>·</span></span>
+    </a>
     <nav>
       <a href="/free-math-worksheets/">Math</a>
       <a href="/free-english-worksheets/">English</a>
@@ -123,57 +208,91 @@
       <div class="info-card"><span class="label">TOPIC</span><span class="value">Addition</span></div>
     </div>
     <div class="download-box">
-      <h2>Ready to Print</h2>
-      <p>This worksheet includes 8 questions with a Ocean Animals theme plus a full answer key. Perfect for Grade 1 Math. Print in seconds.</p>
-      <a href="https://examel.com/downloads/grade-1-math-addition-ocean-animals-standard.pdf" class="btn" download>⬇ Download Free Worksheet</a>
-      <div style="margin-top:24px;padding-top:24px;border-top:1px solid #f0f0f0;">
-        <p style="font-size:14px;color:#636E72;margin-bottom:12px;">Get new free worksheets every week — no spam, unsubscribe anytime.</p>
-        <div class="klaviyo-form-X45k9d"></div>
-        <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/VruXqp/klaviyo.js?company_id=VruXqp"></script>
+      <div class="download-box-title">Ready to Print</div>
+      <p class="download-box-desc">This worksheet includes 8 questions with a Ocean Animals theme plus a full answer key. Perfect for Grade 1 Math.</p>
+      <a href="https://examel.com/downloads/grade-1-math-addition-ocean-animals-standard.pdf" class="btn-primary" download>⬇ Download Free Worksheet</a>
+      <div class="btn-secondary-row">
+        <a href="https://examel.com/downloads/grade-1-math-addition-ocean-animals-standard.pdf" target="_blank" class="btn-secondary">🖨️ Print</a>
+        <a href="https://examel.com/downloads/grade-1-math-addition-ocean-animals-standard.pdf" target="_blank" class="btn-secondary">👁️ Open PDF</a>
+        <a href="#" onclick="navigator.clipboard.writeText(window.location.href);this.textContent='✓ Copied!';setTimeout(()=>this.textContent='🔗 Copy Link',2000);return false;" class="btn-secondary">🔗 Copy Link</a>
+      </div>
+      <hr class="share-divider">
+      <div class="share-label">Share this worksheet</div>
+      <div class="share-row">
+        <a href="https://pinterest.com/pin/create/button/?url=https://examel.com/worksheets/grade-1-math-addition-ocean-animals-standard/&media=https://examel.com/thumbnails/pinterest-thumbs/grade-1-math-addition-ocean-animals-standard.png&description=Ocean%20Animals%20Addition%20Practice%20Worksheet%20Grade%20One%20%E2%80%94%20Free%20Grade%201%20math%20worksheet.%20Answer%20key%20included.%20Download%20free%20at%20examel.com%20%23freeworksheets%20%23homeschool%20%23teachers" target="_blank" class="share-btn share-pinterest">📌 Pinterest</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://examel.com/worksheets/grade-1-math-addition-ocean-animals-standard/" target="_blank" class="share-btn share-facebook">📘 Facebook</a>
+        <a href="https://twitter.com/intent/tweet?text=Free%20Grade%201%20math%20worksheet%20%E2%80%94%20Ocean%20Animals%20Addition%20Practice%20Worksheet%20Grade%20One%20Download%20free%20at%20examel.com&url=https://examel.com/worksheets/grade-1-math-addition-ocean-animals-standard/" target="_blank" class="share-btn share-twitter">🐦 Twitter</a>
+        <a href="mailto:?subject=Free%20worksheet%3A%20Ocean%20Animals%20Addition%20Practice%20Worksheet%20Grade%20One&body=Check%20out%20this%20free%20worksheet%20from%20Examel%3A%20https%3A%2F%2Fexamel.com%2Fworksheets%2Fgrade-1-math-addition-ocean-animals-standard%2F" class="share-btn share-email">📧 Email</a>
+      </div>
+      <div class="trust-strip">
+        <span class="trust-item">✓ Free forever</span>
+        <span class="trust-item">✓ No login required</span>
+        <span class="trust-item">✓ Instant PDF</span>
       </div>
     </div>
     
     <div class="preview-section">
-      <h3>📄 Worksheet Preview</h3>
-      <div class="preview-grid">
-        <div>
-          <p class="preview-label">Page 1 — Questions</p>
+      <div class="preview-section-header">
+        <span class="preview-section-title">📄 Worksheet Preview</span>
+        <span class="preview-badge">Print Preview</span>
+      </div>
+      <div style="margin-bottom:24px;">
+        <p class="preview-label">Page 1 — Questions</p>
+        <div class="preview-img-wrap">
           <a href="https://examel.com/thumbnails/previews/grade-1-math-addition-ocean-animals-standard-p1.png" target="_blank">
             <img src="https://examel.com/thumbnails/previews/grade-1-math-addition-ocean-animals-standard-p1.png"
               alt="Free Grade 1 Math worksheet — Addition — Ocean Animals theme — Common Core CCSS.MATH.1.OA.C.6"
-              loading="lazy" width="850" height="1100"
+              loading="lazy" width="1700" height="2200"
               class="preview-img">
           </a>
+          <a href="https://pinterest.com/pin/create/button/?url=https://examel.com/worksheets/grade-1-math-addition-ocean-animals-standard/&media=https://examel.com/thumbnails/pinterest-thumbs/grade-1-math-addition-ocean-animals-standard.png&description=Ocean Animals Addition Practice Worksheet Grade One — Free Grade 1 Math worksheet. Download free at examel.com"
+            target="_blank" class="preview-pin-btn">📌 Save to Pinterest</a>
         </div>
-        <div>
-          <p class="preview-label">Page 2 — Answer Key</p>
+      </div>
+      <div>
+        <p class="preview-teacher-badge">Teacher / Parent Use Only</p>
+        <p class="preview-label">Page 2 — Answer Key</p>
+        <div class="preview-img-wrap">
           <a href="https://examel.com/thumbnails/previews/grade-1-math-addition-ocean-animals-standard-p2.png" target="_blank">
             <img src="https://examel.com/thumbnails/previews/grade-1-math-addition-ocean-animals-standard-p2.png"
               alt="Answer key — Grade 1 Math worksheet — Addition — teacher and parent use only"
-              loading="lazy" width="850" height="1100"
+              loading="lazy" width="1700" height="2200"
               class="preview-img">
           </a>
+          <a href="https://pinterest.com/pin/create/button/?url=https://examel.com/worksheets/grade-1-math-addition-ocean-animals-standard/&media=https://examel.com/thumbnails/pinterest-thumbs/grade-1-math-addition-ocean-animals-standard.png&description=Ocean Animals Addition Practice Worksheet Grade One — Free Grade 1 Math worksheet. Download free at examel.com"
+            target="_blank" class="preview-pin-btn">📌 Save to Pinterest</a>
         </div>
       </div>
-      <p class="preview-note">Click any image to view full size · 2 pages · Print-ready PDF</p>
+      <p class="preview-note">Click any image to view full size · 2 pages · US Letter · Instant download</p>
     </div>
     
     <div class="features">
-      <h3>What is included</h3>
+      <div class="features-title">What is included</div>
       <div class="feature-item"><span class="check">✓</span> 8 curriculum-aligned questions</div>
       <div class="feature-item"><span class="check">✓</span> Full answer key for parents and teachers</div>
       <div class="feature-item"><span class="check">✓</span> Ocean Animals theme to keep kids engaged</div>
-      <div class="feature-item"><span class="check">✓</span> Print-ready PDF — Letter size</div>
+      <div class="feature-item"><span class="check">✓</span> Print-ready PDF — US Letter size</div>
       <div class="feature-item"><span class="check">✓</span> Name, date, and score fields included</div>
+      <div style="margin-top:4px;"><span class="ccss-badge">CCSS: CCSS.MATH.1.OA.C.6</span></div>
+    </div>
+    <div class="email-section">
+      <h3>📬 Get Free Worksheets Every Week</h3>
+      <p>New themed worksheets added daily. Join thousands of parents and teachers.</p>
+      <form action="https://app.kit.com/forms/9220999/subscriptions" method="POST" target="kit-iframe-ws" style="display:flex;gap:10px;flex-wrap:wrap;">
+        <input type="email" name="email_address" placeholder="Your email address" required class="email-input">
+        <button type="submit" class="email-submit">Get Free Worksheets →</button>
+      </form>
+      <iframe name="kit-iframe-ws" style="display:none;"></iframe>
+      <p class="email-note">No spam. Unsubscribe anytime.</p>
     </div>
     <div class="seo-text">
       <h3>About this Math worksheet for Grade 1</h3>
-      <p>This free printable Math worksheet is designed for Grade 1 students and covers Addition. The Ocean Animals theme keeps kids engaged while they practice essential Math skills. Every worksheet includes a full answer key on page 2, making it easy for parents and teachers to check work instantly.</p>
-      <p>This worksheet is aligned to Common Core State Standards (CCSS) for Grade 1 Math. It is print-ready at US Letter size and includes fields for the student's name, date, and score.</p>
+      <p>This free printable Math worksheet is designed for Grade 1 students and covers Addition. The Ocean Animals theme keeps kids engaged while they practice essential Math skills. Every worksheet includes a full answer key making it easy for parents and teachers to check work instantly.</p>
+      <p>Aligned to Common Core State Standards (CCSS) for Grade 1 Math. Print-ready at US Letter size with name, date, and score fields included. No login or account required — download and print in seconds.</p>
     </div>
     
     <div class="related">
-      <h3>More Grade 1 Math Worksheets</h3>
+      <h3 class="related-title">More Grade 1 Math Worksheets</h3>
       <div class="grid" style="padding:0;margin:0 0 20px;">
         
     <a href="/worksheets/grade-1-math-addition-sports-standard/" class="ws-card" style="border-top:3px solid #FF6B6B;padding-top:0">
@@ -208,7 +327,7 @@
     </div>
     
     <div class="related">
-      <h3>More Addition Worksheets</h3>
+      <h3 class="related-title">More Addition Worksheets</h3>
       <div class="grid" style="padding:0;margin:0 0 20px;">
         
     <a href="/worksheets/grade-1-math-addition-sports-standard/" class="ws-card" style="border-top:3px solid #FF6B6B;padding-top:0">
@@ -246,11 +365,38 @@
       <a href="/free-math-worksheets/grade-1/">← All Grade 1 Math Worksheets</a>
       <a href="/free-math-worksheets/">← All Math Worksheets</a>
       <a href="/free-worksheets/grade-1/">← All Grade 1 Worksheets</a>
-      <a href="https://examel.com">← Examel Home</a>
     </div>
   </div>
+  <div class="sticky-bar" id="stickyBar">
+    <span class="sticky-bar-title">Ocean Animals Addition Practice Worksheet Grade One</span>
+    <a href="https://examel.com/downloads/grade-1-math-addition-ocean-animals-standard.pdf" class="sticky-bar-btn" download>⬇ Download Free</a>
+  </div>
+  <script>
+    (function(){
+      var bar = document.getElementById('stickyBar');
+      var box = document.querySelector('.download-box');
+      if(!bar||!box) return;
+      var observer = new IntersectionObserver(function(entries){
+        bar.classList.toggle('visible', !entries[0].isIntersecting);
+      },{threshold:0});
+      observer.observe(box);
+    })();
+  </script>
   
   <footer class="site-footer">
+    <div class="footer-logo">
+      <svg width="32" height="32" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+        <rect width="72" height="72" rx="16" fill="#6C5CE7"/>
+        <rect x="15" y="15" width="9" height="42" rx="2.5" fill="white"/>
+        <rect x="15" y="15" width="15" height="9" rx="2.5" fill="white"/>
+        <rect x="15" y="31.5" width="24" height="9" rx="2.5" fill="white"/>
+        <rect x="15" y="48" width="33" height="9" rx="2.5" fill="white"/>
+      </svg>
+      <div>
+        <div style="font-size:18px;font-weight:800;letter-spacing:-0.5px;color:white;">examel<span style="color:#6C5CE7;">·</span></div>
+        <div class="footer-motto">Know more. Score more.</div>
+      </div>
+    </div>
     <div class="footer-grid">
       <div class="footer-col">
         <div class="footer-heading">Worksheets</div>
@@ -280,7 +426,7 @@
         <a href="https://examel.com/privacy-policy/">Privacy Policy</a>
       </div>
     </div>
-    <div class="footer-bottom">© 2026 Examel · Free K-8 Printable Worksheets · examel.com</div>
+    <div class="footer-bottom">© 2026 Examel · Free K-8 Printable Worksheets · Every exam. Every grade.</div>
   </footer>
 </body>
 </html>

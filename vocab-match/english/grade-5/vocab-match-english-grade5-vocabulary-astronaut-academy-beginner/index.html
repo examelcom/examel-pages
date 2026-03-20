@@ -14,52 +14,82 @@
   <meta property="og:url" content="https://examel.com/vocab-match/english/grade-5/vocab-match-english-grade5-vocabulary-astronaut-academy-beginner/">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"EducationalResource","name":"Astronaut Academy Vocabulary Match Adventure","description":"Free printable Grade 5 Vocabulary vocabulary match worksheet — match words to definitions","educationalLevel":"Grade 5","subject":"English","teaches":"Vocabulary","keywords":"Grade 5 English vocabulary match, Vocabulary vocabulary worksheet, free printable vocabulary","url":"https://examel.com/vocab-match/english/grade-5/vocab-match-english-grade5-vocabulary-astronaut-academy-beginner/","thumbnailUrl":"https://examel.com/thumbnails/pinterest-thumbs/vocab-match-english-grade5-vocabulary-astronaut-academy-beginner.png","provider":{"@type":"Organization","name":"Examel","url":"https://examel.com"},"isAccessibleForFree":true}</script>
   
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
     *{box-sizing:border-box;margin:0;padding:0;}
-    body{font-family:Arial,sans-serif;color:#2D3436;background:#F8F7FF;}
-    .site-header{background:#6C5CE7;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;}
-    .site-header a{color:white;text-decoration:none;font-weight:bold;font-size:1.1em;}
-    .site-header nav a{margin-left:16px;font-size:13px;opacity:0.9;font-weight:600;}
-    .site-logo{font-size:22px!important;font-weight:900!important;opacity:1!important;letter-spacing:-0.5px;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Inter',system-ui,sans-serif;color:#1A1A2E;background:#FAFAF7;-webkit-font-smoothing:antialiased;}
+    /* NAV */
+    .site-header{background:#1A1A2E;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:100;box-shadow:0 2px 16px rgba(0,0,0,0.15);}
+    .site-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+    .site-logo-text{font-size:20px;font-weight:800;letter-spacing:-1px;color:white;}
+    .site-logo-text span{color:#6C5CE7;}
+    .site-header nav{display:flex;align-items:center;gap:4px;}
+    .site-header nav a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:13px;font-weight:600;padding:6px 10px;border-radius:6px;transition:all 0.2s;}
+    .site-header nav a:hover{color:white;background:rgba(108,92,231,0.2);}
+    /* BREADCRUMB */
     .breadcrumb{max-width:1100px;margin:16px auto;padding:0 20px;font-size:13px;color:#636E72;}
     .breadcrumb a{color:#6C5CE7;text-decoration:none;}
-    .breadcrumb span{margin:0 6px;}
-    .hero{padding:50px 20px;text-align:center;}
-    .hero h1{font-size:clamp(24px,4vw,42px);margin-bottom:14px;color:#2D3436;}
+    .breadcrumb a:hover{text-decoration:underline;}
+    .breadcrumb span{margin:0 6px;opacity:0.4;}
+    /* HERO (hub/category pages) */
+    .hero{padding:60px 20px;text-align:center;background:#FAFAF7;}
+    .hero h1{font-size:clamp(26px,4vw,44px);margin-bottom:14px;color:#1A1A2E;font-weight:800;letter-spacing:-1px;line-height:1.15;}
     .hero h1 span{color:#6C5CE7;}
-    .hero p{font-size:17px;color:#636E72;max-width:600px;margin:0 auto;}
+    .hero p{font-size:17px;color:#636E72;max-width:600px;margin:0 auto;line-height:1.7;}
+    /* FILTER */
     .filter-bar{max-width:1100px;margin:0 auto 30px;padding:0 20px;display:flex;gap:10px;flex-wrap:wrap;}
-    .filter-btn{padding:8px 18px;border-radius:100px;text-decoration:none;font-size:14px;font-weight:bold;border:2px solid #DFE6E9;color:#636E72;background:white;transition:all 0.2s;}
+    .filter-btn{padding:8px 18px;border-radius:100px;text-decoration:none;font-size:13px;font-weight:700;border:2px solid #DFE6E9;color:#636E72;background:white;transition:all 0.2s;}
     .filter-btn:hover,.filter-btn.active{background:#6C5CE7;color:white;border-color:#6C5CE7;}
+    /* GRID */
     .grid{max-width:1100px;margin:0 auto;padding:0 20px 60px;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;}
-    .ws-card{background:white;border-radius:12px;padding:20px;text-decoration:none;color:#2D3436;display:block;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 2px 8px rgba(0,0,0,0.06);}
-    .ws-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.1);}
-    .ws-card-badge{display:inline-block;color:white;padding:3px 10px;border-radius:100px;font-size:12px;font-weight:bold;margin-bottom:10px;}
-    .ws-card h3{font-size:15px;margin-bottom:6px;line-height:1.4;}
-    .ws-card p{font-size:13px;color:#636E72;margin-bottom:12px;}
-    .ws-card-btn{font-size:13px;font-weight:bold;}
-    .preview-section{background:white;border-radius:12px;padding:24px;margin-bottom:30px;}
-    .preview-section h3{font-size:16px;color:#2D3436;margin-bottom:16px;font-weight:700;}
-    .preview-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:8px;}
-    .preview-label{font-size:11px;font-weight:700;color:#636E72;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px;}
-    .preview-img{width:100%;border:1px solid #DFE6E9;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.08);transition:box-shadow 0.2s;display:block;}
-    .preview-img:hover{box-shadow:0 8px 24px rgba(0,0,0,0.15);}
-    .preview-note{font-size:12px;color:#B2BEC3;text-align:center;margin-top:8px;}
-    @media(max-width:600px){.preview-grid{grid-template-columns:1fr;}}
+    /* CARDS */
+    .ws-card{background:white;border-radius:16px;padding:20px;text-decoration:none;color:#1A1A2E;display:block;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 2px 12px rgba(108,92,231,0.07);}
+    .ws-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(108,92,231,0.13);}
+    .ws-card-badge{display:inline-block;color:white;padding:3px 10px;border-radius:100px;font-size:11px;font-weight:700;margin-bottom:10px;letter-spacing:0.3px;}
+    .ws-card h3{font-size:14px;margin-bottom:6px;line-height:1.5;font-weight:700;}
+    .ws-card p{font-size:12px;color:#636E72;margin-bottom:12px;}
+    .ws-card-btn{font-size:12px;font-weight:700;color:#6C5CE7;}
+    /* HUB */
     .hub-grid{max-width:1100px;margin:0 auto;padding:0 20px 60px;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;}
-    .hub-card{background:white;border-radius:16px;padding:28px 20px;text-decoration:none;color:#2D3436;text-align:center;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 2px 8px rgba(0,0,0,0.06);}
-    .hub-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.1);}
-    .hub-card .hub-icon{font-size:40px;margin-bottom:12px;display:block;}
-    .hub-card h3{font-size:17px;margin-bottom:4px;}
+    .hub-card{background:white;border-radius:20px;padding:32px 20px;text-decoration:none;color:#1A1A2E;text-align:center;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 2px 12px rgba(108,92,231,0.07);}
+    .hub-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(108,92,231,0.13);}
+    .hub-card .hub-icon{font-size:40px;margin-bottom:14px;display:block;}
+    .hub-card h3{font-size:17px;margin-bottom:4px;font-weight:700;}
     .hub-card p{font-size:13px;color:#636E72;}
-    .site-footer{padding:40px 20px 20px;background:#2D3436;border-top:4px solid #6C5CE7;}
-    .footer-grid{display:flex;gap:40px;justify-content:center;flex-wrap:wrap;margin-bottom:24px;}
-    .footer-col{display:flex;flex-direction:column;gap:8px;min-width:120px;}
-    .footer-heading{font-size:11px;font-weight:800;color:#FFFFFF;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;}
-    .site-footer a{color:#B2BEC3;text-decoration:none;font-size:13px;transition:color 0.2s;}
+    /* PREVIEW */
+    .preview-section{background:white;border-radius:20px;padding:32px;margin-bottom:24px;box-shadow:0 2px 12px rgba(108,92,231,0.07);}
+    .preview-section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;flex-wrap:wrap;gap:12px;}
+    .preview-section-title{font-size:16px;color:#1A1A2E;font-weight:800;letter-spacing:-0.3px;}
+    .preview-badge{background:#F0EDFF;color:#6C5CE7;font-size:11px;font-weight:700;padding:4px 12px;border-radius:100px;letter-spacing:0.5px;}
+    .preview-label{font-size:11px;font-weight:700;color:#636E72;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;}
+    .preview-teacher-badge{background:#FFF5F5;color:#D63031;font-size:10px;font-weight:700;padding:3px 10px;border-radius:100px;letter-spacing:0.5px;display:inline-block;margin-bottom:10px;}
+    .preview-img-wrap{position:relative;overflow:hidden;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.12),2px 2px 0 rgba(0,0,0,0.04);transition:transform 0.3s,box-shadow 0.3s;cursor:pointer;}
+    .preview-img-wrap:hover{transform:rotate(-0.5deg) scale(1.01);box-shadow:0 16px 48px rgba(0,0,0,0.18),2px 2px 0 rgba(0,0,0,0.04);}
+    .preview-img{width:100%;display:block;border-radius:12px;}
+    .preview-pin-btn{position:absolute;top:12px;right:12px;background:#E60023;color:white;border:none;border-radius:8px;padding:7px 12px;font-size:12px;font-weight:700;cursor:pointer;text-decoration:none;opacity:0;transition:opacity 0.2s;display:flex;align-items:center;gap:5px;}
+    .preview-img-wrap:hover .preview-pin-btn{opacity:1;}
+    .preview-note{font-size:12px;color:#B2BEC3;text-align:center;margin-top:20px;}
+    /* FOOTER */
+    .site-footer{padding:48px 20px 24px;background:#1A1A2E;border-top:3px solid #6C5CE7;margin-top:60px;}
+    .footer-grid{display:flex;gap:48px;justify-content:center;flex-wrap:wrap;margin-bottom:32px;max-width:1100px;margin-left:auto;margin-right:auto;}
+    .footer-col{display:flex;flex-direction:column;gap:10px;min-width:130px;}
+    .footer-heading{font-size:10px;font-weight:800;color:#FFFFFF;text-transform:uppercase;letter-spacing:2px;margin-bottom:6px;}
+    .site-footer a{color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;transition:color 0.2s;}
     .site-footer a:hover{color:#6C5CE7;}
-    .footer-bottom{text-align:center;font-size:12px;color:#636E72;border-top:1px solid #444;padding-top:16px;}
-    @media(max-width:600px){.hub-grid{grid-template-columns:repeat(2,1fr);}}
+    .footer-bottom{text-align:center;font-size:12px;color:rgba(255,255,255,0.25);border-top:1px solid rgba(255,255,255,0.08);padding-top:20px;max-width:1100px;margin:0 auto;}
+    .footer-logo{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:32px;}
+    .footer-motto{font-size:12px;color:rgba(255,255,255,0.35);letter-spacing:1px;}
+    @media(max-width:768px){
+      .site-header nav{display:none;}
+      .hub-grid{grid-template-columns:repeat(2,1fr);}
+      .grid{grid-template-columns:repeat(2,1fr);}
+    }
+    @media(max-width:480px){
+      .grid{grid-template-columns:1fr;}
+    }
   </style>
   <style>
     .ws-hero{background:#0984E3;color:white;padding:40px 20px;text-align:center;}
@@ -84,7 +114,16 @@
 <body>
   
   <header class="site-header">
-    <a href="https://examel.com" class="site-logo">Examel</a>
+    <a href="https://examel.com" class="site-logo">
+      <svg width="28" height="28" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+        <rect width="72" height="72" rx="16" fill="#6C5CE7"/>
+        <rect x="15" y="15" width="9" height="42" rx="2.5" fill="white"/>
+        <rect x="15" y="15" width="15" height="9" rx="2.5" fill="white"/>
+        <rect x="15" y="31.5" width="24" height="9" rx="2.5" fill="white"/>
+        <rect x="15" y="48" width="33" height="9" rx="2.5" fill="white"/>
+      </svg>
+      <span class="site-logo-text">examel<span>·</span></span>
+    </a>
     <nav>
       <a href="/free-math-worksheets/">Math</a>
       <a href="/free-english-worksheets/">English</a>
@@ -171,6 +210,19 @@
   </div>
   
   <footer class="site-footer">
+    <div class="footer-logo">
+      <svg width="32" height="32" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+        <rect width="72" height="72" rx="16" fill="#6C5CE7"/>
+        <rect x="15" y="15" width="9" height="42" rx="2.5" fill="white"/>
+        <rect x="15" y="15" width="15" height="9" rx="2.5" fill="white"/>
+        <rect x="15" y="31.5" width="24" height="9" rx="2.5" fill="white"/>
+        <rect x="15" y="48" width="33" height="9" rx="2.5" fill="white"/>
+      </svg>
+      <div>
+        <div style="font-size:18px;font-weight:800;letter-spacing:-0.5px;color:white;">examel<span style="color:#6C5CE7;">·</span></div>
+        <div class="footer-motto">Know more. Score more.</div>
+      </div>
+    </div>
     <div class="footer-grid">
       <div class="footer-col">
         <div class="footer-heading">Worksheets</div>
@@ -200,7 +252,7 @@
         <a href="https://examel.com/privacy-policy/">Privacy Policy</a>
       </div>
     </div>
-    <div class="footer-bottom">© 2026 Examel · Free K-8 Printable Worksheets · examel.com</div>
+    <div class="footer-bottom">© 2026 Examel · Free K-8 Printable Worksheets · Every exam. Every grade.</div>
   </footer>
 </body>
 </html>
