@@ -222,6 +222,13 @@ const siteFooter = `
     </div>
   </footer>`;
 
+function getCharSVG(subject) {
+  if(subject==='math') return '<svg width="110" height="130" viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg"><ellipse cx="60" cy="105" rx="36" ry="8" fill="rgba(108,92,231,0.12)"/><rect x="22" y="72" width="76" height="52" rx="16" fill="#6C5CE7"/><path d="M16 96 Q60 86 104 96 L108 124 Q60 134 12 124 Z" fill="#7C6CF7"/><ellipse cx="34" cy="120" rx="14" ry="8" fill="#5A4BD1"/><ellipse cx="86" cy="120" rx="14" ry="8" fill="#5A4BD1"/><ellipse cx="60" cy="68" rx="38" ry="42" fill="#C8874A"/><ellipse cx="60" cy="32" rx="40" ry="22" fill="#1A0A00"/><circle cx="38" cy="36" r="14" fill="#1A0A00"/><circle cx="60" cy="28" r="16" fill="#1A0A00"/><circle cx="82" cy="36" r="14" fill="#1A0A00"/><path d="M26 42 Q20 62 24 82" fill="#1A0A00"/><path d="M94 42 Q100 62 96 82" fill="#1A0A00"/><path d="M80,30 Q90,20 96,28 Q90,26 88,32 Z" fill="#FF85A1"/><path d="M96,28 Q106,20 110,30 Q104,28 102,34 Z" fill="#FF6B8E"/><circle cx="96" cy="30" r="6" fill="#FF85A1"/><circle cx="48" cy="66" r="14" fill="white"/><circle cx="72" cy="66" r="14" fill="white"/><circle cx="49" cy="67" r="10" fill="#3D1F00"/><circle cx="73" cy="67" r="10" fill="#3D1F00"/><circle cx="53" cy="62" r="5" fill="white"/><circle cx="77" cy="62" r="5" fill="white"/><circle cx="49" cy="68" r="3.5" fill="#0A0500"/><circle cx="73" cy="68" r="3.5" fill="#0A0500"/><path d="M38 54 Q48 48 58 53" stroke="#1A0A00" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M62 53 Q72 48 82 54" stroke="#1A0A00" stroke-width="2.5" fill="none" stroke-linecap="round"/><circle cx="60" cy="78" r="2.5" fill="#A05830" opacity="0.5"/><circle cx="66" cy="78" r="2.5" fill="#A05830" opacity="0.5"/><path d="M46 88 Q60 100 74 88" stroke="#C05030" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="40" cy="80" r="10" fill="#FF9999" opacity="0.2"/><circle cx="80" cy="80" r="10" fill="#FF9999" opacity="0.2"/></svg>';
+  if(subject==='english'||subject==='reading'||subject==='vocab') return '<svg width="110" height="130" viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg"><ellipse cx="60" cy="105" rx="36" ry="8" fill="rgba(8,145,178,0.12)"/><rect x="22" y="72" width="76" height="52" rx="16" fill="#0891B2"/><ellipse cx="34" cy="120" rx="14" ry="8" fill="#1C1526"/><ellipse cx="86" cy="120" rx="14" ry="8" fill="#1C1526"/><ellipse cx="60" cy="68" rx="40" ry="44" fill="#FDBCB4"/><ellipse cx="60" cy="30" rx="38" ry="22" fill="#6B3A2A"/><ellipse cx="26" cy="52" rx="13" ry="20" fill="#6B3A2A"/><ellipse cx="94" cy="52" rx="13" ry="20" fill="#6B3A2A"/><circle cx="48" cy="66" r="15" fill="none" stroke="#4A3728" stroke-width="3"/><circle cx="72" cy="66" r="15" fill="none" stroke="#4A3728" stroke-width="3"/><path d="M63 66 Q62 64 61 66" stroke="#4A3728" stroke-width="3" fill="none"/><circle cx="48" cy="66" r="10" fill="white"/><circle cx="72" cy="66" r="10" fill="white"/><circle cx="49" cy="67" r="7" fill="#3A2010"/><circle cx="73" cy="67" r="7" fill="#3A2010"/><circle cx="52" cy="63" r="3.5" fill="white"/><circle cx="76" cy="63" r="3.5" fill="white"/><circle cx="49" cy="68" r="2.5" fill="#0A0500"/><circle cx="73" cy="68" r="2.5" fill="#0A0500"/><path d="M50 88 Q60 98 70 88" stroke="#C06050" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="36" cy="78" r="10" fill="#FFB0A0" opacity="0.2"/><circle cx="84" cy="78" r="10" fill="#FFB0A0" opacity="0.2"/></svg>';
+  if(subject==='science') return '<svg width="110" height="130" viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg"><ellipse cx="60" cy="105" rx="36" ry="8" fill="rgba(5,150,105,0.12)"/><rect x="18" y="70" width="84" height="54" rx="18" fill="#F8F8F8"/><rect x="30" y="76" width="60" height="28" rx="12" fill="#0D9488"/><ellipse cx="34" cy="122" rx="14" ry="8" fill="#0F766E"/><ellipse cx="86" cy="122" rx="14" ry="8" fill="#0F766E"/><ellipse cx="60" cy="66" rx="42" ry="46" fill="#7B3F0E"/><ellipse cx="60" cy="26" rx="42" ry="24" fill="#0A0500"/><circle cx="32" cy="28" r="22" fill="#0A0500"/><circle cx="88" cy="28" r="22" fill="#0A0500"/><ellipse cx="32" cy="50" rx="12" ry="6" fill="#F59E0B"/><ellipse cx="88" cy="50" rx="12" ry="6" fill="#F59E0B"/><ellipse cx="32" cy="49" rx="9" ry="4" fill="#FBBF24"/><ellipse cx="88" cy="49" rx="9" ry="4" fill="#FBBF24"/><rect x="20" y="54" width="14" height="52" rx="7" fill="#0A0500"/><rect x="86" y="54" width="14" height="52" rx="7" fill="#0A0500"/><circle cx="27" cy="95" r="6" fill="#F59E0B" stroke="#0A0500" stroke-width="1.5"/><circle cx="93" cy="95" r="6" fill="#10B981" stroke="#0A0500" stroke-width="1.5"/><circle cx="48" cy="64" r="16" fill="white"/><circle cx="72" cy="64" r="16" fill="white"/><circle cx="49" cy="65" r="11" fill="#1A0500"/><circle cx="73" cy="65" r="11" fill="#1A0500"/><circle cx="53" cy="60" r="5.5" fill="white"/><circle cx="77" cy="60" r="5.5" fill="white"/><circle cx="49" cy="66" r="4" fill="#050100"/><circle cx="73" cy="66" r="4" fill="#050100"/><ellipse cx="48" cy="78" rx="10" ry="8" fill="#C05030" opacity="0.9"/><ellipse cx="48" cy="78" rx="7" ry="5" fill="white" opacity="0.9"/><circle cx="36" cy="72" r="12" fill="#FF8C69" opacity="0.25"/><circle cx="84" cy="72" r="12" fill="#FF8C69" opacity="0.25"/></svg>';
+  return '<svg width="110" height="130" viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg"><ellipse cx="60" cy="108" rx="36" ry="8" fill="rgba(239,68,68,0.12)"/><rect x="22" y="74" width="80" height="60" rx="18" fill="#EF4444"/><ellipse cx="62" cy="70" rx="10" ry="9" fill="#FDBCB4"/><ellipse cx="60" cy="46" rx="42" ry="44" fill="#FDBCB4"/><ellipse cx="60" cy="10" rx="40" ry="22" fill="#3D1F00"/><path d="M22 18 Q46 2 96 6 Q108 12 112 24" fill="#3D1F00"/><rect x="22" y="10" width="76" height="13" rx="6.5" fill="#EF4444"/><circle cx="44" cy="44" r="14" fill="white"/><circle cx="76" cy="44" r="14" fill="white"/><circle cx="45" cy="45" r="9" fill="#3D1F00"/><circle cx="77" cy="45" r="9" fill="#3D1F00"/><circle cx="48" cy="41" r="4.5" fill="white"/><circle cx="80" cy="41" r="4.5" fill="white"/><circle cx="45" cy="46" r="3" fill="#0A0500"/><circle cx="77" cy="46" r="3" fill="#0A0500"/><path d="M40 66 Q60 84 80 66" stroke="#C06050" stroke-width="3" fill="#FF9999" stroke-linecap="round"/><path d="M44 68 Q60 78 76 68" fill="white"/><circle cx="28" cy="58" r="11" fill="#FF9999" opacity="0.25"/><circle cx="92" cy="58" r="11" fill="#FF9999" opacity="0.25"/></svg>';
+}
+
 async function generatePages() {
   console.log('Fetching worksheets from Supabase...');
 
@@ -645,18 +652,40 @@ async function generatePages() {
     <a href="https://examel.com">Home</a><span>›</span>
     Free ${capitalize(subject)} Worksheets
   </div>
-  <div class="hero">
-    <h1>Free <span>${capitalize(subject)} Worksheets</span> for Kids</h1>
-    <p>${filtered.length}+ free printable ${capitalize(subject)} worksheets for Grades 1-6. ${meta.desc} Fun themes, answer keys included.</p>
+  <div style="background:#1C1526;border-top:5px solid ${subjectColor(subject)};padding:0 20px;position:relative;overflow:hidden;">
+    <div style="max-width:1100px;margin:0 auto;padding:52px 180px 48px 48px;position:relative;z-index:2;">
+      <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.35);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;font-family:'Outfit',sans-serif;">Free Printable Worksheets</div>
+      <h1 style="font-size:clamp(28px,4vw,48px);font-weight:900;color:white;letter-spacing:-1.5px;line-height:1.1;margin-bottom:14px;font-family:'Outfit',sans-serif;">Free <span style="color:${subjectColor(subject)}">${capitalize(subject)}</span> Worksheets for Kids</h1>
+      <p style="font-size:16px;color:rgba(255,255,255,0.5);max-width:520px;line-height:1.75;margin-bottom:24px;">${filtered.length}+ free printable ${capitalize(subject)} worksheets for Grades 1–6. ${meta.desc} Fun themes, answer keys included. Instant PDF download.</p>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;">
+        <div style="display:flex;align-items:center;gap:6px;font-size:13px;color:rgba(255,255,255,0.4);font-weight:500;"><span style="color:${subjectColor(subject)};font-weight:700;">✓</span> Free forever</div>
+        <div style="display:flex;align-items:center;gap:6px;font-size:13px;color:rgba(255,255,255,0.4);font-weight:500;"><span style="color:${subjectColor(subject)};font-weight:700;">✓</span> Answer key included</div>
+        <div style="display:flex;align-items:center;gap:6px;font-size:13px;color:rgba(255,255,255,0.4);font-weight:500;"><span style="color:${subjectColor(subject)};font-weight:700;">✓</span> Common Core aligned</div>
+        <div style="display:flex;align-items:center;gap:6px;font-size:13px;color:rgba(255,255,255,0.4);font-weight:500;"><span style="color:${subjectColor(subject)};font-weight:700;">✓</span> No login needed</div>
+      </div>
+    </div>
+    <div style="position:absolute;right:80px;bottom:-10px;opacity:0.92;filter:drop-shadow(0 8px 24px rgba(0,0,0,0.3));">${getCharSVG(subject)}</div>
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 80% 0%,rgba(108,92,231,0.15) 0%,transparent 60%);pointer-events:none;"></div>
   </div>
-  <div class="hub-grid">
+  <div style="background:white;border-bottom:1px solid #EDE8DF;padding:16px 24px;">
+    <div style="max-width:1100px;margin:0 auto;display:flex;gap:24px;flex-wrap:wrap;align-items:center;">
+      <span style="font-size:13px;font-weight:700;color:#A89FAE;font-family:'Outfit',sans-serif;">Browse by grade:</span>
+      ${grades.map(g => {
+        const count = worksheets.filter(w => w.subject.toLowerCase() === subject && w.grade === g).length;
+        if(count===0) return '';
+        return `<a href="/free-${subject}-worksheets/grade-${g}/" style="font-size:13px;font-weight:700;color:#6B6475;text-decoration:none;padding:5px 14px;border-radius:100px;border:2px solid #EDE8DF;transition:all 0.2s;font-family:'Outfit',sans-serif;" onmouseover="this.style.background='${subjectColor(subject)}';this.style.color='white';this.style.borderColor='${subjectColor(subject)}'" onmouseout="this.style.background='';this.style.color='#6B6475';this.style.borderColor='#EDE8DF'">Grade ${g} <span style="opacity:0.5;">(${count})</span></a>`;
+      }).join('')}
+    </div>
+  </div>
+  <div class="hub-grid" style="padding-top:32px;">
     ${grades.map(g => {
       const count = worksheets.filter(w => w.subject.toLowerCase() === subject && w.grade === g).length;
       if (count === 0) return '';
-      return `<a href="/free-${subject}-worksheets/grade-${g}/" class="hub-card" style="border-top:3px solid ${gradeColor(g)}">
-        <span class="hub-icon">📄</span>
-        <h3>Grade ${g}</h3>
-        <p>${count} worksheets</p>
+      return `<a href="/free-${subject}-worksheets/grade-${g}/" class="hub-card" style="border-top:4px solid ${subjectColor(subject)}">
+        <span class="hub-icon" style="font-size:32px;margin-bottom:10px;">📚</span>
+        <h3 style="font-size:20px;font-weight:800;color:#1A1420;margin-bottom:4px;font-family:'Outfit',sans-serif;">Grade ${g}</h3>
+        <p style="font-size:13px;color:#A89FAE;">${count} free worksheets</p>
+        <p style="font-size:12px;color:${subjectColor(subject)};font-weight:700;margin-top:12px;font-family:'Outfit',sans-serif;">Browse Grade ${g} →</p>
       </a>`;
     }).join('')}
   </div>

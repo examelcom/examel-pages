@@ -16,11 +16,12 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
   <style>
     *{box-sizing:border-box;margin:0;padding:0;}
     html{scroll-behavior:smooth;}
-    body{font-family:'Inter',system-ui,sans-serif;background:#FAF8F3;color:#1A1420;-webkit-font-smoothing:antialiased;}
+    body{font-family:'DM Sans',system-ui,sans-serif;background:#FAF8F3;color:#1A1420;-webkit-font-smoothing:antialiased;}
+    h1,h2,h3,h4,.site-logo-text,.filter-btn,.ws-card-btn,.hub-card h3,.hero h1,.footer-heading{font-family:'Outfit',sans-serif;}
     /* ── NAV ── */
     .site-header{background:#1C1526;padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:200;border-bottom:1px solid rgba(255,255,255,0.06);box-shadow:0 4px 24px rgba(0,0,0,0.18);}
     .site-logo{display:flex;align-items:center;gap:10px;text-decoration:none;transition:transform 0.2s;}
@@ -75,8 +76,16 @@
     .site-footer a:hover{color:#6C5CE7;}
     .footer-bottom{text-align:center;font-size:12px;color:rgba(255,255,255,0.2);border-top:1px solid rgba(255,255,255,0.07);padding-top:24px;}
     .footer-chars{display:flex;justify-content:center;gap:8px;margin-bottom:28px;opacity:0.6;}
+    .mobile-menu-btn{display:none;background:none;border:none;cursor:pointer;padding:8px;border-radius:8px;transition:background 0.2s;}
+    .mobile-menu-btn:hover{background:rgba(108,92,231,0.2);}
+    .mobile-menu-btn span{display:block;width:22px;height:2px;background:rgba(255,255,255,0.8);margin:4px 0;border-radius:2px;transition:all 0.3s;}
+    .mobile-nav{display:none;position:absolute;top:64px;left:0;right:0;background:#1C1526;border-bottom:2px solid #6C5CE7;padding:16px 20px;z-index:199;flex-direction:column;gap:4px;}
+    .mobile-nav a{color:rgba(255,255,255,0.7);text-decoration:none;font-size:15px;font-weight:600;padding:10px 14px;border-radius:10px;transition:all 0.2s;font-family:'Outfit',sans-serif;}
+    .mobile-nav a:hover{color:white;background:rgba(108,92,231,0.2);}
+    .mobile-nav.open{display:flex;}
     @media(max-width:768px){
       .site-header nav{display:none;}
+      .mobile-menu-btn{display:block;}
       .hub-grid{grid-template-columns:repeat(2,1fr);}
       .grid{grid-template-columns:repeat(2,1fr);}
     }
@@ -127,7 +136,20 @@
       <a href="/free-math-vocabulary/">Vocabulary</a>
       <a href="/word-searches/">Word Searches</a>
     </nav>
+    <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </header>
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="/free-math-worksheets/">Math</a>
+    <a href="/free-english-worksheets/">English</a>
+    <a href="/free-science-worksheets/">Science</a>
+    <a href="/free-math-drills/">Drills</a>
+    <a href="/free-reading-passages/">Reading</a>
+    <a href="/free-math-vocabulary/">Vocabulary</a>
+    <a href="/word-searches/">Word Searches</a>
+  </nav>
+  <script>function toggleMobileMenu(){var n=document.getElementById('mobileNav');n.classList.toggle('open');}</script>
   <div class="breadcrumb">
     <a href="https://examel.com">Home</a><span>›</span>
     <a href="/free-math-vocabulary/">Free Math Vocabulary</a><span>›</span>
@@ -244,7 +266,9 @@
         <div class="footer-col">
           <div class="footer-heading">Examel</div>
           <a href="https://examel.com">Home</a>
-          <a href="https://examel.com/privacy-policy/">Privacy Policy</a>
+          <a href="/about/">About</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms/">Terms of Use</a>
         </div>
       </div>
       <div class="footer-bottom">© 2026 Examel · Free K-8 Printable Worksheets · Every exam. Every grade.</div>
