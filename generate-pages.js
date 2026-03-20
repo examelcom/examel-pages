@@ -133,7 +133,7 @@ async function generatePages() {
 
   const { data: worksheets, error } = await supabase
     .from('worksheets')
-    .select('id,slug,grade,subject,topic,theme,title,pdf_url,preview_image_url,status,format,difficulty,ccss_standard')
+    .select('id,slug,grade,subject,topic,theme,title,pdf_url,preview_image_url,pinterest_image_url,status,format,difficulty,ccss_standard')
     .eq('status', 'published')
     .order('created_at', { ascending: false });
 
@@ -161,9 +161,9 @@ async function generatePages() {
   <meta property="og:type" content="website">
   <meta property="og:title" content="${ws.title} | Free Printable Worksheet | Examel">
   <meta property="og:description" content="Free printable Grade ${ws.grade} ${capitalize(ws.subject)} worksheet about ${formatTopic(ws.topic)}. Answer key included. Download PDF free.">
-  <meta property="og:image" content="${ws.preview_image_url || `https://examel.com/thumbnails/${ws.slug}.png`}">
+  <meta property="og:image" content="${ws.pinterest_image_url || ws.preview_image_url || `https://examel.com/thumbnails/${ws.slug}.png`}">
   <meta property="og:url" content="https://examel.com/worksheets/${ws.slug}/">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"EducationalResource","name":"${ws.title}","description":"Free printable Grade ${ws.grade} ${ws.subject} worksheet about ${formatTopic(ws.topic)} — 8 questions with answer key","educationalLevel":"Grade ${ws.grade}","subject":"${capitalize(ws.subject)}","teaches":"${formatTopic(ws.topic)}","keywords":"Grade ${ws.grade} ${capitalize(ws.subject)} worksheet, ${formatTopic(ws.topic)} worksheet, free printable ${capitalize(ws.subject)} worksheet","url":"https://examel.com/worksheets/${ws.slug}/","thumbnailUrl":"${ws.preview_image_url || `https://examel.com/thumbnails/${ws.slug}.png`}","provider":{"@type":"Organization","name":"Examel","url":"https://examel.com"},"isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"EducationalResource","name":"${ws.title}","description":"Free printable Grade ${ws.grade} ${ws.subject} worksheet about ${formatTopic(ws.topic)} — 8 questions with answer key","educationalLevel":"Grade ${ws.grade}","subject":"${capitalize(ws.subject)}","teaches":"${formatTopic(ws.topic)}","keywords":"Grade ${ws.grade} ${capitalize(ws.subject)} worksheet, ${formatTopic(ws.topic)} worksheet, free printable ${capitalize(ws.subject)} worksheet","url":"https://examel.com/worksheets/${ws.slug}/","thumbnailUrl":"${ws.pinterest_image_url || ws.preview_image_url || `https://examel.com/thumbnails/${ws.slug}.png`}","provider":{"@type":"Organization","name":"Examel","url":"https://examel.com"},"isAccessibleForFree":true}</script>
   ${sharedCSS}
   <style>
     .ws-hero{background:${color};color:white;padding:40px 20px;text-align:center;}
