@@ -17,6 +17,7 @@ function generateReadingPassagePages(worksheets, sharedCSS, siteHeader, siteFoot
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%236C5CE7'/%3E%3Crect x='7' y='7' width='4' height='18' rx='1' fill='white'/%3E%3Crect x='7' y='7' width='7' height='4' rx='1' fill='white'/%3E%3Crect x='7' y='14' width='11' height='4' rx='1' fill='white'/%3E%3Crect x='7' y='21' width='15' height='4' rx='1' fill='white'/%3E%3C/svg%3E">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${ws.title} | Free Printable Reading Comprehension Passage with Answer Key | Examel</title>
   <meta name="description" content="Free printable Grade ${ws.grade} reading comprehension passage about ${topicName}. ${themeName} theme. 6 comprehension questions with answer key. Download PDF instantly.">
