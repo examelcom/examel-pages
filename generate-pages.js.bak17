@@ -603,25 +603,12 @@ async function generatePages() {
     <a href="/free-${subject}-worksheets/">Free ${capitalize(subject)} Worksheets</a><span>›</span>
     Grade ${grade}
   </div>
-  <div style="background:#1C1526;border-top:5px solid ${subjectColor(subject)};padding:0 20px;position:relative;overflow:hidden;">
-    <div style="max-width:1100px;margin:0 auto;padding:48px 180px 44px 48px;position:relative;z-index:2;">
-      <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.35);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;font-family:'Outfit',sans-serif;">Free Printable Worksheets</div>
-      <h1 style="font-size:clamp(24px,3.5vw,42px);font-weight:900;color:white;letter-spacing:-1.5px;line-height:1.1;margin-bottom:12px;font-family:'Outfit',sans-serif;">Free Grade ${grade} <span style="color:${subjectColor(subject)}">${capitalize(subject)}</span> Worksheets</h1>
-      <p style="font-size:15px;color:rgba(255,255,255,0.5);max-width:500px;line-height:1.75;margin-bottom:20px;">${filtered.length}+ free printable Grade ${grade} ${capitalize(subject)} worksheets. Fun themes, answer keys included. Download PDF instantly.</p>
-      <div style="display:flex;gap:14px;flex-wrap:wrap;">
-        <div style="font-size:14px;color:rgba(255,255,255,0.4);font-weight:500;"><span style="color:${subjectColor(subject)};font-weight:700;">✓</span> Free forever</div>
-        <div style="font-size:14px;color:rgba(255,255,255,0.4);font-weight:500;"><span style="color:${subjectColor(subject)};font-weight:700;">✓</span> Answer key included</div>
-        <div style="font-size:14px;color:rgba(255,255,255,0.4);font-weight:500;"><span style="color:${subjectColor(subject)};font-weight:700;">✓</span> CCSS aligned</div>
-      </div>
-    </div>
-    <div style="position:absolute;right:60px;bottom:-10px;opacity:0.92;filter:drop-shadow(0 8px 24px rgba(0,0,0,0.3));">${getCharSVG(subject)}</div>
-    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 80% 0%,rgba(108,92,231,0.15) 0%,transparent 60%);pointer-events:none;"></div>
+  <div class="hero">
+    <h1>Free Grade ${grade} <span>${capitalize(subject)} Worksheets</span></h1>
+    <p>${filtered.length}+ free printable Grade ${grade} ${capitalize(subject)} worksheets. Fun themes, answer keys included. Download PDF instantly.</p>
   </div>
-  <div style="background:white;border-bottom:1px solid #EDE8DF;padding:14px 24px;">
-    <div style="max-width:1100px;margin:0 auto;display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
-      <span style="font-size:14px;font-weight:700;color:#A89FAE;font-family:'Outfit',sans-serif;">Grade:</span>
-      ${grades.map(g => `<a href="/free-${subject}-worksheets/grade-${g}/" style="font-size:14px;font-weight:700;text-decoration:none;padding:6px 16px;border-radius:100px;border:2px solid ${g === grade ? subjectColor(subject) : '#EDE8DF'};background:${g === grade ? subjectColor(subject) : 'white'};color:${g === grade ? 'white' : '#6B6475'};font-family:'Outfit',sans-serif;">Grade ${g}</a>`).join('')}
-    </div>
+  <div class="filter-bar">
+    ${grades.map(g => `<a href="/free-${subject}-worksheets/grade-${g}/" class="filter-btn ${g === grade ? 'active' : ''}">Grade ${g}</a>`).join('')}
   </div>
   <div class="grid">
     ${filtered.map(worksheetCard).join('')}
@@ -690,26 +677,19 @@ async function generatePages() {
       }).join('')}
     </div>
   </div>
-  <div style="max-width:1100px;margin:0 auto;padding:32px 20px 0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+  <div class="hub-grid" style="padding-top:32px;">
     ${grades.map(g => {
       const count = worksheets.filter(w => w.subject.toLowerCase() === subject && w.grade === g).length;
       if (count === 0) return '';
-      const subjectIcon = subject==='math' ? '📐' : subject==='english' ? '📖' : subject==='science' ? '🔬' : '📄';
-      return `<a href="/free-${subject}-worksheets/grade-${g}/" style="background:white;border-radius:20px;padding:28px 20px;text-decoration:none;color:#1A1420;text-align:center;border:1px solid #EDE8DF;border-top:4px solid ${subjectColor(subject)};display:block;transition:transform 0.2s,box-shadow 0.2s;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 32px rgba(0,0,0,0.1)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
-        <span style="font-size:36px;margin-bottom:12px;display:block;">${subjectIcon}</span>
-        <div style="font-size:22px;font-weight:800;color:#1A1420;margin-bottom:4px;font-family:'Outfit',sans-serif;">Grade ${g}</div>
-        <div style="font-size:14px;color:#A89FAE;margin-bottom:14px;">${count} free worksheets</div>
-        <div style="font-size:14px;color:${subjectColor(subject)};font-weight:700;font-family:'Outfit',sans-serif;">Browse Grade ${g} →</div>
+      return `<a href="/free-${subject}-worksheets/grade-${g}/" class="hub-card" style="border-top:4px solid ${subjectColor(subject)}">
+        <span class="hub-icon" style="font-size:32px;margin-bottom:10px;">📚</span>
+        <h3 style="font-size:20px;font-weight:800;color:#1A1420;margin-bottom:4px;font-family:'Outfit',sans-serif;">Grade ${g}</h3>
+        <p style="font-size:13px;color:#A89FAE;">${count} free worksheets</p>
+        <p style="font-size:12px;color:${subjectColor(subject)};font-weight:700;margin-top:12px;font-family:'Outfit',sans-serif;">Browse Grade ${g} →</p>
       </a>`;
     }).join('')}
   </div>
-  <div style="max-width:1100px;margin:0 auto;padding:48px 20px 20px;">
-    <div style="font-size:11px;font-weight:700;color:#A89FAE;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;font-family:'Outfit',sans-serif;">Just added</div>
-    <div style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:12px;">
-      <h2 style="font-size:28px;font-weight:800;color:#1A1420;letter-spacing:-0.5px;font-family:'Outfit',sans-serif;">Latest ${capitalize(subject)} Worksheets</h2>
-      <a href="/free-${subject}-worksheets/" style="font-size:14px;font-weight:700;color:#6C5CE7;text-decoration:none;font-family:'Outfit',sans-serif;">Browse all ${filtered.length}+ →</a>
-    </div>
-  </div>
+  <h2 style="text-align:center;max-width:1100px;margin:0 auto 20px;padding:0 20px;font-size:22px;">Latest ${capitalize(subject)} Worksheets</h2>
   <div class="grid">
     ${recent.map(worksheetCard).join('')}
   </div>
