@@ -21,7 +21,7 @@ function generateDrillPages(worksheets, sharedCSS, siteHeader, siteFooter, grade
   <title>${ws.title} | Free Printable Math Drill with Answer Key | Examel</title>
   <meta name="description" content="Free printable Grade ${ws.grade} ${topicName} math drill. ${ws.difficulty} level, ${themeName} theme. Answer key included. Download PDF instantly. Perfect for timed practice.">
   <link rel="canonical" href="https://examel.com/drills/${ws.subject}/grade-${ws.grade}/${ws.slug}/">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"EducationalResource","name":"${ws.title}","description":"Free printable Grade ${ws.grade} ${topicName} math drill","educationalLevel":"Grade ${ws.grade}","subject":"Math","provider":{"@type":"Organization","name":"Examel","url":"https://examel.com"},"isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"EducationalResource","name":"${ws.title}","description":"Free printable Grade ${ws.grade} ${topicName} math drill — timed practice with answer key","educationalLevel":"Grade ${ws.grade}","subject":"Math","teaches":"${topicName}","keywords":"Grade ${ws.grade} ${topicName} math drill, free printable math drill, ${topicName} practice worksheet","url":"https://examel.com/drills/${ws.subject}/grade-${ws.grade}/${ws.slug}/","thumbnailUrl":"${ws.preview_image_url || `https://examel.com/thumbnails/${ws.slug}.png`}","provider":{"@type":"Organization","name":"Examel","url":"https://examel.com"},"isAccessibleForFree":true}</script>
   ${sharedCSS}
   <style>
     .ws-hero{background:${color};color:white;padding:40px 20px;text-align:center;}

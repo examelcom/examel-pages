@@ -21,7 +21,7 @@ function generateVocabMatchPages(worksheets, sharedCSS, siteHeader, siteFooter, 
   <title>${ws.title} | Free Printable Vocabulary Worksheet with Answer Key | Examel</title>
   <meta name="description" content="Free printable Grade ${ws.grade} ${topicName} vocabulary match worksheet. ${themeName} theme. Answer key included. Students match words to definitions. Download PDF instantly.">
   <link rel="canonical" href="https://examel.com/vocab-match/${ws.subject}/grade-${ws.grade}/${ws.slug}/">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"EducationalResource","name":"${ws.title}","description":"Free printable Grade ${ws.grade} ${topicName} vocabulary match worksheet","educationalLevel":"Grade ${ws.grade}","subject":"${capitalize(ws.subject)}","provider":{"@type":"Organization","name":"Examel","url":"https://examel.com"},"isAccessibleForFree":true}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"EducationalResource","name":"${ws.title}","description":"Free printable Grade ${ws.grade} ${topicName} vocabulary match worksheet — match words to definitions","educationalLevel":"Grade ${ws.grade}","subject":"${capitalize(ws.subject)}","teaches":"${topicName}","keywords":"Grade ${ws.grade} ${capitalize(ws.subject)} vocabulary match, ${topicName} vocabulary worksheet, free printable vocabulary","url":"https://examel.com/vocab-match/${ws.subject}/grade-${ws.grade}/${ws.slug}/","thumbnailUrl":"${ws.preview_image_url || `https://examel.com/thumbnails/${ws.slug}.png`}","provider":{"@type":"Organization","name":"Examel","url":"https://examel.com"},"isAccessibleForFree":true}</script>
   ${sharedCSS}
   <style>
     .ws-hero{background:${color};color:white;padding:40px 20px;text-align:center;}
