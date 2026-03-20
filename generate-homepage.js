@@ -1,4 +1,68 @@
-<!DOCTYPE html>
+require('dotenv').config({ path: '/opt/examel/pdf-engine/.env' });
+const { createClient } = require('@supabase/supabase-js');
+const fs = require('fs');
+
+const supabase = createClient(
+  process.env.SUPABASE_URL,
+  process.env.SUPABASE_ANON_KEY
+);
+
+const capitalize = (s) => s ? s.charAt(0).toUpperCase() + s.slice(1) : '';
+const titleCase = (s) => s ? s.split('-').map(capitalize).join(' ') : '';
+
+function getCardUrl(ws) {
+  if (ws.format === 'drill-grid') return `/drills/${ws.subject}/grade-${ws.grade}/${ws.slug}/`;
+  if (ws.format === 'word-search') return `/word-searches/${ws.subject}/grade-${ws.grade}/${ws.slug}/`;
+  if (ws.format === 'vocab-match') return `/vocab-match/${ws.subject}/grade-${ws.grade}/${ws.slug}/`;
+  if (ws.format === 'reading-passage') return `/reading-passages/grade-${ws.grade}/${ws.slug}/`;
+  return `/worksheets/${ws.slug}/`;
+}
+
+function subjectColor(subject, format) {
+  if (format === 'drill-grid') return '#DC2626';
+  const map = { math:'#7C3AED', english:'#DB2777', science:'#059669', reading:'#0891B2', vocab:'#D97706' };
+  return map[subject?.toLowerCase()] || '#6C5CE7';
+}
+
+function worksheetCard(ws) {
+  const color = subjectColor(ws.subject, ws.format);
+  const url = getCardUrl(ws);
+  const thumb = ws.preview_p1_url
+    ? `<img src="${ws.preview_p1_url}" alt="${ws.title}" class="ws-card-thumb" loading="lazy">`
+    : `<div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,${color}18 0%,${color}08 100%);border-top:4px solid ${color}"><span style="font-size:28px;opacity:0.25;font-weight:900;color:${color};letter-spacing:-1px">${capitalize(ws.subject)}</span></div>`;
+  return `<a href="${url}" class="ws-card">
+    ${thumb}
+    <div class="ws-card-body">
+      <div class="ws-card-badge" style="background:${color}">${capitalize(ws.subject)} · Grade ${ws.grade}</div>
+      <h3>${ws.title}</h3>
+      <p>${titleCase(ws.topic)} · ${titleCase(ws.theme)} theme</p>
+      <span class="ws-card-btn">Download Free →</span>
+    </div>
+  </a>`;
+}
+
+const logoSVG = (size) => `<svg width="${size}" height="${size}" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg"><rect width="72" height="72" rx="16" fill="#6C5CE7"/><rect x="15" y="15" width="9" height="42" rx="2.5" fill="white"/><rect x="15" y="15" width="15" height="9" rx="2.5" fill="white"/><rect x="15" y="31.5" width="24" height="9" rx="2.5" fill="white"/><rect x="15" y="48" width="33" height="9" rx="2.5" fill="white"/></svg>`;
+
+async function generate() {
+  console.log('Fetching data from Supabase...');
+
+  const [freshRes, countsRes] = await Promise.all([
+    supabase.from('worksheets').select('id,title,slug,subject,grade,topic,theme,format,preview_p1_url,pdf_url').eq('status','published').order('created_at', { ascending: false }).limit(6),
+    supabase.from('worksheets').select('subject,format').eq('status','published')
+  ]);
+
+  const fresh = freshRes.data || [];
+  const all = countsRes.data || [];
+
+  const totalCount = all.length;
+  const mathCount = all.filter(w => w.subject === 'math' && w.format === 'worksheet').length;
+  const englishCount = all.filter(w => w.subject === 'english').length;
+  const scienceCount = all.filter(w => w.subject === 'science').length;
+  const drillCount = all.filter(w => w.format === 'drill-grid').length;
+
+  const YEAR = new Date().getFullYear();
+
+  const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -166,7 +230,7 @@
 
 <header class="site-header">
   <a href="https://examel.com" class="site-logo">
-    <svg width="30" height="30" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg"><rect width="72" height="72" rx="16" fill="#6C5CE7"/><rect x="15" y="15" width="9" height="42" rx="2.5" fill="white"/><rect x="15" y="15" width="15" height="9" rx="2.5" fill="white"/><rect x="15" y="31.5" width="24" height="9" rx="2.5" fill="white"/><rect x="15" y="48" width="33" height="9" rx="2.5" fill="white"/></svg>
+    ${logoSVG(30)}
     <span class="logo-text">examel<span>·</span></span>
   </a>
   <nav>
@@ -204,7 +268,7 @@
         <a href="/free-worksheets/grade-3/" class="btn-ghost">Browse by Grade</a>
       </div>
       <div class="trust-strip">
-        <div class="trust-item"><div class="trust-check">✓</div>1,000+ worksheets</div>
+        <div class="trust-item"><div class="trust-check">✓</div>${totalCount.toLocaleString()}+ worksheets</div>
         <div class="trust-item"><div class="trust-check">✓</div>Free forever</div>
         <div class="trust-item"><div class="trust-check">✓</div>Answer key included</div>
         <div class="trust-item"><div class="trust-check">✓</div>CCSS aligned</div>
@@ -233,7 +297,7 @@
 <!-- TRUST BAR -->
 <div class="trust-bar">
   <div class="trust-bar-inner">
-    <div class="trust-stat"><span class="trust-stat-num">1,000+</span> free worksheets</div>
+    <div class="trust-stat"><span class="trust-stat-num">${totalCount.toLocaleString()}+</span> free worksheets</div>
     <div class="trust-stat"><span class="trust-stat-num">Grades 1–6</span> all covered</div>
     <div class="trust-stat"><span class="trust-stat-num">CCSS</span> aligned</div>
     <div class="trust-stat"><span class="trust-stat-num">Daily</span> new worksheets</div>
@@ -254,7 +318,7 @@
       <a href="/free-math-worksheets/" class="subject-card" style="border-top-color:#7C3AED;">
         <span class="subject-char">📐</span>
         <h3 style="color:#7C3AED;">Math</h3>
-        <p class="count">91+ worksheets · Grades 1–6</p>
+        <p class="count">${mathCount}+ worksheets · Grades 1–6</p>
         <div class="topics">
           <span class="topic-pill" style="background:#F4F1FF;color:#7C3AED;">Addition</span>
           <span class="topic-pill" style="background:#F4F1FF;color:#7C3AED;">Multiplication</span>
@@ -265,7 +329,7 @@
       <a href="/free-english-worksheets/" class="subject-card" style="border-top-color:#DB2777;">
         <span class="subject-char">📖</span>
         <h3 style="color:#DB2777;">English</h3>
-        <p class="count">63+ worksheets · Grades 1–6</p>
+        <p class="count">${englishCount}+ worksheets · Grades 1–6</p>
         <div class="topics">
           <span class="topic-pill" style="background:#FDF2F8;color:#DB2777;">Reading</span>
           <span class="topic-pill" style="background:#FDF2F8;color:#DB2777;">Grammar</span>
@@ -276,7 +340,7 @@
       <a href="/free-science-worksheets/" class="subject-card" style="border-top-color:#059669;">
         <span class="subject-char">🔬</span>
         <h3 style="color:#059669;">Science</h3>
-        <p class="count">88+ worksheets · Grades 1–6</p>
+        <p class="count">${scienceCount}+ worksheets · Grades 1–6</p>
         <div class="topics">
           <span class="topic-pill" style="background:#ECFDF5;color:#059669;">Ecosystems</span>
           <span class="topic-pill" style="background:#ECFDF5;color:#059669;">Forces</span>
@@ -287,7 +351,7 @@
       <a href="/free-math-drills/" class="subject-card" style="border-top-color:#DC2626;">
         <span class="subject-char">⚡</span>
         <h3 style="color:#DC2626;">Math Drills</h3>
-        <p class="count">151+ drills · Grades 1–6</p>
+        <p class="count">${drillCount}+ drills · Grades 1–6</p>
         <div class="topics">
           <span class="topic-pill" style="background:#FEF2F2;color:#DC2626;">Speed practice</span>
           <span class="topic-pill" style="background:#FEF2F2;color:#DC2626;">Timed drills</span>
@@ -306,63 +370,10 @@
         <div class="section-label">Just added</div>
         <h2 class="section-title">Fresh This Week</h2>
       </div>
-      <a href="/free-worksheets/" class="section-link">Browse all 1,000+ worksheets →</a>
+      <a href="/free-worksheets/" class="section-link">Browse all ${totalCount.toLocaleString()}+ worksheets →</a>
     </div>
     <div class="ws-grid">
-      <a href="/worksheets/grade-5-science-ecosystems-jungle-standard/" class="ws-card">
-    <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#059669;letter-spacing:-1px">Science</span></div>
-    <div class="ws-card-body">
-      <div class="ws-card-badge" style="background:#059669">Science · Grade 5</div>
-      <h3>Jungle Ecosystems: Organisms and Habitats</h3>
-      <p>Ecosystems · Jungle theme</p>
-      <span class="ws-card-btn">Download Free →</span>
-    </div>
-  </a>
-<a href="/worksheets/grade-4-english-grammar-pirates-standard/" class="ws-card">
-    <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DB277718 0%,#DB277708 100%);border-top:4px solid #DB2777"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DB2777;letter-spacing:-1px">English</span></div>
-    <div class="ws-card-body">
-      <div class="ws-card-badge" style="background:#DB2777">English · Grade 4</div>
-      <h3>Grade 4 Grammar: Pirates and Sentence Parts</h3>
-      <p>Grammar · Pirates theme</p>
-      <span class="ws-card-btn">Download Free →</span>
-    </div>
-  </a>
-<a href="/drills/math/grade-3/drill-math-grade3-multiplication-space-standard/" class="ws-card">
-    <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DC262618 0%,#DC262608 100%);border-top:4px solid #DC2626"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DC2626;letter-spacing:-1px">Math</span></div>
-    <div class="ws-card-body">
-      <div class="ws-card-badge" style="background:#DC2626">Math · Grade 3</div>
-      <h3>Blast Off to Multiplication Galaxy Adventure</h3>
-      <p>Multiplication · Space theme</p>
-      <span class="ws-card-btn">Download Free →</span>
-    </div>
-  </a>
-<a href="/worksheets/grade-3-math-multiplication-space-standard/" class="ws-card">
-    <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#7C3AED18 0%,#7C3AED08 100%);border-top:4px solid #7C3AED"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#7C3AED;letter-spacing:-1px">Math</span></div>
-    <div class="ws-card-body">
-      <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 3</div>
-      <h3>Grade 3 Multiplication: Exploring Space</h3>
-      <p>Multiplication · Space theme</p>
-      <span class="ws-card-btn">Download Free →</span>
-    </div>
-  </a>
-<a href="/reading-passages/grade-1/reading-passage-math-grade1-place-value-dinosaurs-beginner/" class="ws-card">
-    <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#7C3AED18 0%,#7C3AED08 100%);border-top:4px solid #7C3AED"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#7C3AED;letter-spacing:-1px">Math</span></div>
-    <div class="ws-card-body">
-      <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 1</div>
-      <h3>Dinosaur Tens and Ones Discovery</h3>
-      <p>Place Value · Dinosaurs theme</p>
-      <span class="ws-card-btn">Download Free →</span>
-    </div>
-  </a>
-<a href="/drills/math/grade-6/drill-math-grade6-division-space-explorers-beginner/" class="ws-card">
-    <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DC262618 0%,#DC262608 100%);border-top:4px solid #DC2626"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DC2626;letter-spacing:-1px">Math</span></div>
-    <div class="ws-card-body">
-      <div class="ws-card-badge" style="background:#DC2626">Math · Grade 6</div>
-      <h3>Space Explorers Division Quest: Divide to Conquer the Galaxy</h3>
-      <p>Division · Space Explorers theme</p>
-      <span class="ws-card-btn">Download Free →</span>
-    </div>
-  </a>
+      ${fresh.map(ws => worksheetCard(ws)).join('\n')}
     </div>
   </div>
 </section>
@@ -468,7 +479,7 @@
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-logo">
-      <svg width="34" height="34" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg"><rect width="72" height="72" rx="16" fill="#6C5CE7"/><rect x="15" y="15" width="9" height="42" rx="2.5" fill="white"/><rect x="15" y="15" width="15" height="9" rx="2.5" fill="white"/><rect x="15" y="31.5" width="24" height="9" rx="2.5" fill="white"/><rect x="15" y="48" width="33" height="9" rx="2.5" fill="white"/></svg>
+      ${logoSVG(34)}
       <div>
         <div style="font-size:20px;font-weight:800;letter-spacing:-1px;color:white;font-family:'Outfit',sans-serif;">examel<span style="color:#6C5CE7;">·</span></div>
         <div class="footer-motto">Know more. Score more.</div>
@@ -505,7 +516,7 @@
         <a href="/terms/">Terms of Use</a>
       </div>
     </div>
-    <div class="footer-bottom">© 2026 Examel · Free K-8 Printable Worksheets · Every exam. Every grade.</div>
+    <div class="footer-bottom">© ${YEAR} Examel · Free K-8 Printable Worksheets · Every exam. Every grade.</div>
   </div>
 </footer>
 
@@ -521,4 +532,10 @@ function examelSubscribe(){
 }
 </script>
 </body>
-</html>
+</html>`;
+
+  fs.writeFileSync('/opt/examel/examel-pages/index.html', html);
+  console.log(`Homepage generated — ${totalCount} worksheets, ${fresh.length} fresh cards`);
+}
+
+generate().catch(console.error);
