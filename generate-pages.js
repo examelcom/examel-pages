@@ -71,7 +71,7 @@ const sharedCSS = `
     .site-header nav a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:13px;font-weight:600;padding:7px 12px;border-radius:8px;transition:all 0.2s;letter-spacing:0.1px;}
     .site-header nav a:hover{color:white;background:rgba(108,92,231,0.2);}
     /* ── BREADCRUMB ── */
-    .breadcrumb{max-width:860px;margin:18px auto 0;padding:0 20px;font-size:12px;color:#A89FAE;display:flex;align-items:center;flex-wrap:wrap;gap:4px;}
+    .breadcrumb{max-width:860px;margin:18px auto 0;padding:0 20px;font-size:15px;color:#A89FAE;display:flex;align-items:center;flex-wrap:wrap;gap:4px;}
     .breadcrumb a{color:#6C5CE7;text-decoration:none;font-weight:500;transition:opacity 0.2s;}
     .breadcrumb a:hover{opacity:0.7;}
     .breadcrumb .sep{opacity:0.3;margin:0 2px;}
@@ -111,9 +111,9 @@ const sharedCSS = `
     .footer-grid{display:flex;gap:48px;justify-content:center;flex-wrap:wrap;margin-bottom:36px;}
     .footer-col{display:flex;flex-direction:column;gap:10px;min-width:130px;}
     .footer-heading{font-size:10px;font-weight:800;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:2px;margin-bottom:6px;}
-    .site-footer a{color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;transition:color 0.2s;font-weight:500;}
+    .site-footer a{color:rgba(255,255,255,0.5);text-decoration:none;font-size:15px;transition:color 0.2s;font-weight:500;}
     .site-footer a:hover{color:#6C5CE7;}
-    .footer-bottom{text-align:center;font-size:12px;color:rgba(255,255,255,0.2);border-top:1px solid rgba(255,255,255,0.07);padding-top:24px;}
+    .footer-bottom{text-align:center;font-size:14px;color:rgba(255,255,255,0.2);border-top:1px solid rgba(255,255,255,0.07);padding-top:24px;}
     .footer-chars{display:flex;justify-content:center;gap:8px;margin-bottom:28px;opacity:0.6;}
     .mobile-menu-btn{display:none;background:none;border:none;cursor:pointer;padding:8px;border-radius:8px;transition:background 0.2s;}
     .mobile-menu-btn:hover{background:rgba(108,92,231,0.2);}
@@ -810,15 +810,26 @@ async function generatePages() {
 <body>
   ${siteHeader}
   <div class="breadcrumb"><a href="https://examel.com">Home</a><span>›</span> Free Math Drills</div>
-  <div class="hero">
-    <h1>Free <span>Math Drills</span> for Kids</h1>
-    <p>${allDrills.length || '500'}+ free printable math drills for Grades 1-6. Build fact fluency with timed practice. Answer keys included.</p>
+  <div style="background:#1C1526;border-top:5px solid #DC2626;padding:0 20px;position:relative;overflow:hidden;">
+    <div style="max-width:1100px;margin:0 auto;padding:52px 180px 48px 48px;position:relative;z-index:2;">
+      <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.35);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;font-family:'Outfit',sans-serif;">Free Printable Drills</div>
+      <h1 style="font-size:clamp(28px,4vw,48px);font-weight:900;color:white;letter-spacing:-1.5px;line-height:1.1;margin-bottom:14px;font-family:'Outfit',sans-serif;">Free <span style="color:#DC2626;">Math Drills</span> for Kids</h1>
+      <p style="font-size:16px;color:rgba(255,255,255,0.5);max-width:520px;line-height:1.75;margin-bottom:24px;">${allDrills.length || 500}+ free printable math drills for Grades 1–6. Build fact fluency fast. Timed practice with answer keys included.</p>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;">
+        <div style="font-size:14px;color:rgba(255,255,255,0.4);font-weight:500;"><span style="color:#DC2626;font-weight:700;">✓</span> Free forever</div>
+        <div style="font-size:14px;color:rgba(255,255,255,0.4);font-weight:500;"><span style="color:#DC2626;font-weight:700;">✓</span> Answer key included</div>
+        <div style="font-size:14px;color:rgba(255,255,255,0.4);font-weight:500;"><span style="color:#DC2626;font-weight:700;">✓</span> CCSS aligned</div>
+      </div>
+    </div>
+    <div style="position:absolute;right:60px;bottom:-10px;opacity:0.92;filter:drop-shadow(0 8px 24px rgba(0,0,0,0.3));">${getCharSVG('drill')}</div>
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 80% 0%,rgba(220,38,38,0.12) 0%,transparent 60%);pointer-events:none;"></div>
   </div>
-  <div class="hub-grid">
-    ${drillTopics.map(t => `<a href="/free-${t}-drills/" class="hub-card" style="border-top:3px solid #6C5CE7;">
-      <span class="hub-icon">${drillIcons[t]}</span>
-      <h3>${t.charAt(0).toUpperCase()+t.slice(1)} Drills</h3>
-      <p>Grades 1-6</p>
+  <div style="max-width:1100px;margin:0 auto;padding:32px 20px 0;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;">
+    ${drillTopics.map(t => `<a href="/free-${t}-drills/" style="background:white;border-radius:20px;padding:28px 20px;text-decoration:none;color:#1A1420;text-align:center;border:1px solid #EDE8DF;border-top:4px solid #DC2626;display:block;">
+      <span style="font-size:36px;margin-bottom:12px;display:block;">${drillIcons[t]}</span>
+      <div style="font-size:18px;font-weight:800;color:#1A1420;margin-bottom:4px;font-family:'Outfit',sans-serif;">${t.charAt(0).toUpperCase()+t.slice(1)}</div>
+      <div style="font-size:13px;color:#A89FAE;margin-bottom:12px;">Grades 1–6</div>
+      <div style="font-size:13px;color:#DC2626;font-weight:700;font-family:'Outfit',sans-serif;">Browse Drills →</div>
     </a>`).join('')}
   </div>
   ${siteFooter}
@@ -844,17 +855,37 @@ async function generatePages() {
 <body>
   ${siteHeader}
   <div class="breadcrumb"><a href="https://examel.com">Home</a><span>›</span><a href="/free-math-drills/">Math Drills</a><span>›</span>${topic.charAt(0).toUpperCase()+topic.slice(1)} Drills</div>
-  <div class="hero">
-    <h1>Free <span>${topic.charAt(0).toUpperCase()+topic.slice(1)} Drills</span></h1>
-    <p>${topicDrills.length || '100'}+ free printable ${topic} drills for Grades 1-6. Timed practice with answer keys.</p>
+  <div style="background:#1C1526;border-top:5px solid #DC2626;padding:0 20px;position:relative;overflow:hidden;">
+    <div style="max-width:1100px;margin:0 auto;padding:48px 180px 44px 48px;position:relative;z-index:2;">
+      <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.35);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;font-family:'Outfit',sans-serif;">Free Math Drills</div>
+      <h1 style="font-size:clamp(24px,3.5vw,42px);font-weight:900;color:white;letter-spacing:-1.5px;line-height:1.1;margin-bottom:12px;font-family:'Outfit',sans-serif;">Free <span style="color:#DC2626;">${topic.charAt(0).toUpperCase()+topic.slice(1)} Drills</span></h1>
+      <p style="font-size:15px;color:rgba(255,255,255,0.5);max-width:500px;line-height:1.75;margin-bottom:20px;">${topicDrills.length || 100}+ free printable ${topic} drills for Grades 1–6. Build fact fluency with timed practice. Answer keys included.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;">
+        <div style="font-size:14px;color:rgba(255,255,255,0.4);font-weight:500;"><span style="color:#DC2626;font-weight:700;">✓</span> Free forever</div>
+        <div style="font-size:14px;color:rgba(255,255,255,0.4);font-weight:500;"><span style="color:#DC2626;font-weight:700;">✓</span> Answer key included</div>
+        <div style="font-size:14px;color:rgba(255,255,255,0.4);font-weight:500;"><span style="color:#DC2626;font-weight:700;">✓</span> CCSS aligned</div>
+      </div>
+    </div>
+    <div style="position:absolute;right:60px;bottom:-10px;opacity:0.92;filter:drop-shadow(0 8px 24px rgba(0,0,0,0.3));">${getCharSVG('drill')}</div>
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 80% 0%,rgba(220,38,38,0.12) 0%,transparent 60%);pointer-events:none;"></div>
   </div>
-  <div class="hub-grid">
+  <div style="background:white;border-bottom:1px solid #EDE8DF;padding:14px 24px;">
+    <div style="max-width:1100px;margin:0 auto;display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+      <span style="font-size:14px;font-weight:700;color:#A89FAE;font-family:'Outfit',sans-serif;">Grade:</span>
+      ${[1,2,3,4,5,6].map(g => {
+        const count = topicDrills.filter(d => d.grade === g).length;
+        return `<a href="/drills/math/grade-${g}/" style="font-size:14px;font-weight:700;text-decoration:none;padding:6px 16px;border-radius:100px;border:2px solid #EDE8DF;color:#6B6475;font-family:'Outfit',sans-serif;">${count||0} Grade ${g} drills</a>`;
+      }).join('')}
+    </div>
+  </div>
+  <div style="max-width:1100px;margin:0 auto;padding:32px 20px 0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
     ${[1,2,3,4,5,6].map(g => {
       const count = topicDrills.filter(d => d.grade === g).length;
-      return `<a href="/drills/math/grade-${g}/" class="hub-card" style="border-top:3px solid ${gradeColor(g)};">
-        <span class="hub-icon">📄</span>
-        <h3>Grade ${g}</h3>
-        <p>${count || '50'}+ drills</p>
+      return `<a href="/drills/math/grade-${g}/" style="background:white;border-radius:20px;padding:28px 20px;text-decoration:none;color:#1A1420;text-align:center;border:1px solid #EDE8DF;border-top:4px solid #DC2626;display:block;">
+        <span style="font-size:36px;margin-bottom:12px;display:block;">⚡</span>
+        <div style="font-size:22px;font-weight:800;color:#1A1420;margin-bottom:4px;font-family:'Outfit',sans-serif;">Grade ${g}</div>
+        <div style="font-size:14px;color:#A89FAE;margin-bottom:14px;">${count||0} ${topic} drills</div>
+        <div style="font-size:14px;color:#DC2626;font-weight:700;font-family:'Outfit',sans-serif;">Browse Grade ${g} →</div>
       </a>`;
     }).join('')}
   </div>
@@ -888,11 +919,27 @@ async function generatePages() {
 <body>
   ${siteHeader}
   <div class="breadcrumb"><a href="https://examel.com">Home</a><span>›</span> Free ${capitalize(subj)} Vocabulary</div>
-  <div class="hero">
-    <h1>Free <span>${capitalize(subj)} Vocabulary</span> Worksheets</h1>
-    <p>${subjVocab.length || '200'}+ free printable ${subj} vocabulary match worksheets for Grades 1-6. Match words to definitions with answer keys.</p>
+  <div style="background:#1C1526;border-top:5px solid ${subjColor};padding:0 20px;position:relative;overflow:hidden;">
+    <div style="max-width:1100px;margin:0 auto;padding:48px 180px 44px 48px;position:relative;z-index:2;">
+      <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.35);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;font-family:'Outfit',sans-serif;">Free Vocabulary Worksheets</div>
+      <h1 style="font-size:clamp(24px,3.5vw,42px);font-weight:900;color:white;letter-spacing:-1.5px;line-height:1.1;margin-bottom:12px;font-family:'Outfit',sans-serif;">Free <span style="color:${subjColor}">${capitalize(subj)} Vocabulary</span> Worksheets</h1>
+      <p style="font-size:15px;color:rgba(255,255,255,0.5);max-width:500px;line-height:1.75;margin-bottom:20px;">${subjVocab.length || 200}+ free printable ${subj} vocabulary match worksheets for Grades 1–6. Match words to definitions. Answer keys included.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;">
+        <div style="font-size:14px;color:rgba(255,255,255,0.4);"><span style="color:${subjColor};font-weight:700;">✓</span> Free forever</div>
+        <div style="font-size:14px;color:rgba(255,255,255,0.4);"><span style="color:${subjColor};font-weight:700;">✓</span> Answer key included</div>
+        <div style="font-size:14px;color:rgba(255,255,255,0.4);"><span style="color:${subjColor};font-weight:700;">✓</span> No login needed</div>
+      </div>
+    </div>
+    <div style="position:absolute;right:60px;bottom:-10px;opacity:0.92;filter:drop-shadow(0 8px 24px rgba(0,0,0,0.3));">${getCharSVG(subj)}</div>
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 80% 0%,rgba(108,92,231,0.12) 0%,transparent 60%);pointer-events:none;"></div>
   </div>
-  <div class="grid">
+  <div style="max-width:1100px;margin:0 auto;padding:32px 20px 16px;">
+    <div style="font-size:11px;font-weight:700;color:#A89FAE;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;font-family:'Outfit',sans-serif;">Just added</div>
+    <div style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:24px;">
+      <h2 style="font-size:24px;font-weight:800;color:#1A1420;letter-spacing:-0.5px;font-family:'Outfit',sans-serif;">Latest ${capitalize(subj)} Vocabulary</h2>
+    </div>
+  </div>
+  <div class="grid" style="padding-top:0;">
     ${subjVocab.slice(0,12).map(ws => worksheetCard(ws)).join('')}
   </div>
   ${siteFooter}
@@ -919,11 +966,33 @@ async function generatePages() {
 <body>
   ${siteHeader}
   <div class="breadcrumb"><a href="https://examel.com">Home</a><span>›</span> Free Reading Passages</div>
-  <div class="hero">
-    <h1>Free <span>Reading Comprehension</span> Passages</h1>
-    <p>${readingPassagePages.length || '200'}+ free printable reading passages for Grades 1-6. Nonfiction passages with 6 comprehension questions and answer keys.</p>
+  <div style="background:#1C1526;border-top:5px solid #0891B2;padding:0 20px;position:relative;overflow:hidden;">
+    <div style="max-width:1100px;margin:0 auto;padding:52px 180px 48px 48px;position:relative;z-index:2;">
+      <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.35);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;font-family:'Outfit',sans-serif;">Free Reading Comprehension</div>
+      <h1 style="font-size:clamp(28px,4vw,48px);font-weight:900;color:white;letter-spacing:-1.5px;line-height:1.1;margin-bottom:14px;font-family:'Outfit',sans-serif;">Free <span style="color:#0891B2;">Reading Comprehension</span> Passages</h1>
+      <p style="font-size:16px;color:rgba(255,255,255,0.5);max-width:520px;line-height:1.75;margin-bottom:24px;">${readingPassagePages.length || 200}+ free printable reading passages for Grades 1–6. Nonfiction passages with 6 comprehension questions and answer keys included.</p>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;">
+        <div style="font-size:14px;color:rgba(255,255,255,0.4);"><span style="color:#0891B2;font-weight:700;">✓</span> Free forever</div>
+        <div style="font-size:14px;color:rgba(255,255,255,0.4);"><span style="color:#0891B2;font-weight:700;">✓</span> Answer key included</div>
+        <div style="font-size:14px;color:rgba(255,255,255,0.4);"><span style="color:#0891B2;font-weight:700;">✓</span> CCSS aligned</div>
+        <div style="font-size:14px;color:rgba(255,255,255,0.4);"><span style="color:#0891B2;font-weight:700;">✓</span> No login needed</div>
+      </div>
+    </div>
+    <div style="position:absolute;right:60px;bottom:-10px;opacity:0.92;filter:drop-shadow(0 8px 24px rgba(0,0,0,0.3));">${getCharSVG('english')}</div>
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 80% 0%,rgba(8,145,178,0.12) 0%,transparent 60%);pointer-events:none;"></div>
   </div>
-  <div class="hub-grid">
+  <div style="max-width:1100px;margin:0 auto;padding:32px 20px 0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+    ${rpGrades.map(g => {
+      const count = readingPassagePages.filter(p => p.grade === g).length;
+      return `<a href="/free-reading-passages/grade-${g}/" style="background:white;border-radius:20px;padding:28px 20px;text-decoration:none;color:#1A1420;text-align:center;border:1px solid #EDE8DF;border-top:4px solid #0891B2;display:block;">
+        <span style="font-size:36px;margin-bottom:12px;display:block;">📖</span>
+        <div style="font-size:22px;font-weight:800;color:#1A1420;margin-bottom:4px;font-family:'Outfit',sans-serif;">Grade ${g}</div>
+        <div style="font-size:14px;color:#A89FAE;margin-bottom:14px;">${count||0} passages</div>
+        <div style="font-size:14px;color:#0891B2;font-weight:700;font-family:'Outfit',sans-serif;">Browse Grade ${g} →</div>
+      </a>`;
+    }).join('')}
+  </div>
+  <div class="hub-grid" style="display:none;">
     ${rpGrades.map(g => {
       const count = readingPassagePages.filter(p => p.grade === g).length;
       return `<a href="/free-reading-passages/grade-${g}/" class="hub-card" style="border-top:3px solid ${gradeColor(g)};">
@@ -968,6 +1037,177 @@ async function generatePages() {
     fs.writeFileSync(gradeDir + '/index.html', gradeHTML);
   }
   console.log('✓ Reading passage hub pages generated');
+
+  // ── FREE-WORKSHEETS MASTER HUB ─────────────────────────────────────────
+  const fwDir = '/opt/examel/examel-pages/free-worksheets';
+  fs.mkdirSync(fwDir, { recursive: true });
+  const allPublished = worksheets;
+  const fwHTML = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%236C5CE7'/%3E%3Crect x='7' y='7' width='4' height='18' rx='1' fill='white'/%3E%3Crect x='7' y='7' width='7' height='4' rx='1' fill='white'/%3E%3Crect x='7' y='14' width='11' height='4' rx='1' fill='white'/%3E%3Crect x='7' y='21' width='15' height='4' rx='1' fill='white'/%3E%3C/svg%3E">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Free Printable Worksheets for Kids | All Grades | Examel</title>
+  <meta name="description" content="Browse all ${allPublished.length}+ free printable worksheets for Grades 1-6. Math, English, Science and more. Common Core aligned. Answer keys included.">
+  <link rel="canonical" href="https://examel.com/free-worksheets/">
+  ${sharedCSS}
+</head>
+<body>
+  ${siteHeader}
+  <div class="breadcrumb"><a href="https://examel.com">Home</a><span class="sep">›</span> All Free Worksheets</div>
+  <div style="background:#1C1526;border-top:5px solid #6C5CE7;padding:0 20px;position:relative;overflow:hidden;">
+    <div style="max-width:1100px;margin:0 auto;padding:52px 180px 48px 48px;position:relative;z-index:2;">
+      <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.35);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;font-family:'Outfit',sans-serif;">Free Printable Worksheets</div>
+      <h1 style="font-size:clamp(28px,4vw,48px);font-weight:900;color:white;letter-spacing:-1.5px;line-height:1.1;margin-bottom:14px;font-family:'Outfit',sans-serif;">All Free <span style="color:#6C5CE7;">Worksheets</span> for Kids</h1>
+      <p style="font-size:16px;color:rgba(255,255,255,0.5);max-width:520px;line-height:1.75;margin-bottom:24px;">${allPublished.length}+ free printable worksheets for Grades 1–6. Math, English, Science and more. Common Core aligned. Answer keys included.</p>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;">
+        <div style="font-size:14px;color:rgba(255,255,255,0.4);"><span style="color:#6C5CE7;font-weight:700;">✓</span> Free forever</div>
+        <div style="font-size:14px;color:rgba(255,255,255,0.4);"><span style="color:#6C5CE7;font-weight:700;">✓</span> Answer key included</div>
+        <div style="font-size:14px;color:rgba(255,255,255,0.4);"><span style="color:#6C5CE7;font-weight:700;">✓</span> CCSS aligned</div>
+        <div style="font-size:14px;color:rgba(255,255,255,0.4);"><span style="color:#6C5CE7;font-weight:700;">✓</span> No login needed</div>
+      </div>
+    </div>
+    <div style="position:absolute;right:60px;bottom:-10px;opacity:0.92;filter:drop-shadow(0 8px 24px rgba(0,0,0,0.3));">${getCharSVG('math')}</div>
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 80% 0%,rgba(108,92,231,0.15) 0%,transparent 60%);pointer-events:none;"></div>
+  </div>
+  <div style="background:white;border-bottom:1px solid #EDE8DF;padding:14px 24px;">
+    <div style="max-width:1100px;margin:0 auto;display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+      <span style="font-size:14px;font-weight:700;color:#A89FAE;font-family:'Outfit',sans-serif;">Browse by subject:</span>
+      <a href="/free-math-worksheets/" style="font-size:14px;font-weight:700;text-decoration:none;padding:6px 16px;border-radius:100px;background:#7C3AED;color:white;font-family:'Outfit',sans-serif;">Math</a>
+      <a href="/free-english-worksheets/" style="font-size:14px;font-weight:700;text-decoration:none;padding:6px 16px;border-radius:100px;border:2px solid #EDE8DF;color:#6B6475;font-family:'Outfit',sans-serif;">English</a>
+      <a href="/free-science-worksheets/" style="font-size:14px;font-weight:700;text-decoration:none;padding:6px 16px;border-radius:100px;border:2px solid #EDE8DF;color:#6B6475;font-family:'Outfit',sans-serif;">Science</a>
+      <a href="/free-math-drills/" style="font-size:14px;font-weight:700;text-decoration:none;padding:6px 16px;border-radius:100px;border:2px solid #EDE8DF;color:#6B6475;font-family:'Outfit',sans-serif;">Drills</a>
+      <a href="/free-reading-passages/" style="font-size:14px;font-weight:700;text-decoration:none;padding:6px 16px;border-radius:100px;border:2px solid #EDE8DF;color:#6B6475;font-family:'Outfit',sans-serif;">Reading</a>
+    </div>
+  </div>
+  <div style="max-width:1100px;margin:0 auto;padding:32px 20px 0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+    ${[1,2,3,4,5,6].map(g => {
+      const count = allPublished.filter(w => w.grade === g).length;
+      return `<a href="/free-worksheets/grade-${g}/" style="background:white;border-radius:20px;padding:28px 20px;text-decoration:none;color:#1A1420;text-align:center;border:1px solid #EDE8DF;border-top:4px solid #6C5CE7;display:block;">
+        <div style="font-size:32px;font-weight:900;color:#6C5CE7;margin-bottom:4px;font-family:'Outfit',sans-serif;">${g}</div>
+        <div style="font-size:16px;font-weight:700;color:#1A1420;margin-bottom:4px;font-family:'Outfit',sans-serif;">Grade ${g}</div>
+        <div style="font-size:14px;color:#A89FAE;margin-bottom:14px;">${count}+ worksheets</div>
+        <div style="font-size:14px;color:#6C5CE7;font-weight:700;font-family:'Outfit',sans-serif;">Browse Grade ${g} →</div>
+      </a>`;
+    }).join('')}
+  </div>
+  <div style="max-width:1100px;margin:0 auto;padding:32px 20px 16px;">
+    <div style="font-size:11px;font-weight:700;color:#A89FAE;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;font-family:'Outfit',sans-serif;">Just added</div>
+    <h2 style="font-size:24px;font-weight:800;color:#1A1420;letter-spacing:-0.5px;margin-bottom:20px;font-family:'Outfit',sans-serif;">Latest Worksheets</h2>
+  </div>
+  <div class="grid" style="padding-top:0;">
+    ${allPublished.slice(0,12).map(ws => worksheetCard(ws)).join('')}
+  </div>
+  ${siteFooter}
+</body></html>`;
+  fs.writeFileSync(fwDir + '/index.html', fwHTML);
+  console.log('✓ Free worksheets master hub generated');
+
+  // ── WORD SEARCHES HUB ────────────────────────────────────────────────────
+  const wsHubDir = '/opt/examel/examel-pages/word-searches';
+  fs.mkdirSync(wsHubDir, { recursive: true });
+  const allWordSearches = wordSearches;
+  const wsHubHTML = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%236C5CE7'/%3E%3Crect x='7' y='7' width='4' height='18' rx='1' fill='white'/%3E%3Crect x='7' y='7' width='7' height='4' rx='1' fill='white'/%3E%3Crect x='7' y='14' width='11' height='4' rx='1' fill='white'/%3E%3Crect x='7' y='21' width='15' height='4' rx='1' fill='white'/%3E%3C/svg%3E">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Free Word Search Worksheets for Kids | Grades 1-6 | Examel</title>
+  <meta name="description" content="Free printable word search worksheets for Grades 1-6. Math, English and Science word searches with answer keys. Download PDF instantly.">
+  <link rel="canonical" href="https://examel.com/word-searches/">
+  ${sharedCSS}
+</head>
+<body>
+  ${siteHeader}
+  <div class="breadcrumb"><a href="https://examel.com">Home</a><span class="sep">›</span> Free Word Searches</div>
+  <div style="background:#1C1526;border-top:5px solid #D97706;padding:0 20px;position:relative;overflow:hidden;">
+    <div style="max-width:1100px;margin:0 auto;padding:52px 180px 48px 48px;position:relative;z-index:2;">
+      <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.35);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;font-family:'Outfit',sans-serif;">Free Printable Word Searches</div>
+      <h1 style="font-size:clamp(28px,4vw,48px);font-weight:900;color:white;letter-spacing:-1.5px;line-height:1.1;margin-bottom:14px;font-family:'Outfit',sans-serif;">Free <span style="color:#D97706;">Word Search</span> Worksheets</h1>
+      <p style="font-size:16px;color:rgba(255,255,255,0.5);max-width:520px;line-height:1.75;margin-bottom:24px;">${allWordSearches.length || 200}+ free printable word searches for Grades 1–6. Math, English and Science vocabulary. Answer keys included.</p>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;">
+        <div style="font-size:14px;color:rgba(255,255,255,0.4);"><span style="color:#D97706;font-weight:700;">✓</span> Free forever</div>
+        <div style="font-size:14px;color:rgba(255,255,255,0.4);"><span style="color:#D97706;font-weight:700;">✓</span> Answer key included</div>
+        <div style="font-size:14px;color:rgba(255,255,255,0.4);"><span style="color:#D97706;font-weight:700;">✓</span> No login needed</div>
+      </div>
+    </div>
+    <div style="position:absolute;right:60px;bottom:-10px;opacity:0.92;filter:drop-shadow(0 8px 24px rgba(0,0,0,0.3));">${getCharSVG('science')}</div>
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 80% 0%,rgba(217,119,6,0.12) 0%,transparent 60%);pointer-events:none;"></div>
+  </div>
+  <div style="max-width:1100px;margin:0 auto;padding:32px 20px 0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+    ${['math','english','science'].map(subj => {
+      const count = allWordSearches.filter(w => w.subject === subj).length;
+      const color = subj==='math'?'#7C3AED':subj==='english'?'#DB2777':'#059669';
+      const icon = subj==='math'?'📐':subj==='english'?'📖':'🔬';
+      return `<a href="/word-searches/${subj}/" style="background:white;border-radius:20px;padding:28px 20px;text-decoration:none;color:#1A1420;text-align:center;border:1px solid #EDE8DF;border-top:4px solid ${color};display:block;">
+        <span style="font-size:36px;margin-bottom:12px;display:block;">${icon}</span>
+        <div style="font-size:20px;font-weight:800;color:#1A1420;margin-bottom:4px;font-family:'Outfit',sans-serif;">${subj.charAt(0).toUpperCase()+subj.slice(1)}</div>
+        <div style="font-size:14px;color:#A89FAE;margin-bottom:14px;">${count||0} word searches</div>
+        <div style="font-size:14px;color:${color};font-weight:700;font-family:'Outfit',sans-serif;">Browse →</div>
+      </a>`;
+    }).join('')}
+  </div>
+  <div style="max-width:1100px;margin:0 auto;padding:32px 20px 16px;">
+    <div style="font-size:11px;font-weight:700;color:#A89FAE;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;font-family:'Outfit',sans-serif;">Just added</div>
+    <h2 style="font-size:24px;font-weight:800;color:#1A1420;letter-spacing:-0.5px;margin-bottom:20px;font-family:'Outfit',sans-serif;">Latest Word Searches</h2>
+  </div>
+  <div class="grid" style="padding-top:0;">
+    ${allWordSearches.slice(0,12).map(ws => worksheetCard(ws)).join('')}
+  </div>
+  ${siteFooter}
+</body></html>`;
+  fs.writeFileSync(wsHubDir + '/index.html', wsHubHTML);
+  console.log('✓ Word searches hub generated');
+
+  // ── DRILLS GRADE HUB PAGES ───────────────────────────────────────────────
+  for (const g of [1,2,3,4,5,6]) {
+    const gradeDir = `/opt/examel/examel-pages/drills/math/grade-${g}`;
+    fs.mkdirSync(gradeDir, { recursive: true });
+    const gradeDrills = allDrills.filter(d => d.grade === g);
+    const gradeHubHTML = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%236C5CE7'/%3E%3Crect x='7' y='7' width='4' height='18' rx='1' fill='white'/%3E%3Crect x='7' y='7' width='7' height='4' rx='1' fill='white'/%3E%3Crect x='7' y='14' width='11' height='4' rx='1' fill='white'/%3E%3Crect x='7' y='21' width='15' height='4' rx='1' fill='white'/%3E%3C/svg%3E">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Free Grade ${g} Math Drills | Examel</title>
+  <meta name="description" content="Free printable Grade ${g} math drills. Addition, subtraction, multiplication and division practice with answer keys. Download PDF instantly.">
+  <link rel="canonical" href="https://examel.com/drills/math/grade-${g}/">
+  ${sharedCSS}
+</head>
+<body>
+  ${siteHeader}
+  <div class="breadcrumb"><a href="https://examel.com">Home</a><span>›</span><a href="/free-math-drills/">Math Drills</a><span>›</span>Grade ${g}</div>
+  <div style="background:#1C1526;border-top:5px solid #DC2626;padding:0 20px;position:relative;overflow:hidden;">
+    <div style="max-width:1100px;margin:0 auto;padding:48px 180px 44px 48px;position:relative;z-index:2;">
+      <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.35);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;font-family:'Outfit',sans-serif;">Free Math Drills</div>
+      <h1 style="font-size:clamp(24px,3.5vw,42px);font-weight:900;color:white;letter-spacing:-1.5px;line-height:1.1;margin-bottom:12px;font-family:'Outfit',sans-serif;">Free Grade ${g} <span style="color:#DC2626;">Math Drills</span></h1>
+      <p style="font-size:15px;color:rgba(255,255,255,0.5);max-width:500px;line-height:1.75;margin-bottom:20px;">${gradeDrills.length}+ free Grade ${g} math drills. Build fact fluency with timed practice. Answer keys included.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;">
+        <div style="font-size:14px;color:rgba(255,255,255,0.4);"><span style="color:#DC2626;font-weight:700;">✓</span> Free forever</div>
+        <div style="font-size:14px;color:rgba(255,255,255,0.4);"><span style="color:#DC2626;font-weight:700;">✓</span> Answer key included</div>
+        <div style="font-size:14px;color:rgba(255,255,255,0.4);"><span style="color:#DC2626;font-weight:700;">✓</span> CCSS aligned</div>
+      </div>
+    </div>
+    <div style="position:absolute;right:60px;bottom:-10px;opacity:0.92;filter:drop-shadow(0 8px 24px rgba(0,0,0,0.3));">${getCharSVG('drill')}</div>
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 80% 0%,rgba(220,38,38,0.12) 0%,transparent 60%);pointer-events:none;"></div>
+  </div>
+  <div style="background:white;border-bottom:1px solid #EDE8DF;padding:14px 24px;">
+    <div style="max-width:1100px;margin:0 auto;display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+      <span style="font-size:14px;font-weight:700;color:#A89FAE;font-family:'Outfit',sans-serif;">Grade:</span>
+      ${[1,2,3,4,5,6].map(gr => `<a href="/drills/math/grade-${gr}/" style="font-size:14px;font-weight:700;text-decoration:none;padding:6px 16px;border-radius:100px;border:2px solid ${gr===g?'#DC2626':'#EDE8DF'};background:${gr===g?'#DC2626':'white'};color:${gr===g?'white':'#6B6475'};font-family:'Outfit',sans-serif;">Grade ${gr}</a>`).join('')}
+    </div>
+  </div>
+  <div class="grid">
+    ${gradeDrills.map(ws => worksheetCard(ws)).join('')}
+  </div>
+  ${siteFooter}
+</body></html>`;
+    fs.writeFileSync(gradeDir + '/index.html', gradeHubHTML);
+  }
+  console.log('✓ Drills grade hub pages generated');
 
   // ── 5. SITEMAP ────────────────────────────────────────────────────────────
   const baseUrl = 'https://examel.com';

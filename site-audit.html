@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Examel Site Audit — 3/20/2026</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:system-ui,sans-serif;background:#0F0A1A;color:#E0D8F0;padding:24px;}
+h1{font-size:24px;font-weight:800;color:white;margin-bottom:4px;}
+.meta{font-size:13px;color:rgba(255,255,255,0.4);margin-bottom:32px;}
+.stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin-bottom:32px;}
+.stat{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:16px;}
+.stat-num{font-size:28px;font-weight:800;color:#6C5CE7;font-family:system-ui;}
+.stat-label{font-size:12px;color:rgba(255,255,255,0.4);margin-top:4px;}
+.stat.warn .stat-num{color:#F59E0B;}
+.stat.danger .stat-num{color:#EF4444;}
+.section-title{font-size:16px;font-weight:700;color:white;margin-bottom:12px;margin-top:32px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.1);}
+table{width:100%;border-collapse:collapse;font-size:13px;}
+th{text-align:left;padding:10px 12px;background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.5);font-weight:600;font-size:11px;letter-spacing:1px;text-transform:uppercase;}
+td{padding:10px 12px;border-bottom:1px solid rgba(255,255,255,0.05);}
+tr.ok{background:rgba(16,185,129,0.03);}
+tr.missing{background:rgba(239,68,68,0.06);}
+tr.missing td:first-child code{color:#F87171;}
+code{font-size:12px;color:#A78BFA;font-family:monospace;}
+.priority{padding:2px 8px;border-radius:100px;font-size:11px;font-weight:700;}
+.priority.critical{background:rgba(239,68,68,0.2);color:#F87171;}
+.priority.high{background:rgba(245,158,11,0.2);color:#FCD34D;}
+.priority.medium{background:rgba(99,102,241,0.2);color:#A5B4FC;}
+.status{font-size:12px;font-weight:700;}
+.alert{background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);border-radius:12px;padding:16px;margin-bottom:24px;}
+.alert h3{color:#F87171;font-size:14px;margin-bottom:8px;}
+.alert ul{list-style:none;padding:0;}
+.alert li{font-size:13px;color:#FCA5A5;padding:3px 0;}
+.alert li::before{content:'→ ';color:#EF4444;}
+</style>
+</head>
+<body>
+<h1>Examel Site Audit</h1>
+<div class="meta">Generated: 2026-03-20T23:20:08.466Z · examel.com</div>
+
+<div style="background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.3);border-radius:12px;padding:16px;margin-bottom:24px;color:#6EE7B7;font-weight:700;">✅ No critical issues</div>
+
+<div class="stats">
+  <div class="stat"><div class="stat-num">1226</div><div class="stat-label">Total pages</div></div>
+  <div class="stat"><div class="stat-num">729</div><div class="stat-label">Worksheet pages</div></div>
+  <div class="stat"><div class="stat-num">171</div><div class="stat-label">Drill pages</div></div>
+  <div class="stat"><div class="stat-num">80</div><div class="stat-label">Vocab pages</div></div>
+  <div class="stat"><div class="stat-num">80</div><div class="stat-label">Reading pages</div></div>
+  <div class="stat"><div class="stat-num">113</div><div class="stat-label">Word search pages</div></div>
+  <div class="stat ok"><div class="stat-num">0</div><div class="stat-label">Wrong URL word searches</div></div>
+  <div class="stat ok"><div class="stat-num">0</div><div class="stat-label">Missing pages</div></div>
+</div>
+
+<div class="section-title">Route Status — All Expected Pages</div>
+<table>
+<thead><tr><th>URL</th><th>Description</th><th>Priority</th><th>Status</th></tr></thead>
+<tbody><tr class="ok">
+    <td><code>/</code></td>
+    <td>Homepage</td>
+    <td><span class="priority critical">CRITICAL</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/about/</code></td>
+    <td>About page</td>
+    <td><span class="priority high">HIGH</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/privacy-policy/</code></td>
+    <td>Privacy Policy</td>
+    <td><span class="priority high">HIGH</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/terms/</code></td>
+    <td>Terms of Use</td>
+    <td><span class="priority high">HIGH</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/404.html</code></td>
+    <td>404 page</td>
+    <td><span class="priority high">HIGH</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/robots.txt</code></td>
+    <td>Robots.txt</td>
+    <td><span class="priority high">HIGH</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/sitemap.xml</code></td>
+    <td>Sitemap</td>
+    <td><span class="priority critical">CRITICAL</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/free-worksheets/</code></td>
+    <td>All Worksheets Hub</td>
+    <td><span class="priority critical">CRITICAL</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/free-math-worksheets/</code></td>
+    <td>Math Hub</td>
+    <td><span class="priority critical">CRITICAL</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/free-english-worksheets/</code></td>
+    <td>English Hub</td>
+    <td><span class="priority critical">CRITICAL</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/free-science-worksheets/</code></td>
+    <td>Science Hub</td>
+    <td><span class="priority critical">CRITICAL</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/free-math-drills/</code></td>
+    <td>Drills Hub</td>
+    <td><span class="priority critical">CRITICAL</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/free-reading-passages/</code></td>
+    <td>Reading Hub</td>
+    <td><span class="priority critical">CRITICAL</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/free-math-vocabulary/</code></td>
+    <td>Vocab Hub</td>
+    <td><span class="priority high">HIGH</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/free-english-vocabulary/</code></td>
+    <td>English Vocab Hub</td>
+    <td><span class="priority high">HIGH</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/free-science-vocabulary/</code></td>
+    <td>Science Vocab Hub</td>
+    <td><span class="priority high">HIGH</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/word-searches/</code></td>
+    <td>Word Searches Hub</td>
+    <td><span class="priority high">HIGH</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/free-worksheets/grade-1/</code></td>
+    <td>All Worksheets Grade 1</td>
+    <td><span class="priority high">HIGH</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/free-worksheets/grade-2/</code></td>
+    <td>All Worksheets Grade 2</td>
+    <td><span class="priority high">HIGH</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/free-worksheets/grade-3/</code></td>
+    <td>All Worksheets Grade 3</td>
+    <td><span class="priority high">HIGH</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/free-worksheets/grade-4/</code></td>
+    <td>All Worksheets Grade 4</td>
+    <td><span class="priority high">HIGH</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/free-worksheets/grade-5/</code></td>
+    <td>All Worksheets Grade 5</td>
+    <td><span class="priority high">HIGH</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/free-worksheets/grade-6/</code></td>
+    <td>All Worksheets Grade 6</td>
+    <td><span class="priority high">HIGH</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/free-math-worksheets/grade-1/</code></td>
+    <td>Math Grade 1</td>
+    <td><span class="priority high">HIGH</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/free-math-worksheets/grade-2/</code></td>
+    <td>Math Grade 2</td>
+    <td><span class="priority high">HIGH</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/free-math-worksheets/grade-3/</code></td>
+    <td>Math Grade 3</td>
+    <td><span class="priority high">HIGH</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/free-math-worksheets/grade-4/</code></td>
+    <td>Math Grade 4</td>
+    <td><span class="priority high">HIGH</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/free-math-worksheets/grade-5/</code></td>
+    <td>Math Grade 5</td>
+    <td><span class="priority high">HIGH</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/free-math-worksheets/grade-6/</code></td>
+    <td>Math Grade 6</td>
+    <td><span class="priority high">HIGH</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/free-english-worksheets/grade-1/</code></td>
+    <td>English Grade 1</td>
+    <td><span class="priority high">HIGH</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/free-english-worksheets/grade-2/</code></td>
+    <td>English Grade 2</td>
+    <td><span class="priority high">HIGH</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/free-english-worksheets/grade-3/</code></td>
+    <td>English Grade 3</td>
+    <td><span class="priority high">HIGH</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/free-english-worksheets/grade-4/</code></td>
+    <td>English Grade 4</td>
+    <td><span class="priority high">HIGH</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/free-english-worksheets/grade-5/</code></td>
+    <td>English Grade 5</td>
+    <td><span class="priority high">HIGH</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/free-english-worksheets/grade-6/</code></td>
+    <td>English Grade 6</td>
+    <td><span class="priority high">HIGH</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/free-science-worksheets/grade-1/</code></td>
+    <td>Science Grade 1</td>
+    <td><span class="priority high">HIGH</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/free-science-worksheets/grade-2/</code></td>
+    <td>Science Grade 2</td>
+    <td><span class="priority high">HIGH</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/free-science-worksheets/grade-3/</code></td>
+    <td>Science Grade 3</td>
+    <td><span class="priority high">HIGH</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/free-science-worksheets/grade-4/</code></td>
+    <td>Science Grade 4</td>
+    <td><span class="priority high">HIGH</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/free-science-worksheets/grade-5/</code></td>
+    <td>Science Grade 5</td>
+    <td><span class="priority high">HIGH</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/free-science-worksheets/grade-6/</code></td>
+    <td>Science Grade 6</td>
+    <td><span class="priority high">HIGH</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/free-reading-passages/grade-1/</code></td>
+    <td>Reading Grade 1</td>
+    <td><span class="priority medium">MEDIUM</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/free-reading-passages/grade-2/</code></td>
+    <td>Reading Grade 2</td>
+    <td><span class="priority medium">MEDIUM</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/free-reading-passages/grade-3/</code></td>
+    <td>Reading Grade 3</td>
+    <td><span class="priority medium">MEDIUM</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/free-reading-passages/grade-4/</code></td>
+    <td>Reading Grade 4</td>
+    <td><span class="priority medium">MEDIUM</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/free-reading-passages/grade-5/</code></td>
+    <td>Reading Grade 5</td>
+    <td><span class="priority medium">MEDIUM</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/free-reading-passages/grade-6/</code></td>
+    <td>Reading Grade 6</td>
+    <td><span class="priority medium">MEDIUM</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/free-multiplication-drills/</code></td>
+    <td>Multiplication Drills Hub</td>
+    <td><span class="priority medium">MEDIUM</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/free-division-drills/</code></td>
+    <td>Division Drills Hub</td>
+    <td><span class="priority medium">MEDIUM</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/free-addition-drills/</code></td>
+    <td>Addition Drills Hub</td>
+    <td><span class="priority medium">MEDIUM</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/free-subtraction-drills/</code></td>
+    <td>Subtraction Drills Hub</td>
+    <td><span class="priority medium">MEDIUM</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/drills/math/grade-1/</code></td>
+    <td>Math Drills Grade 1 Hub</td>
+    <td><span class="priority medium">MEDIUM</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/drills/math/grade-2/</code></td>
+    <td>Math Drills Grade 2 Hub</td>
+    <td><span class="priority medium">MEDIUM</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/drills/math/grade-3/</code></td>
+    <td>Math Drills Grade 3 Hub</td>
+    <td><span class="priority medium">MEDIUM</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/drills/math/grade-4/</code></td>
+    <td>Math Drills Grade 4 Hub</td>
+    <td><span class="priority medium">MEDIUM</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/drills/math/grade-5/</code></td>
+    <td>Math Drills Grade 5 Hub</td>
+    <td><span class="priority medium">MEDIUM</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr><tr class="ok">
+    <td><code>/drills/math/grade-6/</code></td>
+    <td>Math Drills Grade 6 Hub</td>
+    <td><span class="priority medium">MEDIUM</span></td>
+    <td><span class="status">✅ EXISTS</span></td>
+  </tr></tbody>
+</table>
+</body>
+</html>
