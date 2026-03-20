@@ -36,9 +36,10 @@ function subjectEmoji(subject) {
 function worksheetCard(ws) {
   const color = subjectColor(ws.format === 'drill-grid' ? 'drill-grid' : ws.subject);
   const url = getCardUrl(ws);
+  const subjectLabel = ws.format === 'drill-grid' ? 'Drill' : capitalize(ws.subject);
   const thumb = ws.preview_p1_url
     ? `<img src="${ws.preview_p1_url}" alt="${ws.title}" class="ws-card-thumb" loading="lazy">`
-    : `<div class="ws-card-thumb-placeholder" style="border-top:4px solid ${color}">${subjectEmoji(ws.format === 'drill-grid' ? 'drill-grid' : ws.subject)}</div>`;
+    : `<div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,${color}18 0%,${color}08 100%);border-top:4px solid ${color}"><span style="font-size:28px;opacity:0.25;font-weight:900;color:${color};letter-spacing:-1px">${subjectLabel}</span></div>`;
   return `
     <a href="${url}" class="ws-card">
       ${thumb}
@@ -222,8 +223,8 @@ async function generatePages() {
       return '<svg width="110" height="130" viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg"><ellipse cx="60" cy="108" rx="36" ry="8" fill="rgba(239,68,68,0.12)"/><rect x="22" y="74" width="80" height="60" rx="18" fill="#EF4444"/><ellipse cx="62" cy="70" rx="10" ry="9" fill="#FDBCB4"/><ellipse cx="60" cy="46" rx="42" ry="44" fill="#FDBCB4"/><ellipse cx="60" cy="10" rx="40" ry="22" fill="#3D1F00"/><path d="M22 18 Q46 2 96 6 Q108 12 112 24" fill="#3D1F00"/><rect x="22" y="10" width="76" height="13" rx="6.5" fill="#EF4444"/><circle cx="44" cy="44" r="14" fill="white"/><circle cx="76" cy="44" r="14" fill="white"/><circle cx="45" cy="45" r="9" fill="#3D1F00"/><circle cx="77" cy="45" r="9" fill="#3D1F00"/><circle cx="48" cy="41" r="4.5" fill="white"/><circle cx="80" cy="41" r="4.5" fill="white"/><circle cx="45" cy="46" r="3" fill="#0A0500"/><circle cx="77" cy="46" r="3" fill="#0A0500"/><path d="M40 66 Q60 84 80 66" stroke="#C06050" stroke-width="3" fill="#FF9999" stroke-linecap="round"/><path d="M44 68 Q60 78 76 68" fill="white"/><circle cx="28" cy="58" r="11" fill="#FF9999" opacity="0.25"/><circle cx="92" cy="58" r="11" fill="#FF9999" opacity="0.25"/></svg>';
     })(ws.subject);
     const downloadUrl = ws.pdf_url && ws.pdf_url.startsWith('http') ? ws.pdf_url : 'https://examel.com';
-    const related = worksheets.filter(w => w.subject === ws.subject && w.grade === ws.grade && w.slug !== ws.slug && (!w.format || w.format === 'worksheet')).slice(0, 4);
-    const sameTopicDiffTheme = worksheets.filter(w => w.topic === ws.topic && w.theme !== ws.theme && w.slug !== ws.slug).slice(0, 4);
+    const related = worksheets.filter(w => w.subject === ws.subject && w.grade === ws.grade && w.slug !== ws.slug && (!w.format || w.format === 'worksheet')).slice(0, 3);
+    const sameTopicDiffTheme = worksheets.filter(w => w.topic === ws.topic && w.theme !== ws.theme && w.slug !== ws.slug).slice(0, 3);
     const sameThemeDiffSubject = worksheets.filter(w => w.theme === ws.theme && w.subject !== ws.subject && w.grade === ws.grade && w.slug !== ws.slug).slice(0, 3);
 
     const html = `<!DOCTYPE html>
@@ -252,7 +253,7 @@ async function generatePages() {
     .ws-hero-inner{max-width:860px;margin:0 auto;padding:52px 0 48px;position:relative;z-index:2;}
     .ws-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 0%,rgba(108,92,231,0.18) 0%,transparent 65%);pointer-events:none;}
     .ws-hero::after{content:'';position:absolute;top:-40px;right:-20px;width:220px;height:220px;background:radial-gradient(circle,var(--subject) 0%,transparent 70%);opacity:0.07;pointer-events:none;}
-    .ws-hero-char{position:absolute;right:60px;bottom:0;opacity:0.9;pointer-events:none;}
+    .ws-hero-char{position:absolute;right:48px;bottom:-10px;opacity:0.92;pointer-events:none;filter:drop-shadow(0 8px 24px rgba(0,0,0,0.2));}
     .ws-hero h1{font-size:clamp(22px,3.2vw,34px);margin-bottom:12px;line-height:1.22;font-weight:800;letter-spacing:-0.8px;}
     .ws-hero-sub{font-size:14px;opacity:0.55;margin-bottom:20px;font-weight:500;}
     .ws-badges{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;}
@@ -309,7 +310,7 @@ async function generatePages() {
     /* ── EMAIL ── */
     .email-section{background:#1C1526;border-radius:24px;padding:36px 32px;margin-bottom:28px;text-align:center;position:relative;overflow:hidden;}
     .email-section::before{content:'';position:absolute;top:-60px;right:-40px;width:200px;height:200px;background:radial-gradient(circle,#6C5CE7 0%,transparent 70%);opacity:0.12;}
-    .email-char{position:absolute;right:24px;bottom:0;opacity:0.7;}
+    .email-char{position:absolute;right:20px;bottom:0;opacity:0.85;filter:drop-shadow(0 4px 12px rgba(0,0,0,0.2));}
     .email-section h3{color:white;font-size:20px;font-weight:800;margin-bottom:8px;letter-spacing:-0.5px;position:relative;z-index:2;}
     .email-section p{color:rgba(255,255,255,0.45);font-size:14px;margin-bottom:22px;position:relative;z-index:2;}
     .email-form{display:flex;gap:10px;flex-wrap:wrap;position:relative;z-index:2;}
@@ -452,7 +453,7 @@ async function generatePages() {
 
     <div class="email-section">
       <div class="email-char">
-        <svg width="70" height="90" viewBox="0 0 70 90" xmlns="http://www.w3.org/2000/svg" opacity="0.8">
+        <svg width="100" height="128" viewBox="0 0 70 90" xmlns="http://www.w3.org/2000/svg" opacity="0.8">
           <ellipse cx="35" cy="62" rx="22" ry="6" fill="rgba(108,92,231,0.2)"/>
           <rect x="14" y="44" width="44" height="30" rx="10" fill="#6C5CE7"/>
           <ellipse cx="35" cy="38" rx="24" ry="26" fill="#C8874A"/>
