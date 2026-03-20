@@ -23,6 +23,11 @@ function generateWordSearchPages(worksheets, sharedCSS, siteHeader, siteFooter, 
   <title>${ws.title} | Free Printable Word Search with Answer Key | Examel</title>
   <meta name="description" content="Free printable Grade ${ws.grade} ${capitalize(ws.subject)} word search. ${formatTopic(ws.topic)} with ${formatTheme(ws.theme)} theme. Answer key included. Download PDF instantly.">
   <link rel="canonical" href="https://examel.com/word-searches/${ws.subject}/grade-${ws.grade}/${ws.slug}/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="${ws.title} | Free Printable Word Search | Examel">
+  <meta property="og:description" content="Free printable Grade ${ws.grade} ${capitalize(ws.subject)} word search with answer key. Download PDF free.">
+  <meta property="og:image" content="${ws.preview_image_url || `https://examel.com/thumbnails/${ws.slug}.png`}">
+  <meta property="og:url" content="https://examel.com/word-searches/${ws.subject}/grade-${ws.grade}/${ws.slug}/">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"EducationalResource","name":"${ws.title}","description":"Free printable Grade ${ws.grade} ${capitalize(ws.subject)} word search about ${formatTopic(ws.topic)}","educationalLevel":"Grade ${ws.grade}","subject":"${capitalize(ws.subject)}","teaches":"${formatTopic(ws.topic)}","keywords":"Grade ${ws.grade} ${capitalize(ws.subject)} word search, ${formatTopic(ws.topic)} word search, free printable word search","url":"https://examel.com/word-searches/${ws.subject}/grade-${ws.grade}/${ws.slug}/","thumbnailUrl":"${ws.preview_image_url || `https://examel.com/thumbnails/${ws.slug}.png`}","provider":{"@type":"Organization","name":"Examel","url":"https://examel.com"},"isAccessibleForFree":true}</script>
   ${sharedCSS}
   <style>

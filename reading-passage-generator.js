@@ -21,6 +21,11 @@ function generateReadingPassagePages(worksheets, sharedCSS, siteHeader, siteFoot
   <title>${ws.title} | Free Printable Reading Comprehension Passage with Answer Key | Examel</title>
   <meta name="description" content="Free printable Grade ${ws.grade} reading comprehension passage about ${topicName}. ${themeName} theme. 6 comprehension questions with answer key. Download PDF instantly.">
   <link rel="canonical" href="https://examel.com/reading-passages/grade-${ws.grade}/${ws.slug}/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="${ws.title} | Free Printable Reading Passage | Examel">
+  <meta property="og:description" content="Free printable Grade ${ws.grade} reading comprehension passage with 6 questions and answer key. Download PDF free.">
+  <meta property="og:image" content="${ws.preview_image_url || `https://examel.com/thumbnails/${ws.slug}.png`}">
+  <meta property="og:url" content="https://examel.com/reading-passages/grade-${ws.grade}/${ws.slug}/">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"EducationalResource","name":"${ws.title}","description":"Free printable Grade ${ws.grade} reading comprehension passage about ${topicName} — 6 questions with answer key","educationalLevel":"Grade ${ws.grade}","subject":"${capitalize(ws.subject)}","teaches":"${topicName}","keywords":"Grade ${ws.grade} ${capitalize(ws.subject)} reading passage, ${topicName} reading comprehension, free printable reading worksheet","url":"https://examel.com/reading-passages/grade-${ws.grade}/${ws.slug}/","thumbnailUrl":"${ws.preview_image_url || `https://examel.com/thumbnails/${ws.slug}.png`}","provider":{"@type":"Organization","name":"Examel","url":"https://examel.com"},"isAccessibleForFree":true}</script>
   ${sharedCSS}
   <style>

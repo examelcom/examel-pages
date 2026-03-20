@@ -158,6 +158,11 @@ async function generatePages() {
   <title>${ws.title} | ${ws.difficulty && ws.difficulty !== "standard" ? ws.difficulty.charAt(0).toUpperCase() + ws.difficulty.slice(1) + " " : ""}Free Printable Worksheet with Answer Key | Examel</title>
   <meta name="description" content="Free printable ${ws.subject} worksheet for Grade ${ws.grade}. ${formatTopic(ws.topic)} with ${formatTheme(ws.theme)} theme. Download PDF instantly. Answer key included.">
   <link rel="canonical" href="https://examel.com/worksheets/${ws.slug}/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="${ws.title} | Free Printable Worksheet | Examel">
+  <meta property="og:description" content="Free printable Grade ${ws.grade} ${capitalize(ws.subject)} worksheet about ${formatTopic(ws.topic)}. Answer key included. Download PDF free.">
+  <meta property="og:image" content="${ws.preview_image_url || `https://examel.com/thumbnails/${ws.slug}.png`}">
+  <meta property="og:url" content="https://examel.com/worksheets/${ws.slug}/">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"EducationalResource","name":"${ws.title}","description":"Free printable Grade ${ws.grade} ${ws.subject} worksheet about ${formatTopic(ws.topic)} — 8 questions with answer key","educationalLevel":"Grade ${ws.grade}","subject":"${capitalize(ws.subject)}","teaches":"${formatTopic(ws.topic)}","keywords":"Grade ${ws.grade} ${capitalize(ws.subject)} worksheet, ${formatTopic(ws.topic)} worksheet, free printable ${capitalize(ws.subject)} worksheet","url":"https://examel.com/worksheets/${ws.slug}/","thumbnailUrl":"${ws.preview_image_url || `https://examel.com/thumbnails/${ws.slug}.png`}","provider":{"@type":"Organization","name":"Examel","url":"https://examel.com"},"isAccessibleForFree":true}</script>
   ${sharedCSS}
   <style>
