@@ -73,6 +73,10 @@ function generateVocabMatchPages(worksheets, sharedCSS, siteHeader, siteFooter, 
       <h2>Ready to Print</h2>
       <p>Match 8 key ${topicName} vocabulary words to their definitions. ${themeName} theme keeps kids engaged. Answer key included${ccssText}.</p>
       <a href="${downloadUrl}" class="btn" download>⬇ Download Free Vocabulary Worksheet</a>
+      <div style="margin-top:24px;padding-top:24px;border-top:1px solid #f0f0f0;">
+        <p style="font-size:14px;color:#636E72;margin-bottom:12px;">Get new free worksheets every week — no spam, unsubscribe anytime.</p>
+        <script async data-uid="9b92245d90" src="https://examel.kit.com/9b92245d90/index.js"></script>
+      </div>
     </div>
     <div class="features">
       <h3>What is included</h3>
