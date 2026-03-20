@@ -17,20 +17,11 @@ const titleCase = (s) => s.split(' ').map(capitalize).join(' ');
 const formatTopic = (t) => titleCase(t.replace(/-/g, ' '));
 const formatTheme = (t) => titleCase(t.replace(/-/g, ' '));
 
-function getCardUrl(ws) {
-  if (ws.format === 'drill-grid') return `/drills/${ws.subject}/grade-${ws.grade}/${ws.slug}/`;
-  if (ws.format === 'word-search') return `/word-searches/${ws.subject}/grade-${ws.grade}/${ws.slug}/`;
-  if (ws.format === 'vocab-match') return `/vocab-match/${ws.subject}/grade-${ws.grade}/${ws.slug}/`;
-  if (ws.format === 'reading-passage') return `/reading-passages/grade-${ws.grade}/${ws.slug}/`;
-  return `/worksheets/${ws.slug}/`;
-}
-
 function worksheetCard(ws) {
   const color = gradeColor(ws.grade);
-  const url = getCardUrl(ws);
   const thumb = ws.preview_image_url ? `<img src="${ws.preview_image_url}" alt="${ws.title}" style="width:100%;height:140px;object-fit:cover;border-radius:8px 8px 0 0;margin:-20px -20px 12px -20px;width:calc(100% + 40px);">` : '';
   return `
-    <a href="${url}" class="ws-card" style="border-top:3px solid ${color};padding-top:${ws.preview_image_url?'0':'20px'}">
+    <a href="/worksheets/${ws.slug}/" class="ws-card" style="border-top:3px solid ${color};padding-top:${ws.preview_image_url?'0':'20px'}">
       ${thumb}
       <div class="ws-card-badge" style="background:${color}">${capitalize(ws.subject)} · Grade ${ws.grade}</div>
       <h3>${ws.title}</h3>
