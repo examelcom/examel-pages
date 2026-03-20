@@ -46,6 +46,11 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://examel.com/free-english-worksheets/grade-6/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://examel.com/free-math-worksheets/grade-1/</loc>
     <changefreq>daily</changefreq>
     <priority>0.85</priority>
@@ -67,6 +72,11 @@
   </url>
   <url>
     <loc>https://examel.com/free-math-worksheets/grade-5/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/free-math-worksheets/grade-6/</loc>
     <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
@@ -96,6 +106,11 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://examel.com/free-science-worksheets/grade-6/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://examel.com/free-worksheets/grade-1/</loc>
     <changefreq>daily</changefreq>
     <priority>0.85</priority>
@@ -119,6 +134,761 @@
     <loc>https://examel.com/free-worksheets/grade-5/</loc>
     <changefreq>daily</changefreq>
     <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/free-worksheets/grade-6/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-sports-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-fathers-day-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-earth-day-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-subtraction-wizards-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-thanksgiving-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-fall-harvest-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-subtraction-fall-harvest-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-back-to-school-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-mountains-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-subtraction-hanukkah-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-subtraction-young-scientists-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-dinosaurs-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-block-builders-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-6-science-weather-climate-underwater-explorers-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-baking-champions-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-music-stars-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-5-science-gravity-ocean-animals-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-music-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-hanukkah-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-young-scientists-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-ocean-animals-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-6-science-cells-time-travelers-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-subtraction-eco-warriors-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-6-science-earth-history-fairy-tales-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-6-science-forces-pirates-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-robots-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-mountains-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-space-explorers-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-6-science-cells-summer-vacation-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-dragons-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-subtraction-knights-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-nature-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-travel-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-arctic-animals-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-wizards-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-art-studio-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-coding-kids-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-subtraction-robots-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-mothers-day-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-cooking-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-fall-harvest-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-subtraction-christmas-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-subtraction-pirates-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-subtraction-summer-vacation-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-6-science-heredity-underwater-explorers-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-subtraction-cooking-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-new-year-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-6-science-heredity-summer-vacation-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-jungle-animals-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-subtraction-halloween-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-5-science-human-body-rainforest-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-travel-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-space-explorers-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-winter-wonderland-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-5-science-gravity-valentines-day-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-6-science-forces-easter-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-6-science-human-impact-space-explorers-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-rainforest-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-6-science-ecosystems-robots-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-st-patricks-day-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-5-science-human-body-earth-day-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-6-science-ecosystems-travel-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-6-science-ecosystems-block-builders-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-back-to-school-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-superheroes-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-arctic-animals-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-subtraction-fairy-tales-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-mythology-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-subtraction-travel-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-subtraction-nature-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-6-science-heredity-mythology-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-time-travelers-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-underwater-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-dragons-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-6-math-ratios-and-proportions-spring-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-6-science-energy-transfer-animal-rescue-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-pirates-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-world-games-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-astronaut-academy-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-time-travelers-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-desert-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-gardening-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-desert-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-5-science-human-body-block-builders-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-cooking-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-animal-rescue-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-fairy-tales-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-jungle-animals-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-astronaut-academy-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-summer-vacation-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-nature-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-ocean-animals-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-spring-flowers-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-underwater-explorers-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-farm-animals-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-valentines-day-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-5-science-properties-matter-time-travelers-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-6-science-weather-climate-fall-harvest-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-st-patricks-day-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-subtraction-baking-champions-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-thanksgiving-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-art-studio-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-underwater-explorers-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-fairy-tales-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-gardening-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-superheroes-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-3-math-multiplication-evergreen-farm-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-halloween-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-young-scientists-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-subtraction-valentines-day-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-5-science-properties-matter-superheroes-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-wizards-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-coding-kids-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-sports-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-christmas-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-easter-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-baking-champions-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-new-year-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-christmas-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-farm-animals-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-subtraction-world-games-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-halloween-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-5-math-multiplication-and-division-spring-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-easter-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-mothers-day-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-eco-warriors-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-6-science-earth-history-cooking-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-fathers-day-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-6-science-cells-robots-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-block-builders-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-5-math-decimals-spring-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-4-english-writing-opinion-essays-spring-topics-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-6-science-weather-climate-easter-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-eco-warriors-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-knights-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-animal-rescue-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-winter-wonderland-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-6-science-energy-transfer-music-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-earth-day-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-music-stars-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-video-game-heroes-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-spring-flowers-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-5-science-gravity-gardening-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-hanukkah-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-video-game-heroes-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-pirates-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-6-science-forces-robots-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-6-science-earth-history-desert-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-music-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-6-english-reading-comprehension-spring-exploration-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://examel.com/worksheets/grade-4-science-conservation-and-natural-resources-Earth-Day-standard/</loc>
@@ -2201,659 +2971,504 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade3-fractions-music/</loc>
+    <loc>https://examel.com/word-searches/english/grade-6/word-search-english-grade6-vocabulary-thanksgiving-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade3-fractions-travel/</loc>
+    <loc>https://examel.com/word-searches/math/grade-6/word-search-math-grade6-statistics-earth-day-challenge/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade3-fractions-food/</loc>
+    <loc>https://examel.com/word-searches/science/grade-4/word-search-science-grade4-waves-mythology-beginner/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade3-fractions-holidays/</loc>
+    <loc>https://examel.com/word-searches/math/grade-5/word-search-math-grade5-word-problems-summer-vacation-beginner/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade3-fractions-seasons/</loc>
+    <loc>https://examel.com/word-searches/math/grade-6/word-search-math-grade6-ratios-art-studio-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade3-fractions-mountains/</loc>
+    <loc>https://examel.com/word-searches/math/grade-6/word-search-math-grade6-expressions-underwater-beginner/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade3-fractions-desert/</loc>
+    <loc>https://examel.com/word-searches/english/grade-2/word-search-english-grade2-main-idea-robots-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade3-fractions-rainforest/</loc>
+    <loc>https://examel.com/word-searches/science/grade-4/word-search-science-grade4-electricity-young-scientists-challenge/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade3-fractions-underwater/</loc>
+    <loc>https://examel.com/word-searches/english/grade-4/word-search-english-grade4-reading-comprehension-rainforest-challenge/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade3-fractions-arctic/</loc>
+    <loc>https://examel.com/word-searches/science/grade-3/word-search-science-grade3-fossils-new-year-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade3-fractions-jungle/</loc>
+    <loc>https://examel.com/word-searches/english/grade-6/word-search-english-grade6-figurative-language-desert-challenge/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade3-fractions-nature/</loc>
+    <loc>https://examel.com/word-searches/math/grade-6/word-search-math-grade6-equations-cooking-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade3-fractions-sports/</loc>
+    <loc>https://examel.com/word-searches/math/grade-1/word-search-math-grade1-place-value-time-travelers-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade3-fractions-superheroes/</loc>
+    <loc>https://examel.com/word-searches/english/grade-6/word-search-english-grade6-argument-analysis-knights-beginner/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade3-fractions-pirates/</loc>
+    <loc>https://examel.com/word-searches/english/grade-5/word-search-english-grade5-literary-devices-underwater-explorers-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade3-fractions-robots/</loc>
+    <loc>https://examel.com/word-searches/math/grade-2/word-search-math-grade2-place-value-robots-challenge/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade3-fractions-dragons/</loc>
+    <loc>https://examel.com/word-searches/english/grade-5/word-search-english-grade5-literary-devices-hanukkah-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade3-fractions-animals/</loc>
+    <loc>https://examel.com/word-searches/science/grade-3/word-search-science-grade3-forces-motion-art-studio-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade3-fractions-ocean/</loc>
+    <loc>https://examel.com/word-searches/science/grade-2/word-search-science-grade2-properties-matter-animal-rescue-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade3-fractions-space/</loc>
+    <loc>https://examel.com/word-searches/english/grade-3/word-search-english-grade3-vocabulary-astronaut-academy-beginner/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade3-fractions-dinosaurs/</loc>
+    <loc>https://examel.com/word-searches/science/grade-3/word-search-science-grade3-fossils-knights-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-subtraction-gardening/</loc>
+    <loc>https://examel.com/word-searches/math/grade-1/word-search-math-grade1-patterns-dinosaurs-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-subtraction-cooking/</loc>
+    <loc>https://examel.com/word-searches/english/grade-3/word-search-english-grade3-vocabulary-dragons-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-subtraction-history/</loc>
+    <loc>https://examel.com/word-searches/math/grade-6/word-search-math-grade6-ratios-rainforest-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-subtraction-mythology/</loc>
+    <loc>https://examel.com/word-searches/math/grade-1/word-search-math-grade1-shapes-underwater-explorers-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-subtraction-fairy-tales/</loc>
+    <loc>https://examel.com/word-searches/math/grade-6/word-search-math-grade6-statistics-dinosaurs-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-subtraction-technology/</loc>
+    <loc>https://examel.com/word-searches/math/grade-3/word-search-math-grade3-time-summer-vacation-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-subtraction-art/</loc>
+    <loc>https://examel.com/word-searches/english/grade-1/word-search-english-grade1-sight-words-spring-flowers-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-subtraction-music/</loc>
+    <loc>https://examel.com/word-searches/math/grade-6/word-search-math-grade6-coordinate-plane-block-builders-challenge/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-subtraction-travel/</loc>
+    <loc>https://examel.com/word-searches/english/grade-6/word-search-english-grade6-character-analysis-eco-warriors-beginner/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-subtraction-food/</loc>
+    <loc>https://examel.com/word-searches/english/grade-6/word-search-english-grade6-figurative-language-baking-champions-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-subtraction-holidays/</loc>
+    <loc>https://examel.com/word-searches/english/grade-6/word-search-english-grade6-argument-analysis-baking-champions-beginner/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-subtraction-seasons/</loc>
+    <loc>https://examel.com/word-searches/math/grade-4/word-search-math-grade4-measurement-gardening-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-subtraction-mountains/</loc>
+    <loc>https://examel.com/word-searches/math/grade-3/word-search-math-grade3-area-fairy-tales-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-subtraction-desert/</loc>
+    <loc>https://examel.com/word-searches/math/grade-2/word-search-math-grade2-place-value-pirates-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-subtraction-rainforest/</loc>
+    <loc>https://examel.com/word-searches/math/grade-5/word-search-math-grade5-order-of-operations-new-year-beginner/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-subtraction-underwater/</loc>
+    <loc>https://examel.com/word-searches/science/grade-6/word-search-science-grade6-human-impact-underwater-explorers-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-subtraction-arctic/</loc>
+    <loc>https://examel.com/word-searches/science/grade-5/word-search-science-grade5-solar-system-rainforest-beginner/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-subtraction-jungle/</loc>
+    <loc>https://examel.com/word-searches/math/grade-6/word-search-math-grade6-fractions-wizards-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-subtraction-nature/</loc>
+    <loc>https://examel.com/word-searches/math/grade-5/word-search-math-grade5-patterns-cooking-challenge/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-subtraction-sports/</loc>
+    <loc>https://examel.com/word-searches/math/grade-2/word-search-math-grade2-time-fall-harvest-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-subtraction-superheroes/</loc>
+    <loc>https://examel.com/word-searches/math/grade-3/word-search-math-grade3-fractions-superheroes-beginner/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-subtraction-pirates/</loc>
+    <loc>https://examel.com/word-searches/science/grade-6/word-search-science-grade6-earth-history-block-builders-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-subtraction-robots/</loc>
+    <loc>https://examel.com/word-searches/science/grade-4/word-search-science-grade4-electricity-space-explorers-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-subtraction-dragons/</loc>
+    <loc>https://examel.com/word-searches/science/grade-3/word-search-science-grade3-forces-motion-coding-kids-beginner/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-subtraction-animals/</loc>
+    <loc>https://examel.com/word-searches/science/grade-4/word-search-science-grade4-energy-mythology-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-subtraction-ocean/</loc>
+    <loc>https://examel.com/word-searches/science/grade-5/word-search-science-grade5-properties-matter-mothers-day-beginner/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-subtraction-space/</loc>
+    <loc>https://examel.com/word-searches/math/grade-6/word-search-math-grade6-percentages-nature-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-subtraction-dinosaurs/</loc>
+    <loc>https://examel.com/word-searches/science/grade-6/word-search-science-grade6-ecosystems-valentines-day-challenge/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-addition-gardening/</loc>
+    <loc>https://examel.com/word-searches/english/grade-2/word-search-english-grade2-grammar-st-patricks-day-challenge/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-addition-cooking/</loc>
+    <loc>https://examel.com/word-searches/math/grade-6/word-search-math-grade6-equations-knights-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-addition-history/</loc>
+    <loc>https://examel.com/word-searches/science/grade-5/word-search-science-grade5-properties-matter-hanukkah-challenge/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-addition-mythology/</loc>
+    <loc>https://examel.com/word-searches/math/grade-3/word-search-math-grade3-perimeter-gardening-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-addition-fairy-tales/</loc>
+    <loc>https://examel.com/word-searches/english/grade-6/word-search-english-grade6-point-of-view-wizards-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-addition-technology/</loc>
+    <loc>https://examel.com/word-searches/english/grade-6/word-search-english-grade6-character-analysis-spring-flowers-challenge/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-addition-art/</loc>
+    <loc>https://examel.com/word-searches/english/grade-6/word-search-english-grade6-inference-farm-animals-beginner/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-addition-music/</loc>
+    <loc>https://examel.com/word-searches/science/grade-4/word-search-science-grade4-animal-structures-easter-beginner/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-addition-travel/</loc>
+    <loc>https://examel.com/word-searches/english/grade-3/word-search-english-grade3-character-analysis-music-stars-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-addition-food/</loc>
+    <loc>https://examel.com/word-searches/english/grade-4/word-search-english-grade4-compare-contrast-dragons-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-addition-holidays/</loc>
+    <loc>https://examel.com/word-searches/science/grade-1/word-search-science-grade1-pushes-pulls-video-game-heroes-challenge/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-addition-seasons/</loc>
+    <loc>https://examel.com/word-searches/science/grade-4/word-search-science-grade4-weathering-erosion-young-scientists-beginner/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-addition-mountains/</loc>
+    <loc>https://examel.com/word-searches/math/grade-5/word-search-math-grade5-word-problems-desert-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-addition-desert/</loc>
+    <loc>https://examel.com/word-searches/math/grade-3/word-search-math-grade3-place-value-world-games-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-addition-rainforest/</loc>
+    <loc>https://examel.com/word-searches/english/grade-4/word-search-english-grade4-compare-contrast-time-travelers-beginner/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-addition-underwater/</loc>
+    <loc>https://examel.com/word-searches/math/grade-1/word-search-math-grade1-comparing-numbers-block-builders-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-addition-arctic/</loc>
+    <loc>https://examel.com/word-searches/science/grade-4/word-search-science-grade4-waves-wizards-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-addition-jungle/</loc>
+    <loc>https://examel.com/word-searches/english/grade-6/word-search-english-grade6-point-of-view-fall-harvest-beginner/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-addition-nature/</loc>
+    <loc>https://examel.com/word-searches/science/grade-2/word-search-science-grade2-weather-patterns-halloween-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-addition-sports/</loc>
+    <loc>https://examel.com/word-searches/math/grade-4/word-search-math-grade4-symmetry-ocean-animals-challenge/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-addition-superheroes/</loc>
+    <loc>https://examel.com/word-searches/science/grade-6/word-search-science-grade6-forces-robots-beginner/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-addition-pirates/</loc>
+    <loc>https://examel.com/word-searches/english/grade-1/word-search-english-grade1-reading-comprehension-video-game-heroes-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-addition-robots/</loc>
+    <loc>https://examel.com/word-searches/science/grade-4/word-search-science-grade4-energy-sports-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-addition-dragons/</loc>
+    <loc>https://examel.com/word-searches/math/grade-6/word-search-math-grade6-ratios-space-explorers-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-addition-animals/</loc>
+    <loc>https://examel.com/word-searches/math/grade-5/word-search-math-grade5-coordinate-plane-knights-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-addition-ocean/</loc>
+    <loc>https://examel.com/word-searches/math/grade-3/word-search-math-grade3-perimeter-arctic-animals-challenge/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-addition-space/</loc>
+    <loc>https://examel.com/word-searches/math/grade-5/word-search-math-grade5-patterns-pirates-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade2-addition-dinosaurs/</loc>
+    <loc>https://examel.com/word-searches/math/grade-6/word-search-math-grade6-equations-ocean-animals-challenge/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade3-division-gardening/</loc>
+    <loc>https://examel.com/word-searches/math/grade-4/word-search-math-grade4-factors-block-builders-beginner/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade3-division-cooking/</loc>
+    <loc>https://examel.com/word-searches/english/grade-1/word-search-english-grade1-author-purpose-rainforest-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade3-division-history/</loc>
+    <loc>https://examel.com/word-searches/math/grade-4/word-search-math-grade4-fractions-halloween-beginner/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade3-division-mythology/</loc>
+    <loc>https://examel.com/word-searches/english/grade-2/word-search-english-grade2-author-purpose-gardening-challenge/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade3-division-fairy-tales/</loc>
+    <loc>https://examel.com/word-searches/math/grade-2/word-search-math-grade2-measurement-valentines-day-beginner/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade3-division-technology/</loc>
+    <loc>https://examel.com/word-searches/math/grade-1/word-search-math-grade1-word-problems-halloween-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade3-division-art/</loc>
+    <loc>https://examel.com/word-searches/science/grade-5/word-search-science-grade5-properties-matter-st-patricks-day-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade3-division-music/</loc>
+    <loc>https://examel.com/word-searches/science/grade-2/word-search-science-grade2-habitats-hanukkah-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade3-division-travel/</loc>
+    <loc>https://examel.com/word-searches/science/grade-4/word-search-science-grade4-energy-space-explorers-challenge/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade3-division-food/</loc>
+    <loc>https://examel.com/word-searches/science/grade-1/word-search-science-grade1-plants-pirates-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade3-division-holidays/</loc>
+    <loc>https://examel.com/word-searches/english/grade-3/word-search-english-grade3-writing-sports-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade3-division-seasons/</loc>
+    <loc>https://examel.com/word-searches/english/grade-5/word-search-english-grade5-theme-thanksgiving-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade3-division-mountains/</loc>
+    <loc>https://examel.com/word-searches/english/grade-5/word-search-english-grade5-point-of-view-knights-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade3-division-desert/</loc>
+    <loc>https://examel.com/word-searches/science/grade-5/word-search-science-grade5-ecosystems-summer-vacation-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade3-division-rainforest/</loc>
+    <loc>https://examel.com/word-searches/english/grade-3/word-search-english-grade3-text-features-sports-beginner/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade3-division-underwater/</loc>
+    <loc>https://examel.com/word-searches/science/grade-4/word-search-science-grade4-animal-structures-jungle-animals-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade3-division-arctic/</loc>
+    <loc>https://examel.com/word-searches/english/grade-5/word-search-english-grade5-author-purpose-spring-flowers-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade3-division-jungle/</loc>
+    <loc>https://examel.com/word-searches/math/grade-5/word-search-math-grade5-volume-cooking-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade3-division-nature/</loc>
+    <loc>https://examel.com/word-searches/science/grade-4/word-search-science-grade4-weathering-erosion-gardening-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade3-division-sports/</loc>
+    <loc>https://examel.com/word-searches/english/grade-5/word-search-english-grade5-text-structure-arctic-animals-challenge/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade3-division-superheroes/</loc>
+    <loc>https://examel.com/word-searches/science/grade-5/word-search-science-grade5-solar-system-wizards-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade3-division-pirates/</loc>
+    <loc>https://examel.com/word-searches/english/grade-4/word-search-english-grade4-writing-travel-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/math-grade3-division-robots/</loc>
+    <loc>https://examel.com/word-searches/science/grade-3/word-search-science-grade3-magnets-christmas-standard/</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/worksheets/math-grade3-division-dragons/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/worksheets/math-grade3-division-animals/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/worksheets/math-grade3-division-ocean/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/worksheets/math-grade3-division-space/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/worksheets/math-grade3-division-dinosaurs/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/worksheets/math-grade3-multiplication-gardening/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/worksheets/math-grade3-multiplication-cooking/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/worksheets/math-grade3-multiplication-history/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/worksheets/math-grade3-multiplication-mythology/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/worksheets/math-grade3-multiplication-fairy-tales/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/worksheets/math-grade3-multiplication-music/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/worksheets/math-grade3-multiplication-travel/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/worksheets/math-grade3-multiplication-food/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/worksheets/math-grade3-multiplication-holidays/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/worksheets/math-grade3-multiplication-seasons/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/worksheets/math-grade3-multiplication-rainforest/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/worksheets/math-grade3-multiplication-underwater/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/worksheets/math-grade3-multiplication-arctic/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/worksheets/math-grade3-multiplication-jungle/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/worksheets/math-grade3-multiplication-nature/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/worksheets/math-grade3-multiplication-sports/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/worksheets/math-grade5-nature/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/worksheets/math-grade5-sports/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/worksheets/math-grade4-superheroes/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/worksheets/math-grade4-pirates/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/worksheets/math-grade3-robots/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/worksheets/math-grade3-dragons/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/worksheets/math-grade2-ocean/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/worksheets/math-grade2-space/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/worksheets/math-grade1-dinosaurs/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/worksheets/math-grade1-animals/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://examel.com/word-searches/math/grade-1/word-search-math-grade1-time-cooking-standard/</loc>
@@ -2902,6 +3517,716 @@
   </url>
   <url>
     <loc>https://examel.com/word-searches/math/grade-1/word-search-math-grade1-comparing-numbers-robots-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-5/drill-math-grade5-division-dinosaurs-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-1/drill-math-grade1-subtraction-knights-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-1/drill-math-grade1-addition-hanukkah-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-4/drill-math-grade4-multiplication-dragons-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-1/drill-math-grade1-addition-desert-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-4/drill-math-grade4-multiplication-young-scientists-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-5/drill-math-grade5-division-animal-rescue-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-3/drill-math-grade3-division-fall-harvest-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-4/drill-math-grade4-division-video-game-heroes-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-1/drill-math-grade1-subtraction-dinosaurs-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-1/drill-math-grade1-addition-valentines-day-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-3/drill-math-grade3-multiplication-desert-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-2/drill-math-grade2-addition-world-games-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-2/drill-math-grade2-addition-dragons-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-2/drill-math-grade2-addition-valentines-day-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-2/drill-math-grade2-addition-sports-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-5/drill-math-grade5-division-hanukkah-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-5/drill-math-grade5-division-farm-animals-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-6/drill-math-grade6-division-nature-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-3/drill-math-grade3-multiplication-gardening-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-1/drill-math-grade1-subtraction-earth-day-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-3/drill-math-grade3-division-gardening-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-6/drill-math-grade6-division-coding-kids-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-3/drill-math-grade3-multiplication-coding-kids-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-5/drill-math-grade5-division-wizards-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-1/drill-math-grade1-subtraction-art-studio-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-5/drill-math-grade5-division-christmas-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-4/drill-math-grade4-division-baking-champions-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-6/drill-math-grade6-division-animal-rescue-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-5/drill-math-grade5-division-mythology-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-4/drill-math-grade4-multiplication-fall-harvest-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-1/drill-math-grade1-subtraction-video-game-heroes-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-1/drill-math-grade1-addition-mythology-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-6/drill-math-grade6-division-coding-kids-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-2/drill-math-grade2-subtraction-rainforest-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-4/drill-math-grade4-division-halloween-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-3/drill-math-grade3-multiplication-gardening-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-1/drill-math-grade1-subtraction-ocean-animals-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-2/drill-math-grade2-subtraction-underwater-explorers-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-3/drill-math-grade3-division-thanksgiving-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-2/drill-math-grade2-subtraction-world-games-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-5/drill-math-grade5-multiplication-spring-flowers-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-3/drill-math-grade3-multiplication-christmas-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-5/drill-math-grade5-multiplication-dragons-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-1/drill-math-grade1-subtraction-superheroes-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-4/drill-math-grade4-multiplication-robots-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-2/drill-math-grade2-addition-eco-warriors-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-1/drill-math-grade1-addition-dinosaurs-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-1/drill-math-grade1-addition-earth-day-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-5/drill-math-grade5-multiplication-music-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-6/drill-math-grade6-division-robots-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-1/drill-math-grade1-addition-back-to-school-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-2/drill-math-grade2-subtraction-art-studio-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-2/drill-math-grade2-subtraction-nature-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-5/drill-math-grade5-multiplication-young-scientists-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-2/drill-math-grade2-addition-summer-vacation-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-4/drill-math-grade4-division-dragons-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-6/drill-math-grade6-division-fairy-tales-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-2/drill-math-grade2-addition-video-game-heroes-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-5/drill-math-grade5-multiplication-space-explorers-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-6/drill-math-grade6-division-art-studio-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-4/drill-math-grade4-division-arctic-animals-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-1/drill-math-grade1-subtraction-new-year-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-1/drill-math-grade1-addition-time-travelers-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-3/drill-math-grade3-division-time-travelers-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-5/drill-math-grade5-multiplication-block-builders-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-2/drill-math-grade2-subtraction-christmas-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-4/drill-math-grade4-multiplication-st-patricks-day-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-5/drill-math-grade5-division-st-patricks-day-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-2/drill-math-grade2-addition-knights-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-4/drill-math-grade4-division-st-patricks-day-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-3/drill-math-grade3-multiplication-mothers-day-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-6/drill-math-grade6-division-fathers-day-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-5/drill-math-grade5-division-ocean-animals-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-4/drill-math-grade4-division-travel-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-2/drill-math-grade2-addition-dinosaurs-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-5/drill-math-grade5-multiplication-baking-champions-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-5/drill-math-grade5-division-dinosaurs-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-5/drill-math-grade5-division-mothers-day-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-5/drill-math-grade5-multiplication-back-to-school-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-1/drill-math-grade1-subtraction-christmas-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-4/drill-math-grade4-division-valentines-day-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-1/drill-math-grade1-subtraction-fall-harvest-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-2/drill-math-grade2-addition-christmas-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-4/drill-math-grade4-division-animal-rescue-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-1/drill-math-grade1-subtraction-easter-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-2/drill-math-grade2-addition-fathers-day-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-4/drill-math-grade4-division-valentines-day-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-1/drill-math-grade1-addition-animal-rescue-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-6/drill-math-grade6-division-christmas-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-3/drill-math-grade3-division-astronaut-academy-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-1/drill-math-grade1-addition-knights-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-3/drill-math-grade3-division-christmas-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-5/drill-math-grade5-division-young-scientists-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-2/drill-math-grade2-subtraction-christmas-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-3/drill-math-grade3-division-thanksgiving-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-4/drill-math-grade4-division-dinosaurs-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-1/drill-math-grade1-subtraction-spring-flowers-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-6/drill-math-grade6-division-music-stars-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-6/drill-math-grade6-division-mythology-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-1/drill-math-grade1-addition-hanukkah-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-6/drill-math-grade6-division-dinosaurs-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-3/drill-math-grade3-division-pirates-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-6/drill-math-grade6-division-valentines-day-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-4/drill-math-grade4-multiplication-music-stars-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-6/drill-math-grade6-division-sports-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-4/drill-math-grade4-division-easter-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-4/drill-math-grade4-division-time-travelers-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-4/drill-math-grade4-multiplication-arctic-animals-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-5/drill-math-grade5-division-summer-vacation-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-4/drill-math-grade4-multiplication-knights-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-6/drill-math-grade6-division-young-scientists-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-6/drill-math-grade6-division-arctic-animals-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-6/drill-math-grade6-division-sports-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-1/drill-math-grade1-addition-wizards-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-4/drill-math-grade4-multiplication-nature-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-5/drill-math-grade5-multiplication-christmas-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-6/drill-math-grade6-division-fathers-day-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-2/drill-math-grade2-subtraction-dragons-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-3/drill-math-grade3-multiplication-block-builders-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-5/drill-math-grade5-multiplication-winter-wonderland-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-6/drill-math-grade6-division-underwater-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-2/drill-math-grade2-subtraction-back-to-school-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-4/drill-math-grade4-multiplication-astronaut-academy-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-2/drill-math-grade2-subtraction-underwater-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-3/drill-math-grade3-multiplication-farm-animals-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-3/drill-math-grade3-division-easter-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-6/drill-math-grade6-division-st-patricks-day-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-6/drill-math-grade6-division-travel-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-4/drill-math-grade4-multiplication-underwater-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-6/drill-math-grade6-division-new-year-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-6/drill-math-grade6-division-knights-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-1/drill-math-grade1-addition-nature-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-2/drill-math-grade2-addition-art-studio-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-6/drill-math-grade6-division-hanukkah-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-4/drill-math-grade4-multiplication-christmas-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-4/drill-math-grade4-division-music-stars-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-3/drill-math-grade3-division-coding-kids-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-4/drill-math-grade4-division-summer-vacation-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-2/drill-math-grade2-subtraction-underwater-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-6/drill-math-grade6-division-christmas-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-1/drill-math-grade1-addition-rainforest-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -3036,6 +4361,381 @@
     <priority>0.75</priority>
   </url>
   <url>
+    <loc>https://examel.com/vocab-match/math/grade-5/vocab-match-math-grade5-division-video-game-heroes-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/math/grade-3/vocab-match-math-grade3-data-graphs-fairy-tales-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/math/grade-5/vocab-match-math-grade5-order-of-operations-sports-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/math/grade-6/vocab-match-math-grade6-division-thanksgiving-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/english/grade-4/vocab-match-english-grade4-text-structure-gardening-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/math/grade-6/vocab-match-math-grade6-percentages-fathers-day-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/math/grade-2/vocab-match-math-grade2-arrays-christmas-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/math/grade-2/vocab-match-math-grade2-money-nature-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/math/grade-1/vocab-match-math-grade1-patterns-dinosaurs-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/math/grade-1/vocab-match-math-grade1-word-problems-time-travelers-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/science/grade-5/vocab-match-science-grade5-human-body-cooking-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/science/grade-3/vocab-match-science-grade3-magnets-fathers-day-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/science/grade-1/vocab-match-science-grade1-light-sound-robots-ngss/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/english/grade-1/vocab-match-english-grade1-author-purpose-underwater-explorers-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/science/grade-2/vocab-match-science-grade2-animal-adaptations-fairy-tales-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/english/grade-3/vocab-match-english-grade3-inference-video-game-heroes-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/science/grade-4/vocab-match-science-grade4-plant-structures-new-year-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/science/grade-4/vocab-match-science-grade4-weathering-erosion-ocean-animals-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/english/grade-4/vocab-match-english-grade4-text-structure-nature-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/science/grade-6/vocab-match-science-grade6-energy-transfer-mothers-day-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/science/grade-4/vocab-match-science-grade4-rocks-minerals-fall-harvest-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/math/grade-2/vocab-match-math-grade2-money-arctic-animals-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/math/grade-4/vocab-match-math-grade4-place-value-mountains-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/science/grade-5/vocab-match-science-grade5-matter-block-builders-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/science/grade-2/vocab-match-science-grade2-animal-adaptations-ocean-animals-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/science/grade-5/vocab-match-science-grade5-solar-system-music-stars-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/math/grade-1/vocab-match-math-grade1-shapes-mythology-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/math/grade-4/vocab-match-math-grade4-division-fathers-day-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/math/grade-3/vocab-match-math-grade3-fractions-dragons-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/math/grade-4/vocab-match-math-grade4-angles-sports-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/english/grade-4/vocab-match-english-grade4-compare-contrast-st-patricks-day-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/math/grade-6/vocab-match-math-grade6-percentages-time-travelers-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/english/grade-2/vocab-match-english-grade2-author-purpose-baking-champions-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/science/grade-1/vocab-match-science-grade1-plants-art-studio-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/science/grade-6/vocab-match-science-grade6-forces-halloween-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/english/grade-5/vocab-match-english-grade5-vocabulary-astronaut-academy-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/english/grade-5/vocab-match-english-grade5-point-of-view-knights-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/math/grade-5/vocab-match-math-grade5-patterns-block-builders-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/english/grade-2/vocab-match-english-grade2-grammar-hanukkah-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/math/grade-2/vocab-match-math-grade2-word-problems-winter-wonderland-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/math/grade-1/vocab-match-math-grade1-measurement-underwater-explorers-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/science/grade-2/vocab-match-science-grade2-matter-hanukkah-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/science/grade-5/vocab-match-science-grade5-matter-mothers-day-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/science/grade-2/vocab-match-science-grade2-food-chains-underwater-explorers-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/science/grade-6/vocab-match-science-grade6-human-impact-fairy-tales-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/science/grade-2/vocab-match-science-grade2-properties-matter-summer-vacation-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/science/grade-5/vocab-match-science-grade5-gravity-baking-champions-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/science/grade-5/vocab-match-science-grade5-earth-systems-underwater-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/science/grade-3/vocab-match-science-grade3-magnets-ocean-animals-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/english/grade-6/vocab-match-english-grade6-reading-comprehension-young-scientists-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/english/grade-4/vocab-match-english-grade4-character-analysis-fairy-tales-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/math/grade-1/vocab-match-math-grade1-comparing-numbers-pirates-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/english/grade-3/vocab-match-english-grade3-vocabulary-underwater-explorers-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/english/grade-4/vocab-match-english-grade4-writing-new-year-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/english/grade-3/vocab-match-english-grade3-inference-winter-wonderland-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/math/grade-6/vocab-match-math-grade6-equations-gardening-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/math/grade-2/vocab-match-math-grade2-shapes-art-studio-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/math/grade-6/vocab-match-math-grade6-area-arctic-animals-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/science/grade-2/vocab-match-science-grade2-plant-growth-mothers-day-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/english/grade-3/vocab-match-english-grade3-cause-effect-christmas-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/science/grade-1/vocab-match-science-grade1-plants-knights-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/science/grade-5/vocab-match-science-grade5-food-webs-coding-kids-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/math/grade-4/vocab-match-math-grade4-measurement-sports-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/english/grade-4/vocab-match-english-grade4-author-purpose-hanukkah-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/math/grade-4/vocab-match-math-grade4-symmetry-winter-wonderland-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/english/grade-5/vocab-match-english-grade5-text-structure-back-to-school-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/english/grade-5/vocab-match-english-grade5-vocabulary-earth-day-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/english/grade-5/vocab-match-english-grade5-text-structure-hanukkah-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/english/grade-1/vocab-match-english-grade1-story-elements-mothers-day-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/math/grade-1/vocab-match-math-grade1-word-problems-young-scientists-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/science/grade-4/vocab-match-science-grade4-weathering-erosion-fathers-day-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/science/grade-4/vocab-match-science-grade4-plant-structures-mountains-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/math/grade-2/vocab-match-math-grade2-measurement-pirates-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/english/grade-1/vocab-match-english-grade1-author-purpose-world-games-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/vocab-match/english/grade-3/vocab-match-english-grade3-main-idea-art-studio-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
     <loc>https://examel.com/vocab-match/math/grade-3/vocab-match-math-grade3-multiplication-jungle-3oa1/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
@@ -3064,6 +4764,381 @@
     <loc>https://examel.com/free-science-vocabulary/</loc>
     <changefreq>daily</changefreq>
     <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-1/reading-passage-english-grade1-writing-sentences-robots-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-1/reading-passage-science-grade1-living-nonliving-nature-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-4/reading-passage-english-grade4-reading-comprehension-superheroes-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-6/reading-passage-math-grade6-ratios-st-patricks-day-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-3/reading-passage-english-grade3-text-features-underwater-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-5/reading-passage-english-grade5-author-purpose-arctic-animals-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-6/reading-passage-science-grade6-heredity-mythology-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-3/reading-passage-science-grade3-magnets-dinosaurs-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-6/reading-passage-math-grade6-ratios-nature-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-4/reading-passage-english-grade4-author-purpose-underwater-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-2/reading-passage-math-grade2-time-music-stars-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-4/reading-passage-science-grade4-natural-disasters-earth-day-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-4/reading-passage-english-grade4-text-structure-animal-rescue-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-2/reading-passage-math-grade2-subtraction-spring-flowers-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-4/reading-passage-math-grade4-symmetry-back-to-school-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-5/reading-passage-math-grade5-data-graphs-animal-rescue-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-5/reading-passage-english-grade5-theme-jungle-animals-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-3/reading-passage-science-grade3-ecosystems-time-travelers-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-1/reading-passage-english-grade1-sight-words-halloween-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-3/reading-passage-math-grade3-word-problems-earth-day-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-3/reading-passage-science-grade3-fossils-art-studio-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-2/reading-passage-math-grade2-addition-st-patricks-day-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-5/reading-passage-science-grade5-food-webs-young-scientists-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-2/reading-passage-math-grade2-place-value-block-builders-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-5/reading-passage-science-grade5-ecosystems-baking-champions-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-5/reading-passage-science-grade5-gravity-travel-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-3/reading-passage-science-grade3-environments-eco-warriors-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-1/reading-passage-math-grade1-word-problems-fathers-day-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-1/reading-passage-math-grade1-comparing-numbers-dragons-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-1/reading-passage-math-grade1-subtraction-fathers-day-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-3/reading-passage-english-grade3-main-idea-spring-flowers-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-2/reading-passage-math-grade2-addition-superheroes-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-2/reading-passage-science-grade2-food-chains-hanukkah-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-3/reading-passage-english-grade3-text-features-dragons-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-5/reading-passage-english-grade5-theme-world-games-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-2/reading-passage-english-grade2-compare-contrast-hanukkah-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-5/reading-passage-english-grade5-literary-devices-fathers-day-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-5/reading-passage-english-grade5-literary-devices-video-game-heroes-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-1/reading-passage-math-grade1-word-problems-rainforest-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-5/reading-passage-math-grade5-volume-valentines-day-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-2/reading-passage-english-grade2-compare-contrast-new-year-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-2/reading-passage-math-grade2-arrays-gardening-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-5/reading-passage-math-grade5-decimals-music-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-3/reading-passage-science-grade3-ecosystems-spring-flowers-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-4/reading-passage-math-grade4-division-sports-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-5/reading-passage-math-grade5-division-arctic-animals-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-4/reading-passage-math-grade4-measurement-coding-kids-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-6/reading-passage-math-grade6-equations-pirates-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-6/reading-passage-math-grade6-equations-spring-flowers-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-6/reading-passage-english-grade6-argument-analysis-eco-warriors-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-5/reading-passage-english-grade5-author-purpose-pirates-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-1/reading-passage-science-grade1-earth-materials-mountains-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-2/reading-passage-english-grade2-vocabulary-winter-wonderland-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-4/reading-passage-english-grade4-author-purpose-hanukkah-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-1/reading-passage-english-grade1-sight-words-dragons-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-2/reading-passage-science-grade2-properties-matter-coding-kids-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-1/reading-passage-english-grade1-writing-sentences-back-to-school-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-2/reading-passage-english-grade2-reading-comprehension-superheroes-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-5/reading-passage-science-grade5-ecosystems-baking-champions-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-1/reading-passage-math-grade1-shapes-block-builders-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-2/reading-passage-math-grade2-shapes-nature-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-5/reading-passage-math-grade5-multiplication-gardening-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-1/reading-passage-science-grade1-weather-fairy-tales-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-1/reading-passage-english-grade1-rhyming-st-patricks-day-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-1/reading-passage-english-grade1-rhyming-arctic-animals-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-3/reading-passage-math-grade3-multiplication-nature-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-1/reading-passage-english-grade1-reading-comprehension-fathers-day-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-3/reading-passage-math-grade3-multiplication-dragons-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-4/reading-passage-science-grade4-animal-structures-mountains-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-3/reading-passage-science-grade3-environments-christmas-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-3/reading-passage-english-grade3-character-analysis-winter-wonderland-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-2/reading-passage-math-grade2-place-value-ocean-animals-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-4/reading-passage-math-grade4-word-problems-fall-harvest-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-2/reading-passage-math-grade2-place-value-music-stars-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-3/reading-passage-science-grade3-environments-winter-wonderland-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://examel.com/reading-passages/grade-3/reading-passage-english-grade3-ecosystems-space-standard/</loc>
