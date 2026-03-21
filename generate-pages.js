@@ -2,7 +2,7 @@ require('dotenv').config({ path: '/opt/examel/pdf-engine/.env' });
 const { createClient } = require('@supabase/supabase-js');
 const fs = require('fs');
 const { generateWordSearchPages } = require('./word-search-generator.js');
-const { generateDrillPages } = require('./drill-generator.js');
+const { generateDrillPagesV2 } = require('./drill-generator-v2.js');
 const { generateVocabMatchPages } = require('./vocab-match-generator.js');
 const { generateReadingPassagePages } = require('./reading-passage-generator.js');
 
@@ -232,13 +232,22 @@ function getCharSVG(subject) {
 async function generatePages() {
   console.log('Fetching worksheets from Supabase...');
 
-  const { data: worksheets, error } = await supabase
-    .from('worksheets')
-    .select('id,slug,grade,subject,topic,theme,title,pdf_url,preview_image_url,pinterest_image_url,preview_p1_url,preview_p2_url,status,format,difficulty,ccss_standard')
-    .eq('status', 'published')
-    .order('created_at', { ascending: false });
-
-  if (error) { console.error('Supabase error:', error.message); process.exit(1); }
+  // Paginated fetch — Supabase limits to 1000 rows per request
+  let worksheets = [];
+  let page = 0;
+  const pageSize = 1000;
+  while (true) {
+    const { data, error } = await supabase
+      .from('worksheets')
+      .select('id,slug,grade,subject,topic,theme,title,pdf_url,preview_image_url,pinterest_image_url,preview_p1_url,preview_p2_url,status,format,difficulty,ccss_standard')
+      .eq('status', 'published')
+      .order('created_at', { ascending: false })
+      .range(page * pageSize, (page + 1) * pageSize - 1);
+    if (error) { console.error('Supabase error:', error.message); process.exit(1); }
+    worksheets = worksheets.concat(data);
+    if (data.length < pageSize) break;
+    page++;
+  }
   console.log(`Found ${worksheets.length} worksheets`);
 
   // ── 1. INDIVIDUAL WORKSHEET PAGES ─────────────────────────────────────────
@@ -785,7 +794,7 @@ async function generatePages() {
   const readingPassagePages = generateReadingPassagePages(worksheets, sharedCSS, siteHeader, siteFooter, gradeColor, capitalize, formatTopic, formatTheme);
 
   // ── DRILL PAGES
-  const drillPages = generateDrillPages(worksheets, sharedCSS, siteHeader, siteFooter, gradeColor, capitalize, formatTopic, formatTheme);
+  const drillPages = generateDrillPagesV2(worksheets, sharedCSS, siteHeader, siteFooter, gradeColor, capitalize, formatTopic, formatTheme, subjectColor, worksheetCard, getCharSVG);
 
 
   // ── DRILL HUB PAGES ───────────────────────────────────────────────────────
