@@ -258,6 +258,90 @@ const answerBadge = `<div style="max-width:680px;margin:0 auto 32px;padding:16px
 
 const emailCaptureBlock = `<div style="max-width:680px;margin:0 auto 48px;padding:36px 32px;background:linear-gradient(135deg,#F4F1FF 0%,#EDE8DF 100%);border-radius:24px;text-align:center;border:1px solid #E0D8EC;"><h3 style="font-family:Outfit,sans-serif;font-size:22px;font-weight:800;color:#1A1420;margin-bottom:8px;">Get 5 Free Worksheets Every Week</h3><p style="font-size:15px;color:#6B6475;margin-bottom:20px;line-height:1.6;">Join parents and teachers. Free worksheet pack every Friday — no spam, unsubscribe anytime.</p><p style="font-size:12px;color:#A89FAE;margin-top:14px;">✓ Answer-verified  •  ✓ Printable PDFs  •  ✓ 100% free</p></div>`;
 
+
+// ── CONTENT DISPLAY — renders worksheet content as visible HTML for SEO ──
+function renderContentBlock(ws) {
+  if (!ws.content) return '';
+  let parsed;
+  try {
+    parsed = typeof ws.content === 'string' ? JSON.parse(ws.content) : ws.content;
+  } catch(e) { return ''; }
+
+  const fmt = ws.format || 'worksheet';
+  let html = '<div style="background:white;border-radius:20px;padding:28px 32px;margin-bottom:28px;border:1px solid #EDE8DF;box-shadow:0 2px 8px rgba(0,0,0,0.04);">';
+
+  // Learning objective (worksheets)
+  if (parsed.learning_objective) {
+    html += '<div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#6C5CE7;margin-bottom:12px;font-family:Outfit,sans-serif;">Learning Objective</div>';
+    html += '<p style="font-size:15px;color:#3D3347;line-height:1.8;margin-bottom:20px;">' + parsed.learning_objective + '</p>';
+  }
+
+  // Story intro (drills, vocab, reading)
+  if (parsed.story_intro) {
+    html += '<div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#6C5CE7;margin-bottom:12px;font-family:Outfit,sans-serif;">About This Activity</div>';
+    html += '<p style="font-size:15px;color:#3D3347;line-height:1.8;margin-bottom:20px;font-style:italic;">' + parsed.story_intro + '</p>';
+  }
+
+  // Teacher note (worksheets)
+  if (parsed.teacher_note) {
+    html += '<div style="background:#F4F1FF;border-radius:12px;padding:16px 20px;margin-bottom:20px;border-left:4px solid #6C5CE7;">';
+    html += '<div style="font-size:12px;font-weight:700;color:#6C5CE7;margin-bottom:6px;font-family:Outfit,sans-serif;">Teacher Tip</div>';
+    html += '<p style="font-size:14px;color:#4A4458;line-height:1.7;margin:0;">' + parsed.teacher_note + '</p>';
+    html += '</div>';
+  }
+
+  // Questions preview (worksheets — show first 3)
+  if (parsed.questions && Array.isArray(parsed.questions) && parsed.questions.length > 0) {
+    html += '<div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#6C5CE7;margin-bottom:12px;font-family:Outfit,sans-serif;">Sample Questions</div>';
+    var shown = parsed.questions.slice(0, 3);
+    shown.forEach(function(q, i) {
+      var qText = q.question || q.text || q;
+      if (typeof qText === 'string') {
+        html += '<div style="display:flex;gap:12px;margin-bottom:12px;align-items:flex-start;">';
+        html += '<span style="background:#EDE8DF;color:#6B6475;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;">' + (q.number || i+1) + '</span>';
+        html += '<p style="font-size:14px;color:#3D3347;line-height:1.7;margin:0;">' + qText + '</p>';
+        html += '</div>';
+      }
+    });
+    if (parsed.questions.length > 3) {
+      html += '<p style="font-size:13px;color:#A89FAE;margin-top:8px;">+ ' + (parsed.questions.length - 3) + ' more questions in the full worksheet</p>';
+    }
+  }
+
+  // Reading passage (show first 300 chars)
+  if (parsed.passage) {
+    html += '<div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#6C5CE7;margin-bottom:12px;font-family:Outfit,sans-serif;">Reading Passage Preview</div>';
+    var preview = parsed.passage.length > 300 ? parsed.passage.substring(0, 300) + '...' : parsed.passage;
+    html += '<div style="background:#FFFAF0;border-radius:12px;padding:20px;border:1px solid #EDE8DF;margin-bottom:16px;">';
+    html += '<p style="font-size:15px;color:#3D3347;line-height:1.9;margin:0;">' + preview + '</p>';
+    html += '</div>';
+    if (parsed.passage.length > 300) {
+      html += '<p style="font-size:13px;color:#A89FAE;">Download the full worksheet to read the complete passage and answer comprehension questions.</p>';
+    }
+  }
+
+  // Vocab pairs (show all — they are the content)
+  if (parsed.pairs && Array.isArray(parsed.pairs) && parsed.pairs.length > 0) {
+    html += '<div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#6C5CE7;margin-bottom:12px;font-family:Outfit,sans-serif;">Vocabulary Words</div>';
+    parsed.pairs.forEach(function(p) {
+      html += '<div style="display:flex;gap:12px;margin-bottom:10px;align-items:baseline;">';
+      html += '<span style="font-weight:800;font-size:14px;color:#1A1420;font-family:Outfit,sans-serif;min-width:120px;">' + (p.word || '') + '</span>';
+      html += '<span style="font-size:14px;color:#6B6475;line-height:1.6;">' + (p.definition || '') + '</span>';
+      html += '</div>';
+    });
+  }
+
+  // Student instructions
+  if (parsed.student_instructions) {
+    html += '<div style="margin-top:16px;padding-top:16px;border-top:1px solid #EDE8DF;">';
+    html += '<p style="font-size:13px;color:#6B6475;line-height:1.7;margin:0;"><strong style="color:#1A1420;">Instructions:</strong> ' + parsed.student_instructions + '</p>';
+    html += '</div>';
+  }
+
+  html += '</div>';
+  return html;
+}
+
 function getCharSVG(subject) {
   if(subject==='math') return '<svg width="110" height="130" viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg"><ellipse cx="60" cy="105" rx="36" ry="8" fill="rgba(108,92,231,0.12)"/><rect x="22" y="72" width="76" height="52" rx="16" fill="#6C5CE7"/><path d="M16 96 Q60 86 104 96 L108 124 Q60 134 12 124 Z" fill="#7C6CF7"/><ellipse cx="34" cy="120" rx="14" ry="8" fill="#5A4BD1"/><ellipse cx="86" cy="120" rx="14" ry="8" fill="#5A4BD1"/><ellipse cx="60" cy="68" rx="38" ry="42" fill="#C8874A"/><ellipse cx="60" cy="32" rx="40" ry="22" fill="#1A0A00"/><circle cx="38" cy="36" r="14" fill="#1A0A00"/><circle cx="60" cy="28" r="16" fill="#1A0A00"/><circle cx="82" cy="36" r="14" fill="#1A0A00"/><path d="M26 42 Q20 62 24 82" fill="#1A0A00"/><path d="M94 42 Q100 62 96 82" fill="#1A0A00"/><path d="M80,30 Q90,20 96,28 Q90,26 88,32 Z" fill="#FF85A1"/><path d="M96,28 Q106,20 110,30 Q104,28 102,34 Z" fill="#FF6B8E"/><circle cx="96" cy="30" r="6" fill="#FF85A1"/><circle cx="48" cy="66" r="14" fill="white"/><circle cx="72" cy="66" r="14" fill="white"/><circle cx="49" cy="67" r="10" fill="#3D1F00"/><circle cx="73" cy="67" r="10" fill="#3D1F00"/><circle cx="53" cy="62" r="5" fill="white"/><circle cx="77" cy="62" r="5" fill="white"/><circle cx="49" cy="68" r="3.5" fill="#0A0500"/><circle cx="73" cy="68" r="3.5" fill="#0A0500"/><path d="M38 54 Q48 48 58 53" stroke="#1A0A00" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M62 53 Q72 48 82 54" stroke="#1A0A00" stroke-width="2.5" fill="none" stroke-linecap="round"/><circle cx="60" cy="78" r="2.5" fill="#A05830" opacity="0.5"/><circle cx="66" cy="78" r="2.5" fill="#A05830" opacity="0.5"/><path d="M46 88 Q60 100 74 88" stroke="#C05030" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="40" cy="80" r="10" fill="#FF9999" opacity="0.2"/><circle cx="80" cy="80" r="10" fill="#FF9999" opacity="0.2"/></svg>';
   if(subject==='english'||subject==='reading'||subject==='vocab') return '<svg width="110" height="130" viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg"><ellipse cx="60" cy="105" rx="36" ry="8" fill="rgba(8,145,178,0.12)"/><rect x="22" y="72" width="76" height="52" rx="16" fill="#0891B2"/><ellipse cx="34" cy="120" rx="14" ry="8" fill="#1C1526"/><ellipse cx="86" cy="120" rx="14" ry="8" fill="#1C1526"/><ellipse cx="60" cy="68" rx="40" ry="44" fill="#FDBCB4"/><ellipse cx="60" cy="30" rx="38" ry="22" fill="#6B3A2A"/><ellipse cx="26" cy="52" rx="13" ry="20" fill="#6B3A2A"/><ellipse cx="94" cy="52" rx="13" ry="20" fill="#6B3A2A"/><circle cx="48" cy="66" r="15" fill="none" stroke="#4A3728" stroke-width="3"/><circle cx="72" cy="66" r="15" fill="none" stroke="#4A3728" stroke-width="3"/><path d="M63 66 Q62 64 61 66" stroke="#4A3728" stroke-width="3" fill="none"/><circle cx="48" cy="66" r="10" fill="white"/><circle cx="72" cy="66" r="10" fill="white"/><circle cx="49" cy="67" r="7" fill="#3A2010"/><circle cx="73" cy="67" r="7" fill="#3A2010"/><circle cx="52" cy="63" r="3.5" fill="white"/><circle cx="76" cy="63" r="3.5" fill="white"/><circle cx="49" cy="68" r="2.5" fill="#0A0500"/><circle cx="73" cy="68" r="2.5" fill="#0A0500"/><path d="M50 88 Q60 98 70 88" stroke="#C06050" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="36" cy="78" r="10" fill="#FFB0A0" opacity="0.2"/><circle cx="84" cy="78" r="10" fill="#FFB0A0" opacity="0.2"/></svg>';
@@ -275,7 +359,7 @@ async function generatePages() {
   while (true) {
     const { data, error } = await supabase
       .from('worksheets')
-      .select('id,slug,grade,subject,topic,theme,title,pdf_url,preview_image_url,pinterest_image_url,preview_p1_url,preview_p2_url,status,format,difficulty,ccss_standard,seo_description,target_keyword')
+      .select('id,slug,grade,subject,topic,theme,title,pdf_url,preview_image_url,pinterest_image_url,preview_p1_url,preview_p2_url,status,format,difficulty,ccss_standard,seo_description,target_keyword,content')
       .eq('status', 'published')
       .order('created_at', { ascending: false })
       .range(page * pageSize, (page + 1) * pageSize - 1);
@@ -534,6 +618,8 @@ async function generatePages() {
         <div style="display:flex;align-items:flex-start;gap:12px;"><span style="background:#6C5CE7;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex-shrink:0;">4</span><div><div style="font-weight:700;font-size:14px;color:#1A1420;margin-bottom:2px;">Extend</div><div style="font-size:13px;color:#6B6475;line-height:1.5;">Try a related worksheet to reinforce the skill.</div></div></div>
       </div>
     </div>
+
+    ${renderContentBlock(ws)}
 
     ${pedLinksHtml}
 

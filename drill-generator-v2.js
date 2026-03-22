@@ -2,6 +2,24 @@ const fs = require('fs');
 const intentMap = require('/opt/examel/pdf-engine/drill-intent-map.js');
 
 function generateDrillPagesV2(worksheets, sharedCSS, siteHeader, siteFooter, gradeColor, capitalize, formatTopic, formatTheme, subjectColor, worksheetCard, getCharSVG) {
+
+function renderContentBlock(ws) {
+  if (!ws.content) return '';
+  var parsed;
+  try { parsed = typeof ws.content === 'string' ? JSON.parse(ws.content) : ws.content; } catch(e) { return ''; }
+  var html = '<div style="background:white;border-radius:20px;padding:28px 32px;margin-bottom:28px;border:1px solid #EDE8DF;box-shadow:0 2px 8px rgba(0,0,0,0.04);">';
+  if (parsed.learning_objective) { html += '<div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#6C5CE7;margin-bottom:12px;font-family:Outfit,sans-serif;">Learning Objective</div><p style="font-size:15px;color:#3D3347;line-height:1.8;margin-bottom:20px;">' + parsed.learning_objective + '</p>'; }
+  if (parsed.story_intro) { html += '<div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#6C5CE7;margin-bottom:12px;font-family:Outfit,sans-serif;">About This Activity</div><p style="font-size:15px;color:#3D3347;line-height:1.8;margin-bottom:20px;font-style:italic;">' + parsed.story_intro + '</p>'; }
+  if (parsed.teacher_note) { html += '<div style="background:#F4F1FF;border-radius:12px;padding:16px 20px;margin-bottom:20px;border-left:4px solid #6C5CE7;"><div style="font-size:12px;font-weight:700;color:#6C5CE7;margin-bottom:6px;font-family:Outfit,sans-serif;">Teacher Tip</div><p style="font-size:14px;color:#4A4458;line-height:1.7;margin:0;">' + parsed.teacher_note + '</p></div>'; }
+  if (parsed.questions && Array.isArray(parsed.questions) && parsed.questions.length > 0) { html += '<div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#6C5CE7;margin-bottom:12px;font-family:Outfit,sans-serif;">Sample Questions</div>'; parsed.questions.slice(0,3).forEach(function(q,i){ var t=q.question||q.text||q; if(typeof t==='string'){html+='<div style="display:flex;gap:12px;margin-bottom:12px;align-items:flex-start;"><span style="background:#EDE8DF;color:#6B6475;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;">'+(q.number||i+1)+'</span><p style="font-size:14px;color:#3D3347;line-height:1.7;margin:0;">'+t+'</p></div>';}}); if(parsed.questions.length>3){html+='<p style="font-size:13px;color:#A89FAE;margin-top:8px;">+ '+(parsed.questions.length-3)+' more questions in the full worksheet</p>';} }
+  if (parsed.passage) { var preview=parsed.passage.length>300?parsed.passage.substring(0,300)+'...':parsed.passage; html+='<div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#6C5CE7;margin-bottom:12px;font-family:Outfit,sans-serif;">Reading Passage Preview</div><div style="background:#FFFAF0;border-radius:12px;padding:20px;border:1px solid #EDE8DF;margin-bottom:16px;"><p style="font-size:15px;color:#3D3347;line-height:1.9;margin:0;">'+preview+'</p></div>'; if(parsed.passage.length>300){html+='<p style="font-size:13px;color:#A89FAE;">Download the full worksheet to read the complete passage and answer comprehension questions.</p>';} }
+  if (parsed.pairs && Array.isArray(parsed.pairs) && parsed.pairs.length > 0) { html += '<div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#6C5CE7;margin-bottom:12px;font-family:Outfit,sans-serif;">Vocabulary Words</div>'; parsed.pairs.forEach(function(p){html+='<div style="display:flex;gap:12px;margin-bottom:10px;align-items:baseline;"><span style="font-weight:800;font-size:14px;color:#1A1420;font-family:Outfit,sans-serif;min-width:120px;">'+(p.word||'')+'</span><span style="font-size:14px;color:#6B6475;line-height:1.6;">'+(p.definition||'')+'</span></div>';}); }
+  if (parsed.student_instructions) { html += '<div style="margin-top:16px;padding-top:16px;border-top:1px solid #EDE8DF;"><p style="font-size:13px;color:#6B6475;line-height:1.7;margin:0;"><strong style="color:#1A1420;">Instructions:</strong> ' + parsed.student_instructions + '</p></div>'; }
+  html += '</div>';
+  return html;
+}
+
+
   const drills = worksheets.filter(ws => ws.format === 'drill-grid');
   console.log('Drill V2: ' + drills.length + ' drills, ' + intentMap.length + ' intents');
 
