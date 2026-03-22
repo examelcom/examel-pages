@@ -5,6 +5,7 @@ const { generateWordSearchPages } = require('./word-search-generator.js');
 const { generateDrillPagesV2 } = require('./drill-generator-v2.js');
 const { generateVocabMatchPages } = require('./vocab-match-generator.js');
 const { generateReadingPassagePages } = require('./reading-passage-generator.js');
+const { getPedagogicalLinks } = require('./linking-engine.js');
 
 const supabase = createClient(
   process.env.SUPABASE_URL,
@@ -239,7 +240,7 @@ async function generatePages() {
   while (true) {
     const { data, error } = await supabase
       .from('worksheets')
-      .select('id,slug,grade,subject,topic,theme,title,pdf_url,preview_image_url,pinterest_image_url,preview_p1_url,preview_p2_url,status,format,difficulty,ccss_standard')
+      .select('id,slug,grade,subject,topic,theme,title,pdf_url,preview_image_url,pinterest_image_url,preview_p1_url,preview_p2_url,status,format,difficulty,ccss_standard,seo_description,target_keyword')
       .eq('status', 'published')
       .order('created_at', { ascending: false })
       .range(page * pageSize, (page + 1) * pageSize - 1);
@@ -267,21 +268,29 @@ async function generatePages() {
     const sameTopicDiffTheme = worksheets.filter(w => w.topic === ws.topic && w.theme !== ws.theme && w.slug !== ws.slug).slice(0, 3);
     const sameThemeDiffSubject = worksheets.filter(w => w.theme === ws.theme && w.subject !== ws.subject && w.grade === ws.grade && w.slug !== ws.slug).slice(0, 3);
 
+    // Session 3: Pedagogical linking engine
+    const pedLinks = getPedagogicalLinks(ws, worksheets);
+    const pedLinksHtml = pedLinks.length > 0
+      ? '<div class="related"><h3 class="related-title">Related Worksheets</h3><div style="display:flex;flex-direction:column;gap:8px;">'
+        + pedLinks.map(l => '<a href="' + l.url + '" style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f8f6ff;border-radius:10px;text-decoration:none;color:#1C1526;font-size:14px;font-weight:500;"><span style="color:#6C5CE7;font-weight:700;font-size:12px;">&#8594;</span> ' + l.text + '</a>').join('')
+        + '</div></div>'
+      : '';
+
     const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%236C5CE7'/%3E%3Crect x='7' y='7' width='4' height='18' rx='1' fill='white'/%3E%3Crect x='7' y='7' width='7' height='4' rx='1' fill='white'/%3E%3Crect x='7' y='14' width='11' height='4' rx='1' fill='white'/%3E%3Crect x='7' y='21' width='15' height='4' rx='1' fill='white'/%3E%3C/svg%3E">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Free ${formatTopic(ws.topic)} Worksheet Grade ${ws.grade} | Examel</title>
-  <meta name="description" content="Free printable ${ws.subject} worksheet for Grade ${ws.grade}. ${formatTopic(ws.topic)} with ${formatTheme(ws.theme)} theme. Download PDF instantly. Answer key included.">
+  <title>Free Grade ${ws.grade} ${formatTopic(ws.topic)} ${capitalize(ws.subject)} Worksheet | Examel</title>
+  <meta name="description" content="${ws.seo_description || `Free ${ws.target_keyword || ws.subject + " worksheet for Grade " + ws.grade}. ${formatTopic(ws.topic)} practice with ${formatTheme(ws.theme)} theme. Printable PDF with answer key. No signup required.`}">
   <link rel="canonical" href="https://examel.com/worksheets/${ws.slug}/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="${ws.title} | Free Printable Worksheet | Examel">
   <meta property="og:description" content="Free printable Grade ${ws.grade} ${capitalize(ws.subject)} worksheet about ${formatTopic(ws.topic)}. Answer key included. Download PDF free.">
   <meta property="og:image" content="${ws.pinterest_image_url || ws.preview_image_url || `https://examel.com/thumbnails/${ws.slug}.png`}">
   <meta property="og:url" content="https://examel.com/worksheets/${ws.slug}/">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"EducationalResource","name":"${ws.title}","description":"Free printable Grade ${ws.grade} ${ws.subject} worksheet about ${formatTopic(ws.topic)} — 8 questions with answer key","educationalLevel":"Grade ${ws.grade}","subject":"${capitalize(ws.subject)}","teaches":"${formatTopic(ws.topic)}","keywords":"Grade ${ws.grade} ${capitalize(ws.subject)} worksheet, ${formatTopic(ws.topic)} worksheet, free printable","url":"https://examel.com/worksheets/${ws.slug}/","isAccessibleForFree":true,"provider":{"@type":"Organization","name":"Examel","url":"https://examel.com"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"EducationalResource","name":"${ws.title}","description":"Free printable Grade ${ws.grade} ${ws.subject} worksheet about ${formatTopic(ws.topic)} — 8 questions with answer key","educationalLevel":"Grade ${ws.grade}","subject":"${capitalize(ws.subject)}","teaches":"${formatTopic(ws.topic)}","keywords":"Grade ${ws.grade} ${capitalize(ws.subject)} worksheet, ${formatTopic(ws.topic)} worksheet, free printable","url":"https://examel.com/worksheets/${ws.slug}/","isAccessibleForFree":true,"inLanguage":"en","typicalAgeRange":"5-14","thumbnailUrl":"${ws.preview_p1_url || `https://examel.com/thumbnails/${ws.slug}.png`}","author":{"@type":"Organization","name":"Examel Education Team","url":"https://examel.com"}${ws.ccss_standard ? `,"educationalAlignment":{"@type":"AlignmentObject","alignmentType":"teaches","educationalFramework":"Common Core State Standards","targetName":"${ws.ccss_standard}"}` : ""},"provider":{"@type":"Organization","name":"Examel","url":"https://examel.com"}}</script>
   ${sharedCSS}
   <style>
     :root{
@@ -469,6 +478,8 @@ async function generatePages() {
       <div class="info-chip"><span class="lbl">Topic</span><span class="val">${formatTopic(ws.topic)}</span></div>
     </div>
 
+    <div style="text-align:center;margin:12px 0 0;font-size:13px;color:#8b7fa8;font-weight:500;">Created by Examel Education Team · Aligned to Common Core State Standards</div>
+
     <div class="included-box">
       <div class="included-title">What is included</div>
       <div class="included-item"><span class="check">✓</span> 8 curriculum-aligned questions</div>
@@ -479,17 +490,17 @@ async function generatePages() {
       ${ws.ccss_standard ? `<div style="margin-top:6px;"><span class="ccss-badge">CCSS: ${ws.ccss_standard}</span></div>` : ''}
     </div>
 
-    ${related.length > 0 ? `
-    <div class="related">
-      <h3 class="related-title">More Grade ${ws.grade} ${capitalize(ws.subject)} Worksheets</h3>
-      <div class="related-grid">${related.map(worksheetCard).join('')}</div>
-    </div>` : ''}
+    <div style="background:white;border-radius:20px;padding:28px;margin-bottom:28px;box-shadow:0 2px 8px rgba(0,0,0,0.04),0 8px 24px rgba(0,0,0,0.06);border:1px solid #EDE8DF;">
+      <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#6C5CE7;margin-bottom:16px;font-family:Outfit,sans-serif;">How to Use This Worksheet</div>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;">
+        <div style="display:flex;align-items:flex-start;gap:12px;"><span style="background:#6C5CE7;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex-shrink:0;">1</span><div><div style="font-weight:700;font-size:14px;color:#1A1420;margin-bottom:2px;">Print</div><div style="font-size:13px;color:#6B6475;line-height:1.5;">Download the PDF and print on US Letter paper.</div></div></div>
+        <div style="display:flex;align-items:flex-start;gap:12px;"><span style="background:#6C5CE7;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex-shrink:0;">2</span><div><div style="font-weight:700;font-size:14px;color:#1A1420;margin-bottom:2px;">Review</div><div style="font-size:13px;color:#6B6475;line-height:1.5;">Read through the questions with your child or student.</div></div></div>
+        <div style="display:flex;align-items:flex-start;gap:12px;"><span style="background:#6C5CE7;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex-shrink:0;">3</span><div><div style="font-weight:700;font-size:14px;color:#1A1420;margin-bottom:2px;">Complete</div><div style="font-size:13px;color:#6B6475;line-height:1.5;">Let them work independently. Use the answer key to check.</div></div></div>
+        <div style="display:flex;align-items:flex-start;gap:12px;"><span style="background:#6C5CE7;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex-shrink:0;">4</span><div><div style="font-weight:700;font-size:14px;color:#1A1420;margin-bottom:2px;">Extend</div><div style="font-size:13px;color:#6B6475;line-height:1.5;">Try a related worksheet to reinforce the skill.</div></div></div>
+      </div>
+    </div>
 
-    ${sameTopicDiffTheme.length > 0 ? `
-    <div class="related">
-      <h3 class="related-title">More ${formatTopic(ws.topic)} Worksheets</h3>
-      <div class="related-grid">${sameTopicDiffTheme.map(worksheetCard).join('')}</div>
-    </div>` : ''}
+    ${pedLinksHtml}
 
     <div class="email-section">
       <div class="email-char">
@@ -530,6 +541,11 @@ async function generatePages() {
       <h3 class="related-title">More ${formatTheme(ws.theme)} Theme Worksheets</h3>
       <div class="related-grid">${sameThemeDiffSubject.map(worksheetCard).join('')}</div>
     </div>` : ''}
+
+    <div style="background:#1C1526;border-radius:20px;padding:28px 32px;margin-bottom:28px;color:white;">
+      <div style="font-size:16px;font-weight:800;margin-bottom:10px;font-family:Outfit,sans-serif;">About Examel</div>
+      <p style="font-size:13px;color:rgba(255,255,255,0.6);line-height:1.8;margin:0;">Examel provides 10,000+ free printable worksheets for Grades 1–6, aligned to Common Core State Standards. Every worksheet is reviewed for accuracy and includes a full answer key. New worksheets added weekly across Math, English, and Science. Built by educators for parents, teachers, and homeschool families.</p>
+    </div>
 
     <div class="nav-links">
       <a href="/free-${ws.subject.toLowerCase()}-worksheets/grade-${ws.grade}/">← All Grade ${ws.grade} ${capitalize(ws.subject)} Worksheets</a>
@@ -603,6 +619,11 @@ async function generatePages() {
   <title>Free Grade ${grade} ${capitalize(subject)} Worksheets | Printable PDF | Examel</title>
   <meta name="description" content="Free printable Grade ${grade} ${capitalize(subject)} worksheets. ${filtered.length}+ worksheets with fun themes. Download PDF instantly. Answer keys included. No signup required.">
   <link rel="canonical" href="https://examel.com/free-${subject}-worksheets/grade-${grade}/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free Grade ${grade} ${capitalize(subject)} Worksheets | Examel">
+  <meta property="og:description" content="Free printable Grade ${grade} ${capitalize(subject)} worksheets with fun themes. Download PDF instantly. Answer keys included.">
+  <meta property="og:image" content="https://examel.com/og-default.png">
+  <meta property="og:url" content="https://examel.com/free-${subject}-worksheets/grade-${grade}/">
   ${sharedCSS}
 </head>
 <body>
@@ -666,6 +687,11 @@ async function generatePages() {
   <title>Free ${capitalize(subject)} Worksheets for Kids | Grades 1-6 | Examel</title>
   <meta name="description" content="Free printable ${capitalize(subject)} worksheets for Grades 1-6. ${filtered.length}+ worksheets with fun themes kids love. Download PDF instantly. Answer keys included.">
   <link rel="canonical" href="https://examel.com/free-${subject}-worksheets/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free ${capitalize(subject)} Worksheets for Kids | Examel">
+  <meta property="og:description" content="Free printable ${capitalize(subject)} worksheets for Grades 1-6. Fun themes, answer keys included. Download PDF instantly.">
+  <meta property="og:image" content="https://examel.com/og-default.png">
+  <meta property="og:url" content="https://examel.com/free-${subject}-worksheets/">
   ${sharedCSS}
 </head>
 <body>
@@ -749,6 +775,11 @@ async function generatePages() {
   <title>Free Grade ${grade} Worksheets | Math, English, Science | Examel</title>
   <meta name="description" content="Free printable Grade ${grade} worksheets for Math, English and Science. ${filtered.length}+ worksheets with fun themes. Download PDF instantly. Answer keys included.">
   <link rel="canonical" href="https://examel.com/free-worksheets/grade-${grade}/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free Grade ${grade} Worksheets | Math, English, Science | Examel">
+  <meta property="og:description" content="Free printable Grade ${grade} worksheets for Math, English and Science. Fun themes, answer keys included. Download PDF instantly.">
+  <meta property="og:image" content="https://examel.com/og-default.png">
+  <meta property="og:url" content="https://examel.com/free-worksheets/grade-${grade}/">
   ${sharedCSS}
 </head>
 <body>
