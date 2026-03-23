@@ -1,0 +1,32 @@
+[
+  {
+    "type": "url-not-equal",
+    "input": "division",
+    "forbidden": "/free-math-drills/division/division/",
+    "reason": "CHG-2026-0323: getDrillTopicUrl doubled operation name for simple topics"
+  },
+  {
+    "type": "url-not-equal",
+    "input": "multiplication",
+    "forbidden": "/free-math-drills/multiplication/multiplication/",
+    "reason": "CHG-2026-0323: getDrillTopicUrl doubled operation name for simple topics"
+  },
+  {
+    "type": "url-not-equal",
+    "input": "addition",
+    "forbidden": "/free-math-drills/addition/addition/",
+    "reason": "CHG-2026-0323: getDrillTopicUrl doubled operation name for simple topics"
+  },
+  {
+    "type": "url-not-equal",
+    "input": "subtraction",
+    "forbidden": "/free-math-drills/subtraction/subtraction/",
+    "reason": "CHG-2026-0323: getDrillTopicUrl doubled operation name for simple topics"
+  },
+  {
+    "type": "url-equals",
+    "input": { "format": "drill-grid", "subject": "Math", "grade": 3, "slug": "my-drill" },
+    "expected": "/drills/math/grade-3/my-drill/",
+    "reason": "CHG-2026-0323: drill URLs must be lowercase — uppercase subject caused broken links"
+  }
+]
