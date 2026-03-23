@@ -1,8 +1,10 @@
 require('dotenv').config({ path: '/opt/examel/pdf-engine/.env' });
+const path = require("path");
 const { createClient } = require('@supabase/supabase-js');
 const fs = require('fs');
 const { generateWordSearchPages } = require('./word-search-generator.js');
 const { generateDrillPagesV2 } = require('./drill-generator-v2.js');
+const { generateDrillPages } = require("./drill-generator.js");
 const { generateVocabMatchPages } = require('./vocab-match-generator.js');
 const { generateReadingPassagePages } = require('./reading-passage-generator.js');
 const { getPedagogicalLinks } = require('./linking-engine.js');
@@ -18,9 +20,95 @@ const titleCase = (s) => s.split(' ').map(capitalize).join(' ');
 const formatTopic = (t) => titleCase(t.replace(/-/g, ' '));
 const formatTheme = (t) => titleCase(t.replace(/-/g, ' '));
 
+// ── FILTER FLAGS ──────────────────────────────────────────────────────────
+// Usage: node generate-pages.js --filter format=worksheet
+//        node generate-pages.js --filter subject=math,grade=3
+//        node generate-pages.js  (no filter = full build)
+const FILTER = {};
+const filterIdx = process.argv.indexOf('--filter');
+if (filterIdx !== -1 && process.argv[filterIdx + 1]) {
+  const pairs = process.argv[filterIdx + 1].split(',');
+  pairs.forEach(pair => {
+    const [k, v] = pair.trim().split('=');
+    if (k && v) FILTER[k.trim()] = v.trim().toLowerCase();
+  });
+  console.log('🔍 Filter active:', JSON.stringify(FILTER));
+}
+function shouldRun(section) {
+  if (!Object.keys(FILTER).length) return true;
+  const fmt = FILTER.format;
+  const subj = FILTER.subject;
+  switch (section) {
+    case 'worksheets':       return !fmt || fmt === 'worksheet';
+    case 'category':         return !fmt || fmt === 'worksheet';
+    case 'subject-hub':      return !fmt || fmt === 'worksheet';
+    case 'grade-hub':        return !fmt || fmt === 'worksheet';
+    case 'topic-hub':        return !fmt || fmt === 'worksheet';
+    case 'drill-hub':        return !fmt || fmt === 'drill-grid';
+    case 'vocab-hub':        return !fmt || fmt === 'vocab-match';
+    case 'reading-hub':      return !fmt || fmt === 'reading-passage';
+    case 'free-ws-hub':      return !fmt || fmt === 'worksheet';
+    case 'word-search-hub':  return !fmt || fmt === 'word-search';
+    case 'drills-grade-hub': return !fmt || fmt === 'drill-grid';
+    case 'sitemap':          return true;
+    default:                 return true;
+  }
+}
+
+// ── DRILL INTENT URL MAP (fixes broken drill links) ──────────────────────
+const DRILL_INTENT_MAP = {
+  'addition': '/free-math-drills/addition/',
+  'single-digit-addition': '/free-math-drills/addition/single-digit-addition/',
+  'addition-within-10': '/free-math-drills/addition/addition-within-10/',
+  'addition-within-20': '/free-math-drills/addition/addition-within-20/',
+  'doubles-facts': '/free-math-drills/addition/doubles-facts/',
+  'adding-three-numbers': '/free-math-drills/addition/adding-three-numbers/',
+  'adding-multiples-of-10': '/free-math-drills/addition/adding-multiples-of-10/',
+  'addition-no-regrouping': '/free-math-drills/addition/addition-no-regrouping/',
+  'addition-with-regrouping': '/free-math-drills/addition/addition-with-regrouping/',
+  '3-digit-addition': '/free-math-drills/addition/3-digit-addition/',
+  'subtraction': '/free-math-drills/subtraction/',
+  'single-digit-subtraction': '/free-math-drills/subtraction/single-digit-subtraction/',
+  'subtraction-within-10': '/free-math-drills/subtraction/subtraction-within-10/',
+  'subtraction-within-20': '/free-math-drills/subtraction/subtraction-within-20/',
+  'subtracting-multiples-of-10': '/free-math-drills/subtraction/subtracting-multiples-of-10/',
+  'subtraction-no-borrowing': '/free-math-drills/subtraction/subtraction-no-borrowing/',
+  'subtraction-with-borrowing': '/free-math-drills/subtraction/subtraction-with-borrowing/',
+  '3-digit-subtraction': '/free-math-drills/subtraction/3-digit-subtraction/',
+  'mixed-add-subtract': '/free-math-drills/subtraction/mixed-add-subtract/',
+  'multiplication': '/free-math-drills/multiplication/',
+  'multiplication-facts-0-12': '/free-math-drills/multiplication/multiplication-facts-0-12/',
+  '2-digit-by-1-digit': '/free-math-drills/multiplication/2-digit-by-1-digit/',
+  '2-digit-by-2-digit': '/free-math-drills/multiplication/2-digit-by-2-digit/',
+  'multiplying-by-10-100': '/free-math-drills/multiplication/multiplying-by-10-100/',
+  'mixed-mult-division': '/free-math-drills/multiplication/mixed-mult-division/',
+  'times-table-2': '/free-math-drills/multiplication/times-table-2/',
+  'times-table-3': '/free-math-drills/multiplication/times-table-3/',
+  'times-table-4': '/free-math-drills/multiplication/times-table-4/',
+  'times-table-5': '/free-math-drills/multiplication/times-table-5/',
+  'times-table-6': '/free-math-drills/multiplication/times-table-6/',
+  'times-table-7': '/free-math-drills/multiplication/times-table-7/',
+  'times-table-8': '/free-math-drills/multiplication/times-table-8/',
+  'times-table-9': '/free-math-drills/multiplication/times-table-9/',
+  'times-table-10': '/free-math-drills/multiplication/times-table-10/',
+  'times-table-11': '/free-math-drills/multiplication/times-table-11/',
+  'times-table-12': '/free-math-drills/multiplication/times-table-12/',
+  'division': '/free-math-drills/division/',
+  'basic-division-facts': '/free-math-drills/division/basic-division-facts/',
+  'division-by-2': '/free-math-drills/division/division-by-2/',
+  'division-by-5': '/free-math-drills/division/division-by-5/',
+  'division-by-10': '/free-math-drills/division/division-by-10/',
+  'division-with-remainders': '/free-math-drills/division/division-with-remainders/',
+  'dividing-by-10-100': '/free-math-drills/division/dividing-by-10-100/',
+  'long-division-2-digit-divisor': '/free-math-drills/division/long-division-2-digit-divisor/',
+  'mad-minute-addition': '/free-math-drills/mixed/mad-minute-addition/',
+  'mad-minute-multiplication': '/free-math-drills/mixed/mad-minute-multiplication/',
+  'mixed-all-operations': '/free-math-drills/mixed/mixed-all-operations/'
+};
+
 function getCardUrl(ws) {
-  if (ws.format === 'drill-grid') return `/drills/${ws.subject}/grade-${ws.grade}/${ws.slug}/`;
-  if (ws.format === 'word-search') return `/word-searches/${ws.subject}/grade-${ws.grade}/${ws.slug}/`;
+  if (ws.format === 'drill-grid') { const intentUrl = DRILL_INTENT_MAP[(ws.topic || '').toLowerCase().replace(/ /g, '-')]; return intentUrl || '/free-math-drills/'; }
+  if (ws.format === 'word-search') return '/word-searches/';
   if (ws.format === 'vocab-match') return `/vocab-match/${ws.subject}/grade-${ws.grade}/${ws.slug}/`;
   if (ws.format === 'reading-passage') return `/reading-passages/grade-${ws.grade}/${ws.slug}/`;
   return `/worksheets/${ws.slug}/`;
@@ -357,12 +445,15 @@ async function generatePages() {
   let page = 0;
   const pageSize = 1000;
   while (true) {
-    const { data, error } = await supabase
+    let q = supabase
       .from('worksheets')
       .select('id,slug,grade,subject,topic,theme,title,pdf_url,preview_image_url,pinterest_image_url,preview_p1_url,preview_p2_url,status,format,difficulty,ccss_standard,seo_description,target_keyword,content')
-      .eq('status', 'published')
-      .order('created_at', { ascending: false })
-      .range(page * pageSize, (page + 1) * pageSize - 1);
+      .eq('status', 'published');
+    if (FILTER.format) q = q.eq('format', FILTER.format);
+    if (FILTER.subject) q = q.eq('subject', FILTER.subject);
+    if (FILTER.grade) q = q.eq('grade', parseInt(FILTER.grade));
+    q = q.order('created_at', { ascending: false }).range(page * pageSize, (page + 1) * pageSize - 1);
+    const { data, error } = await q;
     if (error) { console.error('Supabase error:', error.message); process.exit(1); }
     worksheets = worksheets.concat(data);
     if (data.length < pageSize) break;
@@ -370,7 +461,13 @@ async function generatePages() {
   }
   console.log(`Found ${worksheets.length} worksheets`);
 
-  // ── 1. INDIVIDUAL WORKSHEET PAGES ─────────────────────────────────────────
+  // ── SHARED VARIABLES (available to all sections regardless of filter) ──
+  const subjects = [...new Set(worksheets.map(w => w.subject.toLowerCase()))];
+  const grades = [...new Set(worksheets.map(w => w.grade))].sort((a,b) => a-b);
+  const allPublished = worksheets;
+  const topicMap = {};
+
+  if (shouldRun('worksheets')) { // ── 1. INDIVIDUAL WORKSHEET PAGES ──────────────────────────────────────────
   for (const ws of worksheets.filter(w => !w.format || w.format === 'worksheet')) {
     const dir = `/opt/examel/examel-pages/worksheets/${ws.slug}`;
     fs.mkdirSync(dir, { recursive: true });
@@ -388,7 +485,7 @@ async function generatePages() {
     const sameThemeDiffSubject = worksheets.filter(w => w.theme === ws.theme && w.subject !== ws.subject && w.grade === ws.grade && w.slug !== ws.slug).slice(0, 3);
 
     // Session 3: Pedagogical linking engine
-    const pedLinks = getPedagogicalLinks(ws, worksheets);
+    const pedLinks = getPedagogicalLinks(ws, worksheets.filter(w => w.format !== "drill-grid" && w.format !== "word-search"));
     const pedLinksHtml = pedLinks.length > 0
       ? '<div class="related"><h3 class="related-title">Related Worksheets</h3><div style="display:flex;flex-direction:column;gap:8px;">'
         + pedLinks.map(l => '<a href="' + l.url + '" style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f8f6ff;border-radius:10px;text-decoration:none;color:#1C1526;font-size:14px;font-weight:500;"><span style="color:#6C5CE7;font-weight:700;font-size:12px;">&#8594;</span> ' + l.text + '</a>').join('')
@@ -401,7 +498,7 @@ async function generatePages() {
   <meta charset="UTF-8">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%236C5CE7'/%3E%3Crect x='7' y='7' width='4' height='18' rx='1' fill='white'/%3E%3Crect x='7' y='7' width='7' height='4' rx='1' fill='white'/%3E%3Crect x='7' y='14' width='11' height='4' rx='1' fill='white'/%3E%3Crect x='7' y='21' width='15' height='4' rx='1' fill='white'/%3E%3C/svg%3E">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Free Grade ${ws.grade} ${formatTopic(ws.topic)} ${capitalize(ws.subject)} Worksheet | Examel</title>
+  <title>Free Grade ${ws.grade} ${formatTopic(ws.topic)} ${capitalize(ws.subject)} Worksheet — ${formatTheme(ws.theme)} | Examel</title>
   <meta name="description" content="${ws.seo_description || `Free ${ws.target_keyword || ws.subject + " worksheet for Grade " + ws.grade}. ${formatTopic(ws.topic)} practice with ${formatTheme(ws.theme)} theme. Printable PDF with answer key. No signup required.`}">
   <link rel="canonical" href="https://examel.com/worksheets/${ws.slug}/">
   <meta property="og:type" content="website">
@@ -644,11 +741,8 @@ async function generatePages() {
       </div>
       <h3>📬 Get Free Worksheets Every Week</h3>
       <p>New themed worksheets added daily. Free for parents and teachers.</p>
-      <form action="https://app.kit.com/forms/9220999/subscriptions" method="POST" target="kit-iframe-ws" class="email-form">
-        <input type="email" name="email_address" placeholder="Your email address" required class="email-input">
-        <button type="submit" class="email-submit">Get Free Worksheets →</button>
-      </form>
-      <iframe name="kit-iframe-ws" style="display:none;"></iframe>
+      <div class="klaviyo-form-X45k9d"></div>
+      <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/VruXqp/klaviyo.js?company_id=VruXqp"></script>
       <p class="email-note">No spam. Unsubscribe anytime.</p>
     </div>
 
@@ -718,11 +812,9 @@ async function generatePages() {
 
   }
   console.log(`✓ ${worksheets.length} individual pages generated`);
+  } // end worksheets
 
-  // ── 2. CATEGORY PAGES (subject + grade) ───────────────────────────────────
-  const subjects = [...new Set(worksheets.map(w => w.subject.toLowerCase()))];
-  const grades = [...new Set(worksheets.map(w => w.grade))].sort((a,b) => a-b);
-
+  if (shouldRun('category')) { // ── 2. CATEGORY PAGES ──────────────────────────────────────────────────────
   for (const subject of subjects) {
     for (const grade of grades) {
       const filtered = worksheets.filter(w => w.subject.toLowerCase() === subject && w.grade === grade);
@@ -784,8 +876,9 @@ async function generatePages() {
     }
   }
   console.log(`✓ Category pages generated`);
+  } // end category
 
-  // ── 3. SUBJECT HUB PAGES ──────────────────────────────────────────────────
+  if (shouldRun('subject-hub')) { // ── 3. SUBJECT HUB PAGES ─────────────────────────────────────────────────
   const subjectMeta = {
     math: { icon: '➕', desc: 'Addition, subtraction, multiplication, fractions, geometry and more.' },
     english: { icon: '📖', desc: 'Reading comprehension, vocabulary, grammar and writing.' },
@@ -808,6 +901,7 @@ async function generatePages() {
   <title>Free ${capitalize(subject)} Worksheets for Kids | Grades 1-6 | Examel</title>
   <meta name="description" content="Free printable ${capitalize(subject)} worksheets for Grades 1-6. ${filtered.length}+ worksheets with fun themes kids love. Download PDF instantly. Answer keys included.">
   <link rel="canonical" href="https://examel.com/free-${subject}-worksheets/">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Free ${capitalize(subject)} Worksheets for Kids","description":"Free printable ${capitalize(subject)} worksheets for Grades 1-6. Fun themes, answer keys included.","url":"https://examel.com/free-${subject}-worksheets/","publisher":{"@type":"Organization","name":"Examel","url":"https://examel.com"}}</script>
   <meta property="og:type" content="website">
   <meta property="og:title" content="Free ${capitalize(subject)} Worksheets for Kids | Examel">
   <meta property="og:description" content="Free printable ${capitalize(subject)} worksheets for Grades 1-6. Fun themes, answer keys included. Download PDF instantly.">
@@ -885,8 +979,9 @@ async function generatePages() {
     fs.writeFileSync(`${dir}/index.html`, html);
   }
   console.log(`✓ Subject hub pages generated`);
+  } // end subject-hub
 
-  // ── 4. GRADE HUB PAGES ────────────────────────────────────────────────────
+  if (shouldRun('grade-hub')) { // ── 4. GRADE HUB PAGES ───────────────────────────────────────────────────
   const gradeDir = `/opt/examel/examel-pages/free-worksheets`;
   fs.mkdirSync(gradeDir, { recursive: true });
 
@@ -906,6 +1001,7 @@ async function generatePages() {
   <title>Free Grade ${grade} Worksheets | Math, English, Science | Examel</title>
   <meta name="description" content="Free printable Grade ${grade} worksheets for Math, English and Science. ${filtered.length}+ worksheets with fun themes. Download PDF instantly. Answer keys included.">
   <link rel="canonical" href="https://examel.com/free-worksheets/grade-${grade}/">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Free Grade ${grade} Worksheets","description":"Free printable Grade ${grade} worksheets for Math, English and Science. Fun themes, answer keys included.","url":"https://examel.com/free-worksheets/grade-${grade}/","publisher":{"@type":"Organization","name":"Examel","url":"https://examel.com"}}</script>
   <meta property="og:type" content="website">
   <meta property="og:title" content="Free Grade ${grade} Worksheets | Math, English, Science | Examel">
   <meta property="og:description" content="Free printable Grade ${grade} worksheets for Math, English and Science. Fun themes, answer keys included. Download PDF instantly.">
@@ -945,6 +1041,7 @@ async function generatePages() {
     fs.writeFileSync(`${dir}/index.html`, html);
   }
   console.log(`✓ Grade hub pages generated`);
+  } // end grade-hub
 
   // ── WORD SEARCH PAGES
   const wordSearches = generateWordSearchPages(worksheets, sharedCSS, siteHeader, siteFooter, gradeColor, capitalize, formatTopic, formatTheme);
@@ -957,14 +1054,18 @@ async function generatePages() {
 
   // ── DRILL PAGES
   const drillPages = generateDrillPagesV2(worksheets, sharedCSS, siteHeader, siteFooter, gradeColor, capitalize, formatTopic, formatTheme, subjectColor, worksheetCard, getCharSVG);
+  const allDrills = drillPages;
 
 
-  // ── DRILL HUB PAGES ───────────────────────────────────────────────────────
+  // Generate individual drill pages (old generator — produces per-drill pages with schema, OG, badge, content)
+  const individualDrillPages = generateDrillPages(worksheets, sharedCSS, siteHeader, siteFooter, gradeColor, capitalize, formatTopic, formatTheme);
+
+
+  if (shouldRun('drill-hub')) { // ── DRILL HUB PAGES ──────────────────────────────────────────────────────
   const drillTopics = ['multiplication', 'division', 'addition', 'subtraction'];
   const drillIcons = { multiplication: '✖', division: '➗', addition: '➕', subtraction: '➖' };
 
   // Main hub: /free-math-drills/
-  const allDrills = drillPages;
   const mainDrillDir = '/opt/examel/examel-pages/free-math-drills';
   fs.mkdirSync(mainDrillDir, { recursive: true });
   const mainDrillHTML = `<!DOCTYPE html>
@@ -976,6 +1077,12 @@ async function generatePages() {
   <title>Free Math Drills for Kids | Grades 1-6 | Examel</title>
   <meta name="description" content="Free printable math drills for Grades 1-6. Multiplication, division, addition and subtraction drills with answer keys. Download PDF instantly.">
   <link rel="canonical" href="https://examel.com/free-math-drills/">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Free Math Drills for Kids","description":"Free printable math drills for Grades 1-6. Multiplication, division, addition and subtraction drills with answer keys.","url":"https://examel.com/free-math-drills/","publisher":{"@type":"Organization","name":"Examel","url":"https://examel.com"}}</script>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free Math Drills for Kids | Grades 1-6 | Examel">
+  <meta property="og:description" content="Free printable math drills for Grades 1-6. Multiplication, division, addition and subtraction drills with answer keys. Download PDF instantly.">
+  <meta property="og:image" content="https://examel.com/og-default.png">
+  <meta property="og:url" content="https://examel.com/free-math-drills/">
   ${sharedCSS}
 </head>
 <body>
@@ -1021,6 +1128,12 @@ async function generatePages() {
   <title>Free ${topic.charAt(0).toUpperCase()+topic.slice(1)} Drills | Grades 1-6 | Examel</title>
   <meta name="description" content="Free printable ${topic} drills for Grades 1-6. Build ${topic} fact fluency with timed practice sheets. Answer keys included. Download PDF instantly.">
   <link rel="canonical" href="https://examel.com/free-${topic}-drills/">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Free ${topic.charAt(0).toUpperCase()+topic.slice(1)} Drills","description":"Free printable ${topic} drills for Grades 1-6. Build ${topic} fact fluency with timed practice. Answer keys included.","url":"https://examel.com/free-${topic}-drills/","publisher":{"@type":"Organization","name":"Examel","url":"https://examel.com"}}</script>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free ${topic.charAt(0).toUpperCase()+topic.slice(1)} Drills | Grades 1-6 | Examel">
+  <meta property="og:description" content="Free printable ${topic} drills for Grades 1-6. Build ${topic} fact fluency with timed practice sheets. Answer keys included.">
+  <meta property="og:image" content="https://examel.com/og-default.png">
+  <meta property="og:url" content="https://examel.com/free-${topic}-drills/">
   ${sharedCSS}
 </head>
 <body>
@@ -1068,8 +1181,9 @@ async function generatePages() {
     fs.writeFileSync(topicDir + '/index.html', topicHTML);
   }
   console.log('✓ Drill hub pages generated');
+  } // end drill-hub
 
-  // ── VOCAB MATCH HUB PAGES
+  if (shouldRun('vocab-hub')) { // ── VOCAB MATCH HUB PAGES
   const vocabSubjects = ['math', 'english', 'science'];
   for (const subj of vocabSubjects) {
     const subjDir = `/opt/examel/examel-pages/free-${subj}-vocabulary`;
@@ -1085,6 +1199,12 @@ async function generatePages() {
   <title>Free ${capitalize(subj)} Vocabulary Worksheets | Grades 1-6 | Examel</title>
   <meta name="description" content="Free printable ${subj} vocabulary match worksheets for Grades 1-6. Match words to definitions with answer keys. Download PDF instantly.">
   <link rel="canonical" href="https://examel.com/free-${subj}-vocabulary/">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Free ${capitalize(subj)} Vocabulary Worksheets","description":"Free printable ${subj} vocabulary match worksheets for Grades 1-6. Match words to definitions with answer keys.","url":"https://examel.com/free-${subj}-vocabulary/","publisher":{"@type":"Organization","name":"Examel","url":"https://examel.com"}}</script>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free ${capitalize(subj)} Vocabulary Worksheets | Grades 1-6 | Examel">
+  <meta property="og:description" content="Free printable ${subj} vocabulary match worksheets for Grades 1-6. Match words to definitions with answer keys. Download PDF instantly.">
+  <meta property="og:image" content="https://examel.com/og-default.png">
+  <meta property="og:url" content="https://examel.com/free-${subj}-vocabulary/">
   ${sharedCSS}
 </head>
 <body>
@@ -1118,8 +1238,9 @@ async function generatePages() {
     fs.writeFileSync(subjDir + '/index.html', subjHTML);
   }
   console.log('✓ Vocab match hub pages generated');
+  } // end vocab-hub
 
-  // ── READING PASSAGE HUB PAGES
+  if (shouldRun('reading-hub')) { // ── READING PASSAGE HUB PAGES
   const rpGrades = [1,2,3,4,5,6];
   const rpMainDir = '/opt/examel/examel-pages/free-reading-passages';
   fs.mkdirSync(rpMainDir, { recursive: true });
@@ -1132,6 +1253,12 @@ async function generatePages() {
   <title>Free Reading Comprehension Passages | Grades 1-6 | Examel</title>
   <meta name="description" content="Free printable reading comprehension passages for Grades 1-6. Nonfiction passages with 6 comprehension questions and answer keys. Download PDF instantly.">
   <link rel="canonical" href="https://examel.com/free-reading-passages/">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Free Reading Comprehension Passages","description":"Free printable reading comprehension passages for Grades 1-6. Nonfiction passages with 6 comprehension questions and answer keys.","url":"https://examel.com/free-reading-passages/","publisher":{"@type":"Organization","name":"Examel","url":"https://examel.com"}}</script>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free Reading Comprehension Passages | Grades 1-6 | Examel">
+  <meta property="og:description" content="Free printable reading comprehension passages for Grades 1-6. Nonfiction passages with 6 comprehension questions and answer keys. Download PDF instantly.">
+  <meta property="og:image" content="https://examel.com/og-default.png">
+  <meta property="og:url" content="https://examel.com/free-reading-passages/">
   ${sharedCSS}
 </head>
 <body>
@@ -1191,6 +1318,12 @@ async function generatePages() {
   <title>Free Grade ${g} Reading Comprehension Passages | Examel</title>
   <meta name="description" content="Free printable Grade ${g} reading comprehension passages. Nonfiction with 6 questions and answer keys. Download PDF instantly.">
   <link rel="canonical" href="https://examel.com/free-reading-passages/grade-${g}/">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Free Grade ${g} Reading Comprehension Passages","description":"Free printable Grade ${g} reading comprehension passages. Nonfiction with 6 questions and answer keys.","url":"https://examel.com/free-reading-passages/grade-${g}/","publisher":{"@type":"Organization","name":"Examel","url":"https://examel.com"}}</script>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free Grade ${g} Reading Comprehension Passages | Examel">
+  <meta property="og:description" content="Free printable Grade ${g} reading comprehension passages. Nonfiction with 6 questions and answer keys. Download PDF instantly.">
+  <meta property="og:image" content="https://examel.com/og-default.png">
+  <meta property="og:url" content="https://examel.com/free-reading-passages/grade-${g}/">
   ${sharedCSS}
 </head>
 <body>
@@ -1208,11 +1341,11 @@ async function generatePages() {
     fs.writeFileSync(gradeDir + '/index.html', gradeHTML);
   }
   console.log('✓ Reading passage hub pages generated');
+  } // end reading-hub
 
-  // ── FREE-WORKSHEETS MASTER HUB ─────────────────────────────────────────
+  if (shouldRun('free-ws-hub')) { // ── FREE-WORKSHEETS MASTER HUB ────────────────────────────────────────
   const fwDir = '/opt/examel/examel-pages/free-worksheets';
   fs.mkdirSync(fwDir, { recursive: true });
-  const allPublished = worksheets;
   const fwHTML = `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1222,6 +1355,12 @@ async function generatePages() {
   <title>Free Printable Worksheets for Kids | All Grades | Examel</title>
   <meta name="description" content="Browse all ${allPublished.length}+ free printable worksheets for Grades 1-6. Math, English, Science and more. Common Core aligned. Answer keys included.">
   <link rel="canonical" href="https://examel.com/free-worksheets/">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Free Printable Worksheets for Kids","description":"Browse all free printable worksheets for Grades 1-6. Math, English, Science and more. Common Core aligned. Answer keys included.","url":"https://examel.com/free-worksheets/","publisher":{"@type":"Organization","name":"Examel","url":"https://examel.com"}}</script>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free Printable Worksheets for Kids | All Grades | Examel">
+  <meta property="og:description" content="Browse all free printable worksheets for Grades 1-6. Math, English, Science and more. Common Core aligned. Answer keys included.">
+  <meta property="og:image" content="https://examel.com/og-default.png">
+  <meta property="og:url" content="https://examel.com/free-worksheets/">
   ${sharedCSS}
 </head>
 <body>
@@ -1274,8 +1413,9 @@ async function generatePages() {
 </body></html>`;
   fs.writeFileSync(fwDir + '/index.html', fwHTML);
   console.log('✓ Free worksheets master hub generated');
+  } // end free-ws-hub
 
-  // ── WORD SEARCHES HUB ────────────────────────────────────────────────────
+  if (shouldRun('word-search-hub')) { // ── WORD SEARCHES HUB ───────────────────────────────────────────────────
   const wsHubDir = '/opt/examel/examel-pages/word-searches';
   fs.mkdirSync(wsHubDir, { recursive: true });
   const allWordSearches = wordSearches;
@@ -1288,6 +1428,12 @@ async function generatePages() {
   <title>Free Word Search Worksheets for Kids | Grades 1-6 | Examel</title>
   <meta name="description" content="Free printable word search worksheets for Grades 1-6. Math, English and Science word searches with answer keys. Download PDF instantly.">
   <link rel="canonical" href="https://examel.com/word-searches/">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Free Word Search Worksheets for Kids","description":"Free printable word search worksheets for Grades 1-6. Math, English and Science word searches with answer keys.","url":"https://examel.com/word-searches/","publisher":{"@type":"Organization","name":"Examel","url":"https://examel.com"}}</script>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free Word Search Worksheets for Kids | Grades 1-6 | Examel">
+  <meta property="og:description" content="Free printable word search worksheets for Grades 1-6. Math, English and Science word searches with answer keys. Download PDF instantly.">
+  <meta property="og:image" content="https://examel.com/og-default.png">
+  <meta property="og:url" content="https://examel.com/word-searches/">
   ${sharedCSS}
 </head>
 <body>
@@ -1331,8 +1477,9 @@ async function generatePages() {
 </body></html>`;
   fs.writeFileSync(wsHubDir + '/index.html', wsHubHTML);
   console.log('✓ Word searches hub generated');
+  } // end word-search-hub
 
-  // ── DRILLS GRADE HUB PAGES ───────────────────────────────────────────────
+  if (shouldRun('drills-grade-hub')) { // ── DRILLS GRADE HUB PAGES ──────────────────────────────────────────────
   for (const g of [1,2,3,4,5,6]) {
     const gradeDir = `/opt/examel/examel-pages/drills/math/grade-${g}`;
     fs.mkdirSync(gradeDir, { recursive: true });
@@ -1346,6 +1493,12 @@ async function generatePages() {
   <title>Free Grade ${g} Math Drills | Examel</title>
   <meta name="description" content="Free printable Grade ${g} math drills. Addition, subtraction, multiplication and division practice with answer keys. Download PDF instantly.">
   <link rel="canonical" href="https://examel.com/drills/math/grade-${g}/">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Free Grade ${g} Math Drills","description":"Free printable Grade ${g} math drills. Addition, subtraction, multiplication and division practice with answer keys.","url":"https://examel.com/drills/math/grade-${g}/","publisher":{"@type":"Organization","name":"Examel","url":"https://examel.com"}}</script>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free Grade ${g} Math Drills | Examel">
+  <meta property="og:description" content="Free printable Grade ${g} math drills. Addition, subtraction, multiplication and division practice with answer keys. Download PDF instantly.">
+  <meta property="og:image" content="https://examel.com/og-default.png">
+  <meta property="og:url" content="https://examel.com/drills/math/grade-${g}/">
   ${sharedCSS}
 </head>
 <body>
@@ -1379,10 +1532,10 @@ async function generatePages() {
     fs.writeFileSync(gradeDir + '/index.html', gradeHubHTML);
   }
   console.log('✓ Drills grade hub pages generated');
+  } // end drills-grade-hub
 
 
-  // ── TOPIC HUB PAGES (Items 1-7 patch) ──────────────────────────────────
-  const topicMap = {};
+  if (shouldRun('topic-hub')) { // ── TOPIC HUB PAGES ──────────────────────────────────────────────────────
   for (const ws of worksheets) {
     const subj = (ws.subject || '').toLowerCase();
     const topic = (ws.topic || '').toLowerCase().replace(/ /g, '-');
@@ -1462,6 +1615,7 @@ async function generatePages() {
     topicHubCount++;
   }
   console.log('✓ ' + topicHubCount + ' topic hub pages generated');
+  } // end topic-hub
 
   // Add topic hub URLs to sitemap array (will be picked up below)
   const topicHubUrls = Object.entries(topicMap)
@@ -1469,26 +1623,43 @@ async function generatePages() {
     .map(([k, d]) => ({ url: '/free-' + d.subject + '-worksheets/' + d.topic.replace(/ /g, '-') + '/', priority: '0.85', freq: 'daily' }));
 
 
-  // ── 5. SITEMAP ────────────────────────────────────────────────────────────
+  // ── 5. SITEMAP (filesystem-based — only includes pages that actually exist) ──
   const baseUrl = 'https://examel.com';
-  const sitemapUrls = [
-    { url: '/', priority: '1.0', freq: 'daily' },
-    ...subjects.map(s => ({ url: `/free-${s}-worksheets/`, priority: '0.9', freq: 'daily' })),
-    ...subjects.flatMap(s => grades.map(g => ({ url: `/free-${s}-worksheets/grade-${g}/`, priority: '0.85', freq: 'daily' }))),
-    ...grades.map(g => ({ url: `/free-worksheets/grade-${g}/`, priority: '0.85', freq: 'daily' })),
-    ...worksheets.filter(ws => !ws.format || ws.format === 'worksheet').map(ws => ({ url: `/worksheets/${ws.slug}/`, priority: '0.7', freq: 'monthly' })),
-    ...wordSearches.map(ws => ({ url: `/word-searches/${ws.subject}/grade-${ws.grade}/${ws.slug}/`, priority: '0.75', freq: 'monthly' })),
-    ...drillPages.map(ws => ({ url: `/drills/${ws.subject}/grade-${ws.grade}/${ws.slug}/`, priority: '0.75', freq: 'monthly' })),
-    ...vocabMatchPages.map(ws => ({ url: `/vocab-match/${ws.subject}/grade-${ws.grade}/${ws.slug}/`, priority: '0.75', freq: 'monthly' })),
-    ...vocabSubjects.map(s => ({ url: `/free-${s}-vocabulary/`, priority: '0.85', freq: 'daily' })),
-    ...readingPassagePages.map(ws => ({ url: `/reading-passages/grade-${ws.grade}/${ws.slug}/`, priority: '0.8', freq: 'monthly' })),
-    { url: '/free-reading-passages/', priority: '0.9', freq: 'daily' },
-    ...rpGrades.map(g => ({ url: `/free-reading-passages/grade-${g}/`, priority: '0.85', freq: 'daily' })),
-    { url: '/free-math-drills/', priority: '0.9', freq: 'daily' },
-    ...drillTopics.map(t => ({ url: `/free-${t}-drills/`, priority: '0.85', freq: 'daily' }))
-  ,
-    ...topicHubUrls
-  ];
+  const sitemapUrls = [];
+  
+  // Scan filesystem for all index.html pages
+  function scanPages(dir, depth) {
+    try {
+      const entries = fs.readdirSync(dir, { withFileTypes: true });
+      for (const e of entries) {
+        if (e.name === '.git' || e.name === 'node_modules' || e.name === 'downloads' || e.name === 'thumbnails') continue;
+        const full = path.join(dir, e.name);
+        if (e.isDirectory()) scanPages(full, depth + 1);
+        else if (e.name === 'index.html') {
+          const rel = '/' + full.replace('/opt/examel/examel-pages/', '').replace('/index.html', '') + '/';
+          // Assign priority based on page type
+          let priority = '0.7';
+          let freq = 'monthly';
+          if (rel === '//') { priority = '1.0'; freq = 'daily'; } // homepage
+          else if (rel.match(/^\/free-[^/]+-worksheets\/$/)) { priority = '0.9'; freq = 'daily'; } // subject hubs
+          else if (rel.match(/^\/free-[^/]+-worksheets\/grade-/)) { priority = '0.85'; freq = 'daily'; } // grade pages
+          else if (rel.match(/^\/free-[^/]+-worksheets\/[^/]+\/$/)) { priority = '0.85'; freq = 'daily'; } // topic hubs
+          else if (rel.match(/^\/free-(math-drills|reading-passages|.*-vocabulary)/)) { priority = '0.9'; freq = 'daily'; } // format hubs
+          else if (rel.match(/^\/free-worksheets/)) { priority = '0.85'; freq = 'daily'; } // master hub
+          else if (rel.startsWith('/about/') || rel.startsWith('/terms/') || rel.startsWith('/privacy')) { priority = '0.3'; freq = 'monthly'; }
+          else if (rel.startsWith('/worksheets/')) { priority = '0.7'; freq = 'monthly'; }
+          else if (rel.startsWith('/drills/')) { priority = '0.7'; freq = 'monthly'; }
+          else if (rel.startsWith('/vocab-match/')) { priority = '0.75'; freq = 'monthly'; }
+          else if (rel.startsWith('/reading-passages/')) { priority = '0.8'; freq = 'monthly'; }
+          else if (rel.startsWith('/word-searches/')) { priority = '0.7'; freq = 'monthly'; }
+          
+          const url = (rel === '//' || rel === '/index.html/') ? '/' : rel;
+          sitemapUrls.push({ url, priority, freq });
+        }
+      }
+    } catch(e) {}
+  }
+  scanPages('/opt/examel/examel-pages', 0);
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
