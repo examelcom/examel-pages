@@ -1,5 +1,6 @@
 const fs = require('fs');
 const intentMap = require('/opt/examel/pdf-engine/drill-intent-map.js');
+const examelConfig = require('./examel-config');
 
 function generateDrillPagesV2(worksheets, sharedCSS, siteHeader, siteFooter, gradeColor, capitalize, formatTopic, formatTheme, subjectColor, worksheetCard, getCharSVG) {
 
@@ -137,7 +138,7 @@ function renderContentBlock(ws) {
       const downloadUrl = d.pdf_url && d.pdf_url.startsWith('http') ? d.pdf_url : '#';
       const thumbUrl = d.preview_p1_url || d.preview_image_url || '/thumbnails/' + d.slug + '.png';
       const anchorId = (d.theme || 'default').replace(/[^a-z0-9]/g, '-');
-      return '<a href="/drills/math/grade-' + d.grade + '/' + d.slug + '/" class="drill-card" id="' + anchorId + '">' +
+      return '<a href="' + examelConfig.getPageUrl(d) + '" class="drill-card" id="' + anchorId + '">' +
         '<div class="drill-thumb">' +
           (d.preview_p1_url ? '<img src="' + thumbUrl + '" alt="' + d.title + '" loading="lazy">' : '<div class="drill-thumb-ph"><span>⚡</span></div>') +
         '</div>' +
@@ -145,7 +146,7 @@ function renderContentBlock(ws) {
           '<div class="drill-badge">Grade ' + d.grade + (d.difficulty ? ' · ' + capitalize(d.difficulty) : '') + '</div>' +
           '<h3>' + formatTheme(d.theme) + ' Theme</h3>' +
           '<p>' + d.title + '</p>' +
-          '<a href="' + downloadUrl + '" class="drill-btn" download>Download PDF →</a>' +
+          '<span class="drill-btn">Download PDF →</span>' +
         '</div>' +
       '</a>';
     }).join('\n');
@@ -282,6 +283,12 @@ function renderContentBlock(ws) {
       '<title>' + opTitle + ' | Examel</title>\n' +
       '<meta name="description" content="Free printable ' + op + ' math drills for Grades 1-6. ' + totalDrills + '+ themed worksheets with answer keys. Download PDF instantly.">\n' +
       '<link rel="canonical" href="https://examel.com/free-math-drills/' + op + '/">\n' +
+      '<script type="application/ld+json">' + JSON.stringify({"@context":"https://schema.org","@type":"CollectionPage","name":"Free " + capitalize(op) + " Drills","description":"Free printable " + op + " math drills for Grades 1-6. " + totalDrills + "+ themed worksheets with answer keys.","url":"https://examel.com/free-math-drills/" + op + "/","publisher":{"@type":"Organization","name":"Examel","url":"https://examel.com"}}) + '</script>\n' +
+      '<meta property="og:type" content="website">\n' +
+      '<meta property="og:title" content="Free ' + capitalize(op) + ' Drills | Grades 1-6 | Examel">\n' +
+      '<meta property="og:description" content="Free printable ' + op + ' math drills for Grades 1-6. ' + totalDrills + '+ themed worksheets with answer keys.">\n' +
+      '<meta property="og:image" content="https://examel.com/og-default.png">\n' +
+      '<meta property="og:url" content="https://examel.com/free-math-drills/' + op + '/">\n' +
       sharedCSS + '\n' +
       '<style>\n' +
       '.hub-hero{background:#1C1526;padding:52px 20px;text-align:center;border-top:5px solid #DC2626;}\n' +
@@ -326,6 +333,12 @@ function renderContentBlock(ws) {
     '<title>Free Math Drills — Printable PDF with Answer Keys | Examel</title>\n' +
     '<meta name="description" content="Free printable math drills for Grades 1-6. ' + totalAllDrills + '+ themed worksheets covering addition, subtraction, multiplication, and division. Download PDF instantly.">\n' +
     '<link rel="canonical" href="https://examel.com/free-math-drills/">\n' +
+    '<script type="application/ld+json">' + JSON.stringify({"@context":"https://schema.org","@type":"CollectionPage","name":"Free Math Drills for Kids","description":"Free printable math drills for Grades 1-6. " + totalAllDrills + "+ themed worksheets covering addition, subtraction, multiplication, and division. Answer keys included.","url":"https://examel.com/free-math-drills/","publisher":{"@type":"Organization","name":"Examel","url":"https://examel.com"}}) + '</script>\n' +
+    '<meta property="og:type" content="website">\n' +
+    '<meta property="og:title" content="Free Math Drills for Kids | Grades 1-6 | Examel">\n' +
+    '<meta property="og:description" content="Free printable math drills for Grades 1-6. Addition, subtraction, multiplication and division drills with answer keys.">\n' +
+    '<meta property="og:image" content="https://examel.com/og-default.png">\n' +
+    '<meta property="og:url" content="https://examel.com/free-math-drills/">\n' +
     sharedCSS + '\n' +
     '<style>\n' +
     '.hub-hero{background:#1C1526;padding:52px 20px;text-align:center;border-top:5px solid #DC2626;}\n' +
