@@ -282,18 +282,6 @@ function generateFormatHubs(worksheets, sharedCSS, siteHeader, siteFooter, helpe
     </div>
     <div style="position:absolute;right:60px;bottom:-10px;opacity:0.92;">${buildCharSVG('science')}</div>
   </div>
-  <div style="max-width:1100px;margin:0 auto;padding:32px 20px 0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
-    ${['math','english','science'].map(subj => {
-      const cnt   = wsPages.filter(w => w.subject === subj).length;
-      const color = subjectColor(subj);
-      const icon  = subj==='math'?'📐':subj==='english'?'📖':'🔬';
-      return `<a href="/word-searches/${subj}/" style="background:white;border-radius:20px;padding:28px 20px;text-decoration:none;color:#1A1420;text-align:center;border:1px solid #EDE8DF;border-top:4px solid ${color};display:block;">
-        <span style="font-size:36px;margin-bottom:12px;display:block;">${icon}</span>
-        <div style="font-size:20px;font-weight:800;color:#1A1420;margin-bottom:4px;font-family:'Outfit',sans-serif;">${capitalize(subj)}</div>
-        <div style="font-size:14px;color:#A89FAE;margin-bottom:14px;">${cnt || 0} word searches</div>
-        <div style="font-size:14px;color:${color};font-weight:700;">Browse →</div>
-      </a>`;
-    }).join('')}
   </div>
   <div class="grid">${wsPages.slice(0, 12).map(worksheetCard).join('')}</div>
   ${siteFooter}

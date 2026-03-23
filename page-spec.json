@@ -1,0 +1,235 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "updated": "2026-03-23",
+    "purpose": "Defines every page type on examel.com. When adding a new page family: (1) add entry here, (2) write one generator file, (3) import in generate-pages.js. Nothing else needed.",
+    "authority": "This file is read-only during generation. Generators implement these specs — they never redefine them."
+  },
+
+  "page_types": {
+
+    "worksheet": {
+      "description": "Individual worksheet page for a single published worksheet",
+      "url_pattern": "/worksheets/{slug}/",
+      "generator": "worksheet-generator.js",
+      "function": "generateWorksheetPages",
+      "schema_type": "EducationalResource",
+      "required_fields": ["slug", "subject", "grade", "topic", "theme", "title", "pdf_url"],
+      "optional_fields": ["preview_p1_url", "preview_p2_url", "pinterest_image_url", "ccss_standard", "seo_description", "target_keyword", "content"],
+      "supabase_filter": {"format": "worksheet", "status": "published"},
+      "scale": "one page per worksheet row",
+      "added": "2026-03-23 Session 25"
+    },
+
+    "drill_grid": {
+      "description": "Individual drill page for a single published drill-grid worksheet",
+      "url_pattern": "/drills/{subject}/grade-{grade}/{slug}/",
+      "generator": "drill-generator.js",
+      "function": "generateDrillPages",
+      "schema_type": "EducationalResource",
+      "required_fields": ["slug", "subject", "grade", "topic", "title", "pdf_url"],
+      "supabase_filter": {"format": "drill-grid", "status": "published"},
+      "scale": "one page per drill row",
+      "added": "2026-03-23 Session 25",
+      "note": "drill-generator-v2.js also generates intent pages — see drill_intent"
+    },
+
+    "drill_intent": {
+      "description": "Intent hub page grouping all drills for a specific topic",
+      "url_pattern": "/free-math-drills/{operation}/{topic}/",
+      "generator": "drill-generator-v2.js",
+      "function": "generateDrillPagesV2",
+      "schema_type": "CollectionPage",
+      "required_fields": ["topic", "grade"],
+      "scale": "one page per unique drill topic (60 intent pages)",
+      "added": "2026-03-23 Session 25"
+    },
+
+    "vocab_match": {
+      "description": "Individual vocabulary match page",
+      "url_pattern": "/vocab-match/{subject}/grade-{grade}/{slug}/",
+      "generator": "vocab-match-generator.js",
+      "function": "generateVocabMatchPages",
+      "schema_type": "EducationalResource",
+      "required_fields": ["slug", "subject", "grade", "topic", "title", "pdf_url"],
+      "supabase_filter": {"format": "vocab-match", "status": "published"},
+      "scale": "one page per vocab-match row",
+      "added": "2026-03-23 Session 25"
+    },
+
+    "reading_passage": {
+      "description": "Individual reading comprehension passage page",
+      "url_pattern": "/reading-passages/grade-{grade}/{slug}/",
+      "generator": "reading-passage-generator.js",
+      "function": "generateReadingPassagePages",
+      "schema_type": "EducationalResource",
+      "required_fields": ["slug", "grade", "topic", "title", "pdf_url"],
+      "supabase_filter": {"format": "reading-passage", "status": "published"},
+      "scale": "one page per reading-passage row",
+      "added": "2026-03-23 Session 25"
+    },
+
+    "word_search": {
+      "description": "Individual word search page",
+      "url_pattern": "/word-searches/{subject}/grade-{grade}/{slug}/",
+      "generator": "word-search-generator.js",
+      "function": "generateWordSearchPages",
+      "schema_type": "EducationalResource",
+      "required_fields": ["slug", "subject", "grade", "topic", "title", "pdf_url"],
+      "supabase_filter": {"format": "word-search", "status": "published"},
+      "scale": "one page per word-search row",
+      "added": "2026-03-23 Session 25",
+      "note": "SUSPENDED — word search quality issues, no new generation"
+    },
+
+    "subject_hub": {
+      "description": "Subject landing page showing all worksheets for one subject",
+      "url_pattern": "/free-{subject}-worksheets/",
+      "generator": "category-hub-generator.js",
+      "function": "generateCategoryHubs",
+      "schema_type": "CollectionPage",
+      "required_fields": ["subject"],
+      "instances": ["math", "english", "science"],
+      "scale": "3 pages total — fixed",
+      "added": "2026-03-23 Session 25"
+    },
+
+    "category_hub": {
+      "description": "Subject+grade combination page",
+      "url_pattern": "/free-{subject}-worksheets/grade-{grade}/",
+      "generator": "category-hub-generator.js",
+      "function": "generateCategoryHubs",
+      "schema_type": "CollectionPage",
+      "required_fields": ["subject", "grade"],
+      "scale": "up to 18 pages (3 subjects × 6 grades)",
+      "added": "2026-03-23 Session 25"
+    },
+
+    "grade_hub": {
+      "description": "Grade landing page showing all worksheets for one grade across all subjects",
+      "url_pattern": "/free-worksheets/grade-{grade}/",
+      "generator": "category-hub-generator.js",
+      "function": "generateCategoryHubs",
+      "schema_type": "CollectionPage",
+      "required_fields": ["grade"],
+      "instances": [1, 2, 3, 4, 5, 6],
+      "scale": "6 pages total — fixed",
+      "added": "2026-03-23 Session 25"
+    },
+
+    "topic_hub": {
+      "description": "Topic landing page grouping all worksheets for one subject+topic",
+      "url_pattern": "/free-{subject}-worksheets/{topic}/",
+      "generator": "topic-hub-generator.js",
+      "function": "generateTopicHubs",
+      "schema_type": "CollectionPage",
+      "required_fields": ["subject", "topic"],
+      "rule": "Only generated when topic has 3+ worksheets",
+      "scale": "grows with content — currently ~65 pages",
+      "added": "2026-03-23 Session 25"
+    },
+
+    "master_hub": {
+      "description": "Top-level free worksheets landing page",
+      "url_pattern": "/free-worksheets/",
+      "generator": "format-hub-generator.js",
+      "function": "generateFormatHubs",
+      "schema_type": "CollectionPage",
+      "scale": "1 page — fixed",
+      "added": "2026-03-23 Session 25"
+    },
+
+    "drill_main_hub": {
+      "description": "Main math drills landing page",
+      "url_pattern": "/free-math-drills/",
+      "generator": "format-hub-generator.js",
+      "function": "generateFormatHubs",
+      "schema_type": "CollectionPage",
+      "scale": "1 page — fixed",
+      "added": "2026-03-23 Session 25"
+    },
+
+    "drill_operation_hub": {
+      "description": "Operation-level drill hub (multiplication, division, etc.)",
+      "url_pattern": "/free-{operation}-drills/",
+      "generator": "format-hub-generator.js",
+      "function": "generateFormatHubs",
+      "schema_type": "CollectionPage",
+      "instances": ["addition", "subtraction", "multiplication", "division"],
+      "scale": "4 pages — fixed",
+      "added": "2026-03-23 Session 25"
+    },
+
+    "drill_grade_hub": {
+      "description": "Grade-level drill hub",
+      "url_pattern": "/drills/math/grade-{grade}/",
+      "generator": "format-hub-generator.js",
+      "function": "generateFormatHubs",
+      "schema_type": "CollectionPage",
+      "instances": [1, 2, 3, 4, 5, 6],
+      "scale": "6 pages — fixed",
+      "added": "2026-03-23 Session 25"
+    },
+
+    "vocab_hub": {
+      "description": "Subject-level vocabulary hub",
+      "url_pattern": "/free-{subject}-vocabulary/",
+      "generator": "format-hub-generator.js",
+      "function": "generateFormatHubs",
+      "schema_type": "CollectionPage",
+      "instances": ["math", "english", "science"],
+      "scale": "3 pages — fixed",
+      "added": "2026-03-23 Session 25"
+    },
+
+    "reading_main_hub": {
+      "description": "Main reading passages landing page",
+      "url_pattern": "/free-reading-passages/",
+      "generator": "format-hub-generator.js",
+      "function": "generateFormatHubs",
+      "schema_type": "CollectionPage",
+      "scale": "1 page — fixed",
+      "added": "2026-03-23 Session 25"
+    },
+
+    "reading_grade_hub": {
+      "description": "Grade-level reading passages hub",
+      "url_pattern": "/free-reading-passages/grade-{grade}/",
+      "generator": "format-hub-generator.js",
+      "function": "generateFormatHubs",
+      "schema_type": "CollectionPage",
+      "instances": [1, 2, 3, 4, 5, 6],
+      "scale": "6 pages — fixed",
+      "added": "2026-03-23 Session 25"
+    },
+
+    "word_search_hub": {
+      "description": "Main word searches landing page",
+      "url_pattern": "/word-searches/",
+      "generator": "format-hub-generator.js",
+      "function": "generateFormatHubs",
+      "schema_type": "CollectionPage",
+      "scale": "1 page — fixed",
+      "added": "2026-03-23 Session 25"
+    },
+
+    "homepage": {
+      "description": "Examel.com homepage",
+      "url_pattern": "/",
+      "generator": "generate-homepage.js",
+      "function": "main",
+      "schema_type": "WebSite",
+      "scale": "1 page — fixed",
+      "added": "2026-03-23 Session 25"
+    }
+  },
+
+  "adding_new_page_type": {
+    "step_1": "Add entry to this file (page-spec.json)",
+    "step_2": "Write one generator file following existing pattern",
+    "step_3": "Import and call in generate-pages.js orchestrator",
+    "step_4": "Add URL pattern to url-schema.json",
+    "step_5": "Run full build and verify sitemap",
+    "rule": "Never add page generation logic to generate-pages.js itself — it is orchestrator only"
+  }
+}

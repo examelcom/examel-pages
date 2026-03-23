@@ -72,7 +72,6 @@ function renderContentBlock(ws) {
   <div class="breadcrumb">
     <a href="https://examel.com">Home</a><span>›</span>
     <a href="/free-${ws.subject}-vocabulary/">Free ${capitalize(ws.subject)} Vocabulary</a><span>›</span>
-    <a href="/vocab-match/${ws.subject}/grade-${ws.grade}/">Grade ${ws.grade}</a><span>›</span>
     ${ws.title}
   </div>
   <div class="ws-hero">
@@ -139,7 +138,7 @@ function renderContentBlock(ws) {
       <p>This free printable vocabulary match worksheet helps Grade ${ws.grade} ${capitalize(ws.subject)} students learn key ${topicName} terms. The ${themeName} theme makes vocabulary practice engaging while students build academic language skills. Includes answer key and bonus writing challenge${ccssText}.</p>
     </div>
     <div class="nav-links">
-      <a href="/vocab-match/${ws.subject}/grade-${ws.grade}/">← All Grade ${ws.grade} ${capitalize(ws.subject)} Vocabulary</a>
+      <a href="/free-${ws.subject}-vocabulary/">← All ${capitalize(ws.subject)} Vocabulary</a>
       <a href="/free-${ws.subject}-vocabulary/">← All ${capitalize(ws.subject)} Vocabulary</a>
       <a href="https://examel.com">← Examel Home</a>
     </div>

@@ -56,8 +56,6 @@ function generateWordSearchPages(worksheets, sharedCSS, siteHeader, siteFooter, 
   <div class="breadcrumb">
     <a href="https://examel.com">Home</a><span>›</span>
     <a href="/word-searches/">Word Searches</a><span>›</span>
-    <a href="/word-searches/${ws.subject}/">${capitalize(ws.subject)}</a><span>›</span>
-    <a href="/word-searches/${ws.subject}/grade-${ws.grade}/">Grade ${ws.grade}</a><span>›</span>
     ${ws.title}
   </div>
   <div class="ws-hero">
@@ -120,8 +118,7 @@ function generateWordSearchPages(worksheets, sharedCSS, siteHeader, siteFooter, 
       <p>Free printable word search for Grade ${ws.grade} ${capitalize(ws.subject)} covering ${formatTopic(ws.topic)}. The ${formatTheme(ws.theme)} theme makes it engaging while kids practice important vocabulary. Includes answer key with highlighted words and definitions${ccssText}.</p>
     </div>
     <div class="nav-links">
-      <a href="/word-searches/${ws.subject}/grade-${ws.grade}/">← All Grade ${ws.grade} ${capitalize(ws.subject)} Word Searches</a>
-      <a href="/word-searches/${ws.subject}/">← All ${capitalize(ws.subject)} Word Searches</a>
+      <a href="/word-searches/">← All Word Searches</a>
       <a href="https://examel.com">← Examel Home</a>
     </div>
   </div>

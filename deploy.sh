@@ -42,6 +42,15 @@ echo "▶ Step 3b: Post-build inject..." | tee -a $LOG
 node $PAGES_DIR/post-build-inject.js >> $LOG 2>&1 || { echo "🔴 BLOCKED: post-build-inject.js failed" | tee -a $LOG; exit 1; }
 echo "✅ Post-build inject done" | tee -a $LOG
 
+# Step 3c: Deploy gate
+echo "▶ Step 3c: Deploy gate..." | tee -a $LOG
+node $PAGES_DIR/deploy-gate.js >> $LOG 2>&1
+if [ $? -ne 0 ]; then
+  echo "🔴 BLOCKED: Deploy gate failed — see log" | tee -a $LOG
+  exit 1
+fi
+echo "✅ Deploy gate passed" | tee -a $LOG
+
 # Step 4: Health monitor — block on criticals
 echo "▶ Step 4: Health check..." | tee -a $LOG
 HEALTH=$(node $PDF_DIR/seo/site-health-monitor.js --post-build 2>&1)

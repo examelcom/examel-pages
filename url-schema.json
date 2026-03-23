@@ -1,0 +1,149 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "updated": "2026-03-23",
+    "purpose": "Single source of truth for every URL pattern on examel.com. All generators must derive URLs from examel-config/urls.js which implements these patterns. Never hardcode URLs anywhere else.",
+    "authority": "examel-config/urls.js implements these patterns in code. This file documents them for humans and future validators."
+  },
+
+  "individual_pages": {
+    "worksheet": {
+      "pattern": "/worksheets/{slug}/",
+      "example": "/worksheets/grade-3-multiplication-pirates/",
+      "generator": "worksheet-generator.js",
+      "supabase_filter": "format=worksheet"
+    },
+    "drill_grid": {
+      "pattern": "/drills/{subject}/grade-{grade}/{slug}/",
+      "example": "/drills/math/grade-3/multiplication-facts-pirates/",
+      "generator": "drill-generator.js + drill-generator-v2.js",
+      "supabase_filter": "format=drill-grid"
+    },
+    "vocab_match": {
+      "pattern": "/vocab-match/{subject}/grade-{grade}/{slug}/",
+      "example": "/vocab-match/math/grade-3/multiplication-vocabulary-pirates/",
+      "generator": "vocab-match-generator.js",
+      "supabase_filter": "format=vocab-match"
+    },
+    "reading_passage": {
+      "pattern": "/reading-passages/grade-{grade}/{slug}/",
+      "example": "/reading-passages/grade-3/ecosystems-reading-pirates/",
+      "generator": "reading-passage-generator.js",
+      "supabase_filter": "format=reading-passage"
+    },
+    "word_search": {
+      "pattern": "/word-searches/{subject}/grade-{grade}/{slug}/",
+      "example": "/word-searches/science/grade-3/ecosystems-word-search/",
+      "generator": "word-search-generator.js",
+      "supabase_filter": "format=word-search"
+    }
+  },
+
+  "hub_pages": {
+    "subject_hub": {
+      "pattern": "/free-{subject}-worksheets/",
+      "example": "/free-math-worksheets/",
+      "generator": "category-hub-generator.js",
+      "values": ["math", "english", "science"]
+    },
+    "grade_hub": {
+      "pattern": "/free-worksheets/grade-{grade}/",
+      "example": "/free-worksheets/grade-3/",
+      "generator": "category-hub-generator.js",
+      "values": [1, 2, 3, 4, 5, 6]
+    },
+    "category_hub": {
+      "pattern": "/free-{subject}-worksheets/grade-{grade}/",
+      "example": "/free-math-worksheets/grade-3/",
+      "generator": "category-hub-generator.js"
+    },
+    "topic_hub": {
+      "pattern": "/free-{subject}-worksheets/{topic}/",
+      "example": "/free-math-worksheets/multiplication/",
+      "generator": "topic-hub-generator.js",
+      "rule": "Only generated when topic has 3+ worksheets"
+    },
+    "master_hub": {
+      "pattern": "/free-worksheets/",
+      "example": "/free-worksheets/",
+      "generator": "format-hub-generator.js"
+    }
+  },
+
+  "drill_hub_pages": {
+    "drill_main_hub": {
+      "pattern": "/free-math-drills/",
+      "generator": "format-hub-generator.js"
+    },
+    "drill_operation_hub": {
+      "pattern": "/free-{operation}-drills/",
+      "example": "/free-multiplication-drills/",
+      "generator": "format-hub-generator.js",
+      "values": ["addition", "subtraction", "multiplication", "division"]
+    },
+    "drill_intent_page": {
+      "pattern": "/free-math-drills/{operation}/{topic}/",
+      "example": "/free-math-drills/multiplication/times-table-7/",
+      "generator": "drill-generator-v2.js",
+      "rule": "If topic == operation, collapses to /free-math-drills/{operation}/"
+    },
+    "drill_grade_hub": {
+      "pattern": "/drills/math/grade-{grade}/",
+      "example": "/drills/math/grade-3/",
+      "generator": "format-hub-generator.js",
+      "values": [1, 2, 3, 4, 5, 6]
+    }
+  },
+
+  "format_hub_pages": {
+    "vocab_hub": {
+      "pattern": "/free-{subject}-vocabulary/",
+      "example": "/free-math-vocabulary/",
+      "generator": "format-hub-generator.js",
+      "values": ["math", "english", "science"]
+    },
+    "reading_main_hub": {
+      "pattern": "/free-reading-passages/",
+      "generator": "format-hub-generator.js"
+    },
+    "reading_grade_hub": {
+      "pattern": "/free-reading-passages/grade-{grade}/",
+      "example": "/free-reading-passages/grade-3/",
+      "generator": "format-hub-generator.js",
+      "values": [1, 2, 3, 4, 5, 6]
+    },
+    "word_search_hub": {
+      "pattern": "/word-searches/",
+      "generator": "format-hub-generator.js"
+    }
+  },
+
+  "static_pages": {
+    "homepage": {
+      "pattern": "/",
+      "generator": "generate-homepage.js"
+    },
+    "about": {
+      "pattern": "/about/",
+      "generator": "static — manual"
+    },
+    "privacy": {
+      "pattern": "/privacy-policy/",
+      "generator": "static — manual"
+    },
+    "terms": {
+      "pattern": "/terms/",
+      "generator": "static — manual"
+    }
+  },
+
+  "rules": {
+    "slug_format": "lowercase, hyphens only, no spaces, no special chars",
+    "subject_values": ["math", "english", "science"],
+    "grade_values": [1, 2, 3, 4, 5, 6],
+    "format_values": ["worksheet", "drill-grid", "vocab-match", "reading-passage", "word-search"],
+    "trailing_slash": "always — every URL ends with /",
+    "base_url": "https://examel.com",
+    "implementation": "examel-config/urls.js — all generators import from here"
+  }
+}
