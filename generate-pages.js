@@ -20,6 +20,40 @@ const titleCase = (s) => s.split(' ').map(capitalize).join(' ');
 const formatTopic = (t) => titleCase(t.replace(/-/g, ' '));
 const formatTheme = (t) => titleCase(t.replace(/-/g, ' '));
 
+// ── FILTER FLAGS ──────────────────────────────────────────────────────────
+// Usage: node generate-pages.js --filter format=worksheet
+//        node generate-pages.js --filter subject=math,grade=3
+//        node generate-pages.js  (no filter = full build)
+const FILTER = {};
+const filterIdx = process.argv.indexOf('--filter');
+if (filterIdx !== -1 && process.argv[filterIdx + 1]) {
+  const pairs = process.argv[filterIdx + 1].split(',');
+  pairs.forEach(pair => {
+    const [k, v] = pair.trim().split('=');
+    if (k && v) FILTER[k.trim()] = v.trim().toLowerCase();
+  });
+  console.log('🔍 Filter active:', JSON.stringify(FILTER));
+}
+function shouldRun(section) {
+  if (!Object.keys(FILTER).length) return true;
+  const fmt = FILTER.format;
+  const subj = FILTER.subject;
+  switch (section) {
+    case 'worksheets':       return !fmt || fmt === 'worksheet';
+    case 'category':         return !fmt || fmt === 'worksheet';
+    case 'subject-hub':      return !fmt || fmt === 'worksheet';
+    case 'grade-hub':        return !fmt || fmt === 'worksheet';
+    case 'topic-hub':        return !fmt || fmt === 'worksheet';
+    case 'drill-hub':        return !fmt || fmt === 'drill-grid';
+    case 'vocab-hub':        return !fmt || fmt === 'vocab-match';
+    case 'reading-hub':      return !fmt || fmt === 'reading-passage';
+    case 'free-ws-hub':      return !fmt || fmt === 'worksheet';
+    case 'word-search-hub':  return !fmt || fmt === 'word-search';
+    case 'drills-grade-hub': return !fmt || fmt === 'drill-grid';
+    case 'sitemap':          return true;
+    default:                 return true;
+  }
+}
 
 // ── DRILL INTENT URL MAP (fixes broken drill links) ──────────────────────
 const DRILL_INTENT_MAP = {
@@ -411,12 +445,15 @@ async function generatePages() {
   let page = 0;
   const pageSize = 1000;
   while (true) {
-    const { data, error } = await supabase
+    let q = supabase
       .from('worksheets')
       .select('id,slug,grade,subject,topic,theme,title,pdf_url,preview_image_url,pinterest_image_url,preview_p1_url,preview_p2_url,status,format,difficulty,ccss_standard,seo_description,target_keyword,content')
-      .eq('status', 'published')
-      .order('created_at', { ascending: false })
-      .range(page * pageSize, (page + 1) * pageSize - 1);
+      .eq('status', 'published');
+    if (FILTER.format) q = q.eq('format', FILTER.format);
+    if (FILTER.subject) q = q.eq('subject', FILTER.subject);
+    if (FILTER.grade) q = q.eq('grade', parseInt(FILTER.grade));
+    q = q.order('created_at', { ascending: false }).range(page * pageSize, (page + 1) * pageSize - 1);
+    const { data, error } = await q;
     if (error) { console.error('Supabase error:', error.message); process.exit(1); }
     worksheets = worksheets.concat(data);
     if (data.length < pageSize) break;
@@ -424,7 +461,13 @@ async function generatePages() {
   }
   console.log(`Found ${worksheets.length} worksheets`);
 
-  // ── 1. INDIVIDUAL WORKSHEET PAGES ─────────────────────────────────────────
+  // ── SHARED VARIABLES (available to all sections regardless of filter) ──
+  const subjects = [...new Set(worksheets.map(w => w.subject.toLowerCase()))];
+  const grades = [...new Set(worksheets.map(w => w.grade))].sort((a,b) => a-b);
+  const allPublished = worksheets;
+  const topicMap = {};
+
+  if (shouldRun('worksheets')) { // ── 1. INDIVIDUAL WORKSHEET PAGES ──────────────────────────────────────────
   for (const ws of worksheets.filter(w => !w.format || w.format === 'worksheet')) {
     const dir = `/opt/examel/examel-pages/worksheets/${ws.slug}`;
     fs.mkdirSync(dir, { recursive: true });
@@ -769,11 +812,9 @@ async function generatePages() {
 
   }
   console.log(`✓ ${worksheets.length} individual pages generated`);
+  } // end worksheets
 
-  // ── 2. CATEGORY PAGES (subject + grade) ───────────────────────────────────
-  const subjects = [...new Set(worksheets.map(w => w.subject.toLowerCase()))];
-  const grades = [...new Set(worksheets.map(w => w.grade))].sort((a,b) => a-b);
-
+  if (shouldRun('category')) { // ── 2. CATEGORY PAGES ──────────────────────────────────────────────────────
   for (const subject of subjects) {
     for (const grade of grades) {
       const filtered = worksheets.filter(w => w.subject.toLowerCase() === subject && w.grade === grade);
@@ -835,8 +876,9 @@ async function generatePages() {
     }
   }
   console.log(`✓ Category pages generated`);
+  } // end category
 
-  // ── 3. SUBJECT HUB PAGES ──────────────────────────────────────────────────
+  if (shouldRun('subject-hub')) { // ── 3. SUBJECT HUB PAGES ─────────────────────────────────────────────────
   const subjectMeta = {
     math: { icon: '➕', desc: 'Addition, subtraction, multiplication, fractions, geometry and more.' },
     english: { icon: '📖', desc: 'Reading comprehension, vocabulary, grammar and writing.' },
@@ -937,8 +979,9 @@ async function generatePages() {
     fs.writeFileSync(`${dir}/index.html`, html);
   }
   console.log(`✓ Subject hub pages generated`);
+  } // end subject-hub
 
-  // ── 4. GRADE HUB PAGES ────────────────────────────────────────────────────
+  if (shouldRun('grade-hub')) { // ── 4. GRADE HUB PAGES ───────────────────────────────────────────────────
   const gradeDir = `/opt/examel/examel-pages/free-worksheets`;
   fs.mkdirSync(gradeDir, { recursive: true });
 
@@ -998,6 +1041,7 @@ async function generatePages() {
     fs.writeFileSync(`${dir}/index.html`, html);
   }
   console.log(`✓ Grade hub pages generated`);
+  } // end grade-hub
 
   // ── WORD SEARCH PAGES
   const wordSearches = generateWordSearchPages(worksheets, sharedCSS, siteHeader, siteFooter, gradeColor, capitalize, formatTopic, formatTheme);
@@ -1010,18 +1054,18 @@ async function generatePages() {
 
   // ── DRILL PAGES
   const drillPages = generateDrillPagesV2(worksheets, sharedCSS, siteHeader, siteFooter, gradeColor, capitalize, formatTopic, formatTheme, subjectColor, worksheetCard, getCharSVG);
+  const allDrills = drillPages;
 
 
   // Generate individual drill pages (old generator — produces per-drill pages with schema, OG, badge, content)
   const individualDrillPages = generateDrillPages(worksheets, sharedCSS, siteHeader, siteFooter, gradeColor, capitalize, formatTopic, formatTheme);
 
 
-  // ── DRILL HUB PAGES ───────────────────────────────────────────────────────
+  if (shouldRun('drill-hub')) { // ── DRILL HUB PAGES ──────────────────────────────────────────────────────
   const drillTopics = ['multiplication', 'division', 'addition', 'subtraction'];
   const drillIcons = { multiplication: '✖', division: '➗', addition: '➕', subtraction: '➖' };
 
   // Main hub: /free-math-drills/
-  const allDrills = drillPages;
   const mainDrillDir = '/opt/examel/examel-pages/free-math-drills';
   fs.mkdirSync(mainDrillDir, { recursive: true });
   const mainDrillHTML = `<!DOCTYPE html>
@@ -1137,8 +1181,9 @@ async function generatePages() {
     fs.writeFileSync(topicDir + '/index.html', topicHTML);
   }
   console.log('✓ Drill hub pages generated');
+  } // end drill-hub
 
-  // ── VOCAB MATCH HUB PAGES
+  if (shouldRun('vocab-hub')) { // ── VOCAB MATCH HUB PAGES
   const vocabSubjects = ['math', 'english', 'science'];
   for (const subj of vocabSubjects) {
     const subjDir = `/opt/examel/examel-pages/free-${subj}-vocabulary`;
@@ -1193,8 +1238,9 @@ async function generatePages() {
     fs.writeFileSync(subjDir + '/index.html', subjHTML);
   }
   console.log('✓ Vocab match hub pages generated');
+  } // end vocab-hub
 
-  // ── READING PASSAGE HUB PAGES
+  if (shouldRun('reading-hub')) { // ── READING PASSAGE HUB PAGES
   const rpGrades = [1,2,3,4,5,6];
   const rpMainDir = '/opt/examel/examel-pages/free-reading-passages';
   fs.mkdirSync(rpMainDir, { recursive: true });
@@ -1295,11 +1341,11 @@ async function generatePages() {
     fs.writeFileSync(gradeDir + '/index.html', gradeHTML);
   }
   console.log('✓ Reading passage hub pages generated');
+  } // end reading-hub
 
-  // ── FREE-WORKSHEETS MASTER HUB ─────────────────────────────────────────
+  if (shouldRun('free-ws-hub')) { // ── FREE-WORKSHEETS MASTER HUB ────────────────────────────────────────
   const fwDir = '/opt/examel/examel-pages/free-worksheets';
   fs.mkdirSync(fwDir, { recursive: true });
-  const allPublished = worksheets;
   const fwHTML = `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1367,8 +1413,9 @@ async function generatePages() {
 </body></html>`;
   fs.writeFileSync(fwDir + '/index.html', fwHTML);
   console.log('✓ Free worksheets master hub generated');
+  } // end free-ws-hub
 
-  // ── WORD SEARCHES HUB ────────────────────────────────────────────────────
+  if (shouldRun('word-search-hub')) { // ── WORD SEARCHES HUB ───────────────────────────────────────────────────
   const wsHubDir = '/opt/examel/examel-pages/word-searches';
   fs.mkdirSync(wsHubDir, { recursive: true });
   const allWordSearches = wordSearches;
@@ -1430,8 +1477,9 @@ async function generatePages() {
 </body></html>`;
   fs.writeFileSync(wsHubDir + '/index.html', wsHubHTML);
   console.log('✓ Word searches hub generated');
+  } // end word-search-hub
 
-  // ── DRILLS GRADE HUB PAGES ───────────────────────────────────────────────
+  if (shouldRun('drills-grade-hub')) { // ── DRILLS GRADE HUB PAGES ──────────────────────────────────────────────
   for (const g of [1,2,3,4,5,6]) {
     const gradeDir = `/opt/examel/examel-pages/drills/math/grade-${g}`;
     fs.mkdirSync(gradeDir, { recursive: true });
@@ -1484,10 +1532,10 @@ async function generatePages() {
     fs.writeFileSync(gradeDir + '/index.html', gradeHubHTML);
   }
   console.log('✓ Drills grade hub pages generated');
+  } // end drills-grade-hub
 
 
-  // ── TOPIC HUB PAGES (Items 1-7 patch) ──────────────────────────────────
-  const topicMap = {};
+  if (shouldRun('topic-hub')) { // ── TOPIC HUB PAGES ──────────────────────────────────────────────────────
   for (const ws of worksheets) {
     const subj = (ws.subject || '').toLowerCase();
     const topic = (ws.topic || '').toLowerCase().replace(/ /g, '-');
@@ -1567,6 +1615,7 @@ async function generatePages() {
     topicHubCount++;
   }
   console.log('✓ ' + topicHubCount + ' topic hub pages generated');
+  } // end topic-hub
 
   // Add topic hub URLs to sitemap array (will be picked up below)
   const topicHubUrls = Object.entries(topicMap)
