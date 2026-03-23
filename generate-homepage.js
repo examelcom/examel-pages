@@ -1,6 +1,7 @@
 require('dotenv').config({ path: '/opt/examel/pdf-engine/.env' });
 const { createClient } = require('@supabase/supabase-js');
 const fs = require('fs');
+const examelConfig = require('./examel-config');
 
 const supabase = createClient(
   process.env.SUPABASE_URL,
@@ -10,14 +11,8 @@ const supabase = createClient(
 const capitalize = (s) => s ? s.charAt(0).toUpperCase() + s.slice(1) : '';
 const titleCase = (s) => s ? s.split('-').map(capitalize).join(' ') : '';
 
-var DRILL_INTENT_MAP = {"addition":"/free-math-drills/addition/","single-digit-addition":"/free-math-drills/addition/single-digit-addition/","addition-within-10":"/free-math-drills/addition/addition-within-10/","addition-within-20":"/free-math-drills/addition/addition-within-20/","doubles-facts":"/free-math-drills/addition/doubles-facts/","adding-three-numbers":"/free-math-drills/addition/adding-three-numbers/","adding-multiples-of-10":"/free-math-drills/addition/adding-multiples-of-10/","addition-no-regrouping":"/free-math-drills/addition/addition-no-regrouping/","addition-with-regrouping":"/free-math-drills/addition/addition-with-regrouping/","3-digit-addition":"/free-math-drills/addition/3-digit-addition/","subtraction":"/free-math-drills/subtraction/","single-digit-subtraction":"/free-math-drills/subtraction/single-digit-subtraction/","subtraction-within-10":"/free-math-drills/subtraction/subtraction-within-10/","subtraction-within-20":"/free-math-drills/subtraction/subtraction-within-20/","subtracting-multiples-of-10":"/free-math-drills/subtraction/subtracting-multiples-of-10/","subtraction-no-borrowing":"/free-math-drills/subtraction/subtraction-no-borrowing/","subtraction-with-borrowing":"/free-math-drills/subtraction/subtraction-with-borrowing/","3-digit-subtraction":"/free-math-drills/subtraction/3-digit-subtraction/","mixed-add-subtract":"/free-math-drills/subtraction/mixed-add-subtract/","multiplication":"/free-math-drills/multiplication/","multiplication-facts-0-12":"/free-math-drills/multiplication/multiplication-facts-0-12/","2-digit-by-1-digit":"/free-math-drills/multiplication/2-digit-by-1-digit/","2-digit-by-2-digit":"/free-math-drills/multiplication/2-digit-by-2-digit/","multiplying-by-10-100":"/free-math-drills/multiplication/multiplying-by-10-100/","mixed-mult-division":"/free-math-drills/multiplication/mixed-mult-division/","times-table-2":"/free-math-drills/multiplication/times-table-2/","times-table-3":"/free-math-drills/multiplication/times-table-3/","times-table-4":"/free-math-drills/multiplication/times-table-4/","times-table-5":"/free-math-drills/multiplication/times-table-5/","times-table-6":"/free-math-drills/multiplication/times-table-6/","times-table-7":"/free-math-drills/multiplication/times-table-7/","times-table-8":"/free-math-drills/multiplication/times-table-8/","times-table-9":"/free-math-drills/multiplication/times-table-9/","times-table-10":"/free-math-drills/multiplication/times-table-10/","times-table-11":"/free-math-drills/multiplication/times-table-11/","times-table-12":"/free-math-drills/multiplication/times-table-12/","division":"/free-math-drills/division/","basic-division-facts":"/free-math-drills/division/basic-division-facts/","division-by-2":"/free-math-drills/division/division-by-2/","division-by-5":"/free-math-drills/division/division-by-5/","division-by-10":"/free-math-drills/division/division-by-10/","division-with-remainders":"/free-math-drills/division/division-with-remainders/","dividing-by-10-100":"/free-math-drills/division/dividing-by-10-100/","long-division-2-digit-divisor":"/free-math-drills/division/long-division-2-digit-divisor/","mad-minute-addition":"/free-math-drills/mixed/mad-minute-addition/","mad-minute-multiplication":"/free-math-drills/mixed/mad-minute-multiplication/","mixed-all-operations":"/free-math-drills/mixed/mixed-all-operations/"};
-function getCardUrl(ws) {
-  if (ws.format === 'drill-grid') { var t=(ws.topic||'').toLowerCase().replace(/ /g,'-'); return DRILL_INTENT_MAP[t] || '/free-math-drills/'; }
-  if (ws.format === 'word-search') return `/word-searches/${ws.subject}/grade-${ws.grade}/${ws.slug}/`;
-  if (ws.format === 'vocab-match') return `/vocab-match/${ws.subject}/grade-${ws.grade}/${ws.slug}/`;
-  if (ws.format === 'reading-passage') return `/reading-passages/grade-${ws.grade}/${ws.slug}/`;
-  return `/worksheets/${ws.slug}/`;
-}
+// URL routing via examelConfig — single source of truth
+function getCardUrl(ws) { return examelConfig.getCardUrl(ws); }
 
 function subjectColor(subject, format) {
   if (format === 'drill-grid') return '#DC2626';
