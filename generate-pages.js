@@ -859,6 +859,7 @@ async function generatePages() {
   <title>Free ${capitalize(subject)} Worksheets for Kids | Grades 1-6 | Examel</title>
   <meta name="description" content="Free printable ${capitalize(subject)} worksheets for Grades 1-6. ${filtered.length}+ worksheets with fun themes kids love. Download PDF instantly. Answer keys included.">
   <link rel="canonical" href="https://examel.com/free-${subject}-worksheets/">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Free ${capitalize(subject)} Worksheets for Kids","description":"Free printable ${capitalize(subject)} worksheets for Grades 1-6. Fun themes, answer keys included.","url":"https://examel.com/free-${subject}-worksheets/","publisher":{"@type":"Organization","name":"Examel","url":"https://examel.com"}}</script>
   <meta property="og:type" content="website">
   <meta property="og:title" content="Free ${capitalize(subject)} Worksheets for Kids | Examel">
   <meta property="og:description" content="Free printable ${capitalize(subject)} worksheets for Grades 1-6. Fun themes, answer keys included. Download PDF instantly.">
@@ -957,6 +958,7 @@ async function generatePages() {
   <title>Free Grade ${grade} Worksheets | Math, English, Science | Examel</title>
   <meta name="description" content="Free printable Grade ${grade} worksheets for Math, English and Science. ${filtered.length}+ worksheets with fun themes. Download PDF instantly. Answer keys included.">
   <link rel="canonical" href="https://examel.com/free-worksheets/grade-${grade}/">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Free Grade ${grade} Worksheets","description":"Free printable Grade ${grade} worksheets for Math, English and Science. Fun themes, answer keys included.","url":"https://examel.com/free-worksheets/grade-${grade}/","publisher":{"@type":"Organization","name":"Examel","url":"https://examel.com"}}</script>
   <meta property="og:type" content="website">
   <meta property="og:title" content="Free Grade ${grade} Worksheets | Math, English, Science | Examel">
   <meta property="og:description" content="Free printable Grade ${grade} worksheets for Math, English and Science. Fun themes, answer keys included. Download PDF instantly.">
@@ -1031,6 +1033,12 @@ async function generatePages() {
   <title>Free Math Drills for Kids | Grades 1-6 | Examel</title>
   <meta name="description" content="Free printable math drills for Grades 1-6. Multiplication, division, addition and subtraction drills with answer keys. Download PDF instantly.">
   <link rel="canonical" href="https://examel.com/free-math-drills/">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Free Math Drills for Kids","description":"Free printable math drills for Grades 1-6. Multiplication, division, addition and subtraction drills with answer keys.","url":"https://examel.com/free-math-drills/","publisher":{"@type":"Organization","name":"Examel","url":"https://examel.com"}}</script>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free Math Drills for Kids | Grades 1-6 | Examel">
+  <meta property="og:description" content="Free printable math drills for Grades 1-6. Multiplication, division, addition and subtraction drills with answer keys. Download PDF instantly.">
+  <meta property="og:image" content="https://examel.com/og-default.png">
+  <meta property="og:url" content="https://examel.com/free-math-drills/">
   ${sharedCSS}
 </head>
 <body>
@@ -1076,6 +1084,12 @@ async function generatePages() {
   <title>Free ${topic.charAt(0).toUpperCase()+topic.slice(1)} Drills | Grades 1-6 | Examel</title>
   <meta name="description" content="Free printable ${topic} drills for Grades 1-6. Build ${topic} fact fluency with timed practice sheets. Answer keys included. Download PDF instantly.">
   <link rel="canonical" href="https://examel.com/free-${topic}-drills/">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Free ${topic.charAt(0).toUpperCase()+topic.slice(1)} Drills","description":"Free printable ${topic} drills for Grades 1-6. Build ${topic} fact fluency with timed practice. Answer keys included.","url":"https://examel.com/free-${topic}-drills/","publisher":{"@type":"Organization","name":"Examel","url":"https://examel.com"}}</script>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free ${topic.charAt(0).toUpperCase()+topic.slice(1)} Drills | Grades 1-6 | Examel">
+  <meta property="og:description" content="Free printable ${topic} drills for Grades 1-6. Build ${topic} fact fluency with timed practice sheets. Answer keys included.">
+  <meta property="og:image" content="https://examel.com/og-default.png">
+  <meta property="og:url" content="https://examel.com/free-${topic}-drills/">
   ${sharedCSS}
 </head>
 <body>
@@ -1140,6 +1154,12 @@ async function generatePages() {
   <title>Free ${capitalize(subj)} Vocabulary Worksheets | Grades 1-6 | Examel</title>
   <meta name="description" content="Free printable ${subj} vocabulary match worksheets for Grades 1-6. Match words to definitions with answer keys. Download PDF instantly.">
   <link rel="canonical" href="https://examel.com/free-${subj}-vocabulary/">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Free ${capitalize(subj)} Vocabulary Worksheets","description":"Free printable ${subj} vocabulary match worksheets for Grades 1-6. Match words to definitions with answer keys.","url":"https://examel.com/free-${subj}-vocabulary/","publisher":{"@type":"Organization","name":"Examel","url":"https://examel.com"}}</script>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free ${capitalize(subj)} Vocabulary Worksheets | Grades 1-6 | Examel">
+  <meta property="og:description" content="Free printable ${subj} vocabulary match worksheets for Grades 1-6. Match words to definitions with answer keys. Download PDF instantly.">
+  <meta property="og:image" content="https://examel.com/og-default.png">
+  <meta property="og:url" content="https://examel.com/free-${subj}-vocabulary/">
   ${sharedCSS}
 </head>
 <body>
@@ -1187,6 +1207,12 @@ async function generatePages() {
   <title>Free Reading Comprehension Passages | Grades 1-6 | Examel</title>
   <meta name="description" content="Free printable reading comprehension passages for Grades 1-6. Nonfiction passages with 6 comprehension questions and answer keys. Download PDF instantly.">
   <link rel="canonical" href="https://examel.com/free-reading-passages/">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Free Reading Comprehension Passages","description":"Free printable reading comprehension passages for Grades 1-6. Nonfiction passages with 6 comprehension questions and answer keys.","url":"https://examel.com/free-reading-passages/","publisher":{"@type":"Organization","name":"Examel","url":"https://examel.com"}}</script>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free Reading Comprehension Passages | Grades 1-6 | Examel">
+  <meta property="og:description" content="Free printable reading comprehension passages for Grades 1-6. Nonfiction passages with 6 comprehension questions and answer keys. Download PDF instantly.">
+  <meta property="og:image" content="https://examel.com/og-default.png">
+  <meta property="og:url" content="https://examel.com/free-reading-passages/">
   ${sharedCSS}
 </head>
 <body>
@@ -1246,6 +1272,12 @@ async function generatePages() {
   <title>Free Grade ${g} Reading Comprehension Passages | Examel</title>
   <meta name="description" content="Free printable Grade ${g} reading comprehension passages. Nonfiction with 6 questions and answer keys. Download PDF instantly.">
   <link rel="canonical" href="https://examel.com/free-reading-passages/grade-${g}/">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Free Grade ${g} Reading Comprehension Passages","description":"Free printable Grade ${g} reading comprehension passages. Nonfiction with 6 questions and answer keys.","url":"https://examel.com/free-reading-passages/grade-${g}/","publisher":{"@type":"Organization","name":"Examel","url":"https://examel.com"}}</script>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free Grade ${g} Reading Comprehension Passages | Examel">
+  <meta property="og:description" content="Free printable Grade ${g} reading comprehension passages. Nonfiction with 6 questions and answer keys. Download PDF instantly.">
+  <meta property="og:image" content="https://examel.com/og-default.png">
+  <meta property="og:url" content="https://examel.com/free-reading-passages/grade-${g}/">
   ${sharedCSS}
 </head>
 <body>
@@ -1277,6 +1309,12 @@ async function generatePages() {
   <title>Free Printable Worksheets for Kids | All Grades | Examel</title>
   <meta name="description" content="Browse all ${allPublished.length}+ free printable worksheets for Grades 1-6. Math, English, Science and more. Common Core aligned. Answer keys included.">
   <link rel="canonical" href="https://examel.com/free-worksheets/">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Free Printable Worksheets for Kids","description":"Browse all free printable worksheets for Grades 1-6. Math, English, Science and more. Common Core aligned. Answer keys included.","url":"https://examel.com/free-worksheets/","publisher":{"@type":"Organization","name":"Examel","url":"https://examel.com"}}</script>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free Printable Worksheets for Kids | All Grades | Examel">
+  <meta property="og:description" content="Browse all free printable worksheets for Grades 1-6. Math, English, Science and more. Common Core aligned. Answer keys included.">
+  <meta property="og:image" content="https://examel.com/og-default.png">
+  <meta property="og:url" content="https://examel.com/free-worksheets/">
   ${sharedCSS}
 </head>
 <body>
@@ -1343,6 +1381,12 @@ async function generatePages() {
   <title>Free Word Search Worksheets for Kids | Grades 1-6 | Examel</title>
   <meta name="description" content="Free printable word search worksheets for Grades 1-6. Math, English and Science word searches with answer keys. Download PDF instantly.">
   <link rel="canonical" href="https://examel.com/word-searches/">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Free Word Search Worksheets for Kids","description":"Free printable word search worksheets for Grades 1-6. Math, English and Science word searches with answer keys.","url":"https://examel.com/word-searches/","publisher":{"@type":"Organization","name":"Examel","url":"https://examel.com"}}</script>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free Word Search Worksheets for Kids | Grades 1-6 | Examel">
+  <meta property="og:description" content="Free printable word search worksheets for Grades 1-6. Math, English and Science word searches with answer keys. Download PDF instantly.">
+  <meta property="og:image" content="https://examel.com/og-default.png">
+  <meta property="og:url" content="https://examel.com/word-searches/">
   ${sharedCSS}
 </head>
 <body>
@@ -1401,6 +1445,12 @@ async function generatePages() {
   <title>Free Grade ${g} Math Drills | Examel</title>
   <meta name="description" content="Free printable Grade ${g} math drills. Addition, subtraction, multiplication and division practice with answer keys. Download PDF instantly.">
   <link rel="canonical" href="https://examel.com/drills/math/grade-${g}/">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Free Grade ${g} Math Drills","description":"Free printable Grade ${g} math drills. Addition, subtraction, multiplication and division practice with answer keys.","url":"https://examel.com/drills/math/grade-${g}/","publisher":{"@type":"Organization","name":"Examel","url":"https://examel.com"}}</script>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free Grade ${g} Math Drills | Examel">
+  <meta property="og:description" content="Free printable Grade ${g} math drills. Addition, subtraction, multiplication and division practice with answer keys. Download PDF instantly.">
+  <meta property="og:image" content="https://examel.com/og-default.png">
+  <meta property="og:url" content="https://examel.com/drills/math/grade-${g}/">
   ${sharedCSS}
 </head>
 <body>
