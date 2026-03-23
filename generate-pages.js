@@ -18,9 +18,61 @@ const titleCase = (s) => s.split(' ').map(capitalize).join(' ');
 const formatTopic = (t) => titleCase(t.replace(/-/g, ' '));
 const formatTheme = (t) => titleCase(t.replace(/-/g, ' '));
 
+
+// ── DRILL INTENT URL MAP (fixes broken drill links) ──────────────────────
+const DRILL_INTENT_MAP = {
+  'addition': '/free-math-drills/addition/',
+  'single-digit-addition': '/free-math-drills/addition/single-digit-addition/',
+  'addition-within-10': '/free-math-drills/addition/addition-within-10/',
+  'addition-within-20': '/free-math-drills/addition/addition-within-20/',
+  'doubles-facts': '/free-math-drills/addition/doubles-facts/',
+  'adding-three-numbers': '/free-math-drills/addition/adding-three-numbers/',
+  'adding-multiples-of-10': '/free-math-drills/addition/adding-multiples-of-10/',
+  'addition-no-regrouping': '/free-math-drills/addition/addition-no-regrouping/',
+  'addition-with-regrouping': '/free-math-drills/addition/addition-with-regrouping/',
+  '3-digit-addition': '/free-math-drills/addition/3-digit-addition/',
+  'subtraction': '/free-math-drills/subtraction/',
+  'single-digit-subtraction': '/free-math-drills/subtraction/single-digit-subtraction/',
+  'subtraction-within-10': '/free-math-drills/subtraction/subtraction-within-10/',
+  'subtraction-within-20': '/free-math-drills/subtraction/subtraction-within-20/',
+  'subtracting-multiples-of-10': '/free-math-drills/subtraction/subtracting-multiples-of-10/',
+  'subtraction-no-borrowing': '/free-math-drills/subtraction/subtraction-no-borrowing/',
+  'subtraction-with-borrowing': '/free-math-drills/subtraction/subtraction-with-borrowing/',
+  '3-digit-subtraction': '/free-math-drills/subtraction/3-digit-subtraction/',
+  'mixed-add-subtract': '/free-math-drills/subtraction/mixed-add-subtract/',
+  'multiplication': '/free-math-drills/multiplication/',
+  'multiplication-facts-0-12': '/free-math-drills/multiplication/multiplication-facts-0-12/',
+  '2-digit-by-1-digit': '/free-math-drills/multiplication/2-digit-by-1-digit/',
+  '2-digit-by-2-digit': '/free-math-drills/multiplication/2-digit-by-2-digit/',
+  'multiplying-by-10-100': '/free-math-drills/multiplication/multiplying-by-10-100/',
+  'mixed-mult-division': '/free-math-drills/multiplication/mixed-mult-division/',
+  'times-table-2': '/free-math-drills/multiplication/times-table-2/',
+  'times-table-3': '/free-math-drills/multiplication/times-table-3/',
+  'times-table-4': '/free-math-drills/multiplication/times-table-4/',
+  'times-table-5': '/free-math-drills/multiplication/times-table-5/',
+  'times-table-6': '/free-math-drills/multiplication/times-table-6/',
+  'times-table-7': '/free-math-drills/multiplication/times-table-7/',
+  'times-table-8': '/free-math-drills/multiplication/times-table-8/',
+  'times-table-9': '/free-math-drills/multiplication/times-table-9/',
+  'times-table-10': '/free-math-drills/multiplication/times-table-10/',
+  'times-table-11': '/free-math-drills/multiplication/times-table-11/',
+  'times-table-12': '/free-math-drills/multiplication/times-table-12/',
+  'division': '/free-math-drills/division/',
+  'basic-division-facts': '/free-math-drills/division/basic-division-facts/',
+  'division-by-2': '/free-math-drills/division/division-by-2/',
+  'division-by-5': '/free-math-drills/division/division-by-5/',
+  'division-by-10': '/free-math-drills/division/division-by-10/',
+  'division-with-remainders': '/free-math-drills/division/division-with-remainders/',
+  'dividing-by-10-100': '/free-math-drills/division/dividing-by-10-100/',
+  'long-division-2-digit-divisor': '/free-math-drills/division/long-division-2-digit-divisor/',
+  'mad-minute-addition': '/free-math-drills/mixed/mad-minute-addition/',
+  'mad-minute-multiplication': '/free-math-drills/mixed/mad-minute-multiplication/',
+  'mixed-all-operations': '/free-math-drills/mixed/mixed-all-operations/'
+};
+
 function getCardUrl(ws) {
-  if (ws.format === 'drill-grid') return `/drills/${ws.subject}/grade-${ws.grade}/${ws.slug}/`;
-  if (ws.format === 'word-search') return `/word-searches/${ws.subject}/grade-${ws.grade}/${ws.slug}/`;
+  if (ws.format === 'drill-grid') { const intentUrl = DRILL_INTENT_MAP[(ws.topic || '').toLowerCase().replace(/ /g, '-')]; return intentUrl || '/free-math-drills/'; }
+  if (ws.format === 'word-search') return '/word-searches/';
   if (ws.format === 'vocab-match') return `/vocab-match/${ws.subject}/grade-${ws.grade}/${ws.slug}/`;
   if (ws.format === 'reading-passage') return `/reading-passages/grade-${ws.grade}/${ws.slug}/`;
   return `/worksheets/${ws.slug}/`;
@@ -401,7 +453,7 @@ async function generatePages() {
   <meta charset="UTF-8">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%236C5CE7'/%3E%3Crect x='7' y='7' width='4' height='18' rx='1' fill='white'/%3E%3Crect x='7' y='7' width='7' height='4' rx='1' fill='white'/%3E%3Crect x='7' y='14' width='11' height='4' rx='1' fill='white'/%3E%3Crect x='7' y='21' width='15' height='4' rx='1' fill='white'/%3E%3C/svg%3E">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Free Grade ${ws.grade} ${formatTopic(ws.topic)} ${capitalize(ws.subject)} Worksheet | Examel</title>
+  <title>Free Grade ${ws.grade} ${formatTopic(ws.topic)} ${capitalize(ws.subject)} Worksheet — ${formatTheme(ws.theme)} | Examel</title>
   <meta name="description" content="${ws.seo_description || `Free ${ws.target_keyword || ws.subject + " worksheet for Grade " + ws.grade}. ${formatTopic(ws.topic)} practice with ${formatTheme(ws.theme)} theme. Printable PDF with answer key. No signup required.`}">
   <link rel="canonical" href="https://examel.com/worksheets/${ws.slug}/">
   <meta property="og:type" content="website">
@@ -725,7 +777,7 @@ async function generatePages() {
 
   for (const subject of subjects) {
     for (const grade of grades) {
-      const filtered = worksheets.filter(w => w.subject.toLowerCase() === subject && w.grade === grade && w.format !== "drill-grid");
+      const filtered = worksheets.filter(w => w.subject.toLowerCase() === subject && w.grade === grade);
       if (filtered.length === 0) continue;
       const color = gradeColor(grade);
       const dir = `/opt/examel/examel-pages/free-${subject}-worksheets/grade-${grade}`;
