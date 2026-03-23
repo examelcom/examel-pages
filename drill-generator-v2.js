@@ -137,7 +137,7 @@ function renderContentBlock(ws) {
       const downloadUrl = d.pdf_url && d.pdf_url.startsWith('http') ? d.pdf_url : '#';
       const thumbUrl = d.preview_p1_url || d.preview_image_url || '/thumbnails/' + d.slug + '.png';
       const anchorId = (d.theme || 'default').replace(/[^a-z0-9]/g, '-');
-      return '<div class="drill-card" id="' + anchorId + '">' +
+      return '<a href="/drills/math/grade-' + d.grade + '/' + d.slug + '/" class="drill-card" id="' + anchorId + '">' +
         '<div class="drill-thumb">' +
           (d.preview_p1_url ? '<img src="' + thumbUrl + '" alt="' + d.title + '" loading="lazy">' : '<div class="drill-thumb-ph"><span>⚡</span></div>') +
         '</div>' +
@@ -147,7 +147,7 @@ function renderContentBlock(ws) {
           '<p>' + d.title + '</p>' +
           '<a href="' + downloadUrl + '" class="drill-btn" download>Download PDF →</a>' +
         '</div>' +
-      '</div>';
+      '</a>';
     }).join('\n');
 
     const relatedIntentLinks = relatedIntents.map(r =>
