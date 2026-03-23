@@ -725,7 +725,7 @@ async function generatePages() {
 
   for (const subject of subjects) {
     for (const grade of grades) {
-      const filtered = worksheets.filter(w => w.subject.toLowerCase() === subject && w.grade === grade && w.format !== "drill-grid");
+      const filtered = worksheets.filter(w => w.subject.toLowerCase() === subject && w.grade === grade);
       if (filtered.length === 0) continue;
       const color = gradeColor(grade);
       const dir = `/opt/examel/examel-pages/free-${subject}-worksheets/grade-${grade}`;
