@@ -37,6 +37,15 @@ if [ $? -ne 0 ]; then
 fi
 echo "✅ Homepage generated" | tee -a $LOG
 
+# Step 3a: Search index
+echo "▶ Step 3a: Search index..." | tee -a $LOG
+node $PAGES_DIR/search-index-generator.js >> $LOG 2>&1
+if [ $? -ne 0 ]; then
+  echo "🔴 BLOCKED: search-index-generator.js failed" | tee -a $LOG
+  exit 1
+fi
+echo "✅ Search index generated" | tee -a $LOG
+
 # Step 3b: Post-build inject (schema/OG for hub pages)
 echo "▶ Step 3b: Post-build inject..." | tee -a $LOG
 node $PAGES_DIR/post-build-inject.js >> $LOG 2>&1 || { echo "🔴 BLOCKED: post-build-inject.js failed" | tee -a $LOG; exit 1; }

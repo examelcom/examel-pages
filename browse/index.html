@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%236C5CE7'/%3E%3Crect x='7' y='7' width='4' height='18' rx='1' fill='white'/%3E%3Crect x='7' y='7' width='7' height='4' rx='1' fill='white'/%3E%3Crect x='7' y='14' width='11' height='4' rx='1' fill='white'/%3E%3Crect x='7' y='21' width='15' height='4' rx='1' fill='white'/%3E%3C/svg%3E">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browse All Free Worksheets | Examel</title>
+  <meta name="description" content="Browse all free printable worksheets by subject, grade, and format. Math, English, Science worksheets for Grades 1-6. Answer keys included.">
+  <link rel="canonical" href="https://examel.com/browse/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Browse All Free Worksheets | Examel">
+  <meta property="og:description" content="Browse all free printable worksheets by subject, grade, and format. Math, English, Science worksheets for Grades 1-6.">
+  <meta property="og:image" content="https://examel.com/og-default.png">
+  <meta property="og:url" content="https://examel.com/browse/">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Browse All Free Worksheets","description":"Browse all free printable worksheets by subject, grade, and format.","url":"https://examel.com/browse/","publisher":{"@type":"Organization","name":"Examel","url":"https://examel.com"}}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'DM Sans',system-ui,sans-serif;background:#FAF8F3;color:#1A1420;-webkit-font-smoothing:antialiased;}
+    h1,h2,h3{font-family:'Outfit',sans-serif;}
+    .site-header{background:#1C1526;padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:64px;position:sticky;top:0;z-index:200;border-bottom:1px solid rgba(255,255,255,0.06);box-shadow:0 4px 24px rgba(0,0,0,0.18);}
+    .site-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+    .site-logo-text{font-size:20px;font-weight:800;letter-spacing:-1px;color:white;font-family:'Outfit',sans-serif;}
+    .site-logo-text span{color:#6C5CE7;}
+    .site-header nav{display:flex;align-items:center;gap:2px;}
+    .site-header nav a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:13px;font-weight:600;padding:7px 12px;border-radius:8px;transition:all 0.2s;}
+    .site-header nav a:hover,.site-header nav a.active{color:white;background:rgba(108,92,231,0.2);}
+    .search-hero{padding:48px 20px 32px;text-align:center;background:#1C1526;border-bottom:3px solid #6C5CE7;}
+    .search-hero h1{font-size:clamp(24px,3.5vw,40px);font-weight:900;color:white;letter-spacing:-1px;margin-bottom:8px;}
+    .search-hero h1 span{color:#6C5CE7;}
+    .search-hero p{font-size:15px;color:rgba(255,255,255,0.45);margin-bottom:24px;}
+    .search-box{max-width:600px;margin:0 auto;position:relative;}
+    .search-box input{width:100%;padding:16px 24px;border-radius:100px;border:2px solid rgba(108,92,231,0.4);background:rgba(255,255,255,0.08);color:white;font-size:16px;font-family:inherit;outline:none;transition:all 0.2s;}
+    .search-box input::placeholder{color:rgba(255,255,255,0.3);}
+    .search-box input:focus{background:rgba(255,255,255,0.12);border-color:#6C5CE7;box-shadow:0 0 0 4px rgba(108,92,231,0.2);}
+    .search-results-page{max-width:1100px;margin:0 auto;padding:24px 20px 0;}
+    .results-count{font-size:13px;color:#A89FAE;margin-bottom:16px;}
+    .results-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin-bottom:48px;}
+    .result-card{background:white;border-radius:14px;padding:16px 18px;text-decoration:none;color:#1A1420;border:1px solid #EDE8DF;display:flex;align-items:center;gap:12px;transition:transform 0.2s,box-shadow 0.2s;}
+    .result-card:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,0.08);}
+    .result-badge{color:white;font-size:10px;font-weight:700;padding:3px 10px;border-radius:100px;white-space:nowrap;flex-shrink:0;}
+    .result-title{font-size:14px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+    .section{max-width:1100px;margin:0 auto;padding:40px 20px 0;}
+    .section-title{font-size:20px;font-weight:800;color:#1A1420;margin-bottom:6px;letter-spacing:-0.5px;font-family:'Outfit',sans-serif;}
+    .section-sub{font-size:13px;color:#A89FAE;margin-bottom:18px;}
+    .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;margin-bottom:48px;}
+    .card{background:white;border-radius:14px;padding:18px 16px;text-decoration:none;color:#1A1420;border:1px solid #EDE8DF;border-top:3px solid var(--c);transition:transform 0.2s,box-shadow 0.2s;display:block;}
+    .card:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,0,0,0.08);}
+    .card-icon{font-size:24px;margin-bottom:8px;display:block;}
+    .card-title{font-size:14px;font-weight:700;margin-bottom:3px;font-family:'Outfit',sans-serif;}
+    .card-sub{font-size:11px;color:#A89FAE;}
+    .grade-cards{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:48px;}
+    .grade-card{background:white;border-radius:14px;padding:18px 10px;text-decoration:none;color:#1A1420;border:1px solid #EDE8DF;text-align:center;transition:transform 0.2s;display:block;}
+    .grade-card:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,0,0,0.08);}
+    .grade-num{font-size:28px;font-weight:900;color:#6C5CE7;font-family:'Outfit',sans-serif;}
+    .grade-label{font-size:11px;color:#A89FAE;margin-top:3px;}
+    .site-footer{padding:40px 20px 28px;background:#1C1526;border-top:3px solid #6C5CE7;margin-top:64px;text-align:center;}
+    .site-footer a{color:rgba(255,255,255,0.5);text-decoration:none;font-size:14px;}
+    .footer-bottom{color:rgba(255,255,255,0.2);font-size:13px;margin-top:12px;}
+    @media(max-width:600px){.grade-cards{grid-template-columns:repeat(3,1fr);}.cards{grid-template-columns:repeat(2,1fr);}}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a href="https://examel.com" class="site-logo">
+      <svg width="30" height="30" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+        <rect width="72" height="72" rx="16" fill="#6C5CE7"/>
+        <rect x="15" y="15" width="9" height="42" rx="2.5" fill="white"/>
+        <rect x="15" y="15" width="15" height="9" rx="2.5" fill="white"/>
+        <rect x="15" y="31.5" width="24" height="9" rx="2.5" fill="white"/>
+        <rect x="15" y="48" width="33" height="9" rx="2.5" fill="white"/>
+      </svg>
+      <span class="site-logo-text">examel<span>·</span></span>
+    </a>
+    <nav>
+      <a href="/free-worksheets/">Worksheets</a>
+      <a href="/free-math-drills/">Drills</a>
+      <a href="/free-reading-passages/">Reading</a>
+      <a href="/free-math-vocabulary/">Vocabulary</a>
+      <a href="/word-searches/">Word Searches</a>
+      <a href="/browse/" class="active">Browse All</a>
+    </nav>
+  </header>
+
+  <div class="search-hero">
+    <h1>Browse <span>All Worksheets</span></h1>
+    <p>2,400+ free printable worksheets — search or browse by subject, grade, or format</p>
+    <div class="search-box">
+      <input type="text" id="browseSearch" placeholder="Search by topic, grade, subject..." autocomplete="off">
+    </div>
+  </div>
+
+  <div class="search-results-page" id="searchResultsPage" style="display:none;">
+    <div class="results-count" id="resultsCount"></div>
+    <div class="results-grid" id="resultsGrid"></div>
+  </div>
+
+  <div id="browseContent">
+    <!-- BY GRADE -->
+    <div class="section">
+      <div class="section-title">Browse by Grade</div>
+      <div class="section-sub">Jump straight to your child's grade level</div>
+      <div class="grade-cards">
+        <a href="/free-worksheets/grade-1/" class="grade-card"><div class="grade-num">1</div><div class="grade-label">Grade 1</div></a>
+        <a href="/free-worksheets/grade-2/" class="grade-card"><div class="grade-num">2</div><div class="grade-label">Grade 2</div></a>
+        <a href="/free-worksheets/grade-3/" class="grade-card"><div class="grade-num">3</div><div class="grade-label">Grade 3</div></a>
+        <a href="/free-worksheets/grade-4/" class="grade-card"><div class="grade-num">4</div><div class="grade-label">Grade 4</div></a>
+        <a href="/free-worksheets/grade-5/" class="grade-card"><div class="grade-num">5</div><div class="grade-label">Grade 5</div></a>
+        <a href="/free-worksheets/grade-6/" class="grade-card"><div class="grade-num">6</div><div class="grade-label">Grade 6</div></a>
+      </div>
+    </div>
+
+    <!-- BY SUBJECT -->
+    <div class="section">
+      <div class="section-title">Browse by Subject</div>
+      <div class="section-sub">Worksheets, drills, vocabulary, and reading passages</div>
+      <div class="cards">
+        <a href="/free-math-worksheets/" class="card" style="--c:#7C3AED"><span class="card-icon">📐</span><div class="card-title">Math Worksheets</div><div class="card-sub">Grades 1–6 · CCSS aligned</div></a>
+        <a href="/free-english-worksheets/" class="card" style="--c:#DB2777"><span class="card-icon">📖</span><div class="card-title">English Worksheets</div><div class="card-sub">Reading, grammar, writing</div></a>
+        <a href="/free-science-worksheets/" class="card" style="--c:#059669"><span class="card-icon">🔬</span><div class="card-title">Science Worksheets</div><div class="card-sub">Life, earth, physical science</div></a>
+        <a href="/free-math-drills/" class="card" style="--c:#DC2626"><span class="card-icon">⚡</span><div class="card-title">Math Drills</div><div class="card-sub">Fact fluency · timed practice</div></a>
+        <a href="/free-reading-passages/" class="card" style="--c:#0891B2"><span class="card-icon">📚</span><div class="card-title">Reading Passages</div><div class="card-sub">Nonfiction comprehension</div></a>
+        <a href="/free-math-vocabulary/" class="card" style="--c:#D97706"><span class="card-icon">💬</span><div class="card-title">Vocabulary</div><div class="card-sub">Math, English, Science</div></a>
+        <a href="/word-searches/" class="card" style="--c:#6C5CE7"><span class="card-icon">🔤</span><div class="card-title">Word Searches</div><div class="card-sub">All subjects · all grades</div></a>
+      </div>
+    </div>
+
+    <!-- MATH TOPICS -->
+    <div class="section">
+      <div class="section-title">Math — Browse by Topic</div>
+      <div class="section-sub">Jump to any math topic directly</div>
+      <div class="cards">
+        <a href="/free-math-worksheets/addition/" class="card" style="--c:#7C3AED"><span class="card-icon">➕</span><div class="card-title">Addition</div><div class="card-sub">Grades 1–3</div></a>
+        <a href="/free-math-worksheets/subtraction/" class="card" style="--c:#7C3AED"><span class="card-icon">➖</span><div class="card-title">Subtraction</div><div class="card-sub">Grades 1–3</div></a>
+        <a href="/free-math-worksheets/multiplication/" class="card" style="--c:#7C3AED"><span class="card-icon">✖</span><div class="card-title">Multiplication</div><div class="card-sub">Grades 3–5</div></a>
+        <a href="/free-math-worksheets/division/" class="card" style="--c:#7C3AED"><span class="card-icon">➗</span><div class="card-title">Division</div><div class="card-sub">Grades 3–5</div></a>
+        <a href="/free-math-worksheets/fractions/" class="card" style="--c:#7C3AED"><span class="card-icon">½</span><div class="card-title">Fractions</div><div class="card-sub">Grades 3–5</div></a>
+        <a href="/free-math-worksheets/decimals/" class="card" style="--c:#7C3AED"><span class="card-icon">·</span><div class="card-title">Decimals</div><div class="card-sub">Grades 4–6</div></a>
+        <a href="/free-math-worksheets/measurement/" class="card" style="--c:#7C3AED"><span class="card-icon">📏</span><div class="card-title">Measurement</div><div class="card-sub">Grades 2–5</div></a>
+        <a href="/free-math-worksheets/word-problems/" class="card" style="--c:#7C3AED"><span class="card-icon">💭</span><div class="card-title">Word Problems</div><div class="card-sub">Grades 2–6</div></a>
+        <a href="/free-math-worksheets/place-value/" class="card" style="--c:#7C3AED"><span class="card-icon">🔢</span><div class="card-title">Place Value</div><div class="card-sub">Grades 1–4</div></a>
+        <a href="/free-math-worksheets/time/" class="card" style="--c:#7C3AED"><span class="card-icon">🕐</span><div class="card-title">Time</div><div class="card-sub">Grades 1–3</div></a>
+        <a href="/free-math-worksheets/money/" class="card" style="--c:#7C3AED"><span class="card-icon">💰</span><div class="card-title">Money</div><div class="card-sub">Grades 1–4</div></a>
+        <a href="/free-math-worksheets/area/" class="card" style="--c:#7C3AED"><span class="card-icon">▦</span><div class="card-title">Area</div><div class="card-sub">Grades 3–5</div></a>
+      </div>
+    </div>
+
+    <!-- DRILLS -->
+    <div class="section">
+      <div class="section-title">Math Drills — Browse by Operation</div>
+      <div class="section-sub">Timed fact fluency practice with answer keys</div>
+      <div class="cards">
+        <a href="/free-math-drills/addition/" class="card" style="--c:#DC2626"><span class="card-icon">➕</span><div class="card-title">Addition Drills</div><div class="card-sub">Grades 1–3</div></a>
+        <a href="/free-math-drills/subtraction/" class="card" style="--c:#DC2626"><span class="card-icon">➖</span><div class="card-title">Subtraction Drills</div><div class="card-sub">Grades 1–3</div></a>
+        <a href="/free-math-drills/multiplication/" class="card" style="--c:#DC2626"><span class="card-icon">✖</span><div class="card-title">Multiplication Drills</div><div class="card-sub">Grades 3–5</div></a>
+        <a href="/free-math-drills/division/" class="card" style="--c:#DC2626"><span class="card-icon">➗</span><div class="card-title">Division Drills</div><div class="card-sub">Grades 3–5</div></a>
+      </div>
+    </div>
+
+    <!-- READING BY GRADE -->
+    <div class="section">
+      <div class="section-title">Reading Passages — Browse by Grade</div>
+      <div class="section-sub">Nonfiction comprehension passages with answer keys</div>
+      <div class="cards">
+        <a href="/free-reading-passages/grade-1/" class="card" style="--c:#0891B2"><span class="card-icon">📖</span><div class="card-title">Grade 1 Reading</div><div class="card-sub">Short passages</div></a>
+        <a href="/free-reading-passages/grade-2/" class="card" style="--c:#0891B2"><span class="card-icon">📖</span><div class="card-title">Grade 2 Reading</div><div class="card-sub">Short passages</div></a>
+        <a href="/free-reading-passages/grade-3/" class="card" style="--c:#0891B2"><span class="card-icon">📖</span><div class="card-title">Grade 3 Reading</div><div class="card-sub">Nonfiction passages</div></a>
+        <a href="/free-reading-passages/grade-4/" class="card" style="--c:#0891B2"><span class="card-icon">📖</span><div class="card-title">Grade 4 Reading</div><div class="card-sub">Nonfiction passages</div></a>
+        <a href="/free-reading-passages/grade-5/" class="card" style="--c:#0891B2"><span class="card-icon">📖</span><div class="card-title">Grade 5 Reading</div><div class="card-sub">Longer passages</div></a>
+        <a href="/free-reading-passages/grade-6/" class="card" style="--c:#0891B2"><span class="card-icon">📖</span><div class="card-title">Grade 6 Reading</div><div class="card-sub">Complex passages</div></a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <a href="https://examel.com">examel.com</a> · Free K-8 Printable Worksheets
+    <div class="footer-bottom">© 2026 Examel · Know more. Score more.</div>
+  </footer>
+
+  <script>
+  (function(){
+    var idx = null;
+    function loadIndex(cb) {
+      if (idx) return cb(idx);
+      fetch('/search-index.json').then(function(r){return r.json();}).then(function(d){idx=d;cb(idx);}).catch(function(){idx=[];cb([]);});
+    }
+    function search(q, data) {
+      var terms = q.toLowerCase().split(' ').filter(Boolean);
+      return data.filter(function(p){
+        var k = p.k || '';
+        return terms.every(function(t){ return k.includes(t); });
+      });
+    }
+    function colorFor(s) {
+      return s==='math'?'#7C3AED':s==='english'?'#DB2777':s==='science'?'#059669':'#6C5CE7';
+    }
+    var input = document.getElementById('browseSearch');
+    var resultsPage = document.getElementById('searchResultsPage');
+    var browseContent = document.getElementById('browseContent');
+    var resultsGrid = document.getElementById('resultsGrid');
+    var resultsCount = document.getElementById('resultsCount');
+    var timer;
+
+    // Handle ?q= in URL
+    var params = new URLSearchParams(window.location.search);
+    var qParam = params.get('q');
+    if (qParam) { input.value = qParam; runSearch(qParam); }
+
+    input.addEventListener('input', function(){
+      clearTimeout(timer);
+      var q = input.value.trim();
+      if (!q || q.length < 2) {
+        resultsPage.style.display = 'none';
+        browseContent.style.display = 'block';
+        return;
+      }
+      timer = setTimeout(function(){ runSearch(q); }, 200);
+    });
+
+    function runSearch(q) {
+      loadIndex(function(data){
+        var found = search(q, data);
+        resultsCount.textContent = found.length + ' results for "' + q + '"';
+        resultsGrid.innerHTML = found.length === 0
+          ? '<div style="color:#A89FAE;font-size:14px;padding:20px 0;">No results found. Try a different search term.</div>'
+          : found.map(function(p){
+              var badge = p.g ? 'Grade '+p.g : (p.f||'');
+              var color = colorFor(p.s);
+              return '<a href="'+p.u+'" class="result-card">'+
+                '<span class="result-badge" style="background:'+color+'">'+badge+'</span>'+
+                '<span class="result-title">'+p.t+'</span>'+
+                '</a>';
+            }).join('');
+        resultsPage.style.display = 'block';
+        browseContent.style.display = found.length > 0 ? 'none' : 'block';
+      });
+    }
+  })();
+  </script>
+</body>
+</html>
