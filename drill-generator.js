@@ -80,6 +80,7 @@ function generateDrillPages(worksheets, sharedCSS, siteHeader, siteFooter, grade
         <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/VruXqp/klaviyo.js?company_id=VruXqp"></script>
       </div>
     </div>
+    <div style="max-width:680px;margin:0 auto 20px;padding:16px 24px;background:white;border-radius:16px;display:flex;align-items:center;gap:14px;border:1px solid #E0D8EC;box-shadow:0 2px 8px rgba(0,0,0,0.04);"><span style="font-size:28px;">\u2713</span><div><strong style="font-family:Outfit,sans-serif;font-size:14px;color:#1A1420;">Every Answer Verified</strong><p style="font-size:13px;color:#6B6475;margin:0;line-height:1.5;">All drills checked by our AI verification system. No wrong answers — guaranteed.</p></div></div>
     ${ws.preview_p1_url ? `
     <div class="preview-section">
       <h3>📄 Worksheet Preview</h3>
@@ -106,6 +107,7 @@ function generateDrillPages(worksheets, sharedCSS, siteHeader, siteFooter, grade
       <p class="preview-note">Click any image to view full size · 2 pages · Print-ready PDF</p>
     </div>
     ` : ''}
+    ${(function(){ if(!ws.content) return ""; try{ var p=typeof ws.content==="string"?JSON.parse(ws.content):ws.content; var h="<div style=\"background:white;border-radius:12px;padding:24px;margin-bottom:30px;\">"; if(p.story_intro){h+="<div style=\"font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#6C5CE7;margin-bottom:12px;font-family:Outfit,sans-serif;\">About This Drill</div><p style=\"font-size:15px;color:#3D3347;line-height:1.8;font-style:italic;\">"+p.story_intro+"</p>";} if(p.ccss_standard){h+="<p style=\"font-size:13px;color:#6B6475;margin-top:12px;\"><strong>Standard:</strong> "+p.ccss_standard+"</p>";} h+="</div>"; return h; }catch(e){return "";} })()}
     <div class="features">
       <h3>What is included</h3>
       <div class="feature-item"><span class="check">✓</span> ${ws.grade <= 2 ? '40' : ws.grade <= 4 ? '48' : '54'} ${topicName} problems</div>

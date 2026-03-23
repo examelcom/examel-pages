@@ -1,4 +1,5 @@
 require('dotenv').config({ path: '/opt/examel/pdf-engine/.env' });
+const path = require("path");
 const { createClient } = require('@supabase/supabase-js');
 const fs = require('fs');
 const { generateWordSearchPages } = require('./word-search-generator.js');
@@ -440,7 +441,7 @@ async function generatePages() {
     const sameThemeDiffSubject = worksheets.filter(w => w.theme === ws.theme && w.subject !== ws.subject && w.grade === ws.grade && w.slug !== ws.slug).slice(0, 3);
 
     // Session 3: Pedagogical linking engine
-    const pedLinks = getPedagogicalLinks(ws, worksheets);
+    const pedLinks = getPedagogicalLinks(ws, worksheets.filter(w => w.format !== "drill-grid" && w.format !== "word-search"));
     const pedLinksHtml = pedLinks.length > 0
       ? '<div class="related"><h3 class="related-title">Related Worksheets</h3><div style="display:flex;flex-direction:column;gap:8px;">'
         + pedLinks.map(l => '<a href="' + l.url + '" style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f8f6ff;border-radius:10px;text-decoration:none;color:#1C1526;font-size:14px;font-weight:500;"><span style="color:#6C5CE7;font-weight:700;font-size:12px;">&#8594;</span> ' + l.text + '</a>').join('')
@@ -696,11 +697,8 @@ async function generatePages() {
       </div>
       <h3>📬 Get Free Worksheets Every Week</h3>
       <p>New themed worksheets added daily. Free for parents and teachers.</p>
-      <form action="https://app.kit.com/forms/9220999/subscriptions" method="POST" target="kit-iframe-ws" class="email-form">
-        <input type="email" name="email_address" placeholder="Your email address" required class="email-input">
-        <button type="submit" class="email-submit">Get Free Worksheets →</button>
-      </form>
-      <iframe name="kit-iframe-ws" style="display:none;"></iframe>
+      <div class="klaviyo-form-X45k9d"></div>
+      <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/VruXqp/klaviyo.js?company_id=VruXqp"></script>
       <p class="email-note">No spam. Unsubscribe anytime.</p>
     </div>
 
@@ -1009,6 +1007,10 @@ async function generatePages() {
 
   // ── DRILL PAGES
   const drillPages = generateDrillPagesV2(worksheets, sharedCSS, siteHeader, siteFooter, gradeColor, capitalize, formatTopic, formatTheme, subjectColor, worksheetCard, getCharSVG);
+
+
+  // Generate individual drill pages (old generator — produces per-drill pages with schema, OG, badge, content)
+  const individualDrillPages = generateDrillPages(worksheets, sharedCSS, siteHeader, siteFooter, gradeColor, capitalize, formatTopic, formatTheme);
 
 
   // ── DRILL HUB PAGES ───────────────────────────────────────────────────────
@@ -1521,26 +1523,43 @@ async function generatePages() {
     .map(([k, d]) => ({ url: '/free-' + d.subject + '-worksheets/' + d.topic.replace(/ /g, '-') + '/', priority: '0.85', freq: 'daily' }));
 
 
-  // ── 5. SITEMAP ────────────────────────────────────────────────────────────
+  // ── 5. SITEMAP (filesystem-based — only includes pages that actually exist) ──
   const baseUrl = 'https://examel.com';
-  const sitemapUrls = [
-    { url: '/', priority: '1.0', freq: 'daily' },
-    ...subjects.map(s => ({ url: `/free-${s}-worksheets/`, priority: '0.9', freq: 'daily' })),
-    ...subjects.flatMap(s => grades.map(g => ({ url: `/free-${s}-worksheets/grade-${g}/`, priority: '0.85', freq: 'daily' }))),
-    ...grades.map(g => ({ url: `/free-worksheets/grade-${g}/`, priority: '0.85', freq: 'daily' })),
-    ...worksheets.filter(ws => !ws.format || ws.format === 'worksheet').map(ws => ({ url: `/worksheets/${ws.slug}/`, priority: '0.7', freq: 'monthly' })),
-    ...wordSearches.map(ws => ({ url: `/word-searches/${ws.subject}/grade-${ws.grade}/${ws.slug}/`, priority: '0.75', freq: 'monthly' })),
-    ...drillPages.map(ws => ({ url: `/drills/${ws.subject}/grade-${ws.grade}/${ws.slug}/`, priority: '0.75', freq: 'monthly' })),
-    ...vocabMatchPages.map(ws => ({ url: `/vocab-match/${ws.subject}/grade-${ws.grade}/${ws.slug}/`, priority: '0.75', freq: 'monthly' })),
-    ...vocabSubjects.map(s => ({ url: `/free-${s}-vocabulary/`, priority: '0.85', freq: 'daily' })),
-    ...readingPassagePages.map(ws => ({ url: `/reading-passages/grade-${ws.grade}/${ws.slug}/`, priority: '0.8', freq: 'monthly' })),
-    { url: '/free-reading-passages/', priority: '0.9', freq: 'daily' },
-    ...rpGrades.map(g => ({ url: `/free-reading-passages/grade-${g}/`, priority: '0.85', freq: 'daily' })),
-    { url: '/free-math-drills/', priority: '0.9', freq: 'daily' },
-    ...drillTopics.map(t => ({ url: `/free-${t}-drills/`, priority: '0.85', freq: 'daily' }))
-  ,
-    ...topicHubUrls
-  ];
+  const sitemapUrls = [];
+  
+  // Scan filesystem for all index.html pages
+  function scanPages(dir, depth) {
+    try {
+      const entries = fs.readdirSync(dir, { withFileTypes: true });
+      for (const e of entries) {
+        if (e.name === '.git' || e.name === 'node_modules' || e.name === 'downloads' || e.name === 'thumbnails') continue;
+        const full = path.join(dir, e.name);
+        if (e.isDirectory()) scanPages(full, depth + 1);
+        else if (e.name === 'index.html') {
+          const rel = '/' + full.replace('/opt/examel/examel-pages/', '').replace('/index.html', '') + '/';
+          // Assign priority based on page type
+          let priority = '0.7';
+          let freq = 'monthly';
+          if (rel === '//') { priority = '1.0'; freq = 'daily'; } // homepage
+          else if (rel.match(/^\/free-[^/]+-worksheets\/$/)) { priority = '0.9'; freq = 'daily'; } // subject hubs
+          else if (rel.match(/^\/free-[^/]+-worksheets\/grade-/)) { priority = '0.85'; freq = 'daily'; } // grade pages
+          else if (rel.match(/^\/free-[^/]+-worksheets\/[^/]+\/$/)) { priority = '0.85'; freq = 'daily'; } // topic hubs
+          else if (rel.match(/^\/free-(math-drills|reading-passages|.*-vocabulary)/)) { priority = '0.9'; freq = 'daily'; } // format hubs
+          else if (rel.match(/^\/free-worksheets/)) { priority = '0.85'; freq = 'daily'; } // master hub
+          else if (rel.startsWith('/about/') || rel.startsWith('/terms/') || rel.startsWith('/privacy')) { priority = '0.3'; freq = 'monthly'; }
+          else if (rel.startsWith('/worksheets/')) { priority = '0.7'; freq = 'monthly'; }
+          else if (rel.startsWith('/drills/')) { priority = '0.7'; freq = 'monthly'; }
+          else if (rel.startsWith('/vocab-match/')) { priority = '0.75'; freq = 'monthly'; }
+          else if (rel.startsWith('/reading-passages/')) { priority = '0.8'; freq = 'monthly'; }
+          else if (rel.startsWith('/word-searches/')) { priority = '0.7'; freq = 'monthly'; }
+          
+          const url = (rel === '//' || rel === '/index.html/') ? '/' : rel;
+          sitemapUrls.push({ url, priority, freq });
+        }
+      }
+    } catch(e) {}
+  }
+  scanPages('/opt/examel/examel-pages', 0);
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

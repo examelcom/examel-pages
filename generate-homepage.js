@@ -527,7 +527,7 @@ function examelSubscribe(){
   var email=document.getElementById('emailInput').value.trim();
   var msg=document.getElementById('emailMsg');
   if(!email||!email.includes('@')){msg.style.display='block';msg.style.background='#FFF5F5';msg.style.color='#D63031';msg.textContent='Please enter a valid email address.';return;}
-  fetch('https://app.kit.com/forms/9220999/subscriptions',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:'email_address='+encodeURIComponent(email)})
+  fetch('https://manage.klaviyo.com/api/subscribe',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:'email_address='+encodeURIComponent(email)})
   .then(function(r){msg.style.display='block';if(r.ok||r.status===200||r.status===201){msg.style.background='#F0FDF4';msg.style.color='#43A047';msg.textContent='You are in! Check your email to confirm.';}else{msg.style.background='#FFF5F5';msg.style.color='#D63031';msg.textContent='Something went wrong. Please try again.';}})
   .catch(function(){msg.style.display='block';msg.style.background='#FFF5F5';msg.style.color='#D63031';msg.textContent='Something went wrong. Please try again.';});
 }
