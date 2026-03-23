@@ -6,211 +6,6 @@
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://examel.com/drills/Math/grade-1/drill-math-grade1-division-animals-standard/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/drills/Math/grade-1/drill-math-grade1-division-superheroes-beginner/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/drills/Math/grade-1/drill-math-grade1-division-underwater-challenge/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/drills/Math/grade-1/drill-math-grade1-multiplication-jungle-beginner/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/drills/Math/grade-1/drill-math-grade1-multiplication-robots-standard/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/drills/Math/grade-1/drill-math-grade1-multiplication-sports-challenge/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/drills/Math/grade-2/drill-math-grade2-division-cooking-beginner/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/drills/Math/grade-2/drill-math-grade2-division-pirates-standard/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/drills/Math/grade-2/drill-math-grade2-division-space-challenge/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/drills/Math/grade-2/drill-math-grade2-multiplication-animals-challenge/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/drills/Math/grade-2/drill-math-grade2-multiplication-cooking-challenge/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/drills/Math/grade-2/drill-math-grade2-multiplication-dinosaurs-beginner/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/drills/Math/grade-2/drill-math-grade2-multiplication-sports-standard/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/drills/Math/grade-2/drill-math-grade2-multiplication-superheroes-standard/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/drills/Math/grade-3/drill-math-grade3-addition-jungle-standard/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/drills/Math/grade-3/drill-math-grade3-addition-robots-challenge/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/drills/Math/grade-3/drill-math-grade3-addition-underwater-beginner/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/drills/Math/grade-3/drill-math-grade3-multiplication-animals-challenge/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/drills/Math/grade-3/drill-math-grade3-multiplication-dinosaurs-beginner/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/drills/Math/grade-3/drill-math-grade3-multiplication-superheroes-standard/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/drills/Math/grade-3/drill-math-grade3-subtraction-animals-standard/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/drills/Math/grade-3/drill-math-grade3-subtraction-superheroes-beginner/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/drills/Math/grade-3/drill-math-grade3-subtraction-underwater-challenge/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/drills/Math/grade-4/drill-math-grade4-addition-dinosaurs-standard/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/drills/Math/grade-4/drill-math-grade4-addition-space-beginner/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/drills/Math/grade-4/drill-math-grade4-addition-superheroes-challenge/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/drills/Math/grade-4/drill-math-grade4-multiplication-cooking-challenge/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/drills/Math/grade-4/drill-math-grade4-multiplication-robots-beginner/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/drills/Math/grade-4/drill-math-grade4-multiplication-sports-standard/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/drills/Math/grade-4/drill-math-grade4-subtraction-cooking-beginner/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/drills/Math/grade-4/drill-math-grade4-subtraction-pirates-standard/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/drills/Math/grade-4/drill-math-grade4-subtraction-space-challenge/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/drills/Math/grade-5/drill-math-grade5-addition-cooking-challenge/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/drills/Math/grade-5/drill-math-grade5-addition-robots-beginner/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/drills/Math/grade-5/drill-math-grade5-addition-sports-standard/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/drills/Math/grade-6/drill-math-grade6-addition-animals-standard/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/drills/Math/grade-6/drill-math-grade6-addition-superheroes-beginner/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/drills/Math/grade-6/drill-math-grade6-addition-underwater-challenge/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/drills/Math/grade-6/drill-math-grade6-multiplication-jungle-beginner/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/drills/Math/grade-6/drill-math-grade6-multiplication-robots-standard/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/drills/Math/grade-6/drill-math-grade6-multiplication-sports-challenge/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://examel.com/drills/math/grade-1/drill-math-grade1-adding-multiples-of-10-art-gallery-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -716,6 +511,21 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/drills/math/grade-1/drill-math-grade1-division-animals-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-1/drill-math-grade1-division-superheroes-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-1/drill-math-grade1-division-underwater-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/drills/math/grade-1/drill-math-grade1-doubles-facts-cooking-beginner/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -867,6 +677,21 @@
   </url>
   <url>
     <loc>https://examel.com/drills/math/grade-1/drill-math-grade1-mixed-add-subtract-travel-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-1/drill-math-grade1-multiplication-jungle-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-1/drill-math-grade1-multiplication-robots-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-1/drill-math-grade1-multiplication-sports-challenge/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2061,6 +1886,21 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/drills/math/grade-2/drill-math-grade2-division-cooking-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-2/drill-math-grade2-division-pirates-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-2/drill-math-grade2-division-space-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/drills/math/grade-2/drill-math-grade2-doubles-facts-animal-helpers-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -2192,6 +2032,31 @@
   </url>
   <url>
     <loc>https://examel.com/drills/math/grade-2/drill-math-grade2-mixed-add-subtract-volleyball-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-2/drill-math-grade2-multiplication-animals-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-2/drill-math-grade2-multiplication-cooking-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-2/drill-math-grade2-multiplication-dinosaurs-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-2/drill-math-grade2-multiplication-sports-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-2/drill-math-grade2-multiplication-superheroes-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -2936,6 +2801,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/drills/math/grade-3/drill-math-grade3-addition-jungle-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/drills/math/grade-3/drill-math-grade3-addition-no-regrouping-detectives-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -2982,6 +2852,16 @@
   </url>
   <url>
     <loc>https://examel.com/drills/math/grade-3/drill-math-grade3-addition-no-regrouping-zookeeper-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-3/drill-math-grade3-addition-robots-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-3/drill-math-grade3-addition-underwater-beginner/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -3496,6 +3376,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/drills/math/grade-3/drill-math-grade3-multiplication-animals-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/drills/math/grade-3/drill-math-grade3-multiplication-arctic-animals-beginner/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -3557,6 +3442,11 @@
   </url>
   <url>
     <loc>https://examel.com/drills/math/grade-3/drill-math-grade3-multiplication-desert-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-3/drill-math-grade3-multiplication-dinosaurs-beginner/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -3756,6 +3646,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/drills/math/grade-3/drill-math-grade3-multiplication-superheroes-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/drills/math/grade-3/drill-math-grade3-multiplication-thanksgiving-beginner/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -3826,6 +3721,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/drills/math/grade-3/drill-math-grade3-subtraction-animals-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/drills/math/grade-3/drill-math-grade3-subtraction-no-borrowing-geese-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -3842,6 +3742,16 @@
   </url>
   <url>
     <loc>https://examel.com/drills/math/grade-3/drill-math-grade3-subtraction-no-borrowing-meteorology-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-3/drill-math-grade3-subtraction-superheroes-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-3/drill-math-grade3-subtraction-underwater-challenge/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -4327,6 +4237,21 @@
   </url>
   <url>
     <loc>https://examel.com/drills/math/grade-4/drill-math-grade4-3-digit-subtraction-veterans-day-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-4/drill-math-grade4-addition-dinosaurs-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-4/drill-math-grade4-addition-space-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-4/drill-math-grade4-addition-superheroes-challenge/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -4941,6 +4866,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/drills/math/grade-4/drill-math-grade4-multiplication-cooking-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/drills/math/grade-4/drill-math-grade4-multiplication-corn-maze-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -5136,6 +5066,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/drills/math/grade-4/drill-math-grade4-multiplication-robots-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/drills/math/grade-4/drill-math-grade4-multiplication-robots-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -5152,6 +5087,11 @@
   </url>
   <url>
     <loc>https://examel.com/drills/math/grade-4/drill-math-grade4-multiplication-spelling-bee-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-4/drill-math-grade4-multiplication-sports-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -5282,6 +5222,21 @@
   </url>
   <url>
     <loc>https://examel.com/drills/math/grade-4/drill-math-grade4-multiplying-by-10-100-talent-show-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-4/drill-math-grade4-subtraction-cooking-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-4/drill-math-grade4-subtraction-pirates-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-4/drill-math-grade4-subtraction-space-challenge/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -5717,6 +5672,21 @@
   </url>
   <url>
     <loc>https://examel.com/drills/math/grade-5/drill-math-grade5-2-digit-by-2-digit-zip-lining-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-5/drill-math-grade5-addition-cooking-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-5/drill-math-grade5-addition-robots-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-5/drill-math-grade5-addition-sports-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -6911,6 +6881,21 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/drills/math/grade-6/drill-math-grade6-addition-animals-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-6/drill-math-grade6-addition-superheroes-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-6/drill-math-grade6-addition-underwater-challenge/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/drills/math/grade-6/drill-math-grade6-division-3d-printing-challenge/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -8057,6 +8042,21 @@
   </url>
   <url>
     <loc>https://examel.com/drills/math/grade-6/drill-math-grade6-division-zoo-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-6/drill-math-grade6-multiplication-jungle-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-6/drill-math-grade6-multiplication-robots-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/drills/math/grade-6/drill-math-grade6-multiplication-sports-challenge/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
