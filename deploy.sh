@@ -39,7 +39,7 @@ echo "✅ Homepage generated" | tee -a $LOG
 
 # Step 3b: Post-build inject (schema/OG for hub pages)
 echo "▶ Step 3b: Post-build inject..." | tee -a $LOG
-echo "⚠️  post-build-inject.js missing — skipping (ISSUE-009)" >> $LOG 2>&1
+node $PAGES_DIR/post-build-inject.js >> $LOG 2>&1 || { echo "🔴 BLOCKED: post-build-inject.js failed" | tee -a $LOG; exit 1; }
 echo "✅ Post-build inject done" | tee -a $LOG
 
 # Step 4: Health monitor — block on criticals
