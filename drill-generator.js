@@ -1,5 +1,31 @@
 const fs = require('fs');
 
+// Operation mapping for drill topics
+const DRILL_OPERATIONS = {
+  'addition':'addition','single-digit-addition':'addition','addition-within-10':'addition','addition-within-20':'addition',
+  'doubles-facts':'addition','adding-three-numbers':'addition','adding-multiples-of-10':'addition',
+  'addition-no-regrouping':'addition','addition-with-regrouping':'addition','3-digit-addition':'addition',
+  'subtraction':'subtraction','single-digit-subtraction':'subtraction','subtraction-within-10':'subtraction',
+  'subtraction-within-20':'subtraction','subtracting-multiples-of-10':'subtraction','subtraction-no-borrowing':'subtraction',
+  'subtraction-with-borrowing':'subtraction','3-digit-subtraction':'subtraction','mixed-add-subtract':'subtraction',
+  'multiplication':'multiplication','multiplication-facts-0-12':'multiplication','2-digit-by-1-digit':'multiplication',
+  '2-digit-by-2-digit':'multiplication','multiplying-by-10-100':'multiplication','mixed-mult-division':'multiplication',
+  'times-table-2':'multiplication','times-table-3':'multiplication','times-table-4':'multiplication',
+  'times-table-5':'multiplication','times-table-6':'multiplication','times-table-7':'multiplication',
+  'times-table-8':'multiplication','times-table-9':'multiplication','times-table-10':'multiplication',
+  'times-table-11':'multiplication','times-table-12':'multiplication',
+  'division':'division','basic-division-facts':'division','division-by-2':'division','division-by-5':'division',
+  'division-by-10':'division','division-with-remainders':'division','dividing-by-10-100':'division',
+  'long-division-2-digit-divisor':'division',
+  'mad-minute-addition':'mixed','mad-minute-multiplication':'mixed','mixed-all-operations':'mixed'
+};
+
+function getDrillTopicUrl(topic) {
+  var t = (topic || '').toLowerCase().replace(/ /g, '-');
+  var op = DRILL_OPERATIONS[t] || 'addition';
+  return '/free-math-drills/' + op + '/' + t + '/';
+}
+
 function generateDrillPages(worksheets, sharedCSS, siteHeader, siteFooter, gradeColor, capitalize, formatTopic, formatTheme) {
   const drills = worksheets.filter(ws => ws.format === 'drill-grid');
   console.log(`Found ${drills.length} drill pages to generate`);
@@ -54,7 +80,7 @@ function generateDrillPages(worksheets, sharedCSS, siteHeader, siteFooter, grade
   <div class="breadcrumb">
     <a href="https://examel.com">Home</a><span>›</span>
     <a href="/free-math-drills/">Free Math Drills</a><span>›</span>
-    <a href="/free-${ws.topic}-drills/">Free ${topicName} Drills</a><span>›</span>
+    <a href="${getDrillTopicUrl(ws.topic)}">Free ${topicName} Drills</a><span>›</span>
     <a href="/drills/${ws.subject}/grade-${ws.grade}/">Grade ${ws.grade}</a><span>›</span>
     ${ws.title}
   </div>
@@ -123,7 +149,7 @@ function generateDrillPages(worksheets, sharedCSS, siteHeader, siteFooter, grade
     </div>
     <div class="nav-links">
       <a href="/drills/${ws.subject}/grade-${ws.grade}/">← All Grade ${ws.grade} Math Drills</a>
-      <a href="/free-${ws.topic}-drills/">← All ${topicName} Drills</a>
+      <a href="${getDrillTopicUrl(ws.topic)}">← All ${topicName} Drills</a>
       <a href="/free-math-drills/">← All Math Drills</a>
       <a href="https://examel.com">← Examel Home</a>
     </div>

@@ -4,6 +4,7 @@ const { createClient } = require('@supabase/supabase-js');
 const fs = require('fs');
 const { generateWordSearchPages } = require('./word-search-generator.js');
 const { generateDrillPagesV2 } = require('./drill-generator-v2.js');
+const { generateDrillPages } = require("./drill-generator.js");
 const { generateVocabMatchPages } = require('./vocab-match-generator.js');
 const { generateReadingPassagePages } = require('./reading-passage-generator.js');
 const { getPedagogicalLinks } = require('./linking-engine.js');
