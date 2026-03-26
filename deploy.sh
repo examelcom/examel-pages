@@ -51,6 +51,11 @@ echo "▶ Step 3b: Post-build inject..." | tee -a $LOG
 node $PAGES_DIR/post-build-inject.js >> $LOG 2>&1 || { echo "🔴 BLOCKED: post-build-inject.js failed" | tee -a $LOG; exit 1; }
 echo "✅ Post-build inject done" | tee -a $LOG
 
+# Step 3d: Umami analytics inject
+echo "▶ Step 3d: Umami analytics inject..." | tee -a $LOG
+node $PAGES_DIR/umami-inject.js >> $LOG 2>&1 || { echo "🔴 BLOCKED: umami-inject.js failed" | tee -a $LOG; exit 1; }
+echo "✅ Umami inject done" | tee -a $LOG
+
 # Step 3c: Deploy gate
 echo "▶ Step 3c: Deploy gate..." | tee -a $LOG
 node $PAGES_DIR/deploy-gate.js >> $LOG 2>&1
