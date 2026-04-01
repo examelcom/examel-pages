@@ -19,7 +19,7 @@ function subjectColorLight(s) {
 function generateWorksheetPages(worksheets, sharedCSS, siteHeader, siteFooter, helpers) {
   const { gradeColor, capitalize, formatTopic, formatTheme, subjectColor, worksheetCard, getPedagogicalLinks } = helpers;
 
-  const wsOnly = worksheets.filter(w => !w.format || w.format === 'worksheet');
+  const wsOnly = worksheets.filter(w => !w.format || w.format === 'worksheet' || (w.format && w.format.startsWith('game-')));
   let count = 0;
 
   for (const ws of wsOnly) {

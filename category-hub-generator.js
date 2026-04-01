@@ -34,7 +34,7 @@ const SUBJECT_EDUCATION = {
 function generateCategoryHubs(worksheets, sharedCSS, siteHeader, siteFooter, helpers) {
   const { gradeColor, capitalize, formatTopic, formatTheme, subjectColor, worksheetCard } = helpers;
 
-  const wsOnly    = worksheets.filter(w => !w.format || w.format === 'worksheet');
+  const wsOnly    = worksheets.filter(w => !w.format || w.format === 'worksheet' || (w.format && w.format.startsWith('game-')));
   const subjects  = [...new Set(wsOnly.map(w => w.subject.toLowerCase()))];
   const grades    = [...new Set(wsOnly.map(w => w.grade))].sort((a, b) => a - b);
   const allGrades = [...new Set(worksheets.map(w => w.grade))].sort((a, b) => a - b);
@@ -210,7 +210,7 @@ function generateCategoryHubs(worksheets, sharedCSS, siteHeader, siteFooter, hel
   fs.mkdirSync('/opt/examel/examel-pages/free-worksheets', { recursive: true });
 
   for (const grade of allGrades) {
-    const filtered = worksheets.filter(w => w.grade === grade && (!w.format || w.format === 'worksheet'));
+    const filtered = worksheets.filter(w => w.grade === grade && (!w.format || w.format === 'worksheet' || (w.format && w.format.startsWith('game-'))));
     if (filtered.length === 0) continue;
     const color        = gradeColor(grade);
     const dir          = `/opt/examel/examel-pages/free-worksheets/grade-${grade}`;
@@ -243,7 +243,7 @@ function generateCategoryHubs(worksheets, sharedCSS, siteHeader, siteFooter, hel
   </div>
   <div class="hub-grid">
     ${allSubjects.map(s => {
-      const count = worksheets.filter(w => w.subject.toLowerCase() === s && w.grade === grade && (!w.format || w.format === 'worksheet')).length;
+      const count = worksheets.filter(w => w.subject.toLowerCase() === s && w.grade === grade && (!w.format || w.format === 'worksheet' || (w.format && w.format.startsWith('game-')))).length;
       if (count === 0) return '';
       const icons = { math: '➕', english: '📖', science: '🔬' };
       return `<a href="/free-${s}-worksheets/grade-${grade}/" class="hub-card" style="border-top:3px solid ${color}">
