@@ -30,6 +30,8 @@ const { generateCategoryHubs }   = require('./category-hub-generator.js');
 const { generateTopicHubs }      = require('./topic-hub-generator.js');
 const { generateFormatHubs }     = require('./format-hub-generator.js');
 const { generateSitemap }        = require('./sitemap-generator.js');
+const { generateGamePages }    = require('./game-generator.js');
+const { generatePlannerPages } = require('./planner-generator.js');
 
 const supabase = createClient(
   process.env.SUPABASE_URL,
@@ -379,6 +381,8 @@ async function main() {
   if (shouldRun('worksheets'))  generateWorksheetPages(worksheets, sharedCSS, siteHeader, siteFooter, helpers);
   if (shouldRun('category'))    generateCategoryHubs(worksheets, sharedCSS, siteHeader, siteFooter, helpers);
   if (shouldRun('topic-hub'))   generateTopicHubs(worksheets, sharedCSS, siteHeader, siteFooter, helpers);
+  if (shouldRun('games'))    generateGamePages(worksheets, sharedCSS, siteHeader, siteFooter, helpers);
+  if (shouldRun('planners')) generatePlannerPages(worksheets, sharedCSS, siteHeader, siteFooter, helpers);
   if (shouldRun('format-hubs')) generateFormatHubs(worksheets, sharedCSS, siteHeader, siteFooter, helpers);
 
   // ── SITEMAP ───────────────────────────────────────────────────────────────
