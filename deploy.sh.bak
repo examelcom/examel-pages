@@ -88,8 +88,4 @@ if [ $? -ne 0 ]; then
 fi
 echo "✅ Pushed to GitHub" | tee -a $LOG
 
-# Step 6: Sitemap ping
-echo "▶ Step 6: Sitemap ping..." | tee -a $LOG
-node /opt/examel/pdf-engine/seo/indexer-agent.js --sitemap-only 2>&1 | grep -E "ping|Sitemap" | tee -a $LOG
-
 echo "🚀 DEPLOY COMPLETE: $(date '+%Y-%m-%d %H:%M:%S')" | tee -a $LOG
