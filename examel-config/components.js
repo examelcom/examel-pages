@@ -31,6 +31,15 @@ function buildSchema(data) {
   if (data.teaches) schema.teaches = data.teaches;
   if (data.thumbnail) schema.thumbnailUrl = data.thumbnail;
   if (data.isFree !== false) schema.isAccessibleForFree = true;
+  if (data.ccss) {
+    schema.educationalAlignment = {
+      "@type": "AlignmentObject",
+      "alignmentType": "teaches",
+      "educationalFramework": "Common Core State Standards",
+      "targetName": data.ccss
+    };
+  }
+  if (data.typicalAgeRange) schema.typicalAgeRange = data.typicalAgeRange;
   return `<script type="application/ld+json">${JSON.stringify(schema)}</script>`;
 }
 
@@ -104,8 +113,39 @@ function buildAnalytics() {
 <script defer src="https://cloud.umami.is/script.js" data-website-id="a6b927e1-8ee1-445f-ae65-d50931867d37"></script>`;
 }
 
+// ── BREADCRUMB SCHEMA ──
+function buildBreadcrumbSchema(items) {
+  // items = [{name, url}, {name, url}, ...]
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": items.map((item, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": item.name,
+      "item": item.url
+    }))
+  };
+  return `<script type="application/ld+json">${JSON.stringify(schema)}</script>`;
+}
+
+// ── ORGANIZATION SCHEMA ──
+function buildOrganizationSchema() {
+  return `<script type="application/ld+json">${JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Examel",
+    "url": "https://examel.com",
+    "logo": "https://examel.com/og-default.png",
+    "description": "Free printable K-8 worksheets, games, and planners aligned to Common Core standards. Every worksheet a teacher would trust.",
+    "sameAs": []
+  })}</script>`;
+}
+
 module.exports = {
   buildAnalytics,
+  buildBreadcrumbSchema,
+  buildOrganizationSchema,
   buildCharSVG,
   buildAnswerBadge,
   buildEmailCapture,

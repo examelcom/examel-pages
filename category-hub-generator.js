@@ -89,7 +89,7 @@ ${buildAnalytics()}
   <div style="background:white;border-bottom:1px solid #EDE8DF;padding:14px 24px;">
     <div style="max-width:1100px;margin:0 auto;display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
       <span style="font-size:14px;font-weight:700;color:#A89FAE;font-family:'Outfit',sans-serif;">Grade:</span>
-      ${grades.map(g => `<a href="/free-${subject}-worksheets/grade-${g}/" style="font-size:14px;font-weight:700;text-decoration:none;padding:6px 16px;border-radius:100px;border:2px solid ${g === grade ? color : '#EDE8DF'};background:${g === grade ? color : 'white'};color:${g === grade ? 'white' : '#6B6475'};font-family:'Outfit',sans-serif;">Grade ${g}</a>`).join('')}
+      ${grades.filter(g => wsOnly.some(w => w.subject.toLowerCase() === subject && w.grade === g)).map(g => `<a href="/free-${subject}-worksheets/grade-${g}/" style="font-size:14px;font-weight:700;text-decoration:none;padding:6px 16px;border-radius:100px;border:2px solid ${g === grade ? color : '#EDE8DF'};background:${g === grade ? color : 'white'};color:${g === grade ? 'white' : '#6B6475'};font-family:'Outfit',sans-serif;">Grade ${g}</a>`).join('')}
     </div>
   </div>
   <div class="grid">

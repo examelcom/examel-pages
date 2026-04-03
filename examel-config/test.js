@@ -7,7 +7,7 @@
 const fs = require('fs');
 const path = require('path');
 const { getPageUrl, getDirPath, getDrillTopicUrl, getCardUrl, sanitize } = require('./urls');
-const { buildSchema, buildOG, buildAnswerBadge, buildEmailCapture, buildAnalytics } = require('./components');
+const { buildSchema, buildOG, buildAnswerBadge, buildEmailCapture, buildAnalytics, buildBreadcrumbSchema, buildOrganizationSchema } = require('./components');
 const { validatePage } = require('./validator');
 const { processWorksheets } = require('./data-gate');
 
@@ -75,6 +75,13 @@ assert(result.flagged.length === 1, 'data gate: 1 flagged');
 assert(result.clean[0].subject === 'math', 'data gate: subject lowercased');
 
 
+
+// ── SCHEMA TESTS ──
+assert(buildBreadcrumbSchema([{name:'Home',url:'https://examel.com'}]).includes('BreadcrumbList'), 'breadcrumb schema has BreadcrumbList');
+assert(buildOrganizationSchema().includes('Organization'), 'org schema has Organization');
+assert(buildSchema({title:'Test',ccss:'3.OA.7'}).includes('educationalAlignment'), 'schema with ccss has educationalAlignment');
+assert(buildSchema({title:'Test',ccss:'3.OA.7'}).includes('Common Core'), 'schema with ccss has Common Core');
+assert(buildSchema({title:'Test',typicalAgeRange:'8-9'}).includes('typicalAgeRange'), 'schema has typicalAgeRange');
 // ── ANALYTICS TESTS ──
 assert(buildAnalytics().includes('G-QJ7DF8JRPV'), 'analytics has GA4 ID');
 assert(buildAnalytics().includes('umami'), 'analytics has Umami');

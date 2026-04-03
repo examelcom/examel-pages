@@ -76,6 +76,7 @@ async function generate() {
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Examel","url":"https://examel.com","description":"Free printable worksheets for Grades 1-6","potentialAction":{"@type":"SearchAction","target":"https://examel.com/free-worksheets/?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
+  ${buildOrganizationSchema()}
   <style>
     *{box-sizing:border-box;margin:0;padding:0;}
     html{scroll-behavior:smooth;}

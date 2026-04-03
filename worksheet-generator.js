@@ -8,7 +8,7 @@
 const fs = require('fs');
 const {
   getDirPath, getPageUrl, getGradeHubUrl, getSubjectHubUrl,
-  buildSchema, buildOG, buildCharSVG, buildContentBlock, buildAnalytics} = require('./examel-config');
+  buildSchema, buildOG, buildCharSVG, buildContentBlock, buildAnalytics, buildBreadcrumbSchema} = require('./examel-config');
 
 function subjectColorLight(s) {
   const m = { math:'#F5F3FF', english:'#FDF2F8', science:'#ECFDF5', 'drill-grid':'#FEF2F2', reading:'#E0F2FE', vocab:'#FFFBEB' };
@@ -55,7 +55,9 @@ function generateWorksheetPages(worksheets, sharedCSS, siteHeader, siteFooter, h
       subject: capitalize(ws.subject),
       teaches: formatTopic(ws.topic),
       thumbnail: ws.preview_p1_url || `https://examel.com/thumbnails/${ws.slug}.png`,
-      isFree: true
+      isFree: true,
+      ccss: ws.ccss_standard || null,
+      typicalAgeRange: ws.grade ? ((parseInt(ws.grade)+4) + '-' + (parseInt(ws.grade)+6)) : '5-14'
     });
 
     const ogHtml = buildOG({
@@ -76,6 +78,7 @@ function generateWorksheetPages(worksheets, sharedCSS, siteHeader, siteFooter, h
   <link rel="canonical" href="${canonicalUrl}">
   ${ogHtml}
   ${schemaHtml}
+  ${buildBreadcrumbSchema([{name:"Home",url:"https://examel.com"},{name:capitalize(ws.subject),url:"https://examel.com/free-"+ws.subject+"-worksheets/"},{name:"Grade "+ws.grade,url:"https://examel.com/free-"+ws.subject+"-worksheets/grade-"+ws.grade+"/"},{name:ws.title,url:canonicalUrl}])}
   ${sharedCSS}
   <style>
     :root{ --subject:${color}; --subject-light:${colorLight}; }
