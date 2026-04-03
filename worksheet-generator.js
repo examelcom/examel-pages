@@ -8,7 +8,7 @@
 const fs = require('fs');
 const {
   getDirPath, getPageUrl, getGradeHubUrl, getSubjectHubUrl,
-  buildSchema, buildOG, buildCharSVG, buildContentBlock, buildAnalytics, buildBreadcrumbSchema} = require('./examel-config');
+  buildSchema, buildOG, buildCharSVG, buildContentBlock, buildAnalytics, buildBreadcrumbSchema, buildFAQSchema} = require('./examel-config');
 
 function subjectColorLight(s) {
   const m = { math:'#F5F3FF', english:'#FDF2F8', science:'#ECFDF5', 'drill-grid':'#FEF2F2', reading:'#E0F2FE', vocab:'#FFFBEB' };
@@ -67,6 +67,12 @@ function generateWorksheetPages(worksheets, sharedCSS, siteHeader, siteFooter, h
       url: canonicalUrl
     });
 
+    const faqHtml = buildFAQSchema([
+      { question: `What does this ${formatTopic(ws.topic)} worksheet cover?`, answer: `This Grade ${ws.grade} ${capitalize(ws.subject)} worksheet covers ${formatTopic(ws.topic)} with a ${formatTheme(ws.theme)} theme. It includes practice questions with a full answer key for easy grading.` },
+      { question: `What grade level is this worksheet for?`, answer: `This worksheet is designed for Grade ${ws.grade} students (ages ${parseInt(ws.grade)+4}-${parseInt(ws.grade)+6}). It aligns with grade-level expectations for ${capitalize(ws.subject)}.` },
+      { question: `Does this worksheet include an answer key?`, answer: `Yes. Every Examel worksheet includes a complete answer key on the second page, making it easy for teachers and parents to check work instantly.` },
+      { question: `How do I download this worksheet?`, answer: `Click the Download button on this page to get the PDF instantly. No signup or account required. The worksheet prints at US Letter size.` }
+    ]);
     const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -79,6 +85,7 @@ function generateWorksheetPages(worksheets, sharedCSS, siteHeader, siteFooter, h
   ${ogHtml}
   ${schemaHtml}
   ${buildBreadcrumbSchema([{name:"Home",url:"https://examel.com"},{name:capitalize(ws.subject),url:"https://examel.com/free-"+ws.subject+"-worksheets/"},{name:"Grade "+ws.grade,url:"https://examel.com/free-"+ws.subject+"-worksheets/grade-"+ws.grade+"/"},{name:ws.title,url:canonicalUrl}])}
+  ${faqHtml}
   ${sharedCSS}
   <style>
     :root{ --subject:${color}; --subject-light:${colorLight}; }
@@ -153,6 +160,18 @@ function generateWorksheetPages(worksheets, sharedCSS, siteHeader, siteFooter, h
       .info-strip{grid-template-columns:repeat(3,1fr);}
       .sticky-bar-title{display:none;}
     }
+    /* PRINT */
+    @media print{
+      .site-header,.mobile-nav,.sticky-bar,.email-section,.share-row,.share-divider,.btn-download-sub,.site-footer,.site-search,.mobile-menu-btn,.breadcrumb,.ws-hero-char,.download-box,.nav-links{display:none!important;}
+      .ws-hero{background:white!important;color:#1A1420!important;border:none!important;padding:20px 0!important;}
+      .ws-hero h1{color:#1A1420!important;font-size:22px!important;}
+      .ws-badges .ws-badge{background:#EDE8DF!important;color:#1A1420!important;}
+      .preview-desk{break-inside:avoid;padding:0!important;border:none!important;background:none!important;}
+      .preview-paper{box-shadow:none!important;border:1px solid #ccc!important;transform:none!important;}
+      .preview-paper img{height:auto!important;max-height:500px!important;}
+      body{background:white!important;}
+      .ws-container{max-width:100%!important;padding:0!important;}
+    }
   </style>
 ${buildAnalytics()}
 </head>
@@ -168,7 +187,7 @@ ${buildAnalytics()}
   <div class="ws-hero">
     <div class="ws-hero-inner">
       <h1>${ws.title}</h1>
-      <p class="ws-hero-sub">Free printable worksheet — download and print instantly</p>
+      <p class="ws-hero-sub">Printable worksheet — download and print instantly</p>
       <div class="ws-badges">
         <span class="ws-badge">${capitalize(ws.subject)}</span>
         <span class="ws-badge">Grade ${ws.grade}</span>
@@ -203,7 +222,7 @@ ${buildAnalytics()}
     <div class="download-box" id="downloadBox">
       <div class="download-box-label">Ready to print</div>
       <p class="download-box-desc">8 questions with a ${formatTheme(ws.theme)} theme plus a full answer key. Perfect for Grade ${ws.grade} ${capitalize(ws.subject)}.</p>
-      <a href="${downloadUrl}" class="btn-download" id="dlBtn" download onclick="handleDownload(this)">⬇ Download Free Worksheet</a>
+      <a href="${downloadUrl}" class="btn-download" id="dlBtn" download onclick="handleDownload(this)">⬇ Download Worksheet</a>
       <div class="btn-download-sub">
         <a href="${downloadUrl}" target="_blank" class="btn-sub">🖨 Print</a>
         <a href="${downloadUrl}" target="_blank" class="btn-sub">👁 Open PDF</a>
@@ -220,7 +239,7 @@ ${buildAnalytics()}
         </div>
       </div>
       <div class="trust-strip">
-        <span class="trust-item">✓ Free forever</span>
+        <span class="trust-item">✓ Answer keys included</span>
         <span class="trust-item">✓ No login required</span>
         <span class="trust-item">✓ Instant PDF</span>
       </div>
@@ -258,8 +277,8 @@ ${buildAnalytics()}
     ${pedLinksHtml}
 
     <div class="email-section">
-      <h3>📬 Get Free Worksheets Every Week</h3>
-      <p>New themed worksheets added daily. Free for parents and teachers.</p>
+      <h3>📬 Get Worksheets Every Week</h3>
+      <p>New themed worksheets added daily. For parents, teachers, and homeschool families.</p>
       <div class="klaviyo-form-X45k9d"></div>
       <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/VruXqp/klaviyo.js?company_id=VruXqp"></script>
       <p class="email-note">No spam. Unsubscribe anytime.</p>
@@ -268,7 +287,7 @@ ${buildAnalytics()}
     <div class="seo-prose">
       <h3>About this ${capitalize(ws.subject)} worksheet for Grade ${ws.grade}</h3>
       ${ws.seo_description ? `<p>${ws.seo_description}</p>` : ''}
-      <p>This free printable ${capitalize(ws.subject)} worksheet is designed for Grade ${ws.grade} students and covers ${formatTopic(ws.topic)}. The ${formatTheme(ws.theme)} theme keeps kids engaged while they practice essential ${capitalize(ws.subject)} skills. Every worksheet includes a full answer key making it easy for parents and teachers to check work instantly. Aligned to Common Core State Standards (CCSS) for Grade ${ws.grade} ${capitalize(ws.subject)}. Print-ready at US Letter size. No login required — download and print in seconds.</p>
+      <p>This printable ${capitalize(ws.subject)} worksheet is designed for Grade ${ws.grade} students and covers ${formatTopic(ws.topic)}. The ${formatTheme(ws.theme)} theme keeps kids engaged while they practice essential ${capitalize(ws.subject)} skills. Every worksheet includes a full answer key making it easy for parents and teachers to check work instantly. Aligned to Common Core State Standards (CCSS) for Grade ${ws.grade} ${capitalize(ws.subject)}. Print-ready at US Letter size. No login required — download and print in seconds.</p>
       <p style="font-size:12px;color:#A89FAE;margin-top:12px;">Last updated: ${ws.created_at ? new Date(ws.created_at).toLocaleDateString('en-US', {month:'long', year:'numeric'}) : new Date().toLocaleDateString('en-US', {month:'long', year:'numeric'})}</p>
     </div>
 
@@ -280,7 +299,7 @@ ${buildAnalytics()}
 
     <div style="background:#1C1526;border-radius:20px;padding:28px 32px;margin-bottom:28px;color:white;">
       <div style="font-size:16px;font-weight:800;margin-bottom:10px;font-family:Outfit,sans-serif;">About Examel</div>
-      <p style="font-size:13px;color:rgba(255,255,255,0.6);line-height:1.8;margin:0;">Examel provides 10,000+ free printable worksheets for Grades 1–6, aligned to Common Core State Standards. Every worksheet is reviewed for accuracy and includes a full answer key. New worksheets added weekly across Math, English, and Science. Built by educators for parents, teachers, and homeschool families.</p>
+      <p style="font-size:13px;color:rgba(255,255,255,0.6);line-height:1.8;margin:0;">Examel provides 10,000+ printable worksheets for Grades 1–6, aligned to Common Core State Standards. Every worksheet is reviewed for accuracy and includes a full answer key. New worksheets added weekly across Math, English, and Science. Built by educators for parents, teachers, and homeschool families.</p>
     </div>
 
     <div class="nav-links">
@@ -292,7 +311,7 @@ ${buildAnalytics()}
 
   <div class="sticky-bar" id="stickyBar">
     <span class="sticky-bar-title">${ws.title}</span>
-    <a href="${downloadUrl}" class="sticky-bar-btn" download>⬇ Download Free</a>
+    <a href="${downloadUrl}" class="sticky-bar-btn" download>⬇ Download PDF</a>
   </div>
 
   <script>

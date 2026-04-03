@@ -78,7 +78,7 @@ ${buildAnalytics()}
   </div>
   <div class="ws-hero">
     <h1>${ws.title}</h1>
-    <p>Free printable vocabulary match worksheet — download and print instantly</p>
+    <p>Printable vocabulary match worksheet — download and print instantly</p>
     <div class="badges">
       <span class="badge">Grade ${ws.grade}</span>
       <span class="badge">${topicName}</span>
@@ -137,7 +137,7 @@ ${buildAnalytics()}
     ${renderContentBlock(ws)}
     <div class="seo-text">
       <h3>About this Grade ${ws.grade} ${topicName} Vocabulary Worksheet</h3>
-      <p>This free printable vocabulary match worksheet helps Grade ${ws.grade} ${capitalize(ws.subject)} students learn key ${topicName} terms. The ${themeName} theme makes vocabulary practice engaging while students build academic language skills. Includes answer key and bonus writing challenge${ccssText}.</p>
+      <p>This printable vocabulary match worksheet helps Grade ${ws.grade} ${capitalize(ws.subject)} students learn key ${topicName} terms. The ${themeName} theme makes vocabulary practice engaging while students build academic language skills. Includes answer key and bonus writing challenge${ccssText}.</p>
     </div>
     <div class="nav-links">
       <a href="/free-${ws.subject}-vocabulary/">← All ${capitalize(ws.subject)} Vocabulary</a>

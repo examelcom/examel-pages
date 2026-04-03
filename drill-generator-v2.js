@@ -128,7 +128,7 @@ function renderContentBlock(ws) {
       'educationalLevel': gradeText,
       'subject': 'Mathematics',
       'teaches': intent.skill,
-      'keywords': intent.searchIntent + ', free printable math drills, ' + intent.ccss,
+      'keywords': intent.searchIntent + ', printable math drills, ' + intent.ccss,
       'url': 'https://examel.com/free-math-drills/' + intent.operation + '/' + intent.topic + '/',
       'isAccessibleForFree': true,
       'provider': { '@type': 'Organization', 'name': 'Examel', 'url': 'https://examel.com' }
@@ -225,7 +225,7 @@ function renderContentBlock(ws) {
       '</div>\n' +
       '<div class="intent-hero">\n' +
         '<div class="intent-hero-inner">\n' +
-          '<h1>Free <span>' + intent.skill + '</span> Drills</h1>\n' +
+          '<h1><span>' + intent.skill + '</span> Drills</h1>\n' +
           '<p class="intent-hero-sub">' + metaDesc + '</p>\n' +
           '<div class="intent-badges">\n' +
             '<span class="intent-badge">' + gradeText + '</span>\n' +
@@ -305,7 +305,7 @@ function renderContentBlock(ws) {
       '</style>\n' + examelConfig.buildAnalytics() + '\n</head>\n<body>\n' +
       siteHeader + '\n' +
       '<div class="breadcrumb"><a href="https://examel.com">Home</a><span class="sep">›</span><a href="/free-math-drills/">Math Drills</a><span class="sep">›</span>' + capitalize(op) + '</div>\n' +
-      '<div class="hub-hero"><h1>Free <span>' + capitalize(op) + '</span> Drills</h1><p>' + totalDrills + '+ free printable ' + op + ' drills with answer keys. From basic facts to multi-digit computation.</p></div>\n' +
+      '<div class="hub-hero"><h1><span>' + capitalize(op) + '</span> Drills</h1><p>' + totalDrills + '+ printable ' + op + ' drills with answer keys. From basic facts to multi-digit computation.</p></div>\n' +
       '<div class="hub-content"><div class="hub-grid">' + intentCards + '</div></div>\n' +
       siteFooter + '\n</body>\n</html>';
 
@@ -355,7 +355,7 @@ function renderContentBlock(ws) {
     '</style>\n' + examelConfig.buildAnalytics() + '\n</head>\n<body>\n' +
     siteHeader + '\n' +
     '<div class="breadcrumb"><a href="https://examel.com">Home</a><span class="sep">›</span>Math Drills</div>\n' +
-    '<div class="hub-hero"><h1>Free <span>Math Drills</span></h1><p>' + totalAllDrills + '+ free printable math drills with answer keys. Themed practice sheets for addition, subtraction, multiplication, and division.</p></div>\n' +
+    '<div class="hub-hero"><h1><span>Math Drills</span></h1><p>' + totalAllDrills + '+ printable math drills with answer keys. Themed practice sheets for addition, subtraction, multiplication, and division.</p></div>\n' +
     '<div class="hub-content"><div class="hub-grid">' + mainHubCards + '</div></div>\n' +
     siteFooter + '\n</body>\n</html>';
 

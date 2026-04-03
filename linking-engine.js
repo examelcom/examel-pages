@@ -19,6 +19,7 @@ try {
 } catch (e) {
   console.warn('[linking-engine] curriculum-map.js not found, using fallback linking');
 }
+const { getPageUrl } = require('./examel-config/urls.js');
 
 // Skill progression: for a given subject+grade+topic, what comes next?
 function getNextSkill(subject, grade, topic) {
@@ -36,13 +37,9 @@ function normTopic(t) {
   return (t || '').toLowerCase().replace(/-/g, ' ').trim();
 }
 
-// Build URL for a worksheet
+// Build URL for a worksheet — delegates to examel-config/urls.js (single source of truth)
 function buildUrl(ws) {
-  if (ws.format === 'drill-grid') return `/free-math-drills/${ws.slug}/`;
-  if (ws.format === 'vocab-match') return `/vocab-match/${ws.subject.toLowerCase()}/grade-${ws.grade}/${ws.slug}/`;
-  if (ws.format === 'reading-passage') return `/reading-passages/grade-${ws.grade}/${ws.slug}/`;
-  if (ws.format === 'word-search') return `/word-searches/${ws.subject.toLowerCase()}/grade-${ws.grade}/${ws.slug}/`;
-  return `/worksheets/${ws.slug}/`;
+  return getPageUrl(ws);
 }
 
 function capitalize(s) {

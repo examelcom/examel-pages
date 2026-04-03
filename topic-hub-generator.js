@@ -47,7 +47,7 @@ function generateTopicHubs(worksheets, sharedCSS, siteHeader, siteFooter, helper
     const topicSlug    = topic.replace(/ /g, '-');
     const eduKey       = subj + '|' + topic.replace(/-/g, ' ');
     const edu          = TOPIC_EDUCATION[eduKey] || {
-      intro: `Practice ${topicDisplay.toLowerCase()} with our free printable worksheets for Grades 1-6. Each worksheet includes an answer key aligned to Common Core standards.`,
+      intro: `Practice ${topicDisplay.toLowerCase()} with our printable worksheets for Grades 1-6. Each worksheet includes an answer key aligned to Common Core standards.`,
       ccss: '', progression: ''
     };
 
@@ -77,7 +77,7 @@ function generateTopicHubs(worksheets, sharedCSS, siteHeader, siteFooter, helper
   <title>Free ${topicDisplay} Worksheets | Grades ${gradesAvailable[0]}-${gradesAvailable[gradesAvailable.length - 1]} | Printable PDF | Examel</title>
   <meta name="description" content="Free printable ${topicDisplay.toLowerCase()} worksheets for Grades ${gradesAvailable[0]}-${gradesAvailable[gradesAvailable.length - 1]}. ${totalCount}+ worksheets with answer keys. Download PDF instantly. Common Core aligned.">
   <link rel="canonical" href="${canonicalUrl}">
-  ${buildOG({ title: `Free ${topicDisplay} Worksheets | Examel`, description: `${totalCount}+ free printable ${topicDisplay.toLowerCase()} worksheets with answer keys.`, url: canonicalUrl })}
+  ${buildOG({ title: `Free ${topicDisplay} Worksheets | Examel`, description: `${totalCount}+ printable ${topicDisplay.toLowerCase()} worksheets with answer keys.`, url: canonicalUrl })}
   ${buildSchema({ type: 'CollectionPage', title: `Free ${topicDisplay} Worksheets`, description: `${totalCount}+ free ${topicDisplay.toLowerCase()} worksheets`, url: canonicalUrl })}
   ${sharedCSS}
 ${buildAnalytics()}
@@ -91,7 +91,7 @@ ${buildAnalytics()}
   </div>
   <div class="hero">
     <h1>Free <span>${topicDisplay}</span> Worksheets</h1>
-    <p>${totalCount}+ free printable ${topicDisplay.toLowerCase()} worksheets for Grades ${gradesAvailable[0]}-${gradesAvailable[gradesAvailable.length - 1]}. Answer keys included. Common Core aligned.</p>
+    <p>${totalCount}+ printable ${topicDisplay.toLowerCase()} worksheets for Grades ${gradesAvailable[0]}-${gradesAvailable[gradesAvailable.length - 1]}. Answer keys included. Common Core aligned.</p>
   </div>
   ${buildAnswerBadge()}
   <div style="max-width:680px;margin:0 auto 40px;padding:0 20px;">

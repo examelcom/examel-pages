@@ -193,7 +193,7 @@ ${buildAnalytics()}
   <div class="ws-hero">
     <div class="ws-hero-inner">
       <h1>${ws.title}</h1>
-      <p class="ws-hero-sub">Free printable ${formatLabel} worksheet — download and print instantly</p>
+      <p class="ws-hero-sub">Printable ${formatLabel} worksheet — download and print instantly</p>
       <div class="ws-badges">
         <span class="ws-badge">English</span>
         <span class="ws-badge">Grade ${ws.grade}</span>
@@ -221,12 +221,12 @@ ${buildAnalytics()}
 
     <div class="download-box">
       <div class="download-box-desc">
-        Help Grade ${ws.grade} students practice <strong>${formatLabel.toLowerCase()}</strong> with this free printable worksheet
+        Help Grade ${ws.grade} students practice <strong>${formatLabel.toLowerCase()}</strong> with this printable worksheet
         featuring the word <strong>"${topicWord}"</strong>. Includes 8 multiple choice questions with a
         ${formatTheme(ws.theme)} theme and a complete answer key.
       </div>
       <a href="${downloadUrl}" class="btn-download" download>
-        ⬇ Download Free PDF Worksheet
+        ⬇ Download PDF Worksheet
       </a>
       <div style="text-align:center;font-size:12px;color:#A89FAE;margin-top:8px;">
         ✓ Free &nbsp;·&nbsp; ✓ No signup &nbsp;·&nbsp; ✓ Answer key included &nbsp;·&nbsp; ✓ Print ready

@@ -47,7 +47,7 @@ function plannerCard(ws) {
         <div class="ws-card-badge" style="background:#6C5CE7">${type}</div>
         <h3>${ws.title}</h3>
         <p>${formatTopic(ws.topic)}</p>
-        <span class="ws-card-btn">Download Free →</span>
+        <span class="ws-card-btn">View Planner →</span>
       </div>
     </a>`;
 }
@@ -148,7 +148,7 @@ ${siteHeader}
 <div class="ws-hero">
   <div class="ws-hero-badge">📋 ${type}</div>
   <h1>${ws.title}</h1>
-  <p>Free printable ${type.toLowerCase()}. Instant PDF download. No signup required.</p>
+  <p>Printable ${type.toLowerCase()}. Instant PDF download. No signup required.</p>
 </div>
 <div class="ws-layout">
   <div class="ws-preview">
@@ -221,7 +221,7 @@ ${buildAnalytics()}
 ${siteHeader}
 <div class="hero">
   <h1>Free Printable <span>Planners</span></h1>
-  <p>${planners.length} free printable planners — chore charts, habit trackers, meal planners, morning routines and more. Instant PDF download, no signup required.</p>
+  <p>${planners.length} printable planners — chore charts, habit trackers, meal planners, morning routines and more. Instant PDF download, no signup required.</p>
 </div>
 <div class="filter-bar">
   <a href="/planners/" class="filter-btn active">All Planners (${planners.length})</a>

@@ -79,7 +79,7 @@ ${buildAnalytics()}
   </div>
   <div class="ws-hero">
     <h1>${ws.title}</h1>
-    <p>Free printable reading comprehension passage — download and print instantly</p>
+    <p>Printable reading comprehension passage — download and print instantly</p>
     <div class="badges">
       <span class="badge">Grade ${ws.grade}</span>
       <span class="badge">${topicName}</span>
@@ -92,7 +92,7 @@ ${buildAnalytics()}
     <div class="download-box">
       <h2>Ready to Print — 3 Pages</h2>
       <p>Grade ${ws.grade} nonfiction reading passage about ${topicName}. ${themeName} theme. 6 comprehension questions covering main idea, inference, vocabulary, text evidence and more. Answer key included${ccssText}.</p>
-      <a href="${downloadUrl}" class="btn" download>⬇ Download Free Reading Passage</a>
+      <a href="${downloadUrl}" class="btn" download>⬇ Download Reading Passage</a>
       <div style="margin-top:24px;padding-top:24px;border-top:1px solid #f0f0f0;">
         <p style="font-size:14px;color:#636E72;margin-bottom:12px;">Get new free worksheets every week — no spam, unsubscribe anytime.</p>
         <div class="klaviyo-form-X45k9d"></div>
@@ -138,7 +138,7 @@ ${buildAnalytics()}
     ${renderContentBlock(ws)}
     <div class="seo-text">
       <h3>About this Grade ${ws.grade} Reading Comprehension Passage</h3>
-      <p>This free printable reading comprehension passage is designed for Grade ${ws.grade} students. The ${themeName} theme makes reading engaging while students build essential comprehension skills. Six questions cover a range of reading strategies including main idea, text evidence, vocabulary in context, inference, cause and effect, and author's purpose${ccssText}.</p>
+      <p>This printable reading comprehension passage is designed for Grade ${ws.grade} students. The ${themeName} theme makes reading engaging while students build essential comprehension skills. Six questions cover a range of reading strategies including main idea, text evidence, vocabulary in context, inference, cause and effect, and author's purpose${ccssText}.</p>
     </div>
     <div class="nav-links">
       <a href="/free-reading-passages/grade-${ws.grade}/">← All Grade ${ws.grade} Reading Passages</a>

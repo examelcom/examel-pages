@@ -62,7 +62,7 @@ ${buildAnalytics()}
   </div>
   <div class="ws-hero">
     <h1>${ws.title}</h1>
-    <p>Free printable word search — download and print instantly</p>
+    <p>Printable word search — download and print instantly</p>
     <div class="badges">
       <span class="badge">${capitalize(ws.subject)}</span>
       <span class="badge">Grade ${ws.grade}</span>
@@ -117,7 +117,7 @@ ${buildAnalytics()}
     </div>
     <div class="seo-text">
       <h3>About this Grade ${ws.grade} ${capitalize(ws.subject)} Word Search</h3>
-      <p>Free printable word search for Grade ${ws.grade} ${capitalize(ws.subject)} covering ${formatTopic(ws.topic)}. The ${formatTheme(ws.theme)} theme makes it engaging while kids practice important vocabulary. Includes answer key with highlighted words and definitions${ccssText}.</p>
+      <p>Printable word search for Grade ${ws.grade} ${capitalize(ws.subject)} covering ${formatTopic(ws.topic)}. The ${formatTheme(ws.theme)} theme makes it engaging while kids practice important vocabulary. Includes answer key with highlighted words and definitions${ccssText}.</p>
     </div>
     <div class="nav-links">
       <a href="/word-searches/">← All Word Searches</a>

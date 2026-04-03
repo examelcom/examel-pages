@@ -14,6 +14,7 @@
   <meta property="og:url" content="https://examel.com/worksheets/grade-4-math-angles-robots-standard/">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"EducationalResource","name":"Maya Builds the Ultimate Robot","description":"Free printable Grade 4 math worksheet about Angles — 8 questions with answer key","url":"https://examel.com/worksheets/grade-4-math-angles-robots-standard/","publisher":{"@type":"Organization","name":"Examel","url":"https://examel.com"},"educationalLevel":"Grade 4","subject":"Math","teaches":"Angles","thumbnailUrl":"https://examel.com/thumbnails/grade-4-math-angles-robots-standard.png","isAccessibleForFree":true,"educationalAlignment":{"@type":"AlignmentObject","alignmentType":"teaches","educationalFramework":"Common Core State Standards","targetName":"4.MD.C.5, 4.MD.C.6, 4.MD.C.7"},"typicalAgeRange":"8-10"}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://examel.com"},{"@type":"ListItem","position":2,"name":"Math","item":"https://examel.com/free-math-worksheets/"},{"@type":"ListItem","position":3,"name":"Grade 4","item":"https://examel.com/free-math-worksheets/grade-4/"},{"@type":"ListItem","position":4,"name":"Maya Builds the Ultimate Robot","item":"https://examel.com/worksheets/grade-4-math-angles-robots-standard/"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this Angles worksheet cover?","acceptedAnswer":{"@type":"Answer","text":"This Grade 4 Math worksheet covers Angles with a Robots theme. It includes practice questions with a full answer key for easy grading."}},{"@type":"Question","name":"What grade level is this worksheet for?","acceptedAnswer":{"@type":"Answer","text":"This worksheet is designed for Grade 4 students (ages 8-10). It aligns with grade-level expectations for Math."}},{"@type":"Question","name":"Does this worksheet include an answer key?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every Examel worksheet includes a complete answer key on the second page, making it easy for teachers and parents to check work instantly."}},{"@type":"Question","name":"How do I download this worksheet?","acceptedAnswer":{"@type":"Answer","text":"Click the Download button on this page to get the PDF instantly. No signup or account required. The worksheet prints at US Letter size."}}]}</script>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -166,6 +167,18 @@
       .info-strip{grid-template-columns:repeat(3,1fr);}
       .sticky-bar-title{display:none;}
     }
+    /* PRINT */
+    @media print{
+      .site-header,.mobile-nav,.sticky-bar,.email-section,.share-row,.share-divider,.btn-download-sub,.site-footer,.site-search,.mobile-menu-btn,.breadcrumb,.ws-hero-char,.download-box,.nav-links{display:none!important;}
+      .ws-hero{background:white!important;color:#1A1420!important;border:none!important;padding:20px 0!important;}
+      .ws-hero h1{color:#1A1420!important;font-size:22px!important;}
+      .ws-badges .ws-badge{background:#EDE8DF!important;color:#1A1420!important;}
+      .preview-desk{break-inside:avoid;padding:0!important;border:none!important;background:none!important;}
+      .preview-paper{box-shadow:none!important;border:1px solid #ccc!important;transform:none!important;}
+      .preview-paper img{height:auto!important;max-height:500px!important;}
+      body{background:white!important;}
+      .ws-container{max-width:100%!important;padding:0!important;}
+    }
   </style>
 <link rel="alternate" hreflang="en-US" href="https://examel.com">
 <!-- GA4 -->
@@ -197,7 +210,8 @@
       <a href="/free-math-drills/">Drills</a>
       <a href="/free-reading-passages/">Reading</a>
       <a href="/free-math-vocabulary/">Vocabulary</a>
-      <a href="/word-searches/">Word Searches</a>
+      <a href="/free-games/">Games</a>
+      <a href="/planners/">Planners</a>
       <a href="/browse/">Browse All</a>
     </nav>
     <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu">
@@ -213,7 +227,8 @@
     <a href="/free-math-drills/">Drills</a>
     <a href="/free-reading-passages/">Reading</a>
     <a href="/free-math-vocabulary/">Vocabulary</a>
-    <a href="/word-searches/">Word Searches</a>
+    <a href="/free-games/">Games</a>
+      <a href="/planners/">Planners</a>
     <a href="/browse/">Browse All</a>
   </nav>
   <script>
@@ -285,7 +300,7 @@
   <div class="ws-hero">
     <div class="ws-hero-inner">
       <h1>Maya Builds the Ultimate Robot</h1>
-      <p class="ws-hero-sub">Free printable worksheet — download and print instantly</p>
+      <p class="ws-hero-sub">Printable worksheet — download and print instantly</p>
       <div class="ws-badges">
         <span class="ws-badge">Math</span>
         <span class="ws-badge">Grade 4</span>
@@ -301,7 +316,7 @@
     <div class="download-box" id="downloadBox">
       <div class="download-box-label">Ready to print</div>
       <p class="download-box-desc">8 questions with a Robots theme plus a full answer key. Perfect for Grade 4 Math.</p>
-      <a href="https://examel.com/downloads/grade-4-math-angles-robots-standard.pdf" class="btn-download" id="dlBtn" download onclick="handleDownload(this)">⬇ Download Free Worksheet</a>
+      <a href="https://examel.com/downloads/grade-4-math-angles-robots-standard.pdf" class="btn-download" id="dlBtn" download onclick="handleDownload(this)">⬇ Download Worksheet</a>
       <div class="btn-download-sub">
         <a href="https://examel.com/downloads/grade-4-math-angles-robots-standard.pdf" target="_blank" class="btn-sub">🖨 Print</a>
         <a href="https://examel.com/downloads/grade-4-math-angles-robots-standard.pdf" target="_blank" class="btn-sub">👁 Open PDF</a>
@@ -311,14 +326,14 @@
       <div class="share-row">
         <span class="share-label">Share</span>
         <div class="share-icons">
-          <a href="https://pinterest.com/pin/create/button/?url=https://examel.com/worksheets/grade-4-math-angles-robots-standard/&media=&description=Maya%20Builds%20the%20Ultimate%20Robot%20%E2%80%94%20Free%20Grade%204%20math%20worksheet%20%23freeworksheets%20%23homeschool" target="_blank" class="share-icon" title="Pinterest">📌</a>
+          <a href="https://pinterest.com/pin/create/button/?url=https://examel.com/worksheets/grade-4-math-angles-robots-standard/&media=https%3A%2F%2Fexamel.com%2Fthumbnails%2Fgrade-4-math-angles-robots-standard.png&description=Maya%20Builds%20the%20Ultimate%20Robot%20%E2%80%94%20Free%20Grade%204%20math%20worksheet%20%23freeworksheets%20%23homeschool" target="_blank" class="share-icon" title="Pinterest">📌</a>
           <a href="https://www.facebook.com/sharer/sharer.php?u=https://examel.com/worksheets/grade-4-math-angles-robots-standard/" target="_blank" class="share-icon" title="Facebook">📘</a>
           <a href="https://twitter.com/intent/tweet?text=Free%20Grade%204%20math%20worksheet%3A%20Maya%20Builds%20the%20Ultimate%20Robot&url=https://examel.com/worksheets/grade-4-math-angles-robots-standard/" target="_blank" class="share-icon" title="Twitter">🐦</a>
           <a href="mailto:?subject=Free%20worksheet%3A%20Maya%20Builds%20the%20Ultimate%20Robot&body=Check%20out%20this%20free%20worksheet%3A%20https%3A%2F%2Fexamel.com%2Fworksheets%2Fgrade-4-math-angles-robots-standard%2F" class="share-icon" title="Email">📧</a>
         </div>
       </div>
       <div class="trust-strip">
-        <span class="trust-item">✓ Free forever</span>
+        <span class="trust-item">✓ Answer keys included</span>
         <span class="trust-item">✓ No login required</span>
         <span class="trust-item">✓ Instant PDF</span>
       </div>
@@ -353,11 +368,11 @@
     </div>
 
     <div style="background:white;border-radius:12px;padding:24px;margin-bottom:20px;"><div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#6C5CE7;margin-bottom:8px;font-family:Outfit,sans-serif;">Learning Objective</div><p style="font-size:15px;color:#3D3347;line-height:1.8;margin-bottom:16px;">Students will identify, measure, and calculate angles including right, acute, obtuse, and straight angles in robot-themed contexts.</p><div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#6C5CE7;margin-bottom:8px;font-family:Outfit,sans-serif;">Teacher Tip</div><p style="font-size:15px;color:#3D3347;line-height:1.8;margin-bottom:16px;">Before Q6, have students use a protractor on a printed circuit board diagram and find two angles that add to 180°. This mirrors exactly what Maya does in Q6 and Q7.</p><div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#6C5CE7;margin-bottom:8px;font-family:Outfit,sans-serif;">Sample Questions</div><ul style="font-size:14px;color:#4A3F55;line-height:1.8;padding-left:20px;margin-bottom:8px;"><li>Maya checks her robot arm. It tilts to a right angle. A right angle measures exactly ___ degrees. Fill in the blank.</li><li>Maya points the robot arm straight across. That is a straight angle. A straight angle measures ___ degrees. Fill in the blank.</li><li>Maya tilts the robot arm 35°. Then she tilts it 40° more. What is the total angle now? Show your working.</li></ul><p style="font-size:13px;color:#6B6475;font-style:italic;">...plus 5 more questions in the full worksheet</p><p style="font-size:13px;color:#6B6475;margin-top:12px;border-top:1px solid #f0f0f0;padding-top:12px;"><strong>Instructions:</strong> Read each question about Maya and her robot. Show all your working and write your answer clearly.</p><p style="font-size:13px;color:#6B6475;margin-top:8px;"><strong>Standard:</strong> 4.MD.C.5, 4.MD.C.6, 4.MD.C.7</p></div>
-    <div class="related"><h3 class="related-title">Related Worksheets</h3><div style="display:flex;flex-direction:column;gap:8px;"><a href="/free-math-worksheets/grade-4/" style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f8f6ff;border-radius:10px;text-decoration:none;color:#1C1526;font-size:14px;font-weight:500;"><span style="color:#6C5CE7;font-weight:700;font-size:12px;">&#8594;</span> More Grade 4 Math Worksheets</a><a href="/worksheets/math-grade4-factors-gardening/" style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f8f6ff;border-radius:10px;text-decoration:none;color:#1C1526;font-size:14px;font-weight:500;"><span style="color:#6C5CE7;font-weight:700;font-size:12px;">&#8594;</span> Next Skill: Factors</a><a href="/vocab-match/math/grade-4/vocab-match-math-grade4-place-value-world-cup-standard/" style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f8f6ff;border-radius:10px;text-decoration:none;color:#1C1526;font-size:14px;font-weight:500;"><span style="color:#6C5CE7;font-weight:700;font-size:12px;">&#8594;</span> Try a Vocabulary Activity — Grade 4</a><a href="/worksheets/math-grade4-decimals-superheroes/" style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f8f6ff;border-radius:10px;text-decoration:none;color:#1C1526;font-size:14px;font-weight:500;"><span style="color:#6C5CE7;font-weight:700;font-size:12px;">&#8594;</span> Decimals — Grade 4 Math</a><a href="/vocab-match/math/grade-4/vocab-match-math-grade4-place-value-magic-show-standard/" style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f8f6ff;border-radius:10px;text-decoration:none;color:#1C1526;font-size:14px;font-weight:500;"><span style="color:#6C5CE7;font-weight:700;font-size:12px;">&#8594;</span> Place Value — Grade 4 Math</a><a href="/worksheets/math-grade4-factors-underwater/" style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f8f6ff;border-radius:10px;text-decoration:none;color:#1C1526;font-size:14px;font-weight:500;"><span style="color:#6C5CE7;font-weight:700;font-size:12px;">&#8594;</span> Factors — Grade 4 Math</a><a href="/worksheets/grade-4-math-long-division-travel-standard/" style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f8f6ff;border-radius:10px;text-decoration:none;color:#1C1526;font-size:14px;font-weight:500;"><span style="color:#6C5CE7;font-weight:700;font-size:12px;">&#8594;</span> Long Division — Grade 4 Math</a><a href="/worksheets/math-grade4-factors-art/" style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f8f6ff;border-radius:10px;text-decoration:none;color:#1C1526;font-size:14px;font-weight:500;"><span style="color:#6C5CE7;font-weight:700;font-size:12px;">&#8594;</span> Factors — Grade 4 Math</a></div></div>
+    <div class="related"><h3 class="related-title">Related Worksheets</h3><div style="display:flex;flex-direction:column;gap:8px;"><a href="/free-math-worksheets/grade-4/" style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f8f6ff;border-radius:10px;text-decoration:none;color:#1C1526;font-size:14px;font-weight:500;"><span style="color:#6C5CE7;font-weight:700;font-size:12px;">&#8594;</span> More Grade 4 Math Worksheets</a><a href="/worksheets/math-grade4-factors-gardening/" style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f8f6ff;border-radius:10px;text-decoration:none;color:#1C1526;font-size:14px;font-weight:500;"><span style="color:#6C5CE7;font-weight:700;font-size:12px;">&#8594;</span> Next Skill: Factors</a><a href="/vocab-match/math/grade-4/vocab-match-math-grade4-symmetry-christmas-standard/" style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f8f6ff;border-radius:10px;text-decoration:none;color:#1C1526;font-size:14px;font-weight:500;"><span style="color:#6C5CE7;font-weight:700;font-size:12px;">&#8594;</span> Try a Vocabulary Activity — Grade 4</a><a href="/worksheets/math-grade4-word-problems-dragons/" style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f8f6ff;border-radius:10px;text-decoration:none;color:#1C1526;font-size:14px;font-weight:500;"><span style="color:#6C5CE7;font-weight:700;font-size:12px;">&#8594;</span> Word Problems — Grade 4 Math</a><a href="/reading-passages/grade-4/reading-passage-math-grade4-place-value-parallel-world-challenge/" style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f8f6ff;border-radius:10px;text-decoration:none;color:#1C1526;font-size:14px;font-weight:500;"><span style="color:#6C5CE7;font-weight:700;font-size:12px;">&#8594;</span> Place Value — Grade 4 Math</a><a href="/worksheets/math-grade4-factors-travel/" style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f8f6ff;border-radius:10px;text-decoration:none;color:#1C1526;font-size:14px;font-weight:500;"><span style="color:#6C5CE7;font-weight:700;font-size:12px;">&#8594;</span> Factors — Grade 4 Math</a><a href="/worksheets/math-grade4-factors-art/" style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f8f6ff;border-radius:10px;text-decoration:none;color:#1C1526;font-size:14px;font-weight:500;"><span style="color:#6C5CE7;font-weight:700;font-size:12px;">&#8594;</span> Factors — Grade 4 Math</a><a href="/worksheets/math-grade4-word-problems-food/" style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f8f6ff;border-radius:10px;text-decoration:none;color:#1C1526;font-size:14px;font-weight:500;"><span style="color:#6C5CE7;font-weight:700;font-size:12px;">&#8594;</span> Word Problems — Grade 4 Math</a></div></div>
 
     <div class="email-section">
-      <h3>📬 Get Free Worksheets Every Week</h3>
-      <p>New themed worksheets added daily. Free for parents and teachers.</p>
+      <h3>📬 Get Worksheets Every Week</h3>
+      <p>New themed worksheets added daily. For parents, teachers, and homeschool families.</p>
       <div class="klaviyo-form-X45k9d"></div>
       <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/VruXqp/klaviyo.js?company_id=VruXqp"></script>
       <p class="email-note">No spam. Unsubscribe anytime.</p>
@@ -366,7 +381,7 @@
     <div class="seo-prose">
       <h3>About this Math worksheet for Grade 4</h3>
       <p>Fourth graders need to measure and classify angles to build foundational geometric reasoning required for later work with polygons and coordinate geometry. This resource provides scaffolded practice in identifying right, acute, and obtuse angles while applying the 360-degree concept to composite figures, which teachers can use for guided practice or formative assessment before independent angle work.</p>
-      <p>This free printable Math worksheet is designed for Grade 4 students and covers Angles. The Robots theme keeps kids engaged while they practice essential Math skills. Every worksheet includes a full answer key making it easy for parents and teachers to check work instantly. Aligned to Common Core State Standards (CCSS) for Grade 4 Math. Print-ready at US Letter size. No login required — download and print in seconds.</p>
+      <p>This printable Math worksheet is designed for Grade 4 students and covers Angles. The Robots theme keeps kids engaged while they practice essential Math skills. Every worksheet includes a full answer key making it easy for parents and teachers to check work instantly. Aligned to Common Core State Standards (CCSS) for Grade 4 Math. Print-ready at US Letter size. No login required — download and print in seconds.</p>
       <p style="font-size:12px;color:#A89FAE;margin-top:12px;">Last updated: April 2026</p>
     </div>
 
@@ -374,7 +389,7 @@
 
     <div style="background:#1C1526;border-radius:20px;padding:28px 32px;margin-bottom:28px;color:white;">
       <div style="font-size:16px;font-weight:800;margin-bottom:10px;font-family:Outfit,sans-serif;">About Examel</div>
-      <p style="font-size:13px;color:rgba(255,255,255,0.6);line-height:1.8;margin:0;">Examel provides 10,000+ free printable worksheets for Grades 1–6, aligned to Common Core State Standards. Every worksheet is reviewed for accuracy and includes a full answer key. New worksheets added weekly across Math, English, and Science. Built by educators for parents, teachers, and homeschool families.</p>
+      <p style="font-size:13px;color:rgba(255,255,255,0.6);line-height:1.8;margin:0;">Examel provides 10,000+ printable worksheets for Grades 1–6, aligned to Common Core State Standards. Every worksheet is reviewed for accuracy and includes a full answer key. New worksheets added weekly across Math, English, and Science. Built by educators for parents, teachers, and homeschool families.</p>
     </div>
 
     <div class="nav-links">
@@ -386,7 +401,7 @@
 
   <div class="sticky-bar" id="stickyBar">
     <span class="sticky-bar-title">Maya Builds the Ultimate Robot</span>
-    <a href="https://examel.com/downloads/grade-4-math-angles-robots-standard.pdf" class="sticky-bar-btn" download>⬇ Download Free</a>
+    <a href="https://examel.com/downloads/grade-4-math-angles-robots-standard.pdf" class="sticky-bar-btn" download>⬇ Download PDF</a>
   </div>
 
   <script>
@@ -445,7 +460,8 @@
         <div class="footer-col">
           <div class="footer-heading">Practice</div>
           <a href="/free-math-drills/">Math Drills</a>
-          <a href="/word-searches/">Word Searches</a>
+          <a href="/free-games/">Games</a>
+      <a href="/planners/">Planners</a>
           <a href="/free-math-vocabulary/">Vocabulary</a>
           <a href="/free-reading-passages/">Reading</a>
         </div>
@@ -466,7 +482,7 @@
           <a href="/terms/">Terms of Use</a>
         </div>
       </div>
-      <div class="footer-bottom">© 2026 Examel · Free K-8 Printable Worksheets · Every exam. Every grade.</div>
+      <div class="footer-bottom">© 2026 Examel · K-8 Printable Worksheets, Games & Planners · Every exam. Every grade.</div>
     </div>
   </footer>
 </body>

@@ -63,7 +63,7 @@ function gameCard(ws) {
         <div class="ws-card-badge" style="background:${color}">${capitalize(ws.subject)} · ${meta.label}</div>
         <h3>${ws.title}</h3>
         <p>${formatTopic(ws.topic)}</p>
-        <span class="ws-card-btn">Download Free →</span>
+        <span class="ws-card-btn">View Worksheet →</span>
       </div>
     </a>`;
 }
@@ -174,7 +174,7 @@ ${siteHeader}
     <div class="ws-download-card">
       <h2>Free Printable PDF</h2>
       <p>Instant download. No signup required. Print at home or school.</p>
-      <a href="${downloadUrl}" class="btn-download" target="_blank" rel="nofollow">⬇ Download Free PDF</a>
+      <a href="${downloadUrl}" class="btn-download" target="_blank" rel="nofollow">⬇ Download PDF</a>
     </div>
     <div class="ws-meta-card">
       <h3>Details</h3>

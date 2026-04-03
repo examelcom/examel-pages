@@ -70,7 +70,7 @@ function worksheetCard(ws) {
         <div class="ws-card-badge" style="background:${color}">${capitalize(ws.subject)} · Grade ${ws.grade}</div>
         <h3>${ws.title}</h3>
         <p>${formatTopic(ws.topic)} · ${formatTheme(ws.theme)} theme</p>
-        <span class="ws-card-btn">Download Free →</span>
+        <span class="ws-card-btn">View Worksheet →</span>
       </div>
     </a>`;
 }
@@ -210,7 +210,8 @@ const siteHeader = `
       <a href="/free-math-drills/">Drills</a>
       <a href="/free-reading-passages/">Reading</a>
       <a href="/free-math-vocabulary/">Vocabulary</a>
-      <a href="/word-searches/">Word Searches</a>
+      <a href="/free-games/">Games</a>
+      <a href="/planners/">Planners</a>
       <a href="/browse/">Browse All</a>
     </nav>
     <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu">
@@ -226,7 +227,8 @@ const siteHeader = `
     <a href="/free-math-drills/">Drills</a>
     <a href="/free-reading-passages/">Reading</a>
     <a href="/free-math-vocabulary/">Vocabulary</a>
-    <a href="/word-searches/">Word Searches</a>
+    <a href="/free-games/">Games</a>
+      <a href="/planners/">Planners</a>
     <a href="/browse/">Browse All</a>
   </nav>
   <script>
@@ -315,7 +317,8 @@ const siteFooter = `
         <div class="footer-col">
           <div class="footer-heading">Practice</div>
           <a href="/free-math-drills/">Math Drills</a>
-          <a href="/word-searches/">Word Searches</a>
+          <a href="/free-games/">Games</a>
+      <a href="/planners/">Planners</a>
           <a href="/free-math-vocabulary/">Vocabulary</a>
           <a href="/free-reading-passages/">Reading</a>
         </div>
@@ -336,7 +339,7 @@ const siteFooter = `
           <a href="/terms/">Terms of Use</a>
         </div>
       </div>
-      <div class="footer-bottom">© 2026 Examel · Free K-8 Printable Worksheets · Every exam. Every grade.</div>
+      <div class="footer-bottom">© 2026 Examel · K-8 Printable Worksheets, Games & Planners · Every exam. Every grade.</div>
     </div>
   </footer>`;
 

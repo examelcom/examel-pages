@@ -76,9 +76,9 @@ ${buildAnalytics()}
     <div style="max-width:1100px;margin:0 auto;padding:48px 180px 44px 48px;position:relative;z-index:2;">
       <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.35);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;font-family:'Outfit',sans-serif;">Free Printable Worksheets</div>
       <h1 style="font-size:clamp(24px,3.5vw,42px);font-weight:900;color:white;letter-spacing:-1.5px;line-height:1.1;margin-bottom:12px;font-family:'Outfit',sans-serif;">Free Grade ${grade} <span style="color:${color}">${capitalize(subject)}</span> Worksheets</h1>
-      <p style="font-size:15px;color:rgba(255,255,255,0.5);max-width:500px;line-height:1.75;margin-bottom:20px;">${filtered.length}+ free printable Grade ${grade} ${capitalize(subject)} worksheets. Fun themes, answer keys included. Download PDF instantly.</p>
+      <p style="font-size:15px;color:rgba(255,255,255,0.5);max-width:500px;line-height:1.75;margin-bottom:20px;">${filtered.length}+ printable Grade ${grade} ${capitalize(subject)} worksheets. Fun themes, answer keys included. Download PDF instantly.</p>
       <div style="display:flex;gap:14px;flex-wrap:wrap;">
-        <div style="font-size:14px;color:rgba(255,255,255,0.4);font-weight:500;"><span style="color:${color};font-weight:700;">✓</span> Free forever</div>
+        <div style="font-size:14px;color:rgba(255,255,255,0.4);font-weight:500;"><span style="color:${color};font-weight:700;">✓</span> Answer keys included</div>
         <div style="font-size:14px;color:rgba(255,255,255,0.4);font-weight:500;"><span style="color:${color};font-weight:700;">✓</span> Answer key included</div>
         <div style="font-size:14px;color:rgba(255,255,255,0.4);font-weight:500;"><span style="color:${color};font-weight:700;">✓</span> CCSS aligned</div>
       </div>
@@ -146,9 +146,9 @@ ${buildAnalytics()}
     <div style="max-width:1100px;margin:0 auto;padding:52px 180px 48px 48px;position:relative;z-index:2;">
       <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.35);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;font-family:'Outfit',sans-serif;">Free Printable Worksheets</div>
       <h1 style="font-size:clamp(28px,4vw,48px);font-weight:900;color:white;letter-spacing:-1.5px;line-height:1.1;margin-bottom:14px;font-family:'Outfit',sans-serif;">Free <span style="color:${color}">${capitalize(subject)}</span> Worksheets for Kids</h1>
-      <p style="font-size:16px;color:rgba(255,255,255,0.5);max-width:520px;line-height:1.75;margin-bottom:24px;">${filtered.length}+ free printable ${capitalize(subject)} worksheets for Grades 1–6. ${meta.desc} Fun themes, answer keys included. Instant PDF download.</p>
+      <p style="font-size:16px;color:rgba(255,255,255,0.5);max-width:520px;line-height:1.75;margin-bottom:24px;">${filtered.length}+ printable ${capitalize(subject)} worksheets for Grades 1–6. ${meta.desc} Fun themes, answer keys included. Instant PDF download.</p>
       <div style="display:flex;gap:16px;flex-wrap:wrap;">
-        <div style="font-size:13px;color:rgba(255,255,255,0.4);font-weight:500;"><span style="color:${color};font-weight:700;">✓</span> Free forever</div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.4);font-weight:500;"><span style="color:${color};font-weight:700;">✓</span> Answer keys included</div>
         <div style="font-size:13px;color:rgba(255,255,255,0.4);font-weight:500;"><span style="color:${color};font-weight:700;">✓</span> Answer key included</div>
         <div style="font-size:13px;color:rgba(255,255,255,0.4);font-weight:500;"><span style="color:${color};font-weight:700;">✓</span> Common Core aligned</div>
         <div style="font-size:13px;color:rgba(255,255,255,0.4);font-weight:500;"><span style="color:${color};font-weight:700;">✓</span> No login needed</div>
@@ -243,7 +243,7 @@ ${buildAnalytics()}
   </div>
   <div class="hero">
     <h1>Free <span>Grade ${grade} Worksheets</span></h1>
-    <p>${filtered.length}+ free printable Grade ${grade} worksheets for Math, English and Science. Fun themes, answer keys included.</p>
+    <p>${filtered.length}+ printable Grade ${grade} worksheets for Math, English and Science. Fun themes, answer keys included.</p>
   </div>
   <div class="hub-grid">
     ${allSubjects.map(s => {

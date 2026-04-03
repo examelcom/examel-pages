@@ -14,6 +14,7 @@
   <meta property="og:url" content="https://examel.com/worksheets/math-grade3-fractions-desert/">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"EducationalResource","name":"Desert Fraction Adventures: Help the Oasis Friends!","description":"Free printable Grade 3 math worksheet about Fractions — 8 questions with answer key","url":"https://examel.com/worksheets/math-grade3-fractions-desert/","publisher":{"@type":"Organization","name":"Examel","url":"https://examel.com"},"educationalLevel":"Grade 3","subject":"Math","teaches":"Fractions","thumbnailUrl":"https://examel.com/thumbnails/math-grade3-fractions-desert.png","isAccessibleForFree":true,"typicalAgeRange":"7-9"}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://examel.com"},{"@type":"ListItem","position":2,"name":"Math","item":"https://examel.com/free-math-worksheets/"},{"@type":"ListItem","position":3,"name":"Grade 3","item":"https://examel.com/free-math-worksheets/grade-3/"},{"@type":"ListItem","position":4,"name":"Desert Fraction Adventures: Help the Oasis Friends!","item":"https://examel.com/worksheets/math-grade3-fractions-desert/"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this Fractions worksheet cover?","acceptedAnswer":{"@type":"Answer","text":"This Grade 3 Math worksheet covers Fractions with a Desert theme. It includes practice questions with a full answer key for easy grading."}},{"@type":"Question","name":"What grade level is this worksheet for?","acceptedAnswer":{"@type":"Answer","text":"This worksheet is designed for Grade 3 students (ages 7-9). It aligns with grade-level expectations for Math."}},{"@type":"Question","name":"Does this worksheet include an answer key?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every Examel worksheet includes a complete answer key on the second page, making it easy for teachers and parents to check work instantly."}},{"@type":"Question","name":"How do I download this worksheet?","acceptedAnswer":{"@type":"Answer","text":"Click the Download button on this page to get the PDF instantly. No signup or account required. The worksheet prints at US Letter size."}}]}</script>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -166,6 +167,18 @@
       .info-strip{grid-template-columns:repeat(3,1fr);}
       .sticky-bar-title{display:none;}
     }
+    /* PRINT */
+    @media print{
+      .site-header,.mobile-nav,.sticky-bar,.email-section,.share-row,.share-divider,.btn-download-sub,.site-footer,.site-search,.mobile-menu-btn,.breadcrumb,.ws-hero-char,.download-box,.nav-links{display:none!important;}
+      .ws-hero{background:white!important;color:#1A1420!important;border:none!important;padding:20px 0!important;}
+      .ws-hero h1{color:#1A1420!important;font-size:22px!important;}
+      .ws-badges .ws-badge{background:#EDE8DF!important;color:#1A1420!important;}
+      .preview-desk{break-inside:avoid;padding:0!important;border:none!important;background:none!important;}
+      .preview-paper{box-shadow:none!important;border:1px solid #ccc!important;transform:none!important;}
+      .preview-paper img{height:auto!important;max-height:500px!important;}
+      body{background:white!important;}
+      .ws-container{max-width:100%!important;padding:0!important;}
+    }
   </style>
 <link rel="alternate" hreflang="en-US" href="https://examel.com">
 <!-- GA4 -->
@@ -197,7 +210,8 @@
       <a href="/free-math-drills/">Drills</a>
       <a href="/free-reading-passages/">Reading</a>
       <a href="/free-math-vocabulary/">Vocabulary</a>
-      <a href="/word-searches/">Word Searches</a>
+      <a href="/free-games/">Games</a>
+      <a href="/planners/">Planners</a>
       <a href="/browse/">Browse All</a>
     </nav>
     <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu">
@@ -213,7 +227,8 @@
     <a href="/free-math-drills/">Drills</a>
     <a href="/free-reading-passages/">Reading</a>
     <a href="/free-math-vocabulary/">Vocabulary</a>
-    <a href="/word-searches/">Word Searches</a>
+    <a href="/free-games/">Games</a>
+      <a href="/planners/">Planners</a>
     <a href="/browse/">Browse All</a>
   </nav>
   <script>
@@ -285,7 +300,7 @@
   <div class="ws-hero">
     <div class="ws-hero-inner">
       <h1>Desert Fraction Adventures: Help the Oasis Friends!</h1>
-      <p class="ws-hero-sub">Free printable worksheet — download and print instantly</p>
+      <p class="ws-hero-sub">Printable worksheet — download and print instantly</p>
       <div class="ws-badges">
         <span class="ws-badge">Math</span>
         <span class="ws-badge">Grade 3</span>
@@ -301,7 +316,7 @@
     <div class="download-box" id="downloadBox">
       <div class="download-box-label">Ready to print</div>
       <p class="download-box-desc">8 questions with a Desert theme plus a full answer key. Perfect for Grade 3 Math.</p>
-      <a href="https://examel.com/downloads/math-grade3-fractions-desert.pdf" class="btn-download" id="dlBtn" download onclick="handleDownload(this)">⬇ Download Free Worksheet</a>
+      <a href="https://examel.com/downloads/math-grade3-fractions-desert.pdf" class="btn-download" id="dlBtn" download onclick="handleDownload(this)">⬇ Download Worksheet</a>
       <div class="btn-download-sub">
         <a href="https://examel.com/downloads/math-grade3-fractions-desert.pdf" target="_blank" class="btn-sub">🖨 Print</a>
         <a href="https://examel.com/downloads/math-grade3-fractions-desert.pdf" target="_blank" class="btn-sub">👁 Open PDF</a>
@@ -318,7 +333,7 @@
         </div>
       </div>
       <div class="trust-strip">
-        <span class="trust-item">✓ Free forever</span>
+        <span class="trust-item">✓ Answer keys included</span>
         <span class="trust-item">✓ No login required</span>
         <span class="trust-item">✓ Instant PDF</span>
       </div>
@@ -353,11 +368,11 @@
     </div>
 
     
-    <div class="related"><h3 class="related-title">Related Worksheets</h3><div style="display:flex;flex-direction:column;gap:8px;"><a href="/free-math-worksheets/grade-3/" style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f8f6ff;border-radius:10px;text-decoration:none;color:#1C1526;font-size:14px;font-weight:500;"><span style="color:#6C5CE7;font-weight:700;font-size:12px;">&#8594;</span> More Grade 3 Math Worksheets</a><a href="/reading-passages/grade-3/reading-passage-math-grade3-area-origami-standard/" style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f8f6ff;border-radius:10px;text-decoration:none;color:#1C1526;font-size:14px;font-weight:500;"><span style="color:#6C5CE7;font-weight:700;font-size:12px;">&#8594;</span> Next Skill: Area</a><a href="/worksheets/grade-4-math-fractions-ocean-standard/" style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f8f6ff;border-radius:10px;text-decoration:none;color:#1C1526;font-size:14px;font-weight:500;"><span style="color:#6C5CE7;font-weight:700;font-size:12px;">&#8594;</span> Challenge: Grade 4 Fractions</a><a href="/vocab-match/math/grade-3/vocab-match-math-grade3-patterns-coding-kids-standard/" style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f8f6ff;border-radius:10px;text-decoration:none;color:#1C1526;font-size:14px;font-weight:500;"><span style="color:#6C5CE7;font-weight:700;font-size:12px;">&#8594;</span> Try a Vocabulary Activity — Grade 3</a><a href="/worksheets/math-grade3-division-nature/" style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f8f6ff;border-radius:10px;text-decoration:none;color:#1C1526;font-size:14px;font-weight:500;"><span style="color:#6C5CE7;font-weight:700;font-size:12px;">&#8594;</span> Division — Grade 3 Math</a><a href="/worksheets/math-grade3-word-problems-desert/" style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f8f6ff;border-radius:10px;text-decoration:none;color:#1C1526;font-size:14px;font-weight:500;"><span style="color:#6C5CE7;font-weight:700;font-size:12px;">&#8594;</span> Word Problems — Grade 3 Math</a><a href="/worksheets/math-grade3-word-problems-space/" style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f8f6ff;border-radius:10px;text-decoration:none;color:#1C1526;font-size:14px;font-weight:500;"><span style="color:#6C5CE7;font-weight:700;font-size:12px;">&#8594;</span> Word Problems — Grade 3 Math</a><a href="/worksheets/math-grade3-word-problems-travel/" style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f8f6ff;border-radius:10px;text-decoration:none;color:#1C1526;font-size:14px;font-weight:500;"><span style="color:#6C5CE7;font-weight:700;font-size:12px;">&#8594;</span> Word Problems — Grade 3 Math</a></div></div>
+    <div class="related"><h3 class="related-title">Related Worksheets</h3><div style="display:flex;flex-direction:column;gap:8px;"><a href="/free-math-worksheets/grade-3/" style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f8f6ff;border-radius:10px;text-decoration:none;color:#1C1526;font-size:14px;font-weight:500;"><span style="color:#6C5CE7;font-weight:700;font-size:12px;">&#8594;</span> More Grade 3 Math Worksheets</a><a href="/reading-passages/grade-3/reading-passage-math-grade3-area-origami-standard/" style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f8f6ff;border-radius:10px;text-decoration:none;color:#1C1526;font-size:14px;font-weight:500;"><span style="color:#6C5CE7;font-weight:700;font-size:12px;">&#8594;</span> Next Skill: Area</a><a href="/worksheets/grade-4-math-fractions-ocean-standard/" style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f8f6ff;border-radius:10px;text-decoration:none;color:#1C1526;font-size:14px;font-weight:500;"><span style="color:#6C5CE7;font-weight:700;font-size:12px;">&#8594;</span> Challenge: Grade 4 Fractions</a><a href="/vocab-match/math/grade-3/vocab-match-math-grade3-patterns-coding-kids-standard/" style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f8f6ff;border-radius:10px;text-decoration:none;color:#1C1526;font-size:14px;font-weight:500;"><span style="color:#6C5CE7;font-weight:700;font-size:12px;">&#8594;</span> Try a Vocabulary Activity — Grade 3</a><a href="/worksheets/math-grade3-perimeter-holidays/" style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f8f6ff;border-radius:10px;text-decoration:none;color:#1C1526;font-size:14px;font-weight:500;"><span style="color:#6C5CE7;font-weight:700;font-size:12px;">&#8594;</span> Perimeter — Grade 3 Math</a><a href="/worksheets/math-grade3-word-problems-nature/" style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f8f6ff;border-radius:10px;text-decoration:none;color:#1C1526;font-size:14px;font-weight:500;"><span style="color:#6C5CE7;font-weight:700;font-size:12px;">&#8594;</span> Word Problems — Grade 3 Math</a><a href="/worksheets/math-grade3-word-problems-mountains/" style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f8f6ff;border-radius:10px;text-decoration:none;color:#1C1526;font-size:14px;font-weight:500;"><span style="color:#6C5CE7;font-weight:700;font-size:12px;">&#8594;</span> Word Problems — Grade 3 Math</a><a href="/worksheets/math-grade3-word-problems-dragons/" style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f8f6ff;border-radius:10px;text-decoration:none;color:#1C1526;font-size:14px;font-weight:500;"><span style="color:#6C5CE7;font-weight:700;font-size:12px;">&#8594;</span> Word Problems — Grade 3 Math</a></div></div>
 
     <div class="email-section">
-      <h3>📬 Get Free Worksheets Every Week</h3>
-      <p>New themed worksheets added daily. Free for parents and teachers.</p>
+      <h3>📬 Get Worksheets Every Week</h3>
+      <p>New themed worksheets added daily. For parents, teachers, and homeschool families.</p>
       <div class="klaviyo-form-X45k9d"></div>
       <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/VruXqp/klaviyo.js?company_id=VruXqp"></script>
       <p class="email-note">No spam. Unsubscribe anytime.</p>
@@ -366,7 +381,7 @@
     <div class="seo-prose">
       <h3>About this Math worksheet for Grade 3</h3>
       <p>Grade 3 math fractions worksheet. Help desert oasis friends with fraction adventures. Free printable with answer key.</p>
-      <p>This free printable Math worksheet is designed for Grade 3 students and covers Fractions. The Desert theme keeps kids engaged while they practice essential Math skills. Every worksheet includes a full answer key making it easy for parents and teachers to check work instantly. Aligned to Common Core State Standards (CCSS) for Grade 3 Math. Print-ready at US Letter size. No login required — download and print in seconds.</p>
+      <p>This printable Math worksheet is designed for Grade 3 students and covers Fractions. The Desert theme keeps kids engaged while they practice essential Math skills. Every worksheet includes a full answer key making it easy for parents and teachers to check work instantly. Aligned to Common Core State Standards (CCSS) for Grade 3 Math. Print-ready at US Letter size. No login required — download and print in seconds.</p>
       <p style="font-size:12px;color:#A89FAE;margin-top:12px;">Last updated: March 2026</p>
     </div>
 
@@ -380,14 +395,14 @@
         <div class="ws-card-badge" style="background:#DB2777">English · Grade 3</div>
         <h3>Desert Adventures: Reading Comprehension Quest with Cactus Carl and Sandy Sue</h3>
         <p>Reading Comprehension · Desert theme</p>
-        <span class="ws-card-btn">Download Free →</span>
+        <span class="ws-card-btn">View Worksheet →</span>
       </div>
     </a></div>
     </div>
 
     <div style="background:#1C1526;border-radius:20px;padding:28px 32px;margin-bottom:28px;color:white;">
       <div style="font-size:16px;font-weight:800;margin-bottom:10px;font-family:Outfit,sans-serif;">About Examel</div>
-      <p style="font-size:13px;color:rgba(255,255,255,0.6);line-height:1.8;margin:0;">Examel provides 10,000+ free printable worksheets for Grades 1–6, aligned to Common Core State Standards. Every worksheet is reviewed for accuracy and includes a full answer key. New worksheets added weekly across Math, English, and Science. Built by educators for parents, teachers, and homeschool families.</p>
+      <p style="font-size:13px;color:rgba(255,255,255,0.6);line-height:1.8;margin:0;">Examel provides 10,000+ printable worksheets for Grades 1–6, aligned to Common Core State Standards. Every worksheet is reviewed for accuracy and includes a full answer key. New worksheets added weekly across Math, English, and Science. Built by educators for parents, teachers, and homeschool families.</p>
     </div>
 
     <div class="nav-links">
@@ -399,7 +414,7 @@
 
   <div class="sticky-bar" id="stickyBar">
     <span class="sticky-bar-title">Desert Fraction Adventures: Help the Oasis Friends!</span>
-    <a href="https://examel.com/downloads/math-grade3-fractions-desert.pdf" class="sticky-bar-btn" download>⬇ Download Free</a>
+    <a href="https://examel.com/downloads/math-grade3-fractions-desert.pdf" class="sticky-bar-btn" download>⬇ Download PDF</a>
   </div>
 
   <script>
@@ -458,7 +473,8 @@
         <div class="footer-col">
           <div class="footer-heading">Practice</div>
           <a href="/free-math-drills/">Math Drills</a>
-          <a href="/word-searches/">Word Searches</a>
+          <a href="/free-games/">Games</a>
+      <a href="/planners/">Planners</a>
           <a href="/free-math-vocabulary/">Vocabulary</a>
           <a href="/free-reading-passages/">Reading</a>
         </div>
@@ -479,7 +495,7 @@
           <a href="/terms/">Terms of Use</a>
         </div>
       </div>
-      <div class="footer-bottom">© 2026 Examel · Free K-8 Printable Worksheets · Every exam. Every grade.</div>
+      <div class="footer-bottom">© 2026 Examel · K-8 Printable Worksheets, Games & Planners · Every exam. Every grade.</div>
     </div>
   </footer>
 </body>
