@@ -96,7 +96,8 @@ function buildDrillNavLinks(ws, formatTopic) {
 
 // ── ANALYTICS (GA4 + Umami) ──
 function buildAnalytics() {
-  return `<!-- GA4 -->
+  return `<link rel="alternate" hreflang="en-US" href="https://examel.com">
+<!-- GA4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ7DF8JRPV"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-QJ7DF8JRPV");</script>
 <!-- Umami -->

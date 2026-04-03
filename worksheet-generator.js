@@ -264,7 +264,9 @@ ${buildAnalytics()}
 
     <div class="seo-prose">
       <h3>About this ${capitalize(ws.subject)} worksheet for Grade ${ws.grade}</h3>
+      ${ws.seo_description ? `<p>${ws.seo_description}</p>` : ''}
       <p>This free printable ${capitalize(ws.subject)} worksheet is designed for Grade ${ws.grade} students and covers ${formatTopic(ws.topic)}. The ${formatTheme(ws.theme)} theme keeps kids engaged while they practice essential ${capitalize(ws.subject)} skills. Every worksheet includes a full answer key making it easy for parents and teachers to check work instantly. Aligned to Common Core State Standards (CCSS) for Grade ${ws.grade} ${capitalize(ws.subject)}. Print-ready at US Letter size. No login required — download and print in seconds.</p>
+      <p style="font-size:12px;color:#A89FAE;margin-top:12px;">Last updated: ${ws.created_at ? new Date(ws.created_at).toLocaleDateString('en-US', {month:'long', year:'numeric'}) : new Date().toLocaleDateString('en-US', {month:'long', year:'numeric'})}</p>
     </div>
 
     ${sameThemeDiffSubject.length > 0 ? `
