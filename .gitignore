@@ -2,3 +2,7 @@ node_modules/
 .env
 *.log
 site-audit.html
+index.html.bak-*
+robots.txt.bak-*
+*.bak
+*.bak-*

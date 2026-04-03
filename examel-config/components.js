@@ -94,7 +94,17 @@ function buildDrillNavLinks(ws, formatTopic) {
   </div>`;
 }
 
+// ── ANALYTICS (GA4 + Umami) ──
+function buildAnalytics() {
+  return `<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ7DF8JRPV"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-QJ7DF8JRPV");</script>
+<!-- Umami -->
+<script defer src="https://cloud.umami.is/script.js" data-website-id="a6b927e1-8ee1-445f-ae65-d50931867d37"></script>`;
+}
+
 module.exports = {
+  buildAnalytics,
   buildCharSVG,
   buildAnswerBadge,
   buildEmailCapture,

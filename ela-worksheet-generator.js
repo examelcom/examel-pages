@@ -16,8 +16,7 @@
 const fs = require('fs');
 const {
   getDirPath, getPageUrl, getGradeHubUrl, getSubjectHubUrl,
-  buildSchema, buildOG, buildCharSVG
-} = require('./examel-config');
+  buildSchema, buildOG, buildCharSVG, buildAnalytics} = require('./examel-config');
 
 const ELA_FORMATS = ['ela-rhyming', 'ela-synonym', 'ela-antonym'];
 
@@ -179,6 +178,7 @@ function generateElaPages(worksheets, sharedCSS, siteHeader, siteFooter, helpers
       .info-strip{grid-template-columns:repeat(3,1fr);}
     }
   </style>
+${buildAnalytics()}
 </head>
 <body>
   ${siteHeader}

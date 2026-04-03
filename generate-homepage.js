@@ -221,6 +221,7 @@ async function generate() {
     @media(max-width:768px){.site-header nav{display:none;}.mobile-menu-btn{display:block;}.how-grid{grid-template-columns:1fr;}.why-grid{grid-template-columns:1fr;}.subjects-grid{grid-template-columns:repeat(2,1fr);}.trust-bar-inner{gap:16px;}.hero-ctas{flex-direction:column;align-items:flex-start;}}
     @media(max-width:480px){.subjects-grid{grid-template-columns:1fr;}.grades-grid{grid-template-columns:repeat(2,1fr);}.ws-grid{grid-template-columns:1fr;}}
   </style>
+${buildAnalytics()}
 </head>
 <body>
 

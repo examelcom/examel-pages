@@ -1,3 +1,4 @@
+const { buildAnalytics } = require('./examel-config');
 const fs = require('fs');
 
 function generateVocabMatchPages(worksheets, sharedCSS, siteHeader, siteFooter, gradeColor, capitalize, formatTopic, formatTheme) {
@@ -66,6 +67,7 @@ function renderContentBlock(ws) {
     .nav-links{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px;font-size:13px;}
     .nav-links a{color:${color};text-decoration:none;}
   </style>
+${buildAnalytics()}
 </head>
 <body>
   ${siteHeader}

@@ -8,8 +8,7 @@
 'use strict';
 const fs = require('fs');
 const {
-  buildSchema, buildOG, buildAnswerBadge, buildEmailCapture
-} = require('./examel-config');
+  buildSchema, buildOG, buildAnswerBadge, buildEmailCapture, buildAnalytics} = require('./examel-config');
 
 const TOPIC_EDUCATION = {
   'math|multiplication': { intro: 'Multiplication is one of the most important math skills. Our worksheets cover basic facts (times tables 2-12), multi-digit multiplication, word problems, and real-world applications.', ccss: 'CCSS 3.OA.A.1-C.7, 4.OA.A, 5.NBT.B.5', progression: 'Single-digit facts → times tables → multi-digit multiplication.' },
@@ -81,6 +80,7 @@ function generateTopicHubs(worksheets, sharedCSS, siteHeader, siteFooter, helper
   ${buildOG({ title: `Free ${topicDisplay} Worksheets | Examel`, description: `${totalCount}+ free printable ${topicDisplay.toLowerCase()} worksheets with answer keys.`, url: canonicalUrl })}
   ${buildSchema({ type: 'CollectionPage', title: `Free ${topicDisplay} Worksheets`, description: `${totalCount}+ free ${topicDisplay.toLowerCase()} worksheets`, url: canonicalUrl })}
   ${sharedCSS}
+${buildAnalytics()}
 </head>
 <body>
   ${siteHeader}

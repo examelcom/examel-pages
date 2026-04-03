@@ -215,7 +215,7 @@ function renderContentBlock(ws) {
       '.related-ws:hover{transform:translateX(4px);}\n' +
       '.related-ws-badge{font-size:11px;font-weight:700;color:#6C5CE7;display:block;margin-bottom:4px;}\n' +
       '.related-ws-title{font-size:14px;font-weight:600;color:#1A1420;}\n' +
-      '</style>\n</head>\n<body>\n' +
+      '</style>\n' + buildAnalytics() + '\n</head>\n<body>\n' +
       siteHeader + '\n' +
       '<div class="breadcrumb">\n' +
         '<a href="https://examel.com">Home</a><span class="sep">›</span>\n' +
@@ -302,7 +302,7 @@ function renderContentBlock(ws) {
       '.hub-card-count{font-size:11px;font-weight:700;color:#DC2626;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;}\n' +
       '.hub-card h3{font-size:16px;font-weight:700;margin-bottom:6px;}\n' +
       '.hub-card p{font-size:13px;color:#A89FAE;}\n' +
-      '</style>\n</head>\n<body>\n' +
+      '</style>\n' + buildAnalytics() + '\n</head>\n<body>\n' +
       siteHeader + '\n' +
       '<div class="breadcrumb"><a href="https://examel.com">Home</a><span class="sep">›</span><a href="/free-math-drills/">Math Drills</a><span class="sep">›</span>' + capitalize(op) + '</div>\n' +
       '<div class="hub-hero"><h1>Free <span>' + capitalize(op) + '</span> Drills</h1><p>' + totalDrills + '+ free printable ' + op + ' drills with answer keys. From basic facts to multi-digit computation.</p></div>\n' +
@@ -352,7 +352,7 @@ function renderContentBlock(ws) {
     '.hub-card-count{font-size:11px;font-weight:700;color:#DC2626;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;}\n' +
     '.hub-card h3{font-size:16px;font-weight:700;margin-bottom:6px;}\n' +
     '.hub-card p{font-size:13px;color:#A89FAE;}\n' +
-    '</style>\n</head>\n<body>\n' +
+    '</style>\n' + buildAnalytics() + '\n</head>\n<body>\n' +
     siteHeader + '\n' +
     '<div class="breadcrumb"><a href="https://examel.com">Home</a><span class="sep">›</span>Math Drills</div>\n' +
     '<div class="hub-hero"><h1>Free <span>Math Drills</span></h1><p>' + totalAllDrills + '+ free printable math drills with answer keys. Themed practice sheets for addition, subtraction, multiplication, and division.</p></div>\n' +

@@ -8,8 +8,7 @@
 const fs = require('fs');
 const {
   getDirPath, getPageUrl, getGradeHubUrl, getSubjectHubUrl,
-  buildSchema, buildOG, buildCharSVG, buildContentBlock
-} = require('./examel-config');
+  buildSchema, buildOG, buildCharSVG, buildContentBlock, buildAnalytics} = require('./examel-config');
 
 function subjectColorLight(s) {
   const m = { math:'#F5F3FF', english:'#FDF2F8', science:'#ECFDF5', 'drill-grid':'#FEF2F2', reading:'#E0F2FE', vocab:'#FFFBEB' };
@@ -152,6 +151,7 @@ function generateWorksheetPages(worksheets, sharedCSS, siteHeader, siteFooter, h
       .sticky-bar-title{display:none;}
     }
   </style>
+${buildAnalytics()}
 </head>
 <body>
   ${siteHeader}

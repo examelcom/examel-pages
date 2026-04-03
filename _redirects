@@ -1,0 +1,5 @@
+# Examel — Cloudflare Pages redirects
+# www -> non-www (301 permanent)
+https://www.examel.com/* https://examel.com/:splat 301
+http://www.examel.com/* https://examel.com/:splat 301
+http://examel.com/* https://examel.com/:splat 301

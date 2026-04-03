@@ -7,7 +7,7 @@
 const fs = require('fs');
 const path = require('path');
 const { getPageUrl, getDirPath, getDrillTopicUrl, getCardUrl, sanitize } = require('./urls');
-const { buildSchema, buildOG, buildAnswerBadge, buildEmailCapture } = require('./components');
+const { buildSchema, buildOG, buildAnswerBadge, buildEmailCapture, buildAnalytics } = require('./components');
 const { validatePage } = require('./validator');
 const { processWorksheets } = require('./data-gate');
 
@@ -74,6 +74,11 @@ assert(result.clean.length === 1, 'data gate: 1 clean');
 assert(result.flagged.length === 1, 'data gate: 1 flagged');
 assert(result.clean[0].subject === 'math', 'data gate: subject lowercased');
 
+
+// ── ANALYTICS TESTS ──
+assert(buildAnalytics().includes('G-QJ7DF8JRPV'), 'analytics has GA4 ID');
+assert(buildAnalytics().includes('umami'), 'analytics has Umami');
+assert(buildAnalytics().includes('gtag'), 'analytics has gtag');
 // ── LEARNED TESTS (auto-growing) ──
 const learnedPath = path.join(__dirname, 'learned-tests.json');
 if (fs.existsSync(learnedPath)) {

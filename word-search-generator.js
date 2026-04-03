@@ -1,3 +1,4 @@
+const { buildAnalytics } = require('./examel-config');
 // This file is injected into generate-pages.js by the build process
 // It generates word search pages separately
 
@@ -50,6 +51,7 @@ function generateWordSearchPages(worksheets, sharedCSS, siteHeader, siteFooter, 
     .nav-links{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px;font-size:13px;}
     .nav-links a{color:${color};text-decoration:none;}
   </style>
+${buildAnalytics()}
 </head>
 <body>
   ${siteHeader}

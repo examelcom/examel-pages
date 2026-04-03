@@ -10,8 +10,7 @@
 'use strict';
 const fs = require('fs');
 const {
-  buildSchema, buildOG, buildCharSVG, buildAnswerBadge, buildEmailCapture
-} = require('./examel-config');
+  buildSchema, buildOG, buildCharSVG, buildAnswerBadge, buildEmailCapture, buildAnalytics} = require('./examel-config');
 
 const SUBJECT_EDUCATION = {
   math: {
@@ -64,6 +63,7 @@ function generateCategoryHubs(worksheets, sharedCSS, siteHeader, siteFooter, hel
   ${buildOG({ title: `Free Grade ${grade} ${capitalize(subject)} Worksheets | Examel`, description: `Free printable Grade ${grade} ${capitalize(subject)} worksheets with fun themes. Download PDF instantly. Answer keys included.`, url: canonicalUrl })}
   ${buildSchema({ type: 'CollectionPage', title: `Free Grade ${grade} ${capitalize(subject)} Worksheets`, description: `Free printable Grade ${grade} ${capitalize(subject)} worksheets. Fun themes, answer keys included.`, url: canonicalUrl })}
   ${sharedCSS}
+${buildAnalytics()}
 </head>
 <body>
   ${siteHeader}
@@ -134,6 +134,7 @@ function generateCategoryHubs(worksheets, sharedCSS, siteHeader, siteFooter, hel
   ${buildOG({ title: `Free ${capitalize(subject)} Worksheets for Kids | Examel`, description: `Free printable ${capitalize(subject)} worksheets for Grades 1-6. Fun themes, answer keys included. Download PDF instantly.`, url: canonicalUrl })}
   ${buildSchema({ type: 'CollectionPage', title: `Free ${capitalize(subject)} Worksheets for Kids`, description: `Free printable ${capitalize(subject)} worksheets for Grades 1-6. Fun themes, answer keys included.`, url: canonicalUrl })}
   ${sharedCSS}
+${buildAnalytics()}
 </head>
 <body>
   ${siteHeader}
@@ -229,6 +230,7 @@ function generateCategoryHubs(worksheets, sharedCSS, siteHeader, siteFooter, hel
   ${buildOG({ title: `Free Grade ${grade} Worksheets | Math, English, Science | Examel`, description: `Free printable Grade ${grade} worksheets for Math, English and Science. Fun themes, answer keys included.`, url: canonicalUrl })}
   ${buildSchema({ type: 'CollectionPage', title: `Free Grade ${grade} Worksheets`, description: `Free printable Grade ${grade} worksheets for Math, English and Science. Fun themes, answer keys included.`, url: canonicalUrl })}
   ${sharedCSS}
+${buildAnalytics()}
 </head>
 <body>
   ${siteHeader}

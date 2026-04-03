@@ -8,7 +8,7 @@
 'use strict';
 const fs   = require('fs');
 const path = require('path');
-const { buildSchema, buildOG } = require('./examel-config');
+const { buildSchema, buildOG, buildAnalytics} = require('./examel-config');
 
 const BASE = '/opt/examel/examel-pages';
 
@@ -134,6 +134,7 @@ function generatePlannerPages(worksheets, sharedCSS, siteHeader, siteFooter, hel
     .related-title{font-family:'Outfit',sans-serif;font-size:22px;font-weight:800;color:#1A1420;margin-bottom:20px;}
     @media(max-width:700px){.ws-layout{grid-template-columns:1fr;}.ws-sidebar{order:-1;}}
   </style>
+${buildAnalytics()}
 </head>
 <body>
 ${siteHeader}
@@ -214,6 +215,7 @@ ${siteFooter}
   <meta name="description" content="Free printable planners for kids and families. Chore charts, habit trackers, meal planners, morning routines, weekly planners and more. Instant PDF download.">
   <link rel="canonical" href="https://examel.com/planners/">
   ${sharedCSS}
+${buildAnalytics()}
 </head>
 <body>
 ${siteHeader}

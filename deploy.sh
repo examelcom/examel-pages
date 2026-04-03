@@ -56,6 +56,11 @@ echo "▶ Step 3d: Umami analytics inject..." | tee -a $LOG
 node $PAGES_DIR/umami-inject.js >> $LOG 2>&1 || { echo "🔴 BLOCKED: umami-inject.js failed" | tee -a $LOG; exit 1; }
 echo "✅ Umami inject done" | tee -a $LOG
 
+# Step 3e: GA4 analytics inject (safety net)
+echo "▶ Step 3e: GA4 analytics inject..." | tee -a $LOG
+node $PAGES_DIR/ga4-inject.js >> $LOG 2>&1 || { echo "🔴 BLOCKED: ga4-inject.js failed" | tee -a $LOG; exit 1; }
+echo "✅ GA4 inject done" | tee -a $LOG
+
 # Step 3c: Deploy gate
 echo "▶ Step 3c: Deploy gate..." | tee -a $LOG
 node $PAGES_DIR/deploy-gate.js >> $LOG 2>&1

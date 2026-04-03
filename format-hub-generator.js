@@ -12,7 +12,7 @@
 
 'use strict';
 const fs = require('fs');
-const { buildSchema, buildOG, buildCharSVG } = require('./examel-config');
+const { buildSchema, buildOG, buildCharSVG, buildAnalytics} = require('./examel-config');
 
 const favicon = `<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%236C5CE7'/%3E%3Crect x='7' y='7' width='4' height='18' rx='1' fill='white'/%3E%3Crect x='7' y='7' width='7' height='4' rx='1' fill='white'/%3E%3Crect x='7' y='14' width='11' height='4' rx='1' fill='white'/%3E%3Crect x='7' y='21' width='15' height='4' rx='1' fill='white'/%3E%3C/svg%3E`;
 
@@ -42,6 +42,7 @@ function generateFormatHubs(worksheets, sharedCSS, siteHeader, siteFooter, helpe
   ${buildOG({ title: 'Free Math Drills for Kids | Grades 1-6 | Examel', description: 'Free printable math drills for Grades 1-6. Multiplication, division, addition and subtraction drills with answer keys.', url: 'https://examel.com/free-math-drills/' })}
   ${buildSchema({ type: 'CollectionPage', title: 'Free Math Drills for Kids', description: 'Free printable math drills for Grades 1-6. Multiplication, division, addition and subtraction drills with answer keys.', url: 'https://examel.com/free-math-drills/' })}
   ${sharedCSS}
+${buildAnalytics()}
 </head>
 <body>
   ${siteHeader}
@@ -89,6 +90,7 @@ function generateFormatHubs(worksheets, sharedCSS, siteHeader, siteFooter, helpe
   ${buildOG({ title: `Free ${capitalize(topic)} Drills | Grades 1-6 | Examel`, description: `Free printable ${topic} drills for Grades 1-6. Build ${topic} fact fluency with timed practice. Answer keys included.`, url: canonUrl })}
   ${buildSchema({ type: 'CollectionPage', title: `Free ${capitalize(topic)} Drills`, description: `Free printable ${topic} drills for Grades 1-6. Answer keys included.`, url: canonUrl })}
   ${sharedCSS}
+${buildAnalytics()}
 </head>
 <body>
   ${siteHeader}
@@ -131,6 +133,7 @@ function generateFormatHubs(worksheets, sharedCSS, siteHeader, siteFooter, helpe
   ${buildOG({ title: `Free Grade ${g} Math Drills | Examel`, description: `Free printable Grade ${g} math drills with answer keys. Download PDF instantly.`, url: canonUrl })}
   ${buildSchema({ type: 'CollectionPage', title: `Free Grade ${g} Math Drills`, description: `Free printable Grade ${g} math drills with answer keys.`, url: canonUrl })}
   ${sharedCSS}
+${buildAnalytics()}
 </head>
 <body>
   ${siteHeader}
@@ -172,6 +175,7 @@ function generateFormatHubs(worksheets, sharedCSS, siteHeader, siteFooter, helpe
   ${buildOG({ title: `Free ${capitalize(subj)} Vocabulary Worksheets | Examel`, description: `Free printable ${subj} vocabulary match worksheets for Grades 1-6. Answer keys included.`, url: canonUrl })}
   ${buildSchema({ type: 'CollectionPage', title: `Free ${capitalize(subj)} Vocabulary Worksheets`, description: `Free printable ${subj} vocabulary match worksheets for Grades 1-6. Answer keys included.`, url: canonUrl })}
   ${sharedCSS}
+${buildAnalytics()}
 </head>
 <body>
   ${siteHeader}
@@ -202,6 +206,7 @@ function generateFormatHubs(worksheets, sharedCSS, siteHeader, siteFooter, helpe
   ${buildOG({ title: 'Free Reading Comprehension Passages | Grades 1-6 | Examel', description: 'Free printable reading comprehension passages for Grades 1-6. Nonfiction passages with 6 comprehension questions and answer keys.', url: 'https://examel.com/free-reading-passages/' })}
   ${buildSchema({ type: 'CollectionPage', title: 'Free Reading Comprehension Passages', description: 'Free printable reading comprehension passages for Grades 1-6. Nonfiction passages with comprehension questions and answer keys.', url: 'https://examel.com/free-reading-passages/' })}
   ${sharedCSS}
+${buildAnalytics()}
 </head>
 <body>
   ${siteHeader}
@@ -244,6 +249,7 @@ function generateFormatHubs(worksheets, sharedCSS, siteHeader, siteFooter, helpe
   ${buildOG({ title: `Free Grade ${g} Reading Comprehension Passages | Examel`, description: `Free printable Grade ${g} reading comprehension passages. Nonfiction with 6 questions and answer keys.`, url: canonUrl })}
   ${buildSchema({ type: 'CollectionPage', title: `Free Grade ${g} Reading Comprehension Passages`, description: `Free printable Grade ${g} reading comprehension passages with answer keys.`, url: canonUrl })}
   ${sharedCSS}
+${buildAnalytics()}
 </head>
 <body>
   ${siteHeader}
@@ -271,6 +277,7 @@ function generateFormatHubs(worksheets, sharedCSS, siteHeader, siteFooter, helpe
   ${buildOG({ title: 'Free Word Search Worksheets for Kids | Grades 1-6 | Examel', description: 'Free printable word search worksheets for Grades 1-6. Math, English and Science word searches with answer keys.', url: 'https://examel.com/word-searches/' })}
   ${buildSchema({ type: 'CollectionPage', title: 'Free Word Search Worksheets for Kids', description: 'Free printable word search worksheets for Grades 1-6. Math, English and Science word searches with answer keys.', url: 'https://examel.com/word-searches/' })}
   ${sharedCSS}
+${buildAnalytics()}
 </head>
 <body>
   ${siteHeader}
@@ -301,6 +308,7 @@ function generateFormatHubs(worksheets, sharedCSS, siteHeader, siteFooter, helpe
   ${buildOG({ title: 'Free Printable Worksheets for Kids | All Grades | Examel', description: `Browse all ${allPublished.length}+ free printable worksheets for Grades 1-6. Common Core aligned. Answer keys included.`, url: 'https://examel.com/free-worksheets/' })}
   ${buildSchema({ type: 'CollectionPage', title: 'Free Printable Worksheets for Kids', description: `Browse all free printable worksheets for Grades 1-6. Math, English, Science and more. Common Core aligned. Answer keys included.`, url: 'https://examel.com/free-worksheets/' })}
   ${sharedCSS}
+${buildAnalytics()}
 </head>
 <body>
   ${siteHeader}
