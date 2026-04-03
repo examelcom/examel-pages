@@ -59,6 +59,7 @@ function getPageUrl(ws) {
     case 'word-search':
       return `/word-searches/${subject}/grade-${grade}/${slug}/`;
     default:
+      if (format.startsWith('game-')) return `/games/${slug}/`;
       return `/worksheets/${slug}/`;
   }
 }

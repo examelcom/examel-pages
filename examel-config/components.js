@@ -137,15 +137,51 @@ function buildOrganizationSchema() {
     "name": "Examel",
     "url": "https://examel.com",
     "logo": "https://examel.com/og-default.png",
-    "description": "Free printable K-8 worksheets, games, and planners aligned to Common Core standards. Every worksheet a teacher would trust.",
+    "description": "Printable K-8 worksheets, games, and planners. Answer keys included. Every worksheet a teacher would trust.",
     "sameAs": []
   })}</script>`;
+}
+
+// ── FAQ SCHEMA ──
+function buildFAQSchema(faqs) {
+  // faqs = [{question, answer}, ...]
+  if (!faqs || faqs.length === 0) return '';
+  return `<script type="application/ld+json">${JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(f => ({
+      "@type": "Question",
+      "name": f.question,
+      "acceptedAnswer": { "@type": "Answer", "text": f.answer }
+    }))
+  })}</script>`;
+}
+
+// ── GRADE FAQ CONTENT ──
+function getGradeFAQs(grade) {
+  const age = (parseInt(grade) + 4) + '-' + (parseInt(grade) + 6);
+  return [
+    {
+      question: 'What should a Grade ' + grade + ' student know?',
+      answer: 'Grade ' + grade + ' students (ages ' + age + ') typically work on grade-appropriate skills in math, reading, writing, and science aligned to Common Core State Standards. Our worksheets target these specific skills with engaging themes.'
+    },
+    {
+      question: 'How many worksheets should my Grade ' + grade + ' child do per day?',
+      answer: 'Most educators recommend 15-20 minutes of focused practice per day. One or two worksheets is usually sufficient. Quality of engagement matters more than quantity — choose worksheets that match your child\'s current skill level.'
+    },
+    {
+      question: 'Are these Grade ' + grade + ' worksheets free?',
+      answer: 'All Examel worksheets include answer keys and can be downloaded instantly. Teachers can print as many copies as needed for classroom use.'
+    }
+  ];
 }
 
 module.exports = {
   buildAnalytics,
   buildBreadcrumbSchema,
   buildOrganizationSchema,
+  buildFAQSchema,
+  getGradeFAQs,
   buildCharSVG,
   buildAnswerBadge,
   buildEmailCapture,

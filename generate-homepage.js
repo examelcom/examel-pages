@@ -2,6 +2,7 @@ require('dotenv').config({ path: '/opt/examel/pdf-engine/.env' });
 const { createClient } = require('@supabase/supabase-js');
 const fs = require('fs');
 const examelConfig = require('./examel-config');
+const { buildOrganizationSchema, buildAnalytics } = examelConfig;
 
 const supabase = createClient(
   process.env.SUPABASE_URL,
@@ -32,7 +33,7 @@ function worksheetCard(ws) {
       <div class="ws-card-badge" style="background:${color}">${capitalize(ws.subject)} · Grade ${ws.grade}</div>
       <h3>${ws.title}</h3>
       <p>${titleCase(ws.topic)} · ${titleCase(ws.theme)} theme</p>
-      <span class="ws-card-btn">Download Free →</span>
+      <span class="ws-card-btn">View Worksheet →</span>
     </div>
   </a>`;
 }
@@ -63,6 +64,7 @@ async function generate() {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="p:domain_verify" content="TODO_PINTEREST_CODE">
   <title>Free Printable Worksheets for Kids | Grades 1–6 | Examel</title>
   <meta name="description" content="Free printable Math, English and Science worksheets for Grades 1–6. Common Core aligned. Themes kids love — space, dinosaurs, pirates and more. Answer key included. Download PDF instantly, no login needed.">
   <link rel="canonical" href="https://examel.com/">
@@ -238,7 +240,8 @@ ${buildAnalytics()}
     <a href="/free-math-drills/">Drills</a>
     <a href="/free-reading-passages/">Reading</a>
     <a href="/free-math-vocabulary/">Vocabulary</a>
-    <a href="/word-searches/">Word Searches</a>
+    <a href="/free-games/">Games</a>
+    <a href="/planners/">Planners</a>
   </nav>
   <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -251,25 +254,26 @@ ${buildAnalytics()}
   <a href="/free-math-drills/">Drills</a>
   <a href="/free-reading-passages/">Reading</a>
   <a href="/free-math-vocabulary/">Vocabulary</a>
-  <a href="/word-searches/">Word Searches</a>
+  <a href="/free-games/">Games</a>
+    <a href="/planners/">Planners</a>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
     <div>
-      <div class="hero-label">✓ Free · No login · Instant PDF</div>
+      <div class="hero-label">✓ Instant PDF · No login required</div>
       <h1>Worksheets Your Kids<br><span>Actually Want</span><br>to Do</h1>
-      <p class="hero-sub">Themed printables for Grades 1–6. Math, English and Science. Common Core aligned. Answer key on every page.</p>
+      <p class="hero-sub">Themed printables for Grades 1–6. Math, English and Science. Answer key on every page.</p>
       <div class="hero-ctas">
         <a href="/free-math-worksheets/" class="btn-primary">Browse Math Worksheets →</a>
         <a href="/free-worksheets/grade-3/" class="btn-ghost">Browse by Grade</a>
       </div>
       <div class="trust-strip">
-        <div class="trust-item"><div class="trust-check">✓</div>${totalCount.toLocaleString()}+ worksheets</div>
-        <div class="trust-item"><div class="trust-check">✓</div>Free forever</div>
+        <div class="trust-item"><div class="trust-check">✓</div>10,000+ worksheets</div>
+        
         <div class="trust-item"><div class="trust-check">✓</div>Answer key included</div>
-        <div class="trust-item"><div class="trust-check">✓</div>CCSS aligned</div>
+        
       </div>
     </div>
     <div class="grade-picker">
@@ -295,11 +299,10 @@ ${buildAnalytics()}
 <!-- TRUST BAR -->
 <div class="trust-bar">
   <div class="trust-bar-inner">
-    <div class="trust-stat"><span class="trust-stat-num">${totalCount.toLocaleString()}+</span> free worksheets</div>
-    <div class="trust-stat"><span class="trust-stat-num">Grades 1–6</span> all covered</div>
-    <div class="trust-stat"><span class="trust-stat-num">CCSS</span> aligned</div>
+    <div class="trust-stat"><span class="trust-stat-num">10,000+</span> worksheets</div>
+    <div class="trust-stat"><span class="trust-stat-num">K–8</span> all grades</div>
     <div class="trust-stat"><span class="trust-stat-num">Daily</span> new worksheets</div>
-    <div class="trust-stat"><span class="trust-stat-num">Free</span> forever</div>
+    <div class="trust-stat"><span class="trust-stat-num">Answer keys</span> included</div>
   </div>
 </div>
 
@@ -368,7 +371,7 @@ ${buildAnalytics()}
         <div class="section-label">Just added</div>
         <h2 class="section-title">Fresh This Week</h2>
       </div>
-      <a href="/free-worksheets/" class="section-link">Browse all ${totalCount.toLocaleString()}+ worksheets →</a>
+      <a href="/free-worksheets/" class="section-link">Browse all 10,000+ worksheets →</a>
     </div>
     <div class="ws-grid">
       ${fresh.map(ws => worksheetCard(ws)).join('\n')}
@@ -422,8 +425,8 @@ ${buildAnalytics()}
       </div>
       <div class="why-card">
         <div class="why-icon">📐</div>
-        <h3>Common Core aligned</h3>
-        <p>Every worksheet is tagged to CCSS standards. Grade-appropriate difficulty. Teacher-reviewed. Used in classrooms and homes across the USA.</p>
+        <h3>Standards aligned</h3>
+        <p>Every worksheet is grade-appropriate and standards-aligned. Teacher-reviewed difficulty. Used in classrooms and homes worldwide.</p>
       </div>
       <div class="why-card">
         <div class="why-icon">✓</div>
@@ -463,10 +466,10 @@ ${buildAnalytics()}
 <section class="email-section">
   <div class="email-inner">
     <h2>Get new worksheets every week</h2>
-    <p>New themed printables added daily. Subscribe free and get the best ones delivered to your inbox every week.</p>
+    <p>New themed printables added daily. Subscribe and get the best ones delivered to your inbox every week.</p>
     <div class="email-form">
       <input type="email" class="email-input" id="emailInput" placeholder="Your email address">
-      <button class="email-btn" onclick="examelSubscribe()">Subscribe Free</button>
+      <button class="email-btn" onclick="examelSubscribe()">Subscribe</button>
     </div>
     <div class="email-msg" id="emailMsg"></div>
     <p class="email-note">No spam. Unsubscribe anytime.</p>
@@ -493,7 +496,8 @@ ${buildAnalytics()}
       <div class="footer-col">
         <div class="footer-heading">Practice</div>
         <a href="/free-math-drills/">Math Drills</a>
-        <a href="/word-searches/">Word Searches</a>
+        <a href="/free-games/">Games</a>
+    <a href="/planners/">Planners</a>
         <a href="/free-math-vocabulary/">Vocabulary</a>
         <a href="/free-reading-passages/">Reading</a>
       </div>
@@ -514,7 +518,7 @@ ${buildAnalytics()}
         <a href="/terms/">Terms of Use</a>
       </div>
     </div>
-    <div class="footer-bottom">© ${YEAR} Examel · Free K-8 Printable Worksheets · Every exam. Every grade.</div>
+    <div class="footer-bottom">© ${YEAR} Examel · K-8 Printable Worksheets, Games & Planners · Every exam. Every grade.</div>
   </div>
 </footer>
 

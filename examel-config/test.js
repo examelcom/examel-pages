@@ -7,7 +7,7 @@
 const fs = require('fs');
 const path = require('path');
 const { getPageUrl, getDirPath, getDrillTopicUrl, getCardUrl, sanitize } = require('./urls');
-const { buildSchema, buildOG, buildAnswerBadge, buildEmailCapture, buildAnalytics, buildBreadcrumbSchema, buildOrganizationSchema } = require('./components');
+const { buildSchema, buildOG, buildAnswerBadge, buildEmailCapture, buildAnalytics, buildBreadcrumbSchema, buildOrganizationSchema, buildFAQSchema, getGradeFAQs } = require('./components');
 const { validatePage } = require('./validator');
 const { processWorksheets } = require('./data-gate');
 
@@ -82,6 +82,11 @@ assert(buildOrganizationSchema().includes('Organization'), 'org schema has Organ
 assert(buildSchema({title:'Test',ccss:'3.OA.7'}).includes('educationalAlignment'), 'schema with ccss has educationalAlignment');
 assert(buildSchema({title:'Test',ccss:'3.OA.7'}).includes('Common Core'), 'schema with ccss has Common Core');
 assert(buildSchema({title:'Test',typicalAgeRange:'8-9'}).includes('typicalAgeRange'), 'schema has typicalAgeRange');
+
+// ── FAQ TESTS ──
+assert(buildFAQSchema([{question:'Q1',answer:'A1'}]).includes('FAQPage'), 'FAQ schema has FAQPage');
+assert(getGradeFAQs(3).length === 3, 'grade 3 has 3 FAQs');
+assert(getGradeFAQs(3)[0].question.includes('Grade 3'), 'grade FAQ mentions grade');
 // ── ANALYTICS TESTS ──
 assert(buildAnalytics().includes('G-QJ7DF8JRPV'), 'analytics has GA4 ID');
 assert(buildAnalytics().includes('umami'), 'analytics has Umami');

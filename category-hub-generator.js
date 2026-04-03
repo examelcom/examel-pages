@@ -10,7 +10,7 @@
 'use strict';
 const fs = require('fs');
 const {
-  buildSchema, buildOG, buildCharSVG, buildAnswerBadge, buildEmailCapture, buildAnalytics} = require('./examel-config');
+  buildSchema, buildOG, buildCharSVG, buildAnswerBadge, buildEmailCapture, buildAnalytics, buildFAQSchema, getGradeFAQs, buildBreadcrumbSchema} = require('./examel-config');
 
 const SUBJECT_EDUCATION = {
   math: {
@@ -229,6 +229,8 @@ ${buildAnalytics()}
   <link rel="canonical" href="${canonicalUrl}">
   ${buildOG({ title: `Free Grade ${grade} Worksheets | Math, English, Science | Examel`, description: `Free printable Grade ${grade} worksheets for Math, English and Science. Fun themes, answer keys included.`, url: canonicalUrl })}
   ${buildSchema({ type: 'CollectionPage', title: `Free Grade ${grade} Worksheets`, description: `Free printable Grade ${grade} worksheets for Math, English and Science. Fun themes, answer keys included.`, url: canonicalUrl })}
+  ${buildFAQSchema(getGradeFAQs(grade))}
+  ${buildBreadcrumbSchema([{name:'Home',url:'https://examel.com'},{name:'Worksheets',url:'https://examel.com/free-worksheets/'},{name:'Grade '+grade,url:canonicalUrl}])}
   ${sharedCSS}
 ${buildAnalytics()}
 </head>
@@ -257,6 +259,10 @@ ${buildAnalytics()}
   </div>
   <div class="grid">
     ${filtered.slice(0, 12).map(worksheetCard).join('')}
+  </div>
+  <div style="max-width:780px;margin:0 auto;padding:32px 20px 48px;">
+    <h2 style="font-family:Outfit,sans-serif;font-size:22px;font-weight:800;color:#1A1420;margin-bottom:20px;">Frequently Asked Questions</h2>
+    ${getGradeFAQs(grade).map(f => `<div style="margin-bottom:20px;"><h3 style="font-family:Outfit,sans-serif;font-size:16px;font-weight:700;color:#1A1420;margin-bottom:8px;">${f.question}</h3><p style="font-size:14px;color:#6B6475;line-height:1.8;">${f.answer}</p></div>`).join('')}
   </div>
   ${siteFooter}
 </body>
