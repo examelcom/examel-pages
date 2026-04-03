@@ -28,6 +28,16 @@ const GAME_META = {
   'game-timeline':       { label: 'Timeline',          emoji: '📅', desc: 'Order events in the correct chronological sequence.' },
   'game-crossword':      { label: 'Crossword',         emoji: '📰', desc: 'Complete the crossword using the clues provided.' },
   'game-wouldyourather': { label: 'Would You Rather',  emoji: '🤔', desc: 'Discuss fun dilemmas and explain your reasoning.' },
+  // ── Curriculum Engines (tier 5) ──
+  'game-place-value':    { label: 'Place Value',       emoji: '🔢', desc: 'Practice place value with hundreds charts, base-10 blocks, expanded form, and more.' },
+  'game-multiplication': { label: 'Multiplication',    emoji: '✖️', desc: 'Master multiplication with times tables, arrays, fact families, and word problems.' },
+  'game-phonics':        { label: 'Phonics',           emoji: '🔤', desc: 'Build reading skills with CVC words, blends, digraphs, sight words, and rhyming.' },
+  'game-reading-comp':   { label: 'Reading Comp',      emoji: '📖', desc: 'Strengthen comprehension with main idea, inference, text evidence, and more.' },
+  'game-geometry':       { label: 'Geometry',          emoji: '📐', desc: 'Explore shapes, perimeter, area, angles, symmetry, and coordinate grids.' },
+  'game-measurement':    { label: 'Measurement',       emoji: '📏', desc: 'Practice length, weight, time, money, temperature, and unit conversion.' },
+  'game-graphing':       { label: 'Graphing & Data',   emoji: '📊', desc: 'Read and create bar graphs, tally charts, line graphs, pie charts, and more.' },
+  'game-patterns':       { label: 'Patterns',          emoji: '🔁', desc: 'Identify and extend patterns, skip count, complete function tables, and find rules.' },
+  'game-seasonal':       { label: 'Seasonal',          emoji: '🎃', desc: 'Holiday and seasonal worksheets including word searches, writing prompts, and math review.' },
 };
 
 function capitalize(s) { return s ? s.charAt(0).toUpperCase() + s.slice(1) : ''; }
