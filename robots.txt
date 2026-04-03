@@ -1,7 +1,29 @@
 User-agent: *
 Allow: /
-
 Disallow: /downloads/
 Disallow: /thumbnails/
+
+# AI Crawlers — allowed for citation and discovery
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+# Block scrapers with no benefit
+User-agent: CCBot
+Disallow: /
 
 Sitemap: https://examel.com/sitemap.xml

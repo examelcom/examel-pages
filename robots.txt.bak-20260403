@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Disallow: /downloads/
+Disallow: /thumbnails/
+
+Sitemap: https://examel.com/sitemap.xml
