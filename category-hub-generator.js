@@ -245,7 +245,8 @@ ${buildAnalytics()}
     <h1>Free <span>Grade ${grade} Worksheets</span></h1>
     <p>${filtered.length}+ printable Grade ${grade} worksheets for Math, English and Science. Fun themes, answer keys included.</p>
   </div>
-  <div class="hub-grid">
+  <div class="hub-grid" data-pagefind-body>
+    <span data-pagefind-filter="format" hidden>Hub</span>
     ${allSubjects.map(s => {
       const count = worksheets.filter(w => w.subject.toLowerCase() === s && w.grade === grade && (!w.format || w.format === 'worksheet' || (w.format && w.format.startsWith('game-')))).length;
       if (count === 0) return '';

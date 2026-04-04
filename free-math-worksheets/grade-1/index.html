@@ -5,7 +5,7 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%236C5CE7'/%3E%3Crect x='7' y='7' width='4' height='18' rx='1' fill='white'/%3E%3Crect x='7' y='7' width='7' height='4' rx='1' fill='white'/%3E%3Crect x='7' y='14' width='11' height='4' rx='1' fill='white'/%3E%3Crect x='7' y='21' width='15' height='4' rx='1' fill='white'/%3E%3C/svg%3E">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Free Grade 1 Math Worksheets | Printable PDF | Examel</title>
-  <meta name="description" content="Free printable Grade 1 Math worksheets. 76+ worksheets with fun themes. Download PDF instantly. Answer keys included. No signup required.">
+  <meta name="description" content="Free printable Grade 1 Math worksheets. 91+ worksheets with fun themes. Download PDF instantly. Answer keys included. No signup required.">
   <link rel="canonical" href="https://examel.com/free-math-worksheets/grade-1/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Free Grade 1 Math Worksheets | Examel">
@@ -138,7 +138,7 @@
 </head>
 <body>
   
-  <header class="site-header">
+  <header class="site-header" data-pagefind-ignore>
     <a href="https://examel.com" class="site-logo">
       <svg width="30" height="30" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
         <rect width="72" height="72" rx="16" fill="#6C5CE7"/>
@@ -243,7 +243,7 @@
       <span></span><span></span><span></span>
     </button>
   </header>
-  <nav class="mobile-nav" id="mobileNav">
+  <nav class="mobile-nav" id="mobileNav" data-pagefind-ignore>
     <div style="padding:8px 4px 12px;">
       <input type="text" id="mobileSearchInput" placeholder="Search worksheets..." autocomplete="off" style="width:100%;padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.08);color:white;font-size:15px;font-family:inherit;outline:none;">
       <div id="mobileSearchResults" style="margin-top:8px;"></div>
@@ -294,35 +294,114 @@
   <script>
   function toggleMobileMenu(){document.getElementById('mobileNav').classList.toggle('open');}
   (function(){
-    // Mega menu toggle buttons (for click + keyboard support per WAI disclosure pattern)
+    // Mega menu toggle (WAI disclosure pattern)
     document.querySelectorAll('.mega-nav-toggle').forEach(function(btn){
       btn.addEventListener('click',function(e){
         e.stopPropagation();
         var expanded=btn.getAttribute('aria-expanded')==='true';
-        // Close all other panels first
         document.querySelectorAll('.mega-nav-toggle').forEach(function(b){b.setAttribute('aria-expanded','false');});
         if(!expanded){btn.setAttribute('aria-expanded','true');}
       });
     });
-    // Escape closes mega panels
     document.addEventListener('keydown',function(e){
-      if(e.key==='Escape'){
-        document.querySelectorAll('.mega-nav-toggle').forEach(function(b){b.setAttribute('aria-expanded','false');});
-      }
+      if(e.key==='Escape'){document.querySelectorAll('.mega-nav-toggle').forEach(function(b){b.setAttribute('aria-expanded','false');});}
     });
-    // Click outside closes mega panels
     document.addEventListener('click',function(e){
-      if(!e.target.closest('.mega-nav-item')){
-        document.querySelectorAll('.mega-nav-toggle').forEach(function(b){b.setAttribute('aria-expanded','false');});
-      }
+      if(!e.target.closest('.mega-nav-item')){document.querySelectorAll('.mega-nav-toggle').forEach(function(b){b.setAttribute('aria-expanded','false');});}
     });
-    // Search
-    var idx=null;
-    function loadIndex(cb){if(idx)return cb(idx);fetch('/search-index.json').then(function(r){return r.json();}).then(function(d){idx=d;cb(idx);}).catch(function(){idx=[];cb([]);});}
-    function search(q,data){if(!q||q.length<2)return[];var terms=q.toLowerCase().split(' ').filter(Boolean);return data.filter(function(p){var k=p.k||'';return terms.every(function(t){return k.includes(t);});}).slice(0,8);}
-    function renderResults(results,container){if(!results.length){container.innerHTML='<div style="padding:12px 16px;color:#A89FAE;font-size:13px;">No results found</div>';return;}container.innerHTML=results.map(function(p){var badge=p.g?'Grade '+p.g:(p.f||'');var color=p.s==='math'?'#7C3AED':p.s==='english'?'#DB2777':p.s==='science'?'#059669':'#6C5CE7';return '<a href="'+p.u+'" style="display:flex;align-items:center;gap:10px;padding:10px 16px;text-decoration:none;color:#1A1420;border-bottom:1px solid #F0EDE8;transition:background 0.15s;" onmouseover="this.style.background='#F4F1FF'" onmouseout="this.style.background=''"><span style="background:'+color+';color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:100px;white-space:nowrap;flex-shrink:0;">'+badge+'</span><span style="font-size:14px;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">'+p.t+'</span></a>';}).join('');}
-    function setupSearch(inputId,resultsId){var input=document.getElementById(inputId);var results=document.getElementById(resultsId);if(!input||!results)return;var timer;input.addEventListener('input',function(){clearTimeout(timer);var q=input.value.trim();if(!q||q.length<2){results.style.display='none';return;}timer=setTimeout(function(){loadIndex(function(data){var found=search(q,data);renderResults(found,results);results.style.display='block';});},200);});input.addEventListener('keydown',function(e){if(e.key==='Escape'){results.style.display='none';input.value='';}if(e.key==='Enter'&&input.value.trim().length>1){window.location.href='/browse/?q='+encodeURIComponent(input.value.trim());}});document.addEventListener('click',function(e){if(!input.contains(e.target)&&!results.contains(e.target))results.style.display='none';});}
-    document.addEventListener('DOMContentLoaded',function(){setupSearch('searchInput','searchResults');setupSearch('mobileSearchInput','mobileSearchResults');});
+
+    // ── PAGEFIND SEARCH ──
+    var pf=null;
+    var gradeMap={'1st':'1','2nd':'2','3rd':'3','4th':'4','5th':'5','6th':'6','7th':'7','8th':'8','first':'1','second':'2','third':'3','fourth':'4','fifth':'5','sixth':'6','seventh':'7','eighth':'8','kindergarten':'k','kinder':'k'};
+
+    function normalizeQuery(q){
+      q=q.toLowerCase().trim();
+      // "3rd grade math" → "grade 3 math"
+      q=q.replace(/(d+)(?:st|nd|rd|th)s*grade/gi,function(_,n){return 'grade '+n;});
+      // "first grade" → "grade 1"
+      for(var word in gradeMap){
+        var re=new RegExp(word+'\s+grade','gi');
+        q=q.replace(re,'grade '+gradeMap[word]);
+        re=new RegExp('grade\s+'+word,'gi');
+        q=q.replace(re,'grade '+gradeMap[word]);
+      }
+      return q;
+    }
+
+    async function initPagefind(){
+      if(pf)return pf;
+      try{
+        pf=await import('/pagefind/pagefind.js');
+        await pf.options({excerptLength:15});
+        return pf;
+      }catch(e){console.warn('Pagefind not available, falling back to JSON search');return null;}
+    }
+
+    async function doSearch(q){
+      var engine=await initPagefind();
+      if(!engine){return doFallbackSearch(q);}
+      var results=await engine.search(normalizeQuery(q));
+      if(!results||!results.results)return[];
+      var items=await Promise.all(results.results.slice(0,8).map(function(r){return r.data();}));
+      return items.map(function(item){
+        var grade=item.filters&&item.filters.grade?item.filters.grade[0]:'';
+        var subject=item.filters&&item.filters.subject?item.filters.subject[0]:'';
+        var format=item.filters&&item.filters.format?item.filters.format[0]:'';
+        return{t:item.meta&&item.meta.title||'',u:item.url||'',g:grade,s:subject.toLowerCase(),f:format};
+      });
+    }
+
+    // Fallback to old JSON search if Pagefind unavailable
+    var fallbackIdx=null;
+    function doFallbackSearch(q){
+      return new Promise(function(resolve){
+        if(fallbackIdx){resolve(searchJSON(q,fallbackIdx));return;}
+        fetch('/search-index.json').then(function(r){return r.json();}).then(function(d){fallbackIdx=d;resolve(searchJSON(q,d));}).catch(function(){resolve([]);});
+      });
+    }
+    function searchJSON(q,data){
+      var terms=q.toLowerCase().split(' ').filter(Boolean);
+      return data.filter(function(p){var k=p.k||'';return terms.every(function(t){return k.includes(t);});}).slice(0,8);
+    }
+
+    function renderResults(results,container){
+      if(!results.length){container.innerHTML='<div style="padding:14px 16px;color:#A89FAE;font-size:13px;">No results found. Try a different term.</div>';return;}
+      container.innerHTML=results.map(function(p){
+        var badge=p.g||(p.f||'');
+        var color=p.s==='math'?'#7C3AED':p.s==='english'?'#DB2777':p.s==='science'?'#059669':'#6C5CE7';
+        return '<a href="'+p.u+'" style="display:flex;align-items:center;gap:10px;padding:10px 16px;text-decoration:none;color:#1A1420;border-bottom:1px solid #F0EDE8;transition:background 0.15s;" onmouseover="this.style.background='#F4F1FF'" onmouseout="this.style.background=''"><span style="background:'+color+';color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:100px;white-space:nowrap;flex-shrink:0;">'+badge+'</span><span style="font-size:14px;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">'+p.t+'</span></a>';
+      }).join('');
+    }
+
+    function setupSearch(inputId,resultsId){
+      var input=document.getElementById(inputId);
+      var results=document.getElementById(resultsId);
+      if(!input||!results)return;
+      var timer;
+      // Preload Pagefind on first focus
+      input.addEventListener('focus',function(){initPagefind();},{once:true});
+      input.addEventListener('input',function(){
+        clearTimeout(timer);
+        var q=input.value.trim();
+        if(!q||q.length<2){results.style.display='none';return;}
+        timer=setTimeout(async function(){
+          var found=await doSearch(q);
+          renderResults(found,results);
+          results.style.display='block';
+        },200);
+      });
+      input.addEventListener('keydown',function(e){
+        if(e.key==='Escape'){results.style.display='none';input.value='';}
+        if(e.key==='Enter'&&input.value.trim().length>1){window.location.href='/browse/?q='+encodeURIComponent(input.value.trim());}
+      });
+      document.addEventListener('click',function(e){
+        if(!input.contains(e.target)&&!results.contains(e.target))results.style.display='none';
+      });
+    }
+    document.addEventListener('DOMContentLoaded',function(){
+      setupSearch('searchInput','searchResults');
+      setupSearch('mobileSearchInput','mobileSearchResults');
+    });
   })();
   </script>
   <div class="breadcrumb">
@@ -334,7 +413,7 @@
     <div style="max-width:1100px;margin:0 auto;padding:48px 180px 44px 48px;position:relative;z-index:2;">
       <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.35);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;font-family:'Outfit',sans-serif;">Free Printable Worksheets</div>
       <h1 style="font-size:clamp(24px,3.5vw,42px);font-weight:900;color:white;letter-spacing:-1.5px;line-height:1.1;margin-bottom:12px;font-family:'Outfit',sans-serif;">Free Grade 1 <span style="color:#7C3AED">Math</span> Worksheets</h1>
-      <p style="font-size:15px;color:rgba(255,255,255,0.5);max-width:500px;line-height:1.75;margin-bottom:20px;">76+ printable Grade 1 Math worksheets. Fun themes, answer keys included. Download PDF instantly.</p>
+      <p style="font-size:15px;color:rgba(255,255,255,0.5);max-width:500px;line-height:1.75;margin-bottom:20px;">91+ printable Grade 1 Math worksheets. Fun themes, answer keys included. Download PDF instantly.</p>
       <div style="display:flex;gap:14px;flex-wrap:wrap;">
         <div style="font-size:14px;color:rgba(255,255,255,0.4);font-weight:500;"><span style="color:#7C3AED;font-weight:700;">✓</span> Answer keys included</div>
         <div style="font-size:14px;color:rgba(255,255,255,0.4);font-weight:500;"><span style="color:#7C3AED;font-weight:700;">✓</span> Answer key included</div>
@@ -352,6 +431,141 @@
   </div>
   <div class="grid">
     
+    <a href="/worksheets/grade-1-math-counting-wizards-standard/" class="ws-card">
+      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#7C3AED18 0%,#7C3AED08 100%);border-top:4px solid #7C3AED"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#7C3AED;letter-spacing:-1px">Math</span></div>
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 1</div>
+        <h3>Maya the Wizard: Counting Quest</h3>
+        <p>Counting · Wizards theme</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+    <a href="/worksheets/grade-1-math-addition-mothers-day-standard/" class="ws-card">
+      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#7C3AED18 0%,#7C3AED08 100%);border-top:4px solid #7C3AED"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#7C3AED;letter-spacing:-1px">Math</span></div>
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 1</div>
+        <h3>Maya's Mother's Day Gift Hunt Adventure</h3>
+        <p>Addition · Mothers Day theme</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+    <a href="/worksheets/grade-1-math-counting-nature-standard/" class="ws-card">
+      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#7C3AED18 0%,#7C3AED08 100%);border-top:4px solid #7C3AED"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#7C3AED;letter-spacing:-1px">Math</span></div>
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 1</div>
+        <h3>Maya's Nature Hunt: Counting Adventure</h3>
+        <p>Counting · Nature theme</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+    <a href="/worksheets/grade-1-math-subtraction-christmas-standard/" class="ws-card">
+      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#7C3AED18 0%,#7C3AED08 100%);border-top:4px solid #7C3AED"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#7C3AED;letter-spacing:-1px">Math</span></div>
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 1</div>
+        <h3>Maya's Christmas Subtraction Adventure</h3>
+        <p>Subtraction · Christmas theme</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+    <a href="/worksheets/grade-1-math-counting-hanukkah-standard/" class="ws-card">
+      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#7C3AED18 0%,#7C3AED08 100%);border-top:4px solid #7C3AED"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#7C3AED;letter-spacing:-1px">Math</span></div>
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 1</div>
+        <h3>Maya's Hanukkah Counting Adventure</h3>
+        <p>Counting · Hanukkah theme</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+    <a href="/worksheets/grade-1-math-subtraction-spring-beginner/" class="ws-card">
+      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#7C3AED18 0%,#7C3AED08 100%);border-top:4px solid #7C3AED"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#7C3AED;letter-spacing:-1px">Math</span></div>
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 1</div>
+        <h3>Maya's Spring Garden Subtraction Adventure</h3>
+        <p>Subtraction · Spring theme</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+    <a href="/worksheets/grade-1-math-addition-fairy-tales-standard/" class="ws-card">
+      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#7C3AED18 0%,#7C3AED08 100%);border-top:4px solid #7C3AED"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#7C3AED;letter-spacing:-1px">Math</span></div>
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 1</div>
+        <h3>Maya's Fairy-Tale Quest: Addition Adventure</h3>
+        <p>Addition · Fairy Tales theme</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+    <a href="/worksheets/grade-1-math-addition-hanukkah-standard/" class="ws-card">
+      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#7C3AED18 0%,#7C3AED08 100%);border-top:4px solid #7C3AED"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#7C3AED;letter-spacing:-1px">Math</span></div>
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 1</div>
+        <h3>Maya's Hanukkah Treasure Hunt Adventure</h3>
+        <p>Addition · Hanukkah theme</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+    <a href="/worksheets/grade-1-math-counting-eco-warriors-standard/" class="ws-card">
+      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#7C3AED18 0%,#7C3AED08 100%);border-top:4px solid #7C3AED"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#7C3AED;letter-spacing:-1px">Math</span></div>
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 1</div>
+        <h3>Maya the Eco-Warrior Counts to Save</h3>
+        <p>Counting · Eco Warriors theme</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+    <a href="/worksheets/grade-1-math-counting-desert-standard/" class="ws-card">
+      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#7C3AED18 0%,#7C3AED08 100%);border-top:4px solid #7C3AED"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#7C3AED;letter-spacing:-1px">Math</span></div>
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 1</div>
+        <h3>Maya's Desert treasure hunt math adventure</h3>
+        <p>Counting · Desert theme</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+    <a href="/worksheets/grade-1-math-counting-summer-vacation-standard/" class="ws-card">
+      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#7C3AED18 0%,#7C3AED08 100%);border-top:4px solid #7C3AED"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#7C3AED;letter-spacing:-1px">Math</span></div>
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 1</div>
+        <h3>Maya's Summer Treasure Hunt Adventure</h3>
+        <p>Counting · Summer Vacation theme</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+    <a href="/worksheets/grade-1-math-counting-world-games-standard/" class="ws-card">
+      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#7C3AED18 0%,#7C3AED08 100%);border-top:4px solid #7C3AED"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#7C3AED;letter-spacing:-1px">Math</span></div>
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 1</div>
+        <h3>Maya's World Games Counting Quest</h3>
+        <p>Counting · World Games theme</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+    <a href="/worksheets/grade-1-math-subtraction-mountains-standard/" class="ws-card">
+      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#7C3AED18 0%,#7C3AED08 100%);border-top:4px solid #7C3AED"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#7C3AED;letter-spacing:-1px">Math</span></div>
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 1</div>
+        <h3>Maya's Mountain Subtraction Adventure</h3>
+        <p>Subtraction · Mountains theme</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+    <a href="/worksheets/grade-1-math-counting-gardening-standard/" class="ws-card">
+      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#7C3AED18 0%,#7C3AED08 100%);border-top:4px solid #7C3AED"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#7C3AED;letter-spacing:-1px">Math</span></div>
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 1</div>
+        <h3>Maya's Magic Garden Counting Adventure</h3>
+        <p>Counting · Gardening theme</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+    <a href="/worksheets/grade-1-math-addition-young-scientists-standard/" class="ws-card">
+      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#7C3AED18 0%,#7C3AED08 100%);border-top:4px solid #7C3AED"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#7C3AED;letter-spacing:-1px">Math</span></div>
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 1</div>
+        <h3>Maya's Big Science Discovery Day</h3>
+        <p>Addition · Young Scientists theme</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
     <a href="/worksheets/grade-1-math-counting-sports-standard/" class="ws-card">
       <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#7C3AED18 0%,#7C3AED08 100%);border-top:4px solid #7C3AED"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#7C3AED;letter-spacing:-1px">Math</span></div>
       <div class="ws-card-body">
@@ -1038,7 +1252,7 @@
     </a>
   </div>
   
-  <footer class="site-footer">
+  <footer class="site-footer" data-pagefind-ignore>
     <div class="footer-inner">
       <div class="footer-logo">
         <svg width="34" height="34" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">

@@ -235,7 +235,7 @@ function renderContentBlock(ws) {
           '</div>\n' +
         '</div>\n' +
       '</div>\n' +
-      '<div class="intent-content">\n' +
+      '<div class="intent-content" data-pagefind-body><span data-pagefind-filter="format" hidden>Drill</span>\n' +
         '<p class="intent-desc">' + intent.description + '</p>\n' +
         '<p class="intent-count">' + intentDrills.length + ' THEMED DRILLS AVAILABLE — PICK YOUR FAVORITE</p>\n' +
         '<div class="drill-grid">\n' + drillCards + '\n</div>\n' +
@@ -306,7 +306,7 @@ function renderContentBlock(ws) {
       siteHeader + '\n' +
       '<div class="breadcrumb"><a href="https://examel.com">Home</a><span class="sep">›</span><a href="/free-math-drills/">Math Drills</a><span class="sep">›</span>' + capitalize(op) + '</div>\n' +
       '<div class="hub-hero"><h1><span>' + capitalize(op) + '</span> Drills</h1><p>' + totalDrills + '+ printable ' + op + ' drills with answer keys. From basic facts to multi-digit computation.</p></div>\n' +
-      '<div class="hub-content"><div class="hub-grid">' + intentCards + '</div></div>\n' +
+      '<div class="hub-content" data-pagefind-body><span data-pagefind-filter="format" hidden>Drill</span><div class="hub-grid">' + intentCards + '</div></div>\n' +
       siteFooter + '\n</body>\n</html>';
 
     fs.writeFileSync(dir + '/index.html', html);
@@ -356,7 +356,7 @@ function renderContentBlock(ws) {
     siteHeader + '\n' +
     '<div class="breadcrumb"><a href="https://examel.com">Home</a><span class="sep">›</span>Math Drills</div>\n' +
     '<div class="hub-hero"><h1><span>Math Drills</span></h1><p>' + totalAllDrills + '+ printable math drills with answer keys. Themed practice sheets for addition, subtraction, multiplication, and division.</p></div>\n' +
-    '<div class="hub-content"><div class="hub-grid">' + mainHubCards + '</div></div>\n' +
+    '<div class="hub-content" data-pagefind-body><span data-pagefind-filter="format" hidden>Drill</span><div class="hub-grid">' + mainHubCards + '</div></div>\n' +
     siteFooter + '\n</body>\n</html>';
 
   fs.writeFileSync(baseDir + '/index.html', mainHTML);

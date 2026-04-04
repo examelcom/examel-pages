@@ -8,7 +8,7 @@
 'use strict';
 const fs   = require('fs');
 const path = require('path');
-const { buildSchema, buildOG, buildAnalytics} = require('./examel-config');
+const { buildSchema, buildOG, buildAnalytics, buildSynonymBlock } = require('./examel-config');
 
 const BASE = '/opt/examel/examel-pages';
 
@@ -150,7 +150,10 @@ ${siteHeader}
   <h1>${ws.title}</h1>
   <p>Printable ${type.toLowerCase()}. Instant PDF download. No signup required.</p>
 </div>
-<div class="ws-layout">
+<div class="ws-layout" data-pagefind-body>
+    <span data-pagefind-filter="format" hidden>Planner</span>
+    <span data-pagefind-meta="topic" hidden>${formatTopic(ws.topic || 'planner')}</span>
+    ${buildSynonymBlock(ws)}
   <div class="ws-preview">
     ${ws.preview_p1_url
       ? `<img src="${ws.preview_p1_url}" alt="${ws.title} preview" loading="lazy">`

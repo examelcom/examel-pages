@@ -46,6 +46,15 @@ if [ $? -ne 0 ]; then
 fi
 echo "✅ Search index generated" | tee -a $LOG
 
+# Step 3a2: Pagefind chunked search index
+echo "▶ Step 3a2: Pagefind search index..." | tee -a $LOG
+npx pagefind --site $PAGES_DIR >> $LOG 2>&1
+if [ $? -ne 0 ]; then
+  echo "⚠️ WARNING: Pagefind indexing failed (falling back to JSON search)" | tee -a $LOG
+else
+  echo "✅ Pagefind index built" | tee -a $LOG
+fi
+
 # Step 3b: Post-build inject (schema/OG for hub pages)
 echo "▶ Step 3b: Post-build inject..." | tee -a $LOG
 node $PAGES_DIR/post-build-inject.js >> $LOG 2>&1 || { echo "🔴 BLOCKED: post-build-inject.js failed" | tee -a $LOG; exit 1; }

@@ -1,4 +1,4 @@
-const { buildAnalytics } = require('./examel-config');
+const { buildAnalytics, buildSynonymBlock } = require('./examel-config');
 const fs = require('fs');
 
 function generateReadingPassagePages(worksheets, sharedCSS, siteHeader, siteFooter, gradeColor, capitalize, formatTopic, formatTheme) {
@@ -88,7 +88,12 @@ ${buildAnalytics()}
       <span class="badge">6 Questions</span>
     </div>
   </div>
-  <div class="ws-container">
+  <div class="ws-container" data-pagefind-body>
+    <span data-pagefind-filter="grade" hidden>Grade ${ws.grade}</span>
+    <span data-pagefind-filter="subject" hidden>${capitalize(ws.subject)}</span>
+    <span data-pagefind-filter="format" hidden>Reading Passage</span>
+    <span data-pagefind-meta="topic" hidden>${formatTopic(ws.topic)}</span>
+    ${buildSynonymBlock(ws)}
     <div class="download-box">
       <h2>Ready to Print — 3 Pages</h2>
       <p>Grade ${ws.grade} nonfiction reading passage about ${topicName}. ${themeName} theme. 6 comprehension questions covering main idea, inference, vocabulary, text evidence and more. Answer key included${ccssText}.</p>

@@ -177,6 +177,7 @@ function getGradeFAQs(grade) {
 }
 
 module.exports = {
+  buildSynonymBlock,
   buildAnalytics,
   buildBreadcrumbSchema,
   buildOrganizationSchema,
@@ -198,4 +199,55 @@ function buildCharSVG(subject) {
   if (subject === 'science') return '<svg width="110" height="130" viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg"><ellipse cx="60" cy="105" rx="36" ry="8" fill="rgba(5,150,105,0.12)"/><rect x="18" y="70" width="84" height="54" rx="18" fill="#F8F8F8"/><rect x="30" y="76" width="60" height="28" rx="12" fill="#0D9488"/><ellipse cx="34" cy="122" rx="14" ry="8" fill="#0F766E"/><ellipse cx="86" cy="122" rx="14" ry="8" fill="#0F766E"/><ellipse cx="60" cy="66" rx="42" ry="46" fill="#7B3F0E"/><ellipse cx="60" cy="26" rx="42" ry="24" fill="#0A0500"/><circle cx="32" cy="28" r="22" fill="#0A0500"/><circle cx="88" cy="28" r="22" fill="#0A0500"/><ellipse cx="32" cy="50" rx="12" ry="6" fill="#F59E0B"/><ellipse cx="88" cy="50" rx="12" ry="6" fill="#F59E0B"/><ellipse cx="32" cy="49" rx="9" ry="4" fill="#FBBF24"/><ellipse cx="88" cy="49" rx="9" ry="4" fill="#FBBF24"/><rect x="20" y="54" width="14" height="52" rx="7" fill="#0A0500"/><rect x="86" y="54" width="14" height="52" rx="7" fill="#0A0500"/><circle cx="27" cy="95" r="6" fill="#F59E0B" stroke="#0A0500" stroke-width="1.5"/><circle cx="93" cy="95" r="6" fill="#10B981" stroke="#0A0500" stroke-width="1.5"/><circle cx="48" cy="64" r="16" fill="white"/><circle cx="72" cy="64" r="16" fill="white"/><circle cx="49" cy="65" r="11" fill="#1A0500"/><circle cx="73" cy="65" r="11" fill="#1A0500"/><circle cx="53" cy="60" r="5.5" fill="white"/><circle cx="77" cy="60" r="5.5" fill="white"/><circle cx="49" cy="66" r="4" fill="#050100"/><circle cx="73" cy="66" r="4" fill="#050100"/><ellipse cx="48" cy="78" rx="10" ry="8" fill="#C05030" opacity="0.9"/><ellipse cx="48" cy="78" rx="7" ry="5" fill="white" opacity="0.9"/><circle cx="36" cy="72" r="12" fill="#FF8C69" opacity="0.25"/><circle cx="84" cy="72" r="12" fill="#FF8C69" opacity="0.25"/></svg>';
   // Max — default/drill
   return '<svg width="110" height="130" viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg"><ellipse cx="60" cy="108" rx="36" ry="8" fill="rgba(239,68,68,0.12)"/><rect x="22" y="74" width="80" height="60" rx="18" fill="#EF4444"/><ellipse cx="62" cy="70" rx="10" ry="9" fill="#FDBCB4"/><ellipse cx="60" cy="46" rx="42" ry="44" fill="#FDBCB4"/><ellipse cx="60" cy="10" rx="40" ry="22" fill="#3D1F00"/><path d="M22 18 Q46 2 96 6 Q108 12 112 24" fill="#3D1F00"/><rect x="22" y="10" width="76" height="13" rx="6.5" fill="#EF4444"/><circle cx="44" cy="44" r="14" fill="white"/><circle cx="76" cy="44" r="14" fill="white"/><circle cx="45" cy="45" r="9" fill="#3D1F00"/><circle cx="77" cy="45" r="9" fill="#3D1F00"/><circle cx="48" cy="41" r="4.5" fill="white"/><circle cx="80" cy="41" r="4.5" fill="white"/><circle cx="45" cy="46" r="3" fill="#0A0500"/><circle cx="77" cy="46" r="3" fill="#0A0500"/><path d="M40 66 Q60 84 80 66" stroke="#C06050" stroke-width="3" fill="#FF9999" stroke-linecap="round"/><path d="M44 68 Q60 78 76 68" fill="white"/><circle cx="28" cy="58" r="11" fill="#FF9999" opacity="0.25"/><circle cx="92" cy="58" r="11" fill="#FF9999" opacity="0.25"/></svg>';
+}
+
+// ── SYNONYM BLOCK (for Pagefind search) ──
+const synonymDict = (() => {
+  try {
+    return require('/opt/examel/examel-pages/synonym-dictionary.json');
+  } catch(e) { return {}; }
+})();
+
+function buildSynonymBlock(ws) {
+  if (!ws) return '';
+  const parts = [];
+  
+  // Match topic against synonym dictionary
+  const topic = (ws.topic || '').toLowerCase().replace(/\s+/g, '-');
+  if (synonymDict[topic]) {
+    parts.push(synonymDict[topic].join(' '));
+  }
+  
+  // Also match individual words from topic against dictionary
+  const topicWords = (ws.topic || '').toLowerCase().replace(/-/g, ' ').split(/\s+/);
+  for (const word of topicWords) {
+    if (synonymDict[word] && !parts.includes(synonymDict[word].join(' '))) {
+      parts.push(synonymDict[word].join(' '));
+    }
+  }
+  
+  // Add subject synonyms
+  const subject = (ws.subject || '').toLowerCase();
+  if (synonymDict[subject]) {
+    parts.push(synonymDict[subject].join(' '));
+  }
+  
+  // Add grade aliases
+  const gradeAliases = synonymDict._grade_aliases || {};
+  const gradeKey = ws.grade ? `${ws.grade}${['st','nd','rd'][ws.grade-1]||'th'} grade` : '';
+  if (gradeKey && gradeAliases[gradeKey]) {
+    parts.push(gradeAliases[gradeKey].join(' '));
+  }
+  
+  // Add format aliases
+  const formatAliases = synonymDict._format_aliases || {};
+  const format = (ws.format || 'worksheet').toLowerCase().replace('drill-grid','drill');
+  if (formatAliases[format]) {
+    parts.push(formatAliases[format].join(' '));
+  }
+  
+  if (parts.length === 0) return '';
+  
+  // Hidden span — invisible to users, indexed by Pagefind
+  return `<span hidden aria-hidden="true" data-pagefind-weight="0.5" style="display:none!important">${parts.join(' ')}</span>`;
 }

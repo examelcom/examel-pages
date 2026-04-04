@@ -1,4 +1,4 @@
-const { buildAnalytics } = require('./examel-config');
+const { buildAnalytics, buildSynonymBlock } = require('./examel-config');
 const fs = require('fs');
 
 function generateVocabMatchPages(worksheets, sharedCSS, siteHeader, siteFooter, gradeColor, capitalize, formatTopic, formatTheme) {
@@ -87,7 +87,12 @@ ${buildAnalytics()}
       <span class="badge">${capitalize(ws.subject)}</span>
     </div>
   </div>
-  <div class="ws-container">
+  <div class="ws-container" data-pagefind-body>
+    <span data-pagefind-filter="grade" hidden>Grade ${ws.grade}</span>
+    <span data-pagefind-filter="subject" hidden>${capitalize(ws.subject)}</span>
+    <span data-pagefind-filter="format" hidden>Vocabulary</span>
+    <span data-pagefind-meta="topic" hidden>${formatTopic(ws.topic)}</span>
+    ${buildSynonymBlock(ws)}
     <div class="download-box">
       <h2>Ready to Print</h2>
       <p>Match 8 key ${topicName} vocabulary words to their definitions. ${themeName} theme keeps kids engaged. Answer key included${ccssText}.</p>

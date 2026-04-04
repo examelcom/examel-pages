@@ -1,4 +1,4 @@
-const { buildAnalytics } = require('./examel-config');
+const { buildAnalytics, buildSynonymBlock } = require('./examel-config');
 // This file is injected into generate-pages.js by the build process
 // It generates word search pages separately
 
@@ -70,7 +70,12 @@ ${buildAnalytics()}
       <span class="badge">Word Search</span>
     </div>
   </div>
-  <div class="ws-container">
+  <div class="ws-container" data-pagefind-body>
+    <span data-pagefind-filter="grade" hidden>Grade ${ws.grade}</span>
+    <span data-pagefind-filter="subject" hidden>${capitalize(ws.subject)}</span>
+    <span data-pagefind-filter="format" hidden>Word Search</span>
+    <span data-pagefind-meta="topic" hidden>${formatTopic(ws.topic)}</span>
+    ${buildSynonymBlock(ws)}
     <div class="download-box">
       <h2>Ready to Print</h2>
       <p>This word search covers ${formatTopic(ws.topic)} vocabulary for Grade ${ws.grade} ${capitalize(ws.subject)}. Includes answer key and vocabulary definitions.</p>

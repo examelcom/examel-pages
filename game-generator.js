@@ -8,7 +8,7 @@
 'use strict';
 const fs = require('fs');
 const path = require('path');
-const { buildSchema, buildOG, buildCharSVG, buildAnalytics} = require('./examel-config');
+const { buildSchema, buildOG, buildCharSVG, buildAnalytics, buildSynonymBlock } = require('./examel-config');
 
 const BASE = '/opt/examel/examel-pages';
 
@@ -164,7 +164,12 @@ ${siteHeader}
   <h1>${ws.title}</h1>
   <p>${meta.desc}</p>
 </div>
-<div class="ws-layout">
+<div class="ws-layout" data-pagefind-body>
+    <span data-pagefind-filter="grade" hidden>Grade ${ws.grade || 'All'}</span>
+    <span data-pagefind-filter="subject" hidden>${capitalize(ws.subject)}</span>
+    <span data-pagefind-filter="format" hidden>Game</span>
+    <span data-pagefind-meta="topic" hidden>${formatTopic(ws.topic)}</span>
+    ${buildSynonymBlock(ws)}
   <div class="ws-preview">
     ${ws.preview_p1_url
       ? `<img src="${ws.preview_p1_url}" alt="${ws.title} preview" loading="lazy">`

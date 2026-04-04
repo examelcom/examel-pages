@@ -5,6 +5,7 @@
 
 const fs = require('fs');
 const config = require('./examel-config');
+const { buildSynonymBlock } = require('./examel-config/components');
 
 function generateDrillPages(worksheets, sharedCSS, siteHeader, siteFooter, gradeColor, capitalize, formatTopic, formatTheme) {
   const drills = worksheets.filter(ws => ws.format === 'drill-grid');
@@ -73,7 +74,12 @@ function generateDrillPages(worksheets, sharedCSS, siteHeader, siteFooter, grade
       <span class="badge">Math Drill</span>
     </div>
   </div>
-  <div class="ws-container">
+  <div class="ws-container" data-pagefind-body>
+    <span data-pagefind-filter="grade" hidden>Grade ${ws.grade}</span>
+    <span data-pagefind-filter="subject" hidden>${capitalize(ws.subject)}</span>
+    <span data-pagefind-filter="format" hidden>Drill</span>
+    <span data-pagefind-meta="topic" hidden>${formatTopic(ws.topic)}</span>
+    ${buildSynonymBlock(ws)}
     <div class="download-box">
       <h2>Ready to Print</h2>
       <p>This ${topicName} drill has ${ws.grade <= 2 ? '40' : ws.grade <= 4 ? '48' : '54'} problems for Grade ${ws.grade}. ${themeName} theme. Answer key included.</p>

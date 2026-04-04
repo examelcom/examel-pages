@@ -16,7 +16,7 @@
 const fs = require('fs');
 const {
   getDirPath, getPageUrl, getGradeHubUrl, getSubjectHubUrl,
-  buildSchema, buildOG, buildCharSVG, buildAnalytics} = require('./examel-config');
+  buildSchema, buildOG, buildCharSVG, buildAnalytics, buildSynonymBlock } = require('./examel-config');
 
 const ELA_FORMATS = ['ela-rhyming', 'ela-synonym', 'ela-antonym'];
 
@@ -204,7 +204,12 @@ ${buildAnalytics()}
     <div class="ws-hero-char">${charSVG}</div>
   </div>
 
-  <div class="ws-container">
+  <div class="ws-container" data-pagefind-body>
+    <span data-pagefind-filter="grade" hidden>Grade ${ws.grade}</span>
+    <span data-pagefind-filter="subject" hidden>English</span>
+    <span data-pagefind-filter="format" hidden>Worksheet</span>
+    <span data-pagefind-meta="topic" hidden>${formatTopic(ws.topic)}</span>
+    ${buildSynonymBlock(ws)}
 
     <div class="word-spotlight">
       <div class="word-spotlight-label">${formatLabel} Worksheet</div>

@@ -106,7 +106,8 @@ ${buildAnalytics()}
   <div style="max-width:1100px;margin:0 auto 32px;padding:0 20px;">
     <h2 style="font-family:Outfit,sans-serif;font-size:20px;font-weight:800;color:#1A1420;margin-bottom:16px;text-align:center;">Browse by Grade</h2>
   </div>
-  <div class="hub-grid">
+  <div class="hub-grid" data-pagefind-body>
+    <span data-pagefind-filter="format" hidden>Hub</span>
     ${gradesAvailable.map(g => {
       const cnt = byGrade[g] ? byGrade[g].length : 0;
       return `<a href="/free-${subj}-worksheets/grade-${g}/" class="hub-card" style="border-top:3px solid ${gradeColor(parseInt(g))}">

@@ -8,7 +8,7 @@
 const fs = require('fs');
 const {
   getDirPath, getPageUrl, getGradeHubUrl, getSubjectHubUrl,
-  buildSchema, buildOG, buildCharSVG, buildContentBlock, buildAnalytics, buildBreadcrumbSchema, buildFAQSchema} = require('./examel-config');
+  buildSchema, buildOG, buildCharSVG, buildContentBlock, buildAnalytics, buildBreadcrumbSchema, buildFAQSchema, buildSynonymBlock } = require('./examel-config');
 
 function subjectColorLight(s) {
   const m = { math:'#F5F3FF', english:'#FDF2F8', science:'#ECFDF5', 'drill-grid':'#FEF2F2', reading:'#E0F2FE', vocab:'#FFFBEB' };
@@ -197,7 +197,12 @@ ${buildAnalytics()}
     <div class="ws-hero-char">${charSVG}</div>
   </div>
 
-  <div class="ws-container">
+  <div class="ws-container" data-pagefind-body>
+    <span data-pagefind-filter="grade" hidden>Grade ${ws.grade}</span>
+    <span data-pagefind-filter="subject" hidden>${capitalize(ws.subject)}</span>
+    <span data-pagefind-filter="format" hidden>Worksheet</span>
+    <span data-pagefind-meta="topic" hidden>${formatTopic(ws.topic)}</span>
+    ${buildSynonymBlock(ws)}
     ${ws.preview_p1_url ? `
     <div class="preview-desk">
       <div class="preview-desk-title">What's inside this worksheet</div>

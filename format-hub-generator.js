@@ -69,7 +69,8 @@ ${buildAnalytics()}
       <div style="font-size:13px;color:#DC2626;font-weight:700;font-family:'Outfit',sans-serif;">Browse Drills →</div>
     </a>`).join('')}
   </div>
-  <div class="grid">${drillPages.slice(0, 12).map(worksheetCard).join('')}</div>
+  <div class="grid" data-pagefind-body>
+    <span data-pagefind-filter="format" hidden>Hub</span>${drillPages.slice(0, 12).map(worksheetCard).join('')}</div>
   ${siteFooter}
 </body></html>`);
 

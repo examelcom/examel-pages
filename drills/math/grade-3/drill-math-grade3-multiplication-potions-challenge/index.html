@@ -151,7 +151,7 @@
 </head>
 <body>
   
-  <header class="site-header">
+  <header class="site-header" data-pagefind-ignore>
     <a href="https://examel.com" class="site-logo">
       <svg width="30" height="30" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
         <rect width="72" height="72" rx="16" fill="#6C5CE7"/>
@@ -256,7 +256,7 @@
       <span></span><span></span><span></span>
     </button>
   </header>
-  <nav class="mobile-nav" id="mobileNav">
+  <nav class="mobile-nav" id="mobileNav" data-pagefind-ignore>
     <div style="padding:8px 4px 12px;">
       <input type="text" id="mobileSearchInput" placeholder="Search worksheets..." autocomplete="off" style="width:100%;padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.08);color:white;font-size:15px;font-family:inherit;outline:none;">
       <div id="mobileSearchResults" style="margin-top:8px;"></div>
@@ -307,35 +307,114 @@
   <script>
   function toggleMobileMenu(){document.getElementById('mobileNav').classList.toggle('open');}
   (function(){
-    // Mega menu toggle buttons (for click + keyboard support per WAI disclosure pattern)
+    // Mega menu toggle (WAI disclosure pattern)
     document.querySelectorAll('.mega-nav-toggle').forEach(function(btn){
       btn.addEventListener('click',function(e){
         e.stopPropagation();
         var expanded=btn.getAttribute('aria-expanded')==='true';
-        // Close all other panels first
         document.querySelectorAll('.mega-nav-toggle').forEach(function(b){b.setAttribute('aria-expanded','false');});
         if(!expanded){btn.setAttribute('aria-expanded','true');}
       });
     });
-    // Escape closes mega panels
     document.addEventListener('keydown',function(e){
-      if(e.key==='Escape'){
-        document.querySelectorAll('.mega-nav-toggle').forEach(function(b){b.setAttribute('aria-expanded','false');});
-      }
+      if(e.key==='Escape'){document.querySelectorAll('.mega-nav-toggle').forEach(function(b){b.setAttribute('aria-expanded','false');});}
     });
-    // Click outside closes mega panels
     document.addEventListener('click',function(e){
-      if(!e.target.closest('.mega-nav-item')){
-        document.querySelectorAll('.mega-nav-toggle').forEach(function(b){b.setAttribute('aria-expanded','false');});
-      }
+      if(!e.target.closest('.mega-nav-item')){document.querySelectorAll('.mega-nav-toggle').forEach(function(b){b.setAttribute('aria-expanded','false');});}
     });
-    // Search
-    var idx=null;
-    function loadIndex(cb){if(idx)return cb(idx);fetch('/search-index.json').then(function(r){return r.json();}).then(function(d){idx=d;cb(idx);}).catch(function(){idx=[];cb([]);});}
-    function search(q,data){if(!q||q.length<2)return[];var terms=q.toLowerCase().split(' ').filter(Boolean);return data.filter(function(p){var k=p.k||'';return terms.every(function(t){return k.includes(t);});}).slice(0,8);}
-    function renderResults(results,container){if(!results.length){container.innerHTML='<div style="padding:12px 16px;color:#A89FAE;font-size:13px;">No results found</div>';return;}container.innerHTML=results.map(function(p){var badge=p.g?'Grade '+p.g:(p.f||'');var color=p.s==='math'?'#7C3AED':p.s==='english'?'#DB2777':p.s==='science'?'#059669':'#6C5CE7';return '<a href="'+p.u+'" style="display:flex;align-items:center;gap:10px;padding:10px 16px;text-decoration:none;color:#1A1420;border-bottom:1px solid #F0EDE8;transition:background 0.15s;" onmouseover="this.style.background='#F4F1FF'" onmouseout="this.style.background=''"><span style="background:'+color+';color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:100px;white-space:nowrap;flex-shrink:0;">'+badge+'</span><span style="font-size:14px;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">'+p.t+'</span></a>';}).join('');}
-    function setupSearch(inputId,resultsId){var input=document.getElementById(inputId);var results=document.getElementById(resultsId);if(!input||!results)return;var timer;input.addEventListener('input',function(){clearTimeout(timer);var q=input.value.trim();if(!q||q.length<2){results.style.display='none';return;}timer=setTimeout(function(){loadIndex(function(data){var found=search(q,data);renderResults(found,results);results.style.display='block';});},200);});input.addEventListener('keydown',function(e){if(e.key==='Escape'){results.style.display='none';input.value='';}if(e.key==='Enter'&&input.value.trim().length>1){window.location.href='/browse/?q='+encodeURIComponent(input.value.trim());}});document.addEventListener('click',function(e){if(!input.contains(e.target)&&!results.contains(e.target))results.style.display='none';});}
-    document.addEventListener('DOMContentLoaded',function(){setupSearch('searchInput','searchResults');setupSearch('mobileSearchInput','mobileSearchResults');});
+
+    // ── PAGEFIND SEARCH ──
+    var pf=null;
+    var gradeMap={'1st':'1','2nd':'2','3rd':'3','4th':'4','5th':'5','6th':'6','7th':'7','8th':'8','first':'1','second':'2','third':'3','fourth':'4','fifth':'5','sixth':'6','seventh':'7','eighth':'8','kindergarten':'k','kinder':'k'};
+
+    function normalizeQuery(q){
+      q=q.toLowerCase().trim();
+      // "3rd grade math" → "grade 3 math"
+      q=q.replace(/(d+)(?:st|nd|rd|th)s*grade/gi,function(_,n){return 'grade '+n;});
+      // "first grade" → "grade 1"
+      for(var word in gradeMap){
+        var re=new RegExp(word+'\s+grade','gi');
+        q=q.replace(re,'grade '+gradeMap[word]);
+        re=new RegExp('grade\s+'+word,'gi');
+        q=q.replace(re,'grade '+gradeMap[word]);
+      }
+      return q;
+    }
+
+    async function initPagefind(){
+      if(pf)return pf;
+      try{
+        pf=await import('/pagefind/pagefind.js');
+        await pf.options({excerptLength:15});
+        return pf;
+      }catch(e){console.warn('Pagefind not available, falling back to JSON search');return null;}
+    }
+
+    async function doSearch(q){
+      var engine=await initPagefind();
+      if(!engine){return doFallbackSearch(q);}
+      var results=await engine.search(normalizeQuery(q));
+      if(!results||!results.results)return[];
+      var items=await Promise.all(results.results.slice(0,8).map(function(r){return r.data();}));
+      return items.map(function(item){
+        var grade=item.filters&&item.filters.grade?item.filters.grade[0]:'';
+        var subject=item.filters&&item.filters.subject?item.filters.subject[0]:'';
+        var format=item.filters&&item.filters.format?item.filters.format[0]:'';
+        return{t:item.meta&&item.meta.title||'',u:item.url||'',g:grade,s:subject.toLowerCase(),f:format};
+      });
+    }
+
+    // Fallback to old JSON search if Pagefind unavailable
+    var fallbackIdx=null;
+    function doFallbackSearch(q){
+      return new Promise(function(resolve){
+        if(fallbackIdx){resolve(searchJSON(q,fallbackIdx));return;}
+        fetch('/search-index.json').then(function(r){return r.json();}).then(function(d){fallbackIdx=d;resolve(searchJSON(q,d));}).catch(function(){resolve([]);});
+      });
+    }
+    function searchJSON(q,data){
+      var terms=q.toLowerCase().split(' ').filter(Boolean);
+      return data.filter(function(p){var k=p.k||'';return terms.every(function(t){return k.includes(t);});}).slice(0,8);
+    }
+
+    function renderResults(results,container){
+      if(!results.length){container.innerHTML='<div style="padding:14px 16px;color:#A89FAE;font-size:13px;">No results found. Try a different term.</div>';return;}
+      container.innerHTML=results.map(function(p){
+        var badge=p.g||(p.f||'');
+        var color=p.s==='math'?'#7C3AED':p.s==='english'?'#DB2777':p.s==='science'?'#059669':'#6C5CE7';
+        return '<a href="'+p.u+'" style="display:flex;align-items:center;gap:10px;padding:10px 16px;text-decoration:none;color:#1A1420;border-bottom:1px solid #F0EDE8;transition:background 0.15s;" onmouseover="this.style.background='#F4F1FF'" onmouseout="this.style.background=''"><span style="background:'+color+';color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:100px;white-space:nowrap;flex-shrink:0;">'+badge+'</span><span style="font-size:14px;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">'+p.t+'</span></a>';
+      }).join('');
+    }
+
+    function setupSearch(inputId,resultsId){
+      var input=document.getElementById(inputId);
+      var results=document.getElementById(resultsId);
+      if(!input||!results)return;
+      var timer;
+      // Preload Pagefind on first focus
+      input.addEventListener('focus',function(){initPagefind();},{once:true});
+      input.addEventListener('input',function(){
+        clearTimeout(timer);
+        var q=input.value.trim();
+        if(!q||q.length<2){results.style.display='none';return;}
+        timer=setTimeout(async function(){
+          var found=await doSearch(q);
+          renderResults(found,results);
+          results.style.display='block';
+        },200);
+      });
+      input.addEventListener('keydown',function(e){
+        if(e.key==='Escape'){results.style.display='none';input.value='';}
+        if(e.key==='Enter'&&input.value.trim().length>1){window.location.href='/browse/?q='+encodeURIComponent(input.value.trim());}
+      });
+      document.addEventListener('click',function(e){
+        if(!input.contains(e.target)&&!results.contains(e.target))results.style.display='none';
+      });
+    }
+    document.addEventListener('DOMContentLoaded',function(){
+      setupSearch('searchInput','searchResults');
+      setupSearch('mobileSearchInput','mobileSearchResults');
+    });
   })();
   </script>
   <div class="breadcrumb">
@@ -356,7 +435,12 @@
       <span class="badge">Math Drill</span>
     </div>
   </div>
-  <div class="ws-container">
+  <div class="ws-container" data-pagefind-body>
+    <span data-pagefind-filter="grade" hidden>Grade 3</span>
+    <span data-pagefind-filter="subject" hidden>Math</span>
+    <span data-pagefind-filter="format" hidden>Drill</span>
+    <span data-pagefind-meta="topic" hidden>Multiplication</span>
+    <span hidden aria-hidden="true" data-pagefind-weight="0.5" style="display:none!important">multiplying multiply times times table product grade 3 third grade grade three gr 3 g3 speed drill timed test mad minute fact practice fluency</span>
     <div class="download-box">
       <h2>Ready to Print</h2>
       <p>This Multiplication drill has 48 problems for Grade 3. Potions theme. Answer key included.</p>
@@ -404,7 +488,7 @@
   </div>
   </div>
   
-  <footer class="site-footer">
+  <footer class="site-footer" data-pagefind-ignore>
     <div class="footer-inner">
       <div class="footer-logo">
         <svg width="34" height="34" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
