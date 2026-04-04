@@ -340,7 +340,7 @@ ${buildAnalytics()}
 
   <div class="sticky-bar" id="stickyBar">
     <span class="sticky-bar-title">${ws.title}</span>
-    <a href="${downloadUrl}" class="sticky-bar-btn" download>⬇ Download PDF</a>
+    <a href="${downloadUrl}" class="sticky-bar-btn" download onclick="gtag&&gtag('event','worksheet_download',{worksheet_slug:'${ws.slug}',grade:${ws.grade},subject:'${ws.subject}',source:'sticky_bar'})">⬇ Download PDF</a>
   </div>
 
   <script>
@@ -351,7 +351,18 @@ ${buildAnalytics()}
       var obs=new IntersectionObserver(function(e){bar.classList.toggle('visible',!e[0].isIntersecting);},{threshold:0});
       obs.observe(box);
     })();
+    var _scrollFired={};
+    window.addEventListener("scroll",function(){
+      var pct=Math.round((window.scrollY/(document.body.scrollHeight-window.innerHeight))*100);
+      [25,50,75,100].forEach(function(d){
+        if(pct>=d&&!_scrollFired[d]){
+          _scrollFired[d]=true;
+          gtag&&gtag("event","scroll_depth",{worksheet_slug:"${ws.slug}",depth:d,grade:${ws.grade},subject:"${ws.subject}"});
+        }
+      });
+    },{passive:true});
     function handleDownload(btn){
+      gtag&&gtag("event","worksheet_download",{worksheet_slug:"${ws.slug}",grade:${ws.grade},subject:"${ws.subject}",source:"main_button"});
       var orig=btn.innerHTML;
       btn.innerHTML='⏳ Preparing your worksheet...';
       btn.style.background='#5A4BD1';
