@@ -69,6 +69,8 @@
     .footer-heading{font-size:10px;font-weight:800;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:2px;margin-bottom:6px;}
     .site-footer a{color:rgba(255,255,255,0.5);text-decoration:none;font-size:15px;transition:color 0.2s;font-weight:500;}
     .site-footer a:hover{color:#4A3BBF;}
+    a:focus-visible,button:focus-visible{outline:3px solid var(--color-brand);outline-offset:3px;border-radius:4px;}
+    a:focus-visible{border-radius:2px;}
     .footer-bottom{text-align:center;font-size:14px;color:rgba(255,255,255,0.2);border-top:1px solid rgba(255,255,255,0.07);padding-top:24px;}
     .mobile-menu-btn{display:none;background:none;border:none;cursor:pointer;padding:8px;border-radius:8px;}
     /* ── SEARCH ── */
@@ -77,7 +79,7 @@
     .site-search-input::placeholder{color:rgba(255,255,255,0.35);}
     .site-search-input:focus{background:rgba(255,255,255,0.12);border-color:rgba(108,92,231,0.6);box-shadow:0 0 0 3px rgba(108,92,231,0.15);}
     .site-search-results{display:none;position:absolute;top:calc(100% + 8px);left:0;right:0;background:white;border-radius:16px;box-shadow:0 8px 40px rgba(0,0,0,0.18);z-index:999;overflow:hidden;max-height:400px;overflow-y:auto;}
-    .site-search-btn{position:absolute;right:6px;top:50%;transform:translateY(-50%);background:#6C5CE7;border:none;border-radius:100px;width:32px;height:32px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:background 0.2s;}
+    .site-search-btn{position:absolute;right:6px;top:50%;transform:translateY(-50%);background:#6C5CE7;border:none;border-radius:100px;width:40px;height:40px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:background 0.2s;}
     .site-search-btn:hover{background:#5A4BD1;}
     .site-search{position:relative;flex:1;max-width:420px;margin:0 16px;}
     .mobile-nav{display:none;position:absolute;top:64px;left:0;right:0;background:#1C1526;border-bottom:2px solid #6C5CE7;padding:16px 20px;z-index:199;flex-direction:column;gap:4px;}
@@ -93,6 +95,10 @@
     @media(max-width:480px){
       .grid{grid-template-columns:1fr;}
       .hub-grid{grid-template-columns:1fr;}
+    }
+    @media(pointer:coarse),(max-width:768px){
+      .mobile-menu-btn{min-width:44px;min-height:44px;padding:10px;}
+      .filter-btn{min-height:44px;display:inline-flex;align-items:center;padding:10px 16px;}
     }
 
     /* ── MEGA MENU ── */
@@ -410,18 +416,9 @@
   <div class="breadcrumb"><a href="https://examel.com">Home</a><span>›</span><a href="/free-reading-passages/">Reading Passages</a><span>›</span>Grade 3</div>
   <div class="hero">
     <h1>Free Grade 3 <span>Reading Passages</span></h1>
-    <p>30+ free printable Grade 3 nonfiction reading passages with comprehension questions and answer keys.</p>
+    <p>21+ free printable Grade 3 nonfiction reading passages with comprehension questions and answer keys.</p>
   </div>
   <div class="grid">
-    <a href="/reading-passages/grade-3/reading-passage-math-grade3-multiplication-pumpkin-patch-challenge/" class="ws-card">
-      <img src="https://examel.com/thumbnails/previews/reading-passage-math-grade3-multiplication-pumpkin-patch-challenge-p1.png" alt="Maya Counts Pumpkins at the Patch" class="ws-card-thumb" loading="lazy">
-      <div class="ws-card-body">
-        <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 3</div>
-        <h3>Maya Counts Pumpkins at the Patch</h3>
-        <p>Multiplication · Pumpkin Patch theme</p>
-        <span class="ws-card-btn">View Worksheet →</span>
-      </div>
-    </a>
     <a href="/reading-passages/grade-3/reading-passage-science-grade3-fossils-coding-standard/" class="ws-card">
       <img src="https://examel.com/thumbnails/previews/reading-passage-science-grade3-fossils-coding-standard-p1.png" alt="Zoe Codes Her Way to Fossil Clues" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
@@ -440,57 +437,12 @@
         <span class="ws-card-btn">View Worksheet →</span>
       </div>
     </a>
-    <a href="/reading-passages/grade-3/reading-passage-science-grade3-ecosystems-photography-beginner/" class="ws-card">
-      <img src="https://examel.com/thumbnails/previews/reading-passage-science-grade3-ecosystems-photography-beginner-p1.png" alt="Zoe's Camera Finds a Hidden Ecosystem" class="ws-card-thumb" loading="lazy">
-      <div class="ws-card-body">
-        <div class="ws-card-badge" style="background:#059669">Science · Grade 3</div>
-        <h3>Zoe's Camera Finds a Hidden Ecosystem</h3>
-        <p>Ecosystems · Photography theme</p>
-        <span class="ws-card-btn">View Worksheet →</span>
-      </div>
-    </a>
     <a href="/reading-passages/grade-3/reading-passage-math-grade3-fractions-mini-golf-challenge/" class="ws-card">
       <img src="https://examel.com/thumbnails/previews/reading-passage-math-grade3-fractions-mini-golf-challenge-p1.png" alt="Maya Discovers Fractions at Mini-Golf" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 3</div>
         <h3>Maya Discovers Fractions at Mini-Golf</h3>
         <p>Fractions · Mini Golf theme</p>
-        <span class="ws-card-btn">View Worksheet →</span>
-      </div>
-    </a>
-    <a href="/reading-passages/grade-3/reading-passage-english-grade3-vocabulary-nature-detectives-standard/" class="ws-card">
-      <img src="https://examel.com/thumbnails/previews/reading-passage-english-grade3-vocabulary-nature-detectives-standard-p1.png" alt="Leo Cracks the Code of Nature Words" class="ws-card-thumb" loading="lazy">
-      <div class="ws-card-body">
-        <div class="ws-card-badge" style="background:#DB2777">English · Grade 3</div>
-        <h3>Leo Cracks the Code of Nature Words</h3>
-        <p>Vocabulary · Nature Detectives theme</p>
-        <span class="ws-card-btn">View Worksheet →</span>
-      </div>
-    </a>
-    <a href="/reading-passages/grade-3/reading-passage-math-grade3-area-origami-standard/" class="ws-card">
-      <img src="https://examel.com/thumbnails/previews/reading-passage-math-grade3-area-origami-standard-p1.png" alt="Maya Folds Her Way Into Area" class="ws-card-thumb" loading="lazy">
-      <div class="ws-card-body">
-        <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 3</div>
-        <h3>Maya Folds Her Way Into Area</h3>
-        <p>Area · Origami theme</p>
-        <span class="ws-card-btn">View Worksheet →</span>
-      </div>
-    </a>
-    <a href="/reading-passages/grade-3/reading-passage-science-grade3-environments-tacos-standard/" class="ws-card">
-      <img src="https://examel.com/thumbnails/previews/reading-passage-science-grade3-environments-tacos-standard-p1.png" alt="Zoe's Taco Tour of Wild Environments" class="ws-card-thumb" loading="lazy">
-      <div class="ws-card-body">
-        <div class="ws-card-badge" style="background:#059669">Science · Grade 3</div>
-        <h3>Zoe's Taco Tour of Wild Environments</h3>
-        <p>Environments · Tacos theme</p>
-        <span class="ws-card-btn">View Worksheet →</span>
-      </div>
-    </a>
-    <a href="/reading-passages/grade-3/reading-passage-science-grade3-forces-motion-nature-detectives-standard/" class="ws-card">
-      <img src="https://examel.com/thumbnails/previews/reading-passage-science-grade3-forces-motion-nature-detectives-standard-p1.png" alt="Zoe Discovers Forces in the Wild" class="ws-card-thumb" loading="lazy">
-      <div class="ws-card-body">
-        <div class="ws-card-badge" style="background:#059669">Science · Grade 3</div>
-        <h3>Zoe Discovers Forces in the Wild</h3>
-        <p>Forces Motion · Nature Detectives theme</p>
         <span class="ws-card-btn">View Worksheet →</span>
       </div>
     </a>
@@ -518,6 +470,60 @@
         <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 3</div>
         <h3>Maya Measures Potions With Area</h3>
         <p>Area · Potions theme</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+    <a href="/reading-passages/grade-3/reading-passage-science-grade3-forces-motion-chemistry-lab-standard/" class="ws-card">
+      <img src="https://examel.com/thumbnails/previews/reading-passage-science-grade3-forces-motion-chemistry-lab-standard-p1.png" alt="Zoe's Big Lab Discovery: Forces Move!" class="ws-card-thumb" loading="lazy">
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#059669">Science · Grade 3</div>
+        <h3>Zoe's Big Lab Discovery: Forces Move!</h3>
+        <p>Forces Motion · Chemistry Lab theme</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+    <a href="/reading-passages/grade-3/reading-passage-science-grade3-ecosystems-earth-day-standard/" class="ws-card">
+      <img src="https://examel.com/thumbnails/previews/reading-passage-science-grade3-ecosystems-earth-day-standard-p1.png" alt="Zoe Explores an Ecosystem on Earth Day" class="ws-card-thumb" loading="lazy">
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#059669">Science · Grade 3</div>
+        <h3>Zoe Explores an Ecosystem on Earth Day</h3>
+        <p>Ecosystems · Earth Day theme</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+    <a href="/reading-passages/grade-3/reading-passage-science-grade3-magnets-dinosaurs-beginner/" class="ws-card">
+      <img src="https://examel.com/thumbnails/previews/reading-passage-science-grade3-magnets-dinosaurs-beginner-p1.png" alt="Zoe and the Dinosaur Magnet Mystery" class="ws-card-thumb" loading="lazy">
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#059669">Science · Grade 3</div>
+        <h3>Zoe and the Dinosaur Magnet Mystery</h3>
+        <p>Magnets · Dinosaurs theme</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+    <a href="/reading-passages/grade-3/reading-passage-math-grade3-area-tulip-fields-standard/" class="ws-card">
+      <img src="https://examel.com/thumbnails/previews/reading-passage-math-grade3-area-tulip-fields-standard-p1.png" alt="Maya Measures the Tulip Fields" class="ws-card-thumb" loading="lazy">
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 3</div>
+        <h3>Maya Measures the Tulip Fields</h3>
+        <p>Area · Tulip Fields theme</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+    <a href="/reading-passages/grade-3/reading-passage-science-grade3-ecosystems-time-travelers-challenge/" class="ws-card">
+      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#059669;letter-spacing:-1px">Science</span></div>
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#059669">Science · Grade 3</div>
+        <h3>Zoe's Time Machine Reveals Living Worlds</h3>
+        <p>Ecosystems · Time Travelers theme</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+    <a href="/reading-passages/grade-3/reading-passage-science-grade3-environments-winter-wonderland-challenge/" class="ws-card">
+      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#059669;letter-spacing:-1px">Science</span></div>
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#059669">Science · Grade 3</div>
+        <h3>Zoe Discovers Life in a Winter Forest</h3>
+        <p>Environments · Winter Wonderland theme</p>
         <span class="ws-card-btn">View Worksheet →</span>
       </div>
     </a></div>

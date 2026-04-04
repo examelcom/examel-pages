@@ -64,6 +64,8 @@
     .footer-heading{font-size:10px;font-weight:800;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:2px;margin-bottom:6px;}
     .site-footer a{color:rgba(255,255,255,0.5);text-decoration:none;font-size:15px;transition:color 0.2s;font-weight:500;}
     .site-footer a:hover{color:#4A3BBF;}
+    a:focus-visible,button:focus-visible{outline:3px solid var(--color-brand);outline-offset:3px;border-radius:4px;}
+    a:focus-visible{border-radius:2px;}
     .footer-bottom{text-align:center;font-size:14px;color:rgba(255,255,255,0.2);border-top:1px solid rgba(255,255,255,0.07);padding-top:24px;}
     .mobile-menu-btn{display:none;background:none;border:none;cursor:pointer;padding:8px;border-radius:8px;}
     /* ── SEARCH ── */
@@ -72,7 +74,7 @@
     .site-search-input::placeholder{color:rgba(255,255,255,0.35);}
     .site-search-input:focus{background:rgba(255,255,255,0.12);border-color:rgba(108,92,231,0.6);box-shadow:0 0 0 3px rgba(108,92,231,0.15);}
     .site-search-results{display:none;position:absolute;top:calc(100% + 8px);left:0;right:0;background:white;border-radius:16px;box-shadow:0 8px 40px rgba(0,0,0,0.18);z-index:999;overflow:hidden;max-height:400px;overflow-y:auto;}
-    .site-search-btn{position:absolute;right:6px;top:50%;transform:translateY(-50%);background:#6C5CE7;border:none;border-radius:100px;width:32px;height:32px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:background 0.2s;}
+    .site-search-btn{position:absolute;right:6px;top:50%;transform:translateY(-50%);background:#6C5CE7;border:none;border-radius:100px;width:40px;height:40px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:background 0.2s;}
     .site-search-btn:hover{background:#5A4BD1;}
     .site-search{position:relative;flex:1;max-width:420px;margin:0 16px;}
     .mobile-nav{display:none;position:absolute;top:64px;left:0;right:0;background:#1C1526;border-bottom:2px solid #6C5CE7;padding:16px 20px;z-index:199;flex-direction:column;gap:4px;}
@@ -88,6 +90,10 @@
     @media(max-width:480px){
       .grid{grid-template-columns:1fr;}
       .hub-grid{grid-template-columns:1fr;}
+    }
+    @media(pointer:coarse),(max-width:768px){
+      .mobile-menu-btn{min-width:44px;min-height:44px;padding:10px;}
+      .filter-btn{min-height:44px;display:inline-flex;align-items:center;padding:10px 16px;}
     }
 
     /* ── MEGA MENU ── */
@@ -404,31 +410,20 @@
   </script>
 <div class="hero">
   <h1>Free Printable <span>Planners</span></h1>
-  <p>47 printable planners — chore charts, habit trackers, meal planners, morning routines and more. Instant PDF download, no signup required.</p>
+  <p>21 printable planners — chore charts, habit trackers, meal planners, morning routines and more. Instant PDF download, no signup required.</p>
 </div>
 <div class="filter-bar">
-  <a href="/planners/" class="filter-btn active">All Planners (47)</a>
-  <a href="/planners/?type=Weekly%20Planner" class="filter-btn">Weekly Planner (38)</a>
-<a href="/planners/?type=Meal%20Planner" class="filter-btn">Meal Planner (3)</a>
-<a href="/planners/?type=Habit%20Tracker" class="filter-btn">Habit Tracker (2)</a>
+  <a href="/planners/" class="filter-btn active">All Planners (21)</a>
+  <a href="/planners/?type=Weekly%20Planner" class="filter-btn">Weekly Planner (16)</a>
+<a href="/planners/?type=Meal%20Planner" class="filter-btn">Meal Planner (1)</a>
 <a href="/planners/?type=Goal%20Planner" class="filter-btn">Goal Planner (1)</a>
 <a href="/planners/?type=Printable%20Planner" class="filter-btn">Printable Planner (1)</a>
 <a href="/planners/?type=Morning%20Routine" class="filter-btn">Morning Routine (1)</a>
-<a href="/planners/?type=Chore%20Chart" class="filter-btn">Chore Chart (1)</a>
+<a href="/planners/?type=Habit%20Tracker" class="filter-btn">Habit Tracker (1)</a>
 </div>
 <div class="grid">
   
     <a href="/planners/planner-2x2-1-footer-weekly-life-lines-circles-7-low-pastel-dream-filled-header/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#F4F1FF 0%,#EDE8DF 100%);border-top:4px solid #6C5CE7"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#6C5CE7;">W</span></div>
-      <div class="ws-card-body">
-        <div class="ws-card-badge" style="background:#6C5CE7">Weekly Planner</div>
-        <h3>Printable Weekly Planner — Pastel</h3>
-        <p>Weekly Planner</p>
-        <span class="ws-card-btn">View Planner →</span>
-      </div>
-    </a>
-
-    <a href="/planners/planner-2x2-1-footer-weekly-life-lines-circles-7-low-pastel-dream-bordered/" class="ws-card">
       <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#F4F1FF 0%,#EDE8DF 100%);border-top:4px solid #6C5CE7"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#6C5CE7;">W</span></div>
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#6C5CE7">Weekly Planner</div>
@@ -458,26 +453,6 @@
       </div>
     </a>
 
-    <a href="/planners/planner-2x2-1-footer-weekly-life-lines-circles-7-low-dashed-playful-bordered/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#F4F1FF 0%,#EDE8DF 100%);border-top:4px solid #6C5CE7"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#6C5CE7;">W</span></div>
-      <div class="ws-card-body">
-        <div class="ws-card-badge" style="background:#6C5CE7">Weekly Planner</div>
-        <h3>Printable Weekly Planner</h3>
-        <p>Weekly Planner</p>
-        <span class="ws-card-btn">View Planner →</span>
-      </div>
-    </a>
-
-    <a href="/planners/planner-2x2-1-footer-weekly-life-lines-circles-7-low-dark-academia-filled-header/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#F4F1FF 0%,#EDE8DF 100%);border-top:4px solid #6C5CE7"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#6C5CE7;">W</span></div>
-      <div class="ws-card-body">
-        <div class="ws-card-badge" style="background:#6C5CE7">Weekly Planner</div>
-        <h3>Printable Weekly Planner — Classic</h3>
-        <p>Weekly Planner</p>
-        <span class="ws-card-btn">View Planner →</span>
-      </div>
-    </a>
-
     <a href="/planners/planner-2x2-1-footer-weekly-life-lines-circles-7-low-aesthetic-sage-bordered/" class="ws-card">
       <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#F4F1FF 0%,#EDE8DF 100%);border-top:4px solid #6C5CE7"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#6C5CE7;">W</span></div>
       <div class="ws-card-body">
@@ -498,71 +473,11 @@
       </div>
     </a>
 
-    <a href="/planners/planner-2x2-1-footer-weekly-life-lines-circles-7-standard-coral-pop-bordered/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#F4F1FF 0%,#EDE8DF 100%);border-top:4px solid #6C5CE7"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#6C5CE7;">W</span></div>
-      <div class="ws-card-body">
-        <div class="ws-card-badge" style="background:#6C5CE7">Weekly Planner</div>
-        <h3>Printable Weekly Planner — Coral</h3>
-        <p>Weekly Planner</p>
-        <span class="ws-card-btn">View Planner →</span>
-      </div>
-    </a>
-
-    <a href="/planners/planner-2x2-1-footer-weekly-life-lines-circles-7-standard-clean-mono-filled-header/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#F4F1FF 0%,#EDE8DF 100%);border-top:4px solid #6C5CE7"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#6C5CE7;">W</span></div>
-      <div class="ws-card-body">
-        <div class="ws-card-badge" style="background:#6C5CE7">Weekly Planner</div>
-        <h3>Printable Weekly Planner — Minimal</h3>
-        <p>Weekly Planner</p>
-        <span class="ws-card-btn">View Planner →</span>
-      </div>
-    </a>
-
-    <a href="/planners/planner-2x2-1-footer-weekly-life-lines-circles-7-standard-clean-mono-bordered/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#F4F1FF 0%,#EDE8DF 100%);border-top:4px solid #6C5CE7"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#6C5CE7;">W</span></div>
-      <div class="ws-card-body">
-        <div class="ws-card-badge" style="background:#6C5CE7">Weekly Planner</div>
-        <h3>Printable Weekly Planner — Minimal</h3>
-        <p>Weekly Planner</p>
-        <span class="ws-card-btn">View Planner →</span>
-      </div>
-    </a>
-
     <a href="/planners/planner-2x2-1-footer-weekly-life-lines-circles-7-standard-boho-warm-filled-header/" class="ws-card">
       <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#F4F1FF 0%,#EDE8DF 100%);border-top:4px solid #6C5CE7"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#6C5CE7;">W</span></div>
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#6C5CE7">Weekly Planner</div>
         <h3>Printable Weekly Planner</h3>
-        <p>Weekly Planner</p>
-        <span class="ws-card-btn">View Planner →</span>
-      </div>
-    </a>
-
-    <a href="/planners/planner-2x2-1-footer-weekly-life-lines-circles-7-standard-blush-minimal-filled-header/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#F4F1FF 0%,#EDE8DF 100%);border-top:4px solid #6C5CE7"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#6C5CE7;">W</span></div>
-      <div class="ws-card-body">
-        <div class="ws-card-badge" style="background:#6C5CE7">Weekly Planner</div>
-        <h3>Printable Weekly Planner — Blush</h3>
-        <p>Weekly Planner</p>
-        <span class="ws-card-btn">View Planner →</span>
-      </div>
-    </a>
-
-    <a href="/planners/planner-2x2-1-footer-weekly-life-lines-circles-7-standard-blush-minimal-bordered/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#F4F1FF 0%,#EDE8DF 100%);border-top:4px solid #6C5CE7"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#6C5CE7;">W</span></div>
-      <div class="ws-card-body">
-        <div class="ws-card-badge" style="background:#6C5CE7">Weekly Planner</div>
-        <h3>Printable Weekly Planner — Blush</h3>
-        <p>Weekly Planner</p>
-        <span class="ws-card-btn">View Planner →</span>
-      </div>
-    </a>
-
-    <a href="/planners/planner-2x2-1-footer-weekly-life-lines-circles-7-standard-aesthetic-sage-filled-header/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#F4F1FF 0%,#EDE8DF 100%);border-top:4px solid #6C5CE7"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#6C5CE7;">W</span></div>
-      <div class="ws-card-body">
-        <div class="ws-card-badge" style="background:#6C5CE7">Weekly Planner</div>
-        <h3>Printable Weekly Planner — Sage</h3>
         <p>Weekly Planner</p>
         <span class="ws-card-btn">View Planner →</span>
       </div>
@@ -578,26 +493,6 @@
       </div>
     </a>
 
-    <a href="/planners/planner-2x2-1-footer-weekly-life-lines-circles-7-low-rainbow-fun-filled-header/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#F4F1FF 0%,#EDE8DF 100%);border-top:4px solid #6C5CE7"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#6C5CE7;">W</span></div>
-      <div class="ws-card-body">
-        <div class="ws-card-badge" style="background:#6C5CE7">Weekly Planner</div>
-        <h3>Printable Weekly Planner — Rainbow</h3>
-        <p>Weekly Planner</p>
-        <span class="ws-card-btn">View Planner →</span>
-      </div>
-    </a>
-
-    <a href="/planners/planner-2x2-1-footer-weekly-life-lines-circles-7-low-mint-fresh-filled-header/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#F4F1FF 0%,#EDE8DF 100%);border-top:4px solid #6C5CE7"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#6C5CE7;">W</span></div>
-      <div class="ws-card-body">
-        <div class="ws-card-badge" style="background:#6C5CE7">Weekly Planner</div>
-        <h3>Printable Weekly Planner — Mint</h3>
-        <p>Weekly Planner</p>
-        <span class="ws-card-btn">View Planner →</span>
-      </div>
-    </a>
-
     <a href="/planners/planner-2x2-1-footer-weekly-life-lines-circles-7-low-mint-fresh-bordered/" class="ws-card">
       <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#F4F1FF 0%,#EDE8DF 100%);border-top:4px solid #6C5CE7"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#6C5CE7;">W</span></div>
       <div class="ws-card-body">
@@ -608,31 +503,11 @@
       </div>
     </a>
 
-    <a href="/planners/planner-2x2-1-footer-weekly-life-lines-circles-7-low-examel-signature-filled-header/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#F4F1FF 0%,#EDE8DF 100%);border-top:4px solid #6C5CE7"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#6C5CE7;">W</span></div>
-      <div class="ws-card-body">
-        <div class="ws-card-badge" style="background:#6C5CE7">Weekly Planner</div>
-        <h3>Printable Weekly Planner — Purple</h3>
-        <p>Weekly Planner</p>
-        <span class="ws-card-btn">View Planner →</span>
-      </div>
-    </a>
-
     <a href="/planners/planner-2x2-1-footer-weekly-life-lines-circles-7-low-examel-signature-bordered/" class="ws-card">
       <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#F4F1FF 0%,#EDE8DF 100%);border-top:4px solid #6C5CE7"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#6C5CE7;">W</span></div>
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#6C5CE7">Weekly Planner</div>
         <h3>Printable Weekly Planner — Purple</h3>
-        <p>Weekly Planner</p>
-        <span class="ws-card-btn">View Planner →</span>
-      </div>
-    </a>
-
-    <a href="/planners/planner-2x2-1-footer-weekly-life-lines-circles-7-low-dashed-playful-filled-header/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#F4F1FF 0%,#EDE8DF 100%);border-top:4px solid #6C5CE7"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#6C5CE7;">W</span></div>
-      <div class="ws-card-body">
-        <div class="ws-card-badge" style="background:#6C5CE7">Weekly Planner</div>
-        <h3>Printable Weekly Planner</h3>
         <p>Weekly Planner</p>
         <span class="ws-card-btn">View Planner →</span>
       </div>
@@ -658,47 +533,7 @@
       </div>
     </a>
 
-    <a href="/planners/planner-2x2-1-footer-weekly-life-lines-circles-7-low-coral-pop-bordered/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#F4F1FF 0%,#EDE8DF 100%);border-top:4px solid #6C5CE7"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#6C5CE7;">W</span></div>
-      <div class="ws-card-body">
-        <div class="ws-card-badge" style="background:#6C5CE7">Weekly Planner</div>
-        <h3>Printable Weekly Planner — Coral</h3>
-        <p>Weekly Planner</p>
-        <span class="ws-card-btn">View Planner →</span>
-      </div>
-    </a>
-
-    <a href="/planners/planner-2x2-1-footer-weekly-life-lines-circles-7-low-clean-mono-filled-header/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#F4F1FF 0%,#EDE8DF 100%);border-top:4px solid #6C5CE7"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#6C5CE7;">W</span></div>
-      <div class="ws-card-body">
-        <div class="ws-card-badge" style="background:#6C5CE7">Weekly Planner</div>
-        <h3>Printable Weekly Planner — Minimal</h3>
-        <p>Weekly Planner</p>
-        <span class="ws-card-btn">View Planner →</span>
-      </div>
-    </a>
-
-    <a href="/planners/planner-2x2-1-footer-weekly-life-lines-circles-7-low-clean-mono-bordered/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#F4F1FF 0%,#EDE8DF 100%);border-top:4px solid #6C5CE7"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#6C5CE7;">W</span></div>
-      <div class="ws-card-body">
-        <div class="ws-card-badge" style="background:#6C5CE7">Weekly Planner</div>
-        <h3>Printable Weekly Planner — Minimal</h3>
-        <p>Weekly Planner</p>
-        <span class="ws-card-btn">View Planner →</span>
-      </div>
-    </a>
-
     <a href="/planners/planner-2x2-1-footer-weekly-life-lines-circles-7-low-boho-warm-filled-header/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#F4F1FF 0%,#EDE8DF 100%);border-top:4px solid #6C5CE7"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#6C5CE7;">W</span></div>
-      <div class="ws-card-body">
-        <div class="ws-card-badge" style="background:#6C5CE7">Weekly Planner</div>
-        <h3>Printable Weekly Planner</h3>
-        <p>Weekly Planner</p>
-        <span class="ws-card-btn">View Planner →</span>
-      </div>
-    </a>
-
-    <a href="/planners/planner-2x2-1-footer-weekly-life-lines-circles-7-low-boho-warm-bordered/" class="ws-card">
       <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#F4F1FF 0%,#EDE8DF 100%);border-top:4px solid #6C5CE7"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#6C5CE7;">W</span></div>
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#6C5CE7">Weekly Planner</div>
@@ -728,26 +563,6 @@
       </div>
     </a>
 
-    <a href="/planners/planner-top-bottom-split-ampm-pastel-dream/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#F4F1FF 0%,#EDE8DF 100%);border-top:4px solid #6C5CE7"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#6C5CE7;">W</span></div>
-      <div class="ws-card-body">
-        <div class="ws-card-badge" style="background:#6C5CE7">Weekly Planner</div>
-        <h3>Printable Weekly Planner — Pastel</h3>
-        <p>Weekly Planner</p>
-        <span class="ws-card-btn">View Planner →</span>
-      </div>
-    </a>
-
-    <a href="/planners/planner-timeblock-split-weekly-life-examel-signature/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#F4F1FF 0%,#EDE8DF 100%);border-top:4px solid #6C5CE7"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#6C5CE7;">W</span></div>
-      <div class="ws-card-body">
-        <div class="ws-card-badge" style="background:#6C5CE7">Weekly Planner</div>
-        <h3>Printable Weekly Planner — Purple</h3>
-        <p>Weekly Planner</p>
-        <span class="ws-card-btn">View Planner →</span>
-      </div>
-    </a>
-
     <a href="/planners/planner-single-focus-goal-single-blush-minimal/" class="ws-card">
       <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#F4F1FF 0%,#EDE8DF 100%);border-top:4px solid #6C5CE7"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#6C5CE7;">G</span></div>
       <div class="ws-card-body">
@@ -768,32 +583,12 @@
       </div>
     </a>
 
-    <a href="/planners/planner-meal-tasks-split-meals-weekly-examel-signature/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#F4F1FF 0%,#EDE8DF 100%);border-top:4px solid #6C5CE7"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#6C5CE7;">M</span></div>
-      <div class="ws-card-body">
-        <div class="ws-card-badge" style="background:#6C5CE7">Meal Planner</div>
-        <h3>Printable Meal Planner — Purple</h3>
-        <p>Meal Planner</p>
-        <span class="ws-card-btn">View Planner →</span>
-      </div>
-    </a>
-
     <a href="/planners/planner-kanban-notes-kanban-tasks-aesthetic-sage/" class="ws-card">
       <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#F4F1FF 0%,#EDE8DF 100%);border-top:4px solid #6C5CE7"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#6C5CE7;">P</span></div>
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#6C5CE7">Printable Planner</div>
         <h3>Printable Task Board — Sage</h3>
         <p>Task Board</p>
-        <span class="ws-card-btn">View Planner →</span>
-      </div>
-    </a>
-
-    <a href="/planners/planner-7-cols-notes-meals-weekly-examel-signature/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#F4F1FF 0%,#EDE8DF 100%);border-top:4px solid #6C5CE7"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#6C5CE7;">M</span></div>
-      <div class="ws-card-body">
-        <div class="ws-card-badge" style="background:#6C5CE7">Meal Planner</div>
-        <h3>Printable Meal Planner — Purple</h3>
-        <p>Meal Planner</p>
         <span class="ws-card-btn">View Planner →</span>
       </div>
     </a>
@@ -818,16 +613,6 @@
       </div>
     </a>
 
-    <a href="/planners/planner-full-table-notes-habits-health-mint-fresh/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#F4F1FF 0%,#EDE8DF 100%);border-top:4px solid #6C5CE7"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#6C5CE7;">H</span></div>
-      <div class="ws-card-body">
-        <div class="ws-card-badge" style="background:#6C5CE7">Habit Tracker</div>
-        <h3>Printable Habit Tracker — Mint</h3>
-        <p>Habit Tracker</p>
-        <span class="ws-card-btn">View Planner →</span>
-      </div>
-    </a>
-
     <a href="/planners/planner-dual-person-dual-sibs-rainbow-fun/" class="ws-card">
       <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#F4F1FF 0%,#EDE8DF 100%);border-top:4px solid #6C5CE7"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#6C5CE7;">W</span></div>
       <div class="ws-card-body">
@@ -838,52 +623,12 @@
       </div>
     </a>
 
-    <a href="/planners/planner-cards-4-notes-selfcare-coral-pop/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#F4F1FF 0%,#EDE8DF 100%);border-top:4px solid #6C5CE7"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#6C5CE7;">W</span></div>
-      <div class="ws-card-body">
-        <div class="ws-card-badge" style="background:#6C5CE7">Weekly Planner</div>
-        <h3>Printable Weekly Planner — Coral</h3>
-        <p>Weekly Planner</p>
-        <span class="ws-card-btn">View Planner →</span>
-      </div>
-    </a>
-
-    <a href="/planners/planner-bento-selfcare-coral-pop/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#F4F1FF 0%,#EDE8DF 100%);border-top:4px solid #6C5CE7"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#6C5CE7;">W</span></div>
-      <div class="ws-card-body">
-        <div class="ws-card-badge" style="background:#6C5CE7">Weekly Planner</div>
-        <h3>Printable Weekly Planner — Coral</h3>
-        <p>Weekly Planner</p>
-        <span class="ws-card-btn">View Planner →</span>
-      </div>
-    </a>
-
-    <a href="/planners/planner-3x2-footer-chores-rooms-rainbow-fun/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#F4F1FF 0%,#EDE8DF 100%);border-top:4px solid #6C5CE7"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#6C5CE7;">C</span></div>
-      <div class="ws-card-body">
-        <div class="ws-card-badge" style="background:#6C5CE7">Chore Chart</div>
-        <h3>Printable Chore Chart — Rainbow</h3>
-        <p>Chore Chart</p>
-        <span class="ws-card-btn">View Planner →</span>
-      </div>
-    </a>
-
     <a href="/planners/planner-3-stack-notes-habits-health-mint-fresh/" class="ws-card">
       <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#F4F1FF 0%,#EDE8DF 100%);border-top:4px solid #6C5CE7"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#6C5CE7;">H</span></div>
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#6C5CE7">Habit Tracker</div>
         <h3>Printable Habit Tracker — Mint</h3>
         <p>Habit Tracker</p>
-        <span class="ws-card-btn">View Planner →</span>
-      </div>
-    </a>
-
-    <a href="/planners/planner-2x2-1-sidebar-weekly-life-examel-signature/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#F4F1FF 0%,#EDE8DF 100%);border-top:4px solid #6C5CE7"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#6C5CE7;">W</span></div>
-      <div class="ws-card-body">
-        <div class="ws-card-badge" style="background:#6C5CE7">Weekly Planner</div>
-        <h3>Printable Weekly Planner — Purple</h3>
-        <p>Weekly Planner</p>
         <span class="ws-card-btn">View Planner →</span>
       </div>
     </a>

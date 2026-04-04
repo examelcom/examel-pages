@@ -72,6 +72,8 @@
     .footer-heading{font-size:10px;font-weight:800;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:2px;margin-bottom:6px;}
     .site-footer a{color:rgba(255,255,255,0.5);text-decoration:none;font-size:15px;transition:color 0.2s;font-weight:500;}
     .site-footer a:hover{color:#4A3BBF;}
+    a:focus-visible,button:focus-visible{outline:3px solid var(--color-brand);outline-offset:3px;border-radius:4px;}
+    a:focus-visible{border-radius:2px;}
     .footer-bottom{text-align:center;font-size:14px;color:rgba(255,255,255,0.2);border-top:1px solid rgba(255,255,255,0.07);padding-top:24px;}
     .mobile-menu-btn{display:none;background:none;border:none;cursor:pointer;padding:8px;border-radius:8px;}
     /* ── SEARCH ── */
@@ -80,7 +82,7 @@
     .site-search-input::placeholder{color:rgba(255,255,255,0.35);}
     .site-search-input:focus{background:rgba(255,255,255,0.12);border-color:rgba(108,92,231,0.6);box-shadow:0 0 0 3px rgba(108,92,231,0.15);}
     .site-search-results{display:none;position:absolute;top:calc(100% + 8px);left:0;right:0;background:white;border-radius:16px;box-shadow:0 8px 40px rgba(0,0,0,0.18);z-index:999;overflow:hidden;max-height:400px;overflow-y:auto;}
-    .site-search-btn{position:absolute;right:6px;top:50%;transform:translateY(-50%);background:#6C5CE7;border:none;border-radius:100px;width:32px;height:32px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:background 0.2s;}
+    .site-search-btn{position:absolute;right:6px;top:50%;transform:translateY(-50%);background:#6C5CE7;border:none;border-radius:100px;width:40px;height:40px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:background 0.2s;}
     .site-search-btn:hover{background:#5A4BD1;}
     .site-search{position:relative;flex:1;max-width:420px;margin:0 16px;}
     .mobile-nav{display:none;position:absolute;top:64px;left:0;right:0;background:#1C1526;border-bottom:2px solid #6C5CE7;padding:16px 20px;z-index:199;flex-direction:column;gap:4px;}
@@ -96,6 +98,10 @@
     @media(max-width:480px){
       .grid{grid-template-columns:1fr;}
       .hub-grid{grid-template-columns:1fr;}
+    }
+    @media(pointer:coarse),(max-width:768px){
+      .mobile-menu-btn{min-width:44px;min-height:44px;padding:10px;}
+      .filter-btn{min-height:44px;display:inline-flex;align-items:center;padding:10px 16px;}
     }
 
     /* ── MEGA MENU ── */
@@ -166,8 +172,9 @@
     .share-divider{border:none;border-top:1px solid #F0EDE8;margin:18px 0;}
     .share-row{display:flex;align-items:center;justify-content:space-between;gap:8px;}
     .share-label{font-size:11px;font-weight:700;color:#A89FAE;letter-spacing:1px;text-transform:uppercase;}
-    .share-icons{display:flex;gap:8px;}
-    .share-icon{width:36px;height:36px;border-radius:50%;border:1.5px solid #EDE8DF;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:15px;transition:all 0.2s;color:#6B6475;}
+    .share-icons{display:flex;gap:12px;}
+    .share-icon{width:36px;height:36px;border-radius:50%;border:1.5px solid #EDE8DF;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:15px;transition:all 0.2s;color:#6B6475;position:relative;}
+    .share-icon::after{content:"";position:absolute;inset:-4px;}
     .share-icon:hover{border-color:#6C5CE7;background:#F4F1FF;transform:scale(1.1);}
 .pin-it-btn{display:inline-flex;align-items:center;gap:7px;background:#E60023;color:white;font-size:13px;font-weight:700;padding:9px 18px;border-radius:100px;text-decoration:none;transition:all 0.2s;letter-spacing:0.2px;}
 .pin-it-btn:hover{background:#c0001d;transform:translateY(-1px);box-shadow:0 4px 14px rgba(230,0,35,0.3);}
@@ -210,6 +217,11 @@
       .ws-hero-char{display:none;}
       .info-strip{grid-template-columns:repeat(3,1fr);}
       .sticky-bar-title{display:none;}
+    }
+    @media(pointer:coarse),(max-width:640px){
+      .btn-sub{min-height:44px;display:inline-flex;align-items:center;justify-content:center;padding:11px 16px;}
+      .pin-it-btn{min-height:44px;padding:10px 20px;}
+      .sticky-bar-btn{min-height:44px;padding:12px 22px;}
     }
     /* PRINT */
     @media print{
@@ -606,7 +618,7 @@
     </div>
 
     
-    <div class="related"><h3 class="related-title">Related Worksheets</h3><div style="display:flex;flex-direction:column;gap:8px;"><a href="/free-math-worksheets/grade-3/" style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f8f6ff;border-radius:10px;text-decoration:none;color:#1C1526;font-size:14px;font-weight:500;"><span style="color:#6C5CE7;font-weight:700;font-size:12px;">&#8594;</span> More Grade 3 Math Worksheets</a><a href="/vocab-match/math/grade-3/vocab-match-math-grade3-time-time-travelers-standard/" style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f8f6ff;border-radius:10px;text-decoration:none;color:#1C1526;font-size:14px;font-weight:500;"><span style="color:#6C5CE7;font-weight:700;font-size:12px;">&#8594;</span> Next Skill: Time</a><a href="/vocab-match/math/grade-3/vocab-match-math-grade3-multiplication-dinosaurs-3oaa1/" style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f8f6ff;border-radius:10px;text-decoration:none;color:#1C1526;font-size:14px;font-weight:500;"><span style="color:#6C5CE7;font-weight:700;font-size:12px;">&#8594;</span> Try a Vocabulary Activity — Grade 3</a><a href="/worksheets/grade-3-math-fractions-animals-standard/" style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f8f6ff;border-radius:10px;text-decoration:none;color:#1C1526;font-size:14px;font-weight:500;"><span style="color:#6C5CE7;font-weight:700;font-size:12px;">&#8594;</span> Fractions — Grade 3 Math</a><a href="/worksheets/math-grade3-multiplication-cooking/" style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f8f6ff;border-radius:10px;text-decoration:none;color:#1C1526;font-size:14px;font-weight:500;"><span style="color:#6C5CE7;font-weight:700;font-size:12px;">&#8594;</span> Multiplication — Grade 3 Math</a><a href="/worksheets/math-grade3-area-ocean/" style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f8f6ff;border-radius:10px;text-decoration:none;color:#1C1526;font-size:14px;font-weight:500;"><span style="color:#6C5CE7;font-weight:700;font-size:12px;">&#8594;</span> Area — Grade 3 Math</a><a href="/worksheets/math-grade3-multiplication-fairy-tales/" style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f8f6ff;border-radius:10px;text-decoration:none;color:#1C1526;font-size:14px;font-weight:500;"><span style="color:#6C5CE7;font-weight:700;font-size:12px;">&#8594;</span> Multiplication — Grade 3 Math</a><a href="/worksheets/grade-3-math-multiplication-nature-standard/" style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f8f6ff;border-radius:10px;text-decoration:none;color:#1C1526;font-size:14px;font-weight:500;"><span style="color:#6C5CE7;font-weight:700;font-size:12px;">&#8594;</span> Multiplication — Grade 3 Math</a></div></div>
+    <div class="related"><h3 class="related-title">Related Worksheets</h3><div style="display:flex;flex-direction:column;gap:8px;"><a href="/free-math-worksheets/grade-3/" style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f8f6ff;border-radius:10px;text-decoration:none;color:#1C1526;font-size:14px;font-weight:500;"><span style="color:#6C5CE7;font-weight:700;font-size:12px;">&#8594;</span> More Grade 3 Math Worksheets</a><a href="/vocab-match/math/grade-3/vocab-match-math-grade3-time-time-travelers-standard/" style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f8f6ff;border-radius:10px;text-decoration:none;color:#1C1526;font-size:14px;font-weight:500;"><span style="color:#6C5CE7;font-weight:700;font-size:12px;">&#8594;</span> Next Skill: Time</a><a href="/vocab-match/math/grade-3/vocab-match-math-grade3-multiplication-dinosaurs-3oaa1/" style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f8f6ff;border-radius:10px;text-decoration:none;color:#1C1526;font-size:14px;font-weight:500;"><span style="color:#6C5CE7;font-weight:700;font-size:12px;">&#8594;</span> Try a Vocabulary Activity — Grade 3</a><a href="/worksheets/math-grade3-word-problems-superheroes/" style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f8f6ff;border-radius:10px;text-decoration:none;color:#1C1526;font-size:14px;font-weight:500;"><span style="color:#6C5CE7;font-weight:700;font-size:12px;">&#8594;</span> Word Problems — Grade 3 Math</a><a href="/worksheets/math-grade3-word-problems-holidays/" style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f8f6ff;border-radius:10px;text-decoration:none;color:#1C1526;font-size:14px;font-weight:500;"><span style="color:#6C5CE7;font-weight:700;font-size:12px;">&#8594;</span> Word Problems — Grade 3 Math</a><a href="/worksheets/math-grade3-word-problems-food/" style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f8f6ff;border-radius:10px;text-decoration:none;color:#1C1526;font-size:14px;font-weight:500;"><span style="color:#6C5CE7;font-weight:700;font-size:12px;">&#8594;</span> Word Problems — Grade 3 Math</a><a href="/worksheets/math-grade3-division-nature/" style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f8f6ff;border-radius:10px;text-decoration:none;color:#1C1526;font-size:14px;font-weight:500;"><span style="color:#6C5CE7;font-weight:700;font-size:12px;">&#8594;</span> Division — Grade 3 Math</a><a href="/worksheets/math-grade3-word-problems-ocean/" style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f8f6ff;border-radius:10px;text-decoration:none;color:#1C1526;font-size:14px;font-weight:500;"><span style="color:#6C5CE7;font-weight:700;font-size:12px;">&#8594;</span> Word Problems — Grade 3 Math</a></div></div>
 
     <div class="email-section">
       <h3>📬 Get Worksheets Every Week</h3>
@@ -626,16 +638,16 @@
     
     <div class="seo-prose">
       <h3>Why Perimeter matters in Grade 3</h3>
-      <p>Perimeter is the total distance around the outside of a shape, and it's one of the first geometry concepts that helps children move from just looking at shapes to measuring and calculating with them. At ages 8-9, students are developing their ability to think sequentially—they need to add multiple numbers in order, which strengthens both their math fluency and their organizational thinking. Learning perimeter gives children a practical skill they'll use constantly: figuring out how much fencing a garden needs, how far a toy robot might travel around a track, or how much trim a picture frame requires. This worksheet builds confidence with addition while introducing measurement in a concrete, hands-on way. It also helps students see that math isn't abstract—it solves real problems about the spaces and objects in their world.</p>
+      <p>Perimeter is the distance around the outside of a shape, and it's a fundamental measurement skill that Grade 3 students use in real-world situations every day. Whether a child is planning a garden, calculating how much fence a yard needs, or even figuring out how many tiles border a swimming pool, perimeter helps them solve practical problems. At ages 8-9, students are developing the ability to think spatially and understand that shapes have measurable properties beyond just their size. Learning perimeter strengthens addition skills, reinforces the concept that all sides of certain shapes have special relationships (like rectangles having equal opposite sides), and builds confidence with measurement tools. This worksheet helps students move from concrete thinking about "how long" to abstract reasoning about "all the way around"—a crucial cognitive leap for this age group.</p>
 <h4>What your student will practice</h4>
-<ul><li>Identify and count the sides of rectangles, squares, and other polygons accurately</li><li>Add multiple single-digit and two-digit numbers in sequence without skipping sides</li><li>Apply the perimeter formula by measuring and adding all outer edges of shapes</li><li>Solve word problems requiring perimeter calculation with real-world contexts</li></ul>
+<ul><li>Add the lengths of all sides to find perimeter accurately</li><li>Identify and measure all four sides of rectangles and squares</li><li>Use addition skills to solve single-step perimeter word problems</li><li>Recognize that opposite sides of rectangles are equal in length</li></ul>
 <h4>Common mistakes to watch for</h4>
-<p>The most common error at this level is students forgetting to count all four sides of a shape—they'll add three sides and declare the answer complete. You might also see them adding the same side twice or mixing up which measurement belongs to which side. Another frequent mistake is writing the individual measurements correctly but making an arithmetic error during addition, giving a wrong final answer even though their strategy was sound. Watch for children who measure correctly but forget to include all measurements in their final sum—this usually means they need a checklist or system to track which sides they've already counted.</p>
+<p>The most common error is that students count only two or three sides instead of all four, particularly when sides are unlabeled or when students skip marking each side as they add. You might see a child add only the length and width once, forgetting that a rectangle has two long sides and two short sides. Another frequent mistake is misreading the measurement units or confusing centimeters with inches. To spot these errors, ask your child to point to and count each side aloud before adding, and encourage them to circle or check off each number as they use it.</p>
     </div>
     
     <div class="seo-prose">
       <h3>Teacher & Parent Tip</h3>
-      <p>Have your child walk around the perimeter of your kitchen table or a garden bed while you place small objects (coins, buttons, or toy blocks) at each corner. Then have them measure each side with a ruler or measuring tape and write down the numbers. Finally, add all the measurements together to find the total perimeter. This combines movement, measurement, and real addition in a memorable way that sticks much better than worksheets alone. Repeating this with different household objects helps them see the pattern across multiple shapes.</p>
+      <p>Have your child measure and calculate the perimeter of real objects in your home using a ruler or measuring tape—a picture frame, a book cover, or even a robot toy if you have one. Start with the book or frame because these have clear, right-angle corners. After measuring, have them write down each side length and add them up on paper. This hands-on practice makes the abstract concept concrete and shows why perimeter matters beyond the worksheet.</p>
     </div>
     
     <div class="related">

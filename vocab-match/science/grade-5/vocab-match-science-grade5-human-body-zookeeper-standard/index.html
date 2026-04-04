@@ -87,13 +87,18 @@
     .mobile-nav.open{display:flex;}
     @media(max-width:768px){
       .site-header nav{display:none;}
-      .mobile-menu-btn{display:block;}
+      .mobile-menu-btn{display:block;min-width:44px;min-height:44px;padding:10px;}
       .hub-grid{grid-template-columns:repeat(2,1fr);}
       .grid{grid-template-columns:repeat(2,1fr);}
+      .site-search-btn{width:44px;height:44px;}
+      .mega-nav-toggle{min-height:44px;padding:10px 8px;}
+      .mega-nav-link{min-height:44px;display:inline-flex;align-items:center;padding:10px;}
+      .filter-btn{min-height:44px;display:inline-flex;align-items:center;}
     }
     @media(max-width:480px){
       .grid{grid-template-columns:1fr;}
       .hub-grid{grid-template-columns:1fr;}
+      .filter-btn{min-height:44px;padding:10px 16px;}
     }
 
     /* ── MEGA MENU ── */

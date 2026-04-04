@@ -69,6 +69,8 @@
     .footer-heading{font-size:10px;font-weight:800;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:2px;margin-bottom:6px;}
     .site-footer a{color:rgba(255,255,255,0.5);text-decoration:none;font-size:15px;transition:color 0.2s;font-weight:500;}
     .site-footer a:hover{color:#4A3BBF;}
+    a:focus-visible,button:focus-visible{outline:3px solid var(--color-brand);outline-offset:3px;border-radius:4px;}
+    a:focus-visible{border-radius:2px;}
     .footer-bottom{text-align:center;font-size:14px;color:rgba(255,255,255,0.2);border-top:1px solid rgba(255,255,255,0.07);padding-top:24px;}
     .mobile-menu-btn{display:none;background:none;border:none;cursor:pointer;padding:8px;border-radius:8px;}
     /* ── SEARCH ── */
@@ -77,7 +79,7 @@
     .site-search-input::placeholder{color:rgba(255,255,255,0.35);}
     .site-search-input:focus{background:rgba(255,255,255,0.12);border-color:rgba(108,92,231,0.6);box-shadow:0 0 0 3px rgba(108,92,231,0.15);}
     .site-search-results{display:none;position:absolute;top:calc(100% + 8px);left:0;right:0;background:white;border-radius:16px;box-shadow:0 8px 40px rgba(0,0,0,0.18);z-index:999;overflow:hidden;max-height:400px;overflow-y:auto;}
-    .site-search-btn{position:absolute;right:6px;top:50%;transform:translateY(-50%);background:#6C5CE7;border:none;border-radius:100px;width:32px;height:32px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:background 0.2s;}
+    .site-search-btn{position:absolute;right:6px;top:50%;transform:translateY(-50%);background:#6C5CE7;border:none;border-radius:100px;width:40px;height:40px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:background 0.2s;}
     .site-search-btn:hover{background:#5A4BD1;}
     .site-search{position:relative;flex:1;max-width:420px;margin:0 16px;}
     .mobile-nav{display:none;position:absolute;top:64px;left:0;right:0;background:#1C1526;border-bottom:2px solid #6C5CE7;padding:16px 20px;z-index:199;flex-direction:column;gap:4px;}
@@ -93,6 +95,10 @@
     @media(max-width:480px){
       .grid{grid-template-columns:1fr;}
       .hub-grid{grid-template-columns:1fr;}
+    }
+    @media(pointer:coarse),(max-width:768px){
+      .mobile-menu-btn{min-width:44px;min-height:44px;padding:10px;}
+      .filter-btn{min-height:44px;display:inline-flex;align-items:center;padding:10px 16px;}
     }
 
     /* ── MEGA MENU ── */
@@ -410,18 +416,9 @@
   <div class="breadcrumb"><a href="https://examel.com">Home</a><span>›</span><a href="/free-reading-passages/">Reading Passages</a><span>›</span>Grade 6</div>
   <div class="hero">
     <h1>Free Grade 6 <span>Reading Passages</span></h1>
-    <p>19+ free printable Grade 6 nonfiction reading passages with comprehension questions and answer keys.</p>
+    <p>15+ free printable Grade 6 nonfiction reading passages with comprehension questions and answer keys.</p>
   </div>
   <div class="grid">
-    <a href="/reading-passages/grade-6/reading-passage-english-grade6-reading-comprehension-animals-and-habitat-standard/" class="ws-card">
-      <img src="https://examel.com/thumbnails/previews/reading-passage-english-grade6-reading-comprehension-animals-and-habitat-standard-p1.png" alt="Leo Discovers How Animals Use Their Habitats" class="ws-card-thumb" loading="lazy">
-      <div class="ws-card-body">
-        <div class="ws-card-badge" style="background:#DB2777">English · Grade 6</div>
-        <h3>Leo Discovers How Animals Use Their Habitats</h3>
-        <p>Reading Comprehension · Animals And Habitat theme</p>
-        <span class="ws-card-btn">View Worksheet →</span>
-      </div>
-    </a>
     <a href="/reading-passages/grade-6/reading-passage-math-grade6-equations-pirates-beginner/" class="ws-card">
       <img src="https://examel.com/thumbnails/previews/reading-passage-math-grade6-equations-pirates-beginner-p1.png" alt="Maya Solves the Pirate Treasure Equations" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
@@ -437,15 +434,6 @@
         <div class="ws-card-badge" style="background:#DB2777">English · Grade 6</div>
         <h3>Leo and the Eco-Warriors: Arguing to Win</h3>
         <p>Argument Analysis · Eco Warriors theme</p>
-        <span class="ws-card-btn">View Worksheet →</span>
-      </div>
-    </a>
-    <a href="/reading-passages/grade-6/reading-passage-science-grade6-weather-climate-baking-champions-challenge/" class="ws-card">
-      <img src="https://examel.com/thumbnails/previews/reading-passage-science-grade6-weather-climate-baking-champions-challenge-p1.png" alt="Zoe Bakes Through Every Kind of Weather" class="ws-card-thumb" loading="lazy">
-      <div class="ws-card-body">
-        <div class="ws-card-badge" style="background:#059669">Science · Grade 6</div>
-        <h3>Zoe Bakes Through Every Kind of Weather</h3>
-        <p>Weather Climate · Baking Champions theme</p>
         <span class="ws-card-btn">View Worksheet →</span>
       </div>
     </a>
@@ -473,15 +461,6 @@
         <div class="ws-card-badge" style="background:#059669">Science · Grade 6</div>
         <h3>Zoe Sails Into the Science of Forces</h3>
         <p>Forces · Columbus Day theme</p>
-        <span class="ws-card-btn">View Worksheet →</span>
-      </div>
-    </a>
-    <a href="/reading-passages/grade-6/reading-passage-math-grade6-coordinate-plane-wizards-challenge/" class="ws-card">
-      <img src="https://examel.com/thumbnails/previews/reading-passage-math-grade6-coordinate-plane-wizards-challenge-p1.png" alt="Maya Maps the Wizard Academy's Magical Realm" class="ws-card-thumb" loading="lazy">
-      <div class="ws-card-body">
-        <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 6</div>
-        <h3>Maya Maps the Wizard Academy's Magical Realm</h3>
-        <p>Coordinate Plane · Wizards theme</p>
         <span class="ws-card-btn">View Worksheet →</span>
       </div>
     </a>
@@ -518,6 +497,33 @@
         <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 6</div>
         <h3>Maya Balances Equations at Block Builders Lab</h3>
         <p>Equations · Block Builders theme</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+    <a href="/reading-passages/grade-6/reading-passage-math-grade6-fractions-coding-kids-standard/" class="ws-card">
+      <img src="https://examel.com/thumbnails/previews/reading-passage-math-grade6-fractions-coding-kids-standard-p1.png" alt="Maya Codes with Fractions at Club" class="ws-card-thumb" loading="lazy">
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 6</div>
+        <h3>Maya Codes with Fractions at Club</h3>
+        <p>Fractions · Coding Kids theme</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+    <a href="/reading-passages/grade-6/reading-passage-english-grade6-text-structure-compare-and-contrast-environment-and-nature-challenge/" class="ws-card">
+      <img src="https://examel.com/thumbnails/previews/reading-passage-english-grade6-text-structure-compare-and-contrast-environment-and-nature-challenge-p1.png" alt="Leo Discovers Two Forests, One Truth" class="ws-card-thumb" loading="lazy">
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#DB2777">English · Grade 6</div>
+        <h3>Leo Discovers Two Forests, One Truth</h3>
+        <p>Text Structure: Compare And Contrast · Environment And Nature theme</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+    <a href="/reading-passages/grade-6/reading-passage-science-grade6-climate-change-and-human-impact-earth-day-challenge/" class="ws-card">
+      <img src="https://examel.com/thumbnails/previews/reading-passage-science-grade6-climate-change-and-human-impact-earth-day-challenge-p1.png" alt="Zoe's Earth Day Climate Discovery" class="ws-card-thumb" loading="lazy">
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#059669">Science · Grade 6</div>
+        <h3>Zoe's Earth Day Climate Discovery</h3>
+        <p>Climate Change And Human Impact · Earth Day theme</p>
         <span class="ws-card-btn">View Worksheet →</span>
       </div>
     </a></div>

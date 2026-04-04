@@ -69,6 +69,8 @@
     .footer-heading{font-size:10px;font-weight:800;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:2px;margin-bottom:6px;}
     .site-footer a{color:rgba(255,255,255,0.5);text-decoration:none;font-size:15px;transition:color 0.2s;font-weight:500;}
     .site-footer a:hover{color:#4A3BBF;}
+    a:focus-visible,button:focus-visible{outline:3px solid var(--color-brand);outline-offset:3px;border-radius:4px;}
+    a:focus-visible{border-radius:2px;}
     .footer-bottom{text-align:center;font-size:14px;color:rgba(255,255,255,0.2);border-top:1px solid rgba(255,255,255,0.07);padding-top:24px;}
     .mobile-menu-btn{display:none;background:none;border:none;cursor:pointer;padding:8px;border-radius:8px;}
     /* ── SEARCH ── */
@@ -77,7 +79,7 @@
     .site-search-input::placeholder{color:rgba(255,255,255,0.35);}
     .site-search-input:focus{background:rgba(255,255,255,0.12);border-color:rgba(108,92,231,0.6);box-shadow:0 0 0 3px rgba(108,92,231,0.15);}
     .site-search-results{display:none;position:absolute;top:calc(100% + 8px);left:0;right:0;background:white;border-radius:16px;box-shadow:0 8px 40px rgba(0,0,0,0.18);z-index:999;overflow:hidden;max-height:400px;overflow-y:auto;}
-    .site-search-btn{position:absolute;right:6px;top:50%;transform:translateY(-50%);background:#6C5CE7;border:none;border-radius:100px;width:32px;height:32px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:background 0.2s;}
+    .site-search-btn{position:absolute;right:6px;top:50%;transform:translateY(-50%);background:#6C5CE7;border:none;border-radius:100px;width:40px;height:40px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:background 0.2s;}
     .site-search-btn:hover{background:#5A4BD1;}
     .site-search{position:relative;flex:1;max-width:420px;margin:0 16px;}
     .mobile-nav{display:none;position:absolute;top:64px;left:0;right:0;background:#1C1526;border-bottom:2px solid #6C5CE7;padding:16px 20px;z-index:199;flex-direction:column;gap:4px;}
@@ -93,6 +95,10 @@
     @media(max-width:480px){
       .grid{grid-template-columns:1fr;}
       .hub-grid{grid-template-columns:1fr;}
+    }
+    @media(pointer:coarse),(max-width:768px){
+      .mobile-menu-btn{min-width:44px;min-height:44px;padding:10px;}
+      .filter-btn{min-height:44px;display:inline-flex;align-items:center;padding:10px 16px;}
     }
 
     /* ── MEGA MENU ── */
@@ -410,7 +416,7 @@
   <div class="breadcrumb"><a href="https://examel.com">Home</a><span>›</span><a href="/free-reading-passages/">Reading Passages</a><span>›</span>Grade 4</div>
   <div class="hero">
     <h1>Free Grade 4 <span>Reading Passages</span></h1>
-    <p>26+ free printable Grade 4 nonfiction reading passages with comprehension questions and answer keys.</p>
+    <p>21+ free printable Grade 4 nonfiction reading passages with comprehension questions and answer keys.</p>
   </div>
   <div class="grid">
     <a href="/reading-passages/grade-4/reading-passage-math-grade4-measurement-coding-kids-challenge/" class="ws-card">
@@ -428,15 +434,6 @@
         <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 4</div>
         <h3>Maya Finds Symmetry on the First Day</h3>
         <p>Symmetry · Back To School theme</p>
-        <span class="ws-card-btn">View Worksheet →</span>
-      </div>
-    </a>
-    <a href="/reading-passages/grade-4/reading-passage-science-grade4-renewable-energy-earth-day-standard/" class="ws-card">
-      <img src="https://examel.com/thumbnails/previews/reading-passage-science-grade4-renewable-energy-earth-day-standard-p1.png" alt="Zoe Finds Clean Energy on Earth Day" class="ws-card-thumb" loading="lazy">
-      <div class="ws-card-body">
-        <div class="ws-card-badge" style="background:#059669">Science · Grade 4</div>
-        <h3>Zoe Finds Clean Energy on Earth Day</h3>
-        <p>Renewable Energy · Earth Day theme</p>
         <span class="ws-card-btn">View Worksheet →</span>
       </div>
     </a>
@@ -467,33 +464,6 @@
         <span class="ws-card-btn">View Worksheet →</span>
       </div>
     </a>
-    <a href="/reading-passages/grade-4/reading-passage-math-grade4-division-igloo-village-standard/" class="ws-card">
-      <img src="https://examel.com/thumbnails/previews/reading-passage-math-grade4-division-igloo-village-standard-p1.png" alt="Maya Divides Ice Blocks in the Arctic" class="ws-card-thumb" loading="lazy">
-      <div class="ws-card-body">
-        <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 4</div>
-        <h3>Maya Divides Ice Blocks in the Arctic</h3>
-        <p>Division · Igloo Village theme</p>
-        <span class="ws-card-btn">View Worksheet →</span>
-      </div>
-    </a>
-    <a href="/reading-passages/grade-4/reading-passage-science-grade4-animal-structures-pandas-beginner/" class="ws-card">
-      <img src="https://examel.com/thumbnails/previews/reading-passage-science-grade4-animal-structures-pandas-beginner-p1.png" alt="Zoe Discovers Panda Secrets at the Zoo" class="ws-card-thumb" loading="lazy">
-      <div class="ws-card-body">
-        <div class="ws-card-badge" style="background:#059669">Science · Grade 4</div>
-        <h3>Zoe Discovers Panda Secrets at the Zoo</h3>
-        <p>Animal Structures · Pandas theme</p>
-        <span class="ws-card-btn">View Worksheet →</span>
-      </div>
-    </a>
-    <a href="/reading-passages/grade-4/reading-passage-english-grade4-theme-solar-panels-challenge/" class="ws-card">
-      <img src="https://examel.com/thumbnails/previews/reading-passage-english-grade4-theme-solar-panels-challenge-p1.png" alt="Leo Lights Up: Discovering Solar Panels" class="ws-card-thumb" loading="lazy">
-      <div class="ws-card-body">
-        <div class="ws-card-badge" style="background:#DB2777">English · Grade 4</div>
-        <h3>Leo Lights Up: Discovering Solar Panels</h3>
-        <p>Theme · Solar Panels theme</p>
-        <span class="ws-card-btn">View Worksheet →</span>
-      </div>
-    </a>
     <a href="/reading-passages/grade-4/reading-passage-math-grade4-word-problems-music-challenge/" class="ws-card">
       <img src="https://examel.com/thumbnails/previews/reading-passage-math-grade4-word-problems-music-challenge-p1.png" alt="Maya Solves Math at Band Practice" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
@@ -518,6 +488,42 @@
         <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 4</div>
         <h3>Maya Finds Angles in the Deep</h3>
         <p>Angles · Underwater theme</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+    <a href="/reading-passages/grade-4/reading-passage-science-grade4-animal-structures-forest-friends-standard/" class="ws-card">
+      <img src="https://examel.com/thumbnails/previews/reading-passage-science-grade4-animal-structures-forest-friends-standard-p1.png" alt="Zoe Discovers Forest Animal Survival Secrets" class="ws-card-thumb" loading="lazy">
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#059669">Science · Grade 4</div>
+        <h3>Zoe Discovers Forest Animal Survival Secrets</h3>
+        <p>Animal Structures · Forest Friends theme</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+    <a href="/reading-passages/grade-4/reading-passage-science-grade4-energy-first-day-of-fall-challenge/" class="ws-card">
+      <img src="https://examel.com/thumbnails/previews/reading-passage-science-grade4-energy-first-day-of-fall-challenge-p1.png" alt="Zoe Finds Energy on the First Day of Fall" class="ws-card-thumb" loading="lazy">
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#059669">Science · Grade 4</div>
+        <h3>Zoe Finds Energy on the First Day of Fall</h3>
+        <p>Energy · First Day Of Fall theme</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+    <a href="/reading-passages/grade-4/reading-passage-math-grade4-place-value-parallel-world-challenge/" class="ws-card">
+      <img src="https://examel.com/thumbnails/previews/reading-passage-math-grade4-place-value-parallel-world-challenge-p1.png" alt="Maya's World Where Numbers Rule Everything" class="ws-card-thumb" loading="lazy">
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 4</div>
+        <h3>Maya's World Where Numbers Rule Everything</h3>
+        <p>Place Value · Parallel World theme</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+    <a href="/reading-passages/grade-4/reading-passage-english-grade4-text-structure-origami-standard/" class="ws-card">
+      <img src="https://examel.com/thumbnails/previews/reading-passage-english-grade4-text-structure-origami-standard-p1.png" alt="Leo Folds His Way Through Text Structure" class="ws-card-thumb" loading="lazy">
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#DB2777">English · Grade 4</div>
+        <h3>Leo Folds His Way Through Text Structure</h3>
+        <p>Text Structure · Origami theme</p>
         <span class="ws-card-btn">View Worksheet →</span>
       </div>
     </a></div>

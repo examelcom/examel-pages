@@ -118,8 +118,9 @@ function generateWorksheetPages(worksheets, sharedCSS, siteHeader, siteFooter, h
     .share-divider{border:none;border-top:1px solid #F0EDE8;margin:18px 0;}
     .share-row{display:flex;align-items:center;justify-content:space-between;gap:8px;}
     .share-label{font-size:11px;font-weight:700;color:#A89FAE;letter-spacing:1px;text-transform:uppercase;}
-    .share-icons{display:flex;gap:8px;}
-    .share-icon{width:36px;height:36px;border-radius:50%;border:1.5px solid #EDE8DF;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:15px;transition:all 0.2s;color:#6B6475;}
+    .share-icons{display:flex;gap:12px;}
+    .share-icon{width:36px;height:36px;border-radius:50%;border:1.5px solid #EDE8DF;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:15px;transition:all 0.2s;color:#6B6475;position:relative;}
+    .share-icon::after{content:"";position:absolute;inset:-4px;}
     .share-icon:hover{border-color:#6C5CE7;background:#F4F1FF;transform:scale(1.1);}
 .pin-it-btn{display:inline-flex;align-items:center;gap:7px;background:#E60023;color:white;font-size:13px;font-weight:700;padding:9px 18px;border-radius:100px;text-decoration:none;transition:all 0.2s;letter-spacing:0.2px;}
 .pin-it-btn:hover{background:#c0001d;transform:translateY(-1px);box-shadow:0 4px 14px rgba(230,0,35,0.3);}
@@ -162,6 +163,11 @@ function generateWorksheetPages(worksheets, sharedCSS, siteHeader, siteFooter, h
       .ws-hero-char{display:none;}
       .info-strip{grid-template-columns:repeat(3,1fr);}
       .sticky-bar-title{display:none;}
+    }
+    @media(pointer:coarse),(max-width:640px){
+      .btn-sub{min-height:44px;display:inline-flex;align-items:center;justify-content:center;padding:11px 16px;}
+      .pin-it-btn{min-height:44px;padding:10px 20px;}
+      .sticky-bar-btn{min-height:44px;padding:12px 22px;}
     }
     /* PRINT */
     @media print{
