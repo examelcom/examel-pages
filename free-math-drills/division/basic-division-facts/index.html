@@ -91,6 +91,43 @@
       .grid{grid-template-columns:1fr;}
       .hub-grid{grid-template-columns:1fr;}
     }
+
+    /* ── MEGA MENU ── */
+    .mega-nav{display:flex;align-items:center;gap:0;}
+    .mega-nav-item{position:relative;}
+    .mega-nav-link{color:rgba(255,255,255,0.6);text-decoration:none;font-size:13px;font-weight:600;padding:7px 10px;border-radius:8px;transition:all 0.2s;display:inline-block;}
+    .mega-nav-link:hover{color:white;background:rgba(108,92,231,0.2);}
+    .mega-nav-toggle{background:none;border:none;color:rgba(255,255,255,0.6);font-size:13px;font-weight:600;padding:7px 4px 7px 2px;cursor:pointer;font-family:'Outfit',sans-serif;transition:all 0.2s;}
+    .mega-nav-toggle:hover{color:white;}
+    .mega-nav-toggle svg{vertical-align:middle;margin-left:1px;transition:transform 0.2s;}
+    .mega-panel{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(8px);background:white;border-radius:16px;box-shadow:0 12px 48px rgba(0,0,0,0.18),0 0 0 1px rgba(0,0,0,0.06);z-index:300;opacity:0;visibility:hidden;transition:opacity 0.2s 0.12s,visibility 0s 0.35s,transform 0.2s 0.12s;min-width:520px;padding:24px 28px;}
+    .mega-nav-item:hover>.mega-panel,.mega-nav-item:focus-within>.mega-panel{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);transition:opacity 0.2s 0.12s,visibility 0s 0s,transform 0.2s 0.12s;}
+    .mega-nav-toggle[aria-expanded="true"]+.mega-panel{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);transition:opacity 0.2s,visibility 0s,transform 0.2s;}
+    .mega-nav-toggle[aria-expanded="true"] svg{transform:rotate(180deg);}
+    .mega-panel-inner{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+    .mega-col-heading{font-size:13px;font-weight:800;margin-bottom:10px;font-family:'Outfit',sans-serif;letter-spacing:-0.2px;}
+    .mega-panel a{display:block;font-size:13px;color:#4A3F55;text-decoration:none;padding:4px 0;transition:color 0.15s;font-weight:500;}
+    .mega-panel a:hover{color:#6C5CE7;}
+    .mega-see-all{font-weight:700 !important;margin-top:6px;font-size:12px !important;}
+    .mega-grades-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;min-width:360px;}
+    .mega-grade-card{display:flex;flex-direction:column;align-items:center;padding:16px 12px;border-radius:12px;text-decoration:none;color:#1A1420;border:1px solid #EDE8DF;transition:all 0.2s;}
+    .mega-grade-card:hover{background:#6C5CE7;color:white;border-color:#6C5CE7;transform:translateY(-2px);}
+    .mega-grade-num{font-size:24px;font-weight:900;font-family:'Outfit',sans-serif;letter-spacing:-0.5px;}
+    .mega-grade-label{font-size:10px;color:#A89FAE;margin-top:2px;}
+    .mega-grade-card:hover .mega-grade-label{color:rgba(255,255,255,0.7);}
+    /* Mobile accordion */
+    .mobile-accordion{border-top:1px solid rgba(255,255,255,0.08);}
+    .mobile-acc-trigger{width:100%;background:none;border:none;color:rgba(255,255,255,0.7);font-size:15px;font-weight:600;padding:12px 14px;text-align:left;cursor:pointer;font-family:'Outfit',sans-serif;display:flex;justify-content:space-between;align-items:center;}
+    .mobile-acc-trigger:hover{color:white;}
+    .mobile-acc-trigger::after{content:'▸';transition:transform 0.2s;}
+    .mobile-acc-trigger.open::after{transform:rotate(90deg);}
+    .mobile-acc-panel{display:none;padding:0 14px 12px;}
+    .mobile-acc-panel.open{display:block;}
+    .mobile-acc-panel a{display:block;color:rgba(255,255,255,0.5);text-decoration:none;font-size:14px;padding:6px 12px;border-radius:6px;transition:all 0.15s;}
+    .mobile-acc-panel a:hover{color:white;background:rgba(108,92,231,0.15);}
+    .mobile-acc-heading{font-size:11px;font-weight:700;color:rgba(255,255,255,0.35);letter-spacing:1px;text-transform:uppercase;padding:10px 12px 4px;font-family:'Outfit',sans-serif;}
+    @media(max-width:900px){.mega-nav{display:none;}}
+    @media(min-width:901px){.mobile-accordion{display:none;}}
   </style>
 <style>
 .intent-hero{background:#1C1526;border-top:5px solid #DC2626;padding:0 20px;position:relative;overflow:hidden;}
@@ -151,20 +188,96 @@
       </svg>
       <span class="site-logo-text">examel<span>·</span></span>
     </a>
+    <nav class="mega-nav" aria-label="Main navigation">
+      <div class="mega-nav-item">
+        <a href="/free-worksheets/" class="mega-nav-link">Subjects</a><button class="mega-nav-toggle" aria-expanded="false" aria-label="Subjects submenu"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2.5 3.5L5 6L7.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+        <div class="mega-panel">
+          <div class="mega-panel-inner">
+            <div class="mega-col">
+              <div class="mega-col-heading" style="color:#7C3AED;">📐 Math</div>
+              <a href="/free-math-worksheets/addition/">Addition</a>
+              <a href="/free-math-worksheets/subtraction/">Subtraction</a>
+              <a href="/free-math-worksheets/multiplication/">Multiplication</a>
+              <a href="/free-math-worksheets/division/">Division</a>
+              <a href="/free-math-worksheets/fractions/">Fractions</a>
+              <a href="/free-math-worksheets/place-value/">Place Value</a>
+              <a href="/free-math-worksheets/word-problems/">Word Problems</a>
+              <a href="/free-math-worksheets/" class="mega-see-all" style="color:#7C3AED;">All 66 Math topics →</a>
+            </div>
+            <div class="mega-col">
+              <div class="mega-col-heading" style="color:#DB2777;">📖 English</div>
+              <a href="/free-english-worksheets/reading-comprehension/">Reading Comp.</a>
+              <a href="/free-english-worksheets/vocabulary/">Vocabulary</a>
+              <a href="/free-english-worksheets/singular-plural-nouns/">Nouns</a>
+              <a href="/free-english-worksheets/adjectives-basic/">Adjectives</a>
+              <a href="/free-english-worksheets/action-verbs/">Verbs</a>
+              <a href="/free-english-worksheets/text-structure/">Text Structure</a>
+              <a href="/free-english-worksheets/" class="mega-see-all" style="color:#DB2777;">All 24 English topics →</a>
+            </div>
+            <div class="mega-col">
+              <div class="mega-col-heading" style="color:#059669;">🔬 Science</div>
+              <a href="/free-science-worksheets/ecosystems/">Ecosystems</a>
+              <a href="/free-science-worksheets/human-body/">Human Body</a>
+              <a href="/free-science-worksheets/matter/">Matter</a>
+              <a href="/free-science-worksheets/cells/">Cells</a>
+              <a href="/free-science-worksheets/gravity/">Gravity</a>
+              <a href="/free-science-worksheets/" class="mega-see-all" style="color:#059669;">All Science →</a>
+              <div class="mega-col-heading" style="color:#D97706;margin-top:14px;">🌍 Social Studies</div>
+              <a href="/free-social_studies-worksheets/">All Social Studies →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mega-nav-item">
+        <a href="/free-worksheets/" class="mega-nav-link">Grades</a><button class="mega-nav-toggle" aria-expanded="false" aria-label="Grades submenu"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2.5 3.5L5 6L7.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+        <div class="mega-panel">
+          <div class="mega-grades-grid">
+            <a href="/free-worksheets/grade-1/" class="mega-grade-card"><span class="mega-grade-num">1</span><span class="mega-grade-label">Grade</span></a>
+            <a href="/free-worksheets/grade-2/" class="mega-grade-card"><span class="mega-grade-num">2</span><span class="mega-grade-label">Grade</span></a>
+            <a href="/free-worksheets/grade-3/" class="mega-grade-card"><span class="mega-grade-num">3</span><span class="mega-grade-label">Grade</span></a>
+            <a href="/free-worksheets/grade-4/" class="mega-grade-card"><span class="mega-grade-num">4</span><span class="mega-grade-label">Grade</span></a>
+            <a href="/free-worksheets/grade-5/" class="mega-grade-card"><span class="mega-grade-num">5</span><span class="mega-grade-label">Grade</span></a>
+            <a href="/free-worksheets/grade-6/" class="mega-grade-card"><span class="mega-grade-num">6</span><span class="mega-grade-label">Grade</span></a>
+            <a href="/free-worksheets/grade-7/" class="mega-grade-card"><span class="mega-grade-num">7</span><span class="mega-grade-label">Grade</span></a>
+            <a href="/free-worksheets/grade-8/" class="mega-grade-card"><span class="mega-grade-num">8</span><span class="mega-grade-label">Grade</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="mega-nav-item">
+        <a href="/browse/" class="mega-nav-link">Browse</a><button class="mega-nav-toggle" aria-expanded="false" aria-label="Browse submenu"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M2.5 3.5L5 6L7.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
+        <div class="mega-panel">
+          <div class="mega-panel-inner">
+            <div class="mega-col">
+              <div class="mega-col-heading">By Format</div>
+              <a href="/free-worksheets/">📝 Worksheets</a>
+              <a href="/free-math-drills/">⚡ Practice Drills</a>
+              <a href="/free-games/">🎮 Games</a>
+              <a href="/planners/">📅 Planners</a>
+              <a href="/free-reading-passages/">📚 Reading Passages</a>
+              <a href="/free-math-vocabulary/">💬 Vocabulary</a>
+            </div>
+            <div class="mega-col">
+              <div class="mega-col-heading">Drills by Topic</div>
+              <a href="/free-math-drills/addition/">Addition Drills</a>
+              <a href="/free-math-drills/subtraction/">Subtraction Drills</a>
+              <a href="/free-math-drills/multiplication/">Multiplication Drills</a>
+              <a href="/free-math-drills/division/">Division Drills</a>
+              <a href="/free-math-drills/mixed/">Mixed Drills</a>
+            </div>
+            <div class="mega-col">
+              <div class="mega-col-heading">Quick Links</div>
+              <a href="/free-worksheets/">All Worksheets</a>
+              <a href="/browse/">Browse Everything</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
     <div class="site-search" id="siteSearch">
       <input type="text" class="site-search-input" id="searchInput" placeholder="Search worksheets, drills, topics..." autocomplete="off" aria-label="Search">
       <button class="site-search-btn" onclick="var q=document.getElementById('searchInput').value.trim();if(q.length>1)window.location.href='/browse/?q='+encodeURIComponent(q);" aria-label="Search">🔍</button>
       <div class="site-search-results" id="searchResults"></div>
     </div>
-    <nav>
-      <a href="/free-worksheets/">Worksheets</a>
-      <a href="/free-math-drills/">Drills</a>
-      <a href="/free-reading-passages/">Reading</a>
-      <a href="/free-math-vocabulary/">Vocabulary</a>
-      <a href="/free-games/">Games</a>
-      <a href="/planners/">Planners</a>
-      <a href="/browse/">Browse All</a>
-    </nav>
     <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -174,71 +287,81 @@
       <input type="text" id="mobileSearchInput" placeholder="Search worksheets..." autocomplete="off" style="width:100%;padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.08);color:white;font-size:15px;font-family:inherit;outline:none;">
       <div id="mobileSearchResults" style="margin-top:8px;"></div>
     </div>
-    <a href="/free-worksheets/">Worksheets</a>
-    <a href="/free-math-drills/">Drills</a>
-    <a href="/free-reading-passages/">Reading</a>
-    <a href="/free-math-vocabulary/">Vocabulary</a>
-    <a href="/free-games/">Games</a>
-      <a href="/planners/">Planners</a>
-    <a href="/browse/">Browse All</a>
+    <div class="mobile-accordion">
+      <button class="mobile-acc-trigger" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">Subjects</button>
+      <div class="mobile-acc-panel">
+        <div class="mobile-acc-heading" style="color:#7C3AED;">Math</div>
+        <a href="/free-math-worksheets/">All Math</a>
+        <a href="/free-math-worksheets/addition/">Addition</a>
+        <a href="/free-math-worksheets/multiplication/">Multiplication</a>
+        <a href="/free-math-worksheets/fractions/">Fractions</a>
+        <a href="/free-math-worksheets/word-problems/">Word Problems</a>
+        <div class="mobile-acc-heading" style="color:#DB2777;">English</div>
+        <a href="/free-english-worksheets/">All English</a>
+        <a href="/free-english-worksheets/reading-comprehension/">Reading</a>
+        <a href="/free-english-worksheets/vocabulary/">Vocabulary</a>
+        <div class="mobile-acc-heading" style="color:#059669;">Science</div>
+        <a href="/free-science-worksheets/">All Science</a>
+        <a href="/free-social_studies-worksheets/">Social Studies</a>
+      </div>
+    </div>
+    <div class="mobile-accordion">
+      <button class="mobile-acc-trigger" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">Grades</button>
+      <div class="mobile-acc-panel">
+        <a href="/free-worksheets/grade-1/">Grade 1</a>
+        <a href="/free-worksheets/grade-2/">Grade 2</a>
+        <a href="/free-worksheets/grade-3/">Grade 3</a>
+        <a href="/free-worksheets/grade-4/">Grade 4</a>
+        <a href="/free-worksheets/grade-5/">Grade 5</a>
+        <a href="/free-worksheets/grade-6/">Grade 6</a>
+        <a href="/free-worksheets/grade-7/">Grade 7</a>
+        <a href="/free-worksheets/grade-8/">Grade 8</a>
+      </div>
+    </div>
+    <div class="mobile-accordion">
+      <button class="mobile-acc-trigger" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open');">Browse</button>
+      <div class="mobile-acc-panel">
+        <a href="/free-worksheets/">Worksheets</a>
+        <a href="/free-math-drills/">Drills</a>
+        <a href="/free-games/">Games</a>
+        <a href="/planners/">Planners</a>
+        <a href="/free-reading-passages/">Reading</a>
+        <a href="/free-math-vocabulary/">Vocabulary</a>
+      </div>
+    </div>
   </nav>
   <script>
+  function toggleMobileMenu(){document.getElementById('mobileNav').classList.toggle('open');}
   (function(){
-    var idx = null;
-    function loadIndex(cb) {
-      if (idx) return cb(idx);
-      fetch('/search-index.json').then(function(r){return r.json();}).then(function(d){idx=d;cb(idx);}).catch(function(){idx=[];cb([]);});
-    }
-    function search(q, data) {
-      if (!q || q.length < 2) return [];
-      var terms = q.toLowerCase().split(' ').filter(Boolean);
-      return data.filter(function(p) {
-        var k = p.k || '';
-        return terms.every(function(t){ return k.includes(t); });
-      }).slice(0, 8);
-    }
-    function renderResults(results, container) {
-      if (!results.length) { container.innerHTML = '<div style="padding:12px 16px;color:#A89FAE;font-size:13px;">No results found</div>'; return; }
-      container.innerHTML = results.map(function(p) {
-        var badge = p.g ? 'Grade '+p.g : (p.f || '');
-        var color = p.s==='math'?'#7C3AED':p.s==='english'?'#DB2777':p.s==='science'?'#059669':'#6C5CE7';
-        return '<a href="'+p.u+'" style="display:flex;align-items:center;gap:10px;padding:10px 16px;text-decoration:none;color:#1A1420;border-bottom:1px solid #F0EDE8;transition:background 0.15s;" onmouseover="this.style.background='#F4F1FF'" onmouseout="this.style.background=''">'+
-          '<span style="background:'+color+';color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:100px;white-space:nowrap;flex-shrink:0;">'+badge+'</span>'+
-          '<span style="font-size:14px;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">'+p.t+'</span>'+
-          '</a>';
-      }).join('');
-    }
-    function setupSearch(inputId, resultsId) {
-      var input = document.getElementById(inputId);
-      var results = document.getElementById(resultsId);
-      if (!input || !results) return;
-      var timer;
-      input.addEventListener('input', function() {
-        clearTimeout(timer);
-        var q = input.value.trim();
-        if (!q || q.length < 2) { results.style.display='none'; return; }
-        timer = setTimeout(function() {
-          loadIndex(function(data) {
-            var found = search(q, data);
-            renderResults(found, results);
-            results.style.display = 'block';
-          });
-        }, 200);
+    // Mega menu toggle buttons (for click + keyboard support per WAI disclosure pattern)
+    document.querySelectorAll('.mega-nav-toggle').forEach(function(btn){
+      btn.addEventListener('click',function(e){
+        e.stopPropagation();
+        var expanded=btn.getAttribute('aria-expanded')==='true';
+        // Close all other panels first
+        document.querySelectorAll('.mega-nav-toggle').forEach(function(b){b.setAttribute('aria-expanded','false');});
+        if(!expanded){btn.setAttribute('aria-expanded','true');}
       });
-      input.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') { results.style.display='none'; input.value=''; }
-        if (e.key === 'Enter' && input.value.trim().length > 1) {
-          window.location.href = '/browse/?q='+encodeURIComponent(input.value.trim());
-        }
-      });
-      document.addEventListener('click', function(e) {
-        if (!input.contains(e.target) && !results.contains(e.target)) results.style.display='none';
-      });
-    }
-    document.addEventListener('DOMContentLoaded', function() {
-      setupSearch('searchInput', 'searchResults');
-      setupSearch('mobileSearchInput', 'mobileSearchResults');
     });
+    // Escape closes mega panels
+    document.addEventListener('keydown',function(e){
+      if(e.key==='Escape'){
+        document.querySelectorAll('.mega-nav-toggle').forEach(function(b){b.setAttribute('aria-expanded','false');});
+      }
+    });
+    // Click outside closes mega panels
+    document.addEventListener('click',function(e){
+      if(!e.target.closest('.mega-nav-item')){
+        document.querySelectorAll('.mega-nav-toggle').forEach(function(b){b.setAttribute('aria-expanded','false');});
+      }
+    });
+    // Search
+    var idx=null;
+    function loadIndex(cb){if(idx)return cb(idx);fetch('/search-index.json').then(function(r){return r.json();}).then(function(d){idx=d;cb(idx);}).catch(function(){idx=[];cb([]);});}
+    function search(q,data){if(!q||q.length<2)return[];var terms=q.toLowerCase().split(' ').filter(Boolean);return data.filter(function(p){var k=p.k||'';return terms.every(function(t){return k.includes(t);});}).slice(0,8);}
+    function renderResults(results,container){if(!results.length){container.innerHTML='<div style="padding:12px 16px;color:#A89FAE;font-size:13px;">No results found</div>';return;}container.innerHTML=results.map(function(p){var badge=p.g?'Grade '+p.g:(p.f||'');var color=p.s==='math'?'#7C3AED':p.s==='english'?'#DB2777':p.s==='science'?'#059669':'#6C5CE7';return '<a href="'+p.u+'" style="display:flex;align-items:center;gap:10px;padding:10px 16px;text-decoration:none;color:#1A1420;border-bottom:1px solid #F0EDE8;transition:background 0.15s;" onmouseover="this.style.background='#F4F1FF'" onmouseout="this.style.background=''"><span style="background:'+color+';color:white;font-size:10px;font-weight:700;padding:2px 8px;border-radius:100px;white-space:nowrap;flex-shrink:0;">'+badge+'</span><span style="font-size:14px;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">'+p.t+'</span></a>';}).join('');}
+    function setupSearch(inputId,resultsId){var input=document.getElementById(inputId);var results=document.getElementById(resultsId);if(!input||!results)return;var timer;input.addEventListener('input',function(){clearTimeout(timer);var q=input.value.trim();if(!q||q.length<2){results.style.display='none';return;}timer=setTimeout(function(){loadIndex(function(data){var found=search(q,data);renderResults(found,results);results.style.display='block';});},200);});input.addEventListener('keydown',function(e){if(e.key==='Escape'){results.style.display='none';input.value='';}if(e.key==='Enter'&&input.value.trim().length>1){window.location.href='/browse/?q='+encodeURIComponent(input.value.trim());}});document.addEventListener('click',function(e){if(!input.contains(e.target)&&!results.contains(e.target))results.style.display='none';});}
+    document.addEventListener('DOMContentLoaded',function(){setupSearch('searchInput','searchResults');setupSearch('mobileSearchInput','mobileSearchResults');});
   })();
   </script>
 <div class="breadcrumb">
@@ -293,7 +416,7 @@ Basic division facts 1-12
 <a href="/drills/math/grade-3/drill-math-grade3-division-earth-day-standard/" class="drill-card" id="earth-day"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 3 · Standard</div><h3>Earth Day Theme</h3><p>Earth Day Division Adventure: Save the Planet</p><span class="drill-btn">Download PDF →</span></div></a>
 <a href="/drills/math/grade-3/drill-math-grade3-division-earth-day-beginner/" class="drill-card" id="earth-day"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 3 · Beginner</div><h3>Earth Day Theme</h3><p>Earth Day Math: Sharing Earth's Treasures Equally</p><span class="drill-btn">Download PDF →</span></div></a>
 <a href="/drills/math/grade-3/drill-math-grade3-division-easter-beginner/" class="drill-card" id="easter"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 3 · Beginner</div><h3>Easter Theme</h3><p>Easter Egg Hunt Division Adventure</p><span class="drill-btn">Download PDF →</span></div></a>
-<a href="/drills/math/grade-3/drill-math-grade3-division-easter-standard/" class="drill-card" id="easter"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 3 · Standard</div><h3>Easter Theme</h3><p>Easter Egg Hunt Division Challenge</p><span class="drill-btn">Download PDF →</span></div></a>
+<a href="/drills/math/grade-3/drill-math-grade3-division-easter-standard/" class="drill-card" id="easter"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 3 · Standard</div><h3>Easter Theme</h3><p>Easter Egg Hunt Division Challenge — Grade 3</p><span class="drill-btn">Download PDF →</span></div></a>
 <a href="/drills/math/grade-3/drill-math-grade3-division-escape-room-standard/" class="drill-card" id="escape-room"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 3 · Standard</div><h3>Escape Room Theme</h3><p>Escape the Dragon's Tower Division Quest</p><span class="drill-btn">Download PDF →</span></div></a>
 <a href="/drills/math/grade-3/drill-math-grade3-basic-division-facts-explorers-beginner/" class="drill-card" id="explorers"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 3 · Beginner</div><h3>Explorers Theme</h3><p>Max Conquers the Lost Temple: Division Quest</p><span class="drill-btn">Download PDF →</span></div></a>
 <a href="/drills/math/grade-3/drill-math-grade3-division-fairy-tales-standard/" class="drill-card" id="fairy-tales"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 3 · Standard</div><h3>Fairy Tales Theme</h3><p>Max Conquers the Dragon's Golden Treasure: Division Quest!</p><span class="drill-btn">Download PDF →</span></div></a>
@@ -340,7 +463,7 @@ Basic division facts 1-12
 <a href="/drills/math/grade-3/drill-math-grade3-division-music-challenge/" class="drill-card" id="music"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 3 · Challenge</div><h3>Music Theme</h3><p>Rock Star Division: Music Festival Math Challenge</p><span class="drill-btn">Download PDF →</span></div></a>
 <a href="/drills/math/grade-3/drill-math-grade3-division-music-stars-standard/" class="drill-card" id="music-stars"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 3 · Standard</div><h3>Music Stars Theme</h3><p>Pop Stars Share Their Concert Tickets Equally</p><span class="drill-btn">Download PDF →</span></div></a>
 <a href="/drills/math/grade-3/drill-math-grade3-division-mythology-beginner/" class="drill-card" id="mythology"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 3 · Beginner</div><h3>Mythology Theme</h3><p>Max Conquers the Dragon's Gold: Division Quest</p><span class="drill-btn">Download PDF →</span></div></a>
-<a href="/drills/math/grade-3/drill-math-grade3-division-mythology-challenge/" class="drill-card" id="mythology"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 3 · Challenge</div><h3>Mythology Theme</h3><p>Zeus's Lightning Bolts: Division Quest</p><span class="drill-btn">Download PDF →</span></div></a>
+<a href="/drills/math/grade-3/drill-math-grade3-division-mythology-challenge/" class="drill-card" id="mythology"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 3 · Challenge</div><h3>Mythology Theme</h3><p>Zeus's Lightning Bolts: Division Quest — Grade 3 (challenge)</p><span class="drill-btn">Download PDF →</span></div></a>
 <a href="/drills/math/grade-3/drill-math-grade3-division-nature-challenge/" class="drill-card" id="nature"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 3 · Challenge</div><h3>Nature Theme</h3><p>Max Rescues Lost Forest Animals: Division Quest!</p><span class="drill-btn">Download PDF →</span></div></a>
 <a href="/drills/math/grade-3/drill-math-grade3-division-nature-standard/" class="drill-card" id="nature"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 3 · Standard</div><h3>Nature Theme</h3><p>Forest Friends Share Acorns Equally</p><span class="drill-btn">Download PDF →</span></div></a>
 <a href="/drills/math/grade-3/drill-math-grade3-division-new-year-standard/" class="drill-card" id="new-year"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 3 · Standard</div><h3>New Year Theme</h3><p>Max Conquers the New Year's Number Quest</p><span class="drill-btn">Download PDF →</span></div></a>
@@ -369,7 +492,7 @@ Basic division facts 1-12
 <a href="/drills/math/grade-3/drill-math-grade3-basic-division-facts-sky-islands-challenge/" class="drill-card" id="sky-islands"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 3 · Challenge</div><h3>Sky Islands Theme</h3><p>Max Discovers Hidden Treasures: Sky-Islands Division Quest</p><span class="drill-btn">Download PDF →</span></div></a>
 <a href="/drills/math/grade-3/drill-math-grade3-division-space-explorers-beginner/" class="drill-card" id="space-explorers"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 3 · Beginner</div><h3>Space Explorers Theme</h3><p>Space Explorers Division Quest to Planet Math</p><span class="drill-btn">Download PDF →</span></div></a>
 <a href="/drills/math/grade-3/drill-math-grade3-division-space-explorers-standard/" class="drill-card" id="space-explorers"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 3 · Standard</div><h3>Space Explorers Theme</h3><p>Space Explorers Division Quest</p><span class="drill-btn">Download PDF →</span></div></a>
-<a href="/drills/math/grade-3/drill-math-grade3-division-space-explorers-challenge/" class="drill-card" id="space-explorers"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 3 · Challenge</div><h3>Space Explorers Theme</h3><p>Space Explorers Division Quest Across the Galaxy</p><span class="drill-btn">Download PDF →</span></div></a>
+<a href="/drills/math/grade-3/drill-math-grade3-division-space-explorers-challenge/" class="drill-card" id="space-explorers"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 3 · Challenge</div><h3>Space Explorers Theme</h3><p>Space Explorers Division Quest Across the Galaxy — Grade 3 (challenge)</p><span class="drill-btn">Download PDF →</span></div></a>
 <a href="/drills/math/grade-3/drill-math-grade3-division-sports-standard/" class="drill-card" id="sports"><div class="drill-thumb"><img src="https://examel.com/thumbnails/previews/drill-math-grade3-division-sports-standard-p1.png" alt="Max Conquers the Soccer Stadium: Division Challenge!" loading="lazy"></div><div class="drill-body"><div class="drill-badge">Grade 3 · Standard</div><h3>Sports Theme</h3><p>Max Conquers the Soccer Stadium: Division Challenge!</p><span class="drill-btn">Download PDF →</span></div></a>
 <a href="/drills/math/grade-3/drill-math-grade3-division-spring-flowers-challenge/" class="drill-card" id="spring-flowers"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 3 · Challenge</div><h3>Spring Flowers Theme</h3><p>Spring Flowers Division Mystery Garden</p><span class="drill-btn">Download PDF →</span></div></a>
 <a href="/drills/math/grade-3/drill-math-grade3-division-st-patricks-day-challenge/" class="drill-card" id="st-patricks-day"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 3 · Challenge</div><h3>St Patricks Day Theme</h3><p>Lucky Leprechaun's Gold Coin Division Quest</p><span class="drill-btn">Download PDF →</span></div></a>
@@ -420,7 +543,7 @@ Basic division facts 1-12
 <a href="/drills/math/grade-4/drill-math-grade4-division-caterpillars-standard/" class="drill-card" id="caterpillars"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 4 · Standard</div><h3>Caterpillars Theme</h3><p>Max Rescues Caterpillars: Division Speed Challenge</p><span class="drill-btn">Download PDF →</span></div></a>
 <a href="/drills/math/grade-4/drill-math-grade4-basic-division-facts-chefs-standard/" class="drill-card" id="chefs"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 4 · Standard</div><h3>Chefs Theme</h3><p>Max Rescues the Kitchen: Division Facts Challenge!</p><span class="drill-btn">Download PDF →</span></div></a>
 <a href="/drills/math/grade-4/drill-math-grade4-division-chemistry-lab-standard/" class="drill-card" id="chemistry-lab"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 4 · Standard</div><h3>Chemistry Lab Theme</h3><p>Max Rescues the Chemistry Lab: Division Quest!</p><span class="drill-btn">Download PDF →</span></div></a>
-<a href="/drills/math/grade-4/drill-math-grade4-division-christmas-standard/" class="drill-card" id="christmas"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 4 · Standard</div><h3>Christmas Theme</h3><p>Santa's Workshop Division Challenge</p><span class="drill-btn">Download PDF →</span></div></a>
+<a href="/drills/math/grade-4/drill-math-grade4-division-christmas-standard/" class="drill-card" id="christmas"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 4 · Standard</div><h3>Christmas Theme</h3><p>Santa's Workshop Division Challenge — Grade 4</p><span class="drill-btn">Download PDF →</span></div></a>
 <a href="/drills/math/grade-4/drill-math-grade4-division-coding-kids-beginner/" class="drill-card" id="coding-kids"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 4 · Beginner</div><h3>Coding Kids Theme</h3><p>Robot Factory: Division Challenge Quest</p><span class="drill-btn">Download PDF →</span></div></a>
 <a href="/drills/math/grade-4/drill-math-grade4-basic-division-facts-cooking-show-standard/" class="drill-card" id="cooking-show"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 4 · Standard</div><h3>Cooking Show Theme</h3><p>Max Conquers the Kitchen: Division Facts Showdown</p><span class="drill-btn">Download PDF →</span></div></a>
 <a href="/drills/math/grade-4/drill-math-grade4-division-corn-maze-beginner/" class="drill-card" id="corn-maze"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 4 · Beginner</div><h3>Corn Maze Theme</h3><p>Max Conquers the Corn-Maze: Division Quest!</p><span class="drill-btn">Download PDF →</span></div></a>
@@ -435,7 +558,7 @@ Basic division facts 1-12
 <a href="/drills/math/grade-4/drill-math-grade4-division-dragons-beginner/" class="drill-card" id="dragons"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 4 · Beginner</div><h3>Dragons Theme</h3><p>Dragon's Gold Coin Division Adventure</p><span class="drill-btn">Download PDF →</span></div></a>
 <a href="/drills/math/grade-4/drill-math-grade4-division-earth-day-beginner/" class="drill-card" id="earth-day"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 4 · Beginner</div><h3>Earth Day Theme</h3><p>Max Rescues Earth's Animals: Division Challenge!</p><span class="drill-btn">Download PDF →</span></div></a>
 <a href="/drills/math/grade-4/drill-math-grade4-division-earth-day-standard/" class="drill-card" id="earth-day"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 4 · Standard</div><h3>Earth Day Theme</h3><p>Max Rescues Earth's Animals: Division Quest</p><span class="drill-btn">Download PDF →</span></div></a>
-<a href="/drills/math/grade-4/drill-math-grade4-division-easter-challenge/" class="drill-card" id="easter"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 4 · Challenge</div><h3>Easter Theme</h3><p>Easter Egg Hunt Division Challenge</p><span class="drill-btn">Download PDF →</span></div></a>
+<a href="/drills/math/grade-4/drill-math-grade4-division-easter-challenge/" class="drill-card" id="easter"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 4 · Challenge</div><h3>Easter Theme</h3><p>Easter Egg Hunt Division Challenge — Grade 4 (challenge)</p><span class="drill-btn">Download PDF →</span></div></a>
 <a href="/drills/math/grade-4/drill-math-grade4-division-eco-warriors-challenge/" class="drill-card" id="eco-warriors"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 4 · Challenge</div><h3>Eco Warriors Theme</h3><p>Max Rescues Forest Animals: Division Quest</p><span class="drill-btn">Download PDF →</span></div></a>
 <a href="/drills/math/grade-4/drill-math-grade4-division-escape-room-standard/" class="drill-card" id="escape-room"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 4 · Standard</div><h3>Escape Room Theme</h3><p>Max Conquers the Mystery Vault: Division Quest</p><span class="drill-btn">Download PDF →</span></div></a>
 <a href="/drills/math/grade-4/drill-math-grade4-division-fairy-tales-standard/" class="drill-card" id="fairy-tales"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 4 · Standard</div><h3>Fairy Tales Theme</h3><p>Max Conquers the Dragon's Gold: Division Quest</p><span class="drill-btn">Download PDF →</span></div></a>
@@ -454,7 +577,7 @@ Basic division facts 1-12
 <a href="/drills/math/grade-4/drill-math-grade4-division-halloween-challenge/" class="drill-card" id="halloween"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 4 · Challenge</div><h3>Halloween Theme</h3><p>Max Conquers the Haunted Pumpkin Patch: Division Sprint</p><span class="drill-btn">Download PDF →</span></div></a>
 <a href="/drills/math/grade-4/drill-math-grade4-division-halloween-standard/" class="drill-card" id="halloween"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 4 · Standard</div><h3>Halloween Theme</h3><p>Spooky Ghost Division Mystery</p><span class="drill-btn">Download PDF →</span></div></a>
 <a href="/drills/math/grade-4/drill-math-grade4-division-hanukkah-challenge/" class="drill-card" id="hanukkah"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 4 · Challenge</div><h3>Hanukkah Theme</h3><p>Hanukkah Menorah Math: Division Mystery</p><span class="drill-btn">Download PDF →</span></div></a>
-<a href="/drills/math/grade-4/drill-math-grade4-division-hanukkah-standard/" class="drill-card" id="hanukkah"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 4 · Standard</div><h3>Hanukkah Theme</h3><p>Hanukkah Menorah Math: Eight Nights of Division</p><span class="drill-btn">Download PDF →</span></div></a>
+<a href="/drills/math/grade-4/drill-math-grade4-division-hanukkah-standard/" class="drill-card" id="hanukkah"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 4 · Standard</div><h3>Hanukkah Theme</h3><p>Hanukkah Menorah Math: Eight Nights of Division — Grade 4</p><span class="drill-btn">Download PDF →</span></div></a>
 <a href="/drills/math/grade-4/drill-math-grade4-basic-division-facts-harvest-festival-standard/" class="drill-card" id="harvest-festival"><div class="drill-thumb"><img src="https://examel.com/thumbnails/previews/drill-math-grade4-basic-division-facts-harvest-festival-standard-p1.png" alt="Max Conquers the Harvest Festival Division Challenge" loading="lazy"></div><div class="drill-body"><div class="drill-badge">Grade 4 · Standard</div><h3>Harvest Festival Theme</h3><p>Max Conquers the Harvest Festival Division Challenge</p><span class="drill-btn">Download PDF →</span></div></a>
 <a href="/drills/math/grade-4/drill-math-grade4-division-hiking-standard/" class="drill-card" id="hiking"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 4 · Standard</div><h3>Hiking Theme</h3><p>Max Conquers the Mountain: Division Quest!</p><span class="drill-btn">Download PDF →</span></div></a>
 <a href="/drills/math/grade-4/drill-math-grade4-division-horses-challenge/" class="drill-card" id="horses"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 4 · Challenge</div><h3>Horses Theme</h3><p>Galloping Horses: Division Rodeo Adventure</p><span class="drill-btn">Download PDF →</span></div></a>
@@ -479,7 +602,7 @@ Basic division facts 1-12
 <a href="/drills/math/grade-4/drill-math-grade4-division-music-stars-standard/" class="drill-card" id="music-stars"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 4 · Standard</div><h3>Music Stars Theme</h3><p>Music Stars Division Challenge: Rock the Math Stage</p><span class="drill-btn">Download PDF →</span></div></a>
 <a href="/drills/math/grade-4/drill-math-grade4-division-mythology-beginner/" class="drill-card" id="mythology"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 4 · Beginner</div><h3>Mythology Theme</h3><p>Max Conquers Zeus's Divine Chambers: Division Quest</p><span class="drill-btn">Download PDF →</span></div></a>
 <a href="/drills/math/grade-4/drill-math-grade4-division-mythology-challenge/" class="drill-card" id="mythology"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 4 · Challenge</div><h3>Mythology Theme</h3><p>Zeus's Lightning Bolt Division Challenge</p><span class="drill-btn">Download PDF →</span></div></a>
-<a href="/drills/math/grade-4/drill-math-grade4-division-mythology-standard/" class="drill-card" id="mythology"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 4 · Standard</div><h3>Mythology Theme</h3><p>Zeus's Lightning Bolts: Division Quest</p><span class="drill-btn">Download PDF →</span></div></a>
+<a href="/drills/math/grade-4/drill-math-grade4-division-mythology-standard/" class="drill-card" id="mythology"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 4 · Standard</div><h3>Mythology Theme</h3><p>Zeus's Lightning Bolts: Division Quest — Grade 4</p><span class="drill-btn">Download PDF →</span></div></a>
 <a href="/drills/math/grade-4/drill-math-grade4-division-nature-reserve-standard/" class="drill-card" id="nature-reserve"><div class="drill-thumb"><img src="https://examel.com/thumbnails/previews/drill-math-grade4-division-nature-reserve-standard-p1.png" alt="Max Rescues Lost Animals: Nature Reserve Division Quest" loading="lazy"></div><div class="drill-body"><div class="drill-badge">Grade 4 · Standard</div><h3>Nature Reserve Theme</h3><p>Max Rescues Lost Animals: Nature Reserve Division Quest</p><span class="drill-btn">Download PDF →</span></div></a>
 <a href="/drills/math/grade-4/drill-math-grade4-division-new-year-standard/" class="drill-card" id="new-year"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 4 · Standard</div><h3>New Year Theme</h3><p>Max Conquers New Year's Division Countdown Challenge</p><span class="drill-btn">Download PDF →</span></div></a>
 <a href="/drills/math/grade-4/drill-math-grade4-division-ocean-animals-challenge/" class="drill-card" id="ocean-animals"><div class="drill-thumb"><div class="drill-thumb-ph"><span>⚡</span></div></div><div class="drill-body"><div class="drill-badge">Grade 4 · Challenge</div><h3>Ocean Animals Theme</h3><p>Max Rescues Lost Dolphins: Division Challenge</p><span class="drill-btn">Download PDF →</span></div></a>

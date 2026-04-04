@@ -63,7 +63,7 @@ function extractMeta(html, filePath) {
     if (rel.startsWith('/word-searches/') && rel.split('/').filter(Boolean).length > 2) return null;
   }
 
-  return { title, url: rel, format, grade, subject, isHub, keywords };
+  return { t: title, u: rel, f: format, g: grade, s: subject, k: keywords };
 }
 
 function scanPages() {
@@ -96,10 +96,10 @@ function generateIndex() {
 
   // Sort: hubs first, then by grade, then alphabetically
   index.sort((a, b) => {
-    if (a.isHub && !b.isHub) return -1;
-    if (!a.isHub && b.isHub) return 1;
-    if (a.grade && b.grade) return a.grade - b.grade;
-    return a.title.localeCompare(b.title);
+    
+    
+    if (a.g && b.g) return a.g - b.g;
+    return (a.t || "").localeCompare(b.t || "");
   });
 
   fs.writeFileSync(OUT_FILE, JSON.stringify(index));
