@@ -1,0 +1,351 @@
+{
+  "_version": "1.0",
+  "_description": "Maps raw DB topic values → canonical parent topics for grade+topic hub pages. Generator groups all worksheets whose raw topic maps to the same canonical slug under one hub page.",
+  "_rules": [
+    "Every raw topic in the DB must map to exactly one canonical parent",
+    "If a raw topic is not listed, it falls through to 'unmapped' and is excluded from hub pages",
+    "canonical_slug becomes the URL: /free-{subject}-worksheets/grade-{N}/{canonical_slug}/",
+    "valid_grades derived from CCSS — generator only builds pages for valid grade+topic pairs",
+    "min_worksheets: hub page only generated if the grade+canonical combo has >= this many worksheets"
+  ],
+
+  "math": {
+    "addition": {
+      "canonical_slug": "addition",
+      "display_name": "Addition",
+      "valid_grades": [1, 2, 3, 4, 5, 6],
+      "ccss_domains": ["OA", "NBT"],
+      "raw_topics": [
+        "addition", "single-digit-addition", "addition-within-10", "addition-within-20",
+        "addition-no-regrouping", "addition-with-regrouping", "3-digit-addition",
+        "adding-multiples-of-10", "adding-three-numbers", "doubles-facts",
+        "mad-minute-addition"
+      ],
+      "tier_a_content": true
+    },
+    "subtraction": {
+      "canonical_slug": "subtraction",
+      "display_name": "Subtraction",
+      "valid_grades": [1, 2, 3, 4, 5, 6],
+      "ccss_domains": ["OA", "NBT"],
+      "raw_topics": [
+        "subtraction", "single-digit-subtraction", "subtraction-within-10", "subtraction-within-20",
+        "subtraction-no-borrowing", "subtraction-with-borrowing", "3-digit-subtraction",
+        "subtracting-multiples-of-10", "subtracting-money"
+      ],
+      "tier_a_content": true
+    },
+    "mixed-operations": {
+      "canonical_slug": "mixed-operations",
+      "display_name": "Mixed Operations",
+      "valid_grades": [1, 2, 3, 4, 5, 6],
+      "ccss_domains": ["OA"],
+      "raw_topics": [
+        "mixed-add-subtract", "mixed-all-operations", "mixed-mult-division",
+        "operations", "order-of-operations", "order-of-ops-all"
+      ],
+      "tier_a_content": false
+    },
+    "multiplication": {
+      "canonical_slug": "multiplication",
+      "display_name": "Multiplication",
+      "valid_grades": [2, 3, 4, 5, 6],
+      "ccss_domains": ["OA", "NBT"],
+      "raw_topics": [
+        "multiplication", "multiplication-facts-0-12", "mad-minute-multiplication",
+        "multiplying-by-10-100", "2-digit-by-1-digit", "2-digit-by-2-digit",
+        "times-table-2", "times-table-3", "times-table-4", "times-table-5",
+        "times-table-6", "times-table-7", "times-table-8", "times-table-9",
+        "times-table-10", "times-table-11", "times-table-12",
+        "multiplication-tables", "multiplication-and-division", "arrays"
+      ],
+      "tier_a_content": true
+    },
+    "division": {
+      "canonical_slug": "division",
+      "display_name": "Division",
+      "valid_grades": [3, 4, 5, 6],
+      "ccss_domains": ["OA", "NBT"],
+      "raw_topics": [
+        "division", "basic-division-facts", "division-with-remainders",
+        "division-by-2", "division-by-5", "division-by-10",
+        "dividing-by-10-100", "long-division", "long-division-3-digit",
+        "decimal-division"
+      ],
+      "tier_a_content": true
+    },
+    "fractions": {
+      "canonical_slug": "fractions",
+      "display_name": "Fractions",
+      "valid_grades": [3, 4, 5, 6],
+      "ccss_domains": ["NF"],
+      "raw_topics": [
+        "fractions", "simplifying-fractions"
+      ],
+      "tier_a_content": true
+    },
+    "decimals": {
+      "canonical_slug": "decimals",
+      "display_name": "Decimals",
+      "valid_grades": [4, 5, 6],
+      "ccss_domains": ["NF", "NBT"],
+      "raw_topics": [
+        "decimals", "percentages"
+      ],
+      "tier_a_content": false
+    },
+    "place-value": {
+      "canonical_slug": "place-value",
+      "display_name": "Place Value",
+      "valid_grades": [1, 2, 3, 4, 5],
+      "ccss_domains": ["NBT"],
+      "raw_topics": [
+        "place-value", "place value", "comparing-numbers", "even-odd",
+        "powers-of-ten", "skip-count-3"
+      ],
+      "tier_a_content": false
+    },
+    "counting": {
+      "canonical_slug": "counting",
+      "display_name": "Counting",
+      "valid_grades": [1, 2],
+      "ccss_domains": ["CC", "OA"],
+      "raw_topics": [
+        "counting"
+      ],
+      "tier_a_content": false
+    },
+    "measurement": {
+      "canonical_slug": "measurement",
+      "display_name": "Measurement",
+      "valid_grades": [1, 2, 3, 4, 5],
+      "ccss_domains": ["MD"],
+      "raw_topics": [
+        "measurement", "measurements-number_facts-geometry"
+      ],
+      "tier_a_content": false
+    },
+    "time": {
+      "canonical_slug": "time",
+      "display_name": "Time",
+      "valid_grades": [1, 2, 3],
+      "ccss_domains": ["MD"],
+      "raw_topics": [
+        "time"
+      ],
+      "tier_a_content": false
+    },
+    "money": {
+      "canonical_slug": "money",
+      "display_name": "Money",
+      "valid_grades": [1, 2, 3, 4],
+      "ccss_domains": ["MD"],
+      "raw_topics": [
+        "money", "making-change"
+      ],
+      "tier_a_content": false
+    },
+    "geometry": {
+      "canonical_slug": "geometry",
+      "display_name": "Geometry",
+      "valid_grades": [1, 2, 3, 4, 5, 6],
+      "ccss_domains": ["G"],
+      "raw_topics": [
+        "shapes", "angles", "symmetry", "coordinate-plane", "plotting-points"
+      ],
+      "tier_a_content": false
+    },
+    "area-perimeter": {
+      "canonical_slug": "area-perimeter",
+      "display_name": "Area & Perimeter",
+      "valid_grades": [3, 4, 5, 6],
+      "ccss_domains": ["MD"],
+      "raw_topics": [
+        "area", "perimeter", "volume"
+      ],
+      "tier_a_content": false
+    },
+    "word-problems": {
+      "canonical_slug": "word-problems",
+      "display_name": "Word Problems",
+      "valid_grades": [1, 2, 3, 4, 5, 6],
+      "ccss_domains": ["OA", "MD"],
+      "raw_topics": [
+        "word-problems", "word problems", "career-math"
+      ],
+      "tier_a_content": false
+    },
+    "data-graphs": {
+      "canonical_slug": "data-graphs",
+      "display_name": "Data & Graphs",
+      "valid_grades": [2, 3, 4, 5, 6],
+      "ccss_domains": ["MD"],
+      "raw_topics": [
+        "data-graphs", "statistics"
+      ],
+      "tier_a_content": false
+    },
+    "factors-multiples": {
+      "canonical_slug": "factors-multiples",
+      "display_name": "Factors & Multiples",
+      "valid_grades": [4, 5, 6],
+      "ccss_domains": ["OA"],
+      "raw_topics": [
+        "factors"
+      ],
+      "tier_a_content": false
+    },
+    "patterns": {
+      "canonical_slug": "patterns",
+      "display_name": "Patterns",
+      "valid_grades": [1, 2, 3, 4],
+      "ccss_domains": ["OA"],
+      "raw_topics": [
+        "patterns"
+      ],
+      "tier_a_content": false
+    },
+    "equations": {
+      "canonical_slug": "equations",
+      "display_name": "Equations & Expressions",
+      "valid_grades": [5, 6],
+      "ccss_domains": ["EE"],
+      "raw_topics": [
+        "equations", "expressions", "integers", "ratios",
+        "ratios-and-proportions", "unit-rate", "write-ratio", "find-mode"
+      ],
+      "tier_a_content": false
+    }
+  },
+
+  "english": {
+    "reading-comprehension": {
+      "canonical_slug": "reading-comprehension",
+      "display_name": "Reading Comprehension",
+      "valid_grades": [1, 2, 3, 4, 5, 6],
+      "raw_topics": [
+        "reading-comprehension", "reading comprehension", "main-idea",
+        "main-idea-and-supporting-details", "inference", "cause-effect",
+        "compare-contrast", "text-structure", "text-features",
+        "point-of-view", "author-purpose", "character-analysis",
+        "story-elements", "theme", "argument-analysis"
+      ],
+      "tier_a_content": true
+    },
+    "grammar": {
+      "canonical_slug": "grammar",
+      "display_name": "Grammar & Parts of Speech",
+      "valid_grades": [1, 2, 3, 4, 5, 6],
+      "raw_topics": [
+        "grammar", "grammar-parts-of-speech", "action-verbs", "linking-verbs",
+        "helping-verbs", "adjectives-basic", "comparative-adjectives",
+        "superlative-adjectives", "proper-nouns", "common-nouns",
+        "collective-nouns", "abstract-nouns", "possessive-nouns-singular",
+        "possessive-nouns-plural", "singular-plural-nouns",
+        "irregular-plural-nouns", "future-tense", "parts-of-speech"
+      ],
+      "tier_a_content": false
+    },
+    "vocabulary": {
+      "canonical_slug": "vocabulary",
+      "display_name": "Vocabulary",
+      "valid_grades": [1, 2, 3, 4, 5, 6],
+      "raw_topics": [
+        "vocabulary", "sight-words", "sight words",
+        "figurative-language", "literary-devices"
+      ],
+      "tier_a_content": false
+    },
+    "writing": {
+      "canonical_slug": "writing",
+      "display_name": "Writing",
+      "valid_grades": [2, 3, 4, 5, 6],
+      "raw_topics": [
+        "writing", "writing-sentences", "writing-prompts",
+        "writing-opinion-essays"
+      ],
+      "tier_a_content": false
+    }
+  },
+
+  "science": {
+    "life-science": {
+      "canonical_slug": "life-science",
+      "display_name": "Life Science",
+      "valid_grades": [1, 2, 3, 4, 5, 6],
+      "raw_topics": [
+        "ecosystems", "plants", "animal-structures", "animal-adaptations",
+        "insects", "birds", "amphibians", "mammals", "reptiles", "fish",
+        "food-webs", "food-chains", "food-webs-and-food-chains",
+        "habitats", "environments", "heredity", "traits", "cells",
+        "living-nonliving", "life-cycles", "butterfly-life-cycle",
+        "plant-structures", "plant-growth", "plant-life-cycle",
+        "plants-and-what-they-need-to-grow", "nutrition",
+        "ecosystems-and-food-chains"
+      ],
+      "tier_a_content": false
+    },
+    "human-body": {
+      "canonical_slug": "human-body",
+      "display_name": "Human Body",
+      "valid_grades": [3, 4, 5, 6],
+      "raw_topics": [
+        "human-body"
+      ],
+      "tier_a_content": false
+    },
+    "earth-science": {
+      "canonical_slug": "earth-science",
+      "display_name": "Earth Science",
+      "valid_grades": [1, 2, 3, 4, 5, 6],
+      "raw_topics": [
+        "earth_science", "solar-system", "space-exploration",
+        "weather-climate", "weather", "weather-patterns",
+        "weather-and-seasons", "seasons", "rocks-minerals",
+        "earth-materials", "earth-history", "earth-systems",
+        "fossils", "mountains", "natural-disasters",
+        "weathering-erosion", "water-cycle", "waves",
+        "climate-change-and-human-impact", "human-impact",
+        "conservation-and-natural-resources",
+        "recycling-and-reduce-reuse-recycle", "reduce-reuse-recycle"
+      ],
+      "tier_a_content": false
+    },
+    "physical-science": {
+      "canonical_slug": "physical-science",
+      "display_name": "Physical Science",
+      "valid_grades": [1, 2, 3, 4, 5, 6],
+      "raw_topics": [
+        "physical_science", "matter", "properties-matter",
+        "energy", "energy-transfer", "electricity",
+        "forces", "forces-motion", "pushes-pulls",
+        "magnets", "gravity", "light-sound"
+      ],
+      "tier_a_content": false
+    }
+  },
+
+  "_excluded_topics": {
+    "_description": "These raw topics are excluded from hub pages — they are format artifacts, game-seeder artifacts, or planner topics, not real curriculum topics",
+    "format_artifacts": [
+      "wordsearch-animals", "wordsearch-countries", "crossword-countries",
+      "trading-cards-scientists", "riddle-animals", "riddle-countries",
+      "match-author-book", "match-country-capital", "timeline-artists"
+    ],
+    "game_seeder_compound_topics": [
+      "human_body-space_exploration-solar_system", "human_body-solar_system-space_exploration",
+      "solar_system-space_exploration-human_body", "space_exploration-human_body-solar_system",
+      "us_states-countries-national_parks", "us_states-national_parks-countries",
+      "human_body-space_exploration-oceans", "solar_system-human_body-oceans",
+      "space_exploration-solar_system-human_body", "solar_system-human_body-weather",
+      "AND ALL OTHER compound 3-topic values from the game seeder"
+    ],
+    "planner_topics": [
+      "weekly-planner", "habit-tracker", "task-board",
+      "morning-routine-chart", "meal-planner", "goal-planner"
+    ],
+    "too_narrow_for_hub": [
+      "phonics-short-vowels"
+    ]
+  }
+}
