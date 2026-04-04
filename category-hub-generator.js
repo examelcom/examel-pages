@@ -11,6 +11,17 @@
 const fs = require('fs');
 const {
   buildSchema, buildOG, buildCharSVG, buildAnswerBadge, buildEmailCapture, buildAnalytics, buildFAQSchema, getGradeFAQs, buildBreadcrumbSchema} = require('./examel-config');
+const path = require('path');
+const CANONICAL_MAP = JSON.parse(fs.readFileSync(path.join(__dirname, 'topic-canonical-map.json'), 'utf8'));
+const REVERSE_MAP_CAT = {};
+for (const [subj, topics] of Object.entries(CANONICAL_MAP)) {
+  if (subj.startsWith('_')) continue;
+  for (const [, def] of Object.entries(topics)) {
+    for (const raw of def.raw_topics) {
+      REVERSE_MAP_CAT[subj + '|' + raw] = { slug: def.canonical_slug, display: def.display_name };
+    }
+  }
+}
 
 const SUBJECT_EDUCATION = {
   math: {
@@ -92,6 +103,22 @@ ${buildAnalytics()}
       ${grades.filter(g => wsOnly.some(w => w.subject.toLowerCase() === subject && w.grade === g)).map(g => `<a href="/free-${subject}-worksheets/grade-${g}/" style="font-size:14px;font-weight:700;text-decoration:none;padding:6px 16px;border-radius:100px;border:2px solid ${g === grade ? color : '#EDE8DF'};background:${g === grade ? color : 'white'};color:${g === grade ? 'white' : '#6B6475'};font-family:'Outfit',sans-serif;">Grade ${g}</a>`).join('')}
     </div>
   </div>
+  ${(() => {
+    const tc = {};
+    worksheets.filter(w => w.subject && w.subject.toLowerCase() === subject && w.grade === grade).forEach(ws => {
+      const raw = (ws.topic || '').toLowerCase().trim().replace(/ /g, '-');
+      const m = REVERSE_MAP_CAT[subject + '|' + raw];
+      if (m) { if (!tc[m.slug]) tc[m.slug] = { display: m.display, count: 0 }; tc[m.slug].count++; }
+    });
+    const t = Object.entries(tc).filter(([,v]) => v.count >= 5).sort((a,b) => b[1].count - a[1].count);
+    if (!t.length) return '';
+    return `<div style="max-width:1100px;margin:24px auto 8px;padding:0 20px;">
+      <h2 style="font-family:Outfit,sans-serif;font-size:18px;font-weight:800;color:#1A1420;margin-bottom:14px;">Browse by Topic</h2>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px;">
+        ${t.map(([slug, v]) => `<a href="/free-${subject}-worksheets/grade-${grade}/${slug}/" style="padding:10px 20px;background:white;border:2px solid #EDE8DF;border-radius:100px;text-decoration:none;color:#1A1420;font-size:14px;font-weight:600;font-family:Outfit,sans-serif;">${v.display} (${v.count})</a>`).join('')}
+      </div>
+    </div>`;
+  })()}
   <div class="grid">
     ${filtered.map(worksheetCard).join('')}
   </div>
