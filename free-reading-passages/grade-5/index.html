@@ -29,10 +29,14 @@
     .site-header nav{display:flex;align-items:center;gap:2px;}
     .site-header nav a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:13px;font-weight:600;padding:7px 12px;border-radius:8px;transition:all 0.2s;}
     .site-header nav a:hover{color:white;background:rgba(108,92,231,0.2);}
-    .breadcrumb{max-width:860px;margin:18px auto 0;padding:0 20px;font-size:15px;color:#A89FAE;display:flex;align-items:center;flex-wrap:wrap;gap:4px;}
-    .breadcrumb a{color:#6C5CE7;text-decoration:none;font-weight:500;}
-    .breadcrumb a:hover{opacity:0.7;}
-    .breadcrumb .sep{opacity:0.3;margin:0 2px;}
+    :root{--color-brand:#6C5CE7;--color-brand-text:#4A3BBF;}
+    .breadcrumb{max-width:860px;margin:18px auto 0;padding:0 20px;font-size:14px;color:#A89FAE;}
+    .breadcrumb ol{list-style:none;padding:0;margin:0;display:flex;align-items:center;flex-wrap:wrap;gap:0;}
+    .breadcrumb li{display:flex;align-items:center;}
+    .breadcrumb a{color:var(--color-brand-text);text-decoration:none;font-weight:500;}
+    .breadcrumb a:hover{text-decoration:underline;opacity:0.85;}
+    .breadcrumb [aria-current=page]{color:#6B6475;font-weight:400;}
+    .breadcrumb .sep{opacity:0.35;margin:0 6px;font-size:12px;}
     .hero{padding:64px 20px 56px;text-align:center;background:#FAF8F3;}
     .hero h1{font-size:clamp(26px,4vw,44px);margin-bottom:14px;color:#1A1420;font-weight:800;letter-spacing:-1.5px;line-height:1.15;}
     .hero h1 span{color:#6C5CE7;}
@@ -49,7 +53,7 @@
     .ws-card-badge{display:inline-block;color:white;padding:3px 10px;border-radius:100px;font-size:11px;font-weight:700;margin-bottom:10px;}
     .ws-card h3{font-size:14px;margin-bottom:5px;line-height:1.5;font-weight:700;color:#1A1420;}
     .ws-card p{font-size:12px;color:#A89FAE;margin-bottom:12px;line-height:1.5;}
-    .ws-card-btn{font-size:12px;font-weight:700;color:#6C5CE7;}
+    .ws-card-btn{font-size:12px;font-weight:700;color:#4A3BBF;}
     .hub-grid{max-width:1100px;margin:0 auto;padding:0 20px 64px;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;}
     .hub-card{background:white;border-radius:24px;padding:36px 20px;text-decoration:none;color:#1A1420;text-align:center;transition:transform 0.25s cubic-bezier(0.34,1.56,0.64,1),box-shadow 0.25s;box-shadow:0 2px 8px rgba(0,0,0,0.04),0 8px 24px rgba(0,0,0,0.06);border:1px solid #EDE8DF;}
     .hub-card:hover{transform:translateY(-5px);box-shadow:0 8px 32px rgba(108,92,231,0.14),0 2px 8px rgba(0,0,0,0.04);}
@@ -64,7 +68,7 @@
     .footer-col{display:flex;flex-direction:column;gap:10px;min-width:130px;}
     .footer-heading{font-size:10px;font-weight:800;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:2px;margin-bottom:6px;}
     .site-footer a{color:rgba(255,255,255,0.5);text-decoration:none;font-size:15px;transition:color 0.2s;font-weight:500;}
-    .site-footer a:hover{color:#6C5CE7;}
+    .site-footer a:hover{color:#4A3BBF;}
     .footer-bottom{text-align:center;font-size:14px;color:rgba(255,255,255,0.2);border-top:1px solid rgba(255,255,255,0.07);padding-top:24px;}
     .mobile-menu-btn{display:none;background:none;border:none;cursor:pointer;padding:8px;border-radius:8px;}
     /* ── SEARCH ── */
@@ -406,11 +410,20 @@
   <div class="breadcrumb"><a href="https://examel.com">Home</a><span>›</span><a href="/free-reading-passages/">Reading Passages</a><span>›</span>Grade 5</div>
   <div class="hero">
     <h1>Free Grade 5 <span>Reading Passages</span></h1>
-    <p>32+ free printable Grade 5 nonfiction reading passages with comprehension questions and answer keys.</p>
+    <p>33+ free printable Grade 5 nonfiction reading passages with comprehension questions and answer keys.</p>
   </div>
   <div class="grid">
+    <a href="/reading-passages/grade-5/reading-passage-math-grade5-decimals-music-standard/" class="ws-card">
+      <img src="https://examel.com/thumbnails/previews/reading-passage-math-grade5-decimals-music-standard-p1.png" alt="Maya Finds Place Value in Music" class="ws-card-thumb" loading="lazy">
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 5</div>
+        <h3>Maya Finds Place Value in Music</h3>
+        <p>Decimals · Music theme</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
     <a href="/reading-passages/grade-5/reading-passage-math-grade5-data-graphs-animal-rescue-beginner/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#7C3AED18 0%,#7C3AED08 100%);border-top:4px solid #7C3AED"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#7C3AED;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/reading-passage-math-grade5-data-graphs-animal-rescue-beginner-p1.png" alt="Maya Charts Every Animal She Rescues" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 5</div>
         <h3>Maya Charts Every Animal She Rescues</h3>
@@ -419,7 +432,7 @@
       </div>
     </a>
     <a href="/reading-passages/grade-5/reading-passage-english-grade5-theme-jungle-animals-challenge/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DB277718 0%,#DB277708 100%);border-top:4px solid #DB2777"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DB2777;letter-spacing:-1px">English</span></div>
+      <img src="https://examel.com/thumbnails/previews/reading-passage-english-grade5-theme-jungle-animals-challenge-p1.png" alt="Leo Discovers the Jungle's Hidden Connections" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#DB2777">English · Grade 5</div>
         <h3>Leo Discovers the Jungle's Hidden Connections</h3>
@@ -428,7 +441,7 @@
       </div>
     </a>
     <a href="/reading-passages/grade-5/reading-passage-science-grade5-matter-mothers-day-standard/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#059669;letter-spacing:-1px">Science</span></div>
+      <img src="https://examel.com/thumbnails/previews/reading-passage-science-grade5-matter-mothers-day-standard-p1.png" alt="Matter Everywhere on Mother's Day" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · Grade 5</div>
         <h3>Matter Everywhere on Mother's Day</h3>
@@ -437,7 +450,7 @@
       </div>
     </a>
     <a href="/reading-passages/grade-5/reading-passage-math-grade5-multiplication-coding-kids-beginner/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#7C3AED18 0%,#7C3AED08 100%);border-top:4px solid #7C3AED"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#7C3AED;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/reading-passage-math-grade5-multiplication-coding-kids-beginner-p1.png" alt="Maya Codes Her Way Through Multiplication" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 5</div>
         <h3>Maya Codes Her Way Through Multiplication</h3>
@@ -446,7 +459,7 @@
       </div>
     </a>
     <a href="/reading-passages/grade-5/reading-passage-math-grade5-patterns-arctic-animals-beginner/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#7C3AED18 0%,#7C3AED08 100%);border-top:4px solid #7C3AED"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#7C3AED;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/reading-passage-math-grade5-patterns-arctic-animals-beginner-p1.png" alt="Maya Finds Patterns in Arctic Snow" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 5</div>
         <h3>Maya Finds Patterns in Arctic Snow</h3>
@@ -455,7 +468,7 @@
       </div>
     </a>
     <a href="/reading-passages/grade-5/reading-passage-math-grade5-word-problems-travel-challenge/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#7C3AED18 0%,#7C3AED08 100%);border-top:4px solid #7C3AED"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#7C3AED;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/reading-passage-math-grade5-word-problems-travel-challenge-p1.png" alt="Maya Solves Math on the Road" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 5</div>
         <h3>Maya Solves Math on the Road</h3>
@@ -464,7 +477,7 @@
       </div>
     </a>
     <a href="/reading-passages/grade-5/reading-passage-math-grade5-order-of-operations-sushi-standard/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#7C3AED18 0%,#7C3AED08 100%);border-top:4px solid #7C3AED"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#7C3AED;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/reading-passage-math-grade5-order-of-operations-sushi-standard-p1.png" alt="Maya Solves the Sushi Math Mystery" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 5</div>
         <h3>Maya Solves the Sushi Math Mystery</h3>
@@ -473,7 +486,7 @@
       </div>
     </a>
     <a href="/reading-passages/grade-5/reading-passage-science-grade5-human-body-restaurant-standard/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#059669;letter-spacing:-1px">Science</span></div>
+      <img src="https://examel.com/thumbnails/previews/reading-passage-science-grade5-human-body-restaurant-standard-p1.png" alt="Zoe's Restaurant: A Digestive System Discovery" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · Grade 5</div>
         <h3>Zoe's Restaurant: A Digestive System Discovery</h3>
@@ -505,15 +518,6 @@
         <div class="ws-card-badge" style="background:#059669">Science · Grade 5</div>
         <h3>Zoe Dives Deep Into Earth's Oceans</h3>
         <p>Earth Systems · Marine Biologist theme</p>
-        <span class="ws-card-btn">View Worksheet →</span>
-      </div>
-    </a>
-    <a href="/reading-passages/grade-5/reading-passage-science-grade5-earth-systems-dinosaurs-standard/" class="ws-card">
-      <img src="https://examel.com/thumbnails/previews/reading-passage-science-grade5-earth-systems-dinosaurs-standard-p1.png" alt="Zoe Digs Into Earth's Ancient Layers" class="ws-card-thumb" loading="lazy">
-      <div class="ws-card-body">
-        <div class="ws-card-badge" style="background:#059669">Science · Grade 5</div>
-        <h3>Zoe Digs Into Earth's Ancient Layers</h3>
-        <p>Earth Systems · Dinosaurs theme</p>
         <span class="ws-card-btn">View Worksheet →</span>
       </div>
     </a></div>

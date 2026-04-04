@@ -5,7 +5,7 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%236C5CE7'/%3E%3Crect x='7' y='7' width='4' height='18' rx='1' fill='white'/%3E%3Crect x='7' y='7' width='7' height='4' rx='1' fill='white'/%3E%3Crect x='7' y='14' width='11' height='4' rx='1' fill='white'/%3E%3Crect x='7' y='21' width='15' height='4' rx='1' fill='white'/%3E%3C/svg%3E">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Free Grade 6 Worksheets | Math, English, Science | Examel</title>
-  <meta name="description" content="Free printable Grade 6 worksheets for Math, English and Science. 46+ worksheets with fun themes. Download PDF instantly. Answer keys included.">
+  <meta name="description" content="Free printable Grade 6 worksheets for Math, English and Science. 47+ worksheets with fun themes. Download PDF instantly. Answer keys included.">
   <link rel="canonical" href="https://examel.com/free-worksheets/grade-6/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Free Grade 6 Worksheets | Math, English, Science | Examel">
@@ -32,10 +32,14 @@
     .site-header nav{display:flex;align-items:center;gap:2px;}
     .site-header nav a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:13px;font-weight:600;padding:7px 12px;border-radius:8px;transition:all 0.2s;}
     .site-header nav a:hover{color:white;background:rgba(108,92,231,0.2);}
-    .breadcrumb{max-width:860px;margin:18px auto 0;padding:0 20px;font-size:15px;color:#A89FAE;display:flex;align-items:center;flex-wrap:wrap;gap:4px;}
-    .breadcrumb a{color:#6C5CE7;text-decoration:none;font-weight:500;}
-    .breadcrumb a:hover{opacity:0.7;}
-    .breadcrumb .sep{opacity:0.3;margin:0 2px;}
+    :root{--color-brand:#6C5CE7;--color-brand-text:#4A3BBF;}
+    .breadcrumb{max-width:860px;margin:18px auto 0;padding:0 20px;font-size:14px;color:#A89FAE;}
+    .breadcrumb ol{list-style:none;padding:0;margin:0;display:flex;align-items:center;flex-wrap:wrap;gap:0;}
+    .breadcrumb li{display:flex;align-items:center;}
+    .breadcrumb a{color:var(--color-brand-text);text-decoration:none;font-weight:500;}
+    .breadcrumb a:hover{text-decoration:underline;opacity:0.85;}
+    .breadcrumb [aria-current=page]{color:#6B6475;font-weight:400;}
+    .breadcrumb .sep{opacity:0.35;margin:0 6px;font-size:12px;}
     .hero{padding:64px 20px 56px;text-align:center;background:#FAF8F3;}
     .hero h1{font-size:clamp(26px,4vw,44px);margin-bottom:14px;color:#1A1420;font-weight:800;letter-spacing:-1.5px;line-height:1.15;}
     .hero h1 span{color:#6C5CE7;}
@@ -52,7 +56,7 @@
     .ws-card-badge{display:inline-block;color:white;padding:3px 10px;border-radius:100px;font-size:11px;font-weight:700;margin-bottom:10px;}
     .ws-card h3{font-size:14px;margin-bottom:5px;line-height:1.5;font-weight:700;color:#1A1420;}
     .ws-card p{font-size:12px;color:#A89FAE;margin-bottom:12px;line-height:1.5;}
-    .ws-card-btn{font-size:12px;font-weight:700;color:#6C5CE7;}
+    .ws-card-btn{font-size:12px;font-weight:700;color:#4A3BBF;}
     .hub-grid{max-width:1100px;margin:0 auto;padding:0 20px 64px;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;}
     .hub-card{background:white;border-radius:24px;padding:36px 20px;text-decoration:none;color:#1A1420;text-align:center;transition:transform 0.25s cubic-bezier(0.34,1.56,0.64,1),box-shadow 0.25s;box-shadow:0 2px 8px rgba(0,0,0,0.04),0 8px 24px rgba(0,0,0,0.06);border:1px solid #EDE8DF;}
     .hub-card:hover{transform:translateY(-5px);box-shadow:0 8px 32px rgba(108,92,231,0.14),0 2px 8px rgba(0,0,0,0.04);}
@@ -67,7 +71,7 @@
     .footer-col{display:flex;flex-direction:column;gap:10px;min-width:130px;}
     .footer-heading{font-size:10px;font-weight:800;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:2px;margin-bottom:6px;}
     .site-footer a{color:rgba(255,255,255,0.5);text-decoration:none;font-size:15px;transition:color 0.2s;font-weight:500;}
-    .site-footer a:hover{color:#6C5CE7;}
+    .site-footer a:hover{color:#4A3BBF;}
     .footer-bottom{text-align:center;font-size:14px;color:rgba(255,255,255,0.2);border-top:1px solid rgba(255,255,255,0.07);padding-top:24px;}
     .mobile-menu-btn{display:none;background:none;border:none;cursor:pointer;padding:8px;border-radius:8px;}
     /* ── SEARCH ── */
@@ -413,28 +417,37 @@
   </div>
   <div class="hero">
     <h1>Free <span>Grade 6 Worksheets</span></h1>
-    <p>46+ printable Grade 6 worksheets for Math, English and Science. Fun themes, answer keys included.</p>
+    <p>47+ printable Grade 6 worksheets for Math, English and Science. Fun themes, answer keys included.</p>
   </div>
   <div class="hub-grid" data-pagefind-body>
     <span data-pagefind-filter="format" hidden>Hub</span>
-    <a href="/free-english-worksheets/grade-6/" class="hub-card" style="border-top:3px solid #0984E3">
+    <a href="/free-math-worksheets/grade-6/" class="hub-card" style="border-top:3px solid #0984E3">
+        <span class="hub-icon">➕</span>
+        <h3>Math</h3>
+        <p>1 worksheets</p>
+      </a><a href="/free-english-worksheets/grade-6/" class="hub-card" style="border-top:3px solid #0984E3">
         <span class="hub-icon">📖</span>
         <h3>English</h3>
-        <p>6 worksheets</p>
+        <p>7 worksheets</p>
       </a><a href="/free-science-worksheets/grade-6/" class="hub-card" style="border-top:3px solid #0984E3">
         <span class="hub-icon">🔬</span>
         <h3>Science</h3>
         <p>39 worksheets</p>
-      </a><a href="/free-math-worksheets/grade-6/" class="hub-card" style="border-top:3px solid #0984E3">
-        <span class="hub-icon">➕</span>
-        <h3>Math</h3>
-        <p>1 worksheets</p>
       </a>
   </div>
   <div class="grid">
     
+    <a href="/worksheets/grade-6-english-reading-comprehension-spring-exploration-challenge/" class="ws-card">
+      <img src="https://examel.com/thumbnails/previews/grade-6-english-reading-comprehension-spring-exploration-challenge-p1.png" alt="Grade 6 Reading Comprehension — Spring Exploration" class="ws-card-thumb" loading="lazy">
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#DB2777">English · Grade 6</div>
+        <h3>Grade 6 Reading Comprehension — Spring Exploration</h3>
+        <p>Reading Comprehension · Spring Exploration theme</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
     <a href="/worksheets/grade-6-science-heredity-mythology-standard/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#059669;letter-spacing:-1px">Science</span></div>
+      <img src="https://examel.com/thumbnails/previews/grade-6-science-heredity-mythology-standard-p1.png" alt="Zoe and the Oracle's Garden of Traits" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · Grade 6</div>
         <h3>Zoe and the Oracle's Garden of Traits</h3>
@@ -443,7 +456,7 @@
       </div>
     </a>
     <a href="/worksheets/grade-6-science-earth-history-desert-standard/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#059669;letter-spacing:-1px">Science</span></div>
+      <img src="https://examel.com/thumbnails/previews/grade-6-science-earth-history-desert-standard-p1.png" alt="Zoe's Desert Rock Record Hunt" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · Grade 6</div>
         <h3>Zoe's Desert Rock Record Hunt</h3>
@@ -452,7 +465,7 @@
       </div>
     </a>
     <a href="/worksheets/grade-6-science-forces-robots-standard/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#059669;letter-spacing:-1px">Science</span></div>
+      <img src="https://examel.com/thumbnails/previews/grade-6-science-forces-robots-standard-p1.png" alt="Zoe and the Robot Force Lab" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · Grade 6</div>
         <h3>Zoe and the Robot Force Lab</h3>
@@ -461,7 +474,7 @@
       </div>
     </a>
     <a href="/games/game-truefalse-6-1775283084193/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#059669;letter-spacing:-1px">Science</span></div>
+      <img src="https://examel.com/thumbnails/previews/game-truefalse-6-1775283084193-p1.png" alt="True/False — space" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · Grade 6</div>
         <h3>True/False — space</h3>
@@ -470,7 +483,7 @@
       </div>
     </a>
     <a href="/games/game-multiplechoice-6-1775203675563/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#059669;letter-spacing:-1px">Science</span></div>
+      <img src="https://examel.com/thumbnails/previews/game-multiplechoice-6-1775203675563-p1.png" alt="Multiple Choice — human body" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · Grade 6</div>
         <h3>Multiple Choice — human body</h3>
@@ -488,7 +501,7 @@
       </div>
     </a>
     <a href="/worksheets/grade-6-english-abstract-nouns-christmas-standard/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DB277718 0%,#DB277708 100%);border-top:4px solid #DB2777"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DB2777;letter-spacing:-1px">English</span></div>
+      <img src="https://examel.com/thumbnails/previews/grade-6-english-abstract-nouns-christmas-standard-p1.png" alt="Grade 6 Abstract Nouns — Christmas" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#DB2777">English · Grade 6</div>
         <h3>Grade 6 Abstract Nouns — Christmas</h3>
@@ -524,20 +537,11 @@
       </div>
     </a>
     <a href="/worksheets/grade-6-english-helping-verbs-christmas-standard/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DB277718 0%,#DB277708 100%);border-top:4px solid #DB2777"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DB2777;letter-spacing:-1px">English</span></div>
+      <img src="https://examel.com/thumbnails/previews/grade-6-english-helping-verbs-christmas-standard-p1.png" alt="Grade 6 Helping Verbs — Christmas" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#DB2777">English · Grade 6</div>
         <h3>Grade 6 Helping Verbs — Christmas</h3>
         <p>Helping Verbs · Christmas theme</p>
-        <span class="ws-card-btn">View Worksheet →</span>
-      </div>
-    </a>
-    <a href="/worksheets/grade-6-english-abstract-nouns-dinosaurs-standard/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DB277718 0%,#DB277708 100%);border-top:4px solid #DB2777"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DB2777;letter-spacing:-1px">English</span></div>
-      <div class="ws-card-body">
-        <div class="ws-card-badge" style="background:#DB2777">English · Grade 6</div>
-        <h3>Grade 6 Abstract Nouns — Dinosaurs</h3>
-        <p>Abstract Nouns · Dinosaurs theme</p>
         <span class="ws-card-btn">View Worksheet →</span>
       </div>
     </a>

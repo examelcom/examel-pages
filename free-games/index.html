@@ -24,10 +24,14 @@
     .site-header nav{display:flex;align-items:center;gap:2px;}
     .site-header nav a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:13px;font-weight:600;padding:7px 12px;border-radius:8px;transition:all 0.2s;}
     .site-header nav a:hover{color:white;background:rgba(108,92,231,0.2);}
-    .breadcrumb{max-width:860px;margin:18px auto 0;padding:0 20px;font-size:15px;color:#A89FAE;display:flex;align-items:center;flex-wrap:wrap;gap:4px;}
-    .breadcrumb a{color:#6C5CE7;text-decoration:none;font-weight:500;}
-    .breadcrumb a:hover{opacity:0.7;}
-    .breadcrumb .sep{opacity:0.3;margin:0 2px;}
+    :root{--color-brand:#6C5CE7;--color-brand-text:#4A3BBF;}
+    .breadcrumb{max-width:860px;margin:18px auto 0;padding:0 20px;font-size:14px;color:#A89FAE;}
+    .breadcrumb ol{list-style:none;padding:0;margin:0;display:flex;align-items:center;flex-wrap:wrap;gap:0;}
+    .breadcrumb li{display:flex;align-items:center;}
+    .breadcrumb a{color:var(--color-brand-text);text-decoration:none;font-weight:500;}
+    .breadcrumb a:hover{text-decoration:underline;opacity:0.85;}
+    .breadcrumb [aria-current=page]{color:#6B6475;font-weight:400;}
+    .breadcrumb .sep{opacity:0.35;margin:0 6px;font-size:12px;}
     .hero{padding:64px 20px 56px;text-align:center;background:#FAF8F3;}
     .hero h1{font-size:clamp(26px,4vw,44px);margin-bottom:14px;color:#1A1420;font-weight:800;letter-spacing:-1.5px;line-height:1.15;}
     .hero h1 span{color:#6C5CE7;}
@@ -44,7 +48,7 @@
     .ws-card-badge{display:inline-block;color:white;padding:3px 10px;border-radius:100px;font-size:11px;font-weight:700;margin-bottom:10px;}
     .ws-card h3{font-size:14px;margin-bottom:5px;line-height:1.5;font-weight:700;color:#1A1420;}
     .ws-card p{font-size:12px;color:#A89FAE;margin-bottom:12px;line-height:1.5;}
-    .ws-card-btn{font-size:12px;font-weight:700;color:#6C5CE7;}
+    .ws-card-btn{font-size:12px;font-weight:700;color:#4A3BBF;}
     .hub-grid{max-width:1100px;margin:0 auto;padding:0 20px 64px;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;}
     .hub-card{background:white;border-radius:24px;padding:36px 20px;text-decoration:none;color:#1A1420;text-align:center;transition:transform 0.25s cubic-bezier(0.34,1.56,0.64,1),box-shadow 0.25s;box-shadow:0 2px 8px rgba(0,0,0,0.04),0 8px 24px rgba(0,0,0,0.06);border:1px solid #EDE8DF;}
     .hub-card:hover{transform:translateY(-5px);box-shadow:0 8px 32px rgba(108,92,231,0.14),0 2px 8px rgba(0,0,0,0.04);}
@@ -59,7 +63,7 @@
     .footer-col{display:flex;flex-direction:column;gap:10px;min-width:130px;}
     .footer-heading{font-size:10px;font-weight:800;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:2px;margin-bottom:6px;}
     .site-footer a{color:rgba(255,255,255,0.5);text-decoration:none;font-size:15px;transition:color 0.2s;font-weight:500;}
-    .site-footer a:hover{color:#6C5CE7;}
+    .site-footer a:hover{color:#4A3BBF;}
     .footer-bottom{text-align:center;font-size:14px;color:rgba(255,255,255,0.2);border-top:1px solid rgba(255,255,255,0.07);padding-top:24px;}
     .mobile-menu-btn{display:none;background:none;border:none;cursor:pointer;padding:8px;border-radius:8px;}
     /* ── SEARCH ── */
@@ -400,11 +404,15 @@
   </script>
 <div class="hero">
   <h1>Free Printable <span>Game Worksheets</span></h1>
-  <p>280 printable games — matching, true/false, multiple choice, bingo, and more. Free PDF download, no signup required.</p>
+  <p>300 printable games — matching, true/false, multiple choice, bingo, and more. Free PDF download, no signup required.</p>
 </div>
 <div class="filter-bar">
-  <a href="/free-games/" class="filter-btn active">All Games (280)</a>
-  <a href="/free-games/?type=game-bingo" class="filter-btn">🎲 Bingo (10)</a>
+  <a href="/free-games/" class="filter-btn active">All Games (300)</a>
+  <a href="/free-games/?type=game-venndiagram" class="filter-btn">🎮 game-venndiagram (8)</a>
+<a href="/free-games/?type=game-timeline" class="filter-btn">📅 Timeline (10)</a>
+<a href="/free-games/?type=game-riddles" class="filter-btn">🧩 Riddles (14)</a>
+<a href="/free-games/?type=game-flashcards" class="filter-btn">🃏 Flashcards (14)</a>
+<a href="/free-games/?type=game-bingo" class="filter-btn">🎲 Bingo (13)</a>
 <a href="/free-games/?type=game-vocabmatch" class="filter-btn">📖 Vocab Match (12)</a>
 <a href="/free-games/?type=game-factdetective" class="filter-btn">🎮 game-factdetective (9)</a>
 <a href="/free-games/?type=game-sequencing" class="filter-btn">🎮 game-sequencing (8)</a>
@@ -417,16 +425,12 @@
 <a href="/free-games/?type=game-truefalse" class="filter-btn">✅ True / False (33)</a>
 <a href="/free-games/?type=game-crossword" class="filter-btn">📰 Crossword (7)</a>
 <a href="/free-games/?type=game-wordsearch" class="filter-btn">🔍 Word Search (14)</a>
-<a href="/free-games/?type=game-riddles" class="filter-btn">🧩 Riddles (9)</a>
 <a href="/free-games/?type=game-kwl" class="filter-btn">🎮 game-kwl (2)</a>
 <a href="/free-games/?type=game-labeldiagram" class="filter-btn">🎮 game-labeldiagram (3)</a>
 <a href="/free-games/?type=game-wouldyourather" class="filter-btn">🤔 Would You Rather (5)</a>
-<a href="/free-games/?type=game-venndiagram" class="filter-btn">🎮 game-venndiagram (6)</a>
 <a href="/free-games/?type=game-cloze" class="filter-btn">🎮 game-cloze (5)</a>
 <a href="/free-games/?type=game-comparecontrast" class="filter-btn">🎮 game-comparecontrast (5)</a>
-<a href="/free-games/?type=game-flashcards" class="filter-btn">🃏 Flashcards (9)</a>
 <a href="/free-games/?type=game-twotruths" class="filter-btn">🎮 game-twotruths (4)</a>
-<a href="/free-games/?type=game-timeline" class="filter-btn">📅 Timeline (5)</a>
 <a href="/free-games/?type=game-cipher" class="filter-btn">🎮 game-cipher (2)</a>
 <a href="/free-games/?type=game-rankorder" class="filter-btn">🎮 game-rankorder (5)</a>
 <a href="/free-games/?type=game-wordscramble" class="filter-btn">🎮 game-wordscramble (4)</a>
@@ -438,6 +442,206 @@
 </div>
 <div class="grid">
   
+    <a href="/games/game-venndiagram-1-1775286116344/" class="ws-card">
+      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">🎮</span></div>
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#059669">Science · game-venndiagram</div>
+        <h3>Venn Diagram — space</h3>
+        <p>Space_exploration Solar_system Weather</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+
+    <a href="/games/game-venndiagram-4-1775286113658/" class="ws-card">
+      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">🎮</span></div>
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#059669">Science · game-venndiagram</div>
+        <h3>Venn Diagram — space</h3>
+        <p>Solar_system Oceans Rivers</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+
+    <a href="/games/game-timeline-3-1775286110943/" class="ws-card">
+      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#6C5CE718 0%,#6C5CE708 100%);border-top:4px solid #6C5CE7"><span style="font-size:32px;">📅</span></div>
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#6C5CE7">Art · Timeline</div>
+        <h3>Timeline — Put These Artists in Order</h3>
+        <p>Timeline Artists</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+
+    <a href="/games/game-timeline-2-1775286108143/" class="ws-card">
+      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">📅</span></div>
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#059669">Science · Timeline</div>
+        <h3>Timeline — space</h3>
+        <p>Space_exploration Solar_system Weather</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+
+    <a href="/games/game-timeline-3-1775286105417/" class="ws-card">
+      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#6C5CE718 0%,#6C5CE708 100%);border-top:4px solid #6C5CE7"><span style="font-size:32px;">📅</span></div>
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#6C5CE7">Art · Timeline</div>
+        <h3>Timeline — Put These Artists in Order</h3>
+        <p>Timeline Artists</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+
+    <a href="/games/game-timeline-8-1775285895669/" class="ws-card">
+      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">📅</span></div>
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#059669">Science · Timeline</div>
+        <h3>Timeline — space</h3>
+        <p>Space Exploration</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+
+    <a href="/games/game-timeline-4-1775285893048/" class="ws-card">
+      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">📅</span></div>
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#059669">Science · Timeline</div>
+        <h3>Timeline — space</h3>
+        <p>Space_exploration Solar_system Human_body</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+
+    <a href="/games/game-riddles-1-1775285890452/" class="ws-card">
+      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">🧩</span></div>
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#059669">Science · Riddles</div>
+        <h3>Riddles — space</h3>
+        <p>Space_exploration Solar_system Human_body</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+
+    <a href="/games/game-riddles-2-1775285887794/" class="ws-card">
+      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">🧩</span></div>
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#059669">Science · Riddles</div>
+        <h3>Riddles — space</h3>
+        <p>Space_exploration Human_body Oceans</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+
+    <a href="/games/game-riddles-2-1775285884906/" class="ws-card">
+      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">🧩</span></div>
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#059669">Science · Riddles</div>
+        <h3>Riddles — space</h3>
+        <p>Solar_system Space_exploration Human_body</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+
+    <a href="/games/game-riddles-2-1775285675347/" class="ws-card">
+      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">🧩</span></div>
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#059669">Science · Riddles</div>
+        <h3>Riddles — animals</h3>
+        <p>Reptiles</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+
+    <a href="/games/game-riddles-1-1775285672691/" class="ws-card">
+      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">🧩</span></div>
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#059669">Science · Riddles</div>
+        <h3>Riddles — space</h3>
+        <p>Solar System</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+
+    <a href="/games/game-flashcards-3-1775285670089/" class="ws-card">
+      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">🃏</span></div>
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#059669">Science · Flashcards</div>
+        <h3>Flashcards — Famous Scientists Trading Cards</h3>
+        <p>Trading Cards Scientists</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+
+    <a href="/games/game-flashcards-3-1775285667320/" class="ws-card">
+      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">🃏</span></div>
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#059669">Science · Flashcards</div>
+        <h3>Flashcards — Famous Scientists Trading Cards</h3>
+        <p>Trading Cards Scientists</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+
+    <a href="/games/game-flashcards-3-1775285664753/" class="ws-card">
+      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">🃏</span></div>
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#059669">Science · Flashcards</div>
+        <h3>Flashcards — Famous Scientists Trading Cards</h3>
+        <p>Trading Cards Scientists</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+
+    <a href="/games/game-flashcards-1-1775285447618/" class="ws-card">
+      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">🃏</span></div>
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#059669">Science · Flashcards</div>
+        <h3>Flashcards — geography</h3>
+        <p>Mountains Volcanoes Oceans</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+
+    <a href="/games/game-flashcards-3-1775285444998/" class="ws-card">
+      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">🃏</span></div>
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#059669">Science · Flashcards</div>
+        <h3>Flashcards — Famous Scientists Trading Cards</h3>
+        <p>Trading Cards Scientists</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+
+    <a href="/games/game-bingo-2-1775285442276/" class="ws-card">
+      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">🎲</span></div>
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#059669">Science · Bingo</div>
+        <h3>Bingo — space</h3>
+        <p>Solar_system Volcanoes Mountains</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+
+    <a href="/games/game-bingo-1-1775285439645/" class="ws-card">
+      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">🎲</span></div>
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#059669">Science · Bingo</div>
+        <h3>Bingo — animals</h3>
+        <p>Amphibians</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+
+    <a href="/games/game-bingo-1-1775285437055/" class="ws-card">
+      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">🎲</span></div>
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#059669">Science · Bingo</div>
+        <h3>Bingo — animals</h3>
+        <p>Mammals</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+
     <a href="/games/game-bingo-5-1775285273425/" class="ws-card">
       <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">🎲</span></div>
       <div class="ws-card-body">
@@ -689,7 +893,7 @@
     </a>
 
     <a href="/games/game-oddoneout-7-1775284073649/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">🎯</span></div>
+      <img src="https://examel.com/thumbnails/previews/game-oddoneout-7-1775284073649-p1.png" alt="Odd One Out — space" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · Odd One Out</div>
         <h3>Odd One Out — space</h3>
@@ -699,7 +903,7 @@
     </a>
 
     <a href="/games/game-oddoneout-1-1775284070916/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">🎯</span></div>
+      <img src="https://examel.com/thumbnails/previews/game-oddoneout-1-1775284070916-p1.png" alt="Odd One Out — animals" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · Odd One Out</div>
         <h3>Odd One Out — animals</h3>
@@ -709,7 +913,7 @@
     </a>
 
     <a href="/games/game-oddoneout-1-1775284068309/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#0891B218 0%,#0891B208 100%);border-top:4px solid #0891B2"><span style="font-size:32px;">🎯</span></div>
+      <img src="https://examel.com/thumbnails/previews/game-oddoneout-1-1775284068309-p1.png" alt="Odd One Out — geography" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#0891B2">Social_studies · Odd One Out</div>
         <h3>Odd One Out — geography</h3>
@@ -719,7 +923,7 @@
     </a>
 
     <a href="/games/game-oddoneout-1-1775284065642/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">🎯</span></div>
+      <img src="https://examel.com/thumbnails/previews/game-oddoneout-1-1775284065642-p1.png" alt="Odd One Out — geography" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · Odd One Out</div>
         <h3>Odd One Out — geography</h3>
@@ -729,7 +933,7 @@
     </a>
 
     <a href="/games/game-oddoneout-4-1775284062971/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#0891B218 0%,#0891B208 100%);border-top:4px solid #0891B2"><span style="font-size:32px;">🎯</span></div>
+      <img src="https://examel.com/thumbnails/previews/game-oddoneout-4-1775284062971-p1.png" alt="Odd One Out — geography" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#0891B2">Social_studies · Odd One Out</div>
         <h3>Odd One Out — geography</h3>
@@ -739,7 +943,7 @@
     </a>
 
     <a href="/games/game-matching-2-1775283825100/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">🔗</span></div>
+      <img src="https://examel.com/thumbnails/previews/game-matching-2-1775283825100-p1.png" alt="Matching — animals" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · Matching</div>
         <h3>Matching — animals</h3>
@@ -749,7 +953,7 @@
     </a>
 
     <a href="/games/game-matching-7-1775283822331/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">🔗</span></div>
+      <img src="https://examel.com/thumbnails/previews/game-matching-7-1775283822331-p1.png" alt="Matching — space" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · Matching</div>
         <h3>Matching — space</h3>
@@ -759,7 +963,7 @@
     </a>
 
     <a href="/games/game-matching-4-1775283819664/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#0891B218 0%,#0891B208 100%);border-top:4px solid #0891B2"><span style="font-size:32px;">🔗</span></div>
+      <img src="https://examel.com/thumbnails/previews/game-matching-4-1775283819664-p1.png" alt="Matching — geography" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#0891B2">Social_studies · Matching</div>
         <h3>Matching — geography</h3>
@@ -769,7 +973,7 @@
     </a>
 
     <a href="/games/game-matching-3-1775283817009/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#6C5CE718 0%,#6C5CE708 100%);border-top:4px solid #6C5CE7"><span style="font-size:32px;">🔗</span></div>
+      <img src="https://examel.com/thumbnails/previews/game-matching-3-1775283817009-p1.png" alt="Matching — Match the Author to the Book" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#6C5CE7">Ela · Matching</div>
         <h3>Matching — Match the Author to the Book</h3>
@@ -779,7 +983,7 @@
     </a>
 
     <a href="/games/game-matching-1-1775283814091/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">🔗</span></div>
+      <img src="https://examel.com/thumbnails/previews/game-matching-1-1775283814091-p1.png" alt="Matching — animals" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · Matching</div>
         <h3>Matching — animals</h3>
@@ -789,7 +993,7 @@
     </a>
 
     <a href="/games/game-multiplechoice-5-1775283617749/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#0891B218 0%,#0891B208 100%);border-top:4px solid #0891B2"><span style="font-size:32px;">🔘</span></div>
+      <img src="https://examel.com/thumbnails/previews/game-multiplechoice-5-1775283617749-p1.png" alt="Multiple Choice — geography" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#0891B2">Social_studies · Multiple Choice</div>
         <h3>Multiple Choice — geography</h3>
@@ -799,7 +1003,7 @@
     </a>
 
     <a href="/games/game-multiplechoice-5-1775283615105/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">🔘</span></div>
+      <img src="https://examel.com/thumbnails/previews/game-multiplechoice-5-1775283615105-p1.png" alt="Multiple Choice — space" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · Multiple Choice</div>
         <h3>Multiple Choice — space</h3>
@@ -809,7 +1013,7 @@
     </a>
 
     <a href="/games/game-multiplechoice-1-1775283612140/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">🔘</span></div>
+      <img src="https://examel.com/thumbnails/previews/game-multiplechoice-1-1775283612140-p1.png" alt="Multiple Choice — animals" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · Multiple Choice</div>
         <h3>Multiple Choice — animals</h3>
@@ -819,7 +1023,7 @@
     </a>
 
     <a href="/games/game-multiplechoice-2-1775283609389/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">🔘</span></div>
+      <img src="https://examel.com/thumbnails/previews/game-multiplechoice-2-1775283609389-p1.png" alt="Multiple Choice — animals" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · Multiple Choice</div>
         <h3>Multiple Choice — animals</h3>
@@ -829,7 +1033,7 @@
     </a>
 
     <a href="/games/game-multiplechoice-2-1775283606635/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">🔘</span></div>
+      <img src="https://examel.com/thumbnails/previews/game-multiplechoice-2-1775283606635-p1.png" alt="Multiple Choice — animals" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · Multiple Choice</div>
         <h3>Multiple Choice — animals</h3>
@@ -839,7 +1043,7 @@
     </a>
 
     <a href="/games/game-fillinblank-7-1775283396190/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">✏️</span></div>
+      <img src="https://examel.com/thumbnails/previews/game-fillinblank-7-1775283396190-p1.png" alt="Fill-in-Blank — space" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · Fill in the Blank</div>
         <h3>Fill-in-Blank — space</h3>
@@ -849,7 +1053,7 @@
     </a>
 
     <a href="/games/game-fillinblank-1-1775283393467/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">✏️</span></div>
+      <img src="https://examel.com/thumbnails/previews/game-fillinblank-1-1775283393467-p1.png" alt="Fill-in-Blank — space" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · Fill in the Blank</div>
         <h3>Fill-in-Blank — space</h3>
@@ -859,7 +1063,7 @@
     </a>
 
     <a href="/games/game-fillinblank-5-1775283390721/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#0891B218 0%,#0891B208 100%);border-top:4px solid #0891B2"><span style="font-size:32px;">✏️</span></div>
+      <img src="https://examel.com/thumbnails/previews/game-fillinblank-5-1775283390721-p1.png" alt="Fill-in-Blank — geography" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#0891B2">Social_studies · Fill in the Blank</div>
         <h3>Fill-in-Blank — geography</h3>
@@ -869,7 +1073,7 @@
     </a>
 
     <a href="/games/game-fillinblank-1-1775283387902/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">✏️</span></div>
+      <img src="https://examel.com/thumbnails/previews/game-fillinblank-1-1775283387902-p1.png" alt="Fill-in-Blank — animals" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · Fill in the Blank</div>
         <h3>Fill-in-Blank — animals</h3>
@@ -879,7 +1083,7 @@
     </a>
 
     <a href="/games/game-fillinblank-1-1775283385108/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">✏️</span></div>
+      <img src="https://examel.com/thumbnails/previews/game-fillinblank-1-1775283385108-p1.png" alt="Fill-in-Blank — animals" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · Fill in the Blank</div>
         <h3>Fill-in-Blank — animals</h3>
@@ -889,7 +1093,7 @@
     </a>
 
     <a href="/games/game-truefalse-5-1775283086905/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">✅</span></div>
+      <img src="https://examel.com/thumbnails/previews/game-truefalse-5-1775283086905-p1.png" alt="True/False — space" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · True / False</div>
         <h3>True/False — space</h3>
@@ -899,7 +1103,7 @@
     </a>
 
     <a href="/games/game-truefalse-6-1775283084193/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">✅</span></div>
+      <img src="https://examel.com/thumbnails/previews/game-truefalse-6-1775283084193-p1.png" alt="True/False — space" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · True / False</div>
         <h3>True/False — space</h3>
@@ -909,7 +1113,7 @@
     </a>
 
     <a href="/games/game-truefalse-4-1775283081459/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">✅</span></div>
+      <img src="https://examel.com/thumbnails/previews/game-truefalse-4-1775283081459-p1.png" alt="True/False — jungle" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · True / False</div>
         <h3>True/False — jungle</h3>
@@ -919,7 +1123,7 @@
     </a>
 
     <a href="/games/game-truefalse-8-1775283078680/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#0891B218 0%,#0891B208 100%);border-top:4px solid #0891B2"><span style="font-size:32px;">✅</span></div>
+      <img src="https://examel.com/thumbnails/previews/game-truefalse-8-1775283078680-p1.png" alt="True/False — geography" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#0891B2">Social_studies · True / False</div>
         <h3>True/False — geography</h3>
@@ -929,7 +1133,7 @@
     </a>
 
     <a href="/games/game-truefalse-3-1775283075895/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">✅</span></div>
+      <img src="https://examel.com/thumbnails/previews/game-truefalse-3-1775283075895-p1.png" alt="True/False — space" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · True / False</div>
         <h3>True/False — space</h3>
@@ -939,7 +1143,7 @@
     </a>
 
     <a href="/games/game-matching-4-1775204205560/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">🔗</span></div>
+      <img src="https://examel.com/thumbnails/previews/game-matching-4-1775204205560-p1.png" alt="Matching — space" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · Matching</div>
         <h3>Matching — space</h3>
@@ -989,7 +1193,7 @@
     </a>
 
     <a href="/games/game-multiplechoice-6-1775203675563/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">🔘</span></div>
+      <img src="https://examel.com/thumbnails/previews/game-multiplechoice-6-1775203675563-p1.png" alt="Multiple Choice — human body" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · Multiple Choice</div>
         <h3>Multiple Choice — human body</h3>
@@ -999,7 +1203,7 @@
     </a>
 
     <a href="/games/game-matching-3-1775203664270/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#0891B218 0%,#0891B208 100%);border-top:4px solid #0891B2"><span style="font-size:32px;">🔗</span></div>
+      <img src="https://examel.com/thumbnails/previews/game-matching-3-1775203664270-p1.png" alt="Matching — Match the Country to Its Capital" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#0891B2">Social_studies · Matching</div>
         <h3>Matching — Match the Country to Its Capital</h3>
@@ -1019,7 +1223,7 @@
     </a>
 
     <a href="/games/game-truefalse-2-1775203561883/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">✅</span></div>
+      <img src="https://examel.com/thumbnails/previews/game-truefalse-2-1775203561883-p1.png" alt="True/False — space" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · True / False</div>
         <h3>True/False — space</h3>
@@ -1039,7 +1243,7 @@
     </a>
 
     <a href="/games/game-fillinblank-1-1775203407291/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#0891B218 0%,#0891B208 100%);border-top:4px solid #0891B2"><span style="font-size:32px;">✏️</span></div>
+      <img src="https://examel.com/thumbnails/previews/game-fillinblank-1-1775203407291-p1.png" alt="Fill-in-Blank — geography" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#0891B2">Social_studies · Fill in the Blank</div>
         <h3>Fill-in-Blank — geography</h3>
@@ -1079,7 +1283,7 @@
     </a>
 
     <a href="/games/game-truefalse-7-1775203037987/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">✅</span></div>
+      <img src="https://examel.com/thumbnails/previews/game-truefalse-7-1775203037987-p1.png" alt="True/False — human body" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · True / False</div>
         <h3>True/False — human body</h3>
@@ -1089,7 +1293,7 @@
     </a>
 
     <a href="/games/game-truefalse-2-1775202979476/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">✅</span></div>
+      <img src="https://examel.com/thumbnails/previews/game-truefalse-2-1775202979476-p1.png" alt="True/False — human body" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · True / False</div>
         <h3>True/False — human body</h3>
@@ -1119,7 +1323,7 @@
     </a>
 
     <a href="/games/game-matching-2-1775202856787/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">🔗</span></div>
+      <img src="https://examel.com/thumbnails/previews/game-matching-2-1775202856787-p1.png" alt="Matching — space" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · Matching</div>
         <h3>Matching — space</h3>
@@ -1309,7 +1513,7 @@
     </a>
 
     <a href="/games/game-oddoneout-2-1775201709056/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">🎯</span></div>
+      <img src="https://examel.com/thumbnails/previews/game-oddoneout-2-1775201709056-p1.png" alt="Odd One Out — space" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · Odd One Out</div>
         <h3>Odd One Out — space</h3>
@@ -1369,7 +1573,7 @@
     </a>
 
     <a href="/games/game-truefalse-5-1775201391765/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">✅</span></div>
+      <img src="https://examel.com/thumbnails/previews/game-truefalse-5-1775201391765-p1.png" alt="True/False — space" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · True / False</div>
         <h3>True/False — space</h3>
@@ -1399,7 +1603,7 @@
     </a>
 
     <a href="/games/game-fillinblank-3-1775201219338/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">✏️</span></div>
+      <img src="https://examel.com/thumbnails/previews/game-fillinblank-3-1775201219338-p1.png" alt="Fill-in-Blank — space" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · Fill in the Blank</div>
         <h3>Fill-in-Blank — space</h3>
@@ -1459,7 +1663,7 @@
     </a>
 
     <a href="/games/game-matching-3-1775200039174/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#0891B218 0%,#0891B208 100%);border-top:4px solid #0891B2"><span style="font-size:32px;">🔗</span></div>
+      <img src="https://examel.com/thumbnails/previews/game-matching-3-1775200039174-p1.png" alt="Matching — Match the Country to Its Capital" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#0891B2">Social_studies · Matching</div>
         <h3>Matching — Match the Country to Its Capital</h3>
@@ -2149,7 +2353,7 @@
     </a>
 
     <a href="/games/game-oddoneout-2-1775115938838/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">🎯</span></div>
+      <img src="https://examel.com/thumbnails/previews/game-oddoneout-2-1775115938838-p1.png" alt="Odd One Out — health" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · Odd One Out</div>
         <h3>Odd One Out — health</h3>
@@ -2219,7 +2423,7 @@
     </a>
 
     <a href="/games/game-matching-4-1775115188901/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">🔗</span></div>
+      <img src="https://examel.com/thumbnails/previews/game-matching-4-1775115188901-p1.png" alt="Matching — space" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · Matching</div>
         <h3>Matching — space</h3>
@@ -2239,7 +2443,7 @@
     </a>
 
     <a href="/games/game-matching-7-1775115129847/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">🔗</span></div>
+      <img src="https://examel.com/thumbnails/previews/game-matching-7-1775115129847-p1.png" alt="Matching — space" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · Matching</div>
         <h3>Matching — space</h3>
@@ -2249,7 +2453,7 @@
     </a>
 
     <a href="/games/game-fillinblank-1-1775115116652/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">✏️</span></div>
+      <img src="https://examel.com/thumbnails/previews/game-fillinblank-1-1775115116652-p1.png" alt="Fill-in-Blank — space" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · Fill in the Blank</div>
         <h3>Fill-in-Blank — space</h3>
@@ -2269,7 +2473,7 @@
     </a>
 
     <a href="/games/game-fillinblank-4-1775114831925/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">✏️</span></div>
+      <img src="https://examel.com/thumbnails/previews/game-fillinblank-4-1775114831925-p1.png" alt="Fill-in-Blank — space" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · Fill in the Blank</div>
         <h3>Fill-in-Blank — space</h3>
@@ -2309,7 +2513,7 @@
     </a>
 
     <a href="/games/game-fillinblank-1-1775114453750/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">✏️</span></div>
+      <img src="https://examel.com/thumbnails/previews/game-fillinblank-1-1775114453750-p1.png" alt="Fill-in-Blank — animals" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · Fill in the Blank</div>
         <h3>Fill-in-Blank — animals</h3>
@@ -2319,7 +2523,7 @@
     </a>
 
     <a href="/games/game-matching-2-1775114444768/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">🔗</span></div>
+      <img src="https://examel.com/thumbnails/previews/game-matching-2-1775114444768-p1.png" alt="Matching — space" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · Matching</div>
         <h3>Matching — space</h3>
@@ -2329,7 +2533,7 @@
     </a>
 
     <a href="/games/game-matching-1-1775114360302/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">🔗</span></div>
+      <img src="https://examel.com/thumbnails/previews/game-matching-1-1775114360302-p1.png" alt="Matching — space" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · Matching</div>
         <h3>Matching — space</h3>
@@ -2379,7 +2583,7 @@
     </a>
 
     <a href="/games/game-matching-2-1775114109097/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">🔗</span></div>
+      <img src="https://examel.com/thumbnails/previews/game-matching-2-1775114109097-p1.png" alt="Matching — plants" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · Matching</div>
         <h3>Matching — plants</h3>
@@ -2399,7 +2603,7 @@
     </a>
 
     <a href="/games/game-matching-2-1775112369614/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:32px;">🔗</span></div>
+      <img src="https://examel.com/thumbnails/previews/game-matching-2-1775112369614-p1.png" alt="Matching — animals" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · Matching</div>
         <h3>Matching — animals</h3>

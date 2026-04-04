@@ -60,21 +60,21 @@ function buildContentBlock(ws) {
     let h = '<div style="background:white;border-radius:12px;padding:24px;margin-bottom:20px;">';
     
     if (p.learning_objective) {
-      h += `<div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#6C5CE7;margin-bottom:8px;font-family:Outfit,sans-serif;">Learning Objective</div>`;
+      h += `<div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#4A3BBF;margin-bottom:8px;font-family:Outfit,sans-serif;">Learning Objective</div>`;
       h += `<p style="font-size:15px;color:#3D3347;line-height:1.8;margin-bottom:16px;">${p.learning_objective}</p>`;
     }
     if (p.story_intro) {
-      h += `<div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#6C5CE7;margin-bottom:8px;font-family:Outfit,sans-serif;">About This Activity</div>`;
+      h += `<div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#4A3BBF;margin-bottom:8px;font-family:Outfit,sans-serif;">About This Activity</div>`;
       h += `<p style="font-size:15px;color:#3D3347;line-height:1.8;font-style:italic;margin-bottom:16px;">${p.story_intro}</p>`;
     }
     if (p.teacher_note) {
-      h += `<div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#6C5CE7;margin-bottom:8px;font-family:Outfit,sans-serif;">Teacher Tip</div>`;
+      h += `<div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#4A3BBF;margin-bottom:8px;font-family:Outfit,sans-serif;">Teacher Tip</div>`;
       h += `<p style="font-size:15px;color:#3D3347;line-height:1.8;margin-bottom:16px;">${p.teacher_note}</p>`;
     }
     if (p.questions && p.questions.length > 0) {
       const shown = p.questions.slice(0, 3);
       const remaining = p.questions.length - shown.length;
-      h += `<div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#6C5CE7;margin-bottom:8px;font-family:Outfit,sans-serif;">Sample Questions</div>`;
+      h += `<div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#4A3BBF;margin-bottom:8px;font-family:Outfit,sans-serif;">Sample Questions</div>`;
       h += '<ul style="font-size:14px;color:#4A3F55;line-height:1.8;padding-left:20px;margin-bottom:8px;">';
       shown.forEach(q => { h += `<li>${q.question || q}</li>`; });
       h += '</ul>';

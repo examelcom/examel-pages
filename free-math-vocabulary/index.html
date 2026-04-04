@@ -29,10 +29,14 @@
     .site-header nav{display:flex;align-items:center;gap:2px;}
     .site-header nav a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:13px;font-weight:600;padding:7px 12px;border-radius:8px;transition:all 0.2s;}
     .site-header nav a:hover{color:white;background:rgba(108,92,231,0.2);}
-    .breadcrumb{max-width:860px;margin:18px auto 0;padding:0 20px;font-size:15px;color:#A89FAE;display:flex;align-items:center;flex-wrap:wrap;gap:4px;}
-    .breadcrumb a{color:#6C5CE7;text-decoration:none;font-weight:500;}
-    .breadcrumb a:hover{opacity:0.7;}
-    .breadcrumb .sep{opacity:0.3;margin:0 2px;}
+    :root{--color-brand:#6C5CE7;--color-brand-text:#4A3BBF;}
+    .breadcrumb{max-width:860px;margin:18px auto 0;padding:0 20px;font-size:14px;color:#A89FAE;}
+    .breadcrumb ol{list-style:none;padding:0;margin:0;display:flex;align-items:center;flex-wrap:wrap;gap:0;}
+    .breadcrumb li{display:flex;align-items:center;}
+    .breadcrumb a{color:var(--color-brand-text);text-decoration:none;font-weight:500;}
+    .breadcrumb a:hover{text-decoration:underline;opacity:0.85;}
+    .breadcrumb [aria-current=page]{color:#6B6475;font-weight:400;}
+    .breadcrumb .sep{opacity:0.35;margin:0 6px;font-size:12px;}
     .hero{padding:64px 20px 56px;text-align:center;background:#FAF8F3;}
     .hero h1{font-size:clamp(26px,4vw,44px);margin-bottom:14px;color:#1A1420;font-weight:800;letter-spacing:-1.5px;line-height:1.15;}
     .hero h1 span{color:#6C5CE7;}
@@ -49,7 +53,7 @@
     .ws-card-badge{display:inline-block;color:white;padding:3px 10px;border-radius:100px;font-size:11px;font-weight:700;margin-bottom:10px;}
     .ws-card h3{font-size:14px;margin-bottom:5px;line-height:1.5;font-weight:700;color:#1A1420;}
     .ws-card p{font-size:12px;color:#A89FAE;margin-bottom:12px;line-height:1.5;}
-    .ws-card-btn{font-size:12px;font-weight:700;color:#6C5CE7;}
+    .ws-card-btn{font-size:12px;font-weight:700;color:#4A3BBF;}
     .hub-grid{max-width:1100px;margin:0 auto;padding:0 20px 64px;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;}
     .hub-card{background:white;border-radius:24px;padding:36px 20px;text-decoration:none;color:#1A1420;text-align:center;transition:transform 0.25s cubic-bezier(0.34,1.56,0.64,1),box-shadow 0.25s;box-shadow:0 2px 8px rgba(0,0,0,0.04),0 8px 24px rgba(0,0,0,0.06);border:1px solid #EDE8DF;}
     .hub-card:hover{transform:translateY(-5px);box-shadow:0 8px 32px rgba(108,92,231,0.14),0 2px 8px rgba(0,0,0,0.04);}
@@ -64,7 +68,7 @@
     .footer-col{display:flex;flex-direction:column;gap:10px;min-width:130px;}
     .footer-heading{font-size:10px;font-weight:800;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:2px;margin-bottom:6px;}
     .site-footer a{color:rgba(255,255,255,0.5);text-decoration:none;font-size:15px;transition:color 0.2s;font-weight:500;}
-    .site-footer a:hover{color:#6C5CE7;}
+    .site-footer a:hover{color:#4A3BBF;}
     .footer-bottom{text-align:center;font-size:14px;color:rgba(255,255,255,0.2);border-top:1px solid rgba(255,255,255,0.07);padding-top:24px;}
     .mobile-menu-btn{display:none;background:none;border:none;cursor:pointer;padding:8px;border-radius:8px;}
     /* ── SEARCH ── */
@@ -407,13 +411,31 @@
   <div style="background:#1C1526;border-top:5px solid #7C3AED;padding:0 20px;position:relative;overflow:hidden;">
     <div style="max-width:1100px;margin:0 auto;padding:48px 180px 44px 48px;position:relative;z-index:2;">
       <h1 style="font-size:clamp(24px,3.5vw,42px);font-weight:900;color:white;letter-spacing:-1.5px;line-height:1.1;margin-bottom:12px;font-family:'Outfit',sans-serif;">Free <span style="color:#7C3AED">Math Vocabulary</span> Worksheets</h1>
-      <p style="font-size:15px;color:rgba(255,255,255,0.5);max-width:500px;line-height:1.75;margin-bottom:20px;">72+ free printable math vocabulary match worksheets for Grades 1–6. Match words to definitions. Answer keys included.</p>
+      <p style="font-size:15px;color:rgba(255,255,255,0.5);max-width:500px;line-height:1.75;margin-bottom:20px;">74+ free printable math vocabulary match worksheets for Grades 1–6. Match words to definitions. Answer keys included.</p>
     </div>
     <div style="position:absolute;right:60px;bottom:-10px;opacity:0.92;"><svg width="110" height="130" viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg"><ellipse cx="60" cy="105" rx="36" ry="8" fill="rgba(108,92,231,0.12)"/><rect x="22" y="72" width="76" height="52" rx="16" fill="#6C5CE7"/><path d="M16 96 Q60 86 104 96 L108 124 Q60 134 12 124 Z" fill="#7C6CF7"/><ellipse cx="34" cy="120" rx="14" ry="8" fill="#5A4BD1"/><ellipse cx="86" cy="120" rx="14" ry="8" fill="#5A4BD1"/><ellipse cx="60" cy="68" rx="38" ry="42" fill="#C8874A"/><ellipse cx="60" cy="32" rx="40" ry="22" fill="#1A0A00"/><circle cx="38" cy="36" r="14" fill="#1A0A00"/><circle cx="60" cy="28" r="16" fill="#1A0A00"/><circle cx="82" cy="36" r="14" fill="#1A0A00"/><path d="M26 42 Q20 62 24 82" fill="#1A0A00"/><path d="M94 42 Q100 62 96 82" fill="#1A0A00"/><path d="M80,30 Q90,20 96,28 Q90,26 88,32 Z" fill="#FF85A1"/><path d="M96,28 Q106,20 110,30 Q104,28 102,34 Z" fill="#FF6B8E"/><circle cx="96" cy="30" r="6" fill="#FF85A1"/><circle cx="48" cy="66" r="14" fill="white"/><circle cx="72" cy="66" r="14" fill="white"/><circle cx="49" cy="67" r="10" fill="#3D1F00"/><circle cx="73" cy="67" r="10" fill="#3D1F00"/><circle cx="53" cy="62" r="5" fill="white"/><circle cx="77" cy="62" r="5" fill="white"/><circle cx="49" cy="68" r="3.5" fill="#0A0500"/><circle cx="73" cy="68" r="3.5" fill="#0A0500"/><path d="M38 54 Q48 48 58 53" stroke="#1A0A00" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M62 53 Q72 48 82 54" stroke="#1A0A00" stroke-width="2.5" fill="none" stroke-linecap="round"/><circle cx="60" cy="78" r="2.5" fill="#A05830" opacity="0.5"/><circle cx="66" cy="78" r="2.5" fill="#A05830" opacity="0.5"/><path d="M46 88 Q60 100 74 88" stroke="#C05030" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="40" cy="80" r="10" fill="#FF9999" opacity="0.2"/><circle cx="80" cy="80" r="10" fill="#FF9999" opacity="0.2"/></svg></div>
   </div>
   <div class="grid">
+    <a href="/vocab-match/math/grade-1/vocab-match-math-grade1-word-problems-genie-standard/" class="ws-card">
+      <img src="https://examel.com/thumbnails/previews/vocab-match-math-grade1-word-problems-genie-standard-p1.png" alt="Maya's Genie Wish Math Vocabulary Match" class="ws-card-thumb" loading="lazy">
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 1</div>
+        <h3>Maya's Genie Wish Math Vocabulary Match</h3>
+        <p>Word Problems · Genie theme</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+    <a href="/vocab-match/math/grade-1/vocab-match-math-grade1-comparing-numbers-pirates-standard/" class="ws-card">
+      <img src="https://examel.com/thumbnails/previews/vocab-match-math-grade1-comparing-numbers-pirates-standard-p1.png" alt="Maya's Pirate Treasure: Comparing Numbers Adventure" class="ws-card-thumb" loading="lazy">
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 1</div>
+        <h3>Maya's Pirate Treasure: Comparing Numbers Adventure</h3>
+        <p>Comparing Numbers · Pirates theme</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
     <a href="/vocab-match/math/grade-1/vocab-match-math-grade1-comparing-numbers-midnight-sun-challenge/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#7C3AED18 0%,#7C3AED08 100%);border-top:4px solid #7C3AED"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#7C3AED;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/vocab-match-math-grade1-comparing-numbers-midnight-sun-challenge-p1.png" alt="Maya Counts Under the Midnight Sun" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 1</div>
         <h3>Maya Counts Under the Midnight Sun</h3>
@@ -422,7 +444,7 @@
       </div>
     </a>
     <a href="/vocab-match/math/grade-4/vocab-match-math-grade4-word-problems-card-games-standard/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#7C3AED18 0%,#7C3AED08 100%);border-top:4px solid #7C3AED"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#7C3AED;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/vocab-match-math-grade4-word-problems-card-games-standard-p1.png" alt="Maya's Card Game Math Vocabulary Challenge" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 4</div>
         <h3>Maya's Card Game Math Vocabulary Challenge</h3>
@@ -431,7 +453,7 @@
       </div>
     </a>
     <a href="/vocab-match/math/grade-2/vocab-match-math-grade2-word-problems-first-day-of-summer-standard/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#7C3AED18 0%,#7C3AED08 100%);border-top:4px solid #7C3AED"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#7C3AED;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/vocab-match-math-grade2-word-problems-first-day-of-summer-standard-p1.png" alt="Maya's First Day of Summer Math Words" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 2</div>
         <h3>Maya's First Day of Summer Math Words</h3>
@@ -440,7 +462,7 @@
       </div>
     </a>
     <a href="/vocab-match/math/grade-5/vocab-match-math-grade5-data-graphs-lunar-new-year-standard/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#7C3AED18 0%,#7C3AED08 100%);border-top:4px solid #7C3AED"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#7C3AED;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/vocab-match-math-grade5-data-graphs-lunar-new-year-standard-p1.png" alt="Maya's Lunar New Year Data Festival" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 5</div>
         <h3>Maya's Lunar New Year Data Festival</h3>
@@ -449,7 +471,7 @@
       </div>
     </a>
     <a href="/vocab-match/math/grade-3/vocab-match-math-grade3-multiplication-dinosaurs-3oaa1/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#7C3AED18 0%,#7C3AED08 100%);border-top:4px solid #7C3AED"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#7C3AED;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/vocab-match-math-grade3-multiplication-dinosaurs-3OAA1-p1.png" alt="Maya's Mighty Dinosaur Multiplication Adventure" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 3</div>
         <h3>Maya's Mighty Dinosaur Multiplication Adventure</h3>
@@ -458,7 +480,7 @@
       </div>
     </a>
     <a href="/vocab-match/math/grade-5/vocab-match-math-grade5-patterns-circus-standard/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#7C3AED18 0%,#7C3AED08 100%);border-top:4px solid #7C3AED"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#7C3AED;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/vocab-match-math-grade5-patterns-circus-standard-p1.png" alt="Maya's Big Top Patterns Vocabulary Circus" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 5</div>
         <h3>Maya's Big Top Patterns Vocabulary Circus</h3>
@@ -467,7 +489,7 @@
       </div>
     </a>
     <a href="/vocab-match/math/grade-5/vocab-match-math-grade5-data-graphs-geography-class-challenge/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#7C3AED18 0%,#7C3AED08 100%);border-top:4px solid #7C3AED"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#7C3AED;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/vocab-match-math-grade5-data-graphs-geography-class-challenge-p1.png" alt="Maya's Geography Class Data and Graphs Challenge" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 5</div>
         <h3>Maya's Geography Class Data and Graphs Challenge</h3>
@@ -476,7 +498,7 @@
       </div>
     </a>
     <a href="/vocab-match/math/grade-1/vocab-match-math-grade1-counting-musicians-standard/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#7C3AED18 0%,#7C3AED08 100%);border-top:4px solid #7C3AED"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#7C3AED;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/vocab-match-math-grade1-counting-musicians-standard-p1.png" alt="Maya Counts with Musicians!" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 1</div>
         <h3>Maya Counts with Musicians!</h3>
@@ -485,7 +507,7 @@
       </div>
     </a>
     <a href="/vocab-match/math/grade-2/vocab-match-math-grade2-money-valentines-day-challenge/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#7C3AED18 0%,#7C3AED08 100%);border-top:4px solid #7C3AED"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#7C3AED;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/vocab-match-math-grade2-money-valentines-day-challenge-p1.png" alt="Maya's Valentine's Day Money Match Challenge" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 2</div>
         <h3>Maya's Valentine's Day Money Match Challenge</h3>
@@ -494,29 +516,11 @@
       </div>
     </a>
     <a href="/vocab-match/math/grade-1/vocab-match-math-grade1-word-problems-puppet-show-standard/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#7C3AED18 0%,#7C3AED08 100%);border-top:4px solid #7C3AED"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#7C3AED;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/vocab-match-math-grade1-word-problems-puppet-show-standard-p1.png" alt="Maya's Puppet Show Math Word Problems" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 1</div>
         <h3>Maya's Puppet Show Math Word Problems</h3>
         <p>Word Problems · Puppet Show theme</p>
-        <span class="ws-card-btn">View Worksheet →</span>
-      </div>
-    </a>
-    <a href="/vocab-match/math/grade-1/vocab-match-math-grade1-shapes-pirates-standard/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#7C3AED18 0%,#7C3AED08 100%);border-top:4px solid #7C3AED"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#7C3AED;letter-spacing:-1px">Math</span></div>
-      <div class="ws-card-body">
-        <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 1</div>
-        <h3>Maya's Pirate Ship Shape Treasure Hunt</h3>
-        <p>Shapes · Pirates theme</p>
-        <span class="ws-card-btn">View Worksheet →</span>
-      </div>
-    </a>
-    <a href="/vocab-match/math/grade-4/vocab-match-math-grade4-symmetry-christmas-standard/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#7C3AED18 0%,#7C3AED08 100%);border-top:4px solid #7C3AED"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#7C3AED;letter-spacing:-1px">Math</span></div>
-      <div class="ws-card-body">
-        <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 4</div>
-        <h3>Maya's Christmas Symmetry Vocabulary Match</h3>
-        <p>Symmetry · Christmas theme</p>
         <span class="ws-card-btn">View Worksheet →</span>
       </div>
     </a></div>

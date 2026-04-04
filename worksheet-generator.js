@@ -121,6 +121,9 @@ function generateWorksheetPages(worksheets, sharedCSS, siteHeader, siteFooter, h
     .share-icons{display:flex;gap:8px;}
     .share-icon{width:36px;height:36px;border-radius:50%;border:1.5px solid #EDE8DF;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:15px;transition:all 0.2s;color:#6B6475;}
     .share-icon:hover{border-color:#6C5CE7;background:#F4F1FF;transform:scale(1.1);}
+.pin-it-btn{display:inline-flex;align-items:center;gap:7px;background:#E60023;color:white;font-size:13px;font-weight:700;padding:9px 18px;border-radius:100px;text-decoration:none;transition:all 0.2s;letter-spacing:0.2px;}
+.pin-it-btn:hover{background:#c0001d;transform:translateY(-1px);box-shadow:0 4px 14px rgba(230,0,35,0.3);}
+.pin-it-btn svg{flex-shrink:0;}
     .trust-strip{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;padding-top:14px;}
     .trust-item{font-size:12px;color:#059669;font-weight:700;display:flex;align-items:center;gap:5px;}
     .info-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:28px;}
@@ -151,7 +154,7 @@ function generateWorksheetPages(worksheets, sharedCSS, siteHeader, siteFooter, h
     @keyframes confetti-fall{0%{transform:translateY(-20px) rotate(0deg);opacity:1;}100%{transform:translateY(80px) rotate(360deg);opacity:0;}}
     .confetti-piece{position:absolute;width:8px;height:8px;border-radius:2px;pointer-events:none;animation:confetti-fall 0.8s ease-out forwards;}
     .breadcrumb{max-width:860px;margin:18px auto 0;padding:0 20px;font-size:15px;color:#A89FAE;display:flex;align-items:center;flex-wrap:wrap;gap:4px;}
-    .breadcrumb a{color:#6C5CE7;text-decoration:none;font-weight:500;}
+    .breadcrumb a{color:var(--color-brand-text);text-decoration:none;font-weight:500;}
     .breadcrumb .sep{opacity:0.3;margin:0 2px;}
     @media(max-width:640px){
       .preview-desk-images{grid-template-columns:1fr;}
@@ -174,15 +177,18 @@ function generateWorksheetPages(worksheets, sharedCSS, siteHeader, siteFooter, h
     }
   </style>
 ${buildAnalytics()}
+<script async defer src="//assets.pinterest.com/js/pinit.js"></script>
 </head>
 <body>
   ${siteHeader}
-  <div class="breadcrumb">
-    <a href="https://examel.com">Home</a><span class="sep">›</span>
-    <a href="${subjectHubUrl}">Free ${capitalize(ws.subject)} Worksheets</a><span class="sep">›</span>
-    <a href="${gradeHubUrl}">Grade ${ws.grade}</a><span class="sep">›</span>
-    <span>${ws.title}</span>
-  </div>
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="https://examel.com">Home</a></li>
+      <li><span class="sep" aria-hidden="true">›</span><a href="${subjectHubUrl}">Free ${capitalize(ws.subject)} Worksheets</a></li>
+      <li><span class="sep" aria-hidden="true">›</span><a href="${gradeHubUrl}">Grade ${ws.grade}</a></li>
+      <li><span class="sep" aria-hidden="true">›</span><span aria-current="page">${ws.title}</span></li>
+    </ol>
+  </nav>
 
   <div class="ws-hero">
     <div class="ws-hero-inner">
@@ -235,12 +241,14 @@ ${buildAnalytics()}
       </div>
       <hr class="share-divider">
       <div class="share-row">
-        <span class="share-label">Share</span>
+        <a data-pin-do="buttonPin" data-pin-url="${canonicalUrl}" data-pin-media="${ws.pinterest_image_url||ws.preview_image_url||('https://examel.com/thumbnails/'+ws.slug+'.png')}" data-pin-description="${ws.title+' — Free printable Grade '+ws.grade+' '+ws.subject+' worksheet with answer key. #freeworksheets #teachersofinstagram #homeschool #'+ws.subject+'worksheet'}" href="https://pinterest.com/pin/create/button/?url=${canonicalUrl}&media=${encodeURIComponent(ws.pinterest_image_url||ws.preview_image_url||('https://examel.com/thumbnails/'+ws.slug+'.png'))}&description=${encodeURIComponent(ws.title+' — Free printable Grade '+ws.grade+' '+ws.subject+' worksheet with answer key. #freeworksheets #teachersofinstagram #homeschool #'+ws.subject+'worksheet')}" target="_blank" rel="noopener" class="pin-it-btn" aria-label="Save to Pinterest" onclick="gtag&&gtag('event','pinterest_save',{worksheet_slug:'${ws.slug}',grade:${ws.grade},subject:'${ws.subject}'})">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+          Save
+        </a>
         <div class="share-icons">
-          <a href="https://pinterest.com/pin/create/button/?url=${canonicalUrl}&media=${encodeURIComponent(ws.pinterest_image_url||ws.preview_image_url||'')}&description=${encodeURIComponent(ws.title+' — Free Grade '+ws.grade+' '+ws.subject+' worksheet #freeworksheets #homeschool')}" target="_blank" class="share-icon" title="Pinterest">📌</a>
-          <a href="https://www.facebook.com/sharer/sharer.php?u=${canonicalUrl}" target="_blank" class="share-icon" title="Facebook">📘</a>
-          <a href="https://twitter.com/intent/tweet?text=${encodeURIComponent('Free Grade '+ws.grade+' '+ws.subject+' worksheet: '+ws.title)}&url=${canonicalUrl}" target="_blank" class="share-icon" title="Twitter">🐦</a>
-          <a href="mailto:?subject=${encodeURIComponent('Free worksheet: '+ws.title)}&body=${encodeURIComponent('Check out this free worksheet: '+canonicalUrl)}" class="share-icon" title="Email">📧</a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u=${canonicalUrl}" target="_blank" rel="noopener" class="share-icon" title="Share on Facebook" aria-label="Share on Facebook">📘</a>
+          <a href="https://twitter.com/intent/tweet?text=${encodeURIComponent('Free Grade '+ws.grade+' '+ws.subject+' worksheet: '+ws.title)}&url=${canonicalUrl}" target="_blank" rel="noopener" class="share-icon" title="Share on Twitter" aria-label="Share on Twitter">🐦</a>
+          <a href="mailto:?subject=${encodeURIComponent('Free worksheet: '+ws.title)}&body=${encodeURIComponent('Check out this free worksheet: '+canonicalUrl)}" class="share-icon" title="Share by Email" aria-label="Share by Email">📧</a>
         </div>
       </div>
       <div class="trust-strip">

@@ -29,10 +29,14 @@
     .site-header nav{display:flex;align-items:center;gap:2px;}
     .site-header nav a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:13px;font-weight:600;padding:7px 12px;border-radius:8px;transition:all 0.2s;}
     .site-header nav a:hover{color:white;background:rgba(108,92,231,0.2);}
-    .breadcrumb{max-width:860px;margin:18px auto 0;padding:0 20px;font-size:15px;color:#A89FAE;display:flex;align-items:center;flex-wrap:wrap;gap:4px;}
-    .breadcrumb a{color:#6C5CE7;text-decoration:none;font-weight:500;}
-    .breadcrumb a:hover{opacity:0.7;}
-    .breadcrumb .sep{opacity:0.3;margin:0 2px;}
+    :root{--color-brand:#6C5CE7;--color-brand-text:#4A3BBF;}
+    .breadcrumb{max-width:860px;margin:18px auto 0;padding:0 20px;font-size:14px;color:#A89FAE;}
+    .breadcrumb ol{list-style:none;padding:0;margin:0;display:flex;align-items:center;flex-wrap:wrap;gap:0;}
+    .breadcrumb li{display:flex;align-items:center;}
+    .breadcrumb a{color:var(--color-brand-text);text-decoration:none;font-weight:500;}
+    .breadcrumb a:hover{text-decoration:underline;opacity:0.85;}
+    .breadcrumb [aria-current=page]{color:#6B6475;font-weight:400;}
+    .breadcrumb .sep{opacity:0.35;margin:0 6px;font-size:12px;}
     .hero{padding:64px 20px 56px;text-align:center;background:#FAF8F3;}
     .hero h1{font-size:clamp(26px,4vw,44px);margin-bottom:14px;color:#1A1420;font-weight:800;letter-spacing:-1.5px;line-height:1.15;}
     .hero h1 span{color:#6C5CE7;}
@@ -49,7 +53,7 @@
     .ws-card-badge{display:inline-block;color:white;padding:3px 10px;border-radius:100px;font-size:11px;font-weight:700;margin-bottom:10px;}
     .ws-card h3{font-size:14px;margin-bottom:5px;line-height:1.5;font-weight:700;color:#1A1420;}
     .ws-card p{font-size:12px;color:#A89FAE;margin-bottom:12px;line-height:1.5;}
-    .ws-card-btn{font-size:12px;font-weight:700;color:#6C5CE7;}
+    .ws-card-btn{font-size:12px;font-weight:700;color:#4A3BBF;}
     .hub-grid{max-width:1100px;margin:0 auto;padding:0 20px 64px;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;}
     .hub-card{background:white;border-radius:24px;padding:36px 20px;text-decoration:none;color:#1A1420;text-align:center;transition:transform 0.25s cubic-bezier(0.34,1.56,0.64,1),box-shadow 0.25s;box-shadow:0 2px 8px rgba(0,0,0,0.04),0 8px 24px rgba(0,0,0,0.06);border:1px solid #EDE8DF;}
     .hub-card:hover{transform:translateY(-5px);box-shadow:0 8px 32px rgba(108,92,231,0.14),0 2px 8px rgba(0,0,0,0.04);}
@@ -64,7 +68,7 @@
     .footer-col{display:flex;flex-direction:column;gap:10px;min-width:130px;}
     .footer-heading{font-size:10px;font-weight:800;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:2px;margin-bottom:6px;}
     .site-footer a{color:rgba(255,255,255,0.5);text-decoration:none;font-size:15px;transition:color 0.2s;font-weight:500;}
-    .site-footer a:hover{color:#6C5CE7;}
+    .site-footer a:hover{color:#4A3BBF;}
     .footer-bottom{text-align:center;font-size:14px;color:rgba(255,255,255,0.2);border-top:1px solid rgba(255,255,255,0.07);padding-top:24px;}
     .mobile-menu-btn{display:none;background:none;border:none;cursor:pointer;padding:8px;border-radius:8px;}
     /* ── SEARCH ── */
@@ -407,7 +411,7 @@
   <div style="background:#1C1526;border-top:5px solid #0891B2;padding:0 20px;position:relative;overflow:hidden;">
     <div style="max-width:1100px;margin:0 auto;padding:52px 180px 48px 48px;position:relative;z-index:2;">
       <h1 style="font-size:clamp(28px,4vw,48px);font-weight:900;color:white;letter-spacing:-1.5px;line-height:1.1;margin-bottom:14px;font-family:'Outfit',sans-serif;">Free <span style="color:#0891B2;">Reading Comprehension</span> Passages</h1>
-      <p style="font-size:16px;color:rgba(255,255,255,0.5);max-width:520px;line-height:1.75;margin-bottom:24px;">139+ free printable reading passages for Grades 1–6. Nonfiction passages with 6 comprehension questions and answer keys included.</p>
+      <p style="font-size:16px;color:rgba(255,255,255,0.5);max-width:520px;line-height:1.75;margin-bottom:24px;">143+ free printable reading passages for Grades 1–6. Nonfiction passages with 6 comprehension questions and answer keys included.</p>
     </div>
     <div style="position:absolute;right:60px;bottom:-10px;opacity:0.92;"><svg width="110" height="130" viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg"><ellipse cx="60" cy="105" rx="36" ry="8" fill="rgba(8,145,178,0.12)"/><rect x="22" y="72" width="76" height="52" rx="16" fill="#0891B2"/><ellipse cx="34" cy="120" rx="14" ry="8" fill="#1C1526"/><ellipse cx="86" cy="120" rx="14" ry="8" fill="#1C1526"/><ellipse cx="60" cy="68" rx="40" ry="44" fill="#FDBCB4"/><ellipse cx="60" cy="30" rx="38" ry="22" fill="#6B3A2A"/><ellipse cx="26" cy="52" rx="13" ry="20" fill="#6B3A2A"/><ellipse cx="94" cy="52" rx="13" ry="20" fill="#6B3A2A"/><circle cx="48" cy="66" r="15" fill="none" stroke="#4A3728" stroke-width="3"/><circle cx="72" cy="66" r="15" fill="none" stroke="#4A3728" stroke-width="3"/><path d="M63 66 Q62 64 61 66" stroke="#4A3728" stroke-width="3" fill="none"/><circle cx="48" cy="66" r="10" fill="white"/><circle cx="72" cy="66" r="10" fill="white"/><circle cx="49" cy="67" r="7" fill="#3A2010"/><circle cx="73" cy="67" r="7" fill="#3A2010"/><circle cx="52" cy="63" r="3.5" fill="white"/><circle cx="76" cy="63" r="3.5" fill="white"/><circle cx="49" cy="68" r="2.5" fill="#0A0500"/><circle cx="73" cy="68" r="2.5" fill="#0A0500"/><path d="M50 88 Q60 98 70 88" stroke="#C06050" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="36" cy="78" r="10" fill="#FFB0A0" opacity="0.2"/><circle cx="84" cy="78" r="10" fill="#FFB0A0" opacity="0.2"/></svg></div>
   </div>
@@ -425,28 +429,64 @@
       </a><a href="/free-reading-passages/grade-3/" style="background:white;border-radius:20px;padding:28px 20px;text-decoration:none;color:#1A1420;text-align:center;border:1px solid #EDE8DF;border-top:4px solid #0891B2;display:block;">
         <span style="font-size:36px;margin-bottom:12px;display:block;">📖</span>
         <div style="font-size:22px;font-weight:800;color:#1A1420;margin-bottom:4px;font-family:'Outfit',sans-serif;">Grade 3</div>
-        <div style="font-size:14px;color:#A89FAE;margin-bottom:14px;">29 passages</div>
+        <div style="font-size:14px;color:#A89FAE;margin-bottom:14px;">30 passages</div>
         <div style="font-size:14px;color:#0891B2;font-weight:700;">Browse Grade 3 →</div>
       </a><a href="/free-reading-passages/grade-4/" style="background:white;border-radius:20px;padding:28px 20px;text-decoration:none;color:#1A1420;text-align:center;border:1px solid #EDE8DF;border-top:4px solid #0891B2;display:block;">
         <span style="font-size:36px;margin-bottom:12px;display:block;">📖</span>
         <div style="font-size:22px;font-weight:800;color:#1A1420;margin-bottom:4px;font-family:'Outfit',sans-serif;">Grade 4</div>
-        <div style="font-size:14px;color:#A89FAE;margin-bottom:14px;">25 passages</div>
+        <div style="font-size:14px;color:#A89FAE;margin-bottom:14px;">26 passages</div>
         <div style="font-size:14px;color:#0891B2;font-weight:700;">Browse Grade 4 →</div>
       </a><a href="/free-reading-passages/grade-5/" style="background:white;border-radius:20px;padding:28px 20px;text-decoration:none;color:#1A1420;text-align:center;border:1px solid #EDE8DF;border-top:4px solid #0891B2;display:block;">
         <span style="font-size:36px;margin-bottom:12px;display:block;">📖</span>
         <div style="font-size:22px;font-weight:800;color:#1A1420;margin-bottom:4px;font-family:'Outfit',sans-serif;">Grade 5</div>
-        <div style="font-size:14px;color:#A89FAE;margin-bottom:14px;">32 passages</div>
+        <div style="font-size:14px;color:#A89FAE;margin-bottom:14px;">33 passages</div>
         <div style="font-size:14px;color:#0891B2;font-weight:700;">Browse Grade 5 →</div>
       </a><a href="/free-reading-passages/grade-6/" style="background:white;border-radius:20px;padding:28px 20px;text-decoration:none;color:#1A1420;text-align:center;border:1px solid #EDE8DF;border-top:4px solid #0891B2;display:block;">
         <span style="font-size:36px;margin-bottom:12px;display:block;">📖</span>
         <div style="font-size:22px;font-weight:800;color:#1A1420;margin-bottom:4px;font-family:'Outfit',sans-serif;">Grade 6</div>
-        <div style="font-size:14px;color:#A89FAE;margin-bottom:14px;">18 passages</div>
+        <div style="font-size:14px;color:#A89FAE;margin-bottom:14px;">19 passages</div>
         <div style="font-size:14px;color:#0891B2;font-weight:700;">Browse Grade 6 →</div>
       </a>
   </div>
   <div class="grid">
+    <a href="/reading-passages/grade-3/reading-passage-math-grade3-multiplication-pumpkin-patch-challenge/" class="ws-card">
+      <img src="https://examel.com/thumbnails/previews/reading-passage-math-grade3-multiplication-pumpkin-patch-challenge-p1.png" alt="Maya Counts Pumpkins at the Patch" class="ws-card-thumb" loading="lazy">
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 3</div>
+        <h3>Maya Counts Pumpkins at the Patch</h3>
+        <p>Multiplication · Pumpkin Patch theme</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+    <a href="/reading-passages/grade-5/reading-passage-math-grade5-decimals-music-standard/" class="ws-card">
+      <img src="https://examel.com/thumbnails/previews/reading-passage-math-grade5-decimals-music-standard-p1.png" alt="Maya Finds Place Value in Music" class="ws-card-thumb" loading="lazy">
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 5</div>
+        <h3>Maya Finds Place Value in Music</h3>
+        <p>Decimals · Music theme</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+    <a href="/reading-passages/grade-4/reading-passage-math-grade4-measurement-coding-kids-challenge/" class="ws-card">
+      <img src="https://examel.com/thumbnails/previews/reading-passage-math-grade4-measurement-coding-kids-challenge-p1.png" alt="Maya Codes Robots with Measurement" class="ws-card-thumb" loading="lazy">
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 4</div>
+        <h3>Maya Codes Robots with Measurement</h3>
+        <p>Measurement · Coding Kids theme</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+    <a href="/reading-passages/grade-6/reading-passage-english-grade6-reading-comprehension-animals-and-habitat-standard/" class="ws-card">
+      <img src="https://examel.com/thumbnails/previews/reading-passage-english-grade6-reading-comprehension-animals-and-habitat-standard-p1.png" alt="Leo Discovers How Animals Use Their Habitats" class="ws-card-thumb" loading="lazy">
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#DB2777">English · Grade 6</div>
+        <h3>Leo Discovers How Animals Use Their Habitats</h3>
+        <p>Reading Comprehension · Animals And Habitat theme</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
     <a href="/reading-passages/grade-1/reading-passage-science-grade1-weather-fairy-tales-ngss-k-ess2-1/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#059669;letter-spacing:-1px">Science</span></div>
+      <img src="https://examel.com/thumbnails/previews/reading-passage-science-grade1-weather-fairy-tales-ngss-k-ess2-1-p1.png" alt="Zoe Finds Weather in the Magic Forest" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · Grade 1</div>
         <h3>Zoe Finds Weather in the Magic Forest</h3>
@@ -455,7 +495,7 @@
       </div>
     </a>
     <a href="/reading-passages/grade-4/reading-passage-math-grade4-symmetry-back-to-school-standard/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#7C3AED18 0%,#7C3AED08 100%);border-top:4px solid #7C3AED"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#7C3AED;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/reading-passage-math-grade4-symmetry-back-to-school-standard-p1.png" alt="Maya Finds Symmetry on the First Day" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 4</div>
         <h3>Maya Finds Symmetry on the First Day</h3>
@@ -464,7 +504,7 @@
       </div>
     </a>
     <a href="/reading-passages/grade-3/reading-passage-science-grade3-fossils-coding-standard/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#059669;letter-spacing:-1px">Science</span></div>
+      <img src="https://examel.com/thumbnails/previews/reading-passage-science-grade3-fossils-coding-standard-p1.png" alt="Zoe Codes Her Way to Fossil Clues" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · Grade 3</div>
         <h3>Zoe Codes Her Way to Fossil Clues</h3>
@@ -473,7 +513,7 @@
       </div>
     </a>
     <a href="/reading-passages/grade-3/reading-passage-science-grade3-environments-eco-warriors-beginner/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#059669;letter-spacing:-1px">Science</span></div>
+      <img src="https://examel.com/thumbnails/previews/reading-passage-science-grade3-environments-eco-warriors-beginner-p1.png" alt="Zoe the Eco-Warrior Explores Every Environment" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · Grade 3</div>
         <h3>Zoe the Eco-Warrior Explores Every Environment</h3>
@@ -482,7 +522,7 @@
       </div>
     </a>
     <a href="/reading-passages/grade-6/reading-passage-math-grade6-equations-pirates-beginner/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#7C3AED18 0%,#7C3AED08 100%);border-top:4px solid #7C3AED"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#7C3AED;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/reading-passage-math-grade6-equations-pirates-beginner-p1.png" alt="Maya Solves the Pirate Treasure Equations" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 6</div>
         <h3>Maya Solves the Pirate Treasure Equations</h3>
@@ -491,7 +531,7 @@
       </div>
     </a>
     <a href="/reading-passages/grade-4/reading-passage-science-grade4-renewable-energy-earth-day-standard/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#059669;letter-spacing:-1px">Science</span></div>
+      <img src="https://examel.com/thumbnails/previews/reading-passage-science-grade4-renewable-energy-earth-day-standard-p1.png" alt="Zoe Finds Clean Energy on Earth Day" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · Grade 4</div>
         <h3>Zoe Finds Clean Energy on Earth Day</h3>
@@ -500,7 +540,7 @@
       </div>
     </a>
     <a href="/reading-passages/grade-3/reading-passage-science-grade3-ecosystems-photography-beginner/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#059669;letter-spacing:-1px">Science</span></div>
+      <img src="https://examel.com/thumbnails/previews/reading-passage-science-grade3-ecosystems-photography-beginner-p1.png" alt="Zoe's Camera Finds a Hidden Ecosystem" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · Grade 3</div>
         <h3>Zoe's Camera Finds a Hidden Ecosystem</h3>
@@ -509,47 +549,11 @@
       </div>
     </a>
     <a href="/reading-passages/grade-6/reading-passage-english-grade6-argument-analysis-eco-warriors-challenge/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DB277718 0%,#DB277708 100%);border-top:4px solid #DB2777"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DB2777;letter-spacing:-1px">English</span></div>
+      <img src="https://examel.com/thumbnails/previews/reading-passage-english-grade6-argument-analysis-eco-warriors-challenge-p1.png" alt="Leo and the Eco-Warriors: Arguing to Win" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#DB2777">English · Grade 6</div>
         <h3>Leo and the Eco-Warriors: Arguing to Win</h3>
         <p>Argument Analysis · Eco Warriors theme</p>
-        <span class="ws-card-btn">View Worksheet →</span>
-      </div>
-    </a>
-    <a href="/reading-passages/grade-5/reading-passage-math-grade5-data-graphs-animal-rescue-beginner/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#7C3AED18 0%,#7C3AED08 100%);border-top:4px solid #7C3AED"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#7C3AED;letter-spacing:-1px">Math</span></div>
-      <div class="ws-card-body">
-        <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 5</div>
-        <h3>Maya Charts Every Animal She Rescues</h3>
-        <p>Data Graphs · Animal Rescue theme</p>
-        <span class="ws-card-btn">View Worksheet →</span>
-      </div>
-    </a>
-    <a href="/reading-passages/grade-5/reading-passage-english-grade5-theme-jungle-animals-challenge/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DB277718 0%,#DB277708 100%);border-top:4px solid #DB2777"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DB2777;letter-spacing:-1px">English</span></div>
-      <div class="ws-card-body">
-        <div class="ws-card-badge" style="background:#DB2777">English · Grade 5</div>
-        <h3>Leo Discovers the Jungle's Hidden Connections</h3>
-        <p>Theme · Jungle Animals theme</p>
-        <span class="ws-card-btn">View Worksheet →</span>
-      </div>
-    </a>
-    <a href="/reading-passages/grade-4/reading-passage-english-grade4-inference-northern-lights-standard/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DB277718 0%,#DB277708 100%);border-top:4px solid #DB2777"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DB2777;letter-spacing:-1px">English</span></div>
-      <div class="ws-card-body">
-        <div class="ws-card-badge" style="background:#DB2777">English · Grade 4</div>
-        <h3>Leo Reads the Northern Lights</h3>
-        <p>Inference · Northern Lights theme</p>
-        <span class="ws-card-btn">View Worksheet →</span>
-      </div>
-    </a>
-    <a href="/reading-passages/grade-5/reading-passage-science-grade5-matter-mothers-day-standard/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#059669;letter-spacing:-1px">Science</span></div>
-      <div class="ws-card-body">
-        <div class="ws-card-badge" style="background:#059669">Science · Grade 5</div>
-        <h3>Matter Everywhere on Mother's Day</h3>
-        <p>Matter · Mothers Day theme</p>
         <span class="ws-card-btn">View Worksheet →</span>
       </div>
     </a></div>

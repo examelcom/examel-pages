@@ -29,10 +29,14 @@
     .site-header nav{display:flex;align-items:center;gap:2px;}
     .site-header nav a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:13px;font-weight:600;padding:7px 12px;border-radius:8px;transition:all 0.2s;}
     .site-header nav a:hover{color:white;background:rgba(108,92,231,0.2);}
-    .breadcrumb{max-width:860px;margin:18px auto 0;padding:0 20px;font-size:15px;color:#A89FAE;display:flex;align-items:center;flex-wrap:wrap;gap:4px;}
-    .breadcrumb a{color:#6C5CE7;text-decoration:none;font-weight:500;}
-    .breadcrumb a:hover{opacity:0.7;}
-    .breadcrumb .sep{opacity:0.3;margin:0 2px;}
+    :root{--color-brand:#6C5CE7;--color-brand-text:#4A3BBF;}
+    .breadcrumb{max-width:860px;margin:18px auto 0;padding:0 20px;font-size:14px;color:#A89FAE;}
+    .breadcrumb ol{list-style:none;padding:0;margin:0;display:flex;align-items:center;flex-wrap:wrap;gap:0;}
+    .breadcrumb li{display:flex;align-items:center;}
+    .breadcrumb a{color:var(--color-brand-text);text-decoration:none;font-weight:500;}
+    .breadcrumb a:hover{text-decoration:underline;opacity:0.85;}
+    .breadcrumb [aria-current=page]{color:#6B6475;font-weight:400;}
+    .breadcrumb .sep{opacity:0.35;margin:0 6px;font-size:12px;}
     .hero{padding:64px 20px 56px;text-align:center;background:#FAF8F3;}
     .hero h1{font-size:clamp(26px,4vw,44px);margin-bottom:14px;color:#1A1420;font-weight:800;letter-spacing:-1.5px;line-height:1.15;}
     .hero h1 span{color:#6C5CE7;}
@@ -49,7 +53,7 @@
     .ws-card-badge{display:inline-block;color:white;padding:3px 10px;border-radius:100px;font-size:11px;font-weight:700;margin-bottom:10px;}
     .ws-card h3{font-size:14px;margin-bottom:5px;line-height:1.5;font-weight:700;color:#1A1420;}
     .ws-card p{font-size:12px;color:#A89FAE;margin-bottom:12px;line-height:1.5;}
-    .ws-card-btn{font-size:12px;font-weight:700;color:#6C5CE7;}
+    .ws-card-btn{font-size:12px;font-weight:700;color:#4A3BBF;}
     .hub-grid{max-width:1100px;margin:0 auto;padding:0 20px 64px;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;}
     .hub-card{background:white;border-radius:24px;padding:36px 20px;text-decoration:none;color:#1A1420;text-align:center;transition:transform 0.25s cubic-bezier(0.34,1.56,0.64,1),box-shadow 0.25s;box-shadow:0 2px 8px rgba(0,0,0,0.04),0 8px 24px rgba(0,0,0,0.06);border:1px solid #EDE8DF;}
     .hub-card:hover{transform:translateY(-5px);box-shadow:0 8px 32px rgba(108,92,231,0.14),0 2px 8px rgba(0,0,0,0.04);}
@@ -64,7 +68,7 @@
     .footer-col{display:flex;flex-direction:column;gap:10px;min-width:130px;}
     .footer-heading{font-size:10px;font-weight:800;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:2px;margin-bottom:6px;}
     .site-footer a{color:rgba(255,255,255,0.5);text-decoration:none;font-size:15px;transition:color 0.2s;font-weight:500;}
-    .site-footer a:hover{color:#6C5CE7;}
+    .site-footer a:hover{color:#4A3BBF;}
     .footer-bottom{text-align:center;font-size:14px;color:rgba(255,255,255,0.2);border-top:1px solid rgba(255,255,255,0.07);padding-top:24px;}
     .mobile-menu-btn{display:none;background:none;border:none;cursor:pointer;padding:8px;border-radius:8px;}
     /* ── SEARCH ── */
@@ -407,14 +411,41 @@
   <div style="background:#1C1526;border-top:5px solid #D97706;padding:0 20px;position:relative;overflow:hidden;">
     <div style="max-width:1100px;margin:0 auto;padding:52px 180px 48px 48px;position:relative;z-index:2;">
       <h1 style="font-size:clamp(28px,4vw,48px);font-weight:900;color:white;letter-spacing:-1.5px;line-height:1.1;margin-bottom:14px;font-family:'Outfit',sans-serif;">Free <span style="color:#D97706;">Word Search</span> Worksheets</h1>
-      <p style="font-size:16px;color:rgba(255,255,255,0.5);max-width:520px;line-height:1.75;margin-bottom:24px;">113+ free printable word searches for Grades 1–6. Math, English and Science vocabulary. Answer keys included.</p>
+      <p style="font-size:16px;color:rgba(255,255,255,0.5);max-width:520px;line-height:1.75;margin-bottom:24px;">116+ free printable word searches for Grades 1–6. Math, English and Science vocabulary. Answer keys included.</p>
     </div>
     <div style="position:absolute;right:60px;bottom:-10px;opacity:0.92;"><svg width="110" height="130" viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg"><ellipse cx="60" cy="105" rx="36" ry="8" fill="rgba(5,150,105,0.12)"/><rect x="18" y="70" width="84" height="54" rx="18" fill="#F8F8F8"/><rect x="30" y="76" width="60" height="28" rx="12" fill="#0D9488"/><ellipse cx="34" cy="122" rx="14" ry="8" fill="#0F766E"/><ellipse cx="86" cy="122" rx="14" ry="8" fill="#0F766E"/><ellipse cx="60" cy="66" rx="42" ry="46" fill="#7B3F0E"/><ellipse cx="60" cy="26" rx="42" ry="24" fill="#0A0500"/><circle cx="32" cy="28" r="22" fill="#0A0500"/><circle cx="88" cy="28" r="22" fill="#0A0500"/><ellipse cx="32" cy="50" rx="12" ry="6" fill="#F59E0B"/><ellipse cx="88" cy="50" rx="12" ry="6" fill="#F59E0B"/><ellipse cx="32" cy="49" rx="9" ry="4" fill="#FBBF24"/><ellipse cx="88" cy="49" rx="9" ry="4" fill="#FBBF24"/><rect x="20" y="54" width="14" height="52" rx="7" fill="#0A0500"/><rect x="86" y="54" width="14" height="52" rx="7" fill="#0A0500"/><circle cx="27" cy="95" r="6" fill="#F59E0B" stroke="#0A0500" stroke-width="1.5"/><circle cx="93" cy="95" r="6" fill="#10B981" stroke="#0A0500" stroke-width="1.5"/><circle cx="48" cy="64" r="16" fill="white"/><circle cx="72" cy="64" r="16" fill="white"/><circle cx="49" cy="65" r="11" fill="#1A0500"/><circle cx="73" cy="65" r="11" fill="#1A0500"/><circle cx="53" cy="60" r="5.5" fill="white"/><circle cx="77" cy="60" r="5.5" fill="white"/><circle cx="49" cy="66" r="4" fill="#050100"/><circle cx="73" cy="66" r="4" fill="#050100"/><ellipse cx="48" cy="78" rx="10" ry="8" fill="#C05030" opacity="0.9"/><ellipse cx="48" cy="78" rx="7" ry="5" fill="white" opacity="0.9"/><circle cx="36" cy="72" r="12" fill="#FF8C69" opacity="0.25"/><circle cx="84" cy="72" r="12" fill="#FF8C69" opacity="0.25"/></svg></div>
   </div>
   </div>
   <div class="grid">
+    <a href="/word-searches/science/grade-5/word-search-science-grade5-ecosystems-summer-vacation-standard/" class="ws-card">
+      <img src="https://examel.com/thumbnails/previews/word-search-science-grade5-ecosystems-summer-vacation-standard-p1.png" alt="Summer Vacation Ecosystem Explorer Adventure" class="ws-card-thumb" loading="lazy">
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#059669">Science · Grade 5</div>
+        <h3>Summer Vacation Ecosystem Explorer Adventure</h3>
+        <p>Ecosystems · Summer Vacation theme</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+    <a href="/word-searches/english/grade-3/word-search-english-grade3-text-features-sports-beginner/" class="ws-card">
+      <img src="https://examel.com/thumbnails/previews/word-search-english-grade3-text-features-sports-beginner-p1.png" alt="Sports Text Features Word Search Game" class="ws-card-thumb" loading="lazy">
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#DB2777">English · Grade 3</div>
+        <h3>Sports Text Features Word Search Game</h3>
+        <p>Text Features · Sports theme</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+    <a href="/word-searches/english/grade-5/word-search-english-grade5-literary-devices-hanukkah-standard/" class="ws-card">
+      <img src="https://examel.com/thumbnails/previews/word-search-english-grade5-literary-devices-hanukkah-standard-p1.png" alt="Literary Devices Light Up Hanukkah Stories" class="ws-card-thumb" loading="lazy">
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#DB2777">English · Grade 5</div>
+        <h3>Literary Devices Light Up Hanukkah Stories</h3>
+        <p>Literary Devices · Hanukkah theme</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
     <a href="/word-searches/math/grade-1/word-search-math-grade1-place-value-time-travelers-standard/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#7C3AED18 0%,#7C3AED08 100%);border-top:4px solid #7C3AED"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#7C3AED;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/word-search-math-grade1-place-value-time-travelers-standard-p1.png" alt="Time Travelers Discover Place Value" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 1</div>
         <h3>Time Travelers Discover Place Value</h3>
@@ -423,7 +454,7 @@
       </div>
     </a>
     <a href="/word-searches/science/grade-3/word-search-science-grade3-fossils-knights-standard/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#059669;letter-spacing:-1px">Science</span></div>
+      <img src="https://examel.com/thumbnails/previews/word-search-science-grade3-fossils-knights-standard-p1.png" alt="Knight's Quest: Ancient Fossil Treasures" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · Grade 3</div>
         <h3>Knight's Quest: Ancient Fossil Treasures</h3>
@@ -432,7 +463,7 @@
       </div>
     </a>
     <a href="/word-searches/math/grade-6/word-search-math-grade6-fractions-wizards-standard/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#7C3AED18 0%,#7C3AED08 100%);border-top:4px solid #7C3AED"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#7C3AED;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/word-search-math-grade6-fractions-wizards-standard-p1.png" alt="Wizard's Quest: Mastering Fractions and Division" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 6</div>
         <h3>Wizard's Quest: Mastering Fractions and Division</h3>
@@ -441,7 +472,7 @@
       </div>
     </a>
     <a href="/word-searches/math/grade-6/word-search-math-grade6-statistics-earth-day-challenge/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#7C3AED18 0%,#7C3AED08 100%);border-top:4px solid #7C3AED"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#7C3AED;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/word-search-math-grade6-statistics-earth-day-challenge-p1.png" alt="Earth Day Data: Statistics and Planet Protection" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 6</div>
         <h3>Earth Day Data: Statistics and Planet Protection</h3>
@@ -450,7 +481,7 @@
       </div>
     </a>
     <a href="/word-searches/science/grade-4/word-search-science-grade4-waves-wizards-standard/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#059669;letter-spacing:-1px">Science</span></div>
+      <img src="https://examel.com/thumbnails/previews/word-search-science-grade4-waves-wizards-standard-p1.png" alt="Wizard's Guide to Sound and Light Waves" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · Grade 4</div>
         <h3>Wizard's Guide to Sound and Light Waves</h3>
@@ -459,7 +490,7 @@
       </div>
     </a>
     <a href="/word-searches/english/grade-4/word-search-english-grade4-writing-travel-standard/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DB277718 0%,#DB277708 100%);border-top:4px solid #DB2777"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DB2777;letter-spacing:-1px">English</span></div>
+      <img src="https://examel.com/thumbnails/previews/word-search-english-grade4-writing-travel-standard-p1.png" alt="Writing Your Amazing Travel Adventure Story" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#DB2777">English · Grade 4</div>
         <h3>Writing Your Amazing Travel Adventure Story</h3>
@@ -468,7 +499,7 @@
       </div>
     </a>
     <a href="/word-searches/english/grade-4/word-search-english-grade4-compare-contrast-time-travelers-beginner/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DB277718 0%,#DB277708 100%);border-top:4px solid #DB2777"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DB2777;letter-spacing:-1px">English</span></div>
+      <img src="https://examel.com/thumbnails/previews/word-search-english-grade4-compare-contrast-time-travelers-beginner-p1.png" alt="Time Travelers Compare and Contrast" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#DB2777">English · Grade 4</div>
         <h3>Time Travelers Compare and Contrast</h3>
@@ -477,7 +508,7 @@
       </div>
     </a>
     <a href="/word-searches/english/grade-6/word-search-english-grade6-figurative-language-desert-challenge/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DB277718 0%,#DB277708 100%);border-top:4px solid #DB2777"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DB2777;letter-spacing:-1px">English</span></div>
+      <img src="https://examel.com/thumbnails/previews/word-search-english-grade6-figurative-language-desert-challenge-p1.png" alt="Desert Figurative Language Expressions Challenge" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#DB2777">English · Grade 6</div>
         <h3>Desert Figurative Language Expressions Challenge</h3>
@@ -486,38 +517,11 @@
       </div>
     </a>
     <a href="/word-searches/science/grade-5/word-search-science-grade5-solar-system-rainforest-beginner/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#059669;letter-spacing:-1px">Science</span></div>
+      <img src="https://examel.com/thumbnails/previews/word-search-science-grade5-solar-system-rainforest-beginner-p1.png" alt="Solar System in the Rainforest Canopy" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#059669">Science · Grade 5</div>
         <h3>Solar System in the Rainforest Canopy</h3>
         <p>Solar System · Rainforest theme</p>
-        <span class="ws-card-btn">View Worksheet →</span>
-      </div>
-    </a>
-    <a href="/word-searches/science/grade-2/word-search-science-grade2-food-chains-new-year-challenge/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#059669;letter-spacing:-1px">Science</span></div>
-      <div class="ws-card-body">
-        <div class="ws-card-badge" style="background:#059669">Science · Grade 2</div>
-        <h3>New Year Food Chain Discovery Adventure</h3>
-        <p>Food Chains · New Year theme</p>
-        <span class="ws-card-btn">View Worksheet →</span>
-      </div>
-    </a>
-    <a href="/word-searches/math/grade-1/word-search-math-grade1-measurement-cable-cars-standard/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#7C3AED18 0%,#7C3AED08 100%);border-top:4px solid #7C3AED"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#7C3AED;letter-spacing:-1px">Math</span></div>
-      <div class="ws-card-body">
-        <div class="ws-card-badge" style="background:#7C3AED">Math · Grade 1</div>
-        <h3>Cable Car Measurement Adventure</h3>
-        <p>Measurement · Cable Cars theme</p>
-        <span class="ws-card-btn">View Worksheet →</span>
-      </div>
-    </a>
-    <a href="/word-searches/science/grade-5/word-search-science-grade5-matter-jazz-club-standard/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#05966918 0%,#05966908 100%);border-top:4px solid #059669"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#059669;letter-spacing:-1px">Science</span></div>
-      <div class="ws-card-body">
-        <div class="ws-card-badge" style="background:#059669">Science · Grade 5</div>
-        <h3>Matter Melodies: A Jazz Club Science Quest</h3>
-        <p>Matter · Jazz Club theme</p>
         <span class="ws-card-btn">View Worksheet →</span>
       </div>
     </a></div>

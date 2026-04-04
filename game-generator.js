@@ -152,13 +152,13 @@ ${buildAnalytics()}
 </head>
 <body>
 ${siteHeader}
-<div style="max-width:860px;margin:16px auto 0;padding:0 20px;font-size:14px;color:#A89FAE;display:flex;align-items:center;gap:4px;flex-wrap:wrap;">
-  <a href="/" style="color:#6C5CE7;text-decoration:none;font-weight:500;">Home</a>
-  <span style="opacity:0.4;">/</span>
-  <a href="/free-games/" style="color:#6C5CE7;text-decoration:none;font-weight:500;">Games</a>
-  <span style="opacity:0.4;">/</span>
-  <span>${ws.title}</span>
-</div>
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="/">Home</a></li>
+    <li><span class="sep" aria-hidden="true">›</span><a href="/free-games/">Games</a></li>
+    <li><span class="sep" aria-hidden="true">›</span><span aria-current="page">${ws.title}</span></li>
+  </ol>
+</nav>
 <div class="ws-hero">
   <div class="ws-hero-badge">${meta.emoji} ${meta.label}</div>
   <h1>${ws.title}</h1>

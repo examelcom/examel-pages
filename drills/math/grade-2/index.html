@@ -29,10 +29,14 @@
     .site-header nav{display:flex;align-items:center;gap:2px;}
     .site-header nav a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:13px;font-weight:600;padding:7px 12px;border-radius:8px;transition:all 0.2s;}
     .site-header nav a:hover{color:white;background:rgba(108,92,231,0.2);}
-    .breadcrumb{max-width:860px;margin:18px auto 0;padding:0 20px;font-size:15px;color:#A89FAE;display:flex;align-items:center;flex-wrap:wrap;gap:4px;}
-    .breadcrumb a{color:#6C5CE7;text-decoration:none;font-weight:500;}
-    .breadcrumb a:hover{opacity:0.7;}
-    .breadcrumb .sep{opacity:0.3;margin:0 2px;}
+    :root{--color-brand:#6C5CE7;--color-brand-text:#4A3BBF;}
+    .breadcrumb{max-width:860px;margin:18px auto 0;padding:0 20px;font-size:14px;color:#A89FAE;}
+    .breadcrumb ol{list-style:none;padding:0;margin:0;display:flex;align-items:center;flex-wrap:wrap;gap:0;}
+    .breadcrumb li{display:flex;align-items:center;}
+    .breadcrumb a{color:var(--color-brand-text);text-decoration:none;font-weight:500;}
+    .breadcrumb a:hover{text-decoration:underline;opacity:0.85;}
+    .breadcrumb [aria-current=page]{color:#6B6475;font-weight:400;}
+    .breadcrumb .sep{opacity:0.35;margin:0 6px;font-size:12px;}
     .hero{padding:64px 20px 56px;text-align:center;background:#FAF8F3;}
     .hero h1{font-size:clamp(26px,4vw,44px);margin-bottom:14px;color:#1A1420;font-weight:800;letter-spacing:-1.5px;line-height:1.15;}
     .hero h1 span{color:#6C5CE7;}
@@ -49,7 +53,7 @@
     .ws-card-badge{display:inline-block;color:white;padding:3px 10px;border-radius:100px;font-size:11px;font-weight:700;margin-bottom:10px;}
     .ws-card h3{font-size:14px;margin-bottom:5px;line-height:1.5;font-weight:700;color:#1A1420;}
     .ws-card p{font-size:12px;color:#A89FAE;margin-bottom:12px;line-height:1.5;}
-    .ws-card-btn{font-size:12px;font-weight:700;color:#6C5CE7;}
+    .ws-card-btn{font-size:12px;font-weight:700;color:#4A3BBF;}
     .hub-grid{max-width:1100px;margin:0 auto;padding:0 20px 64px;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;}
     .hub-card{background:white;border-radius:24px;padding:36px 20px;text-decoration:none;color:#1A1420;text-align:center;transition:transform 0.25s cubic-bezier(0.34,1.56,0.64,1),box-shadow 0.25s;box-shadow:0 2px 8px rgba(0,0,0,0.04),0 8px 24px rgba(0,0,0,0.06);border:1px solid #EDE8DF;}
     .hub-card:hover{transform:translateY(-5px);box-shadow:0 8px 32px rgba(108,92,231,0.14),0 2px 8px rgba(0,0,0,0.04);}
@@ -64,7 +68,7 @@
     .footer-col{display:flex;flex-direction:column;gap:10px;min-width:130px;}
     .footer-heading{font-size:10px;font-weight:800;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:2px;margin-bottom:6px;}
     .site-footer a{color:rgba(255,255,255,0.5);text-decoration:none;font-size:15px;transition:color 0.2s;font-weight:500;}
-    .site-footer a:hover{color:#6C5CE7;}
+    .site-footer a:hover{color:#4A3BBF;}
     .footer-bottom{text-align:center;font-size:14px;color:rgba(255,255,255,0.2);border-top:1px solid rgba(255,255,255,0.07);padding-top:24px;}
     .mobile-menu-btn{display:none;background:none;border:none;cursor:pointer;padding:8px;border-radius:8px;}
     /* ── SEARCH ── */
@@ -407,7 +411,7 @@
   <div style="background:#1C1526;border-top:5px solid #DC2626;padding:0 20px;position:relative;overflow:hidden;">
     <div style="max-width:1100px;margin:0 auto;padding:48px 180px 44px 48px;position:relative;z-index:2;">
       <h1 style="font-size:clamp(24px,3.5vw,42px);font-weight:900;color:white;letter-spacing:-1.5px;line-height:1.1;margin-bottom:12px;font-family:'Outfit',sans-serif;">Free Grade 2 <span style="color:#DC2626;">Math Drills</span></h1>
-      <p style="font-size:15px;color:rgba(255,255,255,0.5);max-width:500px;line-height:1.75;margin-bottom:20px;">1062+ free Grade 2 math drills. Build fact fluency with timed practice. Answer keys included.</p>
+      <p style="font-size:15px;color:rgba(255,255,255,0.5);max-width:500px;line-height:1.75;margin-bottom:20px;">1068+ free Grade 2 math drills. Build fact fluency with timed practice. Answer keys included.</p>
     </div>
     <div style="position:absolute;right:60px;bottom:-10px;opacity:0.92;"><svg width="110" height="130" viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg"><ellipse cx="60" cy="108" rx="36" ry="8" fill="rgba(239,68,68,0.12)"/><rect x="22" y="74" width="80" height="60" rx="18" fill="#EF4444"/><ellipse cx="62" cy="70" rx="10" ry="9" fill="#FDBCB4"/><ellipse cx="60" cy="46" rx="42" ry="44" fill="#FDBCB4"/><ellipse cx="60" cy="10" rx="40" ry="22" fill="#3D1F00"/><path d="M22 18 Q46 2 96 6 Q108 12 112 24" fill="#3D1F00"/><rect x="22" y="10" width="76" height="13" rx="6.5" fill="#EF4444"/><circle cx="44" cy="44" r="14" fill="white"/><circle cx="76" cy="44" r="14" fill="white"/><circle cx="45" cy="45" r="9" fill="#3D1F00"/><circle cx="77" cy="45" r="9" fill="#3D1F00"/><circle cx="48" cy="41" r="4.5" fill="white"/><circle cx="80" cy="41" r="4.5" fill="white"/><circle cx="45" cy="46" r="3" fill="#0A0500"/><circle cx="77" cy="46" r="3" fill="#0A0500"/><path d="M40 66 Q60 84 80 66" stroke="#C06050" stroke-width="3" fill="#FF9999" stroke-linecap="round"/><path d="M44 68 Q60 78 76 68" fill="white"/><circle cx="28" cy="58" r="11" fill="#FF9999" opacity="0.25"/><circle cx="92" cy="58" r="11" fill="#FF9999" opacity="0.25"/></svg></div>
   </div>
@@ -418,8 +422,62 @@
     </div>
   </div>
   <div class="grid">
+    <a href="/free-math-drills/" class="ws-card">
+      <img src="https://examel.com/thumbnails/previews/drill-math-grade2-skip-count-3-music-challenge-p1.png" alt="Max Collects Musical Notes: Grade 2 Skip-Count-3 Quest" class="ws-card-thumb" loading="lazy">
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#DC2626">Math · Grade 2</div>
+        <h3>Max Collects Musical Notes: Grade 2 Skip-Count-3 Quest</h3>
+        <p>Skip Count 3 · Music theme</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+    <a href="/free-math-drills/" class="ws-card">
+      <img src="https://examel.com/thumbnails/previews/drill-math-grade2-long-division-3-digit-jungle-beginner-p1.png" alt="Max Conquers the Jungle: Grade 2 Division Quest" class="ws-card-thumb" loading="lazy">
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#DC2626">Math · Grade 2</div>
+        <h3>Max Conquers the Jungle: Grade 2 Division Quest</h3>
+        <p>Long Division 3 Digit · Jungle theme</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+    <a href="/free-math-drills/" class="ws-card">
+      <img src="https://examel.com/thumbnails/previews/drill-math-grade2-find-mode-food-standard-p1.png" alt="Max Discovers Hidden Pizzas: Grade 2 Find-Mode Challenge" class="ws-card-thumb" loading="lazy">
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#DC2626">Math · Grade 2</div>
+        <h3>Max Discovers Hidden Pizzas: Grade 2 Find-Mode Challenge</h3>
+        <p>Find Mode · Food theme</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+    <a href="/free-math-drills/" class="ws-card">
+      <img src="https://examel.com/thumbnails/previews/drill-math-grade2-decimal-division-food-standard-p1.png" alt="Max Conquers the Bakery: Grade 2 Decimal Division" class="ws-card-thumb" loading="lazy">
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#DC2626">Math · Grade 2</div>
+        <h3>Max Conquers the Bakery: Grade 2 Decimal Division</h3>
+        <p>Decimal Division · Food theme</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+    <a href="/free-math-drills/addition/" class="ws-card">
+      <img src="https://examel.com/thumbnails/previews/drill-math-grade2-addition-circus-beginner-p1.png" alt="Max Conquers the Circus: Grade 2 Addition Quest" class="ws-card-thumb" loading="lazy">
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#DC2626">Math · Grade 2</div>
+        <h3>Max Conquers the Circus: Grade 2 Addition Quest</h3>
+        <p>Addition · Circus theme</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
+    <a href="/free-math-drills/addition/" class="ws-card">
+      <img src="https://examel.com/thumbnails/previews/drill-math-grade2-addition-space-standard-p1.png" alt="Max Rescues Stranded Aliens: Grade 2 Addition Blast" class="ws-card-thumb" loading="lazy">
+      <div class="ws-card-body">
+        <div class="ws-card-badge" style="background:#DC2626">Math · Grade 2</div>
+        <h3>Max Rescues Stranded Aliens: Grade 2 Addition Blast</h3>
+        <p>Addition · Space theme</p>
+        <span class="ws-card-btn">View Worksheet →</span>
+      </div>
+    </a>
     <a href="/free-math-drills/mixed/mad-minute-addition/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DC262618 0%,#DC262608 100%);border-top:4px solid #DC2626"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DC2626;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/drill-math-grade2-mad-minute-addition-jungle-challenge-p1.png" alt="Max Rescues Animals Through Jungle Addition Challenge" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#DC2626">Math · Grade 2</div>
         <h3>Max Rescues Animals Through Jungle Addition Challenge</h3>
@@ -806,7 +864,7 @@
       </div>
     </a>
     <a href="/free-math-drills/subtraction/mixed-add-subtract/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DC262618 0%,#DC262608 100%);border-top:4px solid #DC2626"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DC2626;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/drill-math-grade2-mixed-add-subtract-circus-standard-p1.png" alt="Max Rescues the Circus Animals: Addition and Subtraction Sprint!" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#DC2626">Math · Grade 2</div>
         <h3>Max Rescues the Circus Animals: Addition and Subtraction Sprint!</h3>
@@ -815,7 +873,7 @@
       </div>
     </a>
     <a href="/free-math-drills/subtraction/mixed-add-subtract/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DC262618 0%,#DC262608 100%);border-top:4px solid #DC2626"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DC2626;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/drill-math-grade2-mixed-add-subtract-seasons-challenge-p1.png" alt="Max Rescues the Four Seasons: Number Quest" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#DC2626">Math · Grade 2</div>
         <h3>Max Rescues the Four Seasons: Number Quest</h3>
@@ -824,7 +882,7 @@
       </div>
     </a>
     <a href="/free-math-drills/multiplication/2-digit-by-1-digit/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DC262618 0%,#DC262608 100%);border-top:4px solid #DC2626"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DC2626;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/drill-math-grade2-2-digit-by-1-digit-superheroes-standard-p1.png" alt="Max Rescues the City: Multiplication Power-Up!" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#DC2626">Math · Grade 2</div>
         <h3>Max Rescues the City: Multiplication Power-Up!</h3>
@@ -833,7 +891,7 @@
       </div>
     </a>
     <a href="/free-math-drills/subtraction/mixed-add-subtract/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DC262618 0%,#DC262608 100%);border-top:4px solid #DC2626"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DC2626;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/drill-math-grade2-mixed-add-subtract-farm-standard-p1.png" alt="Max Rescues the Farm: Addition and Subtraction Sprint!" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#DC2626">Math · Grade 2</div>
         <h3>Max Rescues the Farm: Addition and Subtraction Sprint!</h3>
@@ -842,7 +900,7 @@
       </div>
     </a>
     <a href="/free-math-drills/subtraction/mixed-add-subtract/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DC262618 0%,#DC262608 100%);border-top:4px solid #DC2626"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DC2626;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/drill-math-grade2-mixed-add-subtract-nature-standard-p1.png" alt="Max Rescues Forest Animals: Addition Subtraction Sprint" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#DC2626">Math · Grade 2</div>
         <h3>Max Rescues Forest Animals: Addition Subtraction Sprint</h3>
@@ -851,7 +909,7 @@
       </div>
     </a>
     <a href="/free-math-drills/mixed/mad-minute-addition/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DC262618 0%,#DC262608 100%);border-top:4px solid #DC2626"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DC2626;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/drill-math-grade2-mad-minute-addition-robots-challenge-p1.png" alt="Max Rescues Robot City: Addition Speed Challenge!" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#DC2626">Math · Grade 2</div>
         <h3>Max Rescues Robot City: Addition Speed Challenge!</h3>
@@ -860,7 +918,7 @@
       </div>
     </a>
     <a href="/free-math-drills/multiplication/2-digit-by-1-digit/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DC262618 0%,#DC262608 100%);border-top:4px solid #DC2626"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DC2626;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/drill-math-grade2-2-digit-by-1-digit-animals-challenge-p1.png" alt="Max Rescues Animals: Jungle Multiplication Race!" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#DC2626">Math · Grade 2</div>
         <h3>Max Rescues Animals: Jungle Multiplication Race!</h3>
@@ -869,7 +927,7 @@
       </div>
     </a>
     <a href="/free-math-drills/multiplication/2-digit-by-1-digit/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DC262618 0%,#DC262608 100%);border-top:4px solid #DC2626"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DC2626;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/drill-math-grade2-2-digit-by-1-digit-ocean-challenge-p1.png" alt="Max Rescues Dolphins: Ocean Multiplication Mission!" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#DC2626">Math · Grade 2</div>
         <h3>Max Rescues Dolphins: Ocean Multiplication Mission!</h3>
@@ -878,7 +936,7 @@
       </div>
     </a>
     <a href="/free-math-drills/subtraction/mixed-add-subtract/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DC262618 0%,#DC262608 100%);border-top:4px solid #DC2626"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DC2626;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/drill-math-grade2-mixed-add-subtract-food-challenge-p1.png" alt="Max Rescues the Bakery: Addition and Subtraction Sprint!" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#DC2626">Math · Grade 2</div>
         <h3>Max Rescues the Bakery: Addition and Subtraction Sprint!</h3>
@@ -887,7 +945,7 @@
       </div>
     </a>
     <a href="/free-math-drills/subtraction/mixed-add-subtract/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DC262618 0%,#DC262608 100%);border-top:4px solid #DC2626"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DC2626;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/drill-math-grade2-mixed-add-subtract-pirates-standard-p1.png" alt="Max Rescues the Pirate Crew: Addition and Subtraction Quest" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#DC2626">Math · Grade 2</div>
         <h3>Max Rescues the Pirate Crew: Addition and Subtraction Quest</h3>
@@ -896,7 +954,7 @@
       </div>
     </a>
     <a href="/free-math-drills/subtraction/mixed-add-subtract/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DC262618 0%,#DC262608 100%);border-top:4px solid #DC2626"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DC2626;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/drill-math-grade2-mixed-add-subtract-superheroes-standard-p1.png" alt="Max Rescues the City: Addition and Subtraction Battle" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#DC2626">Math · Grade 2</div>
         <h3>Max Rescues the City: Addition and Subtraction Battle</h3>
@@ -905,7 +963,7 @@
       </div>
     </a>
     <a href="/free-math-drills/multiplication/multiplying-by-10-100/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DC262618 0%,#DC262608 100%);border-top:4px solid #DC2626"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DC2626;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/drill-math-grade2-multiplying-by-10-100-seasons-standard-p1.png" alt="Max Conquers the Four Seasons: Multiplication Quest!" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#DC2626">Math · Grade 2</div>
         <h3>Max Conquers the Four Seasons: Multiplication Quest!</h3>
@@ -914,7 +972,7 @@
       </div>
     </a>
     <a href="/free-math-drills/subtraction/mixed-add-subtract/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DC262618 0%,#DC262608 100%);border-top:4px solid #DC2626"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DC2626;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/drill-math-grade2-mixed-add-subtract-food-standard-p1.png" alt="Max Rescues the Pizza Palace: Addition & Subtraction Sprint" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#DC2626">Math · Grade 2</div>
         <h3>Max Rescues the Pizza Palace: Addition & Subtraction Sprint</h3>
@@ -923,7 +981,7 @@
       </div>
     </a>
     <a href="/free-math-drills/multiplication/multiplying-by-10-100/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DC262618 0%,#DC262608 100%);border-top:4px solid #DC2626"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DC2626;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/drill-math-grade2-multiplying-by-10-100-superheroes-challenge-p1.png" alt="Max Rescues the City: Multiplication by 10 and 100!" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#DC2626">Math · Grade 2</div>
         <h3>Max Rescues the City: Multiplication by 10 and 100!</h3>
@@ -932,7 +990,7 @@
       </div>
     </a>
     <a href="/free-math-drills/mixed/mad-minute-addition/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DC262618 0%,#DC262608 100%);border-top:4px solid #DC2626"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DC2626;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/drill-math-grade2-mad-minute-addition-seasons-challenge-p1.png" alt="Max Rescues the Four Seasons: Addition Sprint!" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#DC2626">Math · Grade 2</div>
         <h3>Max Rescues the Four Seasons: Addition Sprint!</h3>
@@ -941,7 +999,7 @@
       </div>
     </a>
     <a href="/free-math-drills/subtraction/mixed-add-subtract/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DC262618 0%,#DC262608 100%);border-top:4px solid #DC2626"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DC2626;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/drill-math-grade2-mixed-add-subtract-music-challenge-p1.png" alt="Max Rescues the Lost Concert: Addition Subtraction Speed Quest" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#DC2626">Math · Grade 2</div>
         <h3>Max Rescues the Lost Concert: Addition Subtraction Speed Quest</h3>
@@ -950,7 +1008,7 @@
       </div>
     </a>
     <a href="/free-math-drills/multiplication/multiplying-by-10-100/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DC262618 0%,#DC262608 100%);border-top:4px solid #DC2626"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DC2626;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/drill-math-grade2-multiplying-by-10-100-seasons-challenge-p1.png" alt="Max Conquers the Seasonal Snowstorm: Multiplication x10!" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#DC2626">Math · Grade 2</div>
         <h3>Max Conquers the Seasonal Snowstorm: Multiplication x10!</h3>
@@ -959,7 +1017,7 @@
       </div>
     </a>
     <a href="/free-math-drills/multiplication/multiplying-by-10-100/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DC262618 0%,#DC262608 100%);border-top:4px solid #DC2626"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DC2626;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/drill-math-grade2-multiplying-by-10-100-food-standard-p1.png" alt="Max Conquers the Giant Pizza Kitchen Multiplying Madness" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#DC2626">Math · Grade 2</div>
         <h3>Max Conquers the Giant Pizza Kitchen Multiplying Madness</h3>
@@ -968,7 +1026,7 @@
       </div>
     </a>
     <a href="/free-math-drills/mixed/mad-minute-addition/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DC262618 0%,#DC262608 100%);border-top:4px solid #DC2626"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DC2626;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/drill-math-grade2-mad-minute-addition-superheroes-standard-p1.png" alt="Max Rescues the City: Addition Hero Speed Challenge" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#DC2626">Math · Grade 2</div>
         <h3>Max Rescues the City: Addition Hero Speed Challenge</h3>
@@ -977,7 +1035,7 @@
       </div>
     </a>
     <a href="/free-math-drills/mixed/mad-minute-addition/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DC262618 0%,#DC262608 100%);border-top:4px solid #DC2626"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DC2626;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/drill-math-grade2-mad-minute-addition-animals-challenge-p1.png" alt="Max Rescues Lost Zoo Animals: Addition Sprint!" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#DC2626">Math · Grade 2</div>
         <h3>Max Rescues Lost Zoo Animals: Addition Sprint!</h3>
@@ -986,7 +1044,7 @@
       </div>
     </a>
     <a href="/free-math-drills/multiplication/multiplying-by-10-100/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DC262618 0%,#DC262608 100%);border-top:4px solid #DC2626"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DC2626;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/drill-math-grade2-multiplying-by-10-100-ocean-challenge-p1.png" alt="Max Rescues Dolphins: Ocean Multiplication by 10!" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#DC2626">Math · Grade 2</div>
         <h3>Max Rescues Dolphins: Ocean Multiplication by 10!</h3>
@@ -995,7 +1053,7 @@
       </div>
     </a>
     <a href="/free-math-drills/subtraction/mixed-add-subtract/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DC262618 0%,#DC262608 100%);border-top:4px solid #DC2626"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DC2626;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/drill-math-grade2-mixed-add-subtract-farm-challenge-p1.png" alt="Max Rescues Farm Animals: Addition Subtraction Sprint" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#DC2626">Math · Grade 2</div>
         <h3>Max Rescues Farm Animals: Addition Subtraction Sprint</h3>
@@ -1004,7 +1062,7 @@
       </div>
     </a>
     <a href="/free-math-drills/mixed/mad-minute-addition/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DC262618 0%,#DC262608 100%);border-top:4px solid #DC2626"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DC2626;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/drill-math-grade2-mad-minute-addition-jungle-standard-p1.png" alt="Max Rescues the Jungle Animals: Addition Sprint!" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#DC2626">Math · Grade 2</div>
         <h3>Max Rescues the Jungle Animals: Addition Sprint!</h3>
@@ -1013,7 +1071,7 @@
       </div>
     </a>
     <a href="/free-math-drills/subtraction/mixed-add-subtract/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DC262618 0%,#DC262608 100%);border-top:4px solid #DC2626"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DC2626;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/drill-math-grade2-mixed-add-subtract-pirates-challenge-p1.png" alt="Max Escapes the Pirate Ship: Add and Subtract Race!" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#DC2626">Math · Grade 2</div>
         <h3>Max Escapes the Pirate Ship: Add and Subtract Race!</h3>
@@ -1022,7 +1080,7 @@
       </div>
     </a>
     <a href="/free-math-drills/subtraction/mixed-add-subtract/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DC262618 0%,#DC262608 100%);border-top:4px solid #DC2626"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DC2626;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/drill-math-grade2-mixed-add-subtract-sports-challenge-p1.png" alt="Max Conquers the Soccer Stadium Math Challenge" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#DC2626">Math · Grade 2</div>
         <h3>Max Conquers the Soccer Stadium Math Challenge</h3>
@@ -1031,7 +1089,7 @@
       </div>
     </a>
     <a href="/free-math-drills/multiplication/multiplying-by-10-100/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DC262618 0%,#DC262608 100%);border-top:4px solid #DC2626"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DC2626;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/drill-math-grade2-multiplying-by-10-100-robots-challenge-p1.png" alt="Max Rescues the Robot Factory: Multiply by 10!" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#DC2626">Math · Grade 2</div>
         <h3>Max Rescues the Robot Factory: Multiply by 10!</h3>
@@ -1040,7 +1098,7 @@
       </div>
     </a>
     <a href="/free-math-drills/subtraction/mixed-add-subtract/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DC262618 0%,#DC262608 100%);border-top:4px solid #DC2626"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DC2626;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/drill-math-grade2-mixed-add-subtract-superheroes-challenge-p1.png" alt="Max Rescues the Superhero City: Addition and Subtraction Sprint" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#DC2626">Math · Grade 2</div>
         <h3>Max Rescues the Superhero City: Addition and Subtraction Sprint</h3>
@@ -1049,7 +1107,7 @@
       </div>
     </a>
     <a href="/free-math-drills/multiplication/multiplying-by-10-100/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DC262618 0%,#DC262608 100%);border-top:4px solid #DC2626"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DC2626;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/drill-math-grade2-multiplying-by-10-100-circus-challenge-p1.png" alt="Max Rescues the Circus Animals: Multiply by 10!" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#DC2626">Math · Grade 2</div>
         <h3>Max Rescues the Circus Animals: Multiply by 10!</h3>
@@ -1058,7 +1116,7 @@
       </div>
     </a>
     <a href="/free-math-drills/multiplication/2-digit-by-1-digit/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DC262618 0%,#DC262608 100%);border-top:4px solid #DC2626"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DC2626;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/drill-math-grade2-2-digit-by-1-digit-animals-standard-p1.png" alt="Max Rescues Baby Animals: Jungle Multiplication Mission!" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#DC2626">Math · Grade 2</div>
         <h3>Max Rescues Baby Animals: Jungle Multiplication Mission!</h3>
@@ -1067,7 +1125,7 @@
       </div>
     </a>
     <a href="/free-math-drills/subtraction/mixed-add-subtract/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DC262618 0%,#DC262608 100%);border-top:4px solid #DC2626"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DC2626;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/drill-math-grade2-mixed-add-subtract-animals-challenge-p1.png" alt="Max Rescues Wild Animals: Addition Subtraction Sprint!" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#DC2626">Math · Grade 2</div>
         <h3>Max Rescues Wild Animals: Addition Subtraction Sprint!</h3>
@@ -1076,7 +1134,7 @@
       </div>
     </a>
     <a href="/free-math-drills/multiplication/2-digit-by-1-digit/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DC262618 0%,#DC262608 100%);border-top:4px solid #DC2626"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DC2626;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/drill-math-grade2-2-digit-by-1-digit-space-challenge-p1.png" alt="Max Conquers the Asteroid Field: Multiplication Blaster!" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#DC2626">Math · Grade 2</div>
         <h3>Max Conquers the Asteroid Field: Multiplication Blaster!</h3>
@@ -1085,7 +1143,7 @@
       </div>
     </a>
     <a href="/free-math-drills/mixed/mad-minute-addition/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DC262618 0%,#DC262608 100%);border-top:4px solid #DC2626"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DC2626;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/drill-math-grade2-mad-minute-addition-music-challenge-p1.png" alt="Max Rescues the Lost Concert: Addition Sprint!" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#DC2626">Math · Grade 2</div>
         <h3>Max Rescues the Lost Concert: Addition Sprint!</h3>
@@ -1094,7 +1152,7 @@
       </div>
     </a>
     <a href="/free-math-drills/multiplication/multiplying-by-10-100/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DC262618 0%,#DC262608 100%);border-top:4px solid #DC2626"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DC2626;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/drill-math-grade2-multiplying-by-10-100-pirates-challenge-p1.png" alt="Max Conquers the Pirate Treasure Vault: Multiply by 10!" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#DC2626">Math · Grade 2</div>
         <h3>Max Conquers the Pirate Treasure Vault: Multiply by 10!</h3>
@@ -1103,7 +1161,7 @@
       </div>
     </a>
     <a href="/free-math-drills/mixed/mad-minute-addition/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DC262618 0%,#DC262608 100%);border-top:4px solid #DC2626"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DC2626;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/drill-math-grade2-mad-minute-addition-ocean-standard-p1.png" alt="Max Rescues Ocean Friends: Addition Speed Challenge!" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#DC2626">Math · Grade 2</div>
         <h3>Max Rescues Ocean Friends: Addition Speed Challenge!</h3>
@@ -1112,7 +1170,7 @@
       </div>
     </a>
     <a href="/free-math-drills/mixed/mad-minute-addition/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DC262618 0%,#DC262608 100%);border-top:4px solid #DC2626"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DC2626;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/drill-math-grade2-mad-minute-addition-seasons-standard-p1.png" alt="Max Conquers the Four Seasons Addition Quest" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#DC2626">Math · Grade 2</div>
         <h3>Max Conquers the Four Seasons Addition Quest</h3>
@@ -1121,7 +1179,7 @@
       </div>
     </a>
     <a href="/free-math-drills/subtraction/mixed-add-subtract/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DC262618 0%,#DC262608 100%);border-top:4px solid #DC2626"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DC2626;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/drill-math-grade2-mixed-add-subtract-robots-standard-p1.png" alt="Max Rescues Robot City: Addition & Subtraction Mission!" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#DC2626">Math · Grade 2</div>
         <h3>Max Rescues Robot City: Addition & Subtraction Mission!</h3>
@@ -1130,7 +1188,7 @@
       </div>
     </a>
     <a href="/free-math-drills/mixed/mad-minute-addition/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DC262618 0%,#DC262608 100%);border-top:4px solid #DC2626"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DC2626;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/drill-math-grade2-mad-minute-addition-dinosaurs-standard-p1.png" alt="Max Rescues Baby Dinosaurs: Addition Sprint Challenge" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#DC2626">Math · Grade 2</div>
         <h3>Max Rescues Baby Dinosaurs: Addition Sprint Challenge</h3>
@@ -1139,7 +1197,7 @@
       </div>
     </a>
     <a href="/free-math-drills/multiplication/multiplying-by-10-100/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DC262618 0%,#DC262608 100%);border-top:4px solid #DC2626"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DC2626;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/drill-math-grade2-multiplying-by-10-100-animals-challenge-p1.png" alt="Max Rescues the Zoo Animals: Multiply by 10 and 100!" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#DC2626">Math · Grade 2</div>
         <h3>Max Rescues the Zoo Animals: Multiply by 10 and 100!</h3>
@@ -1148,7 +1206,7 @@
       </div>
     </a>
     <a href="/free-math-drills/subtraction/mixed-add-subtract/" class="ws-card">
-      <div class="ws-card-thumb-placeholder" style="background:linear-gradient(135deg,#DC262618 0%,#DC262608 100%);border-top:4px solid #DC2626"><span style="font-size:28px;opacity:0.25;font-weight:900;color:#DC2626;letter-spacing:-1px">Math</span></div>
+      <img src="https://examel.com/thumbnails/previews/drill-math-grade2-mixed-add-subtract-nature-challenge-p1.png" alt="Max Rescues Lost Forest Animals: Addition & Subtraction Sprint" class="ws-card-thumb" loading="lazy">
       <div class="ws-card-body">
         <div class="ws-card-badge" style="background:#DC2626">Math · Grade 2</div>
         <h3>Max Rescues Lost Forest Animals: Addition & Subtraction Sprint</h3>
