@@ -1,0 +1,1 @@
+  || w.format === 'worksheet' || (w.format && w.format.startsWith('game-')));

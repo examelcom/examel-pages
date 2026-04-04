@@ -359,7 +359,7 @@ async function main() {
   while (true) {
     let q = supabase
       .from('worksheets')
-      .select('id,slug,grade,subject,topic,theme,title,pdf_url,preview_image_url,pinterest_image_url,preview_p1_url,preview_p2_url,status,format,difficulty,ccss_standard,seo_description,target_keyword,content,created_at')
+      .select('id,slug,grade,subject,topic,theme,title,pdf_url,preview_image_url,pinterest_image_url,preview_p1_url,preview_p2_url,status,format,difficulty,ccss_standard,seo_description,target_keyword,content,pedagogical_intro,teacher_tip,created_at')
       .eq('status', 'published');
     if (FILTER.format)  q = q.eq('format', FILTER.format);
     if (FILTER.subject) q = q.eq('subject', FILTER.subject);

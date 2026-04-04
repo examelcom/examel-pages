@@ -33,7 +33,7 @@ const SUBJECT_EDUCATION = {
 function generateCategoryHubs(worksheets, sharedCSS, siteHeader, siteFooter, helpers) {
   const { gradeColor, capitalize, formatTopic, formatTheme, subjectColor, worksheetCard } = helpers;
 
-  const wsOnly    = worksheets.filter(w => !w.format || w.format === 'worksheet');
+  const wsOnly    = worksheets.filter(w => !w.format || w.format === 'worksheet' || (w.format && w.format.startsWith('game-')));
   const subjects  = [...new Set(wsOnly.map(w => w.subject.toLowerCase()))];
   const grades    = [...new Set(wsOnly.map(w => w.grade))].sort((a, b) => a - b);
   const allGrades = [...new Set(worksheets.map(w => w.grade))].sort((a, b) => a - b);
