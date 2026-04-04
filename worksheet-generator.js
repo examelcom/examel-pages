@@ -298,8 +298,8 @@ ${buildAnalytics()}
     <div class="email-section">
       <h3>📬 Get Worksheets Every Week</h3>
       <p>New themed worksheets added daily. For parents, teachers, and homeschool families.</p>
-      <div class="klaviyo-form-X45k9d"></div>
-      <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/VruXqp/klaviyo.js?company_id=VruXqp"></script>
+      <!-- COPPA-HALTED: klaviyo form disabled -->
+      <!-- COPPA-HALTED: klaviyo script disabled -->
       <p class="email-note">No spam. Unsubscribe anytime.</p>
     </div>
 

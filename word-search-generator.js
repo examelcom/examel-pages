@@ -82,8 +82,8 @@ ${buildAnalytics()}
       <a href="${downloadUrl}" class="btn" download>⬇ Download Free Word Search</a>
       <div style="margin-top:24px;padding-top:24px;border-top:1px solid #f0f0f0;">
         <p style="font-size:14px;color:#636E72;margin-bottom:12px;">Get new free worksheets every week — no spam, unsubscribe anytime.</p>
-        <div class="klaviyo-form-X45k9d"></div>
-        <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/VruXqp/klaviyo.js?company_id=VruXqp"></script>
+        <!-- COPPA-HALTED: klaviyo form disabled -->
+        <!-- COPPA-HALTED: klaviyo script disabled -->
       </div>
     </div>
     ${ws.preview_p1_url ? `
