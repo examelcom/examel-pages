@@ -34,6 +34,7 @@ function buildSchema(data) {
     schema.typicalAgeRange = data.typicalAgeRange || gradeAgeMap[data.grade] || null;
   }
   if (data.subject) schema.about = { "@type": "Thing", "name": data.subject };
+  if (!schema.typicalAgeRange && data.typicalAgeRange) schema.typicalAgeRange = data.typicalAgeRange;
   if (data.teaches) schema.teaches = data.teaches;
   if (data.thumbnail) schema.thumbnailUrl = data.thumbnail;
   if (data.learningResourceType) schema.learningResourceType = data.learningResourceType;

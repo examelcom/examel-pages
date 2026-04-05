@@ -55,6 +55,12 @@
     .ws-card h3{font-size:14px;margin-bottom:5px;line-height:1.5;font-weight:700;color:#1A1420;}
     .ws-card p{font-size:12px;color:#A89FAE;margin-bottom:12px;line-height:1.5;}
     .ws-card-btn{font-size:12px;font-weight:700;color:#4A3BBF;}
+    .ws-card-footer{display:flex;align-items:center;justify-content:space-between;margin-top:6px;gap:4px;flex-wrap:wrap;}
+    .ws-answer-badge{background:#ECFDF5;color:#059669;border:1px solid #6EE7B7;padding:2px 8px;border-radius:100px;font-size:10px;font-weight:700;letter-spacing:0.3px;white-space:nowrap;}
+    .ws-diff-badge{padding:2px 8px;border-radius:100px;font-size:10px;font-weight:700;white-space:nowrap;}
+    .ws-diff-beginner{background:#EFF6FF;color:#3B82F6;border:1px solid #BFDBFE;}
+    .ws-diff-standard{background:#F0FDF4;color:#16A34A;border:1px solid #BBF7D0;}
+    .ws-diff-challenge{background:#FFF7ED;color:#EA580C;border:1px solid #FDBA74;}
     .hub-grid{max-width:1100px;margin:0 auto;padding:0 20px 64px;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;}
     .hub-card{background:white;border-radius:24px;padding:36px 20px;text-decoration:none;color:#1A1420;text-align:center;transition:transform 0.25s cubic-bezier(0.34,1.56,0.64,1),box-shadow 0.25s;box-shadow:0 2px 8px rgba(0,0,0,0.04),0 8px 24px rgba(0,0,0,0.06);border:1px solid #EDE8DF;}
     .hub-card:hover{transform:translateY(-5px);box-shadow:0 8px 32px rgba(108,92,231,0.14),0 2px 8px rgba(0,0,0,0.04);}
@@ -70,6 +76,8 @@
     .footer-heading{font-size:10px;font-weight:800;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:2px;margin-bottom:6px;}
     .site-footer a{color:rgba(255,255,255,0.5);text-decoration:none;font-size:15px;transition:color 0.2s;font-weight:500;}
     .site-footer a:hover{color:#4A3BBF;}
+    a:focus-visible,button:focus-visible{outline:3px solid var(--color-brand);outline-offset:3px;border-radius:4px;}
+    a:focus-visible{border-radius:2px;}
     .footer-bottom{text-align:center;font-size:14px;color:rgba(255,255,255,0.2);border-top:1px solid rgba(255,255,255,0.07);padding-top:24px;}
     .mobile-menu-btn{display:none;background:none;border:none;cursor:pointer;padding:8px;border-radius:8px;}
     /* ── SEARCH ── */
@@ -78,7 +86,7 @@
     .site-search-input::placeholder{color:rgba(255,255,255,0.35);}
     .site-search-input:focus{background:rgba(255,255,255,0.12);border-color:rgba(108,92,231,0.6);box-shadow:0 0 0 3px rgba(108,92,231,0.15);}
     .site-search-results{display:none;position:absolute;top:calc(100% + 8px);left:0;right:0;background:white;border-radius:16px;box-shadow:0 8px 40px rgba(0,0,0,0.18);z-index:999;overflow:hidden;max-height:400px;overflow-y:auto;}
-    .site-search-btn{position:absolute;right:6px;top:50%;transform:translateY(-50%);background:#6C5CE7;border:none;border-radius:100px;width:32px;height:32px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:background 0.2s;}
+    .site-search-btn{position:absolute;right:6px;top:50%;transform:translateY(-50%);background:#6C5CE7;border:none;border-radius:100px;width:40px;height:40px;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;transition:background 0.2s;}
     .site-search-btn:hover{background:#5A4BD1;}
     .site-search{position:relative;flex:1;max-width:420px;margin:0 16px;}
     .mobile-nav{display:none;position:absolute;top:64px;left:0;right:0;background:#1C1526;border-bottom:2px solid #6C5CE7;padding:16px 20px;z-index:199;flex-direction:column;gap:4px;}
@@ -87,18 +95,17 @@
     .mobile-nav.open{display:flex;}
     @media(max-width:768px){
       .site-header nav{display:none;}
-      .mobile-menu-btn{display:block;min-width:44px;min-height:44px;padding:10px;}
+      .mobile-menu-btn{display:block;}
       .hub-grid{grid-template-columns:repeat(2,1fr);}
       .grid{grid-template-columns:repeat(2,1fr);}
-      .site-search-btn{width:44px;height:44px;}
-      .mega-nav-toggle{min-height:44px;padding:10px 8px;}
-      .mega-nav-link{min-height:44px;display:inline-flex;align-items:center;padding:10px;}
-      .filter-btn{min-height:44px;display:inline-flex;align-items:center;}
     }
     @media(max-width:480px){
       .grid{grid-template-columns:1fr;}
       .hub-grid{grid-template-columns:1fr;}
-      .filter-btn{min-height:44px;padding:10px 16px;}
+    }
+    @media(pointer:coarse),(max-width:768px){
+      .mobile-menu-btn{min-width:44px;min-height:44px;padding:10px;}
+      .filter-btn{min-height:44px;display:inline-flex;align-items:center;padding:10px 16px;}
     }
 
     /* ── MEGA MENU ── */
@@ -460,34 +467,9 @@
       <a href="https://examel.com/downloads/vocab-match-science-grade4-renewable-vs-nonrenewable-energy-earth-day-NGSS4-ESS3-1.pdf" class="btn" download>⬇ Download Free Vocabulary Worksheet</a>
       <div style="margin-top:24px;padding-top:24px;border-top:1px solid #f0f0f0;">
         <p style="font-size:14px;color:#636E72;margin-bottom:12px;">Get new free worksheets every week — no spam, unsubscribe anytime.</p>
-        <div class="klaviyo-form-X45k9d"></div>
-        <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/VruXqp/klaviyo.js?company_id=VruXqp"></script>
+        <!-- COPPA-HALTED: klaviyo form disabled -->
+        <!-- COPPA-HALTED: klaviyo script disabled -->
       </div>
-    </div>
-    
-    <div class="preview-section">
-      <h3>📄 Worksheet Preview</h3>
-      <div class="preview-grid">
-        <div>
-          <p class="preview-label">Page 1 — Vocabulary Match</p>
-          <a href="https://examel.com/thumbnails/previews/vocab-match-science-grade4-renewable-vs-nonrenewable-energy-earth-day-NGSS4-ESS3-1-p1.png" target="_blank">
-            <img src="https://examel.com/thumbnails/previews/vocab-match-science-grade4-renewable-vs-nonrenewable-energy-earth-day-NGSS4-ESS3-1-p1.png"
-              alt="Free Grade 4 Science vocabulary match worksheet — Renewable Vs Nonrenewable Energy — Common Core NGSS.4-ESS3-1"
-              loading="lazy" width="850" height="1100"
-              class="preview-img">
-          </a>
-        </div>
-        <div>
-          <p class="preview-label">Page 2 — Answer Key</p>
-          <a href="https://examel.com/thumbnails/previews/vocab-match-science-grade4-renewable-vs-nonrenewable-energy-earth-day-NGSS4-ESS3-1-p2.png" target="_blank">
-            <img src="https://examel.com/thumbnails/previews/vocab-match-science-grade4-renewable-vs-nonrenewable-energy-earth-day-NGSS4-ESS3-1-p2.png"
-              alt="Answer key — Grade 4 Science vocabulary match — Renewable Vs Nonrenewable Energy — teacher and parent use only"
-              loading="lazy" width="850" height="1100"
-              class="preview-img">
-          </a>
-        </div>
-      </div>
-      <p class="preview-note">Click any image to view full size · 2 pages · Print-ready PDF</p>
     </div>
     
     <div class="features">
@@ -500,7 +482,7 @@
       <div class="feature-item"><span class="check">✓</span> Print-ready PDF — Letter size</div>
       <div class="feature-item"><span class="check">✓</span> standard difficulty level</div>
     </div>
-    <div style="background:white;border-radius:20px;padding:28px 32px;margin-bottom:28px;border:1px solid #EDE8DF;box-shadow:0 2px 8px rgba(0,0,0,0.04);"><div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#6C5CE7;margin-bottom:12px;font-family:Outfit,sans-serif;">About This Activity</div><p style="font-size:15px;color:#3D3347;line-height:1.8;margin-bottom:20px;font-style:italic;">Zoe planted solar-powered flags at the Earth Day celebration.</p><div style="background:#F4F1FF;border-radius:12px;padding:16px 20px;margin-bottom:20px;border-left:4px solid #6C5CE7;"><div style="font-size:12px;font-weight:700;color:#6C5CE7;margin-bottom:6px;font-family:Outfit,sans-serif;">Teacher Tip</div><p style="font-size:14px;color:#4A4458;line-height:1.7;margin:0;">After matching, have students sort the eight words into two Earth Day poster columns — 'Helps Our Planet' vs. 'Harms Our Planet' — then discuss why conserving nonrenewable resources like fossils reduces harmful emissions, reinforcing the NGSS.4-ESS3-1 connection between energy choices and environmental impact.</p></div><div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#6C5CE7;margin-bottom:12px;font-family:Outfit,sans-serif;">Vocabulary Words</div><div style="display:flex;gap:12px;margin-bottom:10px;align-items:baseline;"><span style="font-weight:800;font-size:14px;color:#1A1420;font-family:Outfit,sans-serif;min-width:120px;">RENEWABLE</span><span style="font-size:14px;color:#6B6475;line-height:1.6;">Energy that nature restores quickly, like wind or sunlight.</span></div><div style="display:flex;gap:12px;margin-bottom:10px;align-items:baseline;"><span style="font-weight:800;font-size:14px;color:#1A1420;font-family:Outfit,sans-serif;min-width:120px;">FOSSIL</span><span style="font-size:14px;color:#6B6475;line-height:1.6;">Ancient buried remains that formed coal, oil, or gas.</span></div><div style="display:flex;gap:12px;margin-bottom:10px;align-items:baseline;"><span style="font-weight:800;font-size:14px;color:#1A1420;font-family:Outfit,sans-serif;min-width:120px;">SOLAR</span><span style="font-size:14px;color:#6B6475;line-height:1.6;">Power that comes directly from the sun's bright rays.</span></div><div style="display:flex;gap:12px;margin-bottom:10px;align-items:baseline;"><span style="font-weight:800;font-size:14px;color:#1A1420;font-family:Outfit,sans-serif;min-width:120px;">TURBINE</span><span style="font-size:14px;color:#6B6475;line-height:1.6;">A spinning machine that captures wind to make electricity.</span></div><div style="display:flex;gap:12px;margin-bottom:10px;align-items:baseline;"><span style="font-weight:800;font-size:14px;color:#1A1420;font-family:Outfit,sans-serif;min-width:120px;">RESOURCE</span><span style="font-size:14px;color:#6B6475;line-height:1.6;">A natural supply humans depend on for energy or materials.</span></div><div style="display:flex;gap:12px;margin-bottom:10px;align-items:baseline;"><span style="font-weight:800;font-size:14px;color:#1A1420;font-family:Outfit,sans-serif;min-width:120px;">CONSERVE</span><span style="font-size:14px;color:#6B6475;line-height:1.6;">To protect something by not wasting or overusing it.</span></div><div style="display:flex;gap:12px;margin-bottom:10px;align-items:baseline;"><span style="font-weight:800;font-size:14px;color:#1A1420;font-family:Outfit,sans-serif;min-width:120px;">EMISSION</span><span style="font-size:14px;color:#6B6475;line-height:1.6;">Harmful gas released into the air when fuel burns.</span></div><div style="display:flex;gap:12px;margin-bottom:10px;align-items:baseline;"><span style="font-weight:800;font-size:14px;color:#1A1420;font-family:Outfit,sans-serif;min-width:120px;">SUSTAINABLE</span><span style="font-size:14px;color:#6B6475;line-height:1.6;">Able to keep going without damaging Earth's future supply.</span></div></div>
+    <div style="background:white;border-radius:20px;padding:28px 32px;margin-bottom:28px;border:1px solid #EDE8DF;box-shadow:0 2px 8px rgba(0,0,0,0.04);"><div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#6C5CE7;margin-bottom:12px;font-family:Outfit,sans-serif;">About This Activity</div><p style="font-size:15px;color:#3D3347;line-height:1.8;margin-bottom:20px;font-style:italic;">Zoe planted a solar-powered sign at the Earth Day festival.</p><div style="background:#F4F1FF;border-radius:12px;padding:16px 20px;margin-bottom:20px;border-left:4px solid #6C5CE7;"><div style="font-size:12px;font-weight:700;color:#6C5CE7;margin-bottom:6px;font-family:Outfit,sans-serif;">Teacher Tip</div><p style="font-size:14px;color:#4A4458;line-height:1.7;margin:0;">On Earth Day, have students sort the eight words into two decorated bins labeled 'Helps Earth' and 'Harms Earth' — this physical sort sparks debate about CARBON and FOSSIL fuels versus SOLAR and TURBINE power, deepening NGSS.4-ESS3-1 understanding through real-world connection.</p></div><div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#6C5CE7;margin-bottom:12px;font-family:Outfit,sans-serif;">Vocabulary Words</div><div style="display:flex;gap:12px;margin-bottom:10px;align-items:baseline;"><span style="font-weight:800;font-size:14px;color:#1A1420;font-family:Outfit,sans-serif;min-width:120px;">RENEWABLE</span><span style="font-size:14px;color:#6B6475;line-height:1.6;">Energy that nature replaces again and again, never running out.</span></div><div style="display:flex;gap:12px;margin-bottom:10px;align-items:baseline;"><span style="font-weight:800;font-size:14px;color:#1A1420;font-family:Outfit,sans-serif;min-width:120px;">FOSSIL</span><span style="font-size:14px;color:#6B6475;line-height:1.6;">Ancient plant or animal remains buried deep underground for millions of years.</span></div><div style="display:flex;gap:12px;margin-bottom:10px;align-items:baseline;"><span style="font-weight:800;font-size:14px;color:#1A1420;font-family:Outfit,sans-serif;min-width:120px;">SOLAR</span><span style="font-size:14px;color:#6B6475;line-height:1.6;">Power that comes directly from sunlight hitting special panels.</span></div><div style="display:flex;gap:12px;margin-bottom:10px;align-items:baseline;"><span style="font-weight:800;font-size:14px;color:#1A1420;font-family:Outfit,sans-serif;min-width:120px;">TURBINE</span><span style="font-size:14px;color:#6B6475;line-height:1.6;">A spinning machine that captures wind or water to make electricity.</span></div><div style="display:flex;gap:12px;margin-bottom:10px;align-items:baseline;"><span style="font-weight:800;font-size:14px;color:#1A1420;font-family:Outfit,sans-serif;min-width:120px;">CONSERVE</span><span style="font-size:14px;color:#6B6475;line-height:1.6;">To protect a resource by wasting as little as possible.</span></div><div style="display:flex;gap:12px;margin-bottom:10px;align-items:baseline;"><span style="font-weight:800;font-size:14px;color:#1A1420;font-family:Outfit,sans-serif;min-width:120px;">POLLUTION</span><span style="font-size:14px;color:#6B6475;line-height:1.6;">Harmful chemicals or smoke that dirty the air, water, or land.</span></div><div style="display:flex;gap:12px;margin-bottom:10px;align-items:baseline;"><span style="font-weight:800;font-size:14px;color:#1A1420;font-family:Outfit,sans-serif;min-width:120px;">RESOURCE</span><span style="font-size:14px;color:#6B6475;line-height:1.6;">A natural material people depend on to meet their needs.</span></div><div style="display:flex;gap:12px;margin-bottom:10px;align-items:baseline;"><span style="font-weight:800;font-size:14px;color:#1A1420;font-family:Outfit,sans-serif;min-width:120px;">CARBON</span><span style="font-size:14px;color:#6B6475;line-height:1.6;">A gas released when fuels burn, warming Earth's atmosphere.</span></div></div>
     <div class="seo-text">
       <h3>About this Grade 4 Renewable Vs Nonrenewable Energy Vocabulary Worksheet</h3>
       <p>This printable vocabulary match worksheet helps Grade 4 Science students learn key Renewable Vs Nonrenewable Energy terms. The Earth Day theme makes vocabulary practice engaging while students build academic language skills. Includes answer key and bonus writing challenge (NGSS.4-ESS3-1).</p>

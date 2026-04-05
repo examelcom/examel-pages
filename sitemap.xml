@@ -471,6 +471,116 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/blog/building-math-fluency-quick-vs-extended/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/blog/ccss-math-standards-parent-guide/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/blog/division-facts-teaching-strategies/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/blog/end-of-year-math-review-plan/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/blog/fact-fluency-benchmarks-by-grade/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/blog/first-week-math-routines/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/blog/five-minute-math-warmups/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/blog/fraction-strategies-3rd-5th-grade/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/blog/homework-that-works/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/blog/how-to-use-math-drills-in-classroom/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/blog/is-my-child-behind-in-math/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/blog/math-anxiety-overcoming-guide/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/blog/math-assessment-without-tests/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/blog/math-centers-rotation-guide/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/blog/multiplication-at-home-parent-tips/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/blog/place-value-teaching-guide/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/blog/screen-time-vs-printable-worksheets/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/blog/spaced-practice-math-research/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/blog/summer-math-practice-parents/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/blog/teaching-multiplication-facts-guide/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/blog/telling-time-teaching-guide/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/blog/word-problems-strategies-by-grade/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/browse/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -28811,6 +28921,16 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://examel.com/free-english-worksheets/adverbs-basic/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/free-english-worksheets/articles/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://examel.com/free-english-worksheets/author-purpose/</loc>
     <changefreq>daily</changefreq>
     <priority>0.85</priority>
@@ -28826,7 +28946,22 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://examel.com/free-english-worksheets/comparative-adverbs/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://examel.com/free-english-worksheets/compare-contrast/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/free-english-worksheets/conjunctions-coordinating/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/free-english-worksheets/conjunctions-subordinating/</loc>
     <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
@@ -28847,6 +28982,11 @@
   </url>
   <url>
     <loc>https://examel.com/free-english-worksheets/grade-1/reading-comprehension/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/free-english-worksheets/grade-1/vocabulary/</loc>
     <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
@@ -28877,6 +29017,11 @@
   </url>
   <url>
     <loc>https://examel.com/free-english-worksheets/grade-3/reading-comprehension/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/free-english-worksheets/grade-3/vocabulary/</loc>
     <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
@@ -28941,6 +29086,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://examel.com/free-english-worksheets/interjections/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://examel.com/free-english-worksheets/irregular-plural-nouns/</loc>
     <changefreq>daily</changefreq>
     <priority>0.85</priority>
@@ -28957,6 +29107,36 @@
   </url>
   <url>
     <loc>https://examel.com/free-english-worksheets/possessive-nouns-singular/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/free-english-worksheets/prepositions/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/free-english-worksheets/pronouns-indefinite/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/free-english-worksheets/pronouns-personal/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/free-english-worksheets/pronouns-possessive/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/free-english-worksheets/pronouns-reflexive/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/free-english-worksheets/pronouns-relative/</loc>
     <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
@@ -29476,6 +29656,11 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://examel.com/free-math-worksheets/grade-2/word-problems/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://examel.com/free-math-worksheets/grade-3/addition/</loc>
     <changefreq>daily</changefreq>
     <priority>0.85</priority>
@@ -29602,6 +29787,11 @@
   </url>
   <url>
     <loc>https://examel.com/free-math-worksheets/grade-6/addition/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/free-math-worksheets/grade-6/decimals/</loc>
     <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
@@ -29881,12 +30071,22 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://examel.com/free-science-worksheets/grade-2/earth-science/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://examel.com/free-science-worksheets/grade-2/</loc>
     <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://examel.com/free-science-worksheets/grade-2/life-science/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/free-science-worksheets/grade-2/physical-science/</loc>
     <changefreq>daily</changefreq>
     <priority>0.85</priority>
   </url>
@@ -30106,6 +30306,21 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/games/game-analogy-1-1775373256287/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-analogy-1-1775373258946/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-analogy-2-1775373443013/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/games/game-analogy-4-1775201343560/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -30116,12 +30331,22 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/games/game-analogy-5-1775373446321/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/games/game-analogy-6-1775117486050/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://examel.com/games/game-analogy-6-1775196668032/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-analogy-6-1775373253544/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -30176,6 +30401,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/games/game-bingo-1-1775371244428/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/games/game-bingo-2-1775044700025/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -30196,6 +30426,21 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/games/game-bingo-2-1775371247082/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-bingo-2-1775371249841/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-bingo-2-1775371528444/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/games/game-bingo-3-1775198107937/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -30207,6 +30452,11 @@
   </url>
   <url>
     <loc>https://examel.com/games/game-bingo-5-1775285273425/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-bingo-6-1775371531641/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -30246,6 +30496,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/games/game-categorysort-1-1775370533844/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/games/game-categorysort-2-1775051563996/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -30276,6 +30531,21 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/games/game-categorysort-2-1775370525121/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-categorysort-2-1775370527776/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-categorysort-2-1775370530430/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/games/game-categorysort-3-1775199720718/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -30301,6 +30571,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/games/game-categorysort-8-1775370536515/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/games/game-causeeffect-1-1775196553725/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -30316,12 +30591,37 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/games/game-causeeffect-2-1775374266893/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-causeeffect-2-1775374269687/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-causeeffect-2-1775374548451/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/games/game-causeeffect-3-1775115932417/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/games/game-causeeffect-3-1775374272903/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/games/game-causeeffect-4-1775201522301/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-causeeffect-5-1775374551177/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -30346,6 +30646,16 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/games/game-cipher-2-1775374803585/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-cipher-2-1775375096586/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/games/game-cipher-5-1775110392043/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -30361,12 +30671,27 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/games/game-cipher-5-1775374806940/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/games/game-cipher-7-1775112759819/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/games/game-cipher-7-1775374800986/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/games/game-cipher-8-1775200648999/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-cipher-8-1775374810145/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -30381,12 +30706,27 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/games/game-cloze-2-1775373454502/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/games/game-cloze-5-1775112018161/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://examel.com/games/game-cloze-5-1775201122036/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-cloze-5-1775373451771/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-cloze-5-1775373651283/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -30406,12 +30746,32 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/games/game-cloze-6-1775373449056/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-cloze-6-1775373654124/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/games/game-comparecontrast-1-1775111120626/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://examel.com/games/game-comparecontrast-1-1775197510379/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-comparecontrast-1-1775374553932/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-comparecontrast-1-1775374557146/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -30426,6 +30786,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/games/game-comparecontrast-3-1775374560469/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/games/game-comparecontrast-4-1775117581619/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -30436,7 +30801,17 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/games/game-comparecontrast-7-1775374798285/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/games/game-crossword-1-1775112875113/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-crossword-1-1775375510266/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -30591,6 +30966,16 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/games/game-crossword-3-1775375507632/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-crossword-3-1775375729575/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/games/game-crossword-4-1775113292229/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -30612,6 +30997,16 @@
   </url>
   <url>
     <loc>https://examel.com/games/game-crossword-8-1775110439433/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-crossword-8-1775375513498/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-crossword-8-1775375516338/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -30666,7 +31061,22 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/games/game-factopinion-1-1775372685373/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-factopinion-1-1775372691364/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/games/game-factopinion-2-1775200091975/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-factopinion-3-1775372890722/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -30692,6 +31102,16 @@
   </url>
   <url>
     <loc>https://examel.com/games/game-factopinion-7-1775196616848/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-factopinion-7-1775372688196/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-factopinion-8-1775372894254/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -30756,6 +31176,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/games/game-fillinblank-1-1775369552976/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/games/game-fillinblank-2-1774937549925/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -30786,7 +31211,27 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/games/game-fillinblank-2-1775369541693/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-fillinblank-2-1775369544370/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-fillinblank-2-1775369547036/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/games/game-fillinblank-3-1775201219338/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-fillinblank-3-1775369550371/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -30876,6 +31321,21 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/games/game-flashcards-1-1775371538314/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-flashcards-1-1775371779019/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-flashcards-1-1775371782280/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/games/game-flashcards-2-1775052661461/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -30892,6 +31352,11 @@
   </url>
   <url>
     <loc>https://examel.com/games/game-flashcards-2-1775202270021/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-flashcards-2-1775371535093/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -31021,6 +31486,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/games/game-flashcards-3-1775371540911/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/games/game-flashcards-5-1775118313184/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -31031,7 +31501,62 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/games/game-geometry-2-1775376607488/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-geometry-2-1775376617118/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-geometry-2-1775376790414/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-geometry-3-1775376610474/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-geometry-4-1775376613780/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-graphing-2-1775377043215/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-graphing-2-1775377045834/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-graphing-2-1775377048460/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-graphing-2-1775377051217/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-graphing-2-1775377241900/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/games/game-kwl-1-1775200667541/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-kwl-1-1775374261522/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -31041,7 +31566,17 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/games/game-kwl-2-1775374068937/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/games/game-kwl-3-1775113303037/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-kwl-3-1775374074299/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -31051,7 +31586,17 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/games/game-kwl-4-1775374264198/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/games/game-kwl-6-1775203661543/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-kwl-6-1775374071671/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -31066,7 +31611,17 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/games/game-labeldiagram-1-1775375307859/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/games/game-labeldiagram-2-1775116658129/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-labeldiagram-2-1775375304462/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -31076,7 +31631,17 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/games/game-labeldiagram-3-1775375313209/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/games/game-labeldiagram-5-1775114078191/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-labeldiagram-5-1775375310476/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -31087,6 +31652,11 @@
   </url>
   <url>
     <loc>https://examel.com/games/game-labeldiagram-8-1775111685658/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-labeldiagram-8-1775375504357/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -31122,6 +31692,16 @@
   </url>
   <url>
     <loc>https://examel.com/games/game-matching-1-1775283814091/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-matching-1-1775369919698/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-matching-1-1775369923212/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -31162,6 +31742,16 @@
   </url>
   <url>
     <loc>https://examel.com/games/game-matching-2-1775283825100/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-matching-2-1775369911362/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-matching-2-1775369916964/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -31316,6 +31906,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/games/game-matching-4-1775369914079/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/games/game-matching-5-1774937552585/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -31352,6 +31947,31 @@
   </url>
   <url>
     <loc>https://examel.com/games/game-matching-8-1774938442524/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-measurement-1-1775376793261/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-measurement-1-1775376795938/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-measurement-1-1775376798814/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-measurement-1-1775376801473/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-measurement-1-1775377040571/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -31431,6 +32051,21 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/games/game-multiplechoice-2-1775369721253/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-multiplechoice-2-1775369729933/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-multiplechoice-2-1775369732557/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/games/game-multiplechoice-3-1774940229182/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -31481,6 +32116,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/games/game-multiplechoice-5-1775369724505/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/games/game-multiplechoice-6-1775116709238/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -31497,6 +32137,36 @@
   </url>
   <url>
     <loc>https://examel.com/games/game-multiplechoice-8-1775025681146/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-multiplechoice-8-1775369727146/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-multiplication-2-1775375982110/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-multiplication-2-1775375984996/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-multiplication-2-1775375987701/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-multiplication-2-1775375990500/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-multiplication-2-1775376192580/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -31581,6 +32251,21 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/games/game-oddoneout-2-1775370275039/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-oddoneout-2-1775370277749/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-oddoneout-2-1775370280503/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/games/game-oddoneout-3-1775024309466/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -31621,6 +32306,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/games/game-oddoneout-5-1775370287242/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/games/game-oddoneout-7-1774938494649/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -31641,7 +32331,87 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/games/game-oddoneout-7-1775370283808/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/games/game-oddoneout-8-1775201110376/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-patterns-5-1775377244582/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-patterns-5-1775377247222/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-patterns-5-1775377249876/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-patterns-5-1775377252757/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-patterns-5-1775377482243/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-phonics-1-1775376195315/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-phonics-1-1775376198841/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-phonics-1-1775376201651/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-phonics-1-1775376204399/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-phonics-1-1775376416171/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-place-value-1-1775375732267/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-place-value-1-1775375735038/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-place-value-1-1775375737682/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-place-value-1-1775375741090/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-place-value-1-1775375979302/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -31661,7 +32431,27 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/games/game-rankorder-2-1775373862541/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-rankorder-2-1775373865203/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-rankorder-2-1775374063426/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/games/game-rankorder-3-1775110308686/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-rankorder-3-1775374066187/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -31676,7 +32466,37 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/games/game-rankorder-6-1775373867869/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/games/game-rankorder-8-1775117084824/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-reading-comp-2-1775376419579/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-reading-comp-2-1775376422271/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-reading-comp-2-1775376425053/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-reading-comp-2-1775376427655/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-reading-comp-2-1775376604152/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -31766,6 +32586,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/games/game-riddles-1-1775372013855/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/games/game-riddles-2-1775053500919/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -31821,6 +32646,21 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/games/game-riddles-2-1775371785093/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-riddles-2-1775371788337/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-riddles-2-1775371791120/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/games/game-riddles-3-1775116980746/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -31871,12 +32711,47 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/games/game-riddles-4-1775372016559/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/games/game-riddles-7-1775198344402/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://examel.com/games/game-riddles-8-1775110192379/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-seasonal-1-1775377485349/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-seasonal-1-1775377488011/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-seasonal-1-1775377490810/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-seasonal-1-1775377493395/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-seasonal-1-1775377600439/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-sentenceunscramble-1-1775373247492/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -31891,6 +32766,16 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/games/game-sentenceunscramble-2-1775373073991/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-sentenceunscramble-3-1775373250802/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/games/game-sentenceunscramble-4-1775116006029/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -31901,12 +32786,22 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/games/game-sentenceunscramble-5-1775373079617/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/games/game-sentenceunscramble-6-1775199280810/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://examel.com/games/game-sentenceunscramble-7-1775114350974/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-sentenceunscramble-7-1775373076836/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -31936,6 +32831,16 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/games/game-sequencing-2-1775370948808/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-sequencing-2-1775370951469/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/games/game-sequencing-3-1775201599252/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -31961,6 +32866,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/games/game-sequencing-6-1775370954252/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/games/game-sequencing-8-1775112775007/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -31982,6 +32892,11 @@
   </url>
   <url>
     <loc>https://examel.com/games/game-timeline-2-1775286108143/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-timeline-2-1775372019382/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -32071,12 +32986,27 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/games/game-timeline-3-1775372022044/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-timeline-3-1775372289467/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/games/game-timeline-4-1775112623314/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://examel.com/games/game-timeline-4-1775285893048/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-timeline-4-1775372024721/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -32107,6 +33037,11 @@
   </url>
   <url>
     <loc>https://examel.com/games/game-timeline-8-1775285895669/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-timeline-8-1775372286187/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -32207,6 +33142,31 @@
   </url>
   <url>
     <loc>https://examel.com/games/game-truefalse-2-1775203561883/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-truefalse-2-1775369366999/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-truefalse-2-1775369369979/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-truefalse-2-1775369372730/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-truefalse-2-1775369375503/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-truefalse-2-1775369378440/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -32411,12 +33371,37 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/games/game-twotruths-2-1775372897142/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-twotruths-2-1775373068454/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-twotruths-3-1775373071155/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/games/game-twotruths-4-1775113692466/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://examel.com/games/game-twotruths-4-1775200730415/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-twotruths-4-1775372899804/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-twotruths-4-1775372902571/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -32441,12 +33426,22 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/games/game-venndiagram-1-1775372298842/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/games/game-venndiagram-2-1775118321826/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://examel.com/games/game-venndiagram-3-1775203297154/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-venndiagram-3-1775372292763/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -32462,6 +33457,21 @@
   </url>
   <url>
     <loc>https://examel.com/games/game-venndiagram-4-1775286113658/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-venndiagram-4-1775372296128/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-venndiagram-5-1775372483524/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-venndiagram-6-1775372486414/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -32511,6 +33521,16 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/games/game-vocabmatch-1-1775370959789/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-vocabmatch-1-1775371241013/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/games/game-vocabmatch-2-1775051670641/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -32536,7 +33556,17 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/games/game-vocabmatch-2-1775370957188/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/games/game-vocabmatch-4-1775202111865/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-vocabmatch-4-1775371237969/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -32621,6 +33651,26 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/games/game-whoami-2-1775370749573/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-whoami-2-1775370752260/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-whoami-2-1775370754941/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-whoami-2-1775370757618/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/games/game-whoami-4-1775111171632/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -32632,6 +33682,11 @@
   </url>
   <url>
     <loc>https://examel.com/games/game-whoami-5-1775200259763/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-whoami-5-1775370761107/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -32661,7 +33716,22 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/games/game-wordscramble-2-1775372489323/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-wordscramble-2-1775372492053/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/games/game-wordscramble-3-1775111632080/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-wordscramble-3-1775372682267/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -32671,7 +33741,17 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/games/game-wordscramble-5-1775372494641/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/games/game-wordscramble-7-1775199766400/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-wordscramble-7-1775372679447/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -32801,6 +33881,16 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/games/game-wordsearch-1-1775375099284/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-wordsearch-1-1775375101978/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/games/game-wordsearch-2-1775116345183/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -32862,6 +33952,21 @@
   </url>
   <url>
     <loc>https://examel.com/games/game-wordsearch-3-1775201475930/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-wordsearch-3-1775375104573/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-wordsearch-3-1775375107777/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-wordsearch-3-1775375301084/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -32972,6 +34077,31 @@
   </url>
   <url>
     <loc>https://examel.com/games/game-wouldyourather-3-1775202584253/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-wouldyourather-3-1775373656885/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-wouldyourather-3-1775373659520/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-wouldyourather-3-1775373662186/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-wouldyourather-3-1775373856634/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/games/game-wouldyourather-3-1775373859278/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -33476,6 +34606,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://examel.com/reading-passages/grade-3/reading-passage-Science-grade3-Environments-Dragonflies-NGSS-3-LS4-3/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://examel.com/reading-passages/grade-3/reading-passage-english-grade3-character-analysis-tornadoes-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -33611,6 +34746,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://examel.com/reading-passages/grade-3/reading-passage-science-grade3-environments-tacos-ngss3ls43/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://examel.com/reading-passages/grade-3/reading-passage-science-grade3-environments-tacos-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -33627,6 +34767,11 @@
   </url>
   <url>
     <loc>https://examel.com/reading-passages/grade-3/reading-passage-science-grade3-forces-motion-chemistry-lab-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-3/reading-passage-science-grade3-forces-motion-nature-detectives-NGSS-3-PS2-1/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -33957,6 +35102,11 @@
   </url>
   <url>
     <loc>https://examel.com/reading-passages/grade-5/reading-passage-science-grade5-food-webs-young-scientists-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/reading-passages/grade-5/reading-passage-science-grade5-gravity-eco-warriors-NGSS-5-PS2-1/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -36241,6 +37391,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/worksheets/grade-1-english-action-verbs-superheroes-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/worksheets/grade-1-english-adjectives-basic-animals-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -36256,17 +37411,37 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/grade-1-english-phonics-short-vowels-spring-animals-beginner/</loc>
+    <loc>https://examel.com/worksheets/grade-1-english-articles-christmas-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/grade-1-english-reading-comprehension-choir-standard/</loc>
+    <loc>https://examel.com/worksheets/grade-1-english-pronouns-personal-animals-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/grade-1-english-singular-plural-nouns-halloween-standard/</loc>
+    <loc>https://examel.com/worksheets/grade-1-english-proper-nouns-robots-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-english-proper-nouns-superheroes-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-english-sight-words-spring-beginner/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-english-singular-plural-nouns-dinosaurs-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-english-singular-plural-nouns-robots-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -36287,6 +37462,11 @@
   </url>
   <url>
     <loc>https://examel.com/worksheets/grade-1-math-addition-back-to-school-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-baking-champions-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -36312,6 +37492,11 @@
   </url>
   <url>
     <loc>https://examel.com/worksheets/grade-1-math-addition-desert-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-dinosaurs-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -36342,6 +37527,16 @@
   </url>
   <url>
     <loc>https://examel.com/worksheets/grade-1-math-addition-fall-harvest-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-farm-animals-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-fathers-day-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -36391,6 +37586,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-nature-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/worksheets/grade-1-math-addition-space-explorers-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -36402,6 +37602,11 @@
   </url>
   <url>
     <loc>https://examel.com/worksheets/grade-1-math-addition-spring-flowers-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-st-patricks-day-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -36432,6 +37637,16 @@
   </url>
   <url>
     <loc>https://examel.com/worksheets/grade-1-math-addition-video-game-heroes-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-winter-wonderland-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-addition-wizards-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -36486,6 +37701,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-cooking-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/worksheets/grade-1-math-counting-desert-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -36506,12 +37726,22 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/grade-1-math-counting-eco-warriors-standard/</loc>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-easter-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-fairy-tales-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://examel.com/worksheets/grade-1-math-counting-fall-harvest-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-farm-animals-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -36536,6 +37766,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-mothers-day-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/worksheets/grade-1-math-counting-mountains-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -36546,7 +37781,17 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-music-stars-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/worksheets/grade-1-math-counting-nature-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-new-year-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -36572,6 +37817,11 @@
   </url>
   <url>
     <loc>https://examel.com/worksheets/grade-1-math-counting-sports-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-spring-flowers-beginner/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -36602,6 +37852,11 @@
   </url>
   <url>
     <loc>https://examel.com/worksheets/grade-1-math-counting-time-travelers-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-math-counting-travel-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -36711,12 +37966,27 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/worksheets/grade-1-math-subtraction-travel-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/worksheets/grade-1-math-subtraction-valentines-day-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/worksheets/grade-1-math-subtraction-wizards-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/worksheets/grade-1-math-subtraction-world-games-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-1-science-animals-and-their-babies-spring-beginner/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -36761,12 +38031,42 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/worksheets/grade-2-english-adverbs-basic-animals-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-2-english-articles-underwater-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-2-english-capitalize-i-underwater-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/worksheets/grade-2-english-common-nouns-halloween-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/grade-2-english-future-tense-superheroes-standard/</loc>
+    <loc>https://examel.com/worksheets/grade-2-english-conjunctions-coordinating-underwater-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-2-english-demonstrative-pronouns-pirates-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-2-english-grammar-nouns-and-verbs-spring-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-2-english-interjections-space-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -36781,12 +38081,32 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/worksheets/grade-2-english-possessive-nouns-singular-dinosaurs-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/worksheets/grade-2-english-possessive-nouns-singular-halloween-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://examel.com/worksheets/grade-2-english-possessive-nouns-singular-jungle-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-2-english-prepositions-robots-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-2-english-pronouns-personal-halloween-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-2-english-pronouns-possessive-halloween-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -36801,17 +38121,17 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/grade-2-english-reading-comprehension-spring-nature-beginner/</loc>
+    <loc>https://examel.com/worksheets/grade-2-english-proper-nouns-underwater-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-2-english-singular-plural-nouns-christmas-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://examel.com/worksheets/grade-2-english-singular-plural-nouns-pirates-standard/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/worksheets/grade-2-english-singular-plural-nouns-superheroes-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -36827,6 +38147,11 @@
   </url>
   <url>
     <loc>https://examel.com/worksheets/grade-2-math-subtraction-arctic-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-2-math-subtraction-cooking-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -36847,6 +38172,11 @@
   </url>
   <url>
     <loc>https://examel.com/worksheets/grade-2-math-time-jungle-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-2-math-time-mythology-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -36876,6 +38206,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/worksheets/grade-3-english-action-verbs-halloween-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/worksheets/grade-3-english-action-verbs-jungle-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -36886,12 +38221,32 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/worksheets/grade-3-english-adjectives-basic-pirates-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/worksheets/grade-3-english-adjectives-basic-superheroes-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/grade-3-english-cause-effect-mars-mission-standard/</loc>
+    <loc>https://examel.com/worksheets/grade-3-english-adverbs-basic-halloween-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-3-english-articles-jungle-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-3-english-collective-nouns-pirates-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-3-english-collective-nouns-superheroes-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -36901,7 +38256,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/grade-3-english-common-nouns-pirates-standard/</loc>
+    <loc>https://examel.com/worksheets/grade-3-english-comparative-adjectives-halloween-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -36911,17 +38266,22 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/grade-3-english-comparative-adjectives-space-standard/</loc>
+    <loc>https://examel.com/worksheets/grade-3-english-conjunctions-coordinating-jungle-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/grade-3-english-future-tense-jungle-standard/</loc>
+    <loc>https://examel.com/worksheets/grade-3-english-exclamatory-sentences-halloween-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/grade-3-english-future-tense-space-standard/</loc>
+    <loc>https://examel.com/worksheets/grade-3-english-future-tense-animals-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-3-english-helping-verbs-pirates-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -36936,12 +38296,27 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/worksheets/grade-3-english-interjections-dinosaurs-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-3-english-irregular-plural-nouns-jungle-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/worksheets/grade-3-english-irregular-plural-nouns-space-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://examel.com/worksheets/grade-3-english-linking-verbs-dinosaurs-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-3-english-linking-verbs-halloween-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -36966,32 +38341,47 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/worksheets/grade-3-english-possessive-nouns-singular-christmas-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/worksheets/grade-3-english-possessive-nouns-singular-robots-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/worksheets/grade-3-english-possessive-nouns-singular-superheroes-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-3-english-prepositions-pirates-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-3-english-pronouns-indefinite-superheroes-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-3-english-pronouns-personal-christmas-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-3-english-pronouns-possessive-christmas-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-3-english-pronouns-reflexive-jungle-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/worksheets/grade-3-english-proper-nouns-jungle-standard/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/worksheets/grade-3-english-proper-nouns-space-standard/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/worksheets/grade-3-english-reading-comprehension-mythology-standard/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/worksheets/grade-3-english-reading-comprehension-rainforest-standard/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/worksheets/grade-3-english-reading-comprehension-sports-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -37006,22 +38396,12 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/grade-3-english-superlative-adjectives-christmas-standard/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://examel.com/worksheets/grade-3-english-superlative-adjectives-pirates-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/grade-3-english-superlative-adjectives-superheroes-standard/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://examel.com/worksheets/grade-3-english-writing-prompts-earth-day-standard/</loc>
+    <loc>https://examel.com/worksheets/grade-3-math-division-dragons-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -37031,7 +38411,22 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/worksheets/grade-3-math-division-jungle-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-3-math-division-travel-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/worksheets/grade-3-math-fractions-animals-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-3-math-fractions-dragons-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -37076,6 +38471,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/worksheets/grade-3-math-word-problems-cooking-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/worksheets/grade-3-math-word-problems-dinosaurs-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -37091,12 +38491,22 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/worksheets/grade-4-english-abstract-nouns-animals-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/worksheets/grade-4-english-abstract-nouns-pirates-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://examel.com/worksheets/grade-4-english-abstract-nouns-underwater-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-4-english-adverbs-basic-christmas-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -37111,6 +38521,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/worksheets/grade-4-english-comparative-adjectives-christmas-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/worksheets/grade-4-english-comparative-adjectives-dinosaurs-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -37121,7 +38536,32 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/grade-4-english-grammar-pirates-standard/</loc>
+    <loc>https://examel.com/worksheets/grade-4-english-comparative-adverbs-space-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-4-english-conjunctions-coordinating-robots-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-4-english-conjunctions-subordinating-robots-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-4-english-future-tense-dinosaurs-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-4-english-future-tense-robots-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-4-english-helping-verbs-animals-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -37132,6 +38572,11 @@
   </url>
   <url>
     <loc>https://examel.com/worksheets/grade-4-english-helping-verbs-space-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-4-english-interjections-superheroes-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -37151,6 +38596,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/worksheets/grade-4-english-linking-verbs-robots-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/worksheets/grade-4-english-linking-verbs-superheroes-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -37161,7 +38611,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/grade-4-english-possessive-nouns-plural-space-standard/</loc>
+    <loc>https://examel.com/worksheets/grade-4-english-possessive-nouns-plural-underwater-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -37176,27 +38626,47 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/grade-4-english-proper-nouns-christmas-standard/</loc>
+    <loc>https://examel.com/worksheets/grade-4-english-possessive-nouns-singular-underwater-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/grade-4-english-proper-nouns-dinosaurs-standard/</loc>
+    <loc>https://examel.com/worksheets/grade-4-english-prepositions-space-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/grade-4-english-proper-nouns-robots-standard/</loc>
+    <loc>https://examel.com/worksheets/grade-4-english-pronouns-indefinite-animals-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/grade-4-english-reading-comprehension-spring-outdoor-adventures-standard/</loc>
+    <loc>https://examel.com/worksheets/grade-4-english-pronouns-personal-underwater-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/grade-4-english-writing-opinion-essays-spring-topics-standard/</loc>
+    <loc>https://examel.com/worksheets/grade-4-english-pronouns-possessive-underwater-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-4-english-pronouns-reflexive-robots-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-4-english-pronouns-relative-robots-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-4-english-superlative-adjectives-space-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-4-math-angles-arctic-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -37216,6 +38686,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/worksheets/grade-4-math-angles-holidays-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/worksheets/grade-4-math-angles-mountains-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -37226,7 +38701,22 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/worksheets/grade-4-math-angles-ocean-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-4-math-angles-rainforest-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/worksheets/grade-4-math-angles-robots-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-4-math-angles-technology-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -37246,12 +38736,27 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/worksheets/grade-4-math-long-division-pirates-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/worksheets/grade-4-math-long-division-travel-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/worksheets/grade-4-math-multiplication-spring-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/worksheets/grade-4-math-word-problems-nature-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-4-math-word-problems-sports-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -37286,7 +38791,17 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/worksheets/grade-5-english-citing-sources-superheroes-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/worksheets/grade-5-english-collective-nouns-dinosaurs-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-5-english-collective-nouns-halloween-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -37311,7 +38826,22 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/worksheets/grade-5-english-comparative-adverbs-dinosaurs-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-5-english-conjunctions-subordinating-pirates-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/worksheets/grade-5-english-helping-verbs-dinosaurs-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-5-english-helping-verbs-halloween-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -37331,6 +38861,16 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://examel.com/worksheets/grade-5-english-linking-verbs-underwater-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-5-english-past-continuous-space-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://examel.com/worksheets/grade-5-english-possessive-nouns-plural-dinosaurs-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -37346,12 +38886,42 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/grade-5-english-reading-comprehension-earth-day-standard/</loc>
+    <loc>https://examel.com/worksheets/grade-5-english-prepositions-dinosaurs-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/grade-5-english-theme-new-year-beginner/</loc>
+    <loc>https://examel.com/worksheets/grade-5-english-pronouns-indefinite-halloween-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-5-english-pronouns-reflexive-pirates-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-5-english-pronouns-relative-pirates-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-5-english-proper-nouns-pirates-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-5-english-proper-nouns-superheroes-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-5-english-proper-nouns-underwater-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-5-english-superlative-adjectives-dinosaurs-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -37372,6 +38942,11 @@
   </url>
   <url>
     <loc>https://examel.com/worksheets/grade-5-science-gravity-gardening-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-5-science-gravity-ocean-animals-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -37411,17 +38986,27 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/grade-6-english-abstract-nouns-christmas-standard/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://examel.com/worksheets/grade-6-english-abstract-nouns-dinosaurs-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://examel.com/worksheets/grade-6-english-abstract-nouns-robots-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-6-english-comparative-adverbs-superheroes-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-6-english-conjunctions-subordinating-space-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-6-english-gerunds-dinosaurs-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -37441,7 +39026,12 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://examel.com/worksheets/grade-6-english-reading-comprehension-spring-exploration-challenge/</loc>
+    <loc>https://examel.com/worksheets/grade-6-english-pronouns-indefinite-christmas-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-6-english-pronouns-relative-space-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -37477,6 +39067,11 @@
   </url>
   <url>
     <loc>https://examel.com/worksheets/grade-6-science-ecosystems-block-builders-standard/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://examel.com/worksheets/grade-6-science-ecosystems-robots-standard/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
