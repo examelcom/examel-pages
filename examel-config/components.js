@@ -18,28 +18,45 @@ function buildEmailCapture() {
 
 // ── SCHEMA.ORG ──
 function buildSchema(data) {
+  const gradeAgeMap = {1:'6-7',2:'7-8',3:'8-9',4:'9-10',5:'10-11',6:'11-12'};
   const schema = {
     "@context": "https://schema.org",
-    "@type": data.type || "EducationalResource",
+    "@type": data.type || "LearningResource",
     "name": (data.title || '').replace(/"/g, '\\"'),
     "description": (data.description || '').replace(/"/g, '\\"').substring(0, 200),
     "url": data.url || 'https://examel.com',
-    "publisher": { "@type": "Organization", "name": "Examel", "url": "https://examel.com" }
+    "inLanguage": "en",
+    "publisher": { "@type": "Organization", "name": "Examel", "url": "https://examel.com", "logo": { "@type": "ImageObject", "url": "https://examel.com/og-default.png" } },
+    "isAccessibleForFree": data.isFree !== false
   };
-  if (data.grade) schema.educationalLevel = "Grade " + data.grade;
-  if (data.subject) schema.subject = data.subject;
+  if (data.grade) {
+    schema.educationalLevel = { "@type": "DefinedTerm", "inDefinedTermSet": "US Grade Levels", "name": "Grade " + data.grade };
+    schema.typicalAgeRange = data.typicalAgeRange || gradeAgeMap[data.grade] || null;
+  }
+  if (data.subject) schema.about = { "@type": "Thing", "name": data.subject };
   if (data.teaches) schema.teaches = data.teaches;
   if (data.thumbnail) schema.thumbnailUrl = data.thumbnail;
-  if (data.isFree !== false) schema.isAccessibleForFree = true;
+  if (data.learningResourceType) schema.learningResourceType = data.learningResourceType;
+  if (data.audience) {
+    schema.audience = { "@type": "EducationalAudience", "educationalRole": data.audience };
+  } else {
+    schema.audience = [
+      { "@type": "EducationalAudience", "educationalRole": "student" },
+      { "@type": "EducationalAudience", "educationalRole": "teacher" }
+    ];
+  }
   if (data.ccss) {
     schema.educationalAlignment = {
       "@type": "AlignmentObject",
       "alignmentType": "teaches",
       "educationalFramework": "Common Core State Standards",
-      "targetName": data.ccss
+      "targetName": data.ccss,
+      "targetUrl": "https://www.corestandards.org/Math/"
     };
   }
-  if (data.typicalAgeRange) schema.typicalAgeRange = data.typicalAgeRange;
+  if (data.datePublished) schema.datePublished = data.datePublished;
+  if (data.dateModified) schema.dateModified = data.dateModified;
+  Object.keys(schema).forEach(k => { if (schema[k] === null || schema[k] === undefined) delete schema[k]; });
   return `<script type="application/ld+json">${JSON.stringify(schema)}</script>`;
 }
 

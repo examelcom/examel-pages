@@ -32,7 +32,8 @@ function generateDrillPages(worksheets, sharedCSS, siteHeader, siteFooter, grade
   <meta name="description" content="Free printable Grade ${ws.grade} ${topicName} math drill. ${ws.difficulty || 'Standard'} level, ${themeName} theme. Answer key included. Download PDF instantly.">
   <link rel="canonical" href="${canonicalUrl}">
   ${config.buildOG({ title: `${ws.title} | Free Math Drill | Examel`, description: `Free printable Grade ${ws.grade} ${topicName} math drill. Timed practice with answer key.`, image: thumbUrl, url: canonicalUrl })}
-  ${config.buildSchema({ title: ws.title, description: `Free printable Grade ${ws.grade} ${topicName} math drill with answer key`, grade: ws.grade, subject: 'Math', teaches: topicName, url: canonicalUrl, thumbnail: thumbUrl })}
+  ${config.buildSchema({ title: ws.title, description: `Free printable Grade ${ws.grade} ${topicName} math drill with answer key`, grade: ws.grade, subject: "Mathematics", teaches: topicName, url: canonicalUrl, thumbnail: thumbUrl, learningResourceType: "Worksheet", ccss: ws.ccss_standard || null, datePublished: ws.created_at ? ws.created_at.substring(0,10) : null })}
+  ${config.buildBreadcrumbSchema([{name:"Home",url:"https://examel.com/"},{name:"Math Drills",url:"https://examel.com/free-math-drills/"},{name:"Grade "+ws.grade,url:"https://examel.com/free-math-drills/grade-"+ws.grade+"/"},{name:topicName,url:canonicalUrl}])}
   ${sharedCSS}
   <style>
     .ws-hero{background:${color};color:white;padding:40px 20px;text-align:center;}
@@ -116,7 +117,8 @@ function generateDrillPages(worksheets, sharedCSS, siteHeader, siteFooter, grade
     </div>
     <div class="seo-text">
       <h2>About this Grade ${ws.grade} ${topicName} Drill</h2>
-      <p>Free printable ${topicName} drill for Grade ${ws.grade} students. The ${themeName} theme makes fact practice engaging while kids build ${topicName} fluency. Includes answer key and score field — perfect for timed tests${ccssText}.</p>
+      ${ws.pedagogical_intro ? `<p>${ws.pedagogical_intro}</p>` : `<p>Free printable ${topicName} drill for Grade ${ws.grade} students. The ${themeName} theme makes fact practice engaging while kids build ${topicName} fluency. Includes answer key and score field — perfect for timed tests${ccssText}.</p>`}
+      ${ws.teacher_tip ? `<div style="margin-top:16px;padding:14px 18px;background:#F8F7FF;border-left:3px solid #6C5CE7;border-radius:0 8px 8px 0;"><span style="font-weight:700;color:#6C5CE7;font-size:12px;text-transform:uppercase;letter-spacing:1px;">Teacher Tip</span><p style="margin-top:6px;margin-bottom:0;color:#3D3347;line-height:1.7;">${ws.teacher_tip}</p></div>` : ''}
     </div>
     ${config.buildDrillNavLinks(ws, formatTopic)}
   </div>
