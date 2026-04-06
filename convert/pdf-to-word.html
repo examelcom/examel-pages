@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PDF to Word Converter - Free Online | Examel</title>
+  <meta name="description" content="Transform your PDF documents into editable Word (.docx) files instantly. Free, no signup required.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://examel.com/convert/pdf-to-word">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Schema: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is this PDF to Word converter free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, completely free for files up to 25MB with no signup required. We process up to 10 conversions per hour per user."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will my formatting be preserved?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We preserve text, tables, images, and basic formatting. Very complex layouts (multi-column, overlapping elements) may need minor adjustments in Word after conversion."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my PDF file secure?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Files are processed on our encrypted servers and automatically deleted within 1 hour. We never read, store, or share your documents."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I convert scanned PDFs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Scanned PDFs (image-based) work best with our OCR tool first. This converter works best with text-based PDFs created from word processors."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What Word format is the output?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The output is a .docx file compatible with Microsoft Word 2007 and later, Google Docs, LibreOffice Writer, and Apple Pages."
+      }
+    }
+    ]
+  }
+  </script>
+
+  <!-- Schema: WebApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Convert PDF to Word - Examel",
+    "url": "https://examel.com/convert/pdf-to-word",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <!-- Schema: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examel.com" },
+      { "@type": "ListItem", "position": 2, "name": "Converters", "item": "https://examel.com/convert" },
+      { "@type": "ListItem", "position": 3, "name": "Convert PDF to Word", "item": "https://examel.com/convert/pdf-to-word" }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ── Reset + Base ─────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    :root {
+      --fg-primary: #6C5CE7;
+      --fg-primary-light: #A29BFE;
+      --fg-bg: #FAFAFE;
+      --fg-card: #FFFFFF;
+      --fg-text: #2D3436;
+      --fg-text-muted: #636E72;
+      --fg-border: #E8E6F0;
+      --fg-success: #00B894;
+      --fg-error: #E74C3C;
+      --fg-drop-bg: #F8F7FC;
+      --fg-drop-border: #D5D0F0;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --fg-bg: #1A1A2E;
+        --fg-card: #222240;
+        --fg-text: #E8E6F0;
+        --fg-text-muted: #A0A0B8;
+        --fg-border: #3A3A5C;
+        --fg-drop-bg: #252545;
+        --fg-drop-border: #4A4A6C;
+      }
+    }
+
+    body {
+      font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+      background: var(--fg-bg);
+      color: var(--fg-text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ── Header ───────────────────────────────── */
+    .forge-header {
+      background: var(--fg-card);
+      border-bottom: 1px solid var(--fg-border);
+      padding: 12px 20px;
+    }
+    .forge-header-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .forge-logo {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: 20px;
+      color: var(--fg-primary);
+      text-decoration: none;
+    }
+    .forge-nav a {
+      color: var(--fg-text-muted);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      margin-left: 20px;
+    }
+    .forge-nav a:hover { color: var(--fg-primary); }
+
+    /* ── Breadcrumb ────────────────────────────── */
+    .forge-breadcrumb {
+      max-width: 800px;
+      margin: 16px auto 0;
+      padding: 0 20px;
+      font-size: 13px;
+      color: var(--fg-text-muted);
+    }
+    .forge-breadcrumb a {
+      color: var(--fg-primary);
+      text-decoration: none;
+    }
+
+    /* ── Main ──────────────────────────────────── */
+    .forge-main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 24px 20px 60px;
+    }
+
+    .forge-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: var(--fg-text);
+    }
+    .forge-subtitle {
+      font-size: 15px;
+      color: var(--fg-text-muted);
+      margin-bottom: 24px;
+      max-width: 600px;
+    }
+
+    /* ── Drop Zone ─────────────────────────────── */
+    .forge-dropzone {
+      border: 2px dashed var(--fg-drop-border);
+      border-radius: 16px;
+      padding: 48px 24px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      background: var(--fg-drop-bg);
+      position: relative;
+    }
+    .forge-dropzone:hover,
+    .forge-dropzone.dragover {
+      border-color: var(--fg-primary);
+      background: rgba(108, 92, 231, 0.05);
+    }
+    .forge-dropzone-icon {
+      font-size: 48px;
+      margin-bottom: 12px;
+    }
+    .forge-dropzone-text {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .forge-dropzone-hint {
+      font-size: 13px;
+      color: var(--fg-text-muted);
+    }
+    .forge-dropzone input[type="file"] {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    /* ── Options ───────────────────────────────── */
+    .forge-options {
+      margin-top: 16px;
+      padding: 16px;
+      background: var(--fg-card);
+      border: 1px solid var(--fg-border);
+      border-radius: 12px;
+    }
+    .forge-options label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+    .forge-option-input {
+      padding: 6px 10px;
+      border: 1px solid var(--fg-border);
+      border-radius: 6px;
+      font-size: 14px;
+      width: 100px;
+      background: var(--fg-bg);
+      color: var(--fg-text);
+    }
+    .forge-option-range { width: 200px; }
+    .forge-option-hint {
+      font-size: 12px;
+      color: var(--fg-text-muted);
+      margin-top: 4px;
+    }
+
+    /* ── Progress ──────────────────────────────── */
+    .forge-progress {
+      display: none;
+      margin-top: 20px;
+      padding: 20px;
+      background: var(--fg-card);
+      border: 1px solid var(--fg-border);
+      border-radius: 12px;
+    }
+    .forge-progress.active { display: block; }
+    .forge-progress-file {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .forge-progress-bar-bg {
+      height: 8px;
+      background: var(--fg-border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .forge-progress-bar {
+      height: 100%;
+      background: var(--fg-primary);
+      border-radius: 4px;
+      width: 0%;
+      transition: width 0.3s;
+    }
+    .forge-progress-text {
+      font-size: 13px;
+      color: var(--fg-text-muted);
+      margin-top: 6px;
+    }
+
+    /* ── Result ────────────────────────────────── */
+    .forge-result {
+      display: none;
+      margin-top: 20px;
+      padding: 20px;
+      background: var(--fg-card);
+      border: 2px solid var(--fg-success);
+      border-radius: 12px;
+    }
+    .forge-result.active { display: block; }
+    .forge-result-icon { font-size: 32px; margin-bottom: 8px; }
+    .forge-result-name { font-size: 15px; font-weight: 600; margin-bottom: 12px; }
+    .forge-result-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    .forge-btn {
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: none;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .forge-btn-primary {
+      background: var(--fg-primary);
+      color: white;
+    }
+    .forge-btn-primary:hover { background: #5A4BD1; }
+    .forge-btn-secondary {
+      background: var(--fg-bg);
+      color: var(--fg-text);
+      border: 1px solid var(--fg-border);
+    }
+    .forge-btn-secondary:hover { border-color: var(--fg-primary); }
+
+    /* ── Error ─────────────────────────────────── */
+    .forge-error {
+      display: none;
+      margin-top: 20px;
+      padding: 16px;
+      background: #FFF5F5;
+      border: 1px solid var(--fg-error);
+      border-radius: 12px;
+      color: var(--fg-error);
+      font-size: 14px;
+    }
+    .forge-error.active { display: block; }
+
+    /* ── SEO Content ───────────────────────────── */
+    .forge-content {
+      margin-top: 40px;
+      line-height: 1.8;
+    }
+    .forge-content h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin: 28px 0 12px;
+    }
+    .forge-content h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 20px 0 8px;
+    }
+    .forge-content p { margin-bottom: 14px; font-size: 15px; }
+    .forge-content a { color: var(--fg-primary); }
+
+    /* ── FAQ ───────────────────────────────────── */
+    .forge-faq { margin-top: 32px; }
+    .forge-faq h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .forge-faq-item {
+      border: 1px solid var(--fg-border);
+      border-radius: 8px;
+      margin-bottom: 8px;
+      overflow: hidden;
+    }
+    .forge-faq-q {
+      padding: 14px 18px;
+      font-weight: 600;
+      font-size: 15px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--fg-card);
+    }
+    .forge-faq-q::after { content: '+'; font-size: 20px; color: var(--fg-primary); font-weight: 700; }
+    .forge-faq-item.open .forge-faq-q::after { content: '−'; }
+    .forge-faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s; }
+    .forge-faq-item.open .forge-faq-a { max-height: 300px; padding: 0 18px 14px; }
+    .forge-faq-a p { font-size: 14px; color: var(--fg-text-muted); }
+
+    /* ── Related ───────────────────────────────── */
+    .forge-related { margin-top: 32px; }
+    .forge-related h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .forge-related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 10px;
+    }
+    .forge-related-link {
+      display: block;
+      padding: 12px 16px;
+      background: var(--fg-card);
+      border: 1px solid var(--fg-border);
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--fg-text);
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .forge-related-link:hover { border-color: var(--fg-primary); color: var(--fg-primary); }
+
+    /* ── Footer ────────────────────────────────── */
+    .forge-footer {
+      text-align: center;
+      padding: 24px 20px;
+      font-size: 12px;
+      color: var(--fg-text-muted);
+      border-top: 1px solid var(--fg-border);
+      margin-top: 40px;
+    }
+    .forge-footer a { color: var(--fg-primary); text-decoration: none; }
+
+    /* ── Ad slots ──────────────────────────────── */
+    .forge-ad { margin: 24px 0; min-height: 90px; text-align: center; }
+
+    @media print {
+      .forge-dropzone, .forge-progress, .forge-result, .forge-error,
+      .forge-ad, .forge-header, .forge-footer, .forge-related { display: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="forge-header">
+    <div class="forge-header-inner">
+      <a href="https://examel.com" class="forge-logo">examel</a>
+      <nav class="forge-nav">
+        <a href="/converters">Unit Converters</a>
+        <a href="/convert">File Converters</a>
+        <a href="/worksheets">Worksheets</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="forge-breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> &rsaquo;
+    <a href="/convert">File Converters</a> &rsaquo;
+    <span>Convert PDF to Word</span>
+  </nav>
+
+  <main class="forge-main">
+    <h1 class="forge-title">📄 Convert PDF to Word</h1>
+    <p class="forge-subtitle">Transform your PDF documents into editable Word (.docx) files instantly. Free, no signup required.</p>
+
+    <!-- Drop Zone -->
+    <div class="forge-dropzone" id="dropzone">
+      <div class="forge-dropzone-icon">📄</div>
+      <div class="forge-dropzone-text">Drop your file here or click to browse</div>
+      <div class="forge-dropzone-hint">Max 25MB · Free · No signup required</div>
+      <input type="file" id="fileInput" accept=".pdf">
+    </div>
+
+    
+
+    <!-- Progress -->
+    <div class="forge-progress" id="progress">
+      <div class="forge-progress-file" id="progressFile"></div>
+      <div class="forge-progress-bar-bg">
+        <div class="forge-progress-bar" id="progressBar"></div>
+      </div>
+      <div class="forge-progress-text" id="progressText">Converting...</div>
+    </div>
+
+    <!-- Result -->
+    <div class="forge-result" id="result">
+      <div class="forge-result-icon">✅</div>
+      <div class="forge-result-name" id="resultName"></div>
+      <div class="forge-result-actions">
+        <a class="forge-btn forge-btn-primary" id="downloadBtn" download>⬇ Download</a>
+        <button class="forge-btn forge-btn-secondary" id="newBtn">🔄 Convert Another</button>
+      </div>
+    </div>
+
+    <!-- Error -->
+    <div class="forge-error" id="error"></div>
+
+    <!-- Ad slot -->
+    <div class="forge-ad">
+      <!-- AdSense unit here -->
+    </div>
+
+    <!-- SEO Content -->
+    <div class="forge-content">
+      <h2>How PDF to Word Conversion Works</h2>
+<p>Our converter uses LibreOffice's document engine to intelligently parse your PDF and reconstruct it as an editable Word document. Unlike simple text extractors, this preserves your original formatting including tables, images, headers, footers, and font styles wherever possible.</p>
+<p>The conversion happens entirely on our secure servers. Your file is processed in seconds and automatically deleted within 1 hour — we never store or access your documents.</p>
+<h3>When to Use PDF to Word</h3>
+<p>This tool is ideal when you need to edit a document that was shared as a PDF. Common uses include updating a resume, modifying a contract draft, editing a report, or extracting content from a PDF for a new document. Teachers often use it to convert curriculum PDFs into editable lesson plans.</p>
+<h3>Tips for Best Results</h3>
+<p>Text-based PDFs (created from Word, Google Docs, or similar) convert with the highest fidelity. Scanned PDFs (images of paper documents) will need OCR first — try our <a href="/convert/pdf-ocr">PDF OCR tool</a> for those. Complex layouts with multiple columns or heavy graphics may need minor formatting adjustments after conversion.</p>
+    </div>
+
+    <!-- FAQ -->
+    <div class="forge-faq">
+      <h2>Frequently Asked Questions</h2>
+      
+          <div class="forge-faq-item">
+            <div class="forge-faq-q">Is this PDF to Word converter free?</div>
+            <div class="forge-faq-a"><p>Yes, completely free for files up to 25MB with no signup required. We process up to 10 conversions per hour per user.</p></div>
+          </div>
+          <div class="forge-faq-item">
+            <div class="forge-faq-q">Will my formatting be preserved?</div>
+            <div class="forge-faq-a"><p>We preserve text, tables, images, and basic formatting. Very complex layouts (multi-column, overlapping elements) may need minor adjustments in Word after conversion.</p></div>
+          </div>
+          <div class="forge-faq-item">
+            <div class="forge-faq-q">Is my PDF file secure?</div>
+            <div class="forge-faq-a"><p>Yes. Files are processed on our encrypted servers and automatically deleted within 1 hour. We never read, store, or share your documents.</p></div>
+          </div>
+          <div class="forge-faq-item">
+            <div class="forge-faq-q">Can I convert scanned PDFs?</div>
+            <div class="forge-faq-a"><p>Scanned PDFs (image-based) work best with our OCR tool first. This converter works best with text-based PDFs created from word processors.</p></div>
+          </div>
+          <div class="forge-faq-item">
+            <div class="forge-faq-q">What Word format is the output?</div>
+            <div class="forge-faq-a"><p>The output is a .docx file compatible with Microsoft Word 2007 and later, Google Docs, LibreOffice Writer, and Apple Pages.</p></div>
+          </div>
+    </div>
+
+    <!-- Related -->
+    <div class="forge-related">
+      <h2>Related Converters</h2>
+      <div class="forge-related-grid">
+        <a href="/convert/word-to-pdf" class="forge-related-link">📝 Word to PDF</a>
+            <a href="/convert/pdf-to-jpg" class="forge-related-link">📸 PDF to JPG</a>
+            <a href="/convert/pdf-to-png" class="forge-related-link">📊 PDF to PNG</a>
+      </div>
+    </div>
+
+    <!-- Worksheet cross-sell -->
+    <div class="forge-related" style="margin-top: 24px;">
+      <h2>📚 Practice Worksheets</h2>
+      <div class="forge-related-grid">
+        <a href="/worksheets" class="forge-related-link">📝 Browse All Worksheets</a>
+        <a href="/worksheets/math" class="forge-related-link">🔢 Math Worksheets</a>
+        <a href="/worksheets/ela" class="forge-related-link">📖 ELA Worksheets</a>
+      </div>
+    </div>
+
+    <div class="forge-ad">
+      <!-- AdSense unit 2 -->
+    </div>
+  </main>
+
+  <footer class="forge-footer">
+    <a href="https://examel.com">examel.com</a> · Know more. Score more.<br>
+    Free educational tools for K-8 students and teachers.
+  </footer>
+
+  <script>
+  (function() {
+    var CONVERTER_ID = 'pdf-to-word';
+    var API_BASE = 'https://examel.com/forge';
+    var MAX_SIZE = 26214400;
+
+    var dropzone = document.getElementById('dropzone');
+    var fileInput = document.getElementById('fileInput');
+    var progress = document.getElementById('progress');
+    var progressFile = document.getElementById('progressFile');
+    var progressBar = document.getElementById('progressBar');
+    var progressText = document.getElementById('progressText');
+    var result = document.getElementById('result');
+    var resultName = document.getElementById('resultName');
+    var downloadBtn = document.getElementById('downloadBtn');
+    var newBtn = document.getElementById('newBtn');
+    var errorEl = document.getElementById('error');
+
+    // Drag and drop
+    ['dragenter', 'dragover'].forEach(function(evt) {
+      dropzone.addEventListener(evt, function(e) {
+        e.preventDefault();
+        dropzone.classList.add('dragover');
+      });
+    });
+    ['dragleave', 'drop'].forEach(function(evt) {
+      dropzone.addEventListener(evt, function(e) {
+        e.preventDefault();
+        dropzone.classList.remove('dragover');
+      });
+    });
+    dropzone.addEventListener('drop', function(e) {
+      var files = e.dataTransfer.files;
+      if (files.length > 0) handleFile(files[0]);
+    });
+    fileInput.addEventListener('change', function() {
+      if (fileInput.files.length > 0) handleFile(fileInput.files[0]);
+    });
+
+    // New conversion
+    newBtn.addEventListener('click', function() {
+      result.classList.remove('active');
+      errorEl.classList.remove('active');
+      progress.classList.remove('active');
+      dropzone.style.display = '';
+      fileInput.value = '';
+    });
+
+    // FAQ toggles
+    document.querySelectorAll('.forge-faq-q').forEach(function(q) {
+      q.addEventListener('click', function() {
+        this.parentElement.classList.toggle('open');
+      });
+    });
+
+    function handleFile(file) {
+      // Size check
+      if (file.size > MAX_SIZE) {
+        showError('File is too large. Maximum size is 25MB.');
+        return;
+      }
+
+      // Show progress
+      dropzone.style.display = 'none';
+      errorEl.classList.remove('active');
+      result.classList.remove('active');
+      progress.classList.add('active');
+      progressFile.textContent = file.name + ' (' + formatSize(file.size) + ')';
+      progressBar.style.width = '10%';
+      progressText.textContent = 'Uploading...';
+
+      // Build form data
+      var formData = new FormData();
+      formData.append('file', file);
+
+      // Append options if present
+      document.querySelectorAll('.forge-option-input, .forge-option-range').forEach(function(inp) {
+        if (inp.name && inp.value) formData.append(inp.name, inp.value);
+      });
+
+      // Upload and convert
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', API_BASE + '/convert/' + CONVERTER_ID, true);
+      xhr.responseType = 'blob';
+
+      xhr.upload.addEventListener('progress', function(e) {
+        if (e.lengthComputable) {
+          var pct = Math.round((e.loaded / e.total) * 50);
+          progressBar.style.width = pct + '%';
+          progressText.textContent = 'Uploading... ' + pct + '%';
+        }
+      });
+
+      xhr.addEventListener('progress', function(e) {
+        progressBar.style.width = '75%';
+        progressText.textContent = 'Converting...';
+      });
+
+      xhr.addEventListener('load', function() {
+        if (xhr.status === 200) {
+          progressBar.style.width = '100%';
+          progressText.textContent = 'Done!';
+
+          var blob = xhr.response;
+          var url = URL.createObjectURL(blob);
+
+          // Extract filename from Content-Disposition or generate
+          var cd = xhr.getResponseHeader('Content-Disposition') || '';
+          var match = cd.match(/filename="?([^"]+)"?/);
+          var outName = match ? match[1] : file.name.replace(/\.[^.]+$/, '') + '.docx';
+
+          setTimeout(function() {
+            progress.classList.remove('active');
+            result.classList.add('active');
+            resultName.textContent = outName + ' (' + formatSize(blob.size) + ')';
+            downloadBtn.href = url;
+            downloadBtn.download = outName;
+          }, 300);
+        } else {
+          // Try to read error
+          var reader = new FileReader();
+          reader.onload = function() {
+            try {
+              var err = JSON.parse(reader.result);
+              showError(err.error || err.detail || 'Conversion failed');
+            } catch(e) {
+              showError('Conversion failed. Please try again.');
+            }
+          };
+          reader.readAsText(xhr.response);
+        }
+      });
+
+      xhr.addEventListener('error', function() {
+        showError('Network error. Please check your connection and try again.');
+      });
+
+      xhr.addEventListener('timeout', function() {
+        showError('Conversion timed out. The file may be too complex.');
+      });
+
+      xhr.timeout = 120000; // 2 minutes
+      xhr.send(formData);
+    }
+
+    function showError(msg) {
+      progress.classList.remove('active');
+      errorEl.textContent = '❌ ' + msg;
+      errorEl.classList.add('active');
+      dropzone.style.display = '';
+    }
+
+    function formatSize(bytes) {
+      if (bytes < 1024) return bytes + ' B';
+      if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+      return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
+    }
+  })();
+  </script>
+</body>
+</html>
