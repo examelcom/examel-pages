@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=&apos;http://www.w3.org/2000/svg&apos; viewBox=&apos;0 0 32 32&apos;%3E%3Crect width=&apos;32&apos; height=&apos;32&apos; rx=&apos;7&apos; fill=&apos;%236C5CE7&apos;/%3E%3Crect x=&apos;7&apos; y=&apos;7&apos; width=&apos;4&apos; height=&apos;18&apos; rx=&apos;1&apos; fill=&apos;white&apos;/%3E%3Crect x=&apos;7&apos; y=&apos;7&apos; width=&apos;7&apos; height=&apos;4&apos; rx=&apos;1&apos; fill=&apos;white&apos;/%3E%3Crect x=&apos;7&apos; y=&apos;14&apos; width=&apos;11&apos; height=&apos;4&apos; rx=&apos;1&apos; fill=&apos;white&apos;/%3E%3Crect x=&apos;7&apos; y=&apos;21&apos; width=&apos;15&apos; height=&apos;4&apos; rx=&apos;1&apos; fill=&apos;white&apos;/%3E%3C/svg%3E">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Divisibility Rules Checker | Free | Examel</title>
+  <meta name="description" content="Check if a number is divisible by 2, 3, 4, 5, 6, 7, 8, 9, 10. Free, with rules explained.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://examel.com/converters/math-ops/divisibility-checker.html">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <style>/* ================================================================
+   NEXUS Styles — Examel Converter Engine
+   Design system: #6C5CE7 purple, Outfit headings, DM Sans body
+   ================================================================ */
+
+:root {
+  --nexus-primary: #6C5CE7;
+  --nexus-primary-light: #A29BFE;
+  --nexus-primary-dark: #5A4BD1;
+  --nexus-bg: #FAFAFE;
+  --nexus-card: #FFFFFF;
+  --nexus-text: #2D3436;
+  --nexus-text-muted: #636E72;
+  --nexus-border: #E8E6F0;
+  --nexus-success: #00B894;
+  --nexus-accent: #FD79A8;
+  --nexus-input-bg: #F8F7FC;
+  --nexus-radius: 12px;
+  --nexus-shadow: 0 2px 12px rgba(108, 92, 231, 0.08);
+  --nexus-shadow-lg: 0 8px 32px rgba(108, 92, 231, 0.12);
+}
+
+/* --- RESET & BASE --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body.nexus-page {
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--nexus-bg);
+  color: var(--nexus-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- LAYOUT --- */
+.nexus-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px 20px 60px;
+}
+
+/* --- BREADCRUMB --- */
+.nexus-breadcrumb {
+  font-size: 13px;
+  color: var(--nexus-text-muted);
+  margin-bottom: 20px;
+}
+.nexus-breadcrumb a {
+  color: var(--nexus-primary);
+  text-decoration: none;
+}
+.nexus-breadcrumb a:hover { text-decoration: underline; }
+.nexus-breadcrumb span { margin: 0 6px; }
+
+/* --- HEADER --- */
+.nexus-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.nexus-header h1 {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-weight: 700;
+  color: var(--nexus-text);
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+.nexus-header .nexus-subtitle {
+  font-size: 15px;
+  color: var(--nexus-text-muted);
+}
+.nexus-formula-badge {
+  display: inline-block;
+  background: var(--nexus-primary);
+  color: #fff;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'DM Mono', 'Fira Code', monospace;
+  margin-top: 12px;
+  letter-spacing: 0.02em;
+}
+
+/* --- CONVERTER CARD --- */
+.nexus-card {
+  background: var(--nexus-card);
+  border: 1px solid var(--nexus-border);
+  border-radius: var(--nexus-radius);
+  padding: 32px 28px;
+  box-shadow: var(--nexus-shadow);
+  margin-bottom: 24px;
+}
+
+.nexus-converter {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.nexus-field {
+  flex: 1;
+  min-width: 200px;
+}
+.nexus-field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--nexus-text-muted);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.nexus-field input {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'DM Sans', sans-serif;
+  border: 2px solid var(--nexus-border);
+  border-radius: 8px;
+  background: var(--nexus-input-bg);
+  color: var(--nexus-text);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  -moz-appearance: textfield;
+}
+.nexus-field input::-webkit-outer-spin-button,
+.nexus-field input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.nexus-field input:focus {
+  outline: none;
+  border-color: var(--nexus-primary);
+  box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.15);
+}
+.nexus-field input[readonly] {
+  background: linear-gradient(135deg, #F0EEFF 0%, #F8F7FC 100%);
+  border-color: var(--nexus-primary-light);
+  cursor: default;
+}
+
+/* Swap button */
+.nexus-swap-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid var(--nexus-border);
+  background: var(--nexus-card);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: var(--nexus-primary);
+  transition: all 0.2s;
+  flex-shrink: 0;
+  margin-bottom: 4px;
+}
+.nexus-swap-btn:hover {
+  background: var(--nexus-primary);
+  color: #fff;
+  border-color: var(--nexus-primary);
+  transform: rotate(180deg);
+}
+
+/* Action buttons */
+.nexus-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.nexus-btn {
+  padding: 8px 18px;
+  border-radius: 6px;
+  border: 1px solid var(--nexus-border);
+  background: var(--nexus-card);
+  color: var(--nexus-text);
+  font-size: 13px;
+  font-weight: 600;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.nexus-btn:hover {
+  background: var(--nexus-primary);
+  color: #fff;
+  border-color: var(--nexus-primary);
+}
+.nexus-btn-primary {
+  background: var(--nexus-primary);
+  color: #fff;
+  border-color: var(--nexus-primary);
+}
+.nexus-btn-primary:hover {
+  background: var(--nexus-primary-dark);
+}
+
+/* --- STEPS --- */
+#nexus-steps {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  background: #F8F7FC;
+  border-radius: 8px;
+  margin-top: 0;
+}
+#nexus-steps.visible {
+  max-height: 500px;
+  padding: 20px 24px;
+  margin-top: 16px;
+  border: 1px solid var(--nexus-border);
+}
+.nexus-steps-title {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--nexus-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+}
+.nexus-steps-list {
+  padding-left: 20px;
+}
+.nexus-steps-list li {
+  font-size: 15px;
+  padding: 4px 0;
+  color: var(--nexus-text);
+  font-family: 'DM Mono', 'Fira Code', monospace;
+  font-size: 14px;
+}
+
+/* --- COMMON VALUES TABLE --- */
+.nexus-table-section {
+  margin-top: 32px;
+}
+.nexus-table-section h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.nexus-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.nexus-table th {
+  text-align: left;
+  padding: 10px 12px;
+  background: var(--nexus-primary);
+  color: #fff;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.nexus-table th:first-child { border-radius: 8px 0 0 0; }
+.nexus-table th:last-child { border-radius: 0 8px 0 0; }
+.nexus-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--nexus-border);
+}
+.nexus-table tr:hover {
+  background: #F0EEFF;
+}
+.nexus-table tr { cursor: pointer; }
+
+/* --- FUN FACT --- */
+.nexus-funfact {
+  background: linear-gradient(135deg, #F0EEFF 0%, #E8E4FF 100%);
+  border-radius: var(--nexus-radius);
+  padding: 20px 24px;
+  margin-top: 24px;
+  border-left: 4px solid var(--nexus-primary);
+}
+.nexus-funfact-title {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--nexus-primary);
+  margin-bottom: 4px;
+}
+.nexus-funfact p {
+  font-size: 14px;
+  color: var(--nexus-text);
+}
+
+/* --- FAQ --- */
+.nexus-faq {
+  margin-top: 32px;
+}
+.nexus-faq h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.nexus-faq-item {
+  border: 1px solid var(--nexus-border);
+  border-radius: 8px;
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+.nexus-faq-q {
+  padding: 14px 18px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--nexus-card);
+  transition: background 0.15s;
+}
+.nexus-faq-q:hover { background: #F8F7FC; }
+.nexus-faq-q::after {
+  content: '+';
+  font-size: 20px;
+  color: var(--nexus-primary);
+  font-weight: 700;
+  transition: transform 0.2s;
+}
+.nexus-faq-item.open .nexus-faq-q::after {
+  transform: rotate(45deg);
+}
+.nexus-faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+.nexus-faq-item.open .nexus-faq-a {
+  max-height: 300px;
+  padding: 0 18px 14px;
+}
+.nexus-faq-a p {
+  font-size: 14px;
+  color: var(--nexus-text-muted);
+  line-height: 1.7;
+}
+
+/* --- RELATED --- */
+.nexus-related {
+  margin-top: 32px;
+}
+.nexus-related h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.nexus-related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 10px;
+}
+.nexus-related-link {
+  display: block;
+  padding: 12px 16px;
+  background: var(--nexus-card);
+  border: 1px solid var(--nexus-border);
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--nexus-text);
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.15s;
+}
+.nexus-related-link:hover {
+  border-color: var(--nexus-primary);
+  background: #F8F7FC;
+  color: var(--nexus-primary);
+}
+
+/* --- CCSS BADGE --- */
+.nexus-ccss {
+  display: inline-block;
+  background: #E8F5E9;
+  color: #2E7D32;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+/* --- FOOTER --- */
+.nexus-footer {
+  text-align: center;
+  padding: 32px 20px;
+  font-size: 13px;
+  color: var(--nexus-text-muted);
+  border-top: 1px solid var(--nexus-border);
+  margin-top: 40px;
+}
+.nexus-footer a { color: var(--nexus-primary); text-decoration: none; }
+.nexus-footer a:hover { text-decoration: underline; }
+
+/* --- PRINT STYLES --- */
+@media print {
+  .nexus-actions, .nexus-swap-btn, .nexus-related, .nexus-footer,
+  .nexus-breadcrumb { display: none !important; }
+  .nexus-card { box-shadow: none; border: 1px solid #ccc; }
+  body.nexus-page { background: #fff; }
+  #nexus-steps { max-height: none !important; padding: 16px !important; }
+  #nexus-steps.visible { margin-top: 12px !important; }
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 600px) {
+  .nexus-converter { flex-direction: column; align-items: stretch; }
+  .nexus-swap-btn { align-self: center; transform: rotate(90deg); }
+  .nexus-swap-btn:hover { transform: rotate(270deg); }
+  .nexus-card { padding: 24px 20px; }
+  .nexus-field input { font-size: 18px; padding: 12px 14px; }
+  .nexus-related-grid { grid-template-columns: 1fr; }
+}
+</style>
+
+  
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://examel.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Converters", "item": "https://examel.com/converters/" },
+        { "@type": "ListItem", "position": 3, "name": "Math Operations", "item": "https://examel.com/converters/math-ops/" },
+        { "@type": "ListItem", "position": 4, "name": "Divisibility Rules Checker" }
+      ]
+    }
+    </script>
+  
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What are divisibility rules?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Quick tests to determine if a number divides evenly without doing long division. By 2: last digit is even. By 3: digit sum divisible by 3. By 5: ends in 0 or 5. By 9: digit sum divisible by 9. By 10: ends in 0."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is the rule for 7 so complicated?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "7 does not share a simple relationship with 10 (our number base). Rules based on last digits or digit sums work because of relationships with powers of 10, and 7 does not divide neatly into any power of 10."
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+<body class="nexus-page">
+
+  <div class="nexus-container">
+
+    <!-- Breadcrumb -->
+    <nav class="nexus-breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span>›</span>
+      <a href="/converters/">Converters</a><span>›</span>
+      <a href="/converters/math-ops/">Math Operations</a><span>›</span>
+      Divisibility Rules Checker
+    </nav>
+
+    <!-- Header -->
+    <header class="nexus-header">
+      <h1>Divisibility Rules Checker<span class="nexus-ccss">4.OA.B.4</span></h1>
+      <p class="nexus-subtitle">Check if a number is divisible by 2, 3, 4, 5, 6, 7, 8, 9, 10. Free, with rules explained.</p>
+      <div class="nexus-formula-badge">Test divisibility by 2 through 12</div>
+    </header>
+
+    <!-- Converter Card -->
+    <div class="nexus-card">
+      <div class="nexus-converter">
+        <div class="nexus-field">
+          <label for="nexus-input">Number</label>
+          <input type="number" id="nexus-input" placeholder="Enter value" step="any" inputmode="decimal" autocomplete="off">
+        </div>
+
+        <button class="nexus-swap-btn" id="nexus-swap" title="Reverse conversion" aria-label="Swap conversion direction">⇄</button>
+
+        <div class="nexus-field">
+          <label for="nexus-output">Divisibility Results</label>
+          <input type="text" id="nexus-output" readonly placeholder="Result" tabindex="-1">
+        </div>
+      </div>
+
+      <div class="nexus-actions">
+        <button class="nexus-btn" id="nexus-copy">Copy</button>
+        <button class="nexus-btn" id="nexus-clear">Clear</button>
+        <button class="nexus-btn" id="nexus-print">Print</button>
+      </div>
+
+      <!-- Step-by-step -->
+      <div id="nexus-steps"></div>
+    </div>
+
+    
+    <div class="nexus-table-section">
+      <h2>Common Conversions</h2>
+      <table class="nexus-table">
+        <thead>
+          <tr>
+            <th>Input</th>
+            <th>Output</th>
+            <th>Note</th>
+          </tr>
+        </thead>
+        <tbody id="nexus-common-body"></tbody>
+      </table>
+    </div>
+    
+    <div class="nexus-funfact">
+      <div class="nexus-funfact-title">💡 Did You Know?</div>
+      <p>The divisibility rule for 7 is the hardest to remember: double the last digit and subtract from the rest. If the result is divisible by 7, so is the original. Example: 203 → 20 − 6 = 14 → divisible by 7!</p>
+    </div>
+    
+    <div class="nexus-faq">
+      <h2>Frequently Asked Questions</h2>
+      
+        <div class="nexus-faq-item">
+          <div class="nexus-faq-q">What are divisibility rules?</div>
+          <div class="nexus-faq-a"><p>Quick tests to determine if a number divides evenly without doing long division. By 2: last digit is even. By 3: digit sum divisible by 3. By 5: ends in 0 or 5. By 9: digit sum divisible by 9. By 10: ends in 0.</p></div>
+        </div>
+      
+        <div class="nexus-faq-item">
+          <div class="nexus-faq-q">Why is the rule for 7 so complicated?</div>
+          <div class="nexus-faq-a"><p>7 does not share a simple relationship with 10 (our number base). Rules based on last digits or digit sums work because of relationships with powers of 10, and 7 does not divide neatly into any power of 10.</p></div>
+        </div>
+      
+    </div>
+    
+    <div class="nexus-related">
+      <h2>Related Converters</h2>
+      <div class="nexus-related-grid">
+        <a class="nexus-related-link" href="prime-factorization.html">Prime Factorization</a><a class="nexus-related-link" href="gcf-calculator.html">Gcf Calculator</a><a class="nexus-related-link" href="prime-checker.html">Prime Checker</a>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="nexus-footer">
+      <a href="https://examel.com">examel.com</a> · Know more. Score more.
+      <br>Free, accurate, ad-free educational tools for K-8 students.
+    </footer>
+
+  </div>
+
+  <!-- NEXUS Config + Client -->
+  <script>
+  window.NEXUS_CONFIG = {
+  "id": "divisibility-checker",
+  "category": "math-ops",
+  "title": "Divisibility Rules Checker",
+  "metaTitle": "Divisibility Rules Checker | Free | Examel",
+  "metaDescription": "Check if a number is divisible by 2, 3, 4, 5, 6, 7, 8, 9, 10. Free, with rules explained.",
+  "h1": "Divisibility Rules Checker",
+  "inputLabel": "Number",
+  "outputLabel": "Divisibility Results",
+  "inputUnit": "",
+  "outputUnit": "",
+  "formula": "value",
+  "formulaDisplay": "Test divisibility by 2 through 12",
+  "inputType": "divisibility",
+  "stepsTemplate": [
+    "Enter a whole number",
+    "Test divisibility by 2 (even?), 3 (digit sum?), 4 (last 2 digits?), etc.",
+    "Each rule is checked and explained"
+  ],
+  "stepsExpressions": [],
+  "reverseLink": "",
+  "ccss": [
+    "4.OA.B.4"
+  ],
+  "gradeRange": "3-6",
+  "funFact": "The divisibility rule for 7 is the hardest to remember: double the last digit and subtract from the rest. If the result is divisible by 7, so is the original. Example: 203 → 20 − 6 = 14 → divisible by 7!",
+  "commonValues": [
+    {
+      "input": "120",
+      "output": "÷2✓ ÷3✓ ÷4✓ ÷5✓ ÷6✓ ÷8✓ ÷10✓",
+      "label": "Highly divisible"
+    },
+    {
+      "input": "7",
+      "output": "÷7✓ only",
+      "label": "Prime"
+    },
+    {
+      "input": "36",
+      "output": "÷2✓ ÷3✓ ÷4✓ ÷6✓ ÷9✓ ÷12✓",
+      "label": "Perfect square"
+    },
+    {
+      "input": "100",
+      "output": "÷2✓ ÷4✓ ÷5✓ ÷10✓",
+      "label": "Round number"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What are divisibility rules?",
+      "a": "Quick tests to determine if a number divides evenly without doing long division. By 2: last digit is even. By 3: digit sum divisible by 3. By 5: ends in 0 or 5. By 9: digit sum divisible by 9. By 10: ends in 0."
+    },
+    {
+      "q": "Why is the rule for 7 so complicated?",
+      "a": "7 does not share a simple relationship with 10 (our number base). Rules based on last digits or digit sums work because of relationships with powers of 10, and 7 does not divide neatly into any power of 10."
+    }
+  ],
+  "relatedConverters": [
+    "prime-factorization",
+    "gcf-calculator",
+    "prime-checker"
+  ]
+};
+  </script>
+  <script>/**
+ * NEXUS Client — Examel Converter Engine
+ * Runs client-side on every converter page.
+ * Zero dependencies. Pure vanilla JS.
+ */
+
+(function () {
+  'use strict';
+
+  // --- INIT ---
+  const cfg = window.NEXUS_CONFIG;
+  if (!cfg) return console.error('NEXUS: No config found');
+
+  const inputEl = document.getElementById('nexus-input');
+  const outputEl = document.getElementById('nexus-output');
+  const stepsEl = document.getElementById('nexus-steps');
+  const swapBtn = document.getElementById('nexus-swap');
+  const copyBtn = document.getElementById('nexus-copy');
+  const printBtn = document.getElementById('nexus-print');
+  const clearBtn = document.getElementById('nexus-clear');
+  const commonTableBody = document.getElementById('nexus-common-body');
+
+  // --- CORE CONVERSION ---
+  function convert(value) {
+    if (value === '' || isNaN(value)) return { result: '', steps: [] };
+    const v = parseFloat(value);
+    // Build formula function
+    const fn = new Function('value', 'return ' + cfg.formula + ';');
+    const result = fn(v);
+    // Round to reasonable precision
+    const rounded = smartRound(result);
+    // Build steps
+    const steps = buildSteps(v, result);
+    return { result: rounded, steps };
+  }
+
+  function smartRound(n) {
+    if (n === 0) return 0;
+    const abs = Math.abs(n);
+    if (abs >= 1000) return parseFloat(n.toFixed(2));
+    if (abs >= 1) return parseFloat(n.toFixed(4));
+    if (abs >= 0.01) return parseFloat(n.toFixed(6));
+    return parseFloat(n.toPrecision(6));
+  }
+
+  // --- STEP-BY-STEP BUILDER ---
+  function buildSteps(input, result) {
+    if (!cfg.stepsTemplate || !cfg.stepsTemplate.length) return [];
+
+    return cfg.stepsTemplate.map(function (tpl) {
+      // Replace placeholders
+      let s = tpl;
+      s = s.replace(/\{input\}/g, formatNum(input));
+      s = s.replace(/\{result\}/g, formatNum(result));
+
+      // Evaluate intermediate steps like {step1}, {step2}, etc.
+      // Steps are defined as expressions in stepsExpressions[]
+      if (cfg.stepsExpressions) {
+        cfg.stepsExpressions.forEach(function (expr, i) {
+          const fn = new Function('value', 'return ' + expr + ';');
+          const stepVal = fn(input);
+          s = s.replace(new RegExp('\\{step' + (i + 1) + '\\}', 'g'), formatNum(stepVal));
+        });
+      }
+      return s;
+    });
+  }
+
+  function formatNum(n) {
+    if (Number.isInteger(n)) return n.toLocaleString('en-US');
+    const s = smartRound(n).toString();
+    const parts = s.split('.');
+    parts[0] = parseInt(parts[0]).toLocaleString('en-US');
+    return parts.join('.');
+  }
+
+  // --- EVENT HANDLERS ---
+  function onInput() {
+    const val = inputEl.value.trim();
+    if (val === '' || isNaN(val)) {
+      outputEl.value = '';
+      stepsEl.innerHTML = '';
+      stepsEl.classList.remove('visible');
+      return;
+    }
+    const { result, steps } = convert(val);
+    outputEl.value = result;
+    renderSteps(steps);
+  }
+
+  function renderSteps(steps) {
+    if (!steps.length) {
+      stepsEl.innerHTML = '';
+      stepsEl.classList.remove('visible');
+      return;
+    }
+    stepsEl.innerHTML =
+      '<div class="nexus-steps-title">Step-by-Step</div>' +
+      '<ol class="nexus-steps-list">' +
+      steps.map(function (s) { return '<li>' + s + '</li>'; }).join('') +
+      '</ol>';
+    stepsEl.classList.add('visible');
+  }
+
+  // Swap button → go to reverse converter
+  if (swapBtn && cfg.reverseLink) {
+    swapBtn.addEventListener('click', function () {
+      window.location.href = cfg.reverseLink + '.html';
+    });
+  }
+  if (swapBtn && !cfg.reverseLink) {
+    swapBtn.style.display = 'none';
+  }
+
+  // Copy result
+  if (copyBtn) {
+    copyBtn.addEventListener('click', function () {
+      if (!outputEl.value) return;
+      const text = inputEl.value + ' ' + cfg.inputUnit + ' = ' + outputEl.value + ' ' + cfg.outputUnit;
+      navigator.clipboard.writeText(text).then(function () {
+        copyBtn.textContent = 'Copied!';
+        setTimeout(function () { copyBtn.textContent = 'Copy'; }, 1500);
+      });
+    });
+  }
+
+  // Print
+  if (printBtn) {
+    printBtn.addEventListener('click', function () {
+      window.print();
+    });
+  }
+
+  // Clear
+  if (clearBtn) {
+    clearBtn.addEventListener('click', function () {
+      inputEl.value = '';
+      outputEl.value = '';
+      stepsEl.innerHTML = '';
+      stepsEl.classList.remove('visible');
+      inputEl.focus();
+    });
+  }
+
+  // Populate common values table
+  if (commonTableBody && cfg.commonValues) {
+    cfg.commonValues.forEach(function (cv) {
+      const row = document.createElement('tr');
+      row.innerHTML =
+        '<td>' + cv.input + ' ' + cfg.inputUnit + '</td>' +
+        '<td>' + cv.output + ' ' + cfg.outputUnit + '</td>' +
+        '<td>' + (cv.label || '') + '</td>';
+      row.style.cursor = 'pointer';
+      row.addEventListener('click', function () {
+        inputEl.value = cv.input;
+        onInput();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+      commonTableBody.appendChild(row);
+    });
+  }
+
+  // Listen for input
+  inputEl.addEventListener('input', onInput);
+  inputEl.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') onInput();
+  });
+
+  // Auto-focus
+  inputEl.focus();
+
+})();
+</script>
+
+  <!-- FAQ toggle -->
+  <script>
+  document.querySelectorAll('.nexus-faq-q').forEach(function(q) {
+    q.addEventListener('click', function() {
+      this.parentElement.classList.toggle('open');
+    });
+  });
+  </script>
+
+</body>
+</html>

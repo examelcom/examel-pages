@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=&apos;http://www.w3.org/2000/svg&apos; viewBox=&apos;0 0 32 32&apos;%3E%3Crect width=&apos;32&apos; height=&apos;32&apos; rx=&apos;7&apos; fill=&apos;%236C5CE7&apos;/%3E%3Crect x=&apos;7&apos; y=&apos;7&apos; width=&apos;4&apos; height=&apos;18&apos; rx=&apos;1&apos; fill=&apos;white&apos;/%3E%3Crect x=&apos;7&apos; y=&apos;7&apos; width=&apos;7&apos; height=&apos;4&apos; rx=&apos;1&apos; fill=&apos;white&apos;/%3E%3Crect x=&apos;7&apos; y=&apos;14&apos; width=&apos;11&apos; height=&apos;4&apos; rx=&apos;1&apos; fill=&apos;white&apos;/%3E%3Crect x=&apos;7&apos; y=&apos;21&apos; width=&apos;15&apos; height=&apos;4&apos; rx=&apos;1&apos; fill=&apos;white&apos;/%3E%3C/svg%3E">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Percentage Calculator Converters | Free & Accurate | Examel</title>
+  <meta name="description" content="Calculate percentages, percent change, markup, and more. Free, ad-free, 100% accurate converters for students, parents, and teachers.">
+  <link rel="canonical" href="https://examel.com/converters/percentages/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>/* ================================================================
+   NEXUS Styles — Examel Converter Engine
+   Design system: #6C5CE7 purple, Outfit headings, DM Sans body
+   ================================================================ */
+
+:root {
+  --nexus-primary: #6C5CE7;
+  --nexus-primary-light: #A29BFE;
+  --nexus-primary-dark: #5A4BD1;
+  --nexus-bg: #FAFAFE;
+  --nexus-card: #FFFFFF;
+  --nexus-text: #2D3436;
+  --nexus-text-muted: #636E72;
+  --nexus-border: #E8E6F0;
+  --nexus-success: #00B894;
+  --nexus-accent: #FD79A8;
+  --nexus-input-bg: #F8F7FC;
+  --nexus-radius: 12px;
+  --nexus-shadow: 0 2px 12px rgba(108, 92, 231, 0.08);
+  --nexus-shadow-lg: 0 8px 32px rgba(108, 92, 231, 0.12);
+}
+
+/* --- RESET & BASE --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body.nexus-page {
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--nexus-bg);
+  color: var(--nexus-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- LAYOUT --- */
+.nexus-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px 20px 60px;
+}
+
+/* --- BREADCRUMB --- */
+.nexus-breadcrumb {
+  font-size: 13px;
+  color: var(--nexus-text-muted);
+  margin-bottom: 20px;
+}
+.nexus-breadcrumb a {
+  color: var(--nexus-primary);
+  text-decoration: none;
+}
+.nexus-breadcrumb a:hover { text-decoration: underline; }
+.nexus-breadcrumb span { margin: 0 6px; }
+
+/* --- HEADER --- */
+.nexus-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.nexus-header h1 {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-weight: 700;
+  color: var(--nexus-text);
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+.nexus-header .nexus-subtitle {
+  font-size: 15px;
+  color: var(--nexus-text-muted);
+}
+.nexus-formula-badge {
+  display: inline-block;
+  background: var(--nexus-primary);
+  color: #fff;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'DM Mono', 'Fira Code', monospace;
+  margin-top: 12px;
+  letter-spacing: 0.02em;
+}
+
+/* --- CONVERTER CARD --- */
+.nexus-card {
+  background: var(--nexus-card);
+  border: 1px solid var(--nexus-border);
+  border-radius: var(--nexus-radius);
+  padding: 32px 28px;
+  box-shadow: var(--nexus-shadow);
+  margin-bottom: 24px;
+}
+
+.nexus-converter {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.nexus-field {
+  flex: 1;
+  min-width: 200px;
+}
+.nexus-field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--nexus-text-muted);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.nexus-field input {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'DM Sans', sans-serif;
+  border: 2px solid var(--nexus-border);
+  border-radius: 8px;
+  background: var(--nexus-input-bg);
+  color: var(--nexus-text);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  -moz-appearance: textfield;
+}
+.nexus-field input::-webkit-outer-spin-button,
+.nexus-field input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.nexus-field input:focus {
+  outline: none;
+  border-color: var(--nexus-primary);
+  box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.15);
+}
+.nexus-field input[readonly] {
+  background: linear-gradient(135deg, #F0EEFF 0%, #F8F7FC 100%);
+  border-color: var(--nexus-primary-light);
+  cursor: default;
+}
+
+/* Swap button */
+.nexus-swap-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid var(--nexus-border);
+  background: var(--nexus-card);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: var(--nexus-primary);
+  transition: all 0.2s;
+  flex-shrink: 0;
+  margin-bottom: 4px;
+}
+.nexus-swap-btn:hover {
+  background: var(--nexus-primary);
+  color: #fff;
+  border-color: var(--nexus-primary);
+  transform: rotate(180deg);
+}
+
+/* Action buttons */
+.nexus-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.nexus-btn {
+  padding: 8px 18px;
+  border-radius: 6px;
+  border: 1px solid var(--nexus-border);
+  background: var(--nexus-card);
+  color: var(--nexus-text);
+  font-size: 13px;
+  font-weight: 600;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.nexus-btn:hover {
+  background: var(--nexus-primary);
+  color: #fff;
+  border-color: var(--nexus-primary);
+}
+.nexus-btn-primary {
+  background: var(--nexus-primary);
+  color: #fff;
+  border-color: var(--nexus-primary);
+}
+.nexus-btn-primary:hover {
+  background: var(--nexus-primary-dark);
+}
+
+/* --- STEPS --- */
+#nexus-steps {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  background: #F8F7FC;
+  border-radius: 8px;
+  margin-top: 0;
+}
+#nexus-steps.visible {
+  max-height: 500px;
+  padding: 20px 24px;
+  margin-top: 16px;
+  border: 1px solid var(--nexus-border);
+}
+.nexus-steps-title {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--nexus-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+}
+.nexus-steps-list {
+  padding-left: 20px;
+}
+.nexus-steps-list li {
+  font-size: 15px;
+  padding: 4px 0;
+  color: var(--nexus-text);
+  font-family: 'DM Mono', 'Fira Code', monospace;
+  font-size: 14px;
+}
+
+/* --- COMMON VALUES TABLE --- */
+.nexus-table-section {
+  margin-top: 32px;
+}
+.nexus-table-section h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.nexus-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.nexus-table th {
+  text-align: left;
+  padding: 10px 12px;
+  background: var(--nexus-primary);
+  color: #fff;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.nexus-table th:first-child { border-radius: 8px 0 0 0; }
+.nexus-table th:last-child { border-radius: 0 8px 0 0; }
+.nexus-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--nexus-border);
+}
+.nexus-table tr:hover {
+  background: #F0EEFF;
+}
+.nexus-table tr { cursor: pointer; }
+
+/* --- FUN FACT --- */
+.nexus-funfact {
+  background: linear-gradient(135deg, #F0EEFF 0%, #E8E4FF 100%);
+  border-radius: var(--nexus-radius);
+  padding: 20px 24px;
+  margin-top: 24px;
+  border-left: 4px solid var(--nexus-primary);
+}
+.nexus-funfact-title {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--nexus-primary);
+  margin-bottom: 4px;
+}
+.nexus-funfact p {
+  font-size: 14px;
+  color: var(--nexus-text);
+}
+
+/* --- FAQ --- */
+.nexus-faq {
+  margin-top: 32px;
+}
+.nexus-faq h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.nexus-faq-item {
+  border: 1px solid var(--nexus-border);
+  border-radius: 8px;
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+.nexus-faq-q {
+  padding: 14px 18px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--nexus-card);
+  transition: background 0.15s;
+}
+.nexus-faq-q:hover { background: #F8F7FC; }
+.nexus-faq-q::after {
+  content: '+';
+  font-size: 20px;
+  color: var(--nexus-primary);
+  font-weight: 700;
+  transition: transform 0.2s;
+}
+.nexus-faq-item.open .nexus-faq-q::after {
+  transform: rotate(45deg);
+}
+.nexus-faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+.nexus-faq-item.open .nexus-faq-a {
+  max-height: 300px;
+  padding: 0 18px 14px;
+}
+.nexus-faq-a p {
+  font-size: 14px;
+  color: var(--nexus-text-muted);
+  line-height: 1.7;
+}
+
+/* --- RELATED --- */
+.nexus-related {
+  margin-top: 32px;
+}
+.nexus-related h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.nexus-related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 10px;
+}
+.nexus-related-link {
+  display: block;
+  padding: 12px 16px;
+  background: var(--nexus-card);
+  border: 1px solid var(--nexus-border);
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--nexus-text);
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.15s;
+}
+.nexus-related-link:hover {
+  border-color: var(--nexus-primary);
+  background: #F8F7FC;
+  color: var(--nexus-primary);
+}
+
+/* --- CCSS BADGE --- */
+.nexus-ccss {
+  display: inline-block;
+  background: #E8F5E9;
+  color: #2E7D32;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+/* --- FOOTER --- */
+.nexus-footer {
+  text-align: center;
+  padding: 32px 20px;
+  font-size: 13px;
+  color: var(--nexus-text-muted);
+  border-top: 1px solid var(--nexus-border);
+  margin-top: 40px;
+}
+.nexus-footer a { color: var(--nexus-primary); text-decoration: none; }
+.nexus-footer a:hover { text-decoration: underline; }
+
+/* --- PRINT STYLES --- */
+@media print {
+  .nexus-actions, .nexus-swap-btn, .nexus-related, .nexus-footer,
+  .nexus-breadcrumb { display: none !important; }
+  .nexus-card { box-shadow: none; border: 1px solid #ccc; }
+  body.nexus-page { background: #fff; }
+  #nexus-steps { max-height: none !important; padding: 16px !important; }
+  #nexus-steps.visible { margin-top: 12px !important; }
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 600px) {
+  .nexus-converter { flex-direction: column; align-items: stretch; }
+  .nexus-swap-btn { align-self: center; transform: rotate(90deg); }
+  .nexus-swap-btn:hover { transform: rotate(270deg); }
+  .nexus-card { padding: 24px 20px; }
+  .nexus-field input { font-size: 18px; padding: 12px 14px; }
+  .nexus-related-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body class="nexus-page">
+  <div class="nexus-container">
+    <nav class="nexus-breadcrumb">
+      <a href="/">Home</a><span>›</span>
+      <a href="/converters/">Converters</a><span>›</span>
+      Percentage Calculator
+    </nav>
+    <header class="nexus-header">
+      <h1>📊 Percentage Calculator Converters</h1>
+      <p class="nexus-subtitle">Calculate percentages, percent change, markup, and more.</p>
+    </header>
+    <div class="nexus-related">
+      <div class="nexus-related-grid">
+        <a class="nexus-related-link" href="discount-calculator.html">Discount &amp; Sale Price Calculator</a>
+        <a class="nexus-related-link" href="fraction-to-percentage-visual.html">Fraction to Percentage (Visual)</a>
+        <a class="nexus-related-link" href="grade-percentage-calculator.html">Grade Percentage Calculator</a>
+        <a class="nexus-related-link" href="margin-calculator.html">Profit Margin Calculator</a>
+        <a class="nexus-related-link" href="markup-calculator.html">Markup Percentage Calculator</a>
+        <a class="nexus-related-link" href="original-value-before-decrease.html">Original Value Before Percent Decrease</a>
+        <a class="nexus-related-link" href="original-value-before-increase.html">Original Value Before Percent Increase</a>
+        <a class="nexus-related-link" href="percent-change.html">Percent Change Calculator</a>
+        <a class="nexus-related-link" href="percent-decrease.html">Percent Decrease Calculator</a>
+        <a class="nexus-related-link" href="percent-difference.html">Percent Difference Calculator</a>
+        <a class="nexus-related-link" href="percent-error.html">Percent Error Calculator</a>
+        <a class="nexus-related-link" href="percent-increase.html">Percent Increase Calculator</a>
+        <a class="nexus-related-link" href="percent-of-number.html">Percent of a Number Calculator</a>
+        <a class="nexus-related-link" href="percentage-to-letter-grade.html">Percentage to Letter Grade Converter</a>
+        <a class="nexus-related-link" href="profit-calculator.html">Profit &amp; Loss Percentage Calculator</a>
+        <a class="nexus-related-link" href="split-bill-calculator.html">Split Bill Calculator</a>
+        <a class="nexus-related-link" href="successive-percent-change.html">Successive Percent Change Calculator</a>
+        <a class="nexus-related-link" href="tax-calculator.html">Sales Tax Calculator</a>
+        <a class="nexus-related-link" href="tip-calculator.html">Tip Calculator</a>
+        <a class="nexus-related-link" href="what-percent-is-x-of-y.html">What Percent is X of Y Calculator</a>
+      </div>
+    </div>
+    <footer class="nexus-footer">
+      <a href="https://examel.com">examel.com</a> · Know more. Score more.
+    </footer>
+  </div>
+</body>
+</html>

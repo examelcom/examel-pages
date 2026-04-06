@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=&apos;http://www.w3.org/2000/svg&apos; viewBox=&apos;0 0 32 32&apos;%3E%3Crect width=&apos;32&apos; height=&apos;32&apos; rx=&apos;7&apos; fill=&apos;%236C5CE7&apos;/%3E%3Crect x=&apos;7&apos; y=&apos;7&apos; width=&apos;4&apos; height=&apos;18&apos; rx=&apos;1&apos; fill=&apos;white&apos;/%3E%3Crect x=&apos;7&apos; y=&apos;7&apos; width=&apos;7&apos; height=&apos;4&apos; rx=&apos;1&apos; fill=&apos;white&apos;/%3E%3Crect x=&apos;7&apos; y=&apos;14&apos; width=&apos;11&apos; height=&apos;4&apos; rx=&apos;1&apos; fill=&apos;white&apos;/%3E%3Crect x=&apos;7&apos; y=&apos;21&apos; width=&apos;15&apos; height=&apos;4&apos; rx=&apos;1&apos; fill=&apos;white&apos;/%3E%3C/svg%3E">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Online Converters & Calculators | Examel</title>
+  <meta name="description" content="1202 free, accurate, ad-free converters and calculators for students, parents, and teachers. 100% accuracy guaranteed.">
+  <link rel="canonical" href="https://examel.com/converters/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>/* ================================================================
+   NEXUS Styles — Examel Converter Engine
+   Design system: #6C5CE7 purple, Outfit headings, DM Sans body
+   ================================================================ */
+
+:root {
+  --nexus-primary: #6C5CE7;
+  --nexus-primary-light: #A29BFE;
+  --nexus-primary-dark: #5A4BD1;
+  --nexus-bg: #FAFAFE;
+  --nexus-card: #FFFFFF;
+  --nexus-text: #2D3436;
+  --nexus-text-muted: #636E72;
+  --nexus-border: #E8E6F0;
+  --nexus-success: #00B894;
+  --nexus-accent: #FD79A8;
+  --nexus-input-bg: #F8F7FC;
+  --nexus-radius: 12px;
+  --nexus-shadow: 0 2px 12px rgba(108, 92, 231, 0.08);
+  --nexus-shadow-lg: 0 8px 32px rgba(108, 92, 231, 0.12);
+}
+
+/* --- RESET & BASE --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body.nexus-page {
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--nexus-bg);
+  color: var(--nexus-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- LAYOUT --- */
+.nexus-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px 20px 60px;
+}
+
+/* --- BREADCRUMB --- */
+.nexus-breadcrumb {
+  font-size: 13px;
+  color: var(--nexus-text-muted);
+  margin-bottom: 20px;
+}
+.nexus-breadcrumb a {
+  color: var(--nexus-primary);
+  text-decoration: none;
+}
+.nexus-breadcrumb a:hover { text-decoration: underline; }
+.nexus-breadcrumb span { margin: 0 6px; }
+
+/* --- HEADER --- */
+.nexus-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.nexus-header h1 {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-weight: 700;
+  color: var(--nexus-text);
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+.nexus-header .nexus-subtitle {
+  font-size: 15px;
+  color: var(--nexus-text-muted);
+}
+.nexus-formula-badge {
+  display: inline-block;
+  background: var(--nexus-primary);
+  color: #fff;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'DM Mono', 'Fira Code', monospace;
+  margin-top: 12px;
+  letter-spacing: 0.02em;
+}
+
+/* --- CONVERTER CARD --- */
+.nexus-card {
+  background: var(--nexus-card);
+  border: 1px solid var(--nexus-border);
+  border-radius: var(--nexus-radius);
+  padding: 32px 28px;
+  box-shadow: var(--nexus-shadow);
+  margin-bottom: 24px;
+}
+
+.nexus-converter {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.nexus-field {
+  flex: 1;
+  min-width: 200px;
+}
+.nexus-field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--nexus-text-muted);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.nexus-field input {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'DM Sans', sans-serif;
+  border: 2px solid var(--nexus-border);
+  border-radius: 8px;
+  background: var(--nexus-input-bg);
+  color: var(--nexus-text);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  -moz-appearance: textfield;
+}
+.nexus-field input::-webkit-outer-spin-button,
+.nexus-field input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.nexus-field input:focus {
+  outline: none;
+  border-color: var(--nexus-primary);
+  box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.15);
+}
+.nexus-field input[readonly] {
+  background: linear-gradient(135deg, #F0EEFF 0%, #F8F7FC 100%);
+  border-color: var(--nexus-primary-light);
+  cursor: default;
+}
+
+/* Swap button */
+.nexus-swap-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid var(--nexus-border);
+  background: var(--nexus-card);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: var(--nexus-primary);
+  transition: all 0.2s;
+  flex-shrink: 0;
+  margin-bottom: 4px;
+}
+.nexus-swap-btn:hover {
+  background: var(--nexus-primary);
+  color: #fff;
+  border-color: var(--nexus-primary);
+  transform: rotate(180deg);
+}
+
+/* Action buttons */
+.nexus-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.nexus-btn {
+  padding: 8px 18px;
+  border-radius: 6px;
+  border: 1px solid var(--nexus-border);
+  background: var(--nexus-card);
+  color: var(--nexus-text);
+  font-size: 13px;
+  font-weight: 600;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.nexus-btn:hover {
+  background: var(--nexus-primary);
+  color: #fff;
+  border-color: var(--nexus-primary);
+}
+.nexus-btn-primary {
+  background: var(--nexus-primary);
+  color: #fff;
+  border-color: var(--nexus-primary);
+}
+.nexus-btn-primary:hover {
+  background: var(--nexus-primary-dark);
+}
+
+/* --- STEPS --- */
+#nexus-steps {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  background: #F8F7FC;
+  border-radius: 8px;
+  margin-top: 0;
+}
+#nexus-steps.visible {
+  max-height: 500px;
+  padding: 20px 24px;
+  margin-top: 16px;
+  border: 1px solid var(--nexus-border);
+}
+.nexus-steps-title {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--nexus-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+}
+.nexus-steps-list {
+  padding-left: 20px;
+}
+.nexus-steps-list li {
+  font-size: 15px;
+  padding: 4px 0;
+  color: var(--nexus-text);
+  font-family: 'DM Mono', 'Fira Code', monospace;
+  font-size: 14px;
+}
+
+/* --- COMMON VALUES TABLE --- */
+.nexus-table-section {
+  margin-top: 32px;
+}
+.nexus-table-section h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.nexus-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.nexus-table th {
+  text-align: left;
+  padding: 10px 12px;
+  background: var(--nexus-primary);
+  color: #fff;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.nexus-table th:first-child { border-radius: 8px 0 0 0; }
+.nexus-table th:last-child { border-radius: 0 8px 0 0; }
+.nexus-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--nexus-border);
+}
+.nexus-table tr:hover {
+  background: #F0EEFF;
+}
+.nexus-table tr { cursor: pointer; }
+
+/* --- FUN FACT --- */
+.nexus-funfact {
+  background: linear-gradient(135deg, #F0EEFF 0%, #E8E4FF 100%);
+  border-radius: var(--nexus-radius);
+  padding: 20px 24px;
+  margin-top: 24px;
+  border-left: 4px solid var(--nexus-primary);
+}
+.nexus-funfact-title {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--nexus-primary);
+  margin-bottom: 4px;
+}
+.nexus-funfact p {
+  font-size: 14px;
+  color: var(--nexus-text);
+}
+
+/* --- FAQ --- */
+.nexus-faq {
+  margin-top: 32px;
+}
+.nexus-faq h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.nexus-faq-item {
+  border: 1px solid var(--nexus-border);
+  border-radius: 8px;
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+.nexus-faq-q {
+  padding: 14px 18px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--nexus-card);
+  transition: background 0.15s;
+}
+.nexus-faq-q:hover { background: #F8F7FC; }
+.nexus-faq-q::after {
+  content: '+';
+  font-size: 20px;
+  color: var(--nexus-primary);
+  font-weight: 700;
+  transition: transform 0.2s;
+}
+.nexus-faq-item.open .nexus-faq-q::after {
+  transform: rotate(45deg);
+}
+.nexus-faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+.nexus-faq-item.open .nexus-faq-a {
+  max-height: 300px;
+  padding: 0 18px 14px;
+}
+.nexus-faq-a p {
+  font-size: 14px;
+  color: var(--nexus-text-muted);
+  line-height: 1.7;
+}
+
+/* --- RELATED --- */
+.nexus-related {
+  margin-top: 32px;
+}
+.nexus-related h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.nexus-related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 10px;
+}
+.nexus-related-link {
+  display: block;
+  padding: 12px 16px;
+  background: var(--nexus-card);
+  border: 1px solid var(--nexus-border);
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--nexus-text);
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.15s;
+}
+.nexus-related-link:hover {
+  border-color: var(--nexus-primary);
+  background: #F8F7FC;
+  color: var(--nexus-primary);
+}
+
+/* --- CCSS BADGE --- */
+.nexus-ccss {
+  display: inline-block;
+  background: #E8F5E9;
+  color: #2E7D32;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+/* --- FOOTER --- */
+.nexus-footer {
+  text-align: center;
+  padding: 32px 20px;
+  font-size: 13px;
+  color: var(--nexus-text-muted);
+  border-top: 1px solid var(--nexus-border);
+  margin-top: 40px;
+}
+.nexus-footer a { color: var(--nexus-primary); text-decoration: none; }
+.nexus-footer a:hover { text-decoration: underline; }
+
+/* --- PRINT STYLES --- */
+@media print {
+  .nexus-actions, .nexus-swap-btn, .nexus-related, .nexus-footer,
+  .nexus-breadcrumb { display: none !important; }
+  .nexus-card { box-shadow: none; border: 1px solid #ccc; }
+  body.nexus-page { background: #fff; }
+  #nexus-steps { max-height: none !important; padding: 16px !important; }
+  #nexus-steps.visible { margin-top: 12px !important; }
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 600px) {
+  .nexus-converter { flex-direction: column; align-items: stretch; }
+  .nexus-swap-btn { align-self: center; transform: rotate(90deg); }
+  .nexus-swap-btn:hover { transform: rotate(270deg); }
+  .nexus-card { padding: 24px 20px; }
+  .nexus-field input { font-size: 18px; padding: 12px 14px; }
+  .nexus-related-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body class="nexus-page">
+  <div class="nexus-container" style="max-width: 960px;">
+    <nav class="nexus-breadcrumb">
+      <a href="/">Home</a><span>›</span> Converters
+    </nav>
+    <header class="nexus-header">
+      <h1>Free Online Converters & Calculators</h1>
+      <p class="nexus-subtitle">1202 tools across 60 categories · 100% accurate · Ad-free · Built for K-8 education</p>
+    </header>
+    
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          🌡️ <a href="temperature/" style="color: inherit; text-decoration: none;">Temperature</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;">Convert between Celsius, Fahrenheit, Kelvin, and more.</p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="temperature/celsius-to-fahrenheit.html">Celsius to Fahrenheit Converter</a><a class="nexus-related-link" href="temperature/celsius-to-gas-mark.html">Celsius to Gas Mark Converter</a><a class="nexus-related-link" href="temperature/celsius-to-kelvin.html">Celsius to Kelvin Converter</a><a class="nexus-related-link" href="temperature/celsius-to-rankine.html">Celsius to Rankine Converter</a><a class="nexus-related-link" href="temperature/celsius-to-reaumur.html">Celsius to Réaumur Converter</a><a class="nexus-related-link" href="temperature/fahrenheit-to-celsius.html">Fahrenheit to Celsius Converter</a>
+          <a class="nexus-related-link" href="temperature/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          📏 <a href="length/" style="color: inherit; text-decoration: none;">Length & Distance</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;">Convert inches, feet, meters, miles, and more.</p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="length/centimeters-to-inches.html">Centimeters to Inches Converter</a><a class="nexus-related-link" href="length/centimeters-to-meters.html">Centimeters to Meters Converter</a><a class="nexus-related-link" href="length/centimeters-to-millimeters.html">Centimeters to Millimeters Converter</a><a class="nexus-related-link" href="length/feet-to-inches.html">Feet to Inches Converter</a><a class="nexus-related-link" href="length/feet-to-meters.html">Feet to Meters Converter</a><a class="nexus-related-link" href="length/feet-to-yards.html">Feet to Yards Converter</a>
+          <a class="nexus-related-link" href="length/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          ⚖️ <a href="weight/" style="color: inherit; text-decoration: none;">Weight & Mass</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;">Convert pounds, kilograms, ounces, grams, and more.</p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="weight/grams-to-kilograms.html">Grams to Kilograms Converter</a><a class="nexus-related-link" href="weight/grams-to-milligrams.html">Grams to Milligrams Converter</a><a class="nexus-related-link" href="weight/grams-to-ounces.html">Grams to Ounces Converter</a><a class="nexus-related-link" href="weight/grams-to-pounds.html">Grams to Pounds Converter</a><a class="nexus-related-link" href="weight/kilograms-to-grams.html">Kilograms to Grams Converter</a><a class="nexus-related-link" href="weight/kilograms-to-metric-tons.html">Kilograms to Metric Tons Converter</a>
+          <a class="nexus-related-link" href="weight/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          🔢 <a href="fractions/" style="color: inherit; text-decoration: none;">Fractions, Decimals & Percents</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;">Convert fractions to decimals, percents, mixed numbers, and more.</p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="fractions/decimal-places-rounder.html">Decimal Places Rounder</a><a class="nexus-related-link" href="fractions/decimal-to-fraction.html">Decimal to Fraction Converter</a><a class="nexus-related-link" href="fractions/decimal-to-mixed-number.html">Decimal to Mixed Number Converter</a><a class="nexus-related-link" href="fractions/decimal-to-percent.html">Decimal to Percent Converter</a><a class="nexus-related-link" href="fractions/equivalent-fraction-finder.html">Equivalent Fraction Finder</a><a class="nexus-related-link" href="fractions/fraction-adder.html">Fraction Adder (Add Two Fractions)</a>
+          <a class="nexus-related-link" href="fractions/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          🧪 <a href="volume/" style="color: inherit; text-decoration: none;">Volume & Capacity</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;">Convert gallons, liters, cups, milliliters, and more.</p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="volume/cups-to-fluid-ounces.html">Cups to Fluid Ounces Converter</a><a class="nexus-related-link" href="volume/cups-to-gallons.html">Cups to Gallons Converter</a><a class="nexus-related-link" href="volume/cups-to-milliliters.html">Cups to Milliliters Converter</a><a class="nexus-related-link" href="volume/cups-to-pints.html">Cups to Pints Converter</a><a class="nexus-related-link" href="volume/fluid-ounces-to-cups.html">Fluid Ounces to Cups Converter</a><a class="nexus-related-link" href="volume/fluid-ounces-to-milliliters.html">Fluid Ounces to Milliliters Converter</a>
+          <a class="nexus-related-link" href="volume/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          📊 <a href="percentages/" style="color: inherit; text-decoration: none;">Percentage Calculator</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;">Calculate percentages, percent change, markup, and more.</p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="percentages/discount-calculator.html">Discount &amp; Sale Price Calculator</a><a class="nexus-related-link" href="percentages/fraction-to-percentage-visual.html">Fraction to Percentage (Visual)</a><a class="nexus-related-link" href="percentages/grade-percentage-calculator.html">Grade Percentage Calculator</a><a class="nexus-related-link" href="percentages/margin-calculator.html">Profit Margin Calculator</a><a class="nexus-related-link" href="percentages/markup-calculator.html">Markup Percentage Calculator</a><a class="nexus-related-link" href="percentages/original-value-before-decrease.html">Original Value Before Percent Decrease</a>
+          <a class="nexus-related-link" href="percentages/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          ✏️ <a href="text/" style="color: inherit; text-decoration: none;">Text & String Tools</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;">Word counter, case converter, character counter, and more.</p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="text/camelcase-converter.html">camelCase Converter</a><a class="nexus-related-link" href="text/character-counter.html">Character Counter</a><a class="nexus-related-link" href="text/kebab-case-converter.html">kebab-case Converter</a><a class="nexus-related-link" href="text/lowercase-to-uppercase.html">Lowercase to Uppercase Converter</a><a class="nexus-related-link" href="text/morse-code-to-text.html">Morse Code to Text Converter</a><a class="nexus-related-link" href="text/reading-time-estimator.html">Reading Time Estimator</a>
+          <a class="nexus-related-link" href="text/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          💻 <a href="number-systems/" style="color: inherit; text-decoration: none;">Number Systems</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;">Convert binary, decimal, hex, octal, Roman numerals, and more.</p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="number-systems/base-n-converter.html">Base-N Number Converter (Any Base 2-36)</a><a class="nexus-related-link" href="number-systems/binary-to-decimal.html">Binary to Decimal Converter</a><a class="nexus-related-link" href="number-systems/binary-to-hexadecimal.html">Binary to Hexadecimal Converter</a><a class="nexus-related-link" href="number-systems/binary-to-octal.html">Binary to Octal Converter</a><a class="nexus-related-link" href="number-systems/binary-to-text.html">Binary to Text Converter (ASCII)</a><a class="nexus-related-link" href="number-systems/decimal-to-binary.html">Decimal to Binary Converter</a>
+          <a class="nexus-related-link" href="number-systems/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          ⏰ <a href="time/" style="color: inherit; text-decoration: none;">Time</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;">Convert hours, minutes, seconds, days, weeks, and more.</p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="time/centuries-to-years.html">Centuries to Years Converter</a><a class="nexus-related-link" href="time/days-to-hours.html">Days to Hours Converter</a><a class="nexus-related-link" href="time/days-to-weeks.html">Days to Weeks Converter</a><a class="nexus-related-link" href="time/days-to-years.html">Days to Years Converter</a><a class="nexus-related-link" href="time/decades-to-years.html">Decades to Years Converter</a><a class="nexus-related-link" href="time/hours-to-days.html">Hours to Days Converter</a>
+          <a class="nexus-related-link" href="time/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          🧑‍🍳 <a href="cooking/" style="color: inherit; text-decoration: none;">Cooking & Baking</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;">Convert cups, tablespoons, grams, oven temps, and more.</p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="cooking/butter-sticks-to-cups.html">Butter Sticks to Cups Converter</a><a class="nexus-related-link" href="cooking/butter-sticks-to-grams.html">Butter Sticks to Grams Converter</a><a class="nexus-related-link" href="cooking/butter-sticks-to-tablespoons.html">Butter Sticks to Tablespoons Converter</a><a class="nexus-related-link" href="cooking/cups-to-fluid-ounces-cooking.html">Cups to Fluid Ounces (Cooking)</a><a class="nexus-related-link" href="cooking/cups-to-grams-butter.html">Cups to Grams Converter (Butter)</a><a class="nexus-related-link" href="cooking/cups-to-grams-flour.html">Cups to Grams Converter (Flour)</a>
+          <a class="nexus-related-link" href="cooking/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          🎓 <a href="grades/" style="color: inherit; text-decoration: none;">Grade & Score</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;">GPA calculator, grade converter, test score tools.</p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="grades/assignment-weight-calculator.html">Assignment Weight Calculator</a><a class="nexus-related-link" href="grades/class-rank-percentile.html">Class Rank to Percentile Converter</a><a class="nexus-related-link" href="grades/cumulative-gpa-calculator.html">Cumulative GPA Calculator</a><a class="nexus-related-link" href="grades/curve-calculator.html">Grade Curve Calculator</a><a class="nexus-related-link" href="grades/extra-credit-calculator.html">Extra Credit Impact Calculator</a><a class="nexus-related-link" href="grades/gpa-calculator.html">GPA Calculator (Semester)</a>
+          <a class="nexus-related-link" href="grades/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          📅 <a href="dates/" style="color: inherit; text-decoration: none;">Date & Calendar</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;">Age calculator, days between dates, and more.</p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="dates/add-days-to-date.html">Add or Subtract Days from a Date</a><a class="nexus-related-link" href="dates/age-calculator.html">Age Calculator</a><a class="nexus-related-link" href="dates/age-in-days.html">Age in Days Calculator</a><a class="nexus-related-link" href="dates/birthday-day-of-week.html">What Day of the Week Was I Born?</a><a class="nexus-related-link" href="dates/countdown-to-date.html">Countdown to Date Calculator</a><a class="nexus-related-link" href="dates/date-to-roman-numeral.html">Date to Roman Numeral Converter</a>
+          <a class="nexus-related-link" href="dates/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          📐 <a href="area/" style="color: inherit; text-decoration: none;">Area</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;">Convert square feet, acres, hectares, and more.</p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="area/acres-to-hectares.html">Acres to Hectares Converter</a><a class="nexus-related-link" href="area/acres-to-square-feet.html">Acres to Square Feet Converter</a><a class="nexus-related-link" href="area/acres-to-square-miles.html">Acres to Square Miles Converter</a><a class="nexus-related-link" href="area/hectares-to-acres.html">Hectares to Acres Converter</a><a class="nexus-related-link" href="area/hectares-to-square-meters.html">Hectares to Square Meters Converter</a><a class="nexus-related-link" href="area/square-centimeters-to-square-inches.html">Square Centimeters to Square Inches Converter</a>
+          <a class="nexus-related-link" href="area/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          🎨 <a href="color/" style="color: inherit; text-decoration: none;">Color Conversion</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;">Convert HEX, RGB, HSL, CMYK colors.</p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="color/cmyk-to-hex.html">CMYK to HEX Color Converter</a><a class="nexus-related-link" href="color/cmyk-to-rgb.html">CMYK to RGB Color Converter</a><a class="nexus-related-link" href="color/color-brightness-calculator.html">Color Brightness Calculator</a><a class="nexus-related-link" href="color/color-contrast-checker.html">Color Contrast Checker (WCAG)</a><a class="nexus-related-link" href="color/color-name-to-hex.html">Color Name to HEX Converter</a><a class="nexus-related-link" href="color/color-palette-generator.html">Color Palette Generator</a>
+          <a class="nexus-related-link" href="color/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          📐 <a href="geometry/" style="color: inherit; text-decoration: none;">Geometry Calculators</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;">Area, perimeter, volume for shapes.</p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="geometry/circle-area.html">Circle Area Calculator</a><a class="nexus-related-link" href="geometry/circle-circumference.html">Circle Circumference Calculator</a><a class="nexus-related-link" href="geometry/cone-volume.html">Cone Volume Calculator</a><a class="nexus-related-link" href="geometry/coordinate-distance.html">Distance Between Two Points Calculator</a><a class="nexus-related-link" href="geometry/cube-surface-area.html">Cube Surface Area Calculator</a><a class="nexus-related-link" href="geometry/cube-volume.html">Cube Volume Calculator</a>
+          <a class="nexus-related-link" href="geometry/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          🏎️ <a href="speed/" style="color: inherit; text-decoration: none;">Speed & Velocity</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;">Convert MPH, KPH, knots, Mach, and more.</p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="speed/feet-per-second-to-meters-per-second.html">Feet/Second to Meters/Second Converter</a><a class="nexus-related-link" href="speed/feet-per-second-to-mph.html">Feet per Second to MPH Converter</a><a class="nexus-related-link" href="speed/knots-to-kph.html">Knots to KPH Converter</a><a class="nexus-related-link" href="speed/knots-to-mph.html">Knots to MPH Converter</a><a class="nexus-related-link" href="speed/kph-to-knots.html">KPH to Knots Converter</a><a class="nexus-related-link" href="speed/kph-to-mach.html">KPH to Mach Converter</a>
+          <a class="nexus-related-link" href="speed/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          💰 <a href="money/" style="color: inherit; text-decoration: none;">Money & Financial Math</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;">Tip calculator, tax, discount, and more.</p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="money/annual-to-hourly-salary.html">Annual to Hourly Salary Converter</a><a class="nexus-related-link" href="money/coin-counter.html">Coin Counter (Mixed Coins)</a><a class="nexus-related-link" href="money/compound-interest-calculator.html">Compound Interest Calculator</a><a class="nexus-related-link" href="money/dimes-to-dollars.html">Dimes to Dollars Converter</a><a class="nexus-related-link" href="money/discount-calculator-money.html">Discount Calculator</a><a class="nexus-related-link" href="money/dollars-to-pennies.html">Dollars to Pennies Converter</a>
+          <a class="nexus-related-link" href="money/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          ➕ <a href="math-ops/" style="color: inherit; text-decoration: none;">Math Operations</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;">Exponents, GCF, LCM, prime factorization, and more.</p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="math-ops/absolute-value-calculator.html">Absolute Value Calculator</a><a class="nexus-related-link" href="math-ops/cube-root-calculator.html">Cube Root Calculator</a><a class="nexus-related-link" href="math-ops/distributive-property-expander.html">Distributive Property Expander</a><a class="nexus-related-link" href="math-ops/divisibility-checker.html">Divisibility Rules Checker</a><a class="nexus-related-link" href="math-ops/expanded-to-standard-form.html">Expanded Form to Standard Form Converter</a><a class="nexus-related-link" href="math-ops/exponent-calculator.html">Exponent Calculator (Power)</a>
+          <a class="nexus-related-link" href="math-ops/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          💾 <a href="data/" style="color: inherit; text-decoration: none;">Data & Storage</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;">Convert bytes, KB, MB, GB, TB, and more.</p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="data/bits-to-bytes.html">Bits to Bytes Converter</a><a class="nexus-related-link" href="data/bytes-to-bits.html">Bytes to Bits Converter</a><a class="nexus-related-link" href="data/bytes-to-kilobytes.html">Bytes to Kilobytes Converter</a><a class="nexus-related-link" href="data/gb-to-mb-decimal.html">GB to MB Converter (Decimal/SI)</a><a class="nexus-related-link" href="data/gigabytes-to-megabytes.html">Gigabytes to Megabytes Converter</a><a class="nexus-related-link" href="data/gigabytes-to-terabytes.html">Gigabytes to Terabytes Converter</a>
+          <a class="nexus-related-link" href="data/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          ⚡ <a href="energy/" style="color: inherit; text-decoration: none;">Energy & Power</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;">Convert watts, joules, BTU, calories, and more.</p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="energy/btu-to-joules.html">BTU to Joules Converter</a><a class="nexus-related-link" href="energy/btu-to-kilowatt-hours.html">BTU to Kilowatt-Hours Converter</a><a class="nexus-related-link" href="energy/calories-to-joules.html">Calories to Joules Converter</a><a class="nexus-related-link" href="energy/calories-to-kilocalories.html">Calories to Kilocalories Converter</a><a class="nexus-related-link" href="energy/electron-volts-to-joules.html">Electron Volts to Joules Converter</a><a class="nexus-related-link" href="energy/horsepower-to-kilowatts.html">Horsepower to Kilowatts Converter</a>
+          <a class="nexus-related-link" href="energy/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          🔧 <a href="acceleration/" style="color: inherit; text-decoration: none;">acceleration</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;"></p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="acceleration/cm-s2-to-m-s2.html">cm/s² to m/s² Converter</a><a class="nexus-related-link" href="acceleration/ft-s2-to-g-force.html">ft/s² to g-Force Converter</a><a class="nexus-related-link" href="acceleration/ft-s2-to-m-s2.html">ft/s² to m/s² Converter</a><a class="nexus-related-link" href="acceleration/g-force-to-ft-s2.html">g-Force to ft/s² Converter</a><a class="nexus-related-link" href="acceleration/g-force-to-gal.html">g-Force to Gal Converter</a><a class="nexus-related-link" href="acceleration/g-force-to-km-h-s.html">g-Force to km/h/s Converter</a>
+          <a class="nexus-related-link" href="acceleration/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          🔧 <a href="area-advanced/" style="color: inherit; text-decoration: none;">area-advanced</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;"></p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="area-advanced/acreage-from-dimensions.html">Acreage from Dimensions Calculator</a><a class="nexus-related-link" href="area-advanced/annulus-area.html">Annulus (Ring) Area Calculator</a><a class="nexus-related-link" href="area-advanced/carpet-calculator.html">Carpet Calculator</a><a class="nexus-related-link" href="area-advanced/composite-shape-decomposer.html">Composite Shape Area Decomposer</a><a class="nexus-related-link" href="area-advanced/cross-shape-area.html">Cross (Plus) Shape Area Calculator</a><a class="nexus-related-link" href="area-advanced/ellipse-area.html">Ellipse Area Calculator</a>
+          <a class="nexus-related-link" href="area-advanced/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          🔧 <a href="astronomy/" style="color: inherit; text-decoration: none;">astronomy</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;"></p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="astronomy/age-on-planets.html">Age on Other Planets Calculator</a><a class="nexus-related-link" href="astronomy/angular-size-calculator.html">Angular Size Calculator</a><a class="nexus-related-link" href="astronomy/au-to-light-minutes.html">AU to Light-Minutes Converter</a><a class="nexus-related-link" href="astronomy/cosmic-calendar-converter.html">Cosmic Calendar Converter</a><a class="nexus-related-link" href="astronomy/drake-equation-estimator.html">Drake Equation Estimator</a><a class="nexus-related-link" href="astronomy/earth-years-to-planet-years.html">Earth Years to Planet Years Converter</a>
+          <a class="nexus-related-link" href="astronomy/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          🔧 <a href="binary-logic/" style="color: inherit; text-decoration: none;">binary-logic</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;"></p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="binary-logic/and-gate.html">AND Gate Calculator</a><a class="nexus-related-link" href="binary-logic/bcd-to-binary.html">BCD to Binary Converter</a><a class="nexus-related-link" href="binary-logic/binary-addition.html">Binary Addition Calculator</a><a class="nexus-related-link" href="binary-logic/binary-division.html">Binary Division Calculator</a><a class="nexus-related-link" href="binary-logic/binary-multiplication.html">Binary Multiplication Calculator</a><a class="nexus-related-link" href="binary-logic/binary-subtraction.html">Binary Subtraction Calculator</a>
+          <a class="nexus-related-link" href="binary-logic/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          🔧 <a href="chemistry/" style="color: inherit; text-decoration: none;">chemistry</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;"></p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="chemistry/balancing-coefficient-checker.html">Balanced Equation Coefficient Checker</a><a class="nexus-related-link" href="chemistry/celsius-to-kelvin.html">Celsius to Kelvin Converter</a><a class="nexus-related-link" href="chemistry/dilution-calculator.html">Dilution Calculator (M₁V₁ = M₂V₂)</a><a class="nexus-related-link" href="chemistry/electron-config-shorthand.html">Electron Configuration Quick Reference</a><a class="nexus-related-link" href="chemistry/empirical-formula-finder.html">Empirical Formula Finder</a><a class="nexus-related-link" href="chemistry/grams-to-moles.html">Grams to Moles Converter</a>
+          <a class="nexus-related-link" href="chemistry/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          🔧 <a href="clock-time/" style="color: inherit; text-decoration: none;">clock-time</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;"></p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="clock-time/12h-to-24h.html">12-Hour to 24-Hour Time Converter</a><a class="nexus-related-link" href="clock-time/24h-to-12h.html">24-Hour to 12-Hour Time Converter</a><a class="nexus-related-link" href="clock-time/analog-to-digital-clock.html">Analog to Digital Clock Converter</a><a class="nexus-related-link" href="clock-time/clock-angle-calculator.html">Clock Angle Calculator</a><a class="nexus-related-link" href="clock-time/clock-hands-overlap.html">Clock Hands Overlap Calculator</a><a class="nexus-related-link" href="clock-time/days-between-dates.html">Days Between Dates Calculator</a>
+          <a class="nexus-related-link" href="clock-time/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          🔧 <a href="concentration/" style="color: inherit; text-decoration: none;">concentration</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;"></p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="concentration/g-per-l-to-mg-per-ml.html">g/L to mg/mL Converter</a><a class="nexus-related-link" href="concentration/g-per-l-to-percent-w-v.html">g/L to %w/v Converter</a><a class="nexus-related-link" href="concentration/mg-per-dl-to-mmol-per-l.html">mg/dL to mmol/L Converter (Glucose)</a><a class="nexus-related-link" href="concentration/mg-per-l-to-ppm.html">mg/L to PPM Converter</a><a class="nexus-related-link" href="concentration/mg-per-ml-to-g-per-l.html">mg/mL to g/L Converter</a><a class="nexus-related-link" href="concentration/mmol-per-l-to-mg-per-dl.html">mmol/L to mg/dL Converter (Glucose)</a>
+          <a class="nexus-related-link" href="concentration/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          🔧 <a href="construction/" style="color: inherit; text-decoration: none;">construction</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;"></p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="construction/bathroom-tile-estimator.html">Bathroom Tile Estimator</a><a class="nexus-related-link" href="construction/brick-calculator.html">Brick Calculator</a><a class="nexus-related-link" href="construction/concrete-mix-calculator.html">Concrete Bags Calculator</a><a class="nexus-related-link" href="construction/cubic-yards-calculator.html">Cubic Yards Calculator</a><a class="nexus-related-link" href="construction/deck-board-calculator.html">Deck Board Calculator</a><a class="nexus-related-link" href="construction/door-rough-opening.html">Door Rough Opening Calculator</a>
+          <a class="nexus-related-link" href="construction/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          🔧 <a href="coordinate-conversions/" style="color: inherit; text-decoration: none;">coordinate-conversions</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;"></p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="coordinate-conversions/bearing-to-degrees.html">Compass Bearing to Degrees Converter</a><a class="nexus-related-link" href="coordinate-conversions/cartesian-to-cylindrical.html">Cartesian to Cylindrical Coordinates Converter</a><a class="nexus-related-link" href="coordinate-conversions/cartesian-to-spherical.html">Cartesian to Spherical Coordinates Converter</a><a class="nexus-related-link" href="coordinate-conversions/compass-to-degrees.html">Compass Direction to Degrees Converter</a><a class="nexus-related-link" href="coordinate-conversions/cylindrical-to-cartesian.html">Cylindrical to Cartesian Coordinates Converter</a><a class="nexus-related-link" href="coordinate-conversions/dd-to-ddm.html">Decimal Degrees to DDM Converter</a>
+          <a class="nexus-related-link" href="coordinate-conversions/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          🔧 <a href="coordinate-geometry/" style="color: inherit; text-decoration: none;">coordinate-geometry</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;"></p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="coordinate-geometry/cartesian-to-polar.html">Cartesian to Polar Converter</a><a class="nexus-related-link" href="coordinate-geometry/centroid-of-triangle.html">Triangle Centroid Calculator</a><a class="nexus-related-link" href="coordinate-geometry/collinearity-checker.html">Collinearity Checker</a><a class="nexus-related-link" href="coordinate-geometry/distance-calculator.html">Distance Between Two Points Calculator</a><a class="nexus-related-link" href="coordinate-geometry/distance-point-to-line.html">Distance from Point to Line Calculator</a><a class="nexus-related-link" href="coordinate-geometry/equation-of-circle.html">Equation of a Circle Calculator</a>
+          <a class="nexus-related-link" href="coordinate-geometry/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          🔧 <a href="density/" style="color: inherit; text-decoration: none;">density</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;"></p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="density/g-cm3-to-kg-m3.html">g/cm³ to kg/m³ Converter</a><a class="nexus-related-link" href="density/g-cm3-to-lb-ft3.html">g/cm³ to lb/ft³ Converter</a><a class="nexus-related-link" href="density/g-cm3-to-oz-in3.html">g/cm³ to oz/in³ Converter</a><a class="nexus-related-link" href="density/g-cm3-to-specific-gravity.html">g/cm³ to Specific Gravity Converter</a><a class="nexus-related-link" href="density/g-l-to-kg-m3.html">g/L to kg/m³ Converter</a><a class="nexus-related-link" href="density/g-ml-to-kg-l.html">g/mL to kg/L Converter</a>
+          <a class="nexus-related-link" href="density/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          🔧 <a href="electrical/" style="color: inherit; text-decoration: none;">electrical</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;"></p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="electrical/amp-hours-to-coulombs.html">Amp-Hours to Coulombs Converter</a><a class="nexus-related-link" href="electrical/amp-hours-to-milliamp-hours.html">Amp-Hours to mAh Converter</a><a class="nexus-related-link" href="electrical/amp-hours-to-watt-hours.html">Amp-Hours to Watt-Hours Converter</a><a class="nexus-related-link" href="electrical/amps-to-milliamps.html">Amps to Milliamps Converter</a><a class="nexus-related-link" href="electrical/coulombs-to-amp-hours.html">Coulombs to Amp-Hours Converter</a><a class="nexus-related-link" href="electrical/farads-to-microfarads.html">Farads to Microfarads Converter</a>
+          <a class="nexus-related-link" href="electrical/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          🔧 <a href="electrical-circuits/" style="color: inherit; text-decoration: none;">electrical-circuits</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;"></p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="electrical-circuits/amps-to-watts.html">Amps to Watts Converter</a><a class="nexus-related-link" href="electrical-circuits/battery-life-calculator.html">Battery Life Calculator</a><a class="nexus-related-link" href="electrical-circuits/capacitor-charge-time.html">RC Time Constant Calculator</a><a class="nexus-related-link" href="electrical-circuits/capacitors-in-parallel.html">Capacitors in Parallel Calculator</a><a class="nexus-related-link" href="electrical-circuits/capacitors-in-series.html">Capacitors in Series Calculator</a><a class="nexus-related-link" href="electrical-circuits/circuit-breaker-sizing.html">Circuit Breaker Sizing Guide</a>
+          <a class="nexus-related-link" href="electrical-circuits/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          🔧 <a href="exponents/" style="color: inherit; text-decoration: none;">exponents</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;"></p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="exponents/compound-growth-calculator.html">Compound Growth Calculator</a><a class="nexus-related-link" href="exponents/cube-calculator.html">Cube Calculator (n³)</a><a class="nexus-related-link" href="exponents/cube-root-calculator.html">Cube Root Calculator</a><a class="nexus-related-link" href="exponents/doubling-time-calculator.html">Doubling Time Calculator</a><a class="nexus-related-link" href="exponents/exponent-rules-checker.html">Exponent Rules Reference</a><a class="nexus-related-link" href="exponents/exponential-growth-calculator.html">Exponential Growth Calculator</a>
+          <a class="nexus-related-link" href="exponents/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          🔧 <a href="flow-rate/" style="color: inherit; text-decoration: none;">flow-rate</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;"></p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="flow-rate/cfm-to-gpm.html">CFM to GPM Converter (Water)</a><a class="nexus-related-link" href="flow-rate/cfm-to-lpm.html">CFM to LPM Converter</a><a class="nexus-related-link" href="flow-rate/cfm-to-m3-per-hour.html">CFM to m³/h Converter</a><a class="nexus-related-link" href="flow-rate/gph-to-gpm.html">GPH to GPM Converter</a><a class="nexus-related-link" href="flow-rate/gph-to-lph.html">GPH to LPH Converter</a><a class="nexus-related-link" href="flow-rate/gpm-to-cfm.html">GPM to CFM Converter (Water)</a>
+          <a class="nexus-related-link" href="flow-rate/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          🔧 <a href="force/" style="color: inherit; text-decoration: none;">force</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;"></p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="force/dynes-to-newtons.html">Dynes to Newtons Converter</a><a class="nexus-related-link" href="force/gram-force-to-newtons.html">Gram-Force to Newtons Converter</a><a class="nexus-related-link" href="force/kilogram-force-to-newtons.html">Kilogram-Force to Newtons Converter</a><a class="nexus-related-link" href="force/kilogram-force-to-pounds-force.html">Kilogram-Force to Pounds-Force Converter</a><a class="nexus-related-link" href="force/kilonewtons-to-newtons.html">Kilonewtons to Newtons Converter</a><a class="nexus-related-link" href="force/kilonewtons-to-pounds-force.html">Kilonewtons to Pounds-Force Converter</a>
+          <a class="nexus-related-link" href="force/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          🔧 <a href="frequency/" style="color: inherit; text-decoration: none;">frequency</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;"></p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="frequency/bpm-to-hz.html">BPM to Hertz Converter</a><a class="nexus-related-link" href="frequency/bpm-to-ms-per-beat.html">BPM to Milliseconds per Beat Converter</a><a class="nexus-related-link" href="frequency/frequency-to-period.html">Frequency to Period Converter</a><a class="nexus-related-link" href="frequency/ghz-to-mhz.html">Gigahertz to Megahertz Converter</a><a class="nexus-related-link" href="frequency/ghz-to-thz.html">Gigahertz to Terahertz Converter</a><a class="nexus-related-link" href="frequency/hz-to-bpm.html">Hertz to BPM Converter</a>
+          <a class="nexus-related-link" href="frequency/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          🔧 <a href="fuel-economy/" style="color: inherit; text-decoration: none;">fuel-economy</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;"></p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="fuel-economy/gal-100mi-to-l-100km.html">gal/100mi to L/100km Converter</a><a class="nexus-related-link" href="fuel-economy/gal-100mi-to-mpg.html">gal/100mi to MPG Converter</a><a class="nexus-related-link" href="fuel-economy/km-per-l-to-l-100km.html">km/L to L/100km Converter</a><a class="nexus-related-link" href="fuel-economy/km-per-l-to-mpg.html">km/L to MPG Converter</a><a class="nexus-related-link" href="fuel-economy/kwh-100mi-to-mpge.html">kWh/100mi to MPGe Converter</a><a class="nexus-related-link" href="fuel-economy/l-100km-to-gal-100mi.html">L/100km to gal/100mi Converter</a>
+          <a class="nexus-related-link" href="fuel-economy/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          🔧 <a href="measurement-estimation/" style="color: inherit; text-decoration: none;">measurement-estimation</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;"></p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="measurement-estimation/basketball-courts-to-sq-m.html">Basketball Courts to Square Meters Converter</a><a class="nexus-related-link" href="measurement-estimation/bathtubs-to-liters.html">Bathtubs to Liters Converter</a><a class="nexus-related-link" href="measurement-estimation/blue-whales-to-meters.html">Blue Whales to Meters Converter</a><a class="nexus-related-link" href="measurement-estimation/bowling-ball-to-kg.html">Bowling Balls to Kilograms Converter</a><a class="nexus-related-link" href="measurement-estimation/classroom-to-sq-feet.html">Classroom Size to Square Feet Converter</a><a class="nexus-related-link" href="measurement-estimation/credit-cards-to-cm.html">Credit Cards to Centimeters Converter</a>
+          <a class="nexus-related-link" href="measurement-estimation/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          🔧 <a href="money-advanced/" style="color: inherit; text-decoration: none;">money-advanced</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;"></p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="money-advanced/allowance-budget.html">Allowance Budget Planner</a><a class="nexus-related-link" href="money-advanced/bill-split-calculator.html">Bill Splitting Calculator</a><a class="nexus-related-link" href="money-advanced/bills-to-coins.html">Bills to Coins Converter</a><a class="nexus-related-link" href="money-advanced/coin-counter.html">Coin Counter Calculator</a><a class="nexus-related-link" href="money-advanced/coins-in-dollar.html">Coins in a Dollar</a><a class="nexus-related-link" href="money-advanced/compound-interest-calculator.html">Compound Interest Calculator</a>
+          <a class="nexus-related-link" href="money-advanced/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          🔧 <a href="music-audio/" style="color: inherit; text-decoration: none;">music-audio</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;"></p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="music-audio/amplitude-to-decibels.html">Amplitude Ratio to Decibels Converter</a><a class="nexus-related-link" href="music-audio/audio-length-file-size.html">Audio File Size to Length Calculator</a><a class="nexus-related-link" href="music-audio/bpm-to-ms-per-beat-music.html">BPM to Milliseconds per Beat</a><a class="nexus-related-link" href="music-audio/cents-to-frequency-ratio.html">Cents to Frequency Ratio Converter</a><a class="nexus-related-link" href="music-audio/db-power-ratio.html">Decibels to Power Ratio Converter</a><a class="nexus-related-link" href="music-audio/decibels-to-amplitude.html">Decibels to Amplitude Ratio Converter</a>
+          <a class="nexus-related-link" href="music-audio/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          🔧 <a href="paper-print/" style="color: inherit; text-decoration: none;">paper-print</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;"></p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="paper-print/a-series-converter.html">A-Series Paper Size Converter (A0-A10)</a><a class="nexus-related-link" href="paper-print/b-series-converter.html">B-Series Paper Size Converter</a><a class="nexus-related-link" href="paper-print/binding-margin-calculator.html">Binding Margin Calculator</a><a class="nexus-related-link" href="paper-print/business-card-dimensions.html">Business Card Dimensions Converter</a><a class="nexus-related-link" href="paper-print/c-series-envelope.html">C-Series Envelope Size Converter</a><a class="nexus-related-link" href="paper-print/dpi-from-dimensions.html">DPI Calculator from Image and Print Size</a>
+          <a class="nexus-related-link" href="paper-print/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          🔧 <a href="percentage-ops/" style="color: inherit; text-decoration: none;">percentage-ops</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 21 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;"></p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="percentage-ops/decimal-to-percent.html">Decimal to Percentage Converter</a><a class="nexus-related-link" href="percentage-ops/discount-from-percent.html">Discount Amount Calculator</a><a class="nexus-related-link" href="percentage-ops/fraction-to-percent.html">Fraction to Percentage Converter</a><a class="nexus-related-link" href="percentage-ops/grade-percent-to-letter.html">Grade Percentage to Letter Grade Converter</a><a class="nexus-related-link" href="percentage-ops/margin-percent.html">Margin Percentage Calculator</a><a class="nexus-related-link" href="percentage-ops/markup-percent.html">Markup Percentage Calculator</a>
+          <a class="nexus-related-link" href="percentage-ops/" style="font-weight:700; color: var(--nexus-primary);">See all 21 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          🔧 <a href="perimeter/" style="color: inherit; text-decoration: none;">perimeter</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;"></p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="perimeter/arc-length.html">Arc Length Calculator</a><a class="nexus-related-link" href="perimeter/baseboard-calculator.html">Baseboard/Trim Length Calculator</a><a class="nexus-related-link" href="perimeter/border-trim-length.html">Border/Edging Length Calculator</a><a class="nexus-related-link" href="perimeter/circle-circumference.html">Circle Circumference Calculator</a><a class="nexus-related-link" href="perimeter/crown-molding-calculator.html">Crown Molding Length Calculator</a><a class="nexus-related-link" href="perimeter/ellipse-perimeter.html">Ellipse Perimeter Calculator (Approximation)</a>
+          <a class="nexus-related-link" href="perimeter/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          🔧 <a href="photography/" style="color: inherit; text-decoration: none;">photography</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;"></p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="photography/aperture-to-f-stops.html">Aperture to f-Stop Converter</a><a class="nexus-related-link" href="photography/aspect-ratio-crop.html">Aspect Ratio Crop Calculator</a><a class="nexus-related-link" href="photography/bellows-extension-factor.html">Bellows Extension Factor Calculator</a><a class="nexus-related-link" href="photography/circle-of-confusion.html">Circle of Confusion Calculator</a><a class="nexus-related-link" href="photography/depth-of-field-calculator.html">Depth of Field Calculator</a><a class="nexus-related-link" href="photography/exposure-value-calculator.html">Exposure Value (EV) Calculator</a>
+          <a class="nexus-related-link" href="photography/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          🔧 <a href="pressure/" style="color: inherit; text-decoration: none;">pressure</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;"></p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="pressure/atm-to-bar.html">Atmospheres to Bar Converter</a><a class="nexus-related-link" href="pressure/atm-to-kpa.html">Atmospheres to Kilopascals Converter</a><a class="nexus-related-link" href="pressure/atm-to-mmhg.html">Atmospheres to mmHg Converter</a><a class="nexus-related-link" href="pressure/atm-to-psi.html">Atmospheres to PSI Converter</a><a class="nexus-related-link" href="pressure/bar-to-atm.html">Bar to Atmospheres Converter</a><a class="nexus-related-link" href="pressure/bar-to-kpa.html">Bar to Kilopascals Converter</a>
+          <a class="nexus-related-link" href="pressure/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          🔧 <a href="ratio/" style="color: inherit; text-decoration: none;">ratio</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;"></p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="ratio/aspect-ratio-calculator.html">Aspect Ratio Calculator</a><a class="nexus-related-link" href="ratio/equivalent-ratio-generator.html">Equivalent Ratio Generator</a><a class="nexus-related-link" href="ratio/fraction-to-ratio.html">Fraction to Ratio Converter</a><a class="nexus-related-link" href="ratio/gear-ratio-calculator.html">Gear Ratio Calculator</a><a class="nexus-related-link" href="ratio/golden-ratio-calculator.html">Golden Ratio Calculator</a><a class="nexus-related-link" href="ratio/map-scale-converter.html">Map Scale Converter</a>
+          <a class="nexus-related-link" href="ratio/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          🔧 <a href="reading-level/" style="color: inherit; text-decoration: none;">reading-level</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;"></p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="reading-level/ar-book-level.html">AR (Accelerated Reader) Level Reference</a><a class="nexus-related-link" href="reading-level/ari-index.html">Automated Readability Index (ARI)</a><a class="nexus-related-link" href="reading-level/coleman-liau-index.html">Coleman-Liau Index Calculator</a><a class="nexus-related-link" href="reading-level/dale-chall-readability.html">Dale-Chall Readability Score</a><a class="nexus-related-link" href="reading-level/dra-to-grade.html">DRA to Grade Level Converter</a><a class="nexus-related-link" href="reading-level/flesch-kincaid-grade.html">Flesch-Kincaid Grade Level Calculator</a>
+          <a class="nexus-related-link" href="reading-level/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          🔧 <a href="roman-numerals/" style="color: inherit; text-decoration: none;">roman-numerals</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;"></p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="roman-numerals/chapter-act-numbering.html">Chapter/Act/Scene Numbering</a><a class="nexus-related-link" href="roman-numerals/chronogram-solver.html">Chronogram Solver</a><a class="nexus-related-link" href="roman-numerals/clock-face-iiii-vs-iv.html">Clock Face IIII vs IV Explainer</a><a class="nexus-related-link" href="roman-numerals/date-to-roman.html">Date to Roman Numerals Converter</a><a class="nexus-related-link" href="roman-numerals/decimal-to-roman.html">Decimal to Roman Numerals Converter</a><a class="nexus-related-link" href="roman-numerals/large-roman-numbers.html">Large Roman Numbers (Vinculum)</a>
+          <a class="nexus-related-link" href="roman-numerals/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          🔧 <a href="scale-map/" style="color: inherit; text-decoration: none;">scale-map</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;"></p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="scale-map/action-figure-scale.html">Action Figure Scale Calculator</a><a class="nexus-related-link" href="scale-map/architect-scale-converter.html">Architect Scale Converter</a><a class="nexus-related-link" href="scale-map/bar-scale-calculator.html">Bar Scale Calculator</a><a class="nexus-related-link" href="scale-map/blueprint-scale-reader.html">Blueprint Scale Reader</a><a class="nexus-related-link" href="scale-map/diorama-scale-calculator.html">Diorama Scale Calculator</a><a class="nexus-related-link" href="scale-map/dollhouse-scale.html">Dollhouse Scale Calculator (1:12)</a>
+          <a class="nexus-related-link" href="scale-map/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          🔧 <a href="sequences/" style="color: inherit; text-decoration: none;">sequences</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;"></p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="sequences/abundant-deficient-perfect.html">Number Type Checker (Abundant/Deficient/Perfect)</a><a class="nexus-related-link" href="sequences/arithmetic-nth-term.html">Arithmetic Sequence Nth Term</a><a class="nexus-related-link" href="sequences/arithmetic-series-sum.html">Arithmetic Series Sum</a><a class="nexus-related-link" href="sequences/common-difference-finder.html">Common Difference Finder</a><a class="nexus-related-link" href="sequences/common-ratio-finder.html">Common Ratio Finder</a><a class="nexus-related-link" href="sequences/even-odd-generator.html">Even/Odd Number Generator</a>
+          <a class="nexus-related-link" href="sequences/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          🔧 <a href="sports-math/" style="color: inherit; text-decoration: none;">sports-math</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;"></p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="sports-math/basketball-shooting-pct.html">Basketball Shooting Percentage Calculator</a><a class="nexus-related-link" href="sports-math/batting-average.html">Batting Average Calculator</a><a class="nexus-related-link" href="sports-math/cycling-speed-power.html">Cycling Speed Estimator from Watts</a><a class="nexus-related-link" href="sports-math/era-calculator.html">ERA Calculator</a><a class="nexus-related-link" href="sports-math/fantasy-points-calculator.html">Fantasy Points Calculator (Standard)</a><a class="nexus-related-link" href="sports-math/field-dimensions.html">Sports Field Dimensions Reference</a>
+          <a class="nexus-related-link" href="sports-math/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          🔧 <a href="statistics/" style="color: inherit; text-decoration: none;">statistics</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;"></p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="statistics/coefficient-of-variation-calculator.html">Coefficient of Variation Calculator</a><a class="nexus-related-link" href="statistics/combination-calculator.html">Combination Calculator (nCr)</a><a class="nexus-related-link" href="statistics/expected-value-calculator.html">Expected Value Calculator</a><a class="nexus-related-link" href="statistics/geometric-mean-calculator.html">Geometric Mean Calculator</a><a class="nexus-related-link" href="statistics/harmonic-mean-calculator.html">Harmonic Mean Calculator</a><a class="nexus-related-link" href="statistics/interquartile-range-calculator.html">Interquartile Range (IQR) Calculator</a>
+          <a class="nexus-related-link" href="statistics/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          🔧 <a href="torque/" style="color: inherit; text-decoration: none;">torque</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;"></p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="torque/ft-lbf-to-in-lbf.html">Foot-Pounds to Inch-Pounds Converter</a><a class="nexus-related-link" href="torque/ft-lbf-to-kgf-m.html">Foot-Pounds to kgf·m Converter</a><a class="nexus-related-link" href="torque/ft-lbf-to-nm.html">Foot-Pounds to Newton-Meters Converter</a><a class="nexus-related-link" href="torque/in-lbf-to-ft-lbf.html">Inch-Pounds to Foot-Pounds Converter</a><a class="nexus-related-link" href="torque/in-lbf-to-kgf-cm.html">Inch-Pounds to kgf·cm Converter</a><a class="nexus-related-link" href="torque/in-lbf-to-nm.html">Inch-Pounds to Newton-Meters Converter</a>
+          <a class="nexus-related-link" href="torque/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          🔧 <a href="trigonometry/" style="color: inherit; text-decoration: none;">trigonometry</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 21 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;"></p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="trigonometry/angle-to-slope.html">Angle to Slope Converter</a><a class="nexus-related-link" href="trigonometry/arccos-calculator.html">Inverse Cosine (Arccos) Calculator</a><a class="nexus-related-link" href="trigonometry/arcsin-calculator.html">Inverse Sine (Arcsin) Calculator</a><a class="nexus-related-link" href="trigonometry/arctan-calculator.html">Inverse Tangent (Arctan) Calculator</a><a class="nexus-related-link" href="trigonometry/complementary-angle-finder.html">Complementary Angle Finder</a><a class="nexus-related-link" href="trigonometry/cos-calculator.html">Cosine Calculator (Degrees)</a>
+          <a class="nexus-related-link" href="trigonometry/" style="font-weight:700; color: var(--nexus-primary);">See all 21 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          🔧 <a href="typography/" style="color: inherit; text-decoration: none;">typography</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;"></p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="typography/em-to-pixels.html">Em to Pixels Converter</a><a class="nexus-related-link" href="typography/em-to-rem.html">Em to Rem Converter</a><a class="nexus-related-link" href="typography/golden-ratio-typography.html">Golden Ratio Typography Calculator</a><a class="nexus-related-link" href="typography/inches-to-pica.html">Inches to Picas Converter</a><a class="nexus-related-link" href="typography/line-height-calculator.html">Line Height Calculator</a><a class="nexus-related-link" href="typography/mm-to-points.html">Millimeters to Points Converter</a>
+          <a class="nexus-related-link" href="typography/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          🔧 <a href="unit-rate/" style="color: inherit; text-decoration: none;">unit-rate</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;"></p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="unit-rate/beats-per-minute-to-per-second.html">BPM to Beats/Second Converter</a><a class="nexus-related-link" href="unit-rate/calories-per-serving.html">Calories Per Serving Calculator</a><a class="nexus-related-link" href="unit-rate/cost-per-mile.html">Cost Per Mile Calculator</a><a class="nexus-related-link" href="unit-rate/cost-per-unit.html">Cost Per Unit Calculator</a><a class="nexus-related-link" href="unit-rate/dpi-to-ppi.html">DPI to PPI Converter</a><a class="nexus-related-link" href="unit-rate/events-per-hour.html">Events Per Hour Calculator</a>
+          <a class="nexus-related-link" href="unit-rate/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          🔧 <a href="viscosity/" style="color: inherit; text-decoration: none;">viscosity</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;"></p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="viscosity/centipoise-to-millipascal-second.html">Centipoise to mPa·s Converter</a><a class="nexus-related-link" href="viscosity/centipoise-to-pascal-second.html">Centipoise to Pa·s Converter</a><a class="nexus-related-link" href="viscosity/centipoise-to-poise.html">Centipoise to Poise Converter</a><a class="nexus-related-link" href="viscosity/centistokes-to-mm2-per-s.html">Centistokes to mm²/s Converter</a><a class="nexus-related-link" href="viscosity/centistokes-to-stokes.html">Centistokes to Stokes Converter</a><a class="nexus-related-link" href="viscosity/kg-per-m-s-to-pascal-second.html">kg/(m·s) to Pa·s Converter</a>
+          <a class="nexus-related-link" href="viscosity/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          🔧 <a href="volume-advanced/" style="color: inherit; text-decoration: none;">volume-advanced</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;"></p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="volume-advanced/aquarium-volume.html">Aquarium Volume Calculator</a><a class="nexus-related-link" href="volume-advanced/capsule-volume.html">Capsule Volume Calculator</a><a class="nexus-related-link" href="volume-advanced/concrete-calculator.html">Concrete Volume Calculator</a><a class="nexus-related-link" href="volume-advanced/cone-volume.html">Cone Volume Calculator</a><a class="nexus-related-link" href="volume-advanced/ellipsoid-volume.html">Ellipsoid Volume Calculator</a><a class="nexus-related-link" href="volume-advanced/firewood-cord-calculator.html">Firewood Cord Calculator</a>
+          <a class="nexus-related-link" href="volume-advanced/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+      <div class="nexus-card" style="margin-bottom: 16px;">
+        <h2 style="font-family: Outfit, sans-serif; margin-bottom: 8px;">
+          🔧 <a href="weather/" style="color: inherit; text-decoration: none;">weather</a>
+          <span style="font-size: 13px; font-weight: 400; color: #636E72;"> — 20 converters</span>
+        </h2>
+        <p style="font-size: 14px; color: #636E72; margin-bottom: 12px;"></p>
+        <div class="nexus-related-grid">
+          <a class="nexus-related-link" href="weather/air-quality-index.html">Air Quality Index (AQI) Reference</a><a class="nexus-related-link" href="weather/beaufort-scale-converter.html">Beaufort Scale to Wind Speed Converter</a><a class="nexus-related-link" href="weather/cloud-base-height.html">Cloud Base Height Estimator</a><a class="nexus-related-link" href="weather/dew-point-calculator.html">Dew Point Calculator</a><a class="nexus-related-link" href="weather/earthquake-magnitude.html">Earthquake Magnitude Scale Reference</a><a class="nexus-related-link" href="weather/fahrenheit-celsius-weather.html">Weather Temperature Quick Reference</a>
+          <a class="nexus-related-link" href="weather/" style="font-weight:700; color: var(--nexus-primary);">See all 20 →</a>
+        </div>
+      </div>
+    <footer class="nexus-footer">
+      <a href="https://examel.com">examel.com</a> · Know more. Score more.
+    </footer>
+  </div>
+</body>
+</html>
