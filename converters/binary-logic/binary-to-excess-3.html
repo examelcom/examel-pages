@@ -561,7 +561,7 @@ body.nexus-page {
     <div class="nexus-related">
       <h2>Related Converters</h2>
       <div class="nexus-related-grid">
-        <a class="nexus-related-link" href="binary-to-bcd.html">Binary To Bcd</a><a class="nexus-related-link" href="bcd-to-binary.html">Bcd To Binary</a><a class="nexus-related-link" href="ones-complement.html">Ones Complement</a>
+        <a class="nexus-related-link" href="binary-to-bcd">Binary To Bcd</a><a class="nexus-related-link" href="bcd-to-binary">Bcd To Binary</a><a class="nexus-related-link" href="ones-complement">Ones Complement</a>
       </div>
     </div>
 
@@ -744,7 +744,7 @@ body.nexus-page {
   // Swap button → go to reverse converter
   if (swapBtn && cfg.reverseLink) {
     swapBtn.addEventListener('click', function () {
-      window.location.href = cfg.reverseLink + '.html';
+      window.location.href = cfg.reverseLink;
     });
   }
   if (swapBtn && !cfg.reverseLink) {

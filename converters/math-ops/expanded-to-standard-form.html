@@ -548,7 +548,7 @@ body.nexus-page {
     <div class="nexus-related">
       <h2>Related Converters</h2>
       <div class="nexus-related-grid">
-        <a class="nexus-related-link" href="standard-to-expanded-form.html">Standard To Expanded Form</a><a class="nexus-related-link" href="place-value-finder.html">Place Value Finder</a>
+        <a class="nexus-related-link" href="standard-to-expanded-form">Standard To Expanded Form</a><a class="nexus-related-link" href="place-value-finder">Place Value Finder</a>
       </div>
     </div>
 
@@ -725,7 +725,7 @@ body.nexus-page {
   // Swap button → go to reverse converter
   if (swapBtn && cfg.reverseLink) {
     swapBtn.addEventListener('click', function () {
-      window.location.href = cfg.reverseLink + '.html';
+      window.location.href = cfg.reverseLink;
     });
   }
   if (swapBtn && !cfg.reverseLink) {

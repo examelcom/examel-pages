@@ -548,7 +548,7 @@ body.nexus-page {
     <div class="nexus-related">
       <h2>Related Converters</h2>
       <div class="nexus-related-grid">
-        <a class="nexus-related-link" href="btu-to-kilowatt-hours.html">Btu To Kilowatt Hours</a><a class="nexus-related-link" href="kilowatt-hours-to-joules.html">Kilowatt Hours To Joules</a>
+        <a class="nexus-related-link" href="btu-to-kilowatt-hours">Btu To Kilowatt Hours</a><a class="nexus-related-link" href="kilowatt-hours-to-joules">Kilowatt Hours To Joules</a>
       </div>
     </div>
 
@@ -721,7 +721,7 @@ body.nexus-page {
   // Swap button → go to reverse converter
   if (swapBtn && cfg.reverseLink) {
     swapBtn.addEventListener('click', function () {
-      window.location.href = cfg.reverseLink + '.html';
+      window.location.href = cfg.reverseLink;
     });
   }
   if (swapBtn && !cfg.reverseLink) {

@@ -548,7 +548,7 @@ body.nexus-page {
     <div class="nexus-related">
       <h2>Related Converters</h2>
       <div class="nexus-related-grid">
-        <a class="nexus-related-link" href="atm-to-mmhg.html">Atm To Mmhg</a><a class="nexus-related-link" href="mmhg-to-psi.html">Mmhg To Psi</a><a class="nexus-related-link" href="mmhg-to-kpa.html">Mmhg To Kpa</a>
+        <a class="nexus-related-link" href="atm-to-mmhg">Atm To Mmhg</a><a class="nexus-related-link" href="mmhg-to-psi">Mmhg To Psi</a><a class="nexus-related-link" href="mmhg-to-kpa">Mmhg To Kpa</a>
       </div>
     </div>
 
@@ -727,7 +727,7 @@ body.nexus-page {
   // Swap button → go to reverse converter
   if (swapBtn && cfg.reverseLink) {
     swapBtn.addEventListener('click', function () {
-      window.location.href = cfg.reverseLink + '.html';
+      window.location.href = cfg.reverseLink;
     });
   }
   if (swapBtn && !cfg.reverseLink) {

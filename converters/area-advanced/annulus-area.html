@@ -561,7 +561,7 @@ body.nexus-page {
     <div class="nexus-related">
       <h2>Related Converters</h2>
       <div class="nexus-related-grid">
-        <a class="nexus-related-link" href="sector-area.html">Sector Area</a><a class="nexus-related-link" href="segment-area.html">Segment Area</a><a class="nexus-related-link" href="ellipse-area.html">Ellipse Area</a>
+        <a class="nexus-related-link" href="sector-area">Sector Area</a><a class="nexus-related-link" href="segment-area">Segment Area</a><a class="nexus-related-link" href="ellipse-area">Ellipse Area</a>
       </div>
     </div>
 
@@ -743,7 +743,7 @@ body.nexus-page {
   // Swap button → go to reverse converter
   if (swapBtn && cfg.reverseLink) {
     swapBtn.addEventListener('click', function () {
-      window.location.href = cfg.reverseLink + '.html';
+      window.location.href = cfg.reverseLink;
     });
   }
   if (swapBtn && !cfg.reverseLink) {

@@ -561,7 +561,7 @@ body.nexus-page {
     <div class="nexus-related">
       <h2>Related Converters</h2>
       <div class="nexus-related-grid">
-        <a class="nexus-related-link" href="pounds-to-tons.html">Pounds To Tons</a><a class="nexus-related-link" href="tons-to-metric-tons.html">Tons To Metric Tons</a><a class="nexus-related-link" href="tons-to-kilograms.html">Tons To Kilograms</a>
+        <a class="nexus-related-link" href="pounds-to-tons">Pounds To Tons</a><a class="nexus-related-link" href="tons-to-metric-tons">Tons To Metric Tons</a><a class="nexus-related-link" href="tons-to-kilograms">Tons To Kilograms</a>
       </div>
     </div>
 
@@ -751,7 +751,7 @@ body.nexus-page {
   // Swap button → go to reverse converter
   if (swapBtn && cfg.reverseLink) {
     swapBtn.addEventListener('click', function () {
-      window.location.href = cfg.reverseLink + '.html';
+      window.location.href = cfg.reverseLink;
     });
   }
   if (swapBtn && !cfg.reverseLink) {

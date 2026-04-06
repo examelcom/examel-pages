@@ -561,7 +561,7 @@ body.nexus-page {
     <div class="nexus-related">
       <h2>Related Converters</h2>
       <div class="nexus-related-grid">
-        <a class="nexus-related-link" href="text-to-morse-code.html">Text To Morse Code</a><a class="nexus-related-link" href="text-to-nato-phonetic.html">Text To Nato Phonetic</a><a class="nexus-related-link" href="reverse-text.html">Reverse Text</a>
+        <a class="nexus-related-link" href="text-to-morse-code">Text To Morse Code</a><a class="nexus-related-link" href="text-to-nato-phonetic">Text To Nato Phonetic</a><a class="nexus-related-link" href="reverse-text">Reverse Text</a>
       </div>
     </div>
 
@@ -741,7 +741,7 @@ body.nexus-page {
   // Swap button → go to reverse converter
   if (swapBtn && cfg.reverseLink) {
     swapBtn.addEventListener('click', function () {
-      window.location.href = cfg.reverseLink + '.html';
+      window.location.href = cfg.reverseLink;
     });
   }
   if (swapBtn && !cfg.reverseLink) {

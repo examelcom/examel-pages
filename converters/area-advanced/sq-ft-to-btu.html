@@ -561,7 +561,7 @@ body.nexus-page {
     <div class="nexus-related">
       <h2>Related Converters</h2>
       <div class="nexus-related-grid">
-        <a class="nexus-related-link" href="paint-coverage-calculator.html">Paint Coverage Calculator</a><a class="nexus-related-link" href="carpet-calculator.html">Carpet Calculator</a>
+        <a class="nexus-related-link" href="paint-coverage-calculator">Paint Coverage Calculator</a><a class="nexus-related-link" href="carpet-calculator">Carpet Calculator</a>
       </div>
     </div>
 
@@ -746,7 +746,7 @@ body.nexus-page {
   // Swap button → go to reverse converter
   if (swapBtn && cfg.reverseLink) {
     swapBtn.addEventListener('click', function () {
-      window.location.href = cfg.reverseLink + '.html';
+      window.location.href = cfg.reverseLink;
     });
   }
   if (swapBtn && !cfg.reverseLink) {

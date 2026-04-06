@@ -561,7 +561,7 @@ body.nexus-page {
     <div class="nexus-related">
       <h2>Related Converters</h2>
       <div class="nexus-related-grid">
-        <a class="nexus-related-link" href="decimal-to-roman.html">Decimal To Roman</a><a class="nexus-related-link" href="date-to-roman.html">Date To Roman</a><a class="nexus-related-link" href="roman-calculator-add.html">Roman Calculator Add</a>
+        <a class="nexus-related-link" href="decimal-to-roman">Decimal To Roman</a><a class="nexus-related-link" href="date-to-roman">Date To Roman</a><a class="nexus-related-link" href="roman-calculator-add">Roman Calculator Add</a>
       </div>
     </div>
 
@@ -755,7 +755,7 @@ body.nexus-page {
   // Swap button → go to reverse converter
   if (swapBtn && cfg.reverseLink) {
     swapBtn.addEventListener('click', function () {
-      window.location.href = cfg.reverseLink + '.html';
+      window.location.href = cfg.reverseLink;
     });
   }
   if (swapBtn && !cfg.reverseLink) {

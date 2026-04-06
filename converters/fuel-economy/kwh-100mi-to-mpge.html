@@ -548,7 +548,7 @@ body.nexus-page {
     <div class="nexus-related">
       <h2>Related Converters</h2>
       <div class="nexus-related-grid">
-        <a class="nexus-related-link" href="mpge-to-kwh-100mi.html">Mpge To Kwh 100mi</a><a class="nexus-related-link" href="kwh-100mi-to-mi-per-kwh.html">Kwh 100mi To Mi Per Kwh</a>
+        <a class="nexus-related-link" href="mpge-to-kwh-100mi">Mpge To Kwh 100mi</a><a class="nexus-related-link" href="kwh-100mi-to-mi-per-kwh">Kwh 100mi To Mi Per Kwh</a>
       </div>
     </div>
 
@@ -726,7 +726,7 @@ body.nexus-page {
   // Swap button → go to reverse converter
   if (swapBtn && cfg.reverseLink) {
     swapBtn.addEventListener('click', function () {
-      window.location.href = cfg.reverseLink + '.html';
+      window.location.href = cfg.reverseLink;
     });
   }
   if (swapBtn && !cfg.reverseLink) {

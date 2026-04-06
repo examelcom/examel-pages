@@ -548,7 +548,7 @@ body.nexus-page {
     <div class="nexus-related">
       <h2>Related Converters</h2>
       <div class="nexus-related-grid">
-        <a class="nexus-related-link" href="word-count-estimator.html">Word Count Estimator</a><a class="nexus-related-link" href="reading-time-estimator-rl.html">Reading Time Estimator Rl</a>
+        <a class="nexus-related-link" href="word-count-estimator">Word Count Estimator</a><a class="nexus-related-link" href="reading-time-estimator-rl">Reading Time Estimator Rl</a>
       </div>
     </div>
 
@@ -729,7 +729,7 @@ body.nexus-page {
   // Swap button → go to reverse converter
   if (swapBtn && cfg.reverseLink) {
     swapBtn.addEventListener('click', function () {
-      window.location.href = cfg.reverseLink + '.html';
+      window.location.href = cfg.reverseLink;
     });
   }
   if (swapBtn && !cfg.reverseLink) {

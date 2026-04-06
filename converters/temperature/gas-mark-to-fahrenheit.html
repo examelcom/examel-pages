@@ -561,7 +561,7 @@ body.nexus-page {
     <div class="nexus-related">
       <h2>Related Converters</h2>
       <div class="nexus-related-grid">
-        <a class="nexus-related-link" href="fahrenheit-to-gas-mark.html">Fahrenheit To Gas Mark</a><a class="nexus-related-link" href="gas-mark-to-celsius.html">Gas Mark To Celsius</a>
+        <a class="nexus-related-link" href="fahrenheit-to-gas-mark">Fahrenheit To Gas Mark</a><a class="nexus-related-link" href="gas-mark-to-celsius">Gas Mark To Celsius</a>
       </div>
     </div>
 
@@ -749,7 +749,7 @@ body.nexus-page {
   // Swap button → go to reverse converter
   if (swapBtn && cfg.reverseLink) {
     swapBtn.addEventListener('click', function () {
-      window.location.href = cfg.reverseLink + '.html';
+      window.location.href = cfg.reverseLink;
     });
   }
   if (swapBtn && !cfg.reverseLink) {

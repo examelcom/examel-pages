@@ -548,7 +548,7 @@ body.nexus-page {
     <div class="nexus-related">
       <h2>Related Converters</h2>
       <div class="nexus-related-grid">
-        <a class="nexus-related-link" href="g-ml-to-kg-m3.html">G Ml To Kg M3</a><a class="nexus-related-link" href="kg-m3-to-g-cm3.html">Kg M3 To G Cm3</a>
+        <a class="nexus-related-link" href="g-ml-to-kg-m3">G Ml To Kg M3</a><a class="nexus-related-link" href="kg-m3-to-g-cm3">Kg M3 To G Cm3</a>
       </div>
     </div>
 
@@ -726,7 +726,7 @@ body.nexus-page {
   // Swap button → go to reverse converter
   if (swapBtn && cfg.reverseLink) {
     swapBtn.addEventListener('click', function () {
-      window.location.href = cfg.reverseLink + '.html';
+      window.location.href = cfg.reverseLink;
     });
   }
   if (swapBtn && !cfg.reverseLink) {

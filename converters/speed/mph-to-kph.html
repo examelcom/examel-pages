@@ -574,7 +574,7 @@ body.nexus-page {
     <div class="nexus-related">
       <h2>Related Converters</h2>
       <div class="nexus-related-grid">
-        <a class="nexus-related-link" href="kph-to-mph.html">Kph To Mph</a><a class="nexus-related-link" href="mph-to-meters-per-second.html">Mph To Meters Per Second</a><a class="nexus-related-link" href="mph-to-knots.html">Mph To Knots</a>
+        <a class="nexus-related-link" href="kph-to-mph">Kph To Mph</a><a class="nexus-related-link" href="mph-to-meters-per-second">Mph To Meters Per Second</a><a class="nexus-related-link" href="mph-to-knots">Mph To Knots</a>
       </div>
     </div>
 
@@ -778,7 +778,7 @@ body.nexus-page {
   // Swap button → go to reverse converter
   if (swapBtn && cfg.reverseLink) {
     swapBtn.addEventListener('click', function () {
-      window.location.href = cfg.reverseLink + '.html';
+      window.location.href = cfg.reverseLink;
     });
   }
   if (swapBtn && !cfg.reverseLink) {

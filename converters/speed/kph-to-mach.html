@@ -548,7 +548,7 @@ body.nexus-page {
     <div class="nexus-related">
       <h2>Related Converters</h2>
       <div class="nexus-related-grid">
-        <a class="nexus-related-link" href="mach-to-kph.html">Mach To Kph</a><a class="nexus-related-link" href="kph-to-mph.html">Kph To Mph</a>
+        <a class="nexus-related-link" href="mach-to-kph">Mach To Kph</a><a class="nexus-related-link" href="kph-to-mph">Kph To Mph</a>
       </div>
     </div>
 
@@ -721,7 +721,7 @@ body.nexus-page {
   // Swap button → go to reverse converter
   if (swapBtn && cfg.reverseLink) {
     swapBtn.addEventListener('click', function () {
-      window.location.href = cfg.reverseLink + '.html';
+      window.location.href = cfg.reverseLink;
     });
   }
   if (swapBtn && !cfg.reverseLink) {

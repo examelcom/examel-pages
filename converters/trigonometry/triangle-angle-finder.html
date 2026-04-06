@@ -561,7 +561,7 @@ body.nexus-page {
     <div class="nexus-related">
       <h2>Related Converters</h2>
       <div class="nexus-related-grid">
-        <a class="nexus-related-link" href="complementary-angle-finder.html">Complementary Angle Finder</a><a class="nexus-related-link" href="supplementary-angle-finder.html">Supplementary Angle Finder</a><a class="nexus-related-link" href="polygon-interior-angle.html">Polygon Interior Angle</a>
+        <a class="nexus-related-link" href="complementary-angle-finder">Complementary Angle Finder</a><a class="nexus-related-link" href="supplementary-angle-finder">Supplementary Angle Finder</a><a class="nexus-related-link" href="polygon-interior-angle">Polygon Interior Angle</a>
       </div>
     </div>
 
@@ -744,7 +744,7 @@ body.nexus-page {
   // Swap button → go to reverse converter
   if (swapBtn && cfg.reverseLink) {
     swapBtn.addEventListener('click', function () {
-      window.location.href = cfg.reverseLink + '.html';
+      window.location.href = cfg.reverseLink;
     });
   }
   if (swapBtn && !cfg.reverseLink) {

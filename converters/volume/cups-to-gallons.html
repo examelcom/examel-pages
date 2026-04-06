@@ -548,7 +548,7 @@ body.nexus-page {
     <div class="nexus-related">
       <h2>Related Converters</h2>
       <div class="nexus-related-grid">
-        <a class="nexus-related-link" href="gallons-to-cups.html">Gallons To Cups</a><a class="nexus-related-link" href="cups-to-quarts.html">Cups To Quarts</a><a class="nexus-related-link" href="cups-to-liters.html">Cups To Liters</a>
+        <a class="nexus-related-link" href="gallons-to-cups">Gallons To Cups</a><a class="nexus-related-link" href="cups-to-quarts">Cups To Quarts</a><a class="nexus-related-link" href="cups-to-liters">Cups To Liters</a>
       </div>
     </div>
 
@@ -729,7 +729,7 @@ body.nexus-page {
   // Swap button → go to reverse converter
   if (swapBtn && cfg.reverseLink) {
     swapBtn.addEventListener('click', function () {
-      window.location.href = cfg.reverseLink + '.html';
+      window.location.href = cfg.reverseLink;
     });
   }
   if (swapBtn && !cfg.reverseLink) {

@@ -561,7 +561,7 @@ body.nexus-page {
     <div class="nexus-related">
       <h2>Related Converters</h2>
       <div class="nexus-related-grid">
-        <a class="nexus-related-link" href="inches-to-centimeters.html">Inches To Centimeters</a><a class="nexus-related-link" href="centimeters-to-feet.html">Centimeters To Feet</a><a class="nexus-related-link" href="millimeters-to-inches.html">Millimeters To Inches</a>
+        <a class="nexus-related-link" href="inches-to-centimeters">Inches To Centimeters</a><a class="nexus-related-link" href="centimeters-to-feet">Centimeters To Feet</a><a class="nexus-related-link" href="millimeters-to-inches">Millimeters To Inches</a>
       </div>
     </div>
 
@@ -751,7 +751,7 @@ body.nexus-page {
   // Swap button → go to reverse converter
   if (swapBtn && cfg.reverseLink) {
     swapBtn.addEventListener('click', function () {
-      window.location.href = cfg.reverseLink + '.html';
+      window.location.href = cfg.reverseLink;
     });
   }
   if (swapBtn && !cfg.reverseLink) {

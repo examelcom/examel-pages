@@ -561,7 +561,7 @@ body.nexus-page {
     <div class="nexus-related">
       <h2>Related Converters</h2>
       <div class="nexus-related-grid">
-        <a class="nexus-related-link" href="mb-to-mib.html">Mb To Mib</a><a class="nexus-related-link" href="megabytes-to-gigabytes.html">Megabytes To Gigabytes</a>
+        <a class="nexus-related-link" href="mb-to-mib">Mb To Mib</a><a class="nexus-related-link" href="megabytes-to-gigabytes">Megabytes To Gigabytes</a>
       </div>
     </div>
 
@@ -744,7 +744,7 @@ body.nexus-page {
   // Swap button → go to reverse converter
   if (swapBtn && cfg.reverseLink) {
     swapBtn.addEventListener('click', function () {
-      window.location.href = cfg.reverseLink + '.html';
+      window.location.href = cfg.reverseLink;
     });
   }
   if (swapBtn && !cfg.reverseLink) {

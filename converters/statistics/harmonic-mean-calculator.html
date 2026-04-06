@@ -561,7 +561,7 @@ body.nexus-page {
     <div class="nexus-related">
       <h2>Related Converters</h2>
       <div class="nexus-related-grid">
-        <a class="nexus-related-link" href="mean-calculator.html">Mean Calculator</a><a class="nexus-related-link" href="geometric-mean-calculator.html">Geometric Mean Calculator</a>
+        <a class="nexus-related-link" href="mean-calculator">Mean Calculator</a><a class="nexus-related-link" href="geometric-mean-calculator">Geometric Mean Calculator</a>
       </div>
     </div>
 
@@ -738,7 +738,7 @@ body.nexus-page {
   // Swap button → go to reverse converter
   if (swapBtn && cfg.reverseLink) {
     swapBtn.addEventListener('click', function () {
-      window.location.href = cfg.reverseLink + '.html';
+      window.location.href = cfg.reverseLink;
     });
   }
   if (swapBtn && !cfg.reverseLink) {

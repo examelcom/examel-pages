@@ -561,7 +561,7 @@ body.nexus-page {
     <div class="nexus-related">
       <h2>Related Converters</h2>
       <div class="nexus-related-grid">
-        <a class="nexus-related-link" href="square-perimeter.html">Square Perimeter</a><a class="nexus-related-link" href="triangle-perimeter.html">Triangle Perimeter</a><a class="nexus-related-link" href="circle-circumference.html">Circle Circumference</a>
+        <a class="nexus-related-link" href="square-perimeter">Square Perimeter</a><a class="nexus-related-link" href="triangle-perimeter">Triangle Perimeter</a><a class="nexus-related-link" href="circle-circumference">Circle Circumference</a>
       </div>
     </div>
 
@@ -742,7 +742,7 @@ body.nexus-page {
   // Swap button → go to reverse converter
   if (swapBtn && cfg.reverseLink) {
     swapBtn.addEventListener('click', function () {
-      window.location.href = cfg.reverseLink + '.html';
+      window.location.href = cfg.reverseLink;
     });
   }
   if (swapBtn && !cfg.reverseLink) {

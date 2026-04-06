@@ -561,7 +561,7 @@ body.nexus-page {
     <div class="nexus-related">
       <h2>Related Converters</h2>
       <div class="nexus-related-grid">
-        <a class="nexus-related-link" href="nickels-to-dollars.html">Nickels To Dollars</a><a class="nexus-related-link" href="quarters-to-dollars.html">Quarters To Dollars</a><a class="nexus-related-link" href="coin-counter.html">Coin Counter</a>
+        <a class="nexus-related-link" href="nickels-to-dollars">Nickels To Dollars</a><a class="nexus-related-link" href="quarters-to-dollars">Quarters To Dollars</a><a class="nexus-related-link" href="coin-counter">Coin Counter</a>
       </div>
     </div>
 
@@ -751,7 +751,7 @@ body.nexus-page {
   // Swap button → go to reverse converter
   if (swapBtn && cfg.reverseLink) {
     swapBtn.addEventListener('click', function () {
-      window.location.href = cfg.reverseLink + '.html';
+      window.location.href = cfg.reverseLink;
     });
   }
   if (swapBtn && !cfg.reverseLink) {

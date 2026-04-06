@@ -561,7 +561,7 @@ body.nexus-page {
     <div class="nexus-related">
       <h2>Related Converters</h2>
       <div class="nexus-related-grid">
-        <a class="nexus-related-link" href="cups-to-grams-flour.html">Cups To Grams Flour</a><a class="nexus-related-link" href="cups-to-grams-butter.html">Cups To Grams Butter</a><a class="nexus-related-link" href="cups-to-milliliters.html">Cups To Milliliters</a>
+        <a class="nexus-related-link" href="cups-to-grams-flour">Cups To Grams Flour</a><a class="nexus-related-link" href="cups-to-grams-butter">Cups To Grams Butter</a><a class="nexus-related-link" href="cups-to-milliliters">Cups To Milliliters</a>
       </div>
     </div>
 
@@ -756,7 +756,7 @@ body.nexus-page {
   // Swap button → go to reverse converter
   if (swapBtn && cfg.reverseLink) {
     swapBtn.addEventListener('click', function () {
-      window.location.href = cfg.reverseLink + '.html';
+      window.location.href = cfg.reverseLink;
     });
   }
   if (swapBtn && !cfg.reverseLink) {

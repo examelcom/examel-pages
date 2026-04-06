@@ -561,7 +561,7 @@ body.nexus-page {
     <div class="nexus-related">
       <h2>Related Converters</h2>
       <div class="nexus-related-grid">
-        <a class="nexus-related-link" href="grams-to-moles.html">Grams To Moles</a><a class="nexus-related-link" href="moles-to-particles.html">Moles To Particles</a><a class="nexus-related-link" href="molar-mass-calculator.html">Molar Mass Calculator</a>
+        <a class="nexus-related-link" href="grams-to-moles">Grams To Moles</a><a class="nexus-related-link" href="moles-to-particles">Moles To Particles</a><a class="nexus-related-link" href="molar-mass-calculator">Molar Mass Calculator</a>
       </div>
     </div>
 
@@ -744,7 +744,7 @@ body.nexus-page {
   // Swap button → go to reverse converter
   if (swapBtn && cfg.reverseLink) {
     swapBtn.addEventListener('click', function () {
-      window.location.href = cfg.reverseLink + '.html';
+      window.location.href = cfg.reverseLink;
     });
   }
   if (swapBtn && !cfg.reverseLink) {

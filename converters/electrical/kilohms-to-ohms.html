@@ -548,7 +548,7 @@ body.nexus-page {
     <div class="nexus-related">
       <h2>Related Converters</h2>
       <div class="nexus-related-grid">
-        <a class="nexus-related-link" href="ohms-to-kilohms.html">Ohms To Kilohms</a><a class="nexus-related-link" href="kilohms-to-megohms.html">Kilohms To Megohms</a>
+        <a class="nexus-related-link" href="ohms-to-kilohms">Ohms To Kilohms</a><a class="nexus-related-link" href="kilohms-to-megohms">Kilohms To Megohms</a>
       </div>
     </div>
 
@@ -726,7 +726,7 @@ body.nexus-page {
   // Swap button → go to reverse converter
   if (swapBtn && cfg.reverseLink) {
     swapBtn.addEventListener('click', function () {
-      window.location.href = cfg.reverseLink + '.html';
+      window.location.href = cfg.reverseLink;
     });
   }
   if (swapBtn && !cfg.reverseLink) {

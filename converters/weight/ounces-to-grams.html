@@ -561,7 +561,7 @@ body.nexus-page {
     <div class="nexus-related">
       <h2>Related Converters</h2>
       <div class="nexus-related-grid">
-        <a class="nexus-related-link" href="grams-to-ounces.html">Grams To Ounces</a><a class="nexus-related-link" href="ounces-to-pounds.html">Ounces To Pounds</a><a class="nexus-related-link" href="ounces-to-kilograms.html">Ounces To Kilograms</a>
+        <a class="nexus-related-link" href="grams-to-ounces">Grams To Ounces</a><a class="nexus-related-link" href="ounces-to-pounds">Ounces To Pounds</a><a class="nexus-related-link" href="ounces-to-kilograms">Ounces To Kilograms</a>
       </div>
     </div>
 
@@ -751,7 +751,7 @@ body.nexus-page {
   // Swap button → go to reverse converter
   if (swapBtn && cfg.reverseLink) {
     swapBtn.addEventListener('click', function () {
-      window.location.href = cfg.reverseLink + '.html';
+      window.location.href = cfg.reverseLink;
     });
   }
   if (swapBtn && !cfg.reverseLink) {

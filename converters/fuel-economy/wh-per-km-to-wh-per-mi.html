@@ -548,7 +548,7 @@ body.nexus-page {
     <div class="nexus-related">
       <h2>Related Converters</h2>
       <div class="nexus-related-grid">
-        <a class="nexus-related-link" href="wh-per-mi-to-wh-per-km.html">Wh Per Mi To Wh Per Km</a><a class="nexus-related-link" href="wh-per-km-to-kwh-100km.html">Wh Per Km To Kwh 100km</a>
+        <a class="nexus-related-link" href="wh-per-mi-to-wh-per-km">Wh Per Mi To Wh Per Km</a><a class="nexus-related-link" href="wh-per-km-to-kwh-100km">Wh Per Km To Kwh 100km</a>
       </div>
     </div>
 
@@ -726,7 +726,7 @@ body.nexus-page {
   // Swap button → go to reverse converter
   if (swapBtn && cfg.reverseLink) {
     swapBtn.addEventListener('click', function () {
-      window.location.href = cfg.reverseLink + '.html';
+      window.location.href = cfg.reverseLink;
     });
   }
   if (swapBtn && !cfg.reverseLink) {

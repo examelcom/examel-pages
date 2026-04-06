@@ -561,7 +561,7 @@ body.nexus-page {
     <div class="nexus-related">
       <h2>Related Converters</h2>
       <div class="nexus-related-grid">
-        <a class="nexus-related-link" href="log-base-10.html">Log Base 10</a><a class="nexus-related-link" href="log-base-n.html">Log Base N</a>
+        <a class="nexus-related-link" href="log-base-10">Log Base 10</a><a class="nexus-related-link" href="log-base-n">Log Base N</a>
       </div>
     </div>
 
@@ -748,7 +748,7 @@ body.nexus-page {
   // Swap button → go to reverse converter
   if (swapBtn && cfg.reverseLink) {
     swapBtn.addEventListener('click', function () {
-      window.location.href = cfg.reverseLink + '.html';
+      window.location.href = cfg.reverseLink;
     });
   }
   if (swapBtn && !cfg.reverseLink) {

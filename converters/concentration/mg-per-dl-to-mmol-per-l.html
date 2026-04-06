@@ -561,7 +561,7 @@ body.nexus-page {
     <div class="nexus-related">
       <h2>Related Converters</h2>
       <div class="nexus-related-grid">
-        <a class="nexus-related-link" href="mmol-per-l-to-mg-per-dl.html">Mmol Per L To Mg Per Dl</a><a class="nexus-related-link" href="mg-per-dl-to-mg-per-l.html">Mg Per Dl To Mg Per L</a>
+        <a class="nexus-related-link" href="mmol-per-l-to-mg-per-dl">Mmol Per L To Mg Per Dl</a><a class="nexus-related-link" href="mg-per-dl-to-mg-per-l">Mg Per Dl To Mg Per L</a>
       </div>
     </div>
 
@@ -743,7 +743,7 @@ body.nexus-page {
   // Swap button → go to reverse converter
   if (swapBtn && cfg.reverseLink) {
     swapBtn.addEventListener('click', function () {
-      window.location.href = cfg.reverseLink + '.html';
+      window.location.href = cfg.reverseLink;
     });
   }
   if (swapBtn && !cfg.reverseLink) {

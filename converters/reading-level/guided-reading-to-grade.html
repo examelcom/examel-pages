@@ -561,7 +561,7 @@ body.nexus-page {
     <div class="nexus-related">
       <h2>Related Converters</h2>
       <div class="nexus-related-grid">
-        <a class="nexus-related-link" href="lexile-to-grade.html">Lexile To Grade</a><a class="nexus-related-link" href="dra-to-grade.html">Dra To Grade</a><a class="nexus-related-link" href="ar-book-level.html">Ar Book Level</a>
+        <a class="nexus-related-link" href="lexile-to-grade">Lexile To Grade</a><a class="nexus-related-link" href="dra-to-grade">Dra To Grade</a><a class="nexus-related-link" href="ar-book-level">Ar Book Level</a>
       </div>
     </div>
 
@@ -753,7 +753,7 @@ body.nexus-page {
   // Swap button → go to reverse converter
   if (swapBtn && cfg.reverseLink) {
     swapBtn.addEventListener('click', function () {
-      window.location.href = cfg.reverseLink + '.html';
+      window.location.href = cfg.reverseLink;
     });
   }
   if (swapBtn && !cfg.reverseLink) {

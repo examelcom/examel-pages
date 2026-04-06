@@ -561,7 +561,7 @@ body.nexus-page {
     <div class="nexus-related">
       <h2>Related Converters</h2>
       <div class="nexus-related-grid">
-        <a class="nexus-related-link" href="cups-to-milliliters.html">Cups To Milliliters</a><a class="nexus-related-link" href="milliliters-to-liters.html">Milliliters To Liters</a><a class="nexus-related-link" href="milliliters-to-fluid-ounces.html">Milliliters To Fluid Ounces</a>
+        <a class="nexus-related-link" href="cups-to-milliliters">Cups To Milliliters</a><a class="nexus-related-link" href="milliliters-to-liters">Milliliters To Liters</a><a class="nexus-related-link" href="milliliters-to-fluid-ounces">Milliliters To Fluid Ounces</a>
       </div>
     </div>
 
@@ -751,7 +751,7 @@ body.nexus-page {
   // Swap button → go to reverse converter
   if (swapBtn && cfg.reverseLink) {
     swapBtn.addEventListener('click', function () {
-      window.location.href = cfg.reverseLink + '.html';
+      window.location.href = cfg.reverseLink;
     });
   }
   if (swapBtn && !cfg.reverseLink) {

@@ -574,7 +574,7 @@ body.nexus-page {
     <div class="nexus-related">
       <h2>Related Converters</h2>
       <div class="nexus-related-grid">
-        <a class="nexus-related-link" href="decimal-to-fraction.html">Decimal To Fraction</a><a class="nexus-related-link" href="fraction-to-percent.html">Fraction To Percent</a><a class="nexus-related-link" href="mixed-number-to-improper-fraction.html">Mixed Number To Improper Fraction</a>
+        <a class="nexus-related-link" href="decimal-to-fraction">Decimal To Fraction</a><a class="nexus-related-link" href="fraction-to-percent">Fraction To Percent</a><a class="nexus-related-link" href="mixed-number-to-improper-fraction">Mixed Number To Improper Fraction</a>
       </div>
     </div>
 
@@ -784,7 +784,7 @@ body.nexus-page {
   // Swap button → go to reverse converter
   if (swapBtn && cfg.reverseLink) {
     swapBtn.addEventListener('click', function () {
-      window.location.href = cfg.reverseLink + '.html';
+      window.location.href = cfg.reverseLink;
     });
   }
   if (swapBtn && !cfg.reverseLink) {

@@ -548,7 +548,7 @@ body.nexus-page {
     <div class="nexus-related">
       <h2>Related Converters</h2>
       <div class="nexus-related-grid">
-        <a class="nexus-related-link" href="rgb-to-hsv.html">Rgb To Hsv</a><a class="nexus-related-link" href="hsl-to-rgb.html">Hsl To Rgb</a>
+        <a class="nexus-related-link" href="rgb-to-hsv">Rgb To Hsv</a><a class="nexus-related-link" href="hsl-to-rgb">Hsl To Rgb</a>
       </div>
     </div>
 
@@ -729,7 +729,7 @@ body.nexus-page {
   // Swap button → go to reverse converter
   if (swapBtn && cfg.reverseLink) {
     swapBtn.addEventListener('click', function () {
-      window.location.href = cfg.reverseLink + '.html';
+      window.location.href = cfg.reverseLink;
     });
   }
   if (swapBtn && !cfg.reverseLink) {

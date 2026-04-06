@@ -561,7 +561,7 @@ body.nexus-page {
     <div class="nexus-related">
       <h2>Related Converters</h2>
       <div class="nexus-related-grid">
-        <a class="nexus-related-link" href="print-size-from-megapixels.html">Print Size From Megapixels</a><a class="nexus-related-link" href="image-file-size-estimator.html">Image File Size Estimator</a>
+        <a class="nexus-related-link" href="print-size-from-megapixels">Print Size From Megapixels</a><a class="nexus-related-link" href="image-file-size-estimator">Image File Size Estimator</a>
       </div>
     </div>
 
@@ -743,7 +743,7 @@ body.nexus-page {
   // Swap button → go to reverse converter
   if (swapBtn && cfg.reverseLink) {
     swapBtn.addEventListener('click', function () {
-      window.location.href = cfg.reverseLink + '.html';
+      window.location.href = cfg.reverseLink;
     });
   }
   if (swapBtn && !cfg.reverseLink) {

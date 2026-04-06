@@ -548,7 +548,7 @@ body.nexus-page {
     <div class="nexus-related">
       <h2>Related Converters</h2>
       <div class="nexus-related-grid">
-        <a class="nexus-related-link" href="markup-calculator.html">Markup Calculator</a><a class="nexus-related-link" href="margin-calculator.html">Margin Calculator</a><a class="nexus-related-link" href="percent-change.html">Percent Change</a>
+        <a class="nexus-related-link" href="markup-calculator">Markup Calculator</a><a class="nexus-related-link" href="margin-calculator">Margin Calculator</a><a class="nexus-related-link" href="percent-change">Percent Change</a>
       </div>
     </div>
 
@@ -730,7 +730,7 @@ body.nexus-page {
   // Swap button → go to reverse converter
   if (swapBtn && cfg.reverseLink) {
     swapBtn.addEventListener('click', function () {
-      window.location.href = cfg.reverseLink + '.html';
+      window.location.href = cfg.reverseLink;
     });
   }
   if (swapBtn && !cfg.reverseLink) {

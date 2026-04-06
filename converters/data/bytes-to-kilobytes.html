@@ -561,7 +561,7 @@ body.nexus-page {
     <div class="nexus-related">
       <h2>Related Converters</h2>
       <div class="nexus-related-grid">
-        <a class="nexus-related-link" href="kilobytes-to-bytes.html">Kilobytes To Bytes</a><a class="nexus-related-link" href="kilobytes-to-megabytes.html">Kilobytes To Megabytes</a><a class="nexus-related-link" href="bits-to-bytes.html">Bits To Bytes</a>
+        <a class="nexus-related-link" href="kilobytes-to-bytes">Kilobytes To Bytes</a><a class="nexus-related-link" href="kilobytes-to-megabytes">Kilobytes To Megabytes</a><a class="nexus-related-link" href="bits-to-bytes">Bits To Bytes</a>
       </div>
     </div>
 
@@ -749,7 +749,7 @@ body.nexus-page {
   // Swap button → go to reverse converter
   if (swapBtn && cfg.reverseLink) {
     swapBtn.addEventListener('click', function () {
-      window.location.href = cfg.reverseLink + '.html';
+      window.location.href = cfg.reverseLink;
     });
   }
   if (swapBtn && !cfg.reverseLink) {

@@ -548,7 +548,7 @@ body.nexus-page {
     <div class="nexus-related">
       <h2>Related Converters</h2>
       <div class="nexus-related-grid">
-        <a class="nexus-related-link" href="oven-fahrenheit-to-celsius.html">Oven Fahrenheit To Celsius</a><a class="nexus-related-link" href="oven-celsius-to-fahrenheit.html">Oven Celsius To Fahrenheit</a>
+        <a class="nexus-related-link" href="oven-fahrenheit-to-celsius">Oven Fahrenheit To Celsius</a><a class="nexus-related-link" href="oven-celsius-to-fahrenheit">Oven Celsius To Fahrenheit</a>
       </div>
     </div>
 
@@ -749,7 +749,7 @@ body.nexus-page {
   // Swap button → go to reverse converter
   if (swapBtn && cfg.reverseLink) {
     swapBtn.addEventListener('click', function () {
-      window.location.href = cfg.reverseLink + '.html';
+      window.location.href = cfg.reverseLink;
     });
   }
   if (swapBtn && !cfg.reverseLink) {

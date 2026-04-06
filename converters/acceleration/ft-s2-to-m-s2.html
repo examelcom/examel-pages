@@ -548,7 +548,7 @@ body.nexus-page {
     <div class="nexus-related">
       <h2>Related Converters</h2>
       <div class="nexus-related-grid">
-        <a class="nexus-related-link" href="m-s2-to-ft-s2.html">M S2 To Ft S2</a><a class="nexus-related-link" href="ft-s2-to-g-force.html">Ft S2 To G Force</a>
+        <a class="nexus-related-link" href="m-s2-to-ft-s2">M S2 To Ft S2</a><a class="nexus-related-link" href="ft-s2-to-g-force">Ft S2 To G Force</a>
       </div>
     </div>
 
@@ -721,7 +721,7 @@ body.nexus-page {
   // Swap button → go to reverse converter
   if (swapBtn && cfg.reverseLink) {
     swapBtn.addEventListener('click', function () {
-      window.location.href = cfg.reverseLink + '.html';
+      window.location.href = cfg.reverseLink;
     });
   }
   if (swapBtn && !cfg.reverseLink) {

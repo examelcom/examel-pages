@@ -561,7 +561,7 @@ body.nexus-page {
     <div class="nexus-related">
       <h2>Related Converters</h2>
       <div class="nexus-related-grid">
-        <a class="nexus-related-link" href="snake-case-converter.html">Snake Case Converter</a><a class="nexus-related-link" href="kebab-case-converter.html">Kebab Case Converter</a><a class="nexus-related-link" href="title-case-converter.html">Title Case Converter</a>
+        <a class="nexus-related-link" href="snake-case-converter">Snake Case Converter</a><a class="nexus-related-link" href="kebab-case-converter">Kebab Case Converter</a><a class="nexus-related-link" href="title-case-converter">Title Case Converter</a>
       </div>
     </div>
 
@@ -746,7 +746,7 @@ body.nexus-page {
   // Swap button → go to reverse converter
   if (swapBtn && cfg.reverseLink) {
     swapBtn.addEventListener('click', function () {
-      window.location.href = cfg.reverseLink + '.html';
+      window.location.href = cfg.reverseLink;
     });
   }
   if (swapBtn && !cfg.reverseLink) {

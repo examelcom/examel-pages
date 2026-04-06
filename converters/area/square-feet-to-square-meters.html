@@ -561,7 +561,7 @@ body.nexus-page {
     <div class="nexus-related">
       <h2>Related Converters</h2>
       <div class="nexus-related-grid">
-        <a class="nexus-related-link" href="square-meters-to-square-feet.html">Square Meters To Square Feet</a><a class="nexus-related-link" href="square-feet-to-acres.html">Square Feet To Acres</a><a class="nexus-related-link" href="square-feet-to-square-yards.html">Square Feet To Square Yards</a>
+        <a class="nexus-related-link" href="square-meters-to-square-feet">Square Meters To Square Feet</a><a class="nexus-related-link" href="square-feet-to-acres">Square Feet To Acres</a><a class="nexus-related-link" href="square-feet-to-square-yards">Square Feet To Square Yards</a>
       </div>
     </div>
 
@@ -751,7 +751,7 @@ body.nexus-page {
   // Swap button → go to reverse converter
   if (swapBtn && cfg.reverseLink) {
     swapBtn.addEventListener('click', function () {
-      window.location.href = cfg.reverseLink + '.html';
+      window.location.href = cfg.reverseLink;
     });
   }
   if (swapBtn && !cfg.reverseLink) {

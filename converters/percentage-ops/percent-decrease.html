@@ -548,7 +548,7 @@ body.nexus-page {
     <div class="nexus-related">
       <h2>Related Converters</h2>
       <div class="nexus-related-grid">
-        <a class="nexus-related-link" href="percent-increase.html">Percent Increase</a><a class="nexus-related-link" href="percent-change.html">Percent Change</a><a class="nexus-related-link" href="original-before-decrease.html">Original Before Decrease</a>
+        <a class="nexus-related-link" href="percent-increase">Percent Increase</a><a class="nexus-related-link" href="percent-change">Percent Change</a><a class="nexus-related-link" href="original-before-decrease">Original Before Decrease</a>
       </div>
     </div>
 
@@ -729,7 +729,7 @@ body.nexus-page {
   // Swap button → go to reverse converter
   if (swapBtn && cfg.reverseLink) {
     swapBtn.addEventListener('click', function () {
-      window.location.href = cfg.reverseLink + '.html';
+      window.location.href = cfg.reverseLink;
     });
   }
   if (swapBtn && !cfg.reverseLink) {

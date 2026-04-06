@@ -561,7 +561,7 @@ body.nexus-page {
     <div class="nexus-related">
       <h2>Related Converters</h2>
       <div class="nexus-related-grid">
-        <a class="nexus-related-link" href="lpm-to-gpm.html">Lpm To Gpm</a><a class="nexus-related-link" href="gpm-to-liters-per-second.html">Gpm To Liters Per Second</a><a class="nexus-related-link" href="gpm-to-cfm.html">Gpm To Cfm</a>
+        <a class="nexus-related-link" href="lpm-to-gpm">Lpm To Gpm</a><a class="nexus-related-link" href="gpm-to-liters-per-second">Gpm To Liters Per Second</a><a class="nexus-related-link" href="gpm-to-cfm">Gpm To Cfm</a>
       </div>
     </div>
 
@@ -744,7 +744,7 @@ body.nexus-page {
   // Swap button → go to reverse converter
   if (swapBtn && cfg.reverseLink) {
     swapBtn.addEventListener('click', function () {
-      window.location.href = cfg.reverseLink + '.html';
+      window.location.href = cfg.reverseLink;
     });
   }
   if (swapBtn && !cfg.reverseLink) {
