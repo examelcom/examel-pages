@@ -437,6 +437,60 @@ body.nexus-page {
   .nexus-field input { font-size: 18px; padding: 12px 14px; }
   .nexus-related-grid { grid-template-columns: 1fr; }
 }
+
+/* --- WORKSHEET CROSS-LINKS --- */
+.nexus-worksheets {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  background: linear-gradient(135deg, #F0EEFF 0%, #E8F5E9 100%);
+  border: 2px solid #6C5CE7;
+  border-radius: 12px;
+  padding: 24px;
+  margin-top: 32px;
+}
+.nexus-worksheets-icon {
+  font-size: 32px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.nexus-worksheets-content { flex: 1; }
+.nexus-worksheets h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2D3436;
+  margin-bottom: 4px;
+}
+.nexus-worksheets p {
+  font-size: 13px;
+  color: #636E72;
+  margin-bottom: 12px;
+}
+.nexus-worksheets-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.nexus-worksheet-link {
+  display: inline-block;
+  padding: 8px 16px;
+  background: #6C5CE7;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  transition: background 0.15s;
+}
+.nexus-worksheet-link:hover {
+  background: #5A4BD1;
+}
+@media (max-width: 600px) {
+  .nexus-worksheets { flex-direction: column; }
+  .nexus-worksheets-icon { font-size: 24px; }
+}
+
 </style>
 
   
@@ -568,6 +622,19 @@ body.nexus-page {
       
     </div>
     
+    
+    <!-- Worksheet Cross-Links — examel.com moat -->
+    <div class="nexus-worksheets">
+      <div class="nexus-worksheets-icon">📝</div>
+      <div class="nexus-worksheets-content">
+        <h2>Practice with Worksheets</h2>
+        <p>Reinforce this skill with free, printable worksheets aligned to Common Core standards.</p>
+        <div class="nexus-worksheets-grid">
+          <a class="nexus-worksheet-link" href="/free-math-worksheets/decimals/">Decimals Worksheets →</a><a class="nexus-worksheet-link" href="/free-math-worksheets/fractions/">Fractions Worksheets →</a><a class="nexus-worksheet-link" href="/free-math-worksheets/grade-5/">Grade 5 Math →</a>
+        </div>
+      </div>
+    </div>
+
     <div class="nexus-related">
       <h2>Related Converters</h2>
       <div class="nexus-related-grid">
