@@ -546,6 +546,46 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to convert using Audio Length from File Size",
+  "description": "Estimate audio duration from file size and format. Free.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "Divide file size (in bits) by bitrate"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "Convert seconds to minutes"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "Uncompressed WAV: ~10 MB/minute (CD stereo)"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "text": "MP3 320 kbps: ~2.4 MB/minute"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "Audio Length from File Size"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: Duration = file size / bitrate"
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

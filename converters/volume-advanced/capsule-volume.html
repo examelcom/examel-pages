@@ -554,6 +554,46 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to convert using Capsule Volume",
+  "description": "Calculate the volume of a capsule (cylinder + two hemispheres). Free.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "Cylinder height = L − 2r (total minus two hemispherical caps)"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "Cylinder volume: πr²(L−2r)"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "Two hemispheres = one sphere: (4/3)πr³"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "text": "Add together: V = πr²(L − 2r/3)"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "Capsule Volume"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: V = πr²(L − 2r) + (4/3)πr³ = πr²(L − 2r/3)"
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

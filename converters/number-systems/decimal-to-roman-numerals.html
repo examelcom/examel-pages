@@ -562,6 +562,46 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to use the Decimal to Roman Numerals Converter",
+  "description": "Convert numbers to Roman numerals. 2024 = MMXXIV. Free, instant, step-by-step.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "Start with the largest Roman numeral value that fits (M=1000, D=500, C=100, etc.)"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "Subtract it and write the symbol"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "Repeat until the number reaches 0"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "text": "Use subtractive notation: IV=4, IX=9, XL=40, XC=90, CD=400, CM=900"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "Decimal to Roman Numerals Converter"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: Greedy algorithm: subtract largest Roman value that fits, repeat"
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

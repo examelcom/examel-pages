@@ -554,6 +554,41 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to convert using Unix Timestamp",
+  "description": "Convert Unix timestamp to human-readable date/time. Free.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "Unix epoch: January 1, 1970 00:00:00 UTC"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "Current timestamp ≈ 1.7+ billion"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "Convert: divide by 86,400 for days since epoch, then calculate date"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "Unix Timestamp"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: Date = seconds since January 1, 1970 00:00:00 UTC"
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

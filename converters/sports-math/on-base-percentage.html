@@ -546,6 +546,41 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to use the OBP Calculator",
+  "description": "Calculate OBP. Includes walks and HBP. Free.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "Add hits + walks + hit-by-pitch"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "Divide by (AB + BB + HBP + sac flies)"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "OBP measures how often a batter reaches base"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "OBP Calculator"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: OBP = (H + BB + HBP) / (AB + BB + HBP + SF)"
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

@@ -546,6 +546,36 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to use the PPI Calculator",
+  "description": "Calculate PPI from resolution and screen size. Free.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "Calculate diagonal resolution: √(width² + height²)"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "Divide by screen diagonal in inches"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "PPI Calculator"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: PPI = √(W² + H²) / diagonal (inches)"
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

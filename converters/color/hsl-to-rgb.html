@@ -546,6 +546,51 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to use the HSL to RGB Color Converter",
+  "description": "Convert HSL color values to RGB. hsl(240, 100%, 50%) → rgb(0, 0, 255). Free.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "Convert S and L to decimals (divide by 100)"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "Compute chroma C = (1 - |2L - 1|) × S"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "Compute intermediate value X based on hue sector"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "text": "Add lightness offset to get final R, G, B"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 5,
+      "text": "Multiply by 255 for 0-255 range"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "HSL to RGB Color Converter"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: Compute chroma → adjust per hue sector → add lightness offset"
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

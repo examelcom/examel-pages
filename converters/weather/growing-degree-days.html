@@ -546,6 +546,46 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to convert using Growing Degree Days",
+  "description": "Calculate GDD for agriculture. Base 50°F. Free.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "Average daily temp: (high + low) / 2"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "Subtract base temperature (typically 50°F for corn)"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "If negative, GDD = 0 (no growth below base)"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "text": "Accumulate daily for season total"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "Growing Degree Days"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: GDD = max(0, (Tmax+Tmin)/2 − Tbase)"
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

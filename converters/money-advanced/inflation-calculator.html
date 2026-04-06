@@ -546,6 +546,36 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to convert using Inflation",
+  "description": "$100 in 2000 ≈ $180 in 2024. Free.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "Find CPI ratio between years"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "Multiply original amount"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "Inflation"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: Adjusted = original × (CPI_end/CPI_start)"
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

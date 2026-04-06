@@ -546,6 +546,46 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to convert using Pattern Rule Finder",
+  "description": "Find the rule behind a number pattern. 2, 6, 18, 54 → ×3. Free.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "Look at differences between terms"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "If constant → arithmetic (add rule)"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "If not, look at ratios → geometric (multiply rule)"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "text": "If neither, check second differences, squares, cubes, or other patterns"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "Pattern Rule Finder"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: Check: constant difference? constant ratio? other pattern?"
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

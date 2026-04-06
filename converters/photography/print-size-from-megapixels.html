@@ -546,6 +546,41 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to convert using Print Size from MP",
+  "description": "Calculate maximum print size from megapixels. Free.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "Calculate pixel dimensions from MP"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "Divide by 300 for high-quality print size"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "Divide by 150 for acceptable quality print size"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "Print Size from MP"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: Max print = √(MP×1.5M) / 300 for width at 3:2"
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

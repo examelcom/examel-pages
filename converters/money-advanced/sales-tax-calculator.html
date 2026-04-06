@@ -546,6 +546,36 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to convert using Sales Tax",
+  "description": "Calculate tax + total. $80 at 8.5% = $86.80. Free.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "Multiply price by rate÷100"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "Add to price"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "Sales Tax"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: Tax = price × rate/100"
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

@@ -546,6 +546,41 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to convert using Milliseconds per Beat to BPM",
+  "description": "Convert ms/beat to BPM. 500 ms/beat = 120 BPM. Free.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "Take your value ms per beat"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "Divide 60,000 by it"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "60,000 ÷ your value = the result BPM"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "Milliseconds per Beat to BPM"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: BPM = 60,000 ÷ ms/beat"
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

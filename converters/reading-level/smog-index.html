@@ -554,6 +554,46 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to convert using SMOG Index",
+  "description": "Calculate SMOG readability. Counts polysyllabic words. Free.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "Select 30 sentences (10 from beginning, middle, end)"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "Count words with 3+ syllables (polysyllabic)"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "Take the square root"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "text": "Add 3"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "SMOG Index"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: SMOG = 3 + √(polysyllable count in 30 sentences)"
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

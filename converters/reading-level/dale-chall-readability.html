@@ -546,6 +546,46 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to convert using Dale-Chall Score",
+  "description": "Calculate Dale-Chall score using familiar word list. Free.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "Count total words and sentences"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "Count \"difficult\" words (not on the 3,000 familiar-word list)"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "Calculate % difficult and avg sentence length"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "text": "Apply formula"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "Dale-Chall Score"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: 0.1579(difficult%)+0.0496(words/sentences) [+3.6365 if difficult%>5]"
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

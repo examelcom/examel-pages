@@ -554,6 +554,41 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to convert using Decimal Degrees to DMS",
+  "description": "Convert decimal degrees to degrees-minutes-seconds. 40.7128° → 40°42'46\". Free.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "Take integer part = degrees"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "Multiply decimal by 60 → integer = minutes"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "Multiply remaining decimal by 60 = seconds"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "Decimal Degrees to DMS"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: D = int(DD), M = int(frac×60), S = frac(M)×60"
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

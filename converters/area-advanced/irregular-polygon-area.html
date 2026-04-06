@@ -554,6 +554,46 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to convert using Irregular Polygon Area (Coordinates)",
+  "description": "Calculate area of any polygon from coordinates using the Shoelace formula. Free.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "List all vertices in order (clockwise or counterclockwise)"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "For each consecutive pair, calculate xᵢ×yᵢ₊₁ − xᵢ₊₁×yᵢ"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "Sum all cross products"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "text": "Take absolute value and divide by 2"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "Irregular Polygon Area (Coordinates)"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: A = ½|Σ(xᵢyᵢ₊₁ − xᵢ₊₁yᵢ)| (Shoelace formula)"
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

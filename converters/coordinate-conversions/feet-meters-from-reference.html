@@ -546,6 +546,41 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to convert using Distance from Reference",
+  "description": "Calculate how far a point is from a reference in feet or meters. Free.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "For flat/local: d = √((x₂−x₁)² + (y₂−y₁)²)"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "For geographic: use Haversine formula"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "For 3D: add (z₂−z₁)² under the root"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "Distance from Reference"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: Use Pythagorean theorem for flat surfaces, Haversine for geographic"
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

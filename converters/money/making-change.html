@@ -554,6 +554,51 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to use the Making Change Calculator",
+  "description": "Calculate how to make change with the fewest coins. Uses the greedy algorithm. Free.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "Start with the change amount in cents"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "Use as many quarters as possible"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "Use dimes for the remaining amount"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "text": "Use nickels for the remaining amount"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 5,
+      "text": "Use pennies for the rest"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "Making Change Calculator"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: Greedy: use largest coins first (Q, D, N, P)"
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

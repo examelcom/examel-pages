@@ -546,6 +546,46 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to use the Pass / Fail Threshold Calculator",
+  "description": "Calculate the minimum score needed to pass. Set any passing threshold. Free, instant.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "Enter total possible points"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "Enter the passing threshold percentage"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "Multiply total points by threshold (as decimal)"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "text": "Round up to the nearest whole number"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "Pass / Fail Threshold Calculator"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: Min Points = Total Points × (Threshold ÷ 100)"
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

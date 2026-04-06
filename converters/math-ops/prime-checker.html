@@ -562,6 +562,46 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to convert using Prime Number Checker",
+  "description": "Check if a number is prime or composite. Free, instant, with explanation.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "Check if the number is less than 2 (not prime)"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "Check if divisible by 2 (even numbers > 2 are not prime)"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "Test divisibility by odd numbers from 3 up to √n"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "text": "If no divisors found, it is prime"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "Prime Number Checker"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: Test divisibility by primes up to √n"
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

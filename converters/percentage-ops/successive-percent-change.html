@@ -554,6 +554,41 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to convert using Successive % Changes",
+  "description": "Calculate combined effect of multiple % changes. +20% then −10% ≠ +10%! Free.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "Convert each % to a multiplier: +20% → 1.20, −10% → 0.90"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "Multiply all multipliers together"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "1.20 × 0.90 = 1.08 → net +8% (not +10%!)"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "Successive % Changes"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: Multiply: Final = Original × (1+r₁) × (1+r₂) × ..."
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

@@ -554,6 +554,46 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to use the Military Time Converter",
+  "description": "Convert military time (0000-2359) to standard time and back. 1430 = 2:30 PM. Free.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "Military time uses 4 digits with no colon: HHMM"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "First 2 digits = hours (00-23)"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "Last 2 digits = minutes (00-59)"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "text": "Convert hours: 00=12AM, 01-11=AM, 12=12PM, 13-23=PM (subtract 12)"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "Military Time Converter"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: Read first 2 digits as hours (24h), last 2 as minutes"
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

@@ -554,6 +554,41 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to convert using BPM to ms/beat",
+  "description": "Convert BPM to ms/beat for delay and echo effects. 120 BPM = 500ms. Free.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "Divide 60,000 by BPM"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "This gives quarter note duration"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "Eighth note = half that, dotted = × 1.5"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "BPM to ms/beat"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: ms/beat = 60,000 ÷ BPM"
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

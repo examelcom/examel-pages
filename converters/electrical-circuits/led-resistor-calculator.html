@@ -554,6 +554,41 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to convert using LED Resistor",
+  "description": "Calculate the right resistor for an LED. Free.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "Subtract LED forward voltage from supply voltage"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "Divide by desired LED current (typically 20 mA = 0.020 A)"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "Choose the nearest standard resistor value"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "LED Resistor"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: R = (V_supply − V_LED) / I_LED"
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

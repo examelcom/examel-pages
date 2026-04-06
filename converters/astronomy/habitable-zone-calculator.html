@@ -554,6 +554,41 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to convert using Habitable Zone",
+  "description": "Estimate the habitable zone for a star by luminosity. Free.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "Inner edge: √(luminosity / 1.1) AU"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "Outer edge: √(luminosity / 0.53) AU"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "These are approximate — actual HZ depends on atmosphere, greenhouse effect, etc."
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "Habitable Zone"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: Inner ≈ √(L/1.1) AU, Outer ≈ √(L/0.53) AU"
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

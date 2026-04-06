@@ -546,6 +546,41 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to convert using Relative Humidity",
+  "description": "Calculate RH from temperature and dew point. Free.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "Quick: RH ≈ 100 − 5×(temp − dew point)"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "When dew point = temp: RH = 100% (fog/rain)"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "When dew point far below temp: very dry air"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "Relative Humidity"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: RH ≈ 100 − 5(T − Td) for quick estimate"
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

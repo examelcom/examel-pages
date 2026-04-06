@@ -546,6 +546,41 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to convert using HEX to Nearest Color Name",
+  "description": "Find the closest CSS color name for any HEX code. #FF6347 → tomato. Free, instant.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "Convert HEX to RGB"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "Calculate the Euclidean distance to each of 140 CSS named colors"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "Return the closest match by RGB distance"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "HEX to Nearest Color Name"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: Calculate RGB distance to all 140 named colors → closest match"
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

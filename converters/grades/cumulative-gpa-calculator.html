@@ -554,6 +554,46 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to use the Cumulative GPA Calculator",
+  "description": "Calculate your cumulative GPA across multiple semesters. Free, step-by-step.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "Multiply your prior GPA by prior total credits (= old quality points)"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "Multiply your current semester GPA by current credits (= new quality points)"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "Add old + new quality points"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "text": "Divide by total credits (old + new)"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "Cumulative GPA Calculator"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: Cumulative = (Old QP + New QP) ÷ (Old Credits + New Credits)"
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

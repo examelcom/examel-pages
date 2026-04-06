@@ -554,6 +554,46 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to convert using Floor Plan Area",
+  "description": "Calculate room areas from floor plan measurements and scale. Free.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "Measure width and length on the floor plan"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "Multiply each by the scale factor"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "Multiply the real dimensions for area"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "text": "At 1/4\"=1': multiply plan inches by 4 for feet"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "Floor Plan Area"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: Area = (plan width × scale) × (plan length × scale)"
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

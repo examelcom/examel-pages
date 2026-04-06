@@ -554,6 +554,46 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to convert using Image File Size",
+  "description": "Estimate file size from megapixels and format. Free.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "Uncompressed: MP × 3 (RGB) × bytes per channel"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "RAW: ~60-75% of uncompressed (lossless compression)"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "JPEG high quality: ~10-20% of uncompressed"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "text": "JPEG normal: ~5-10% of uncompressed"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "Image File Size"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: RAW ≈ MP × bit_depth × 3 / 8 / 1M. JPEG ≈ RAW / 5-10."
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

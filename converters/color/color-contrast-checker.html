@@ -554,6 +554,46 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to convert using Color Contrast Checker (WCAG)",
+  "description": "Check color contrast ratio for WCAG accessibility. Text and background colors. Free.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "Enter text color and background color (HEX or RGB)"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "Calculate relative luminance of each color"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "Compute contrast ratio: (lighter + 0.05) / (darker + 0.05)"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "text": "Check against WCAG thresholds: AA requires 4.5:1 for normal text, 3:1 for large text"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "Color Contrast Checker (WCAG)"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: Ratio = (L1 + 0.05) / (L2 + 0.05) using relative luminance"
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

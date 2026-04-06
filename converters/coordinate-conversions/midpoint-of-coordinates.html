@@ -546,6 +546,41 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to convert using Coordinate Midpoint",
+  "description": "Find the geographic midpoint between two locations. Free.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "For short distances: avg lat, avg long works"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "For long distances: use 3D Cartesian midpoint on sphere"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "Convert back to lat/long"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "Coordinate Midpoint"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: Use spherical midpoint formula (not simple average for long distances)"
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

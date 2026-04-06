@@ -554,6 +554,41 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to convert using Cartesian to Spherical",
+  "description": "Convert (x,y,z) to (ρ,θ,φ). Free.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "ρ = √(x²+y²+z²) — distance from origin"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "θ = atan2(y, x) — azimuthal angle (same as cylindrical)"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "φ = arccos(z/ρ) — polar angle from z-axis"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "Cartesian to Spherical"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: ρ = √(x²+y²+z²), θ = atan2(y,x), φ = arccos(z/ρ)"
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

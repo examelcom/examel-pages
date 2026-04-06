@@ -554,6 +554,41 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to convert using Overtime Pay",
+  "description": "Calculate overtime pay. $20/hr regular, time-and-a-half = $30/hr OT. Free.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "First 40 hours at regular rate"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "Hours over 40 at 1.5× rate (time-and-a-half)"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "Some jobs/states: double-time after 60 hours or on holidays"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "Overtime Pay"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: OT rate = regular × 1.5 (time-and-a-half). Total = (40 × regular) + (OT hours × OT rate)."
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

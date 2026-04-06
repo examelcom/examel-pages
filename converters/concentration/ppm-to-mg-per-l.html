@@ -554,6 +554,41 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to convert using PPM to mg/L",
+  "description": "Convert parts per million to mg/L. 1 PPM = 1 mg/L (in water). Free.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "For water-based solutions, PPM and mg/L are numerically equal"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "1 PPM = 1 mg per liter"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "This assumes solution density ≈ 1 g/mL (water)"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "PPM to mg/L"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: mg/L = PPM × 1 (for dilute aqueous solutions)"
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

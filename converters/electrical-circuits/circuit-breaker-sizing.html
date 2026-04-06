@@ -554,6 +554,41 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to convert using Circuit Breaker Sizing",
+  "description": "Determine the right breaker size for your load. Free.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "Calculate load current: I = P/V"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "Apply 80% continuous load rule: I ÷ 0.8"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "Select next standard breaker size: 15, 20, 25, 30, 40, 50, 60A"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "Circuit Breaker Sizing"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: Breaker amps ≥ load amps / 0.8 (80% rule)"
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

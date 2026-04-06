@@ -546,6 +546,51 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to convert using Passer Rating",
+  "description": "Calculate NFL quarterback passer rating. Perfect = 158.3. Free.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "a = ((Comp/Att)−.3) × 5"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "b = ((Yds/Att)−3) × .25"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "c = (TD/Att) × 20"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "text": "d = 2.375 − ((INT/Att) × 25)"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 5,
+      "text": "Cap each 0-2.375, avg all 4, ×100/6"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "Passer Rating"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: Complex: 4 components capped at 2.375 each, averaged, ×100/6"
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

@@ -554,6 +554,46 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to convert using Percent Growth Per Period",
+  "description": "Find the per-period growth rate from start, end, and periods. Free.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "Divide end value by start value"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "Take the tth root (raise to 1/t)"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "Subtract 1"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "text": "Multiply by 100 for percentage"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "Percent Growth Per Period"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: r = (End/Start)^(1/t) − 1"
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

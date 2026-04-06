@@ -546,6 +546,51 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to use the CMYK to RGB Color Converter",
+  "description": "Convert CMYK print values to RGB screen colors. Free, instant.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "Convert CMYK percentages to decimals (divide by 100)"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "R = 255 × (1 − C) × (1 − K)"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "G = 255 × (1 − M) × (1 − K)"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "text": "B = 255 × (1 − Y) × (1 − K)"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 5,
+      "text": "Round each to nearest integer"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "CMYK to RGB Color Converter"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: R=255×(1−C/100)×(1−K/100), G and B similar"
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

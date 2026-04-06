@@ -546,6 +546,41 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to use the ERA Calculator",
+  "description": "Calculate Earned Run Average. 30 ER / 100 IP = 2.70. Free.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "Divide earned runs by innings pitched"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "Multiply by 9 (scale to a full game)"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "Lower is better!"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "ERA Calculator"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: ERA = (Earned Runs / Innings Pitched) × 9"
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

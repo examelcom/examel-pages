@@ -554,6 +554,41 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to convert using Reading Time Estimator",
+  "description": "Estimate reading time for an article or book. Free.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "Divide word count by 238 (average adult WPM)"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "Round to nearest minute"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "For technical text, use 200 WPM instead"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "Reading Time Estimator"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: Time (min) = Words ÷ 238 (average adult reading speed)"
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

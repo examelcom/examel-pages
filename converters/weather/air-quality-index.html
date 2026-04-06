@@ -546,6 +546,56 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to convert using Air Quality Index",
+  "description": "AQI scale. 0-50 = Good. 151-200 = Unhealthy. Free.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "0-50: Good (green) — no risk"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "51-100: Moderate (yellow) — some concern for sensitive"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "101-150: Unhealthy for sensitive groups (orange)"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "text": "151-200: Unhealthy (red) — everyone affected"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 5,
+      "text": "201-300: Very unhealthy (purple)"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 6,
+      "text": "301-500: Hazardous (maroon)"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "Air Quality Index"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: 0-50: Good. 51-100: Moderate. 101-150: Sensitive groups. 151-200: Unhealthy."
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

@@ -546,6 +546,41 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to use the DPI Calculator",
+  "description": "Calculate DPI from image pixels and desired print size. Free.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "Divide image width (pixels) by desired print width (inches)"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "Result is the DPI at that print size"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "300+ DPI = excellent, 150+ = good, <100 = pixelated"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "DPI Calculator"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: DPI = pixels ÷ print size (inches)"
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

@@ -554,6 +554,41 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to convert using Filter Factor to Stops",
+  "description": "Convert filter factor to exposure stops. 4× filter = 2 stops. Free.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "Take log base 2 of the filter factor"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "2× = 1 stop, 4× = 2 stops, 8× = 3 stops"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "This is how much extra exposure you need"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "Filter Factor to Stops"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: stops = log₂(filter factor)"
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

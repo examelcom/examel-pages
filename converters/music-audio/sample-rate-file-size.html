@@ -554,6 +554,41 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to convert using Audio File Size",
+  "description": "Estimate audio file size from sample rate, bit depth, duration. Free.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "Multiply: sample rate × bit depth × channels × seconds"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "Divide by 8 (bits to bytes)"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "Divide by 1,000,000 (bytes to MB)"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "Audio File Size"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: Size = rate × bits × channels × seconds / 8 / 1,000,000"
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

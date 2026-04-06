@@ -546,6 +546,46 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to convert using Frequency to MIDI",
+  "description": "Convert frequency to nearest MIDI note. 440 Hz = MIDI 69 (A4). Free.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "Divide frequency by 440"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "Take log base 2"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "Multiply by 12"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "text": "Add 69"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "Frequency to MIDI"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: MIDI = 69 + 12 × log₂(f/440)"
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

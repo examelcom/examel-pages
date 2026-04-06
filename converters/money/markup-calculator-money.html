@@ -554,6 +554,46 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to use the Markup Calculator",
+  "description": "Calculate selling price from cost and markup percentage. Free, step-by-step.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "Convert markup to decimal: markup ÷ 100"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "Add 1 to get multiplier: 1 + decimal"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "Multiply cost by multiplier"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "text": "Profit = Selling Price − Cost"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "Markup Calculator"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: Selling Price = Cost × (1 + Markup%/100)"
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

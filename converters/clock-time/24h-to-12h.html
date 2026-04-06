@@ -546,6 +546,46 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to convert using 24-Hour to 12-Hour",
+  "description": "Convert 24-hour (military) to 12-hour time. 15:30 = 3:30 PM. Free.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "00:00 = 12:00 AM (midnight)"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "01:00 - 11:59 = 1:00 AM - 11:59 AM"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "12:00 = 12:00 PM (noon)"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "text": "13:00 - 23:59 = 1:00 PM - 11:59 PM (subtract 12)"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "24-Hour to 12-Hour"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: 00-11: AM (00 = 12 AM). 12-23: PM (subtract 12 for 13-23)."
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

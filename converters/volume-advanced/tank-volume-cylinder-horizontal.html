@@ -554,6 +554,41 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to convert using Horizontal Cylinder Tank",
+  "description": "Calculate liquid volume in a horizontal cylindrical tank. Free.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "This uses the circular segment area × tank length"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "At half full: V = ½πr²L"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "At any fill height h: use the segment formula"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "Horizontal Cylinder Tank"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: V = L × [r²·arccos((r−h)/r) − (r−h)·√(2rh−h²)]"
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

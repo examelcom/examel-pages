@@ -546,6 +546,41 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to convert using Slugging Percentage",
+  "description": "Calculate SLG. Total bases / at-bats. Free.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "Calculate total bases: 1B×1 + 2B×2 + 3B×3 + HR×4"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "Divide by at-bats"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "SLG measures power — higher = more extra-base hits"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "Slugging Percentage"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: SLG = (1B + 2×2B + 3×3B + 4×HR) / AB"
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

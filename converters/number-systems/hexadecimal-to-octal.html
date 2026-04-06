@@ -546,6 +546,41 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to use the Hexadecimal to Octal Converter",
+  "description": "Convert hexadecimal to octal. FF = 377. Via binary regrouping. Free.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "Convert each hex digit to 4-bit binary"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "Regroup the binary digits into sets of 3 from the right"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "Convert each 3-bit group to octal"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "Hexadecimal to Octal Converter"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: Hex → Binary (×4 bits) → Octal (÷3 bits)"
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

@@ -554,6 +554,41 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to convert using Binary to BCD",
+  "description": "Convert binary to Binary-Coded Decimal. Free.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "Convert binary to decimal"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "Encode each decimal digit as a 4-bit binary group"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "Example: 42 → 0100 0010 (BCD)"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "Binary to BCD"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: Convert to decimal first, then encode each digit as 4 bits"
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 

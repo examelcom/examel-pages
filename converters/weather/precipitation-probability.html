@@ -546,6 +546,46 @@ body.nexus-page {
   }
 }
     </script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to convert using Precipitation Probability",
+  "description": "What does \"40% chance of rain\" actually mean? Free.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "text": "40% = over the forecast area, rain will occur 40% of the time/area"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "text": "It does NOT mean 40% of the area gets rain while 60% stays dry"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "text": "Technically: P = C × A (confidence × area)"
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "text": "50%+ → carry an umbrella"
+    }
+  ],
+  "tool": {
+    "@type": "HowToTool",
+    "name": "Precipitation Probability"
+  },
+  "totalTime": "PT1M",
+  "supply": {
+    "@type": "HowToSupply",
+    "name": "Formula: P = confidence × area coverage"
+  }
+}
+    </script>
 </head>
 <body class="nexus-page">
 
