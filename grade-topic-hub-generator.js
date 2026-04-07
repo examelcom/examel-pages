@@ -19,7 +19,7 @@
 'use strict';
 const fs   = require('fs');
 const path = require('path');
-const { buildSchema, buildOG, buildAnswerBadge, buildEmailCapture, buildAnalytics } = require('./examel-config');
+const { buildSchema, buildOG, buildAnswerBadge, buildEmailCapture, buildAnalytics, getPageUrl } = require('./examel-config');
 
 const BASE = '/opt/examel/examel-pages';
 const MIN_WORKSHEETS = 5;
@@ -156,7 +156,7 @@ function buildHubJsonLd(subject, grade, displayName, count, canonicalUrl, worksh
 // ── Worksheet card (matches existing pattern from generate-pages.js) ──
 function worksheetCard(ws) {
   const color = subjectColor(ws.subject);
-  const url = `/worksheets/${ws.slug}/`;
+  const url = getPageUrl(ws);
   const subjectLabel = capitalize(ws.subject);
   const thumb = ws.preview_p1_url
     ? `<img src="${ws.preview_p1_url}" alt="${ws.title}" class="ws-card-thumb" loading="lazy">`
@@ -293,7 +293,7 @@ function generateGradeTopicHubs(worksheets, sharedCSS, siteHeader, siteFooter, h
       .slice(0, 8);
 
     // Worksheet URLs for JSON-LD
-    const wsUrls = groupWs.map(ws => `https://examel.com/worksheets/${ws.slug}/`);
+    const wsUrls = groupWs.map(ws => `https://examel.com${getPageUrl(ws)}`);
 
     // JSON-LD
     const jsonLd = buildHubJsonLd(subject, grade, display_name, totalCount, canonicalUrl, wsUrls);
